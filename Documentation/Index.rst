@@ -39,9 +39,6 @@ TYPO3 Exceptions
 
 .. rst-class:: horizbuttons-tip-xxl
 
-- :ref:`Sitemap`
-
-
 The content of this document is related to TYPO3 CMS,
 a GNU/GPL CMS/Framework available from `www.typo3.org
 <https://typo3.org/>`_
@@ -55,15 +52,9 @@ If you find an error or something is missing, please create an `issue
 or make the change yourself. You can find out more about how to do this in
 :ref:`contribute`.
 
-**Table of Contents**
-
 .. toctree::
+   :glob:
+   :titlesonly:
    :hidden:
 
-   Quicklinks
-   genindex
-
-.. toctree::
-   :maxdepth: 1
-
-   Exceptions/Index
+   Exceptions/*
