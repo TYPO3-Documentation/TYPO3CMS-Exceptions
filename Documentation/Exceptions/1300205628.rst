@@ -8,7 +8,7 @@ Related to the YAG Extension.
 =============================
 
 Case 1
-======
+------
 
 ::
 
@@ -24,7 +24,7 @@ Case 1
      (table: tx_yag_domain_model_item, field: sourceuri)
 
 Case 2
-======
+------
 
 This exception may happen when my fileadmin (storage) has disabled flag
 "Is publicly available?" on the Access sheet.

@@ -25,7 +25,7 @@ Typo3 v7.6.32 Happens when attaching an image to an existing content
 element.
 
 Patch
-=====
+-----
 
 We found a patch in the source of the site we've taken over from another
 agency. The patch was created on v7.6.31 but could also be applied to

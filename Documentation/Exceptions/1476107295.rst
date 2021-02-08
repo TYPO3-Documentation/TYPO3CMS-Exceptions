@@ -117,11 +117,17 @@ Array and string offset access syntax with curly braces is deprecated in
 line 479
 
 thrown in file
-/srv/sftp/ppwmain/udm.esaa-eu.org/typo3_src-9.5.9/typo3/sysext/core/Classes/Error/ErrorHandler.php
+/srv/sftp/ppwmain/page.org/typo3_src-9.5.9/typo3/sysext/core/Classes/Error/ErrorHandler.php
 
 in line 124
 
 Solution: Disable Debug Mode ;)
+
+--------------
+
+When gridelements is enabled in debug mode, this error comes currently
+in V10.4.12 - disable the ext, when you are in debug mode and you are
+good to go.
 
 .. |Error ... to large ... offset 27.jpg| image:: files/Error_..._to_large_..._offset_27.jpg
    :target: /File:Error_..._to_large_..._offset_27.jpg

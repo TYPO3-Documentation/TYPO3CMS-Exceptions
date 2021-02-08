@@ -19,21 +19,18 @@ Source:
    TYPO3Fluid\Fluid\View\Exception\InvalidTemplateResourceException thrown in file
    .../typo3_src/vendor/typo3fluid/fluid/src/View/TemplatePaths.php in line 590.
 
-==========================
 Problem: No page templates
 ==========================
 
 We had this error when no fluidpage templates were available and thus
 not selected in the backend.
 
-===========================================
 Problem: sitepackage not added in resources
 ===========================================
 
 We had this error because the sitepackage was not added on root -> edit
 page -> resources -> include pagetsconfig
 
-===============================
 Problem: TYPO3 9.5 Install Tool
 ===============================
 

@@ -14,7 +14,6 @@ Message:
 
    More information regarding this error might be available online.
 
-=======
 General
 =======
 
@@ -30,7 +29,6 @@ General
    autoloading in some TYPO3 version (ie. 6.2.30). Excluding E_STRICT
    errors can help.
 
-=====================================================================
 If you got the error while migrating your extension to use namespaces
 =====================================================================
 
@@ -77,7 +75,6 @@ otherwise extbase tries to look up names in the old fashioned way.
 More here: `Extbase
 Reference <https://docs.typo3.org/typo3cms/ExtbaseFluidBook/b-ExtbaseReference/Index.html>`__
 
-==========================================
 Error message concerning Fluid View Helper
 ==========================================
 
@@ -88,7 +85,7 @@ Error message concerning Fluid View Helper
    not loaded or no autoloader?
 
 solutions
-=========
+---------
 
 -  it could be, that you have misspelled the name of the viewhelper, for
    example
@@ -145,7 +142,6 @@ For more information see:
    Forge <https://forge.typo3.org/projects/typo3v4-mvc/wiki/Breaking_Changes%7CExtbase>`__
    [not available anymore]
 
-======================================================
 error message concerning DamViewHelper (from ext:news)
 ======================================================
 
@@ -162,7 +158,7 @@ accessible." <https://wiki.typo3.org/Exception/CMS/1263391473%7C>`__
 [not available anymore] appears.
 
 Solution
-========
+--------
 
 so the viewhelper format.dam got removed news 3.0.1 has other
 HTML-templates than 2.3.1 as the copied and individualized templates
@@ -170,7 +166,6 @@ stayed through the upgrade calls to the old viewhelper stay in place and
 throw an error with the new version. Solution: clean up your copied
 templates
 
-======================
 Error in own extension
 ======================
 
@@ -201,7 +196,6 @@ In your own extension: If you add the namespace after the extension had
 already been installed, intensive clearing of caches is needed. May even
 be needed to empty typo3temp.
 
-===========================================
 If you got the error while in composer mode
 ===========================================
 
@@ -237,7 +231,6 @@ For more information see:
 
 -  https://wiki.typo3.org/Composer [deprecated wiki link]
 
-=========================================================
 If you got the error while updating from TYPO3 4.x to 6.2
 =========================================================
 
@@ -261,7 +254,6 @@ Thanks, but (luckily) it was something else: the templates and
 namespaces have been changed. So using an old template can cause this
 exception too. https://forge.typo3.org/issues/62220
 
-=========================================================================
 If you got the error while adding a new namespace in TYPO3 7.4.0 or 7.5.0
 =========================================================================
 
@@ -273,7 +265,7 @@ but somehow that alone won't work.
 .. _solution-1:
 
 Solution
-========
+--------
 
 ::
 
@@ -281,7 +273,6 @@ Solution
    - Go to the Install Tool and hit the 'Clear cache' button. On the same page hit the 'Clear PHP opcode cache' button
    - Go back to the Extension Manager and reinstall your extension
 
-==============================================
 If you got the error while updating FluidTYPO3
 ==============================================
 
@@ -307,7 +298,6 @@ Examples:
    5.vendorName = FluidTYPO3
    5.pluginName = Page
 
-====================================================
 If you got the error with EXT:fluidcontent_bootstrap
 ====================================================
 
@@ -337,7 +327,6 @@ places and set the extension to ``excludeFromUpdates``.
 A more elegant way could be to change the template path to ``fileadmin``
 and copy the resources (and alter only these files).
 
-==============================
 If you got the error with Flux
 ==============================
 
@@ -361,7 +350,6 @@ Fix:
 
 Just remove ``<flux:widget.grid />`` completely.
 
-============================================
 if you got this error while updating via git
 ============================================
 
