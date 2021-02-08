@@ -1,0 +1,56 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1231267498
+==========================
+
+Solution
+========
+
+Most likely you changed your cache configuration and the configured
+backend does not match the options. Change or remove the options.
+
+If you change the backend to NullBackend, make sure you remove the
+options.
+
+This setup will throw the exception:
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['backend'] = 'TYPO3\\CMS\\Core\\Cache\\Backend\\MemcachedBackend';
+      $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['options'] = array('servers' => array('localhost:11211'),);
+      $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['backend'] = 'TYPO3\\CMS\\Core\\Cache\\Backend\\NullBackend';
+
+| 
+| If you want to set to NullBackend, do it like this:
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object'] = array('backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\NullBackend');
+
+or clear the options:
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['options'] = array();

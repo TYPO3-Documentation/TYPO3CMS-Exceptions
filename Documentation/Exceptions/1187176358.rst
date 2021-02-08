@@ -1,0 +1,41 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1187176358
+==========================
+
+Exception message:
+
+#1187176358: The controller name must be a valid string, integer given.
+
+Source:
+
+TYPO3\CMS\Extbase\Mvc\Exception\InvalidControllerNameException thrown in
+file typo3_src/typo3/sysext/extbase/Classes/Mvc/Request.php in line 315.
+
+Possible error sources
+======================
+
+configurePlugin: Actions declared incorrectly
+---------------------------------------------
+
+This error happens when the first array does have an integer as key
+instead of the plugin name:
+
+.. container::
+
+   ::
+
+      array('show')
+
+The correct solution is this:
+
+.. container::
+
+   ::
+
+      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+          'FooExt', 'PluginName',
+          array('PluginName' => 'show'),
+          array('PluginName' => 'show')// non-cacheable actions                                                                                                          
+      );

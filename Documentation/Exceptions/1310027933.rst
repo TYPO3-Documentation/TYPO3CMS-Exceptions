@@ -1,0 +1,593 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1310027933
+==========================
+
+Update: see https://forge.typo3.org/issues/59829 for a hint towards the
+cause and/or workaround.
+
+Runtime Exception with TYPO3 4.7.19 & Powermail 2.0.15 after Updating
+TYPO3 from 4.7.9 to 4.7.19 and Powermail-Update from 2.0.14 to 2.0.15.
+The page with the exception includes the powermail plugin. All other
+pages work.
+
+Don't have a solution for this problem, any clues?
+
+Here's the exception message:
+
+Uncaught TYPO3 Exception
+
+#. 1310027933: DBAL fatal error: No handler found in
+   handler_getFromTableList() for: "" (SQL engine parse ERROR: No table
+   name found as expected in parseFromTables()!: near " ") (More
+   information)
+
+RuntimeException thrown in file
+/var/www/web749/html/typo3/sysext/dbal/class.ux_t3lib_db.php in line
+3028.
+
+45 ux_t3lib_DB::handler_getFromTableList(NULL)
+
+| 
+| /var/www/web749/html/typo3/sysext/dbal/class.ux_t3lib_db.php:
+
+01963: \*/ 01964: public function quoteStr($str, $table) {
+
+01965: $this->lastHandlerKey = $this->handler_getFromTableList($table);
+
+01966: switch ((string)
+$this->handlerCfg[$this->lastHandlerKey]['type']) { 01967: case
+'native':
+
+| 
+| 44 ux_t3lib_DB::quoteStr("1", NULL)
+
+| 
+| /var/www/web749/html/typo3/sysext/dbal/class.ux_t3lib_db.php:
+
+01950: \*/ 01951: public function fullQuoteStr($str, $table) {
+
+01952: return '\\ *. $this->quoteStr($str, $table) . '\\*;
+
+01953: } 01954:
+
+| 
+| 43 ux_t3lib_DB::fullQuoteStr("1", NULL)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Persistence/Storage/Typo3DbBackend.php:
+
+00783: $items = array(); 00784: foreach ($parameter as $item) {
+
+00785: $items[] = $this->databaseHandle->fullQuoteStr($item,
+$tableName);
+
+00786: } 00787: $parameter = '(' . implode(',', $items) . ')';
+
+| 
+| 42
+  Tx_Extbase_Persistence_Storage_Typo3DbBackend::replacePlaceholders("SELECT
+  COUNT(*) FROM
+  tx_powermail_domain_model_fo…x_powermail_domain_model_forms.endtime>1401707460)",
+  array, NULL)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Persistence/Storage/Typo3DbBackend.php:
+
+00291: } 00292: $statement = $this->buildQuery($statementParts,
+$parameters);
+
+00293: $this->replacePlaceholders($statement, $parameters,
+$statementParts['tables'][0]);
+
+00294: $result = $this->databaseHandle->sql_query($statement); 00295:
+$this->checkSqlErrors($statement);
+
+| 
+| 41
+  Tx_Extbase_Persistence_Storage_Typo3DbBackend::getObjectCountByQuery(Tx_Extbase_Persistence_Query)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Persistence/Backend.php:
+
+00237: \*/ 00238: public function
+getObjectCountByQuery(Tx_Extbase_Persistence_QueryInterface $query) {
+
+00239: return $this->storageBackend->getObjectCountByQuery($query);
+
+00240: } 00241:
+
+| 
+| 40
+  Tx_Extbase_Persistence_Backend::getObjectCountByQuery(Tx_Extbase_Persistence_Query)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Persistence/Manager.php:
+
+00127: \*/ 00128: public function
+getObjectCountByQuery(Tx_Extbase_Persistence_QueryInterface $query) {
+
+00129: return $this->backend->getObjectCountByQuery($query);
+
+00130: } 00131:
+
+| 
+| 39
+  Tx_Extbase_Persistence_Manager::getObjectCountByQuery(Tx_Extbase_Persistence_Query)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Persistence/QueryResult.php:
+
+00150: return count($this->queryResult); 00151: } else {
+
+00152: return
+$this->persistenceManager->getObjectCountByQuery($this->query);
+
+00153: } 00154: }
+
+| 
+| 38 Tx_Extbase_Persistence_QueryResult::count()
+
+37 count(Tx_Extbase_Persistence_QueryResult)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/ViewHelpers/ForViewHelper.php:
+
+00101: 'index' => 0, 00102: 'cycle' => 1,
+
+00103: 'total' => count($arguments['each'])
+
+00104: ); 00105:
+
+| 
+| 36 Tx_Fluid_ViewHelpers_ForViewHelper::renderStatic(array, Closure,
+  Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/ViewHelpers/ForViewHelper.php:
+
+00073: \*/ 00074: public function render($each, $as, $key = *, $reverse
+= FALSE, $iteration = NULL) {*
+
+00075: return self::renderStatic($this->arguments,
+$this->buildRenderChildrenClosure(), $this->renderingContext);
+
+00076: } 00077:
+
+| 
+| 35
+  Tx_Fluid_ViewHelpers_ForViewHelper::render(Tx_Extbase_Persistence_QueryResult,
+  "form", "", boolean, NULL)
+
+34 call_user_func_array(array, array)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00231: 00232: try {
+
+00233: return call_user_func_array(array($this, 'render'),
+$renderMethodParameters);
+
+00234: } catch (Tx_Fluid_Core_ViewHelper_Exception $exception) { 00235:
+// @todo [BW] rethrow exception, log, ignore.. depending on the current
+context
+
+| 
+| 33 Tx_Fluid_Core_ViewHelper_AbstractViewHelper::callRenderMethod()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00214: $this->initialize(); 00215:
+
+00216: return $this->callRenderMethod();
+
+00217: } 00218:
+
+| 
+| 32
+  Tx_Fluid_Core_ViewHelper_AbstractViewHelper::initializeArgumentsAndRender()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/ViewHelperNode.php:
+
+00131: } 00132:
+
+00133: $output = $viewHelper->initializeArgumentsAndRender();
+
+00134: 00135: return $output;
+
+| 
+| 31
+  Tx_Fluid_Core_Parser_SyntaxTree_ViewHelperNode::evaluate(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/AbstractNode.php:
+
+00043: $output = (string)$output; 00044: }
+
+00045: $subNodeOutput = $subNode->evaluate($renderingContext);
+
+00046: 00047: if (is_object($subNodeOutput)) {
+
+| 
+| 30
+  Tx_Fluid_Core_Parser_SyntaxTree_AbstractNode::evaluateChildNodes(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00261: return $closure(); 00262: }
+
+00263: return
+$this->viewHelperNode->evaluateChildNodes($this->renderingContext);
+
+00264: } 00265:
+
+| 
+| 29 Tx_Fluid_Core_ViewHelper_AbstractViewHelper::renderChildren()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/ViewHelpers/SectionViewHelper.php:
+
+00095: if
+($this->viewHelperVariableContainer->exists('Tx_Fluid_ViewHelpers_SectionViewHelper',
+'isCurrentlyRenderingSection')) { 00096:
+$this->viewHelperVariableContainer->remove('Tx_Fluid_ViewHelpers_SectionViewHelper',
+'isCurrentlyRenderingSection');
+
+00097: return $this->renderChildren();
+
+00098: } 00099: return *;*
+
+| 
+| 28 Tx_Fluid_ViewHelpers_SectionViewHelper::render()
+
+27 call_user_func_array(array, array)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00231: 00232: try {
+
+00233: return call_user_func_array(array($this, 'render'),
+$renderMethodParameters);
+
+00234: } catch (Tx_Fluid_Core_ViewHelper_Exception $exception) { 00235:
+// @todo [BW] rethrow exception, log, ignore.. depending on the current
+context
+
+| 
+| 26 Tx_Fluid_Core_ViewHelper_AbstractViewHelper::callRenderMethod()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00214: $this->initialize(); 00215:
+
+00216: return $this->callRenderMethod();
+
+00217: } 00218:
+
+| 
+| 25
+  Tx_Fluid_Core_ViewHelper_AbstractViewHelper::initializeArgumentsAndRender()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/ViewHelperNode.php:
+
+00131: } 00132:
+
+00133: $output = $viewHelper->initializeArgumentsAndRender();
+
+00134: 00135: return $output;
+
+| 
+| 24
+  Tx_Fluid_Core_Parser_SyntaxTree_ViewHelperNode::evaluate(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/View/AbstractTemplateView.php:
+
+00254: 00255: $this->startRendering($renderingTypeOnNextLevel,
+$parsedTemplate, $renderingContext);
+
+00256: $output = $section->evaluate($renderingContext);
+
+00257: $this->stopRendering(); 00258: }
+
+| 
+| 23 Tx_Fluid_View_AbstractTemplateView::renderSection("main", array,
+  boolean)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/ViewHelpers/RenderViewHelper.php:
+
+00088: return
+$this->viewHelperVariableContainer->getView()->renderPartial($partial,
+$section, $arguments); 00089: } elseif ($section !== NULL) {
+
+00090: return
+$this->viewHelperVariableContainer->getView()->renderSection($section,
+$arguments, $optional);
+
+00091: } 00092: return *;*
+
+| 
+| 22 Tx_Fluid_ViewHelpers_RenderViewHelper::render("main", NULL, array,
+  boolean)
+
+21 call_user_func_array(array, array)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00231: 00232: try {
+
+00233: return call_user_func_array(array($this, 'render'),
+$renderMethodParameters);
+
+00234: } catch (Tx_Fluid_Core_ViewHelper_Exception $exception) { 00235:
+// @todo [BW] rethrow exception, log, ignore.. depending on the current
+context
+
+| 
+| 20 Tx_Fluid_Core_ViewHelper_AbstractViewHelper::callRenderMethod()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/ViewHelper/AbstractViewHelper.php:
+
+00214: $this->initialize(); 00215:
+
+00216: return $this->callRenderMethod();
+
+00217: } 00218:
+
+| 
+| 19
+  Tx_Fluid_Core_ViewHelper_AbstractViewHelper::initializeArgumentsAndRender()
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/ViewHelperNode.php:
+
+00131: } 00132:
+
+00133: $output = $viewHelper->initializeArgumentsAndRender();
+
+00134: 00135: return $output;
+
+| 
+| 18
+  Tx_Fluid_Core_Parser_SyntaxTree_ViewHelperNode::evaluate(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/AbstractNode.php:
+
+00043: $output = (string)$output; 00044: }
+
+00045: $subNodeOutput = $subNode->evaluate($renderingContext);
+
+00046: 00047: if (is_object($subNodeOutput)) {
+
+| 
+| 17
+  Tx_Fluid_Core_Parser_SyntaxTree_AbstractNode::evaluateChildNodes(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/SyntaxTree/RootNode.php:
+
+00025: \*/ 00026: public function
+evaluate(Tx_Fluid_Core_Rendering_RenderingContextInterface
+$renderingContext) {
+
+00027: return $this->evaluateChildNodes($renderingContext);
+
+00028: } 00029: }
+
+| 
+| 16
+  Tx_Fluid_Core_Parser_SyntaxTree_RootNode::evaluate(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/Core/Parser/ParsingState.php:
+
+00087: \*/ 00088: public function
+render(Tx_Fluid_Core_Rendering_RenderingContextInterface
+$renderingContext) {
+
+00089: return $this->rootNode->evaluate($renderingContext);
+
+00090: } 00091:
+
+| 
+| 15
+  Tx_Fluid_Core_Parser_ParsingState::render(Tx_Fluid_Core_Rendering_RenderingContext)
+
+| 
+| /var/www/web749/html/typo3/sysext/fluid/Classes/View/AbstractTemplateView.php:
+
+00197: } 00198: $this->startRendering(self::RENDERING_LAYOUT,
+$parsedTemplate, $this->baseRenderingContext);
+
+00199: $output = $parsedLayout->render($this->baseRenderingContext);
+
+00200: $this->stopRendering(); 00201: } else {
+
+| 
+| 14 Tx_Fluid_View_AbstractTemplateView::render()
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/MVC/Controller/ActionController.php:
+
+00308: 00309: if ($actionResult === NULL && $this->view instanceof
+Tx_Extbase_MVC_View_ViewInterface) {
+
+00310: $this->response->appendContent($this->view->render());
+
+00311: } elseif (is_string($actionResult) && strlen($actionResult) > 0)
+{ 00312: $this->response->appendContent($actionResult);
+
+| 
+| 13 Tx_Extbase_MVC_Controller_ActionController::callActionMethod()
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/MVC/Controller/ActionController.php:
+
+00164: $this->initializeView($this->view); 00165: }
+
+00166: $this->callActionMethod();
+
+00167: } 00168:
+
+| 
+| 12
+  Tx_Extbase_MVC_Controller_ActionController::processRequest(Tx_Extbase_MVC_Web_Request,
+  Tx_Extbase_MVC_Web_Response)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/MVC/Dispatcher.php:
+
+00094: $controller = $this->resolveController($request); 00095: try {
+
+00096: $controller->processRequest($request, $response);
+
+00097: } catch (Tx_Extbase_MVC_Exception_StopAction $ignoredException) {
+00098: }
+
+| 
+| 11 Tx_Extbase_MVC_Dispatcher::dispatch(Tx_Extbase_MVC_Web_Request,
+  Tx_Extbase_MVC_Web_Response)
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/MVC/Web/FrontendRequestHandler.php:
+
+00083: $response =
+$this->objectManager->create('Tx_Extbase_MVC_Web_Response'); 00084:
+
+00085: $this->dispatcher->dispatch($request, $response);
+
+00086: 00087: return $response;
+
+| 
+| 10 Tx_Extbase_MVC_Web_FrontendRequestHandler::handleRequest()
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Core/Bootstrap.php:
+
+00240: $requestHandler =
+$requestHandlerResolver->resolveRequestHandler(); 00241:
+
+00242: $response = $requestHandler->handleRequest();
+
+00243: 00244: // If response is NULL after handling the request we need
+to stop
+
+| 
+| 9 Tx_Extbase_Core_Bootstrap::handleWebRequest()
+
+| 
+| /var/www/web749/html/typo3/sysext/extbase/Classes/Core/Bootstrap.php:
+
+00210: $content = $this->handleCommandLineRequest(); 00211: } else {
+
+00212: $content = $this->handleWebRequest();
+
+00213: } 00214: return $content;
+
+| 
+| 8 Tx_Extbase_Core_Bootstrap::run("", array)
+
+7 call_user_func_array(array, array)
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/class.tslib_content.php:
+
+06583: ), array( 06584: $content, $conf
+
+06585: ));
+
+06586: } else { 06587: $GLOBALS['TT']->setTSlogMessage('Method "' .
+$parts[1] . '" did not exist in class "' . $parts[0] . '"', 3);
+
+| 
+| 6 tslib_cObj::callUserFunction("tx_extbase_core_bootstrap->run",
+  array, "")
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/content/class.tslib_content_user.php:
+
+00053: } 00054: $this->cObj->includeLibs($conf);
+
+00055: $tempContent = $this->cObj->callUserFunction($conf['userFunc'],
+$conf, *);*
+
+00056: if ($this->cObj->doConvertToUserIntObject) { 00057:
+$this->cObj->doConvertToUserIntObject = FALSE;
+
+| 
+| 5 tslib_content_User::render(array)
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/class.tslib_content.php:
+
+00778: return $this->getContentObject('USER_INT')->render($conf); 00779:
+} else {
+
+00780: return $this->getContentObject('USER')->render($conf);
+
+00781: } 00782: }
+
+| 
+| 4 tslib_cObj::USER(array)
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/class.tslib_fe.php:
+
+03305: break; 03306: case 'FUNC':
+
+03307: $incContent =
+$INTiS_cObj->USER($INTiS_config[$INTiS_key]['conf']);
+
+03308: break; 03309: case 'POSTUSERFUNC':
+
+| 
+| 3 tslib_fe::INTincScript_process(array)
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/class.tslib_fe.php:
+
+03241: $INTiS_config = $this->config['INTincScript']; 03242:
+$this->INTincScript_includeLibs($INTiS_config);
+
+03243: $this->INTincScript_process($INTiS_config);
+
+03244: // Check if there were new items added to INTincScript during the
+previous execution: 03245: $INTiS_config =
+array_diff_assoc($this->config['INTincScript'], $INTiS_config);
+
+| 
+| 2 tslib_fe::INTincScript()
+
+| 
+| /var/www/web749/html/typo3/sysext/cms/tslib/index_ts.php:
+
+00365: if ($TSFE->isINTincScript()) { 00366: $TT->push('Non-cached
+objects',\ *);*
+
+00367: $TSFE->INTincScript();
+
+00368: $TT->pull(); 00369: }
+
+| 
+| 1 require("/var/www/web749/html/typo3/sysext/cms/tslib/index_ts.php")
+
+| 
+| /var/www/web749/html/index.php:
+
+00074: // \*****************\* 00075:
+
+00076: require (PATH_tslib.'index_ts.php');
+
+00077: 00078: ?>

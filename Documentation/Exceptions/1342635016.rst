@@ -1,0 +1,21 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1342635016
+==========================
+
+**ISSUE**
+
+This usually occurs with a fresh installation of TYPO3 6.2.4, right
+after the first login to the backend of the newly installed system, but
+can also occur with an existing installation. It often happens when
+downloading the preconfigured distributions in the Extension Manager.
+
+**POSSIBLE SOLUTION**
+
+php.ini (or vhost configuration)
+
+::
+
+   allow_url_fopen = On
+   max_execution_time = 300

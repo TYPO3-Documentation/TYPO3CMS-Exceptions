@@ -1,0 +1,67 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1533822084
+==========================
+
+Error message
+=============
+
+The following exception may bubble up since TYPO3 v9 during login:
+
+::
+
+      #1533822084 TYPO3\CMS\Core\Crypto\PasswordHashing\InvalidPasswordHashException
+      Configured default hash method TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash is not available. If the instance has just been upgraded, please log in to the standalone install tool at typo3/install.php to fix this. Follow the wiki link for more details.
+
+Explanation
+===========
+
+If an instance has just been upgraded and if *argon2i* hash mechanism is
+not available locally, the default backend will still try to upgrade a
+given user password to *argon2i* if the install tool has not been
+executed once.
+
+Reasons
+=======
+
+This typically happens only if a system has just been upgraded and a
+backend login is performed before the install tool has executed silent
+upgarde wizards.
+
+Solutions
+=========
+
+-  **Recommended**: Fix the server side: There is little reason to run
+   PHP 7.2 without argon2i support. Install a PHP build that supports
+   this.
+-  Call the standalone install tool and log in once. This should detect
+   that argon2i is not available and will configure a different default
+   hash mechanism. A backend login should be possible afterwards.
+-  If that won't do, you can change the hash mechanism in Admin Tools >
+   Settings > Configuration Presets > Password hashing presets. This
+   might be necessary if, e.g., you moved your system to a different
+   server where argon2i isn't available. Create a new user that uses the
+   working algorithm.
+-  **If access to install tool is not possible**: This could happen when
+   first installation was done on a system with argon2i and copied to a
+   target system that doesn't support this encryption type
+
+   -  open ``typo3conf/LocalConfiguration.php`` change password hashing
+      for ``[FE][passwordHashing][className]`` and
+      ``[BE][passwordHashing][className]`` e.g. to
+      ``TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash``
+      or any other supported types
+   -  change
+      ``$GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword']`` e.g.
+      to
+      ``'$2y$12$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'``)
+      to be able to generate a new hash value.
+
+More information
+================
+
+-  `Official password hashing documentation since TYPO3
+   v9 <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/PasswordHashing/Index.html>`__
+-  `Issue explaining the deployment
+   problem <https://forge.typo3.org/issues/86155>`__

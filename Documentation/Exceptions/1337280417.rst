@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1337280417
+==========================
+
+Problem occurs when extension size is more than post_max_size (php.ini).
+Just fix post_max_size and restart webserver.
+
+TYPO3 Internals: Actually error should be reported at
+\\TYPO3\CMS\Extensionmanager\Controller\UploadExtensionFileController::extractAction
+in case of
+$_FILES['tx_extensionmanager_tools_extensionmanagerextensionmanager'] is
+null.

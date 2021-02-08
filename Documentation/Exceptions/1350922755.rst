@@ -1,0 +1,18 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1350922755
+==========================
+
+Extension BLSV Sportabzeichen 2012 (blsvsa2012)
+===============================================
+
+error message
+-------------
+
+Der Schüler konnte keiner Altersgruppe zugeordnet werden!
+
+error handling
+==============
+
+The Age of the Pupil doe not match to a "Altersgruppe"

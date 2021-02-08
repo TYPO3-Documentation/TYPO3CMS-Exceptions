@@ -1,0 +1,33 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1390290029
+==========================
+
+::
+
+   Uncaught TYPO3 Exception
+    #1390290029: You are trying to use a method on an inaccessible folder.
+
+TYPO3 7:
+
+-  accessed files/folders may be missing (check if the do exist)
+-  filestorage may be out of webroot (try to move the files into a valid
+   filestorage)
+-  check the same folder in the backend module »file->list« - maybe some
+   Icons will show you that the folder is not accessible
+-  check missing folders in typo3temp
+-  If the filestorage is readonly (Flag »Is writable« not set), the you
+   may need to set a “Folder for manipulated and temporary images etc.“
+   → This folder may be located in another filestorage, which is
+   writeable (eg the non-writable filestorage is number 2, a writeable
+   storage is number 1, then set this folder value to »1:/_processed_«)
+
+processed directory readonly
+============================
+
+We had this error when listing files in the backend. The source of the
+problem was that the folder contained image files and the backend wanted
+to create and save preview images. The processed-Folder was set to a
+second file storage whose root directory was readonly. After fixing that
+permission problem of the second file storage, everything worked again.

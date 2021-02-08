@@ -1,0 +1,31 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1363778104
+==========================
+
+**If you inject a service, or whatever other class in a model:**
+
+Please be sure you implement the Singleton interface in the service.
+
+Example:
+
+I have a Domain Model under \\Custom\Domain\Model.php, in which I do:
+
+::
+
+   /**
+   * myService # optional property name as this is not really a property, it does not make much sense to name it
+   *
+   * @var \Custom\Services\MyService
+   * @inject
+   * @lazy
+   */
+
+protected $myService;
+
+Then I need to make sure MyService class is declared like this :
+
+::
+
+   class MyService extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController implements \TYPO3\CMS\Core\SingletonInterface

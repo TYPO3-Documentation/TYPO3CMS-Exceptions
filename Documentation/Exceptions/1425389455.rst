@@ -1,0 +1,44 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1425389455
+==========================
+
+Error message:
+
+::
+
+   Oops, an error occurred!
+   Invalid request for route "/record/edit"
+
+Hi there,
+
+I got this exception after I installed the extensions autoloader and faq
+on my local TYPO3 7.6 installation and created a page on which I put the
+faq plugin. To get back to work I hat to clear the whole
+typo3temp-folder to be able to login into my TYPO3 an deinstall the
+extensions.
+
+Thank you very much for your help in advance, regards Thorsten Griebenow
+
+autoloader v1.10.0 faq v1.0.0
+
+--------------
+
+Hello,
+
+I encountered this error and I can't think of what might have caused it.
+I haven't installed any extensions recently. Only changes I've done to
+my TYPO3 site were related to editing.
+
+To fix the problem, I entered the install tool and cleared all caches.
+Then I was able to log in as usual.
+
+Invalid request for route "/main"
+=================================
+
+This may happen if you are in Development context and your backend
+session times out. The token in the url will no longer be valid after
+you session has expired. This error may also popup if you try to
+re-login after your session timed out. There is a bug report open here:
+https://forge.typo3.org/issues/69763

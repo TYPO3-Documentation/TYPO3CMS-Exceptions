@@ -1,0 +1,33 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1253191023
+==========================
+
+**#1253191023: TypoScript object path "tt_content.list.20.yourext" does
+not exist**
+
+| Using fluid_styled_content (only, in my case), had to obviously add a
+  list entry for my current plugin.
+| fluid_styled_content needs you to override its default *if you change
+  the templateRootPaths*
+| Meaning that when overriding lib.fluidContent, you need to add
+  something like this:
+
+::
+
+   lib.fluidContent {
+       templateName = YourTemplateName
+       templateRootPaths {
+           30 = EXT:myext/Resources/Private/Templates
+       }
+       layoutRootPaths {
+           30 = EXT:myext/Resources/Private/Layouts
+       }
+       partialRootPaths {
+           30 = EXT:myext/Resources/Private/Partials
+       }
+       list {
+           templateName = YourListTemplateName
+       }
+   }

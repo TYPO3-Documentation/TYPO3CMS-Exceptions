@@ -1,0 +1,47 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1341151261
+==========================
+
+Error message
+=============
+
+Columns configuration file not found
+
+EXT:ad_google_maps: What did I do prior to experiencing the problem?
+====================================================================
+
+This error occured using TYPO3 6.1
+
+After installation of an extension (ad_google_maps) in the extension
+manager (EM) the error message appeared whenever I opened a frontend or
+backend page.
+
+Apparently this happend to other people with the same extension. They
+reported the same error in a (German) board: `Thread
+one <http://www.typo3.net/forum/thematik/zeige/thema/114839/>`__,
+`Thread two <http://www.typo3.net/forum/thematik/zeige/thema/115266/>`__
+
+Reason
+------
+
+In ext_tables.php [i]dynamicConfigFile[/i] uses a **relative** path, but
+\\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles()
+expects to get an **absolute** path.
+
+Solution (patch)
+----------------
+
+Replace the call of extRelPath() with extPath() for all
+*dynamicConfigFile*-entries in the ext_tables.php
+
+Solution (uninstall)
+--------------------
+
+#. Edit typo3conf/LocalConfiguration.php and remove the extension from
+   all lists.
+#. Open the install tool in your browser:
+   your-typo3-installation.com/typo3/install
+#. Use the database analyzer to fix the problem: Click the 'Compare'
+   link and see what the install tool suggests to do.

@@ -1,0 +1,63 @@
+.. include:: /Includes.rst.txt
+
+==================
+TYPO3 Exception 40
+==================
+
+::
+
+   The column 'columnname' on table 'tablename' already exists
+
+Typo3 8 panics if an extensions sql file includes the same line twice,
+deleting the extra line makes the problem go away
+
+This happens if the file ext_tables.sql of a TYPO3 extension has the
+same field twice for a table. Example:
+
+::
+
+      CREATE TABLE sys_products_fe_users_mm_visited_products (
+          uid int(11) NOT NULL auto_increment,
+          pid int(11) DEFAULT '0' NOT NULL,
+          tstamp int(11) DEFAULT '0' NOT NULL,
+          crdate int(11) DEFAULT '0' NOT NULL,
+          deleted tinyint(4) DEFAULT '0' NOT NULL,
+          hidden tinyint(4) DEFAULT '0' NOT NULL,
+          tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+          uid_local int(11) DEFAULT '0' NOT NULL,
+          uid_foreign int(11) DEFAULT '0' NOT NULL,
+          qty int(11) unsigned DEFAULT '0' NOT NULL,
+
+::
+
+          PRIMARY KEY (uid),
+          KEY uid_local (uid_local),
+          KEY uid_foreign (uid_foreign),
+      );
+
+There are 2 fields 'tstamp' in the table
+sys_products_fe_users_mm_visited_products
+
+Solution: Remove the second line with the field 'tstamp' from table
+'sys_products_fe_users_mm_visited_products'.
+
+::
+
+      Uncaught TYPO3 Exception
+      #40: The column 'tstamp' on table 'sys_products_fe_users_mm_visited_products' already exists.
+      Doctrine\DBAL\Schema\SchemaException thrown in file
+      /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SchemaException.php in line 120.
+      28 Doctrine\DBAL\Schema\SchemaException::columnAlreadyExists("sys_products_fe_users_mm_visited_products", "tstamp")
+      /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php:
+      00478: 
+      00479:         if (isset($this->_columns[$columnName])) {
+      00480:             throw SchemaException::columnAlreadyExists($this->getName(), $columnName);
+      00481:         }
+      00482: 
+      27 Doctrine\DBAL\Schema\Table::_addColumn(Doctrine\DBAL\Schema\Column)
+      /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php:
+      00321:         $column = new Column($columnName, Type::getType($typeName), $options);
+      00322: 
+      00323:         $this->_addColumn($column);
+      00324: 
+      00325:         return $column;

@@ -1,0 +1,18 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1284906026
+==========================
+
+When trying to user feedit_advanced I get the following error (cannot
+find any error in logs):
+
+**Oops, an error occurred! Language and character encoding are not set.
+More information regarding this error might be available online**
+
+Any idea how to fix this? - I don't have this issue with beta
+releases :(
+
+Best regards,
+
+Stelli

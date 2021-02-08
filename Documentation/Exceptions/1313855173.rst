@@ -1,0 +1,34 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1313855173
+==========================
+
+First of all: Please check, if you have configured your controller in
+ext_localconf.php
+
+If the problem still comes up:
+
+#. Have a look at
+   `this <http://www.typo3forum.net/forum/extbase/59994-action-show-list-not-allowed-plugin.html#post192668>`__
+   [not available anymore], if you work with
+   switchableControllerActions.
+#. Maybe you have changed your content element from another plugin to
+   your new extbase plugin. In that case it may be that the previous
+   plugin works with FlexForms (pi_flexform). Extbase will read these
+   FlexForm-Configurations regardless, if your plugin needs them or not.
+   So please delete current content element, create a new one and choose
+   your plugin OR clear content of col pi_flexform in database of this
+   content element.
+#. If you don't want to add the missing controller to ext_localconf.php
+   you have the posibility to add following into your TypoScript:
+
+plugin.your_extension.mvc.callDefaultActionIfActionCantBeResolved = 1
+
+see [ERROR: Cannot get content for issue "31322"]
+
+Another possibility is that you may have the same plugin twice on the
+same page with different switchable controller actions chosen. If there
+is one switchable controller action chosen on another plugin that does
+not allow this controller, you'll have to adapt your page setup or your
+switchable controller actions.

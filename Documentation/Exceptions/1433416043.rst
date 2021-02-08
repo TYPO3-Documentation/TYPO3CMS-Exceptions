@@ -1,0 +1,27 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1433416043
+==========================
+
+TYPO3 7.6.0
+===========
+
+Error when opening backend login after upgrading from 7.x:
+
+::
+
+   Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1433416043: 
+   The login provider "1433416748" defines an invalid provider. 
+   Ensure the class exists and implements the "TYPO3\CMS\Backend\LoginProvider\LoginProviderInterface".
+   RuntimeException thrown in file /typo3_src-7.6.0/typo3/sysext/backend/Classes/Controller/LoginController.php in line 458. 
+   Requested URL: http://www.doamin.dev/typo3/index.php
+
+Solution
+--------
+
+| Flush all caches via "Clear all cache" button in the Install Tool.
+| (Explanation: The openid login form is registered with its old
+  namespace and this registration is cached. Removing the cache will
+  refresh the configration, which contains the right reference to the
+  new namespace.)

@@ -1,0 +1,34 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1439228111
+==========================
+
+Exception Message
+=================
+
+::
+
+   #1439228111: Cannot set an alias map as the alias loader is not registered!
+
+   RuntimeException thrown in file
+   [...]/typo3/vendor/typo3/class-alias-loader/src/ClassAliasMap.php in line 59.
+
+Possible Error Sources
+======================
+
+Composer install with "--no-scripts" option
+-------------------------------------------
+
+Probably you tried to run a composer install/update using the
+"--no-scripts" option.
+
+::
+
+   composer install --no-scripts
+
+Try to run composer install again without the "--no-scripts" option.
+
+::
+
+   composer install

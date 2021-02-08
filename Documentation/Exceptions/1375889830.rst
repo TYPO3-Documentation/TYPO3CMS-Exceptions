@@ -1,0 +1,24 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1375889830
+==========================
+
+You are not allowed to access files outside your storages
+=========================================================
+
+This exception is thrown in FAL whenever you are trying to access a file
+outside of your configured storages. The default storage is fileadmin
+(see
+https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/Index.html).
+
+In backend modules this execption will occur if files in legacy
+folders/storages are accessed, which is prohibited due to security
+reasons (see https://review.typo3.org/#/c/23608/).
+
+Solution
+--------
+
+Either try to access files in a valid storage instead (like
+»fileadmin/_temp-/« instead of (»uploads/not/working«) or add the
+desired folder to a storage configuration.

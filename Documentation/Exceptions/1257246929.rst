@@ -1,0 +1,47 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1257246929
+==========================
+
+Error message:
+
+::
+
+   #1257246929: Tried resolving a template file for controller action "Page->render" in format ".html",
+   but none of the paths contained the expected template file ().
+   The following paths were checked: .../typo3conf/ext/fluidpages/Resources/Private/Templates/
+
+Source:
+
+::
+
+   TYPO3Fluid\Fluid\View\Exception\InvalidTemplateResourceException thrown in file
+   .../typo3_src/vendor/typo3fluid/fluid/src/View/TemplatePaths.php in line 590.
+
+==========================
+Problem: No page templates
+==========================
+
+We had this error when no fluidpage templates were available and thus
+not selected in the backend.
+
+===========================================
+Problem: sitepackage not added in resources
+===========================================
+
+We had this error because the sitepackage was not added on root -> edit
+page -> resources -> include pagetsconfig
+
+===============================
+Problem: TYPO3 9.5 Install Tool
+===============================
+
+This error happens after an upgrade from TYPO3 8.7. Then the TYPO3 9.5
+Install Tool is stuck in this error message. All the caches must be
+deleted. And the file index.php must be checked. This should be a link
+and not a php file. Activate the systemLogLevel' => 0, 'devIPmask' and
+'displayErrors' => 1 in the file LocalConfiguration.php . The debug
+output will show paths to files in the source code. It is
+typo3_src-9.5.22 on the upper line and typo3_src-8.7.32 on the lower
+backtrace lines. This does not fit together.

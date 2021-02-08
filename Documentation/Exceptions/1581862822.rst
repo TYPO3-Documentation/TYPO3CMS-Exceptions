@@ -1,0 +1,17 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1581862822
+==========================
+
+Maybe your content is insert into a Fluid template by <f:cObject
+typoscriptObjectPath /> and your TypoScript lib uses a insertData = 1,
+this could be the reason why the form submit fails:
+
+insertData behaves like dataWrap and parses curly braces, see
+https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Stdwrap.html?highlight=insertdata
+
+So, the serialized value of the hidden form field
+tx_form_formframework[__trustedProperties] get's parsed, too. The
+following HMAC validation throws the exception, because the
+\__trustedProperties is broken.

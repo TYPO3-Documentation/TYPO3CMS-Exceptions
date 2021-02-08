@@ -1,0 +1,42 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1288085266
+==========================
+
+Possible Reasons for this Exception
+===================================
+
+-  You've created a Template using css_styled_content methods, but
+   haven't included it inside your template
+-  You've created a FLUID Template and forgot to include a template file
+   (see example below)
+-  You've installed an extension that has a Static Include and you
+   forgot to add the Static Include (from extension)
+
+Example
+-------
+
+.. container::
+
+   `TS
+   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      page.10 = FLUIDTEMPLATE
+      page.10 {
+        # this line is important!
+        file = fileadmin/templates/file.html
+        # Set the Template Pathes
+        partialRootPath = fileadmin/templates/partials/
+        layoutRootPath = fileadmin/templates/layouts/
+        variables {
+          # Assign the main column with our {content}-destination
+          content < styles.content.get
+          content.select.where = colPos = 1
+        }
+      }

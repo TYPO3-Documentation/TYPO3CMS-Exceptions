@@ -1,0 +1,28 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1288087061
+==========================
+
+Error: file can not be found
+
+| In the example below, the error is:
+| *Template could not be found at "fileadmin/templates/RS1.html".*
+
+Problem: what TypoScript code generates this error?
+
+Answer: probably in your ROOT template, where you define the
+backend_layout.
+
+Example: see code below
+
+::
+
+   page.10.file.stdWrap.cObject = CASE
+   page.10.file.stdWrap.cObject {
+       key.data = levelfield:-1, backend_layout_next_level, slide
+       key.override.field = backend_layout
+       
+       default = TEXT
+       default.value = fileadmin/templates/RS1.html
+   }

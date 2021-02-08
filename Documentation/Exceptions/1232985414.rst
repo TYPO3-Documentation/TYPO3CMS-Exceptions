@@ -1,0 +1,20 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1232985414
+==========================
+
+'If you've gotten this error message
+
+::
+
+   Oops, an error occurred!
+      
+   The PHP extension "apc" or "apcu" must be installed and loaded in order to use the APC backend.
+
+Then there are two methods, which will work.
+
+#. Install and configure apc on the server. Maybe APC is installed, but
+   needs more memory.
+#. Goto TYPO3 *Install Tool* --> *Configuration Presets* --> *Extbase
+   object cache* and choose *Database cache backend* and save.

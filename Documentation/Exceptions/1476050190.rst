@@ -1,0 +1,10 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1476050190
+==========================
+
+You can access the admin menus pages via the installtool
+(typo3/install.php in TYPO3 10).
+
+Clearing all caches should help in TYPO3 9.5.

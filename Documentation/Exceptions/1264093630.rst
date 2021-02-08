@@ -1,0 +1,26 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1264093630
+==========================
+
+This error can be caused by a mis-spelled vendor name.
+
+The vendor name (first part of the namespaced class name) must start
+with a capital letter to work correctly with Extbase. Otherwise PHP
+class names start with a small letter while the Extbase types start with
+a capital letter what will cause problems.
+
+| 
+| Make sure the type of each variable is defined in your model:
+  extensionname/Classes/Domain/Model/\* Set the "@var" in the header
+| 
+
+::
+
+   /**
+   * aString
+   *
+   * @var string
+   */ 
+   protected $aString;

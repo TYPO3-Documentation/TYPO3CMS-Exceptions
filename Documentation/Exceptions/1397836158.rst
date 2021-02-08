@@ -1,0 +1,17 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1397836158
+==========================
+
+If you have an error in typo3conf/ext/[your_ext_key]/ext_tables.php:
+**"#1397836158: No or invalid extension key "" given."**
+
+-  Search for variable $extensionKey and replace with $_EXTKEY
+-  Try not to use $_EXTKEY in dynamicConfigFiles or otherwise included
+   TCA snippets
+-  Check https://forge.typo3.org/issues/59033
+
+You may have to clear the cache in install tool (See "Important
+actions").
+https://docs.typo3.org/typo3cms/InstallationGuide/Upgrade/RemoveTemporaryCacheFiles/Index.html

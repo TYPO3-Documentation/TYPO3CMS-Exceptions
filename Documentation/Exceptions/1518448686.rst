@@ -1,0 +1,32 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1518448686
+==========================
+
+Error message
+=============
+
+The following exception may be displayed since TYPO3 v9 during login:
+
+::
+
+      #1518448686 TYPO3\CMS\Core\Exception
+      No suitable request handler found.
+
+Reasons
+=======
+
+Password for installation tool is missing in ``LocalConfiguration.php``.
+TYPO3 tries to find out the encryption type by analyzing the password in
+order to allow logins after migrating to an other encrypting algorithm.
+
+Solutions
+=========
+
+-  Open ``typo3conf/LocalConfiguration.php``
+-  Check if ``$GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword']``
+   is set
+-  Enter a dummy hash (e.g.
+   ``'$2y$12$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'``)
+   to be able to generate a new hash value.

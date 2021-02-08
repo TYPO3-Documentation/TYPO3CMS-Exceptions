@@ -1,0 +1,12 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1301648945
+==========================
+
+Database Error: The current username, password or host was not accepted
+when the connection to the database was attempted to be established!
+
+This means, you have to add / check the credentials TYPO3 uses for
+database connections. Edit them via the Install Tool or in the
+typo3conf/localconf.php file.

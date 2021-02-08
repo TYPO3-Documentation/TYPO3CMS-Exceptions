@@ -1,0 +1,19 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1288965219
+==========================
+
+Error: $className must be a non empty string.
+
+When: When executing 8.7.4 "Execute database migrations on single rows"
+upgrade wizard. On Windows 7 IIS. Upgrade from fresh 7.6.21 install.
+
+Solution: Upgrade Core to 8.7.24
+
+TYPO3 9.5.10
+============
+
+Error has occurred on calling findAll(). The mistake was, that one
+property in the model missed the type in the @var anotaion. A little bit
+confusing. Found the problem on debugging DataMapper.

@@ -1,0 +1,27 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1233180480
+==========================
+
+error message
+=============
+
+#. 1233180480: The method "yourMethod" is not supported by the
+   repository
+
+Analysis
+========
+
+-  check if the method **yourMethod** is not defined in the repository,
+   also with respect to spelling (lowercase and upercase).
+-  check the visibility of the method (public, protected, private)
+
+Solution
+========
+
+-  define the method **yourMethod** or correct the spelling.
+-  change the visibility of the method to public if it's called from a
+   controller or somewhere else outside the repository itself. If the
+   method is called from a sub-repository-class the visibility can be
+   either public too or protected but not private.

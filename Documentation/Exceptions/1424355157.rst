@@ -1,0 +1,11 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1424355157
+==========================
+
+Exception: "Session file not writable. Please check permission on typo3temp/InstallToolSessions and its subdirectories."
+========================================================================================================================
+
+Check **[BE][fileCreateMask]** and **[BE][folderCreateMask]**. The masks
+might be too restrictive.

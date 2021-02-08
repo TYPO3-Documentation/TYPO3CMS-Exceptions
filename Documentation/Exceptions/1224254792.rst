@@ -1,0 +1,20 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1224254792
+==========================
+
+Namespace could not be resolved. This exception should never be thrown!
+=======================================================================
+
+-  Most likely, you're using a ViewHelper or something that has its own
+   namespace, but you didn't declared that namespace (e.g: missing
+   ``{namespace myNamespace=Tx_MyExt_ViewHelpers}`` or with PHP
+   namespaces: ``{namespace myNamespace=Vendor\MyExt\ViewHelpers}``).
+
+-  The quite common instance is using a VHS View Helper
+   (e.g.\ ``v:extension.path.resources``) without referencing the VHS
+   namespace (``{namespace v=Tx_Vhs_ViewHelpers}``).
+
+-  Also keep in mind that may be required to declare namespace(s) in the
+   partial(s) even thought they where declared in the parent template.

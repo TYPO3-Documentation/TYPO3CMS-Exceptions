@@ -1,0 +1,19 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1222361632
+==========================
+
+erreo message TYPO3 CMS 6.1.5
+=============================
+
+::
+
+   #1222361632: The cache file "[...]/typo3temp/Cache/Data/t3lib_l10n/f376fbe33c1512a6e326035c17036b8e" could not be written.
+
+solution
+========
+
+::
+
+   I removed the file from cache

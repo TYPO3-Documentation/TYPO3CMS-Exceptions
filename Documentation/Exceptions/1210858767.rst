@@ -1,0 +1,8 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1210858767
+==========================
+
+The argument name is not a string (e.g. a number) or it is empty. Make
+sure the argument name satisfies the *is_string* method of PHP.

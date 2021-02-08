@@ -1,0 +1,17 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294586446
+==========================
+
+Possible causes:
+
+-  Fresh installation of Templavoila (on 6.1) when accessing the
+   WEB>Page Module.
+
+-  Fix: Reload the whole Page (not only the Content-Frame)
+
+-  Installed on new Typo3 3-7-1: not accessible in BE and front-end
+   template stopped being shown
+
+-  Know of no fix, hope 7-3-1 gets modules soon

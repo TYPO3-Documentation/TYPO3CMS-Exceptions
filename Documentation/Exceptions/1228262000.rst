@@ -1,0 +1,43 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1228262000
+==========================
+
+Happened after updating from TYPO3 6.0 to TYPO3 6.2.2. The extension
+RealURL: Clear cache [realurl_clearcache] threw the error
+
+Fatal error: require_once(): Failed opening required
+'/public_html/typo3/interfaces/interface.backend_cacheActionsHook.php'
+in
+/public_html/typo3conf/ext/realurl_clearcache/class.tx_realurlclearcache_cachemenu.php
+on line 35
+
+So I had to remove
+
+::
+
+      'realurl_clearcache' => 
+      array (
+        'state' => 'active',
+        'packagePath' => 'typo3conf/ext/realurl_clearcache/',
+        'classesPath' => 'Classes/',
+      ),
+
+from typo3conf/PackageStates.php
+
+Then this error occurred:
+
+Oops, an error occurred!
+
+$hookObject must implement interface
+TYPO3\CMS\Backend\Toolbar\ClearCacheActionsHookInterface
+
+| 
+| **Solution:**
+
+Clear the cache in the Install tool:
+
+Important actions
+
+Clear all cache

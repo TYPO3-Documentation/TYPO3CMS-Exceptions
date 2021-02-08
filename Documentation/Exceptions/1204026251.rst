@@ -1,0 +1,16 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1204026251
+==========================
+
+You probably ran into a race condition which is described in
+https://forge.typo3.org/issues/46205 and has been fixed in 6.0.5 Try to
+update to TYPO3 6.0.6 (or the latest patch level release 6.0.x) and then
+to clear your /typo3temp/Cache/ folder.
+
+Taken from
+http://stackoverflow.com/questions/16708012/cache-file-could-not-be-written-typo3-6-0-4
+
+It could also be that you are over quota and this might also occur when
+the disk is full.

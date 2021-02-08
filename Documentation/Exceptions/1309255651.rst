@@ -1,0 +1,31 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1309255651
+==========================
+
+The provided phpdoc annotation contains a type that is not recognized.
+
+Allowed properties:
+
+-  boolean
+-  DateTime
+-  string
+-  integer
+
+(This list is incomplete and should be extended, if that's desirable.
+However I think it is helpful)
+
+This can e.g. happen if you model contains properties of the type Date.
+
+The extension_builder has a bug which allows to assign this faulty Type
+to properties.
+
+One solution is to manually edit the Model and replace all annotations
+stating Date with DateTime.
+
+Take care to for annotations in getters, setters and class-property
+declarations.
+
+See [ERROR: Cannot get content for issue "33875"] for similar problem
+regarding "type".

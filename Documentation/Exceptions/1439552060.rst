@@ -1,0 +1,10 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1439552060
+==========================
+
+>> The extension "typoscript_code" has invalid version constraints in
+suggests section. Extension key is missing!
+
+Haven't found out yet what this message means. Version 5.0.0

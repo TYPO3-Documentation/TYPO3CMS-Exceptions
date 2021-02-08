@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1481889220
+==========================
+
+Optimize MySQL tables scheduler task
+====================================
+
+If you get this error when running the *Optimize MySQL database tables
+(scheduler)* task, try using the **mysqli** driver instead of
+*pdo_mysql*.
+
+See: https://forge.typo3.org/issues/82686?next_issue_id=82682

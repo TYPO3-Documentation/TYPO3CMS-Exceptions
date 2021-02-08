@@ -1,0 +1,17 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1244201848
+==========================
+
+Exception message:
+
+::
+
+   Oops, an error occurred!
+
+   A boolean expression has more than tree parts.
+
+The error happens when you have a `Fluid ``f:if``
+tag </Fluid#f:if.2C_f:then.2C_f:else>`__ with a syntax error in the
+``condition`` attribute.

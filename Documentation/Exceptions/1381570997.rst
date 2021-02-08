@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1381570997
+==========================
+
+::
+
+   #1381570997: A file needs to reside in a Storage

@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1334427099
+==========================
+
+What I did? I tried to log on as a back-end user whilst still logged in
+as admin in the back-end. Now I am not able to log on again.
+
+Bessage when try to log in on backend: Oops, an error occurred!
+
+Folder for file mount /egli does not exist.
+
+More information regarding this error might be available online.

@@ -1,0 +1,19 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1205414233
+==========================
+
+This can be caused when ``config.tx_extbase`` is not set in TypoScript
+which happens if ``extbase/ext_typoscript_setup.txt`` was not loaded.
+
+The only known cause is that you don't have a TS template with "root
+template" flag set in your TS hierarchy.
+
+If setting this flag is not an option for you (this may happen with
+inherited configuration templates such as "Use this template for next
+level"), then you may included it manually with
+
+::
+
+   <INCLUDE_TYPOSCRIPT: source="FILE:typo3/sysext/extbase/ext_typoscript_setup.txt">

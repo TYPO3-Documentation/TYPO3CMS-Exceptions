@@ -1,0 +1,30 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1289679153
+==========================
+
+The error "The specified compression of type "integer" but a boolean is
+expected. When your cache configuration is invalid. Check
+typo3conf/LocalConfiguration.php and
+typo3conf/AdditionalConfiguration.php looking for sth like:
+
+::
+
+      'pages' => [
+          'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\RedisBackend',
+          'options' => [
+              'compression' => 1,
+          ],
+      ],
+
+and change it to
+
+::
+
+      'pages' => [
+          'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\RedisBackend',
+          'options' => [
+              'compression' => true,
+          ],
+      ],

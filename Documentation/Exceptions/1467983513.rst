@@ -1,0 +1,38 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1467983513
+==========================
+
+Error message
+=============
+
+ID parameter needs to be passed for the cHash calculation! As a
+temporary not recommended workaround, you can set
+$GLOBALS['TYPO3_CONF_VARS']['FE']['cHashIncludePageId'] to false to
+avoid this error.
+
+General
+=======
+
+This error can happen with TYPO3 6.2.27, 7.6.11 or 8.3.1 and newer. It
+happens when the CacheHashCalculator API is called without id argument.
+Starting with TYPO3 6.2.27, 7.6.11 or 8.3.1 this API requires the id
+argument to be set.
+
+With RealURL
+============
+
+This exception will be solved with the successor of RealURL 2.0.15.
+Until an updated version of RealURL has been released, if you encounter
+this exception, you can manually integrate `this
+fix <https://github.com/dmitryd/typo3-realurl/commit/36166de3ce47c2cc8d6ef450f80ca8127d6b7bbd>`__
+in RealURL.
+
+Afterwards, clear all your caches.
+
+See also
+========
+
+-  `TYPO3-CORE-SA-2016-022: Cache Flooding in TYPO3
+   Frontend <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-022/>`__

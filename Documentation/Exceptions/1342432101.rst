@@ -1,0 +1,52 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1342432101
+==========================
+
+Cause: This error can happened after updating extension list from TER
+(corrupted entries, error during download, ...).
+
+Consequence: Extensions are stored multiple times in
+tx_extensionmanager_domain_model_extension table with different
+versions.
+
+How to solve: This example uses paymentlib. Replace "paymentlib" with
+the extension key from your error message. Search all your files
+"ext_emconf.php" of all folders under ext (local or global) for a
+dependency from the extension key given in the error message.
+'constraints' => array( 'depends' => array( 'php' => '5.1.2-0.0.0',
+'paymentlib' => '0.3.2-', ), ...
+
+Add an additional end version number, e.g. '0.0.0', to the end of the
+version dependency.
+
+'paymentlib' => '0.3.2-0.0.0',
+
+You can truncate tx_extensionmanager_domain_model_extension table and
+re-download extension list from TER.
+
+If the problem persists, remove all old entries in
+tx_extensionmanager_domain_model_extension table of the extension which
+is concerned.
+
+Make a SQL query in your records:
+
+SELECT \* FROM \`tx_extensionmanager_domain_model_extension\` WHERE
+serialized_dependencies LIKE '%paymentlib%' If you get many records
+listed, which is the case for static_info_tables, then you must add the
+extensions which you use on your site:
+
+SELECT \* FROM \`tx_extensionmanager_domain_model_extension\` WHERE
+serialized_dependencies LIKE '%paymentlib%' AND extension_key IN
+('tt_address', 'tt_products', 'tt_news')
+
+Use a list of the extensions found inside of the typo3conf/ext folder.
+
+Then step through the dependencies of the extensions on TER which did
+require the same extension paymentlib. Remove the line
+paymentlib_quickpay from the table
+tx_extensionmanager_domain_model_extension or remove that extension from
+your local TYPO3 environment. Unfortunately you cannot edit the wrong
+version settings of the extension on TER. Therefore you must remove this
+extension until the extension author will upload a fixed version of it.

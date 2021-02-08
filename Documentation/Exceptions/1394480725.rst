@@ -1,0 +1,54 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1394480725
+==========================
+
+I had this error after i clicked the install button on the
+bootstrap_kickstart package.
+
+| 
+| ( ! ) Warning:
+  rename(C:/wamp/www/typo6/typo3temp/Cache/Data/cache_classes/549e9c6f11f2c.temp,C:/wamp/www/typo6/typo3temp/Cache/Data/cache_classes/tx_extbase_configuration_backendconfigurationmanager):
+  in
+  C:\wamp\www\typo6\typo3\sysext\core\Classes\Cache\Backend\SimpleFileBackend.php
+  on line 244 Call Stack
+
+#. Time Memory Function Location
+
+1 0.0056 260784 {main}( ) ..\mod.php:0 2 0.0061 272744 require(
+'C:\wamp\www\typo6\typo3\init.php' ) ..\mod.php:20 3 0.0515 2918712
+TYPO3\CMS\Core\Core\Bootstrap->loadConfigurationAndInitialize( )
+..\init.php:48 4 0.1333 3316592
+TYPO3\CMS\Core\Core\Bootstrap->initializePackageManagement( )
+..\Bootstrap.php:232 5 0.3587 4526080
+TYPO3\CMS\Core\Package\PackageManager->initialize( )
+..\Bootstrap.php:314 6 0.8191 5440080
+TYPO3\CMS\Core\Core\ClassLoader->setPackages( )
+..\PackageManager.php:147 7 0.8194 5440608
+TYPO3\CMS\Core\Core\ClassLoader->buildPackageNamespacesAndClassesPaths(
+) ..\ClassLoader.php:454 8 1.1028 6585296
+TYPO3\CMS\Core\Core\ClassAliasMap->buildMappingFiles( )
+..\ClassLoader.php:500 9 10.1871 6767696
+TYPO3\CMS\Core\Cache\Frontend\StringFrontend->set( )
+..\ClassAliasMap.php:128 10 10.1871 6767872
+TYPO3\CMS\Core\Cache\Backend\SimpleFileBackend->set( )
+..\StringFrontend.php:50 11 10.1944 6768280 rename ( )
+
+--------------
+
+I had this error after clicking "Clear all Cache" in the Install Tool /
+Important Actions Before it worked but trying to Install a new Core
+(6.2.10) via important Actions ran into a general Error, the Clearing
+Cache runs into this error.
+
+typo3 6.2.25
+============
+
+Got error "Could not acquire lock for ClassLoader cache creation." on
+after updateing the realurl extension from 1.12.8 to 2.0.15
+
+Solution
+--------
+
+Cleared Cache again, no problem detected

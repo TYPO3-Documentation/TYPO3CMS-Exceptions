@@ -1,0 +1,375 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1289386765
+==========================
+
+Message:
+
+::
+
+   Oops, an error occurred!
+
+   Could not analyse class: Vendor\Extension\Controller\SomeController maybe not loaded or no autoloader?
+
+   More information regarding this error might be available online.
+
+=======
+General
+=======
+
+-  The class cache in TYPO3 7.6 does not get cleared when pressing the
+   "Clear System Cache" button, so you have to empty ``typo3temp/*``
+   yourself to get around this issue:
+
+::
+
+   $ rm -rf typo3temp/*
+
+-  The errorHandler turns E_STRICT into exception. This can break the
+   autoloading in some TYPO3 version (ie. 6.2.30). Excluding E_STRICT
+   errors can help.
+
+=====================================================================
+If you got the error while migrating your extension to use namespaces
+=====================================================================
+
+If you're migrating to namespaces, you need to put the vendor name
+inside your \**ext_localconf.php*\* and your \**ext_tables.php**,
+otherwise extbase tries to look up names in the old fashioned way.
+
+**ext_localconf.php:**
+
+::
+
+   // Wrong
+   TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+       $_EXTKEY,
+       'Plugin',
+       array('Controller' => 'action')
+   );
+
+   // Right
+   TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+       'MyVendorName.'.$_EXTKEY,
+       'Plugin',
+       array('Controller' => 'action')
+   );
+
+**ext_tables.php:**
+
+::
+
+   // Wrong
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+       $_EXTKEY,
+       'Plugin',
+       'PluginTitle',
+   );;
+
+   // Right
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+       'MyVendorName.' . $_EXTKEY,
+       'Plugin',
+       'PluginTitle',
+   );
+
+More here: `Extbase
+Reference <https://docs.typo3.org/typo3cms/ExtbaseFluidBook/b-ExtbaseReference/Index.html>`__
+
+==========================================
+Error message concerning Fluid View Helper
+==========================================
+
+::
+
+   #1289386765: Could not analyse class:TYPO3\CMS\Fluid\ViewHelpers\Form\TextViewHelper maybe 
+
+   not loaded or no autoloader?
+
+solutions
+=========
+
+-  it could be, that you have misspelled the name of the viewhelper, for
+   example
+
+::
+
+   "<f:form.textbox ..." instead of   "<f:form.textfield ..."
+
+-  to be more specific for the requested extension blog_example, change
+   all occurrences in templates under
+
+typo3conf/ext/blog_example/Ressources/Private/Backend/Layouts/Templates
+e.g.: Templates/Blog/New.html Line 14
+
+::
+
+   <f:form.textbox property ="title" />
+
+to
+
+::
+
+   <f:form.textfield property ="title" />
+
+-  also check if the extension itself is loaded
+
+-  The RenderFlashMessagesViewHelper was deprecated for a long time and
+   finally removed in 6.0.
+
+So, please use FlashMessagesViewHelper instead:
+
+::
+
+   <f:renderFlashMessages/>
+
+becomes
+
+::
+
+   <f:flashMessages/>
+
+-  You must also check the Fluid template for upper and lower case
+   writing. For example f:link.typoLink... will throw an exception
+   because the class cannot be found. But this will occur only on
+   case-sensitive file systems. Normally you will find out on your dev
+   server because your local computer will most likely use a
+   case-insensitive file system. Solution: change f:link.typoLink
+   tof:link.typolink
+
+For more information see:
+
+-  `Fluid#form_fields </Fluid#f:form.textbox>`__ [deprecated wiki link]
+-  `Documentation on Typo3
+   Forge <https://forge.typo3.org/projects/typo3v4-mvc/wiki/Breaking_Changes%7CExtbase>`__
+   [not available anymore]
+
+======================================================
+error message concerning DamViewHelper (from ext:news)
+======================================================
+
+I got this error while updating ext:news from 2.3.1 to 3.0.1 after an
+TYPO3 upgrade from 6.1.12 to 6.2.6
+
+::
+
+   #1289386765: Could not analyse class:Tx_News_ViewHelpers_Format_DamViewHelper maybe not loaded or no autoloader?
+
+earlier an error `"#1263391473: The property "falMediaNonPreviews" on
+the subject was not
+accessible." <https://wiki.typo3.org/Exception/CMS/1263391473%7C>`__
+[not available anymore] appears.
+
+Solution
+========
+
+so the viewhelper format.dam got removed news 3.0.1 has other
+HTML-templates than 2.3.1 as the copied and individualized templates
+stayed through the upgrade calls to the old viewhelper stay in place and
+throw an error with the new version. Solution: clean up your copied
+templates
+
+======================
+Error in own extension
+======================
+
+If you got the error using your own extension: Maybe your extension-name
+uses underscores. If your extension is named my_extension:
+
+::
+
+   //wrong
+   /**
+    * Misc Functions
+   *
+   * @var \Myvendor\Myextension\Utility\Div
+   * @inject
+   */
+   protected $div;
+
+   //right
+   /**
+    * Misc Functions
+   *
+   * @var \Myvendor\MyExtension\Utility\Div
+   * @inject
+   */
+   protected $div;
+
+In your own extension: If you add the namespace after the extension had
+already been installed, intensive clearing of caches is needed. May even
+be needed to empty typo3temp.
+
+===========================================
+If you got the error while in composer mode
+===========================================
+
+And you are adding your own extension or added some extension without
+composer. Then you must either load the extension with composer or
+handle the class loading with your composer.json:
+
+::
+
+   {
+     "name": "my-vendor/my-typo3-cms-distribution",
+     "require": {
+       "typo3/cms": "7.x-dev"
+     },
+     "autoload": {
+       "psr-4": {
+         "MyVendor\\MySitePackage\\": "typo3conf/ext/my_site_package/Classes"
+       }
+     }
+   }
+
+Note if your installation "web-dir" in composer.json is "Web":
+
+::
+
+   ...
+   "psr-4": {
+         "MyVendor\\MySitePackage\\": "Web/typo3conf/ext/my_site_package/Classes"
+   }
+   ...
+
+For more information see:
+
+-  https://wiki.typo3.org/Composer [deprecated wiki link]
+
+=========================================================
+If you got the error while updating from TYPO3 4.x to 6.2
+=========================================================
+
+Then your migration process was broken. For me it helped to redo it
+entirely and uninstall "extension news" completely (without deleting
+files) and updating it after the upgrade. The error message provided
+here doesn't tell you where exactly the issue occurs because you only
+see the result of a problem at a very later stage that some classes
+could not be loaded. The root cause is a broken autoload-process that
+unfortunately doesn't create any errors.
+
+I am getting this for Powermail after and upgrade from 4.5->6.2 Could
+not analyse
+class:Tx_Powermail_ViewHelpers_Getter_GetFieldMarkerFromUidViewHelper
+maybe not loaded or no autoloader? I've tried uninstalling and
+installing powermail, no luck. What do you mean by "redo it entirely"?
+Redo the whole TYPO3 upgrade? --> yes, that's what I meant. Take your
+4.x environment, uninstall Powermail, and try the Upgrade again.
+
+Thanks, but (luckily) it was something else: the templates and
+namespaces have been changed. So using an old template can cause this
+exception too. https://forge.typo3.org/issues/62220
+
+=========================================================================
+If you got the error while adding a new namespace in TYPO3 7.4.0 or 7.5.0
+=========================================================================
+
+Adding a new file with namespace in v7.4.0 or v7.5.0 can trigger this
+error. In my case it happens to be a weird caching issue. Actually
+hitting the "Clear cache" button in the install tool should solve that,
+but somehow that alone won't work.
+
+.. _solution-1:
+
+Solution
+========
+
+::
+
+   - Go to the Extension Manager and uninstall your extension
+   - Go to the Install Tool and hit the 'Clear cache' button. On the same page hit the 'Clear PHP opcode cache' button
+   - Go back to the Extension Manager and reinstall your extension
+
+==============================================
+If you got the error while updating FluidTYPO3
+==============================================
+
+If you upgrade old versions of flux/fluidpages and get this error, then
+you'll need to switch to proper namespaces (legacy namespaces got
+removed in version 7.2.0, see Changelog →
+https://github.com/FluidTYPO3/flux/blob/7.2.0/CHANGELOG.md)
+
+Examples:
+
+-  In PHP Code ``Tx_Fluidpages_Controller_PageController`` to
+   ``\FluidTYPO3\Fluidpages\Controller\PageController``
+-  In ViewHelpers ``{namespace v=Tx_Vhs_ViewHelpers}`` to
+   ``{namespace v=FluidTYPO3\Vhs\ViewHelpers}``
+-  In TypoScript (if not loaded automatically)
+
+::
+
+   5 = USER
+   5.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+   5.extensionName = Fluidpages
+   ### the following line is new and required:
+   5.vendorName = FluidTYPO3
+   5.pluginName = Page
+
+====================================================
+If you got the error with EXT:fluidcontent_bootstrap
+====================================================
+
+*Could not analyse
+class:Tx_Vhs_ViewHelpers_Extension_Path_ResourcesViewHelper maybe not
+loaded or no autoloader?*
+
+The extension throws this error after updating
+https://extensions.typo3.org/extension/vhs/ to v2.4.0 (which is the last
+version to work with TYPO3 6.2). The extension fluidcontent_bootstrap
+itself isn't 7.6 compatible. So either replace it or fix the problematic
+places and set the extension to ``excludeFromUpdates``.
+
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Accordion.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Alert.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonGroup.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonLink.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Carousel.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Jumbotron.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/NavigationList.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/PageHeader.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Row.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Tabs.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Thumbnails.html
+-  fluidcontent_bootstrap/Resources/Private/Templates/Content/Well.html
+
+A more elegant way could be to change the template path to ``fileadmin``
+and copy the resources (and alter only these files).
+
+==============================
+If you got the error with Flux
+==============================
+
+Error:
+
+::
+
+   Could not analyse class: "FluidTYPO3\Flux\ViewHelpers\Widget\GridViewHelper" maybe not loaded or no autoloader? Class FluidTYPO3\Flux\ViewHelpers\Widget\GridViewHelper does not exist
+
+Reason:
+
+::
+
+   > https://github.com/FluidTYPO3/flux/commit/3b65374429f579a39ece2d23568abb12ae110b29
+   > DEPRECATED
+   > - * Grid Widget for rendering a grid in previews of BE elements
+   > New behaviour:
+   > Renders a Grid as content element container in the page module if your template defines one, regardless of whether or not you have a Preview section (https://fluidtypo3.org/blog/news/coming-changes-in-flux-72.html)
+
+Fix:
+
+Just remove ``<flux:widget.grid />`` completely.
+
+============================================
+if you got this error while updating via git
+============================================
+
+-  If you update your installation via git it is possible that Class
+   caches are not up to date
+-  The caches will not be cleared in BE neither in install tool
+-  To clear the caches deinstall and re-install the extension
+-  Alternatively use terminal: typo3/cli_dispatch.phpsh extbase
+   extension:dumpclassloadinginformation
+-  If your installation uses xcache, there is no possibility to clear
+   the cache. You have to restart the server.

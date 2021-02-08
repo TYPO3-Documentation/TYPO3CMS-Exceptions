@@ -1,0 +1,13 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1169128255
+==========================
+
+Had this error for the first time a few minutes ago because i made a
+stupid typo. But this page is empty, so here come the first input :)
+
+If you inject a repositoryClass into a controller your have to write
+@var className
+
+i wrote @param className... Thats all. :)

@@ -1,0 +1,32 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1460629247
+==========================
+
+TYPO3 8.7.1
+===========
+
+Error: No valid handlers found for type: javascript
+---------------------------------------------------
+
+Happens after saving in CKEditor.
+
+You may have received this error, because you are trying to save a
+non-compliant link in CKEditor. Usually CKEditor will eliminate (remove)
+such links - but in combination with
+`extraAllowedContent <https://usetypo3.com/ckeditor.html#c405>`__ it
+might happen that the link passes the filter.
+
+For example, this would cause the error above:
+
+::
+
+      href="/impressum/"
+
+Valid links would be:
+
+::
+
+      href="t3://page?uid=175"
+      href="https://typo3.org"

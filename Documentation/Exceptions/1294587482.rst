@@ -1,0 +1,18 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294587482
+==========================
+
+This exception occurs when TYPO3 misses any mandatory PHP modules (i.e.
+gd, mysql, openssl, fileinfo).
+
+In TYPO3 4.6 and newer there is the module "openssl" also needed.
+
+To fix this modify your php.ini file and activate the proper
+extension(s) there.
+
+Activating OpenSSL there will fix this error message. However, you
+should also take care to configure it correctly, so that it is actually
+working. Otherwise, you won't be able to use saltedpasswords, which is
+recommended and enabled by default in TYPO3 4.6 and newer.

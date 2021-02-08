@@ -1,0 +1,59 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1166546734
+==========================
+
+#1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
+====================================================================
+
+Reason 1:
+---------
+
+-  Package does really not exist
+
+Reason 2:
+---------
+
+.. container::
+
+   .. container::
+
+      |Extension Upload screen TER.png|
+
+      .. container::
+
+         .. container::
+
+-  CamelCaseConversion Problem with numbers
+-  f.e. vendor_extension_2018 will be converted into VendorExtension2018
+   and converted back into vendor_extension2018
+
+This will result in the following error message:
+
+**Package "vendor_extension2018" is not available. Please check if the
+package exists and that the package key is correct (package keys are
+case sensitive)**
+
+According to the hints in TER these kind of keys are invalid:
+
+-  https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ExtensionKey/Index.html
+
+Also See
+--------
+
+-  https://forge.typo3.org/issues/87737
+
+Reason 3 - Unknown
+------------------
+
+On a new Typo3 8LTS installation with test page and empty database comes
+this error message in Backend: "Uncaught TYPO3 Exception: #1166546734:
+Package "core" is not available..." If typo3temp/var/cache is emptied,
+the installation will work for a few minutes. The "missing" package
+varies in the error message until "rte_ckeditor" and
+"fluid_styled_content" have been deactivated. Now the error message
+appears only with Package "core".
+
+.. |Extension Upload screen TER.png| image:: files/Extension_Upload_screen_TER.png
+   :target: /File:Extension_Upload_screen_TER.png

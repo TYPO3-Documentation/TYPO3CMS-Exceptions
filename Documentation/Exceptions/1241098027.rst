@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1241098027
+==========================
+
+::
+
+   #1241098027: Invalid validate annotation in Vnd\Extname\Domain\SomeObj::phone: Could not resolve class name for validator "".

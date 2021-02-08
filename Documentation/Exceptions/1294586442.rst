@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294586442
+==========================
+
+Template is not writeable
+
+Happens when your filepermissions (Unix) are not correct if you include
+TypoScript from a file and try to edit it in the backend.
+
+Solution: Change filepermissions to make the file writeable by the
+webserver, ie.
+
+chgrp www-data fileadmin/templates/typoscript.txt && chmod g+w www-data

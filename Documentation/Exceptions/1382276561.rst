@@ -1,0 +1,79 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1382276561
+==========================
+
+Dear creators of TYPO3: please allow me to use composer in my own
+projects.
+
+The error I am getting is:
+
+::
+
+     The package "sv" depends on "sysextcore" which is not present in the system.
+
+Just let me include my own vendor autoload and leave me alone with these
+errors.
+
+**Solution: Deleting typo3conf/PackageStates.php**
+
+Upgrading from 6.2 to 7 LTS, I had this problem too. Deleting
+typo3conf/PackageStates.php helped me. PackageStates.php will regenerate
+itself.
+
+**Solution**
+
+::
+
+     I had the same problem, edit composer.json (or PackageStates.php) file in typo3conf and delete sections "extra", "replace", "autoload" and "autoload-dev".
+
+Same problem while updating static_info_tables on TYPO3 6.2.19
+
+::
+
+     #1382276561: The package "static_info_tables_de" depends on "sjbr/static_info_tables" which is not present in the system. (More information)
+
+Problem under TYPO3 8.7.19
+
+::
+
+     The package "static_info_tables_de" depends on "typo3/cms-core" which is not present in the system.
+
+UnexpectedValueException thrown in file
+/html/typo3_src-6.2.19/typo3/sysext/core/Classes/Package/DependencyResolver.php
+in line 140.
+
+EM is no longer available.
+
+**Solution** Clear system caches
+
+**Solution** The cache cannot be cleared, because both the TYPO3 backend
+and the TYPO3 install tool are not available any more. Open the file
+typo3conf/PackageStates.php and remove the part which belongs to the
+extension which requires the missing extension. If everything is finally
+restored, then you can install this extension again manually.
+
+**Solution** If deleting PackageStates.php is no option, try using the
+typo3cms console to install an extension which is already installed.
+That should fix it.
+
+**Solution** Edit the file PackagesStates.php under TYPO3 8.7 and remove
+the part of the extension which produces this PHP exception error:
+
+::
+
+       'static_info_tables_de' => [
+          'packagePath' => 'typo3conf/ext/static_info_tables_de/',
+       ],
+
+**Solution** Dependencies are resolved before the message is generated,
+so if the message reads
+
+::
+
+       The package "my_extensions_2" depends on "fluidcontent" which is not present in the system.
+
+and "my_extensions_2" does not directly depend on "fluidcontent", it
+will depend on another extension e.g. "my_extensions_1" which will
+depend on "fluidcontent" (or another extension still).

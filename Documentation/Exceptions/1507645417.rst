@@ -1,0 +1,23 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1507645417
+==========================
+
+This happened in TYPO3 9.3.3 :
+
+**Oops, an error occurred!** Line 39: Object Name String,
+"exclude.tt_products_cat_language" was not followed by any operator,
+=<>({
+
+Solution:
+=========
+
+The file **ext_conf_template.txt** of the extension contains a missing
+equation sign (=).
+
+*exclude.tt_products_cat_language*
+
+Cange it into this format:
+
+*exclude.tt_products_cat_language =*

@@ -1,0 +1,16 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1440506893
+==========================
+
+::
+
+   #1440506893: Data structure error: No source value in fieldname "tx_templavoila_ds" 
+
+::
+
+   #1440506893: Data structure error: Line 1: Invalid document end 
+
+Invalid document end: This happens if you define a flexform xml file
+which is not available. Check the path to your file.

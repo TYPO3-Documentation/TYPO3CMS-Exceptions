@@ -1,0 +1,23 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1400741142
+==========================
+
+**Solution 1:**
+
+This exception might occur in EXT:news since version 3.1.0.
+
+To solve it, please add "list.paginate.itemsPerPage" to the TS setting
+*overrideFlexformSettingsIfEmpty*.
+
+The final code might look like this
+
+plugin.tx_news.settings.overrideFlexformSettingsIfEmpty =
+cropMaxCharacters,dateField,timeRestriction,orderBy,orderDirection,backPid,listPid,startingpoint,recursive,list.paginate.itemsPerPage
+
+| 
+| **Solution 2:**
+
+Include the EXT:news static into your root-template (or
+extension-template)

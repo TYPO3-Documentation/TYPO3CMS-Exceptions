@@ -1,0 +1,37 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1371069824
+==========================
+
+It happened by TYPO3 6.1.7 Fluid Extbase Flux Bootstrap Template
+
+Oops, an error occurred!
+
+Arguments useShortcutData, useShortcutTarget and useShortcutUid are
+mutually exclusive. Please use only one at a time.
+
+---
+
+With the latest version of VHS, useShortcutUid is set to true by default
+so, if you also set useShortcutData or useShortcutTarget to true, you
+will have this exception.
+
+A solution - while the bug is still present - is to set
+useShortcutUid=false in your fluid template to invalidate the default
+value.
+
+Have a look here :
+
+https://github.com/FluidTYPO3/vhs/issues/506
+
+http://fluidtypo3.org/viewhelpers/vhs/master/Page/MenuViewHelper.html
+[not available anymore]
+
+---
+
+If you have fluidpages 2.1.1 and vhs 1.8.5 installed than switch back to
+Versions 2.1.0 / 1.8.4 and it is working again.
+
+In Versions 2.1.1 / 1.8.5 "Various fixes, mainly small bugs. " have been
+fixed and probably a bigger one has been created.

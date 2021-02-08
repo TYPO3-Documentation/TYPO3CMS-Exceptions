@@ -1,0 +1,13 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294681467
+==========================
+
+This error shows up if Email addresses could not be validated
+succesfully. Correct format would be something like My Group: "Richard"
+<richard@localhost> (A comment), ted@example.com (Ted Bloggs), Barney;
+
+Not all components are required but if there is a name, it must be
+wrapped in some way. See this RFC for details:
+http://www.ietf.org/rfc/rfc822.txt

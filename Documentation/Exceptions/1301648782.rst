@@ -1,0 +1,8 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1301648782
+==========================
+
+I granted privileges to user on the wrong database. Corrected it and
+solved.

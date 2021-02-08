@@ -1,0 +1,10 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1298920754
+==========================
+
+aufgetaucht beim Update von **YAG** auf 3.1.0
+
+behoben durch Deinstallation von **Theme perfectlightbox**
+(https://forge.typo3.org/issues/43067)

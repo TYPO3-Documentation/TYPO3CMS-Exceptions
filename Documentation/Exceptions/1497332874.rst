@@ -1,0 +1,21 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1497332874
+==========================
+
+This error can happen in the TYPO3 Backend on the page configuration.
+
+**YAML file "/path/typo3conf/sites/my-site/config.yaml" could not be
+parsed into valid syntax, probably empty?**
+
+(1/1) #1497332874
+TYPO3\CMS\Core\Configuration\Loader\Exception\YamlParseException in
+/path/htdocs/typo3_src-9.5.22/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php
+line 60 $content = $this->getFileContents($fileName); $content =
+Yaml::parse($content); if (!is_array($content)) { throw new
+YamlParseException( 'YAML file "' . $fileName . '" could not be parsed
+into valid syntax, probably empty?', 1497332874 ); }
+
+| 
+| Solution: Use a yaml syntax checker tool for for config.yaml file.

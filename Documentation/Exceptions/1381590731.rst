@@ -1,0 +1,24 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1381590731
+==========================
+
+Cause in TYPO3 6.2 LTS Beta3
+============================
+
+Copy / Past images in fileadmin doesn't index the images
+
+Quickfix in TYPO3 6.2 LTS Beta3:
+
+Edit the images you've pasted and save them. This is a quickfix, not a
+solution
+
+This bug still occurs in 6.2beta5 if you forgot to **run the Upgrade
+Wizard**
+
+Accurance in TYPO3 6.2 LTS with tx_news
+=======================================
+
+Missing MySQL Tables "sys_file" and "sys_file_processedfile" due to
+MySQL version incompatibility.

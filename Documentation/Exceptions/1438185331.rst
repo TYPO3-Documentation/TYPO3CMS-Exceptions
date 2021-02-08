@@ -1,0 +1,43 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1438185331
+==========================
+
+An error message of this kind appears in the TYPO3 backend.
+
+::
+
+      #1438185331: At least one "types" array must be defined for table myfirsttable_mm_second, preferred "0" (More information)
+
+::
+
+      UnexpectedValueException thrown in file
+      /home/myuser/public_html/mysite/typo3_src-8.7.13/typo3/sysext/backend/Classes/Form/FormDataProvider/DatabaseRecordTypeValue.php in line 43.
+
+| 
+| **Solution:** Edit the file
+  *your_extension_key*/Configuration/TCA/*myfirsttable_mm_second.php* of
+  your extension. Use your extension key and file name of your table
+  instead of this example.
+
+Add an empty part of types to it, like this:
+
+::
+
+    $result = array (
+        'ctrl' => array (
+          'title' => 'LLL:EXT:your_extension_key/locallang_db.xml:myfirsttable_mm_second',
+     ...
+        'columns' => array(
+     ...
+        ),
+        'types' => array(
+          '0' => array(
+              'showitem' => 
+          )
+    ),
+
+Of course you can add a more enhanced types array if you have a need for
+it. A mm table in most cases has no usage as a standalone entry form in
+the TYPO3 backend.

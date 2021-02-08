@@ -1,0 +1,58 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1237823699
+==========================
+
+#1237823699: Required argument "controller" was not supplied.
+=============================================================
+
+Just add the parameter controller to the *be.menus.actionMenuItem*
+ViewHelper:
+
+::
+
+    <f:be.menus.actionMenuItem controller="YourController" label="YourLabel" action="YourAction" />
+
+Required argument "viewHelperArgument" was not supplied. Is thrown if
+you use a view Helper in your fluid template without a required
+argument.
+
+#1237823699: Required argument "each" was not supplied.
+=======================================================
+
+::
+
+    <f:for each="{menu}" as="menuEntry" key="table">
+    ...
+    <f:for>
+
+You must add the paramter 'menu' to the call from the PHP side.
+
+::
+
+    $assigns['menu'] = $menu;
+    $view->assignMultiple($assigns);
+
+And you must have the correct syntax of the "f:for"-ViewHelper.
+
+::
+
+    <f:for each="{menu}" as="menuEntry" key="table">
+    ...
+    </f:for>
+
+#1237823699 Error: Required argument "colPos" was not supplied.
+===============================================================
+
+TYPO3 with flux and fluidcontent - Upgraded to version 9.
+
+Issue 1: Fluidcontent needs to be migrated to Flux:
+https://github.com/FluidTYPO3/fluidcontent/issues/424 → Run SQL
+Statement https://stackoverflow.com/a/50759394/3894752
+
+Issue 2: Flux now requires colPos attributes for content elements as
+well: https://github.com/FluidTYPO3/flux/issues/1599 → Add colPos
+attribute to all grids with numbers from 0 to 99. The Update script of
+flux will then fix the colPos Value in the database automatically.
+https://github.com/FluidTYPO3/flux/issues/1594#issuecomment-408886174

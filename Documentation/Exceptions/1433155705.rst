@@ -1,0 +1,8 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1433155705
+==========================
+
+I got this message after installing tinymce. After I deinstalled
+htmlarea the problem was fixed.

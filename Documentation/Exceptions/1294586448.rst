@@ -1,0 +1,30 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294586448
+==========================
+
+Editors cannot upload files in media extension
+==============================================
+
+When a editor (a backend user that is not an administrator) tries to
+access a module to where they have no access to an exception like this
+will be thrown:
+
+::
+
+   Core: Exception handler (WEB):
+   Uncaught TYPO3 Exception: #1294586448: Access Error: You don't have access to this module.
+   RuntimeException thrown in file /var/www/html/vendor/typo3/cms/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php in line 448.
+
+In the media extension this happens if the access to the modules is not
+configured properly.
+
+Check the following access: A backend user with access to "File>Media"
+must also granted to "User tools > Media Extra (hidden module, required
+for non admin)".
+
+|Media Extra Module in Access List for Backend usergroup.png|
+
+.. |Media Extra Module in Access List for Backend usergroup.png| image:: files/Media_Extra_Module_in_Access_List_for_Backend_usergroup.png
+   :target: /File:Media_Extra_Module_in_Access_List_for_Backend_usergroup.png

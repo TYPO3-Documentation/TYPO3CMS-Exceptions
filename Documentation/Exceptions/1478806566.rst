@@ -1,0 +1,50 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1478806566
+==========================
+
+MenuProcessor Configuration contains invalid Arguments: stdWrap / wrap
+======================================================================
+
+This doesn't work:
+
+::
+
+    lib.myNavigation = FLUIDTEMPLATE
+    lib.myNavigation {
+        file = assets/Resources/Private/Partials/MyNavigation.html
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+              special = directory
+              special.value = 9999
+              titleField = nav_title // title
+              expandAll = 1
+              levels = 3
+              as = dropdownNav
+              stdWrap.wrap =  <div > | </div>
+            }
+        }
+    }
+
+This works:
+
+::
+
+    lib.myNavigation = FLUIDTEMPLATE
+    lib.myNavigation {
+        file = assets/Resources/Private/Partials/MyNavigation.html
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+              special = directory
+              special.value = 9999
+              titleField = nav_title // title
+              expandAll = 1
+              levels = 3
+              as = dropdownNav
+            }
+        }
+        stdWrap.wrap =  <div > | </div>
+    }

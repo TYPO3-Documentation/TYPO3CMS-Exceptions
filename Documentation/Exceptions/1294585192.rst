@@ -1,0 +1,12 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294585192
+==========================
+
+"ADMCMD command could not be executed!" related to:
+https://forge.typo3.org/issues/18761
+
+client issue.
+
+removing the cookie "ADMCMD_prev" solves the problem

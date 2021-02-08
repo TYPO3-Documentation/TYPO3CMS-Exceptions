@@ -1,0 +1,56 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1459422492
+==========================
+
+This error happens when you update a TYPO3 7.x installation to Version
+8.x. Because of the changed array structure in version 8.x, TYPO3 cannot
+find the proper database connection.
+
+You need to change to following lines in your LocalConfiguration.php:
+=====================================================================
+
+**From:**
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      'DB' => [
+          'database' => '',
+          'host' => 1',
+          'password' => '',
+          'port' => 3306,
+          'username' => '',
+      ],
+
+**To:**
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      'DB' => [
+          'Connections' => [
+              'Default' => [
+                  'charset' => 'utf8',
+                  'dbname' => 'typo3_v8',
+                  'driver' => 'mysqli',
+                  'host' => '',
+                  'password' => '',
+                  'port' => 3306,
+                  'user' => '',
+              ],
+          ],
+      ],

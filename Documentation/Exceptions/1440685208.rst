@@ -1,0 +1,40 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1440685208
+==========================
+
+**Fluid**
+
+::
+
+   #1440685208: Broken data structure on field name pi_flexform. section without type or vice versa is not allowed
+
+Happens when using
+`<flux:form.container> <https://fluidtypo3.org/viewhelpers/flux/master/Form/ContainerViewHelper.html>`__
+[not available anymore] in a fluid content element.
+
+In our case it was due to <type>no_map</type> which we commented out.
+Then I worked.
+
+Issues:
+
+-  https://forge.typo3.org/issues/70197
+-  https://github.com/FluidTYPO3/flux/issues/944
+-  https://github.com/FluidTYPO3/flux/issues/992
+
+**Templavoila**
+
+Templavoila > 7.6.0
+
+::
+
+    Broken data structure on field name tx_templavoila_flex. section without type or vice versa is not allowed
+
+Type nodes need to ne inside of »tx_templavoila«. Only exception if the
+type is of »array«, butthen it needs a »<section>1</section>« node in
+the same level.
+
+-  See
+   https://docs.templavoila.support/Changelog/7.6/Breaking-ConfigurationOfTypesInFlexforms.html
+   [not available anymore]

@@ -1,0 +1,44 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1317178794
+==========================
+
+After adding a Filemount
+========================
+
+You'll probably get this error if you add a file mount *after* creating
+content containing images or links to files. (Using FAL.)
+
+Solution
+========
+
+Check the Upgrade Wizard in the Install Tool to make sure that there are
+no outstanding FAL migration actions required.
+
+If the error appears on every page, the issue may be that a content
+element or resource is being inherited from a different page (higher up
+the tree structure.)
+
+Workaround
+==========
+
+There is a bug in TYPO3 6.2.15 which leads to a wrong SQL query. That
+will raise this exception.
+
+::
+
+      SELECT * FROM sys_file_reference WHERE uid=1 AND sys_file_reference.deleted=0
+
+Just make sure that your first several (maximum number of assigned file
+references to your extension table) records of the table
+sys_file_reference are not marked as deleted. If this SQL query executes
+successfully, then it will work.
+
+=================
+From a eID script
+=================
+
+This problem may happen if you are in the context of a eID script and
+you forgot to load the TCA from EXT:core (namely the TCA for
+``sys_file`` and ``sys_file_reference``.

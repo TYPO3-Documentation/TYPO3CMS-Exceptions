@@ -1,0 +1,64 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1203699034
+==========================
+
+::
+
+   #1203699034: A cache with identifier "IDENTIFIER" does not exist. 
+
+Solution
+========
+
+Most likely you did not clear cache. You will not be able to do this
+from backend any more. Instead you have to remove all cache files from
+your instance manually.
+
+For 4.x: Remove all ``typo3conf/temp_*`` files. For 6.x: Remove
+``typo3temp/Cache/*`` folders.
+
+--------------
+
+If this does not help, add the following lines to you
+``typo3conf/localconf.php`` file.
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['IDENTIFIER'])) {
+          $TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['IDENTIFIER'] = array();
+      }
+
+See
+`Caching_framework#How_to_use_the_caching_framework_in_extensions </wiki/index.php?title=Caching_framework&action=edit&redlink=1>`__
+[not available anymore] for more information.
+
+--------------
+
+This issue can also occur when you run a code from the Install Tool
+(e.g. when using upgrade wizard) context and the cache 'IDENTIFIER' is
+defined in a 3rd party extension. Install tool doesn't load all
+extensions configuration, thus custom cache definition is not available.
+Try calling the upgrade wizard from CLI
+
+::
+
+   ./typo3cms upgrade:wizard --identifier=DatabaseRowsUpdateWizard
+
+--------------
+
+In current versions of TYPO3 the Caching Framework is installed by
+default.
+
+This Exception may appear if you just upgraded your TYPO3 Core and have
+not removed the cache files in typo3conf.
+
+To do so simply remove these files go to your TYPO3 Installation and in
+the shell type rm typo3conf/temp_CACHED_\* and reload the page.

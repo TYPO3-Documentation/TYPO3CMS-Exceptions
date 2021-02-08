@@ -1,0 +1,74 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294587217
+==========================
+
+Hello! I received this error message from my TYPO3-Frontend. Reason:
+Inside the Template of this page there were spaces inside the lines
+like:
+
+#. Default PAGE object:
+
+page = PAGE page. 10 = TEXT page. 10.value = HELLO WORLD!
+
+(see the spaces right after the dots)
+
+Removing these spaces leaded to a page running fine without the error
+message this Thread is about. Best regards, strawk
+
+| 
+| **#1294587217: The page is not configured! [type=0][]. This means that
+  there is no TypoScript object of type PAGE with typeNum=0 configured**
+
+This happens if you forget the line
+
+::
+
+   page = PAGE
+
+in the Setup field of your TypoScript record.
+
+When you see this error, a TypoScript template is already there. In the
+backend go to the page with that TypoScript template. Most probably it
+is on the root page of your website; that is the one directly below the
+very first page, below the one with the TYPO3 logo next to it. Use the
+"Template" module to have a look at the template located at that page.
+
+Use the Template module to modify that template: Select the
+"Info/Modify" screen from the drop-down box at the top. Then click on
+the pencil icon next to the word "Setup" and replace what you have in
+the Setup field with the following lines:
+
+.. container::
+
+   ::
+
+          # Default PAGE object:
+          page = PAGE
+          # Define output for typeNum=0, the default type.
+          page.typeNum = 0
+          page.10 = TEXT
+          page.10.value = HELLO WORLD!
+
+Save the template and open the page in the frontend. You should see the
+words "HELLO WORLD!".
+
+| 
+| Another possibility is that you are trying to access a page with an
+  undefined page type. E.g. ``example.org/?type=123``, but you do not
+  have a ``(page).typeNum = 123`` defined in your TypoScript template.
+
+| 
+| == #1294587217: The page is not configured! [type=103][]. This means
+  that there is no TypoScript object of type PAGE with typeNum=103
+  configured.
+
+This error is thrown when an old dead link is called after update to
+TYPO3 CMS 6.2. Please see: http://www.bahai.by/be/?type=103 [not
+available anymore] Why no 404 error.
+
+Using Bootstrap_package
+=======================
+
+You forgot to include the bootstrap_package static template.

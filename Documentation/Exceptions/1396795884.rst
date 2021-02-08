@@ -1,0 +1,95 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1396795884
+==========================
+
+Error displayed during installation of TYPO3
+============================================
+
+Usually, when installing a new TYPO3 instance, the system will detect
+the instance has not been configured yet and will redirect to the
+installer to proceed with the installation. However, depending on web
+server configuration, this trusted hosts pattern error may still be
+thrown and the redirect will not be performed. An easy way to circumvent
+this is to just manually add the path url »typo3/install.php« in the
+browser to directly reach the installer, which will take care of the
+trusted hosts pattern setting in one of its installer steps.
+
+Error displayed on an existing instance
+=======================================
+
+You see this error, because the submitted HTTP host-header does not
+match the trustedHosts configuration. You may want to adjust the trusted
+host pattern, which is security mechanism to validate the HTTP
+host-header and prevent host spoofing.
+
+Please read the `security advisory
+»TYPO3-CORE-SA-2014-001« <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2014-001/>`__
+to understand the need for this configuration option.
+
+The trusted host pattern may be set with the Install Tool (Backend >
+Install Tool > All configuration > Toggle all and find
+trustedHostsPattern) or by editing »/typo3conf/LocalConfiguration.php«
+
+::
+
+   $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern']
+
+This is a regular expression pattern that matches all allowed hostnames
+(including their ports) of this TYPO3 installation, or the string
+"SERVER_NAME" (default). The default value SERVER_NAME checks if the
+HTTP Host header equals the SERVER_NAME and SERVER_PORT. This is secure
+in correctly configured hosting environments and does not need further
+configuration.
+
+Under certain circumstances, it might be required to change the default
+configuration. A typical case is a hosting setup with a Load Balancer,
+CDN or a HA proxy.
+
+Typical configuration examples
+------------------------------
+
+The following matches all hosts that end with **.domain.com** with all
+corresponding subdomains:
+
+::
+
+   .*\.domain\.com
+
+A common setup could include the leading **www.** (optional):
+
+::
+
+   (www\.)?domain\.com
+
+The following matches all hosts with subdomains under **.domain.com**
+and **.otherdomain.com**:
+
+::
+
+   (.*\.domain|.*\.otherdomain)\.com
+
+Be aware that HTTP Host header may also contain **a port**. If your
+installation runs on a specific port, you need to explicitly allow this
+in your pattern. To allows only www.domain.com:88, not www.domain.com,
+you could configure:
+
+::
+
+   www\.domain\.com:88
+
+To disable this check completely (not recommended because it is
+insecure) you can use ".*" as pattern:
+
+::
+
+   .*
+
+Extension 'hosts_pattern'
+=========================
+
+Take a look at the extension 'hosts_pattern' which generates the
+patterns for you
+
+-  https://extensions.typo3.org/extension/hosts_pattern/

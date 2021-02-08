@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1460976233
+==========================
+
+In a custom content element, that wont check, if an image is there or
+not - will put this exception out. Check, if your CE is capable, to
+handle if there is an image or not.
+
+The extension Camaliga is sensible for this issue. If you have assigned
+a Gallery Map Element to a plugin and with this element is no image
+connected, than you receive this error message. Look in your storage
+folder with the Gallery Elements and check all Elements if they have an
+image assigned. Check also all the translated elements in this folder.

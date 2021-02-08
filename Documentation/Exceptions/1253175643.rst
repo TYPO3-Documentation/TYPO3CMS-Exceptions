@@ -1,0 +1,29 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1253175643
+==========================
+
+error message
+=============
+
+#. 1253175643: The argument type for parameter $parameter of method
+   Tx_yourExtensionKey_Controller_yourController->yourAction() could not
+   be detected.
+
+solution
+========
+
+| The GET/POST vars to **action parameter mapping** works only for
+  **objects** or **arrays** and **not for strings**.
+
+To get an string argument you have to fetch it by your own from the
+request object in your action method:
+
+::
+
+   if ($this->request->hasArgument('parameter')) {
+
+       $keyword = $this->request->getArgument('parameter');
+
+   }

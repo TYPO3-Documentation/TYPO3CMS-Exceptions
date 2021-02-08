@@ -1,0 +1,137 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1278155988
+==========================
+
+I got this exception just after I imported and installed tt_news in my
+Typo3 6.2 website. So now I cannot edit the pages on my website.
+
+In the log it says:
+
+::
+
+   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): ^ in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110   
+   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): <source>Bootstrap Package: Left & normal, 2 Columns</source> in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110   
+   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): /home/solreszt/public_html/typo3conf/ext/bootstrap_package/Resources/Private/Language/Backend.xml:18: parser error : xmlParseEntityRef: no name in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110
+
+It seems that the adding of one new page layout is not correct. It has
+worked for a month now, except that the name of the new layout did not
+show up in the backend. As I mentioned in an issue on the English forum
+in april/may: https://forum.typo3.org/index.php/t/203479/ This exception
+is really destroying the website. This exception causes that you are not
+any longer able to edit any page. It seems like all references in the
+list of Backend layouts have disappeared. I have got this exception
+twice and both times I have done something in the Extension Manager. The
+first time I installed tt_news, I now know that tt_news is not
+compatible with bootstrap extension. The second time I was changing the
+logo files in the configuration of bootstrap. I see no other way to
+solve this problem than go back to an earlier backup. Regards, Gunnar
+Jonsson
+
+| 
+| I found the solution: Removing the & ampersand in the name of a
+  backend layout in the backend.xlf file was the solution. The ampersand
+  in the following lines was causing the Exception:
+
+::
+
+   <trans-unit >
+    <source>Bootstrap Package: Left & normal, 2 Columns</source>
+   </trans-unit>
+
+==============================
+==============================
+
+I want a page layout with 3 grids for left margin and 9 grids for
+normal. Are there any tutorial how to add a new page layout in bootstrap
+package?
+
+I have copied one of the HTML files and renamed it
+Default2VColumns.html, so it looks like:
+
+::
+
+   <f:layout name="Default" /> <f:section name="Main"> <div > <div > <div > <f:cObject typoscriptObjectPath="lib.dynamicContent" data="1" /> </div> <div  role="main"> <f:cObject typoscriptObjectPath="lib.dynamicContent" data="0" /> </div> </div> </div> </f:section>
+
+And I also inserted the following in the root template:
+
+::
+
+    page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns = TEXT
+    page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns.value = EXT:bootstrap_package/Resources/Private/Templates/Page/Default2VColumns.html
+    page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns.insertData = 1
+    
+
+I insert the following in the file:
+bootstrap_package/Resources/Private/Language/Backend.xml
+
+::
+
+   <trans-unit >
+    <source>Bootstrap Package: Left & normal, 2 Columns</source>
+   </trans-unit>
+
+| 
+| And futhermore I had to insert the following in the file
+  bootstrap_package/Classes/Hooks/Options/BackendLayoutDataProvider.php:
+
+::
+
+    'default_2_V_columns' => array(
+    'title' => 'LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.default_2_V_columns',
+    'config' => '
+    backend_layout {
+    colCount = 6
+    rowCount = 2
+    rows {
+    1 {
+    columns {
+    1 {
+    name = LLL:EXT:cms/locallang_ttc.xlf:colPos.I.0
+    colPos = 1
+    colspan = 2
+    }
+    2 {
+    name = LLL:EXT:cms/locallang_ttc.xlf:colPos.I.1
+    colPos = 0
+    colspan = 4
+    }
+    }
+    }
+    2 {
+    columns {
+    1 {
+    name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer1
+    colPos = 10
+    colspan = 2
+    }
+    2 {
+    name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer2
+    colPos = 11
+    colspan = 2
+    }
+    3 {
+    name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer3
+    colPos = 12
+    colspan = 2
+    }
+    }
+    }
+    }
+    }
+    ',
+    'icon' => 'EXT:bootstrap_package/Resources/Public/Images/BackendLayouts/default_2_V_columns.gif'
+    ),
+
+Most things seems now to be in order, except for the naming of the page
+layout in the backend. I get a blank line instead of the text "Bootstrap
+Package: Left & normal, 2 Columns" when choosing page layout in Edit
+page.
+
+Broken character in locallang_db.xlf
+====================================
+
+I got this error in the BE list view (7.6 LTS) and was able to fix it by
+correcting a broken character in
+myext/Resources/Private/Language/locallang_db.xlf (ursbraem, 19.10.2016)

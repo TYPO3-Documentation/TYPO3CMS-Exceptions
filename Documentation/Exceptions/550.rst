@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+===================
+TYPO3 Exception 550
+===================
+
+Following Message appears
+
+Oops, an error occurred! Expected response code 250 but got code "550",
+with message "550 5.7.60 SMTP; Client does not have permissions to send
+as this sender
+
+FE_Manager tries to send a notification to the admin, sender address or
+mailserver information doesn't match the reuirements. Check

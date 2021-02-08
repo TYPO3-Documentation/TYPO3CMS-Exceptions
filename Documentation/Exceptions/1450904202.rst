@@ -1,0 +1,12 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1450904202
+==========================
+
+::
+
+    No storage folder (option storagePid) for frontend users given.
+
+Solution: Define your user storage page: Either in plugin options
+(flexform) or in your site's TypoScript.

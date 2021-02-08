@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1382284105
+==========================
+
+This error happens, when in Fluid templates the img-tag have an
+undefined variable in src-parameter.
+
+Example:
+
+<img src="{f:uri.image(image: file)}" title="{file.title}"
+alt="{file.alternative}" />
+
+And "file" is undefined, or not a String or a FileReference

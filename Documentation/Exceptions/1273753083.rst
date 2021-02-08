@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1273753083
+==========================
+
+-  Try this: Instead of just displaying {myObject.myProperty} , wrap it
+   with f:format.date: {myObject.myProperty -> f:format.date(format:
+   'd.m.Y')}. See https://forge.typo3.org/issues/38294

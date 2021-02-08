@@ -1,0 +1,30 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1380581244
+==========================
+
+::
+
+   #1380581244: Redirect loop aborted. If this message is shown again after a reload, your setup is so weird that the install tool is unable to handle it. Please make sure to remove the "install[redirectCount]" parameter from your request or restart the install tool from the backend navigation.
+
+The error happened after an upgrade of TYPO3 6.2 via 7.6 to 8.7. The
+reason was wrong entries in Additionalconf.php:
+
+::
+
+   \TYPO3\CMS\Core\Configuration\ConfigurationManager::setLocalConfigurationValueByPath('DB/database', 'DBNAME');
+   \TYPO3\CMS\Core\Configuration\ConfigurationManager::setLocalConfigurationValueByPath('DB/username', 'USERNAME');
+   \TYPO3\CMS\Core\Configuration\ConfigurationManager::setLocalConfigurationValueByPath('DB/password', 'PASSWORD');
+
+After changing the entries to the following text, everything worked as
+expected.
+
+::
+
+   $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = 'DBNAME';
+   $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = 'USERNAME';
+   $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user']     = 'PASSWORD';
+
+| 
+| If the error appears on 7.6, check if the port is set.

@@ -1,0 +1,44 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1534710048
+==========================
+
+Exeption is Thrown when click in Backend on Module "Sites"
+==========================================================
+
+after Upgrade from TYPO3 LTS 8 or lower to LTS-9 and imported Database
+from old instance you want to create Your First SITE configuration, but
+get this Exception/CMS/1534710048
+
+Possible Reasons / Solutions
+----------------------------
+
+Missing database Tables
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Solution** : -> goto Admin Tools -> maintanance -> Database Compare
+
+Exception is thrown when trying to edit records in BE
+=====================================================
+
+Error in TCA configuration
+--------------------------
+
+**Solution**: Check if display condition 'displayCond' => 'USER:' .
+\\TYPO3\CMS\Core\Compatibility\PseudoSiteTcaDisplayCondition::class .
+'->isInPseudoSite:pages:false' is used for records. The pseudo site
+check should only be used for pages. Remove or adopt display condition.
+Problem occured for example in tt_address >= 5.0.0, < 5.2.0 for field
+slug.
+
+The error may only occur if you edit specific records as a problem only
+arises if a page(!) with the uid of the record(!) does not exist.
+
+**Extension news or tt_address needs updates**
+----------------------------------------------
+
+Some versions of the extensions news and tt_address can cause this error
+on opening records like sys_category. Updating the extension to the most
+recent Version can help. I had the problem with TYPO3 LTS 9 and news
+8.4.0

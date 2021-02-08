@@ -1,0 +1,26 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1444996537
+==========================
+
+This error happens since TYPO3 7.6 if your extension has defined the TCA
+in the file Configuration/TCA/my_extension_table.php and when
+"'displayCond' => 'EXT:foreign_extension:LOADED:true'" is used.
+
+see `Bug #76958: displayCond LOADED does not check the loaded
+extension <https://forge.typo3.org/issues/76958>`__
+
+You must move the the column with the condition into the folder
+Configuration/TCA/Overrides of your extension (my_extension) or of the
+foreign extension (foreign_extension) or of a third connector extension
+like my_extension_connector. There you must use condition
+
+::
+
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('foreign_extension')) {
+       $temporaryColumns = array (
+         'my_field_for_foreign_extension' => array (
+
+in the file Configuration/TCA/Overrides/my_extension_table.php around
+the part where the column is defined.

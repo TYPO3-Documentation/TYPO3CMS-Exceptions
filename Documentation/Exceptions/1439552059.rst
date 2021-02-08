@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1439552059
+==========================
+
+While updating from 6.2, the Extension Manager in 7.6 threw this error:
+
+The extension "simulatestatic" has invalid version constraints in
+conflicts section. Extension key is missing!
+
+Changing package states or deactivating in LocalConfiguration.php did
+nothing good. As the extensions in my case had to be replaced anyway, I
+deleted their folders from typo3conf/ext/

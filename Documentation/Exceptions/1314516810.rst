@@ -1,0 +1,46 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1314516810
+==========================
+
+Problem
+=======
+
+A logo file is missing when the introduction is installed.
+
+Method 1
+--------
+
+A workaround is to edit the typoscript template on the root page and
+comment the first line //page.logo.file =
+fileadmin/introduction/images/theme/IntroductionPackage.png
+
+Method 2
+--------
+
+Another solution is to go to the web root of your TYPO3 installation
+(e.g. /home/typo3/www/ or /home/typo3/htdocs/) and execute the following
+shell commands which will copy the missing file to where it is supposed
+to be:
+
+mkdir fileadmin/introduction/images/theme/
+
+cp
+typo3conf/ext/introduction/Initialisation/Files/images/theme/IntroductionPackage.png
+fileadmin/introduction/images/theme/
+
+If you see this Exception because of an other reason
+----------------------------------------------------
+
+If you upgrade from older Version to 6.2.x, and click on -> Info Icon of
+an Image that is related to a page/content element and got this
+exception? `see FIX Problems with
+sys_file_storage <typo3-exception-1319455097>`__
+
+What also links to this exception: File /tmpl/layouts/ [myedit: or any other path/filename including \*uppercase\* letters /myedit] does not exist.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+List > New TYPO3 site > File Storage > Configuration > **Uses case
+sensitive identifiers** [if your installation runs on a case sensitive
+file system].

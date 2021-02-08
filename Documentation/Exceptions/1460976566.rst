@@ -1,0 +1,49 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1460976566
+==========================
+
+Misspelled folder name in icon path
+===================================
+
+| I've encoutered the exception that "source" is mandatory during icon
+  rendering.
+| This was because I misspelled a folder name in the icon path using
+  "EXT:...".
+| It could not be resolved and therefor the icon path was empty in the
+  end.
+
+Cache
+=====
+
+Clearing the cache via the install tool fixed the error for me
+
+Other
+=====
+
+i received following exception when i installed the following extensions
+/\* 'svconnector' => [
+
+::
+
+              'packagePath' => 'typo3conf/ext/svconnector/',
+          ],
+          'external_import' => [
+              'packagePath' => 'typo3conf/ext/external_import/',
+          ],*/
+
+I tried to comment out the 2 extensions in PackageStates.php but i still
+i cannot login as administrator.
+
+What must i do ?
+
+Thanks Gerard
+
+---
+
+I had a similar problem with the same error-code but in a local ddev
+server. I used ddev v. 0.18.0 - where the error came out and updated to
+ddev 1.3.0 there the error was gone.
+
+Greetz MonTea

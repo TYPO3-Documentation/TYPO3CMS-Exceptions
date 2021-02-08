@@ -1,0 +1,45 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1263391473
+==========================
+
+News
+====
+
+**Exception in news detail view:**
+
+::
+
+   #1263391473: The property "falMediaNonPreviews" on the subject was not accessible.
+   TYPO3\CMS\Extbase\Reflection\Exception\PropertyNotAccessibleException thrown in file /srv/www/typo3/typo3_src-6.2.3/typo3/sysext/extbase/Classes/Reflection/ObjectAccess.php in line 77.
+
+   TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty(Tx_News_Domain_Model_NewsDefault, "falMediaNonPreviews")
+
+**Solution:**
+
+Ensure that plugin.tx_news.features.rewrittenPropertyMapper is **not**
+set to 0.
+
+Flux
+====
+
+Error:
+
+::
+
+   > The property "options.Fluidcontent.sorting" on the subject was not accessible. 
+
+Reason:
+
+::
+
+   > Form now supports sorting as a global option that can be used by any implementation; previously fluidcontent added its own but can now delegate this to Flux. This means that from now on you should define options="{sorting: 10}" instead of wrapping the sorting value in a scope like {Fluidcontent: {sorting: 10}}.
+   > https://github.com/FluidTYPO3/flux/blob/3840921670676f6ca5a8141bee640eeeb3865708/Documentation/Changelog/7.2.2.md
+
+Solution:
+
+::
+
+   > Hotfix: Comment out line 277 in luidTYPO3\Fluidcontent\Service\ConfigurationService in EXT:fluidcontent 4.4.1 (https://github.com/FluidTYPO3/fluidcontent/issues/376) (not so cool)
+   > Regular fix: Use development branch of EXT:flux (https://github.com/FluidTYPO3/flux/pull/1283)

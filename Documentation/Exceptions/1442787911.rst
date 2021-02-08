@@ -1,0 +1,13 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1442787911
+==========================
+
+#. Solution: delete cache_core files
+
+sudo rm -rf typo3temp/cache/code/cache_core
+
+#. or
+
+sudo rm -rf typo3temp /

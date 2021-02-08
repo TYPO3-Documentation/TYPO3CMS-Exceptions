@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1537633463
+==========================
+
+If you have a problem with an OutOfRangeException with the message "Hash
+not resolvable" this is a bug reported here:
+https://forge.typo3.org/issues/87688

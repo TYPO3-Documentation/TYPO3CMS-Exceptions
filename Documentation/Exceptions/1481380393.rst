@@ -1,0 +1,38 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1481380393
+==========================
+
+Happened for me when I wanted to access backend flexform of one of my
+own extensions after upgrading to TYPO3 8.7 LTS.
+
+Fix: If there's only one display condition, remove all the unnecessary
+stuff from Configuration/FlexForms/FlexformPlugin.xml (or whatever your
+flexform file is named).
+
+Old:
+====
+
+::
+
+     <displayCond>
+
+        <AND>
+
+           <numIndex>FIELD:switchableControllerActions:!=:Event->list</numIndex>
+
+        </AND>
+
+     </displayCond>
+
+New:
+====
+
+::
+
+     <displayCond>
+
+        FIELD:switchableControllerActions:!=:Event->list
+
+     </displayCond>

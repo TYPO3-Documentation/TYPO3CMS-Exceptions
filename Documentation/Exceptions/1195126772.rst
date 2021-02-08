@@ -1,0 +1,67 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1195126772
+==========================
+
+General
+=======
+
+#. Check wether the requested class really implements
+   TYPO3\\CMS\\Backend\\Toolbar\\ToolbarItemHookInterface
+
+Exception on shortcut
+=====================
+
+#. The error might have been caused because the argument to the
+   constructor was not passed by reference as requested by the
+   Interface/Class. In general this causes just a warning but can also
+   lead to serious problems.
+#. There's a bug in PHP 5.5.6+ which causes this Exception:
+   https://forge.typo3.org/issues/53682
+
+I moved Typo3 6.1.6 from a server with php 5.3.15 to one with 5.6.1. It
+is the same code nothing changed in DB or code. Now I get this error
+whenever I want to open backend.
+
+#. 1195126772: $toolbarItem "shortcuts" must implement interface
+   TYPO3\CMS\Backend\Toolbar\ToolbarItemHookInterface (More information)
+
+UnexpectedValueException thrown in file
+/_www/www.example.at/typo3/sysext/backend/Classes/Controller/BackendController.php
+in line 148.
+
+| 
+| Here is the code:
+
+::
+
+          /**
+           * Initializes the core toolbar items
+           *
+           * @return void
+           */
+          protected function initializeCoreToolbarItems() {
+                  $coreToolbarItems = array(
+                          'shortcuts' => 'TYPO3\\CMS\\Backend\\Toolbar\\ShortcutToolbarItem',
+                          'clearCacheActions' => 'TYPO3\\CMS\\Backend\\Toolbar\\ClearCacheToolbarItem',
+                          'liveSearch' => '\\TYPO3\\CMS\\Backend\\Toolbar\\LiveSearchToolbarItem'
+                  );
+                  foreach ($coreToolbarItems as $toolbarItemName => $toolbarItemClassName) {
+                          $toolbarItem = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance($toolbarItemClassName, $this);
+                          if (!$toolbarItem instanceof \TYPO3\CMS\Backend\Toolbar\ToolbarItemHookInterface) {
+                                  'throw new \UnexpectedValueException('$toolbarItem "' . $toolbarItemName . '" must implement interface TYPO3\\CMS\\Backend\''''Bold text
+                          }
+                          if ($toolbarItem->checkAccess()) {
+                                  $this->toolbarItems[$toolbarItemName] = $toolbarItem;
+                          } else {
+                                  unset($toolbarItem);
+                          }
+                  }
+          }
+
+Workaround
+==========
+
+My Backend worked well again after switching to PHP 5.5 -> Don't use PHP
+5.6 until fixed.

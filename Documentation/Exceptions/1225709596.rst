@@ -1,0 +1,25 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1225709596
+==========================
+
+TYPO3 6.2.1
+===========
+
+::
+
+   The template files "/home/.....t3bootstrap/Resources/Private/Layouts/Content", "/home/....t3bootstrap/Resources/Private/Layouts/Content.html" could not be loaded.
+
+Reason
+------
+
+Happend by using Flux 7.0.0
+
+Solution
+^^^^^^^^
+
+None until now
+
+Eventually you haven't include fluidcontent_bootstrap in your template.
+Just include it.

@@ -1,0 +1,16 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294587486
+==========================
+
+TYPO3 9.5.23 and the extension phpmyadmin 5.6.4 result in error message
+
+::
+
+      Session already started by session_start(). Make sure no installed extension is starting a session in its ext_localconf.php or ext_tables.php. 
+
+when logging in to Admin Tools (Maintenance, Settings, Update,
+Environment) in Backend.
+
+Solution: uninstall phpmyadmin, delete cookies, re-login

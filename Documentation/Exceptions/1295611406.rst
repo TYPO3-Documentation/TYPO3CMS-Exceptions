@@ -1,0 +1,8 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1295611406
+==========================
+
+https://twitter.com/s_michaelsen/statuses/243636376648699904 [not
+available anymore]

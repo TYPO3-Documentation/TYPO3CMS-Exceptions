@@ -1,0 +1,25 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1363783884
+==========================
+
+Extension BLSV Sporttabzieche 2013( blsvsa2013)
+===============================================
+
+Error
+-----
+
+::
+
+   #1363783884: Keine Institution zugeordnet (uid: 109019) (More information) 
+
+   Exception thrown in file
+   /www/2013.sportabzeichen-bayern.de/htdocs/typo3conf/ext/blsvsa2013/Classes/Domain/Model/Schulen.php in line 853.
+
+solution
+--------
+
+::
+
+   The debitort needs an Institionartart. Please contact your admin

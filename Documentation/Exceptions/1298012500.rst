@@ -1,0 +1,103 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1298012500
+==========================
+
+Exception message:
+
+::
+
+   #1298012500: Required argument "someRequest" is not set for Vnd\Extname\Controller\SomeController->submitData.
+
+   TYPO3\CMS\Extbase\Mvc\Controller\Exception\RequiredArgumentMissingException thrown in file
+   .../typo3_src/typo3/sysext/extbase/Classes/Mvc/Controller/AbstractController.php in line 430.
+
+This happens when an action method requires a parameter (e.g. domain
+object), but the POST request did not contain those data.
+
+This may happen when the form is submitted without filling any values.
+
+Posted 25. June 2015
+====================
+
+| **PROBLEM**
+| After **successfull** submission of the powermail form, I get this
+  error:
+
+::
+
+   #1298012500: Required argument "mail" is not set. 
+
+::
+
+   Required argument "mail" is not set for In2code\Powermail\Controller\FormController->create.
+
+| 
+| **POSSIBLE CAUSE**
+| My powermail form redirects to a thank you page. The base-url was set
+  to non-www.
+| e.g. config.baseURL = http://domain.tld/ [not available anymore]
+| **SOLUTION**
+| Change
+| config.baseURL = http://domain.tld/ [not available anymore]
+| To
+| config.baseURL = http://**www.**\ domain.tld/
+| See this page for details
+| http://stackoverflow.com/a/31022725
+| **ENVIRONMENT**
+| Typo3, v6.2.13
+| Powermail, v2.4.3
+| realUrl v1.13.3
+| PHP 5.5.x
+| **OTHER THOUGHTS**
+| After form completion, I use a redirect to another page. The redirect
+  is related to config.baseURL. Maybe the error is not happening,
+  without the redirect.
+| **LINKS**
+| http://stackoverflow.com/a/31022725
+| https://forge.typo3.org/issues/66848
+
+Posted earlier from somebody else
+=================================
+
+I got this error message with the extension "powermail"!
+
+After having sent the message I receive an answer site. When I now
+switch the language the erropr arrives:
+
+#. 1298012500: Required argument "form" is not set. (More information)
+
+TYPO3\CMS\Extbase\Mvc\Controller\Exception\RequiredArgumentMissingException
+thrown in file
+/var/www/pathTo/typo3_src-6.2.12/typo3/sysext/extbase/Classes/Mvc/Controller/AbstractController.php
+in line 425.
+
+14
+TYPO3\CMS\Extbase\Mvc\Controller\AbstractController::mapRequestArgumentsToControllerArguments()
+
+| 
+| /var/www/avadis/html/typo3_src-6.2.12/typo3/sysext/extbase/Classes/Mvc/Controller/ActionController.php:
+
+00148: call_user_func(array($this, $actionInitializationMethodName));
+00149: }
+
+00150: $this->mapRequestArgumentsToControllerArguments();
+
+00151: $this->checkRequestHash(); 00152: $this->controllerContext =
+$this->buildControllerContext();
+
+| 
+| 13
+  TYPO3\CMS\Extbase\Mvc\Controller\ActionController::processRequest(TYPO3\CMS\Extbase\Mvc\Web\Request,
+  TYPO3\CMS\Extbase\Mvc\Web\Response)
+
+| 
+| /var/www/avadis/html/typo3_src-6.2.12/typo3/sysext/extbase/Classes/Mvc/Dispatcher.php:
+
+00067: $controller = $this->resolveController($request); 00068: try {
+
+00069: $controller->processRequest($request, $response);
+
+00070: } catch (\TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
+$ignoredException) { 00071: }

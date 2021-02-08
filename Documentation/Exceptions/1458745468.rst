@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1458745468
+==========================
+
+This exception has been introduced together with `exception
+1458745712 <typo3-exception-1458745712>`__, same documentation may apply
+for this one as well.

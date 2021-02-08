@@ -1,0 +1,79 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1278450972
+==========================
+
+#1278450972: The classname "TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Webconsulting\WebconWarndienst\Domain\Model\Location>" was not found and thus can not be reflected.
+============================================================================================================================================================================
+
+This (extbase) error can occur if you have annotated a (controller
+action) method using "@param" but have not given a type hint. If the
+annotation is wrong this error will occur.
+
+Example:
+
+::
+
+    /**
+     * A test action
+     *
+     * @param \MyVendor\MyExtension\Domain\Motel\InvalidName $myVariable
+     */
+    public function testAction($myVariable) {
+
+As you see the @param annotation is wrong. Because you usually have not
+any "Domain\Motel" namespace and there is no type hint for $myVariable
+in the function header.
+
+So either correct the annotation, clear all caches:
+
+::
+
+    /**
+     * A test action
+     *
+     * @param \MyVendor\MyExtension\Domain\Model\ValidName $myVariable
+     */
+    public function testAction($myVariable) {
+
+Or try to add a type hint:
+
+::
+
+    /**
+     * A test action
+     *
+     * @param \MyVendor\MyExtension\Domain\Model\ValidName $myVariable
+     */
+    public function testAction(\MyVendor\MyExtension\Domain\Model\ValidName $myVariable) {
+
+I had a Composer based Installation. And i have to add my ext. to the
+psr4 autoload in copmposer.json:
+
+::
+
+     
+      "autoload": {
+           "psr-4": {
+                   "MyVendor\\MyExtension\\":"web/typo3conf/ext/MyExtension/Classes"
+           }
+       },
+
+#1278450972 TYPO3\CMS\Extbase\Reflection\Exception\UnknownClassException
+========================================================================
+
+**Class Boolean does not exist. Reflection failed.**
+
+::
+
+      at TYPO3\CMS\Extbase\Reflection\ReflectionService->buildClassSchema('Vendorname\\Extensionname\\Domain\\Model\\MyModel')
+
+Got this error because in MyModel was a setter with a wrong typehint, in
+my case it was something like
+
+::
+
+      public function setFreeShipping(\Boolean $freeShipping) 
+
+Solution was to change *\\Boolean* to *bool*.

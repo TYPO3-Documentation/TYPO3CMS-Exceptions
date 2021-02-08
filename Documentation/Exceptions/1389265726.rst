@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1389265726
+==========================
+
+Change the Login URL from
+
+http:// to http\ **s**://

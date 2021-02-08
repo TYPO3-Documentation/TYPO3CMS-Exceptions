@@ -1,0 +1,44 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294585070
+==========================
+
+Password change in "Admin Tools"->Reports
+=========================================
+
+The BE-Page "Admin Tools"->Reports offers a link to change the default
+backend-user (admin, password) if still existent. After saving the
+user-account it seems that the previous page should be loaded, instead
+this error is shown:
+
+Uncaught TYPO3 Exception
+
+1294585070: No module "tools_txreportsM1" could be found.
+
+UnexpectedValueException thrown in file /.../typo3/mod.php in line 55.
+
+Clicking on the link "Admin Tools"->Reports links to the page without
+errors and shows the page correct again.
+
+openid
+======
+
+openid extension has an "Add OpenID" wizard (shown when editing a
+backend user information) that triggers this error in TYPO3 6.2.27 No
+idea how to prevent / fix this.
+
+Backend Module Call with navigationFrameModule by Extbase
+=========================================================
+
+-  TYPO3 Version 6.2.26
+-  @see: https://forge.typo3.org/issues/59369
+
+According to https://forge.typo3.org/issues/59369#note-2 the
+errormessage in the navigation part of the frameModule is:
+
+Uncaught TYPO3 Exception
+
+1294585070: No module "my_Mod" could be found.
+
+UnexpectedValueException thrown in file /.../typo3/mod.php in line 46.

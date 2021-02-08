@@ -1,0 +1,7 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1522960188
+==========================
+
+https://forge.typo3.org/issues/86623

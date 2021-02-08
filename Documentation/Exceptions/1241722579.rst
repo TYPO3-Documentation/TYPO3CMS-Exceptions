@@ -1,0 +1,22 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1241722579
+==========================
+
+Error-Message:
+==============
+
+(1/1) #1241722579 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+
+"@" could not be parsed by \\DateTime constructor:
+DateTime::__construct(): Failed to parse time string (@) at position 0
+(@): Unexpected character
+
+Solution
+========
+
+Adjust usage of viewHelper to respect the requirements.
+
+Cases where it can happen are beside general faults that an extension is
+updated and the templates are outdated.

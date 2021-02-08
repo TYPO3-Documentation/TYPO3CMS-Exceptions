@@ -1,0 +1,7 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1320569854
+==========================
+
+http://lists.typo3.org/pipermail/typo3-dev/2012-July/045668.html

@@ -1,0 +1,11 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1487326416
+==========================
+
+This error happened on deleting content elements. We had several entries
+in table tx_solr_indexqueue_item with "root" pointing to a deleted page.
+Clearing the Index Queue did not delete these entries and not solve the
+problem. Truncating the table and adding all content anew to the queue
+did solve it for me.

@@ -1,0 +1,32 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1353170925
+==========================
+
+The relation information for property "propertyXX" of class "TX\ext_key\Domain\Model\SomeModelYY" is missing.
+=============================================================================================================
+
+If you have a propery in a class SomeModelYY which has another class as
+type
+
+::
+
+          /**
+           * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
+           */
+          protected $propertyXX;
+           
+
+the object will be populated by extbase without any other configuration.
+
+But to make queries like
+
+::
+
+     $query->like("propertyXX.someproperty", '%foo%') 
+
+work, you still have to declare a 'foreign_table' in your TCA.
+
+Also be sure, to have the properties with getter and setter in your
+model.

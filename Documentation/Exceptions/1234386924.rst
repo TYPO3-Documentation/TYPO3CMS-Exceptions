@@ -1,0 +1,130 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1234386924
+==========================
+
+Error-messages:
+===============
+
+#. #1234386924: Cannot create empty instance of the class
+   "TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository" because
+   it does not implement the
+   TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
+#. #1234386924: Cannot create empty instance of the class
+   "TYPO3\CMS\Extbase\Persistence\ObjectStorage" because it does not
+   implement the TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
+
+--`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
+(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+[deprecated wiki link]) 04:19, 11 August 2014 (CEST)
+
+Fix
+===
+
+Assure that all classes in your model-files are defined and annotated
+correctly.
+
+Below is an example for one property of another table:
+
+::
+
+      /**
+        * contact
+        *
+        * @var \Vendor\Extension\Domain\Model\Contact
+        */
+       protected $contact = NULL;
+
+
+       /**
+        * Returns the contact
+        *
+        * @return \Vendor\Extension\Domain\Model\Contact $contact
+        */
+       public function getContact() {
+           return $this->contact;
+       }
+
+       /**
+        * Sets the contact
+        *
+        * @param \Vendor\Extension\Domain\Model\Contact $contact
+        * @return void
+        */
+       public function setContact(\Vendor\Extension\Domain\Model\Contact $contact) {
+           $this->contact = $contact;
+       }
+
+A more complicated example is when records or files are handled by
+ObjectStorage, this is an Object where several items can be stored and
+items can be added and removed from a stack:
+
+::
+
+
+       /**
+        * member
+        *
+        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\Extension\Domain\Model\Member>
+        */
+        protected $member = NULL;
+
+       /**
+        * __construct
+        */
+       public function __construct() {
+           //Do not remove the next line: It would break the functionality
+           $this->initStorageObjects();
+       }
+
+       /**
+        * Initializes all ObjectStorage properties
+        * Do not modify this method!
+        * It will be rewritten on each save in the extension builder
+        * You may modify the constructor of this class instead
+        *
+        * @return void
+        */
+       protected function initStorageObjects() {
+           $this->member = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+       }
+
+       /**
+        * Adds a member
+        *
+        * @param \Vendor\Extension\Domain\Model\Member $member
+        * @return void
+        */
+       public function addMember(\Vendor\Extension\Domain\Model\Member $member) {
+           $this->member->attach($member);
+       }
+
+       /**
+        * Removes a member
+        *
+        * @param $memberToRemove The member to be removed
+        * @return void
+        */
+       public function removeMember(\Vendor\Extension\Domain\Model\Member $memberToRemove) {
+           $this->member->detach($memberToRemove);
+       }
+
+       /**
+        * Returns the member
+        *
+        * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\Extension\Domain\Model\Member> $member
+        */
+       public function getMember() {
+           return $this->member;
+       }
+
+       /**
+        * Sets the member
+        *
+        * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\Extension\Domain\Model\Member> $member
+        * @return void
+        */
+       public function setMember(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $member) {
+           $this->member = $member;
+       }

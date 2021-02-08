@@ -1,0 +1,88 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1237900529
+==========================
+
+News2
+=====
+
+::
+
+   #1237900529: The argument "configuration" was registered with type "array", but is of type "NULL" in view helper "Tx_News2_ViewHelpers_Widget_PaginateViewHelper"
+
+You forgot to include the static template for news2. Open your template
+record and go to Includes-->Include static (from extension). Select news
+v2 (news) from the list and save your template record. Reload you
+frontend page.
+
+Fluid Template
+==============
+
+::
+
+   #1237900529: The argument "arguments" was registered with type "array", but is of type "string" in view helper "Tx_Fluid_ViewHelpers_TranslateViewHelper"
+
+If you've noted something like this:
+
+::
+
+   <f:for each="{newsItem.author}" as="currentAuthor">
+   <f:translate key="author" arguments="{currentAuthor.name}" />
+   </f:for>
+
+you can change writing like this:
+
+::
+
+   <f:for each="{newsItem.author}" as="currentAuthor">
+   <f:translate key="author" arguments="{0: currentAuthor.name}" />
+   </f:for>
+
+Usally for the news-extension this is not the case, but I changed the
+author field to include several records from fe_users. Therefore
+{newsItem.author} is an array and has to be looped. --`David
+bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
+(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+[deprecated wiki link]) 09:33, 12 March 2014 (CET)
+
+<f:for>
+=======
+
+::
+
+   #1237900529: The argument "each" was registered with type "array", but is of type "string" in view helper "TYPO3\CMS\Fluid\ViewHelpers\ForViewHelper"
+
+The above exception is thrown by the following snippet:
+
+::
+
+   <f:for each="{ jobs }" as="job">{job.id}</f:for>
+
+Removing the spaces after { and before } is my solution to the problem:
+
+::
+
+   <f:for each="{jobs}" as="job">{job.id}</f:for>
+
+Please not the discussion at: https://forge.typo3.org/issues/64317
+--`Bernhard
+Schenkenfelder </wiki/index.php?title=User:Bernland&action=edit&redlink=1>`__
+[deprecated wiki link]
+
+<f:form.select>
+===============
+
+::
+
+     <f:form.select options="{
+                               1: 'Bauhauptgewerbe',
+                                  Straßenbauer: '- Straßenbauer'}/>
+
+Replace all special chars like "ß, ä, ö, ü, ..." by english letters.
+
+::
+
+     <f:form.select options="{
+                               1: 'Bauhauptgewerbe',
+                                  Strassenbauer: '- Straßenbauer'}/>

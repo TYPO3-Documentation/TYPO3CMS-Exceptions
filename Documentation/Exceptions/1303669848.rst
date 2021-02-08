@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1303669848
+==========================
+
+Exception message:
+
+::
+
+   #1303669848: The directory "/var/www/site/htdocs/typo3temp/Cache/Code/cache_core/" can not be created.
+
+Probably the directory already exists.
+
+**Why is it tried to create the directory although it already exists?**

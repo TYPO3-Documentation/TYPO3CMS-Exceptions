@@ -1,0 +1,18 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1416391467
+==========================
+
+TYPO3 exception message:
+
+::
+
+   #1416391467: Registered eID has invalid script path.
+
+Make sure the eID registration is either a path to a ``.php`` script, or
+a ``ClassName::methodName``:
+
+::
+
+   $TYPO3_CONF_VARS['FE']['eID_include']['tx_vendor_extname'] = 'Vendor\Extname\Handler::search';

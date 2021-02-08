@@ -1,0 +1,102 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1320286857
+==========================
+
+File-Record-Wizard
+
+--------------
+
+This error occurs e.g. when a file-name contains an umlaut. By removing
+the umlaut this can fix this issue. However, if it doesn't check the
+other posted solutions in this entry.
+
+| 
+| RTE
+
+--------------
+
+I've got this error since some weeks, when I try to create a link to a
+file or folder inside RTE. Links to email or pages work fine. I had that
+problem with 6.2 and now after upgrade also with 7.6.15.
+
+| 
+| I noticed this issue when RTE had an incorrect link:
+
+<link ../fileadmin/user_upload/documents/myhomeplan.pdf>
+
+TYPO3 specifically reported that the file path is incorrect and that
+".." and "//" are not allowed in the begining of file path.
+
+This happened for us after we migrated from 4.5.x to 4.6.x.
+
+Table that was affected: "tt_content"
+
+Field where issue was noticed: "bodytext"
+
+FIX: "remove the invalid character manually using DB"
+
+Other possible places where this issue can be noticed:
+
+-  Can affect: Any table, ex: news, tt_news etc...
+-  Sometimes, we may even get into this situation when the file in
+   question has been renamed/moved/missing.
+
+SOLUTION:
+
+Sadly when this issue happens, RTE failed to load. So, the only option I
+had was to correct the path directly in the DB using "phpmyadmin".
+
+In my case it was "tt_content" table and the field that had isue was
+"bodytext"
+
+RTE// CKEditor with Core v9+
+
+--------------
+
+This issue occurred to me by misusing the "softref" config within the
+bodytext TCA configuration in an override. (in my concrete example)
+
+This Bug behaved like the following with the relevant content in line 1
+of the bodytext editor input:
+
+-  Saving 'test test' -> works
+-  Saving 'testtest' -> error
+-  Saving 'test' -> error
+
+When 'softref' is set to e.g. the 'bodytext' field, the DataHandler
+calls 'updateRefIndexTable' of the ReferenceIndex. The Stacktrace lead
+through the SoftReferenceIndex and its 'getTypoLinkParts' function.
+There the TypoLinkCodecService is calle with '->decode(...)' This
+functionality is used to resolve links, while it splits on spaces This
+is the reason why 'testtest' fails and 'test test' does not. 'testtest'
+gets wrapped with it's p-Tags and results in invalid linkhandling while
+'test test' gets split into '< p > test' which is not correct, but does
+not throw an exception.
+
+| 
+| STudio26
+
+--------------
+
+I got this error when upgrading from 4.5 to 6.2 with the uprade wizard.
+
+I ran a DB check and it solved the prblem for me. I then restarted the
+wizard and could go forward.
+
+Mygoddess
+
+--------------
+
+I also got this error when upgrading from 4.5 to 6.2 (starting from a
+4.3 but not relevent)
+
+In this case I recommend to perform a manual update of the reference
+index in the 4.5 context. Then look in the reference index for
+occurrences of ".." and "//" when @softref_key = 'typolink_tag' AND
+ref_table = '_FILE'@. It will give you the pattern to match. Typical
+patterns are "../fileadmin" or "uploads/tx_extension//filename.ext". The
+first pattern need correction in the original field too. The second
+needs correction in the extension tca. I also encountered links like
+"../?../" path is in deleted state.

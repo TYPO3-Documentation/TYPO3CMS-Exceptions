@@ -1,0 +1,117 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1225709595
+==========================
+
+Exception message:
+
+   #1225709595: The Fluid template files "" could not be loaded.
+
+   TYPO3Fluid\Fluid\View\Exception\InvalidTemplateResourceException
+   thrown in file
+
+   /var/www/site/htdocs/typo3_src/vendor/typo3fluid/fluid/src/View/TemplatePaths.php
+   in line 730.
+
+TYPO3 10+
+=========
+
+I also believe this solution might work for most user of TYPO3 6+,
+though only tested with version 10.4.5.
+
+Solution 1
+----------
+
+If you're using a standalone view, be sure to set the controller
+context. You can then adjust it to your taste if you want to. But at
+least set it for the view to work properly. Including your controller
+context will also cure most of your standalone view problems. The
+controller context already exists in your controller in the
+$this->controllerContext class field (others call it class property).
+All you have to do is include it in the
+*$standaloneView->setControllerContext()* method like so,
+
+| 
+| $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
+
+$standaloneView->setControllerContext($this->controllerContext);
+
+$standaloneView->setTemplatePathAndFilename('EXT:myextention/Resources/Private/Templates/'
+. $this->template);
+
+$standaloneView->assignMultiple($this->settings);
+
+...
+
+Solution 2
+----------
+
+If you are running your view away from the Controllers, then make sure
+to fill in *fillDefaultsByPackageName* with your extension key:
+
+| 
+| $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
+
+$standaloneView->getTemplatePaths()->fillDefaultsByPackageName('myextension');
+
+$standaloneView->setTemplatePathAndFilename('EXT:myextention/Resources/Private/Templates/'
+. $this->template); ...
+
+error message
+=============
+
+#. 1225709595: The template files
+   ".../typo3conf/ext/blsvsa2013/Resources/Private/Partials/Model/Template.html"
+   could not be loaded.
+
+solution
+========
+
+check if the template file exist.
+
+If you set the format of our view manually in the controller like this:
+$this->request->setFormat('xml'); extbase is still looking for a file
+called youraction.html even if it eventually uses youraction.xml so you
+need to create both files, the html file can be empty. I think this is a
+bug and filled a bug report; https://forge.typo3.org/issues/46657
+
+typo3 6.1.7
+===========
+
+typo3conf/ext/fluidpages/Resources/Private/Partials/Exception/1364741158
+usually happening i.e. when you make your own extension from the
+t3bootstrap extension.
+
+This is a problem of fluidpages and can be only solved by editing the
+database manually. You need to delete all references to the former
+extension name with the new extension name. Unfortunately it is not at
+all doing this automatically. Things which were simply not at all needed
+to be done with TemplaVoila now need to be applied by manual access in
+the database. Not a good move towards usability at all.
+
+#. go to i.e. phpmyadmin and do a search for your string (path =
+   extension name)
+#. click on the table and than do a search and replace with your new
+   extension name.
+
+i.e.
+
+-  11 matches in pages (browse and do find replace) - TSCONFIG,
+   tx_fed_page_controller_action, tx_fed_page_controller_action
+-  6 matches in sys_file (browse and do find replace) - identifier
+-  1 match in sys_registry (browse and do find replace) - entry_key
+-  12 matches in sys_template (browse and do find replace) - config,
+   constants, include_static_file
+-  28 matches in tt_content (browse and do find replace) -
+   tx_fed_fcefile
+-  1 match in tx_impexp_presets (delete) -
+-  39 matches in tx_realurl_errorlog (delete)
+
+other error
+===========
+
+The error could be related to his Issue;
+https://github.com/noelboss/Podcast/issues/17
+
+Please report problems here.

@@ -1,0 +1,31 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1195043965
+==========================
+
+Can someone please help me with this problem, which I've got when I
+updated to version Typo3 CMS 6.2 from 5.4.3. Thank You! I appreciate
+your help.
+
+3 TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::start(array,
+"pages")
+
+/home/sbscro/public_html/typo3/sysext/frontend/Classes/Controller/TypoScriptFrontendController.php:
+04247: public function newCObj() { 04248: $this->cObj =
+GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
+04249: $this->cObj->start($this->page, 'pages'); 04250: } 04251:
+
+2 TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController::newCObj()
+
+/home/sbscro/public_html/typo3/sysext/cms/tslib/index_ts.php: 00202:
+\\TYPO3\CMS\Frontend\Page\PageGenerator::pagegenInit(); 00203: // Global
+content object 00204: $TSFE->newCObj(); 00205: // LIBRARY INCLUSION,
+TypoScript 00206: $temp_incFiles =
+\\TYPO3\CMS\Frontend\Page\PageGenerator::getIncFiles();
+
+1 require"/home/sbscro/public_html/typo3/sysext/cms/tslib/index_ts.php")
+
+/home/sbscro/public_html/index.php: 00026:
+->redirectToInstallerIfEssentialConfigurationDoesNotExist(); 00027:
+00028: require(PATH_tslib . 'index_ts.php');

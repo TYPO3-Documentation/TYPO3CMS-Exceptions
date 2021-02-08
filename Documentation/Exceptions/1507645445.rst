@@ -1,0 +1,26 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1507645445
+==========================
+
+**(1/1) #1507645445 RuntimeException** **Line 2: Object Name String,
+"Enables" was not followed by any operator, =<>({**
+
+The file ext_conf_template.php has a RETURN where it is not allowed.
+
+*Wrong*:
+
+::
+
+    # cat=basic/enable/020; type=boolean; label=Activate the feature: 
+    Enables the feature
+    feature = 0
+
+| 
+| *Correct*:
+
+::
+
+    # cat=basic/enable/020; type=boolean; label=Activate the feature: Enables the feature
+    feature = 0

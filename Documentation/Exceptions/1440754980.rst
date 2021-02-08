@@ -1,0 +1,27 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1440754980
+==========================
+
+Exception Message: [module-icon-<something>] The option "source" is required and must not be empty
+==================================================================================================
+
+This happen in 9LTS if you use ExtensionManagementUtility::addModule()
+with 7LTS parameters. Instead of
+
+::
+
+    'labels' => [
+      'tabs_images' => [
+        'tab' => 'EXT:someext/Resources/Public/Images/icon.svg',
+      ],
+      'll_ref' => 'LLL:EXT: someext/Resources/Private/Language/locallang_mod.xml',
+    ]
+
+you need the 8LTS+ parameter type
+
+::
+
+    'icon' => 'EXT: someext/Resources/Public/Icons/icon.svg',
+    'labels' => 'LLL:EXT: someext/Resources/Private/Language/locallang_mod.xml'

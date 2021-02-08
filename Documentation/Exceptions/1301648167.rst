@@ -1,0 +1,55 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1301648167
+==========================
+
+Mountpoints and Shortcut Pages
+==============================
+
+If you have a shortcut page which links to "first subpage" and the first
+subpage is a mountpoint, than you will run into this error.
+
+Do not use "first subpage" if the first visible(!) subpage is a
+mountpage. You can select the mountpage as shortcut target - just do not
+use the automatic functions ("first subpage", "random subpage"...)
+
+There is some info in this bug: https://forge.typo3.org/issues/14351
+
+TYPO3 4.7.4
+
+Realurl and Mountpoints
+=======================
+
+If you use realurl and mountpoints. It seems that RealUrl cannot/does
+not remove the cache entries, if you change a mountpage to a normal
+page. If you got this error, go to the mountpoint itself and remove all
+cacheentries.
+
+TYPO3 4.7.4, realurl 1.12.3
+
+`Maholtz </User:Maholtz>`__ [deprecated wiki link]
+(`talk </User_talk:Maholtz>`__ [deprecated wiki link]) 10:55, 1 October
+2012 (CEST)
+
+addRootLineFields which are not available
+=========================================
+
+If you have set some additional fields in
+*$TYPO3_CONF_VARS['FE']['addRootLineFields']* which not exists in the
+database table *pages*. E.g. You've add realurl related fields in your
+localconf.php, LocalConfiguration.php or ext_localconf.php, but forgot
+to install ext:realurl or just forgot to do a *DB COMPARE*. If you got
+this error, check if you have defined non-existent fields in your
+*$TYPO3_CONF_VARS['FE']['addRootLineFields']* configuration.
+
+TYPO3 CMS
+
+TypoScript PAGE cObject is missing
+==================================
+
+In certain cases, it is possible that this error occurs, when the
+necessary PAGE cObject (e.g. "page = PAGE") isn't available with the
+requested typeNum. Check if your typoscript setup is completely loaded.
+
+TYPO3 CMS

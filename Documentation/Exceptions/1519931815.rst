@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1519931815
+==========================
+
+Unresolved extension-dependencies
+=================================
+
+| 
+| This error might be caused by unresolved extension dependencies.
+| More detailed error-message could be retrieved using extension
+  "typo3_console". Executing following command in
+  typo3/typo3conf/ext/typo3_console:
+| ./typo3cms install:generatepackagestates

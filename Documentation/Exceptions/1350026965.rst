@@ -1,0 +1,12 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1350026965
+==========================
+
+Extension BLSV Sportabzeichen 2013 (blsvsa2013)
+===============================================
+
+There is **no school** with **number=nn** for this user defined in
+**editAction** of **SchulenController**
+(**Tx_Blsvsa2013_Controller_SchulenController**) .

@@ -1,0 +1,14 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1353170711
+==========================
+
+You encounter this Exception because you try to fetch objects from the
+database which most probably do not have a TCA configuration.
+
+Without the TCA configuration Extbase is unable to build the ColumnMap
+correctly.
+
+So please be sure you have a working TCA configuration by using the
+Configuration module in the backend.

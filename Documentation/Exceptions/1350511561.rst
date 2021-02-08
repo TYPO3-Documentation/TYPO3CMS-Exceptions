@@ -1,0 +1,19 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1350511561
+==========================
+
+::
+
+   Use of Markdown requires the "markdown" shell utility to be installed and accessible; this binary could not be found in any of your configured paths available to this script
+
+This happens with the
+`schemaker <https://extensions.typo3.org/extension/schemaker/>`__
+extension.
+
+On Debian, you can install it easily:
+
+::
+
+   $ apt-get install markdown

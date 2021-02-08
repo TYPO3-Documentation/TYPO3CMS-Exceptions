@@ -1,0 +1,12 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1401732564
+==========================
+
+This is an Exception if GIFBUILDER is used in css_styled_content texpic
+renderer or FCE and image is linked
+
+See https://forge.typo3.org/issues/62184
+
+The Bug is has been solved in TYPO3 6.2.12 (and later)

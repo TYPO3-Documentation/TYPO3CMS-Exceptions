@@ -1,0 +1,56 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1317178604
+==========================
+
+--`Infodesign@reinecke.de </wiki/index.php?title=User:Infodesign@reinecke.de&action=edit&redlink=1>`__
+[deprecated wiki link]
+(`talk </wiki/index.php?title=User_talk:Infodesign@reinecke.de&action=edit&redlink=1>`__
+[deprecated wiki link]) 07:00, 30 July 2013 (CEST)
+
+Typo3 CMS 6.1.2 filelist/fileadmin error while uploading a file again which has been deleted earlier in the same folder
+=======================================================================================================================
+
+| Having deleted a specific file before at the fileadmin it´s not
+  possible to upload the same file again without error "No file found
+  for given UID.".
+| You can´t open the fileadmin folder containing the file once again
+  uploaded afterwards. Same error message.
+| My operating system (Ubuntu) tells me that the file has been uploaded
+  successfully.
+| At the sys_file table the misbehaving file´s entry shows "deleted = 1"
+  before and after upload.
+| Starting a scheduler task for removing the fileadmin´s garbage
+  collection won´t help, neither after deletion nor after upload.
+| I don´t know how to force the removal of such an incriminating
+  sys_file entry by any normal Typo3 function.
+| My Solution: Deleting the sys_file entry of that file via phpMyadmin.
+| This is forcing Typo3 fileadmin to create a new sys_file entry with a
+  different uid. Now the folder and it´s content are available again.
+| Don´t know, whether this is the right place for a bug report -
+  hopefully!
+| Edit: Related to `Bug #50508 <https://forge.typo3.org/issues/50508>`__
+
+TYPO3 CMS 6.2.x - happened when a tt_news entry had an non-existing image in the bodytext
+=========================================================================================
+
+For some reason the preview did still exist and was shown in BE when
+editing the news record. But in FE this lead to the exception, because
+the sys_file record was not there anymore.
+
+EXT:solr + EXT:solrfal
+======================
+
+The exception happened when initializing fileadmin/ queue. File record
+was missing in sys_file but existed in sys_file_reference and
+sys_file_processedfile. The following SQL helped:
+
+delete from sys_file_reference where uid_local not in (select uid from
+sys_file); truncate sys_file_processedfile;
+
+Also the exception happened when there are non-existing files for
+indexing in tx_solr_indexqueue_file and the tecords are not deleted with
+"Clear Index Queue" for unkown reason. So this SQL helped:
+
+truncate tx_solr_indexqueue_file;

@@ -1,0 +1,34 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1294586441
+==========================
+
+Hallo, der Fehler trat auf als ich das Template innerhalb des Setups
+bearbeiten wollte. Ein Speichern der Änderungen ist leider nicht möglich
+und bringt die folgende Fehlermeldung:
+
+Oops, an error occurred! "EXT:wt_spamshield/static/settings/setup.txt"
+is not a valid file location. More information regarding this error
+might be available online.
+
+Diese Fehlermeldung kam mit deaktiverter Erweiterung spamshield.
+
+Mit aktivierter Spamshield-Erweiterung kommt diese Fehlermeldung:
+
+Oops, an error occurred! "EXT:wt_spamshield/static/settings/setup.txt"
+is not writable. More information regarding this error might be
+available online.
+
+Online liefert es mir einen Pfad, den ich in der akutellen Installation
+tpyo3 6.1.7 nicht finden kann
+(`typo3-exception-1294586442 <typo3-exception-1294586442>`__):
+
+Template is not writeable Happens when your filepermissions (Unix) are
+not correct if you include TypoScript from a file and try to edit it in
+the backend. Solution: Change filepermissions to make the file writeable
+by the webserver, ie. chgrp www-data fileadmin/templates/typoscript.txt
+&& chmod g+w www-data
+
+Woran liegt nun der Fehler, der mich daran hindert das Typoscript des
+Templates zu verändern? Viele Grüße Josef

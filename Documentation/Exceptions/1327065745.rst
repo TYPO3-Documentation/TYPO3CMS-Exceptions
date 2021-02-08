@@ -1,0 +1,54 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1327065745
+==========================
+
+Problem:
+========
+
+Uncaught TYPO3 Exception: #1327065745: Unsupported or non-existing
+property name "categories" used in relation matching.
+
+Cause:
+======
+
+Caching TCA information changed in v8.
+
+Solution:
+=========
+
+From the core `API
+docs <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/Categories/Index.html#making-a-table-categorizable>`__:
+
+The second way is to call
+\\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable().
+This method adds a new entry into the registry managed by
+\\TYPO3\CMS\Core\Category\CategoryRegistry. The registry will take care
+of adding the relevant $TCA definition to create a field for making
+relations to the system categories. The call to **makeCategorizable()
+must be located in an extension's Configuration/TCA/Overrides folder**
+(or ext_tables.php file before TYPO3 CMS 6.2.1).
+
+.. _problem-1:
+
+Problem:
+========
+
+Uncaught TYPO3 Exception: #1327065745: Unsupported or non-existing
+property name "<propertyName>" used in relation matching.
+
+.. _cause-1:
+
+Cause:
+======
+
+Use of 1:1 relation in domain model but querying it as a n:m relation.
+
+.. _solution-1:
+
+Solution:
+=========
+
+The query must use equals() for 1:1 relation. If you use contains()
+extbase will expects a 1:n or n:m relation.

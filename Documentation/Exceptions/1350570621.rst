@@ -1,0 +1,10 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1350570621
+==========================
+
+::
+
+   #1350570621: Cannot process task of type "Image.foo"
+   InvalidArgumentException thrown in file typo3/sysext/core/Classes/Resource/Processing/LocalImageProcessor.php in line 61.

@@ -1,0 +1,27 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1381847136
+==========================
+
+#1381847136: Could not determine the current charset of the database.
+=====================================================================
+
+Did you update MySQL last time and this exception occurred? First verify
+if MySQL can check the charsets by running SQL in some GUI:
+
+::
+
+   SHOW SESSION VARIABLES LIKE 'character_set%';
+
+If it show's you the error like **Table
+'performance_schema.session_variables' doesn't exist** you can try to
+fix it by the console command:
+
+::
+
+   mysql_upgrade -u root -p --force
+
+(restart MySQL after all)
+
+reference: http://stackoverflow.com/q/31967527/1066240

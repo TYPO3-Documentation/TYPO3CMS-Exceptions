@@ -1,0 +1,156 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1318283565
+==========================
+
+Package: TYPO3
+
+Subpackage: rsaauth
+
+Versions: 1.2.0 -
+
+Class: tx_rsaauth_loginformhook
+
+Method: getLoginFormTag()
+
+Author: Steffen Gebert
+
+Message: No OpenSSL backend could be obtained for rsaauth.
+
+Description: Login into TYPO3 is not possible anymore, as no OpenSSL
+backend for rsaauth is available.
+
+Solutions
+=========
+
+-  Activate and configure (on Windows) the PHP module openssl
+-  Configure rsaauth to use the openssl executable inside localconf.php
+
+   -  Set $TYPO3_CONF_VARS['SYS']['binSetup'] to the executable. E.g.
+      'openssl=C:/ ... /openssl.exe'
+   -  If your path to openssl.exe contains blanks, make sure to quote
+      the openssl parameter, e.g. 'openssl="C:/ ... /openssl.exe"'
+
+-  Set $TYPO3_CONF_VARS[TYPO3_mode]['loginSecurityLevel'] to 'normal'
+   instead of 'rsa' (replace TYPO3_mode with BE or FE) and set the hash
+   of your user account's password to the md5 hashed value of your
+   password. This way you can at least access your installation. Please
+   be aware that this is a bad idea and disabling
+   rsaauth/saltedpasswords results in all your passwords being unusable,
+   until openssl is available.
+
+Windows 7 and Xampp
+-------------------
+
+Assuming you installed Xampp into C:\xampp:
+
+-  Activate the PHP module openssl in C:\xampp\php\php.ini. Look for
+   this line:
+
+::
+
+    ;extension=php_openssl.dll
+
+-  Load fileinfo module as well. Look for this line and uncomment it:
+
+::
+
+    ;extension=php_fileinfo.dll
+
+-  Add an environment variable "OPENSSL_CONF" with value
+   C:\xampp\apache\conf\openssl.cnf. Press "Win + PAUSE" to go to the
+   System window. In the left sidebar are the system settings.
+-  Either set $TYPO3_CONF_VARS['SYS']['binSetup'] to
+   'openssl=C:\xampp\apache\bin\openssl.exe' or append
+   C:\xampp\apache\bin to the environment variable PATH (will work for
+   every PHP script not only TYPO3)
+
+   -  If your path to openssl.exe contains blanks, make sure to quote
+      the openssl parameter, e.g. 'openssl="C:/ ... /openssl.exe"'
+
+-  Restart Apache
+-  If Apache won't start, deactivate the apache ssl module (php has its
+   own) in C:\xampp\apache\conf\httpd.conf like so:
+
+::
+
+    #LoadModule ssl_module modules/mod_ssl.so
+
+and near the end of the file:
+
+::
+
+    #Include conf/extra/httpd-ssl.conf
+
+-  Copy "libeay32.ddl" and "ssleay32.dll" from C:\xampp\php\\ to
+   C:\xampp\apache\bin\\
+
+Helpful links (German)
+^^^^^^^^^^^^^^^^^^^^^^
+
+-  http://blog.joergboesche.de/xampp-1-7-7-apachephp-openssl-modul-workaround-gegen-abstuerze
+-  http://praxistipps.chip.de/typo3-lokal-unter-windows-installieren-so-gehts_33260
+
+Helpful links (English)
+^^^^^^^^^^^^^^^^^^^^^^^
+
+-  http://stackoverflow.com/questions/24140956/xampp-3-2-1-and-typo3-6-2-openssl-not-working
+
+Solution for Windows 10 with XAMPP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I have a 64-bit Windows 10 laptop upon which I installed XAMPP and TYPO3
+v8.7.10. For days I struggled with the following message during TYPO3
+install cited as a catastrophic failure under "System Environment"
+evaluations:
+
+PHP OpenSSL extension not working Something went wrong while trying to
+create a new private key for testing. Please check the integration of
+the PHP OpenSSL extension and if it is installed correctly.
+
+Finally, after trying all kind of OpenSSL-related installation
+verifications, I found a solution at this link ...
+https://stackoverflow.com/questions/4719939/xampp-openssl-errors-when-calling-openssl-pkey-new?rq=1
+...
+
+At the bottom it said; "...start apache using the xampp/apache_start.bat
+NOT THE XAMPP CONTROL PANEL (its strange that when started from the
+control panel it doesn't work [maybe a current directory problem])".
+
+After launching apache with xampp/apache_start.bat, I could launch
+everything else (esp. MySQL) using the XAMPP Control Panel, which did
+detect Apache was already running. Next, I returned to TYPO3 8.7.10
+install checks, and the OpenSSL problem was gone!
+
+I do not know what is the difference (directory spec or what?) between
+XAMPP Control Panel and xampp/apache_start.bat.
+
+Debian Squeeze/Wheezy
+---------------------
+
+| Got error after installation of Redmine on Debian (amd64).
+| Typo3 is version : 6.1.0.
+| I upgraded to version 6.1.5 trying to solve my pb.
+| apt-get didn't want to reinstall package openssl (says "unable to find
+  source package").
+| Solution came when i installed it manually with dpkg -i from :
+| http://ftp.us.debian.org/debian/pool/main/o/openssl/openssl_0.9.8o-4squeeze14_amd64.deb
+  [not available anymore]
+| Which was the version i needed.
+| Hope it helps.
+
+| Alternative solution for error "PHP OpenSSL extension not working:
+  Something went wrong while trying to create a new private key for
+  testing ..." on Debian Wheezy using PHP 5.5 FPM with login spinning
+  forever after updating Typo3 to 6.2.11: Setting 'loginSecurityLevel'
+  => 'normal' in LocalConfiguration helped temporarily for the login
+  issue, but real "solution" was to give everyone read rights on
+  /etc/ssl/openssl.cnf as this seems to be needed by PHP's
+  openssl_pkey_new():
+| chmod a+r /etc/ssl/openssl.cnf
+
+::
+
+   I got this error when i had the directory /etc/ssl owned by root and no read access for www-data (apache2)
+   Ron [deprecated wiki link]

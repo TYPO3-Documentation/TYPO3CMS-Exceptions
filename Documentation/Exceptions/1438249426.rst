@@ -1,0 +1,13 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1438249426
+==========================
+
+Default language record with id X not found in table Y while editing record Z
+=============================================================================
+
+This message is a result of an data inconsistency. This happens if the
+translation parent in default language was deleted without deleting the
+translation that was edited currently. Please contact your support for
+further help.

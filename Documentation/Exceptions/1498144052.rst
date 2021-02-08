@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1498144052
+==========================
+
+A new installations of T3 v8.7.4 (Aug 2017). Installed 'media' extension
+successfully but using it gives error message, "Parameter $extensionName
+cannot be empty if a fully-qualified key is not specified."
+
+Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1498144052:
+Parameter $extensionName cannot be empty if a fully-qualified key is not
+specified. \| InvalidArgumentException thrown in file
+C:\inetpub\typo3_src-8.7.4\typo3\sysext\extbase\Classes\Utility\LocalizationUtility.php
+in line 88.

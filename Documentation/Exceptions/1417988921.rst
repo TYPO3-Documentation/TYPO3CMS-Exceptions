@@ -1,0 +1,55 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1417988921
+==========================
+
+Workaround
+==========
+
+Create your first page in the List-tab. Afterwards it will work in the
+Page-tab too. Copied from this german thread:
+https://forum.typo3.org/index.php/t/210486/
+
+Other Workaround, which applies for 7.4.0:
+
+-  Export (to .t3d) a single leaf page from another TYPO3 CMS instance
+   (mine was 6.2)
+-  Right click root element in page tree => Import from .t3d (I imported
+   only page properties)
+-  Now I can append other pages to that page by using the "New"
+   operation (which failed before)
+-  I can even add pages (with "New" to the root element which did not
+   work before.
+
+Still, none of my pages is tagged as "Use as Root Page" in page
+properties/"Behaviour" => It does not have to do with "Root Page".
+Instead, at least one page must exist to get rid of the Bug (as a
+workaround).
+
+Limitation: When I delete all pages in the page tree, and then try to
+right-click-"New" => I hit the error again. Basically this means that
+this workaround only works as long as you don't delete all pages.
+
+See https://forge.typo3.org/issues/66704. When there is a fix available
+and released, an update should do.
+
+| --`An0ther-adm1n </wiki/index.php?title=User:An0ther-adm1n&action=edit&redlink=1>`__
+  [deprecated wiki link]
+  (`talk </wiki/index.php?title=User_talk:An0ther-adm1n&action=edit&redlink=1>`__
+  [deprecated wiki link]) 14:20, 15 November 2015 (CET)
+| system: FAMP (10.2 / 2.4 / 5.6 / 5.6)
+| typo3: 7.4.0
+| none of the above worked for me:
+
+-  it's ignoring the input, and drops a log
+-  Attempt to insert record on page '[root-level]' (0) where this table,
+   tt_content, is not allowed (msg#1.1.11)
+
+-  the form is opened, but when saving ajax flashes a red div that says:
+-  SQL error: 'Incorrect integer value: *for column 'content_from_pid'
+   at row 1' (pages:NEW56488561b8cf49.40165590)*
+
+-  use the drag & drop menu in the upper left to create new pages by
+   dragging to the page tree
+-  But is like before: I only can create pages by drag and drop

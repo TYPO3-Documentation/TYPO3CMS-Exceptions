@@ -1,0 +1,19 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1343464101
+==========================
+
+Error message
+=============
+
+::
+
+   #1343464101: Broken rootline. Could not resolve page with uid 333.
+
+=====
+Cause
+=====
+
+-  Workspace page preview link is opened to a page that has not been
+   published yet (only exists in workspace)

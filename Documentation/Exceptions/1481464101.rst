@@ -1,0 +1,37 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1481464101
+==========================
+
+The cause of this error is the flexform file itself. Especially when
+plugin options are defined under display conditions within <AND> clause.
+
+::
+
+   <settings.subtitle_align>
+        <TCEforms>
+            <label>Subtitle Alignment</label>
+              <displayCond>
+                <AND>
+                  FIELD:settings.subtitle:!=:0
+                </AND>
+              </displayCond>
+          .......
+   </settings.subtitle_align>
+
+If there is only a single condition, please avoid <AND> and get rid of
+the exception.
+
+::
+
+   <settings.subtitle_align>
+        <TCEforms>
+            <label>Subtitle Alignment</label>
+              <displayCond>
+                  FIELD:settings.subtitle:!=:0
+              </displayCond>
+          .......
+   </settings.subtitle_align>
+
+SOLVED !!!

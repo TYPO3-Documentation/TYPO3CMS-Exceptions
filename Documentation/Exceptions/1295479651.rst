@@ -1,0 +1,38 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1295479651
+==========================
+
+#1295479651: The default action can not be determined for controller
+"Foo". Please check
+TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin() in your
+ext_localconf.php.
+
+This may happen if the third parameter to
+``\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin()`` is
+wrong.
+
+Invalid:
+
+.. container::
+
+   ::
+
+      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+          $_EXTKEY, 'Foo',
+          array('Foo' => array('show')),
+          array()
+      );
+
+Valid:
+
+.. container::
+
+   ::
+
+      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+          $_EXTKEY, 'Foo',
+          array('Foo' => 'show'),
+          array()
+      );

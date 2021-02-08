@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1278155987
+==========================
+
+Check the XML-File announced, if it is well formated with an
+XML-Validator. Occurs when a tag name is not well closed (example :
+<label></labe>).
+
+This error might also occur if the file has the wrong encoding. Try to
+use UTF-8 (without BOM). If the file is a language file, also check all
+other language versions. For example, if the error is shown for
+locallang_db.xlf, in fact, the error might be caused by
+de.locallang_db.xlf.

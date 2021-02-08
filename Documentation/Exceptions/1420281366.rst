@@ -1,0 +1,27 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1420281366
+==========================
+
+Hi,
+
+The problem was in sys_dmail_group.php. This file is under the folder
+directory 'typo3conf/ext/direct_mail/Configuration/TCA/'.
+
+In this file, under 'select_categories' => , you could find
+'itemsProcFunc' => wrongly defined with slashes.
+
+Replace,
+
+'itemsProcFunc' =>
+'\DirectMailTeam\DirectMail\SelectCategories->get_localized_categories',
+
+by
+
+'itemsProcFunc' =>
+'DirectMailTeam\\DirectMail\\SelectCategories->get_localized_categories',
+
+Don't forget to clear cache. Now it will work ;-)
+
+Cheers, Alagu

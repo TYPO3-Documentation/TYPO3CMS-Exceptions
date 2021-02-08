@@ -1,0 +1,93 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1251315967
+==========================
+
+This Exception rose in one installation(TYPO3 4.6.9-15) after changing
+direction of relations in the extension_builder between two models after
+having already inserted some entries to the list-view in the backend.
+
+Deleting the files *typo3conf/temp_CACHED_\** and truncating the
+caching-framework-tables beginning with *cf\_* helped for
+`me </wiki/index.php?title=User:Swagner&action=edit&redlink=1>`__
+[deprecated wiki link].
+
+// Additional Situations, observed in TYPO3 6.1.2, Extbase 6 This
+exception is also thrown when, in the course of development: - a
+variable is changed, e.g. from CamelCase to non-CamelCase:
+
+::
+
+      protected $pressReview
+      protected $pressreview
+
+- a variable annotation is changed, e.g. from CamelCase to
+Non-CamelCase:
+
+::
+
+      /**
+       * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
+       */
+     
+      /**
+       * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
+       */
+
+(Working in the files directly, not using the Extension_builder
+[anymore]) In `my </wiki/index.php?title=User&action=edit&redlink=1>`__
+[not available anymore] case, the truncating of the cf_-tables was
+sufficient.
+
+extension_builder bug
+=====================
+
+In another case, this occurred in the extension builder v6.2.0 after the
+modification of an extension via the extension builder to add a new
+model object and relate it in a 1:n relation. The previously created
+model, which was meant to hold a set (n) of the new model, was missing
+the new model in the new dependency injections. The code generated was
+missing the new model's extbase path.
+
+To fix this:
+
+-  Find all sections where the new model path is missing and add it
+
+   -  e.g. from \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<> to
+      \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<\{VendorName}\{Ext}\Domain\Model\{NewModel}>
+      in the protected variable
+   -  in the get/set/add/edit functions in the body, e.g. the 'add'
+      function
+
+::
+
+     /**
+     * Adds a {newModel}
+     *
+     * @param ${newModel}
+     * @return void
+     */
+     
+      Change to 
+     
+     /**
+     * Adds a {newModel}
+      *
+     * @param \{VendorName}\{Ext}\Domain\Model\{NewModel} ${newModel}
+     * @return void
+     */
+
+-  
+
+   -  Clear Typo3 Caches
+   -  Delete typo3temp/\*
+   -  As stated before, truncating the cf_-tables was needed before the
+      error stopped.
+
+| 
+| May also be caused by incorrectly formatted comments - a missing \* on
+  the first line (only having one star) will stop the parser finding the
+  definitions.
+
+The error occurs also if you have missing annotation in your model.

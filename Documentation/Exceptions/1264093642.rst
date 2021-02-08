@@ -1,0 +1,39 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1264093642
+==========================
+
+error with use-statement in annotaions
+======================================
+
+#. 1264093642: Found an invalid element type declaration in %s. Type
+   "ObjectStorage" must not have an element type hint
+   (vendor\yourExtension\Domain\Model\yourModel)
+
+solution
+========
+
+| in annotations use statement does'nt work
+
+use
+
+::
+
+    use TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    ....
+    /**
+    * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\vendor\yourExtension\Domain\Model\yourModel
+    * ...
+    */
+
+instead off
+
+::
+
+    use TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    ....
+    /**
+    * @var ObjectStorage<\vendor\yourExtension\Domain\Model\yourModel>
+    * ...
+    */

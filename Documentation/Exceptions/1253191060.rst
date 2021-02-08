@@ -1,0 +1,32 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1253191060
+==========================
+
+**Exception 1253191060**
+
+> Could not get image resource for
+"/var/www/path-to-nonexisting-file/vhs-pdf-dummy.pdf-page1.png".
+
+A ViewHelper tries to load an non-existing image.
+
+The exception is thrown in VHS package
+(vhs/Classes/ViewHelpers/Media/Image/AbstractImageViewHelper.php &
+vhs/Classes/ViewHelpers/Resource/AbstractImageViewHelper.php)
+
+Try the find the Content Element with the missing file and replace it.
+
+Edit: Sometimes a ViewHelper tries to generate an image and pass it to
+the image ViewHelper. In my case the
+»vhs/Classes/ViewHelpers/Media/PdfThumbnailViewHelper.php« Class tried
+to generate a file in »'typo3temp/assets/vhs-pdf-' . $filename . '-page'
+. $page . '.png'«. Due to false access right it was not able to save the
+file, passed it to the Image ViewHelper which then raised the exception.
+
+Note: The core ViewHelpers f:image and f:uri.image used to behave the
+same. However they don't throw exceptions for missing images anymore.
+See https://forge.typo3.org/issues/71686
+
+Note II: Exceptions may be ignored via TypoScript:
+https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.0/Feature-47919-CatchContentRenderingExceptions.html

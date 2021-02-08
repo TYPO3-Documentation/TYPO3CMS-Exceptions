@@ -1,0 +1,28 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1270853882
+==========================
+
+Message
+   TYPO3 Fatal Error: No database selected!
+Problem
+   ``typo3conf/LocalConfiguration.php`` misses the ``DB/database`` key.
+
+If you've just updated to TYPO3 8.7, you most probably are missing new
+configuration in your AdditionalConfiguration.php file. In 8.7 the
+structure of the db connection configuration has changed.
+
+Something like that will work in AdditionalConfiguration.php:
+
+.. container::
+
+   ::
+
+      $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = 'dbname';
+      $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = '127.0.0.1';
+      $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = 'username';
+      $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = 'passwordtodb';
+
+Read more here:
+https://docs.typo3.org/typo3cms/CoreApiReference/8.7/ApiOverview/Database/Configuration/Index.html

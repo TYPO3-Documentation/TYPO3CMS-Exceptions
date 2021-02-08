@@ -1,0 +1,42 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1256475113
+==========================
+
+It appeared when hitting 'add new site configuration for this site' in
+the site configuration. Before I had installed the 'Launch TYPO3
+Responsive!' preconfigured distribution, then I had entered a page for
+an additional site and then installed the 'The official Introduction
+Package'. It happens at any of the three sites.
+
+This problem may happen as well when opening the Backend module
+"reports" and is actually related to the use of an extended Fluid syntax
+like this:
+
+::
+
+   <a href="{be:moduleLink(route:'system_reports',arguments:{action:'detail', extension:extensionKey, report:reportName})}">
+
+In some versions of PHP, there is a PCRE bug with the underlying
+``readline`` library:
+https://github.com/TYPO3/Fluid/commit/865890c3cffaf8d5f6aa44295d42a84a103895ec
+
+A possible fix (for the example above) is to enclose the array arguments
+with single quotes like that:
+
+::
+
+   <a href="{be:moduleLink(route:'system_reports',arguments:'{action:\'detail\', extension:extensionKey, report:reportName}')}">
+
+This effectively forces Fluid to extract the content of the single
+quotes with a simpler regular expression instead of a recursive one.
+
+Another possible cause of this error may be a PHP-configuration problem:
+PHP 7.3.14:
+
+::
+
+   pcre.jit = 1
+
+jit (Just in time compiler) had to be enabled in my installation.

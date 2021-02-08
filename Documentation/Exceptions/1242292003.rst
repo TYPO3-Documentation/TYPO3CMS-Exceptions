@@ -1,0 +1,35 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1242292003
+==========================
+
+This exception is thrown in extbase extensions if doc header is
+incorrect or if you use some PHP optimizer like eAccelerator because
+these optimizers remove the comments, extbase needs to determine the
+data type.
+
+::
+
+   #1242292003: could not determine type of argument "section" of the render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper". 
+   Either the methods docComment is invalid or some PHP optimizer strips off comments.
+
+**Solution:**
+
+#. check doc header, it must start with /*\* (two stars).
+#. attribute must be mentioned as @param type $variableName.
+#. alternatively use $this->registerArgument() in initializeArguments()
+   method.
+#. compile eAccelerator with option
+   "--with-eaccelerator-doc-comment-inclusion": "If you want
+   eAccelerator to retain doc-comments in internal php structures"
+   (eAccelerator help)
+#. use another PHP optimizer. I use xCache on Debian Squeeze which seems
+   to work fine.
+#. using the opcode cache of modern PHP versions, you can set
+   opcache.save_comments=1 and opcache.load_comments=1.
+
+Links:
+
+-  `eAccelerator <http://eaccelerator.net/>`__
+-  `xCache <http://xcache.lighttpd.net/>`__ [not available anymore]

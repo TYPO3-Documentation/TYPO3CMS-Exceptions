@@ -1,0 +1,72 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1540246570
+==========================
+
+It happens when i create a content element of type Plugin and forget to
+choose the specific Plugin from the tab 'Plug-in'
+
+--------------
+
+Occures if you pass the wrong pluginType to
+TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)
+
+You have removed Typoscript by Conditon ?
+=========================================
+
+f.e. you have used this:
+
+::
+
+     [globalVar = TSFE:id = {$noLoginPluginOnPids}]
+
+lib.login >
+
+::
+
+     [global]
+
+This will lead to this Exception since TYPO3 LTS 9 if you usw something
+like the next line in your Fluid Template <f:cObject
+typoscriptObjectPath="lib.login" />
+
+Solution
+--------
+
+change typoscript to:
+
+::
+
+     [globalVar = TSFE:id = {$noLoginPluginOnPids}]
+
+lib.login =
+
+::
+
+     [global]
+
+Exception is thrown in a fluid template using a view helper
+===========================================================
+
+reason code like this:
+
+::
+
+       <mmf:post.helpfulButton post="{post}" title="{f:translate(key:'Button_Helpful' )}"> 
+
+IF translation Key is not found in LLL File, leads to this "misleading"
+error message
+
+.. _solution-1:
+
+Solution
+========
+
+add a default Text and also FIX LLL language File
+
+or add path to lll File:
+
+::
+
+      <mmf:post.helpfulButton post="{post}" title="{f:translate(key:'LLL:EXT:yourExtension/Resources/Private/Language/locallang.xmlButton_Helpful')}">

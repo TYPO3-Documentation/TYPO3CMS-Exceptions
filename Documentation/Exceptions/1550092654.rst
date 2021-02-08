@@ -1,0 +1,9 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1550092654
+==========================
+
+Uncaught TYPO3 Exception #1550092654: A registered extension for the
+service "backend.routes" requires the service to be available, which is
+missing.

@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1301648975
+==========================
+
+GIVEN: - TYPO3 CMS Version 6.2.1 - No Pages in PageTree
+
+Calling up the FE: you will encounter this Error.
+
+Solution: - Add a Page - Add a TS-Template within this page.
+
+It can also be due to wrong domain name.
+
+hth G

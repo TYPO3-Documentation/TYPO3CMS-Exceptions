@@ -1,0 +1,22 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1420480928
+==========================
+
+**RealURL is not able to find the root page id for the given domain**
+
+RealURL searches in the sys_domain table for a domain with matches the
+current host. It would then detect the PID of the domain record and
+hence get the rootpage of the domain.
+
+If this exception is thrown, than
+
+-  either no domain record exists for the current domain (solution: add
+   domain record)
+-  or a proxy modifies the host of the request and realurl cant find it
+   (solution: check what realurl uses to match a domain, check for
+   proxies, maybe add a domainrecord)
+-  or RealURL cant handle ports in the domain (eg: localhost:8023 -
+   currently no other solution than switching to a host without ports or
+   overwrite the ConfigurationReader class)

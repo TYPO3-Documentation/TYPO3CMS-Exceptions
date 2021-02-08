@@ -1,0 +1,110 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1458745712
+==========================
+
+Exception message
+=================
+
+Invalid flex form data structure on field name "pi_flexform" with
+element "..." in section container "section": Nesting sections in
+container elements sections is not allowed.
+
+Background
+==========
+
+Support for editing/creating nested flex form section containers has
+been blocked in TYPO3 7.4.5 due to issues in data consistency and
+component handling (`commit
+27ac159 <https://git.typo3.org/Packages/TYPO3.CMS.git/commit/27ac1594dbd23417d055934dc5981bb3c6f13ba4>`__).
+See `Core bug report #73125 <https://forge.typo3.org/issues/73125>`__.
+
+Nested sections in Flux aka "Fluid Powered TYPO3"
+=================================================
+
+Nesting sections could be thought of as "repeaters" inside "repeaters",
+such as for a FCE which contained a dynamic list of contacts with
+another dynamic list of phone numbers inside. Blockage of nested
+sections in TYPO3 Core means that Flux isn't able to support these data
+structures any more if TYPO3 7.4.5 or higher is being used.
+
+A request for a flag to circumvent the blockage when Flux is being used
+has been made but was rejected (see `TYPO3 Core bug report #76281 on
+Forge <https://forge.typo3.org/issues/76281>`__, "Change 47369 killed
+features in flux").
+
+Flux developers stated that it was only meant to abstract core's API for
+flex forms, thus support for nested sections was only available because
+it was in Core. No workarounds will be implemented by "Fluid Powered
+TYPO3" (i.e. neither flux or fluidcontent) and the Core exception will
+not be caught (see `flux issue 1139 on
+GitHub <https://github.com/FluidTYPO3/flux/issues/1139>`__, "Nesting
+sections in container elements sections is not allowed.").
+
+Impact
+------
+
+Previously created FCEs with nested sections can still be read (and
+rendered), disabled/enabled, copied and deleted, but no longer be fully
+edited in backend until all nested sections have been removed from the
+FCE's Configuration section. Attempting to enter the edit view for a FCE
+with such a structure now generally fails with the above exception being
+displayed. Previously entered nested data seems to survive saving in BE
+even after the data structure has been modified, but the absence of a
+clean-up of such invalid data cannot be guaranteed for all times.
+
+Workarounds
+-----------
+
+Using nested FCEs (containers/grid) instead
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Most times it's possible to split affected FCEs into one or more
+container FCEs to contain special FCEs only meant for use inside these
+containers.
+
+For example, if you had a structure such as:
+
+-  FCE "Contacts"
+
+   -  Section/object "Person"
+
+      -  Field "Name" => "John Doe"
+      -  Section/object "Number"
+
+         -  Field "Type" => "Phone"
+         -  Field "Number" => "12345"
+
+      -  Section/object "Number"
+
+         -  Field "Type" => "Fax"
+         -  Field "Number" => "54321"
+
+   -  Section/object "Person"
+
+      -  ...
+
+You could split it so that you get:
+
+-  FCE "Contacts Container"
+
+   -  Grid column "Contacts"
+
+      -  FCE "Contact Person"
+
+         -  Field "Name" => "John Doe"
+
+            -  Section/object "Number"
+
+               -  Field "Type" => "Phone"
+               -  Field "Number" => "12345"
+
+            -  Section/object "Number"
+
+               -  Field "Type" => "Fax"
+               -  Field "Number" => "54321"
+
+      -  FCE "Contact Person"
+
+         -  ...

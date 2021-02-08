@@ -1,0 +1,21 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1264678095
+==========================
+
+Error-Message:
+
+#. 1264678095: The "in" operator must be given a multivalued operand
+   (array, ArrayAccess, Traversable). (More information)
+
+TYPO3\CMS\Extbase\Persistence\Generic\Exception\UnexpectedTypeException
+thrown in file
+...\typo3\sysext\extbase\Classes\Persistence\Generic\Query.php in line
+490.
+
+29 TYPO3\CMS\Extbase\Persistence\Generic\Query::in("authors", "6")
+
+--`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
+(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+[deprecated wiki link]) 00:41, 15 August 2014 (CEST)

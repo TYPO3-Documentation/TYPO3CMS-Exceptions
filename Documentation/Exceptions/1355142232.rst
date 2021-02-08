@@ -1,0 +1,16 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1355142232
+==========================
+
+TYPO3 10+
+=========
+
+Note: Could work with lesser versions.
+
+What this simply says is that you don't have such a field/property with
+that spelling in your model for the table you are querying. Perhaps you
+are using the exact spelling found in your table. You should instead use
+the spelling in your model. Cross-check that you have such a field in
+your model.

@@ -1,0 +1,47 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1297933823
+==========================
+
+Uncaught TYPO3 Exception: #1297933823: Object with identity "1234" not
+found.
+
+Error like that is thrown when you have an Extbase plugin on a page with
+a "single view" action, and the object with id 1234 can not be
+retreived. E.g. because it is hidden or deleted.
+
+Example for **TYPO3 8.7**:
+
+::
+
+     /**
+       * @param \TYPO3\CMS\Extbase\Mvc\RequestInterface $request
+       * @param \TYPO3\CMS\Extbase\Mvc\ResponseInterface $response
+       * @throws \Exception|\TYPO3\CMS\Extbase\Property\Exception
+       */
+      public function processRequest(\TYPO3\CMS\Extbase\Mvc\RequestInterface $request, \TYPO3\CMS\Extbase\Mvc\ResponseInterface $response)
+      {
+          try {
+              parent::processRequest($request, $response);
+          }
+          catch(\TYPO3\CMS\Extbase\Property\Exception\TargetNotFoundException $e) {
+              if ($e instanceof \TYPO3\CMS\Extbase\Property\Exception\TargetNotFoundException) {
+                  $GLOBALS['TSFE']->pageNotFoundAndExit('The given id could not be mapped to an object.');
+              } else {
+                  throw $e;
+              }
+          }
+      }
+
+| 
+| In **TYPO3 9.5**, you can switch out the (now deprecated)
+  pageNotfoundAndExit()-code with this:
+
+::
+
+      return GeneralUtility::makeInstance(ErrorController::class)->pageNotFoundAction(
+        $this->request,
+        'The requested page does not exist',
+        ['code' => PageAccessFailureReasons::PAGE_NOT_FOUND]
+      );

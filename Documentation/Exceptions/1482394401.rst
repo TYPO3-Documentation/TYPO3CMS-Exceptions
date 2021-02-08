@@ -1,0 +1,38 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1482394401
+==========================
+
+| **Missing "type" in TCA of field
+  "['dummyTable']['dummyField']['config']**
+
+| Enabling in the Form plugin the "Override finisher settings" option
+  may display this error for misconfigured form finishers.
+| Comment out one finisher at a time in the form definition file
+  (*.form.yaml) to find the culprit.
+
+| 
+| **TCEforms flexform** The error message only gives an example table
+  name and table field, because due to some migration to real names are
+  not used in this error message. So you have to do some guesswork from
+  which extension this error comes from. Check the flexform file
+  flexform_ds.xml (or another name) of the TYPO3 extension if there are
+  TCEforms entries. In the child pair config a type must have been
+  defined.
+
+Example:
+
+::
+
+    <config>
+      <form_type>user</form_type>
+      <userFunc><![CDATA[EXT:myextension/lib/class.tx_myextension_tceFunc.php:&tx_myextension_tceFunc->getCheckbox]]></userFunc>
+      <checked>0</checked>
+    </config>
+
+You must use the type instead:
+
+::
+
+      <type>user</type>

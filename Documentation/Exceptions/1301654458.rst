@@ -1,0 +1,11 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1301654458
+==========================
+
+**Parser for plain old PHP array is not yet implemented.**
+
+Check your system for extensions that still use the old format for
+language resources (locallang.php). Remove them or update them to xml
+format.

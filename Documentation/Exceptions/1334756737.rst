@@ -1,0 +1,22 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1334756737
+==========================
+
+A cache file could not be written.
+
+-  Check your quota.
+-  Check if filesystem is full.
+
+Troubleshooting: Log on to the console or ftp as the user that runs php
+and try to create the file. Add some text to the file so it has more
+than 0 bytes.
+
+I had this problem with an installation today. The solution was to grant
+owner rights for the directorys: typo3conf, typo3temp, fileadmin and
+uploads to PHP-User. Don't know if this ist spacial for my provider but
+it seems to work at the moment.
+
+The problem can also occur when there is not enough space on hard disk.
+Try to expand the hard disk drive or delete some unnecessary files.

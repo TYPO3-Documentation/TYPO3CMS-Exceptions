@@ -1,0 +1,52 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1376683066
+==========================
+
+::
+
+   Uncaught TYPO3 Exception #1376683066: The slot method JambageCom\TtProducts\Slots\DatabaseRecordListSlots->addValuesToCsvRow() returned a different number (2) of arguments, than it received (1). (More information)
+
+| 
+| This happens if a signal slot method is used to extend an extension or
+  TYPO3.
+
+::
+
+   TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotReturnException thrown in file
+    /var/www/html/typo3_src-7.6.16/typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php in line 147.
+    17 TYPO3\CMS\Extbase\SignalSlot\Dispatcher::dispatch("JambageCom\DbList\RecordList\DatabaseRecordList", "beforeSetCsvRow", array)
+
+The signal is called with a paramter *array($csvRow)*:
+
+::
+
+   $this->signalSlotDispatcher->dispatch(__CLASS__, 'beforeSetCsvRow', array($csvRow));
+
+However the according slot method returns only *$csvRow*
+
+::
+
+   class DatabaseRecordListSlots
+   {
+     public function addValuesToCsvRow($csvRow)
+     {
+       $csvRow['neu'] = 128;
+       return $csvRow;
+     }
+   }
+
+The slot must return the same array of arguments as the dispatcher
+signal has used before.
+
+::
+
+   class DatabaseRecordListSlots
+   {
+     public function addValuesToCsvRow($csvRow)
+     {
+       $csvRow['neu'] = 128;
+       return array($csvRow);
+     }
+   }

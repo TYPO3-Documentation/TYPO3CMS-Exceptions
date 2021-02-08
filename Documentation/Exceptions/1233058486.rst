@@ -1,0 +1,59 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1233058486
+==========================
+
+Invalid chars in identifier for the cache-instance
+==================================================
+
+Remove or replace the invalid characters from your identifier.
+
+Interface: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+----------------------------------------------------------
+
+::
+
+      const PATTERN_ENTRYIDENTIFIER = '/^[a-zA-Z0-9_%\\-&]{1,250}$/';
+
+Abstract Class: TYPO3\CMS\Core\Cache\Frontend\AbstractFrontend
+--------------------------------------------------------------
+
+::
+
+      public function isValidEntryIdentifier($identifier) {
+          return preg_match(self::PATTERN_ENTRYIDENTIFIER, $identifier) === 1;
+      }
+
+file ext_autoload.php
+---------------------
+
+An invalid character in the file ext_autoload.php causes this error
+message.
+
+::
+
+      return array(
+       'Agency\\TtProductsAgency\\Hooks\\Marker;'
+       => $extensionPath . 'Classes/Hooks/Marker.php',
+      );
+
+Here a semicolon is wrong at "Marker;". The error message invents a
+class name of its own. It does not exist anywhere: ..._hooks_marker
+
+::
+
+      'Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1233058486: 
+      \"agency_ttproductsagency_hooks_marker;\" is not a valid cache entry identifier. 
+      | InvalidArgumentException thrown in file 
+      /usr/www/users/myuser/typo3_src-6.2.14/typo3/sysext/core/Classes
+      /Cache/Frontend/AbstractFrontend.php in line 85. Requested URL:
+
+EXT:be_acl :: Version 1.7.3 and above
+-------------------------------------
+
+From version 1.7.3 on the cache identifier includes the
+"usergroup_cached_list" of the backend user object. If there are too
+many usergroups in the list, the string of the cache identifier gets
+longer than 250 characters. So the validation fails. (See also the
+constant in the first paragraph).

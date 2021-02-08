@@ -1,0 +1,53 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1439288036
+==========================
+
+"An item in field XXXXX of table YYYYY is not an array as expected"
+
+This happens in TYPO3 7.6 if there is a incompatible 'items' TCA
+definition in the according field like
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      'items' => [
+          '0' => '-'
+      ]
+
+or
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      'items' => ['-']
+
+This has to be replaced with a correct item definition like
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      'items' => [
+          ['-', 0]
+      ]
+
+https://docs.typo3.org/typo3cms/TCAReference/7.6/Reference/Columns/Select/Index.html#items

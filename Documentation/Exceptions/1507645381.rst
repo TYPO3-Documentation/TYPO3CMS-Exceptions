@@ -1,0 +1,70 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1507645381
+==========================
+
+Exception 1507645381 \\RuntimeException
+=======================================
+
+Reason 1: Cause of Error: BOM in ext_conf_template.txt
+======================================================
+
+This exception got thrown in TYPO3 9.5.5, when the ext_conf_template.txt
+file contained a BOM (byte order mark) character at beginning of the
+file and the Extension Configuration was fetched using the
+ExtensionConfiguration API.
+
+Error message
+-------------
+
+::
+
+      #1507645381 RuntimeException
+      Line 0: Object Name String, "﻿#" contains invalid character "�". Must be alphanumeric or one of: "_:-\."
+
+Show if file contains BOM
+-------------------------
+
+Linux: In the shell:
+
+::
+
+      # file ext_conf_template.txt*
+        ext_conf_template.txt:              UTF-8 Unicode (with BOM) text
+
+Fix error
+---------
+
+Fix, see these resources:
+
+-  in shell:
+   https://unix.stackexchange.com/questions/381230/how-can-i-remove-the-bom-from-a-utf-8-file
+-  in PhpStorm: Use File > Remove BOM, see
+   https://intellij-support.jetbrains.com/hc/en-us/community/posts/207041775-How-do-I-stop-PHPStorm-7-0-131-374-from-adding-a-BOM
+
+Reason 2: Cause of Error: incorrect setting in own exteension ext_conf_template.txt
+===================================================================================
+
+This exception got thrown in TYPO3 9.5.5, when the ext_conf_template.txt
+file containing a value and the = sign is missing and the Extension
+Configuration was fetched using the ExtensionConfiguration API.
+
+.. _error-message-1:
+
+Error message
+-------------
+
+::
+
+      #1507645417 RuntimeException
+      Line xxx: Object Name String, "﻿valueInExtConf" was not followed by any operator, =<>({
+
+.. _fix-error-1:
+
+Fix error
+---------
+
+Search for a file ext_conf_template.txt in your extensions containing
+the string from abvoe ( in this example "valueInExtConf") and add the
+missing =

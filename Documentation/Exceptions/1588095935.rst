@@ -1,0 +1,26 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1588095935
+==========================
+
+I got the error message
+
+::
+
+   #1588095935 TYPO3\CMS\Core\Http\Security\MissingReferrerException
+   Missing referrer for /main 
+
+when I logged in into the backend or install tool after updating from
+TYPO3 9.5.16 to 9.5.20. The error was caused by the feature
+"security.backend.enforceReferrer" which was introduced in 9.5.17(?) and
+is enabled by default. I edited my LocalConfiguration.php by hand and
+inserted
+
+::
+
+   'SYS' => [
+           'features' => [
+               'security.backend.enforceReferrer' => false,
+           ],
+   ]

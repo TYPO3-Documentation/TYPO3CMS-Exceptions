@@ -1,0 +1,11 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1314226805
+==========================
+
+#. 1314226805: Property "crop" was not found in file reference or
+   original file
+
+Happens if the field is missing in database. Go to Database Analyzer in
+Install Tool and add the field.

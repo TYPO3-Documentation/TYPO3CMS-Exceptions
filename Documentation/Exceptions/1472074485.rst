@@ -1,0 +1,20 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1472074485
+==========================
+
+Unknown column 'tx_myext_domain_model_myfield.' in 'order clause'
+=================================================================
+
+There's no 'foreign_sorting' set in TCA. For me it happened with an
+Inline type.
+
+Table 'my_db.tx_myext_domain_model_myfield' doesn't exist
+=========================================================
+
+When you have mapped a relation to an external model in your extension,
+but forgot to define the mapping in Typoscript
+
+Table 'my_db.tx_myext_persistence_objectstorage' doesn't exist
+--------------------------------------------------------------

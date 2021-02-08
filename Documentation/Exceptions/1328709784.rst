@@ -1,0 +1,18 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1328709784
+==========================
+
+1328709784: The finisher preset identified by "xxx" could not be found,
+or the implementationClassName was not specified.
+
+This error is related to EXT:form
+
+You probably added a custom finisher to your current form configuration
+yaml file, but forgot to register the finisher in base config of your
+form setup.
+
+Please ensure that you add your newly created form finisher to config
+section:
+**prototypes.standard.formElementsDefinition:finishersDefinition**

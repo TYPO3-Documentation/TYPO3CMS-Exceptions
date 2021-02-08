@@ -1,0 +1,71 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1437750231
+==========================
+
+Exception message:
+
+#1437750231: The way registering a wizard in TCA has changed in 6.2 and
+was removed in CMS 7. Please set module[name]=module_name instead of
+using script=path/to/script.php in your TCA
+
+Source:
+
+\\InvalidArgumentException thrown in
+TYPO3\CMS\Backend\Form\Element\AbstractFormElement::renderWizards()
+
+Breaking-Rst:
+
+https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.0/Breaking-59659-DeprecatedCodeRemovalInBackendSysext.html
+
+Solution:
+
+Check and adapt TCA and Flexforms.
+
+For TCA replace
+
+::
+
+   'script' => 'browse_links.php?mode=wizard&act=file'
+
+with
+
+::
+
+   'module' => array(
+       'name' => 'wizard_element_browser',
+       'urlParameters' => array(
+           'mode' => 'wizard',
+           'act' => 'file'
+       )
+   )
+
+For Flexforms replace
+
+::
+
+   <script>browse_links.php?mode=wizard&act=file</script>
+
+with
+
+::
+
+   <module type="array">
+       <name>wizard_element_browser</name>
+       <urlParameters type="array">
+           <mode>wizard</mode>
+           <act>file</act>
+       </urlParameters>
+   </module>
+
+| 
+| For 'wizard_add.php', 'wizard_edit.php', 'wizard_list.php',
+  'wizard_rte.php', the module names stay the same as the old php files
+  name, for instance:
+
+::
+
+   'module' => array(
+       'name' => 'wizard_add',
+   ),

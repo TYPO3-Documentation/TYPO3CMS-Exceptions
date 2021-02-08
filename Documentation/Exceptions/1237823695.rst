@@ -1,0 +1,155 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1237823695
+==========================
+
+General
+=======
+
+`Register arguments of
+viewhelpers <https://docs.typo3.org/typo3cms/ExtbaseFluidBook/8-Fluid/8-developing-a-custom-viewhelper.html#register-arguments-of-viewhelpers>`__
+describes how to register own Arguments for viewHelpers. Never denying
+that I might have made a fault I never had success with the simple
+notation by using several parameters in the render-function. I succeeded
+with the solution to register the arguments in the function
+initializeArguments() which is automatically called if present in the
+viewHelper. --`David bruchmann </User:David_bruchmann>`__ [deprecated
+wiki link]
+(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+[deprecated wiki link]) 01:07, 2 March 2015 (CET)
+
+PHPStorm
+========
+
+The error shown is “Argument "xmlns:f" was not registered”.
+
+PHPStorm sometimes adds a xmlns attribute to the very first tag in a
+Fluid Template, if you use auto completion (eg. type in »f:comm« and hit
+enter to autocomplete to »<f:comment></f:comment>«). If the first tag in
+your template happens to be a Fluid tag, then the Fluid parser will
+throw the execption, that »xmlns« is in fact not a valid attribute of
+the current Fluid tag.
+
+Issue on Forge: https://forge.typo3.org/issues/56481
+
+Solution 1 - Remove the attribute
+---------------------------------
+
+Just remove the wrong xmlns attribute from your Fluid tag
+
+````
+
+::
+
+   Wrong (xmlns isnt a valid attribute for this tag): 
+   <f:layout name="Page/Homepage" xmlns:f="http://www.w3.org/1999/html"/>
+
+   Right:
+   <f:layout name="Page/Homepage" />
+
+Solution 2 - Register the namespace
+-----------------------------------
+
+PHPStorm needs to know about the fluid namespace, then it will not add
+those attributes by itself anymore. Wrap your template into a DIV like
+this:
+
+````
+
+::
+
+   <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+        xmlns:f="https://typo3.org/ns/fluid/ViewHelpers"
+   >
+
+       <!-- Fluid goes here -->
+
+   </div>
+
+See
+http://buzz.typo3.org/teams/extbase/article/howto-autocompletion-for-fluid-in-phpstorm/
+&
+https://fluidtypo3.org/documentation/templating-manual/appendix/fluid-autocompletion.html
+
+Fluid 6.1 select ViewHelper
+===========================
+
+``Argument "prependContent" was not registered``
+
+``<f:form.select name="formtype" options="{formtype}" optionLabelField="title" prependContent="TRUE">``
+
+``<option value="0">--please choose--</option>``
+
+``</f:form.select>``
+
+-  prependContent="TRUE" should be available since 6.1
+   https://forge.typo3.org/issues/26595
+-  No documented solution yet
+
+EXT:news
+========
+
+If you get this problem in the "**news**" extensions, it might be linked
+to the viewhelper => "hsc". Try with the original template form the
+extension.
+
+EXT:roq_newsevent
+=================
+
+After update of roq_newsevent, (or for no apparent reason) the error
+appears in relation with roq_newsevent template :
+/Partials/EventList/item.html
+
+The viewhelper linking to single view have to be updated :
+
+Original version : <e:link newsItem="{newsItem}" settings="{settings}"
+action="eventDetail">{newsItem.title}</e:link>
+
+Updated and working version : <n:link newsItem="{newsItem}"
+settings="{settings}">{newsItem.title}</n:link>
+
+See on TYPO3 Forge here : https://forge.typo3.org/issues/53921
+
+Upgrade to TYPO3 7.6.2
+======================
+
+The Extension Manager does not work and gives this error message. ````
+
+````
+
+::
+
+   Uncaught TYPO3 Exception
+   #1237823695: Argument "jQueryNamespace" was not registered. (More information)
+   TYPO3\CMS\Fluid\Core\Parser\Exception thrown in file
+   /var/www/html/developer/typo3_src-7.6.2/typo3/sysext/fluid/Classes/Core/Parser /TemplateParser.php in line 604.
+   19 TYPO3\CMS\Fluid\Core\Parser \TemplateParser::abortIfUnregisteredArgumentsExist(array, array)
+   /var/www/html/developer/typo3_src-7.6.2/typo3/sysext/fluid/Classes/Core/Parser/TemplateParser.php:
+   00563:         // The following three checks are only done *in an uncached template*, and not needed anymore in the cached version
+   00564:         $expectedViewHelperArguments = $viewHelper->prepareArguments();
+   00565:         $this->abortIfUnregisteredArgumentsExist($expectedViewHelperArguments, $argumentsObjectTree);
+   00566:           $this->abortIfRequiredArgumentsAreMissing($expectedViewHelperArguments, $argumentsObjectTree);
+   00567:         $this->rewriteBooleanNodesInArgumentsObjectTree($expectedViewHelperArguments, $argumentsObjectTree);
+
+````
+
+```` Solution: Start the Install Tool and press the button "Clear all
+cache".
+
+Removal of deprecated code in sysext fluid
+==========================================
+
+See `Breaking: #53542 - Removal of deprecated code in sysext
+fluid <https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.0/Breaking-53542-DeprecatedCodeRemovalInFluid.html>`__
+
+For example: f:be.container arguments
+
+Error *Argument "addCssFile" was not registered*
+
+Use *includeCssFiles* instead of *addCssFile* and adapt value from
+string to array
+
+``addCssFile="{f:uri.resource(path:'Css/backend.css')}"``
+
+``includeCssFiles="{0:'{f:uri.resource(path:\'Css/backend.css\')}'}"``

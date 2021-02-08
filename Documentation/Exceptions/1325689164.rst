@@ -1,0 +1,23 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1325689164
+==========================
+
+**Case 1:**
+
+This happened when i added a filemount 4:GoedZorgen which got the number
+8: (4: = fileadmin/user_upload ; 8: = fileadmin/user_upload/GoedZorgen)
+
+and then added a media file to a content element using this filemount 8:
+
+and then deleted the filemount number 8:
+
+**Case 2:**
+
+A file storage with an unreachable base path has been tried to access.
+This might happen after importing a database.
+
+Check the filemount entries with the list module.
+
+Are the folder paths in the field "base path" correct?

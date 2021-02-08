@@ -1,0 +1,295 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1247602160
+==========================
+
+Tx_Extbase_Persistence_Storage_Exception_SqlError
+=================================================
+
+Tables or Fields missing, database needs to be updated
+------------------------------------------------------
+
+::
+
+   #1247602160: Unknown column 'tx_yourext_domain_model_yourmodel.sorting' ...
+
+Make sure the Database tables are up to date. Go to the Extensionmanager
+and deactivate and activate the Extension (Typo3 6.0) or choose
+"Database Update" in the detail-view of an extension. Alternatively you
+can use the install-Tools "Database Analyser" to update all table
+definitions, choose "Update required tables COMPARE".
+
+Model mapping incorrect or missing
+----------------------------------
+
+.. container::
+
+   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
+   wiki link]
+
+.. container::
+
+   ::
+
+       --#1247602160: Table 'my_database.tx_extendpages_domain_model_page' doesn't exist:
+       SELECT tx_extendpages_domain_model_page.* FROM tx_extendpages_domain_model_page
+       WHERE tx_extendpages_domain_model_page.uid = '56' LIMIT 1
+
+can happen if you didn't map the table and model via TypoScript.
+
+To solve this problem map the model to the corresponding database table
+name. The syntax for the upper example is the following:
+
+.. container::
+
+   `TS
+   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      plugin.tx_extendpages.persistence.classes.Tx_Extendpages_Domain_Model_Page.mapping.tableName = pages
+
+'tx_extbase_domain_model_backenduser' doesn't exist
+===================================================
+
+.. container::
+
+   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
+   wiki link]
+
+.. container::
+
+   ::
+
+      --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist: 
+      SELECT tx_extbase_domain_model_backenduser.* 
+      FROM tx_extbase_domain_model_backenduser 
+      WHERE tx_extbase_domain_model_backenduser.uid = '1' 
+      LIMIT 1
+
+| 
+| See also: https://forge.typo3.org/issues/51234
+
+Adding this code to the TypoScript, on **all pages where is_siteroot is
+set**, seems to solve this issue:
+
+.. container::
+
+   `TS
+   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      config.tx_extbase.persistence.classes {
+          TYPO3\CMS\Beuser\Domain\Model\BackendUser {
+              mapping {
+                  tableName = be_users
+                  columns {
+                      allowed_languages.mapOnProperty = allowedLanguages
+                      file_mountpoints.mapOnProperty = fileMountPoints
+                      db_mountpoints.mapOnProperty = dbMountPoints
+                      usergroup.mapOnProperty = backendUserGroups
+                  }
+              }
+          }
+          TYPO3\CMS\Beuser\Domain\Model\BackendUserGroup {
+              mapping {
+                  tableName = be_groups
+                  columns {
+                      subgroup.mapOnProperty = subGroups
+                  }
+              }
+          }
+      }
+
+'tx_staticinfotables_domain_model_language' doesn't exist
+=========================================================
+
+::
+
+   Oops, an error occurred!
+   Table '[DB_NAME.tx_staticinfotables_domain_model_language' doesn't exist.
+   More information regarding this error might be available online.
+
+No good solution found so far, will report in if solution is found.
+
+Temporary solution would be to create table with 608 empty records, to
+be able to create and edit records in backend on page [0],
+
+otherwise TYPo3 will display error message and you can not edit anything
+on page [0].
+
+.. container::
+
+   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
+   wiki link]
+
+.. container::
+
+   ::
+
+      CREATE TABLE `tx_staticinfotables_domain_model_language` (
+        `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `constructed_language` varchar(255) DEFAULT NULL,
+        `sacred_language` varchar(255) DEFAULT NULL,
+        `iso_code_a2` varchar(5) DEFAULT NULL,
+        `country_iso_code_a2` varchar(5) DEFAULT NULL,
+        PRIMARY KEY (`uid`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+Try inserting the extbase mapping typoscript in the setup of your
+General Record Storage Page:
+
+::
+
+   <INCLUDE_TYPOSCRIPT: source="FILE:EXT:static_info_tables/Configuration/TypoScript/Extbase/setup.txt">
+
+'tx_srlanguagemenu_domain_model_systemlanguage' doesn't exist
+=============================================================
+
+This occurs when the sr_language_menu extension is installed, but not
+configured right.
+
+Please make sure, that you include the "Language Menu Setup
+(sr_language_menu)" in
+
+Templates->Edit the whole template record->Includes: Language Menu Setup
+(sr_language_menu)!
+
+Secondly take a look a the static info tables extension and make sure
+that you have installed the infotables for all required languages!
+
+'tx_news_domain_model_filereference' doesn't exist
+==================================================
+
+See https://forge.typo3.org/issues/58925 and
+https://forge.typo3.org/issues/58784 I actually had the current version
+already (merging an upgraded dev instance with the live site), but I had
+to include the static templates and clear all caches, also truncate cf\_
+tables manually. Now it works.
+
+MySQL max_allowed_packet
+========================
+
+If only one Plugin/Site stops with "MySQL server has gone away" and all
+other are working..
+
+Increase the MySQL max_allowed_packet value.
+
+Powermail 2 formconverter: Unknown column 'fs.class' in 'field list'
+====================================================================
+
+Error encountered using formconverter after updating powermail from
+v1.4.x. Intermediate versions (1.6 to 2.0?) used to have field "class"
+in tables "tx_powermail_fieldsets" and "tx_powermail_fields". Add it
+manually to both tables, and formconverter will work (remove fields via
+DB COMPARE when done):
+
+.. container::
+
+   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
+   wiki link]
+
+.. container::
+
+   ::
+
+      alter table tx_powermail_fieldsets add column class text NOT NULL;
+      alter table tx_powermail_fields add column class text NOT NULL;
+
+sf_register Thows error with activated static_info_tables
+=========================================================
+
+With TYPO3 CMS 7.6.4 , sf_register 6.2.7 together with
+static_info_tables 6.3.9: Error in Mysql Request: newar "? and
+deleted=0" when the registerform tries generating the Country Zone
+Dropdown Problem is the
+\\typo3conf\ext\sf_register\Classes\Domain\Repository\StaticCountryZoneRepository.php
+function findAllByIso2 ->
+
+changing :
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $query->statement("SELECT * FROM static_country_zones WHERE zn_country_iso_2 = ? AND deleted = 0" , array($iso2) );
+
+to
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $query->statement("SELECT * FROM static_country_zones WHERE zn_country_iso_2 = '" . $iso2 . "' AND deleted = 0" );
+
+helped as quick solution. As normally the query->statement() should
+replace the Questionmark with $iso2 i am not sure why this is needed.
+
+Alternative solution is to use DB abstraction with following code:
+
+.. container::
+
+   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   [deprecated wiki link]
+
+.. container::
+
+   ::
+
+      $query->matching($query->equals('zn_country_iso_2', $iso2));
+
+Related `issue <https://github.com/evoWeb/sf_register/issues/13>`__ at
+sf_register bugtracker.
+
+Related `issue <https://forge.typo3.org/issues/67375>`__ at TYPO3
+bugtracker.
+
+SQL Mode not compatible
+=======================
+
+In some cases the query is okay, but not compatible with the current
+sql_mode of the MySQL Database.
+
+Check your sql_mode
+
+.. container::
+
+   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
+   wiki link]
+
+.. container::
+
+   ::
+
+      mysql> SELECT @@sql_mode;
+      +-------------------------------------------------------------------------------------------------------------------------------------------+
+      | @@sql_mode                                                                                                                                |
+      +-------------------------------------------------------------------------------------------------------------------------------------------+
+      | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
+      +-------------------------------------------------------------------------------------------------------------------------------------------+
+      1 row in set (0,00 sec)
+
+Try to remove some of these modes in »/etc/mysql/my.conf«
+
+::
+
+   > [mysqld]
+   > sql_mode=NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION

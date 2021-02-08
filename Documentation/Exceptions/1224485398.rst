@@ -1,0 +1,44 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1224485398
+==========================
+
+error message
+=============
+
+::
+
+   #1224485398: Templating tags not properly nested. Expected: TYPO3\CMS\Fluid\ViewHelpers\Link\ExternalViewHelper;
+
+   Actual: TYPO3\CMS\Fluid\ViewHelpers\Link\UriViewHelper 
+
+This error is triggered when the parser is finding that tags are not
+properly nested. Consult the manual for the correct nesting
+possibilities.
+
+solution
+========
+
+::
+
+   You have to close the viewhelper in template, for example:
+
+   <f:link.external ..>   needs      </f:link.external>
+
+*Hint*: Most of the time this error will be triggered if you forget to
+correctly close a single tag with a slash. (e.g. you need to use
+<f:example /> not <f:example>)
+
+Fault in viewHelper
+-------------------
+
+If a viewHelper is not properly programmed, any arguments might break
+templates. It's important to register all arguments properly to get the
+templates parsed correct. To test any viewHelper, remove any arguments
+in the fluid-template to check if the nesting is recognized right then.
+The error-message is misleading in this case because the reason is not
+related to the notation in the template but to faults in the viewHelper.
+--`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
+(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+[deprecated wiki link]) 01:16, 2 March 2015 (CET)

@@ -1,0 +1,39 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1338996122
+==========================
+
+Error Message:
+
+::
+
+      #1338996122: Package "typo3-realurl" is already registered. 
+
+Solution 1:
+
+This happens after I accidently installed a backup version of an
+extension: realurl.2.1.7. Then it does not help to set this extension
+inactive in the file typo3conf/PackageStates.php. You must remove the
+whole configuration part for this extension from
+typo3conf/PackageStates.php:
+
+::
+
+          'realurl.2.1.7' => [
+              'composerName' => 'dmitryd/typo3-realurl',
+              'state' => 'inactive',
+              'packagePath' => 'typo3conf/ext/realurl.2.1.7/',
+              'suggestions' => [],
+          ],
+
+Solution 2:
+
+Another package uses the same name in its »composer.json« file. Even if
+»composer mode« is not enabled and the composer file is just copied, it
+will cause the TYPO3 Package Manager to throw the correct exception.
+This may happen if you copy an extension, e.g. from
+»typo3conf/ext/acme« to »typo3conf/ext/acme.old«. Just search the
+filesystem for any other instances of the same package name and rename
+one of them. Attention: Composer files allow aliases for package names
+in the »replace« section, catch them as well.

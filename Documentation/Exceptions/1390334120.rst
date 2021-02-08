@@ -1,0 +1,15 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1390334120
+==========================
+
+I'm getting this error frequently when installing and uninstalling
+extensions, running the DBAL etc, in TYPO3 6.2.6. It seems to have
+started when I (unsuccessfully) installed the extension 'uncache'. Also,
+one of the very few references to this exception is linked to uncache:
+https://forum.typo3.org/index.php/t/206055/
+
+UPDATE: I cleared all caches, and uninstalled uncache previously, but
+the error kept popping up. Then I deleted uncache, and truncated the
+cache\_ and cf_tables manually. Looks better now, I hope.
