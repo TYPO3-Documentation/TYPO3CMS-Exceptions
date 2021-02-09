@@ -12,7 +12,7 @@ TYPO3 Exception 1316104317
 
       Change the **{{draft}}** marker to **{{review}}** when you need a
       reviewer for text and TypoScript.
-      `info </Help:Contents#Teamwork_-_draft_review_publish_delete_merge_outdated>`__
+      `info <https://wiki.typo3.org/Help:Contents#Teamwork_-_draft_review_publish_delete_merge_outdated>`__
       [deprecated wiki link]
 
 The default controller can not be determined. Please check for
@@ -28,7 +28,8 @@ controller/action. Here's an example:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -63,7 +64,7 @@ double-check your ext_localconf.
 .. container::
 
    `TS
-   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
    [deprecated wiki link]
 
 .. container::

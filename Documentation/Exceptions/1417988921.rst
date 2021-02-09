@@ -34,9 +34,9 @@ this workaround only works as long as you don't delete all pages.
 See https://forge.typo3.org/issues/66704. When there is a fix available
 and released, an update should do.
 
-| --`An0ther-adm1n </wiki/index.php?title=User:An0ther-adm1n&action=edit&redlink=1>`__
+| --`An0ther-adm1n <https://wiki.typo3.org/wiki/index.php?title=User:An0ther-adm1n&action=edit&redlink=1>`__
   [deprecated wiki link]
-  (`talk </wiki/index.php?title=User_talk:An0ther-adm1n&action=edit&redlink=1>`__
+  (`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:An0ther-adm1n&action=edit&redlink=1>`__
   [deprecated wiki link]) 14:20, 15 November 2015 (CET)
 | system: FAMP (10.2 / 2.4 / 5.6 / 5.6)
 | typo3: 7.4.0

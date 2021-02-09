@@ -8,7 +8,7 @@ This exception can be raised when the TCA definition is invalid (check
 if the "type"-Attribute is correct/non-empty). The current TCA can be
 shown under System > Configuration > $GLOBALS['TCA']...
 
---`Benjamin-pick </wiki/index.php?title=User:Benjamin-pick&action=edit&redlink=1>`__
+--`Benjamin-pick <https://wiki.typo3.org/wiki/index.php?title=User:Benjamin-pick&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Benjamin-pick&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Benjamin-pick&action=edit&redlink=1>`__
 [deprecated wiki link]) 16:24, 16 November 2015 (CET)

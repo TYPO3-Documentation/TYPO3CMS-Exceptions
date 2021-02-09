@@ -32,8 +32,8 @@ configuration option "module" should get used
 (https://docs.typo3.org/typo3cms/TCAReference/AdditionalFeatures/WizardsConfiguration/Index.html#wizards-configuration-script-script
 [not available anymore])
 
-`Kraftb </User:Kraftb>`__ [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Kraftb&action=edit&redlink=1>`__
+`Kraftb <https://wiki.typo3.org/User:Kraftb>`__ [deprecated wiki link]
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Kraftb&action=edit&redlink=1>`__
 [deprecated wiki link]) 15:20, 7 May 2014 (CEST)
 
 | 

@@ -13,5 +13,5 @@ You should use the following hook
 and execute t3lib_extMgm::addModuleJsFile in the above file - the
 pagerenderer is needed to add files to the backend.
 
--  `Extension_Development,_native_ExtJS_Modules </Extension_Development,_native_ExtJS_Modules>`__
+-  `Extension_Development,_native_ExtJS_Modules <https://wiki.typo3.org/Extension_Development,_native_ExtJS_Modules>`__
    [deprecated wiki link]

@@ -15,7 +15,8 @@ You need to change to following lines in your LocalConfiguration.php:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -34,7 +35,8 @@ You need to change to following lines in your LocalConfiguration.php:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::

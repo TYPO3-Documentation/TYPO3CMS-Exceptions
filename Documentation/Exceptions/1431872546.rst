@@ -20,6 +20,7 @@ TYPO3\CMS\Backend\Form\Exception thrown in file
 D:\___WWW___\_typo3\_SOURCES\typo3_src-7.3.0\typo3\sysext\backend\Classes\Form\NodeFactory.php
 in line 143.
 
---`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+--`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
+[deprecated wiki link]
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
 [deprecated wiki link]) 08:05, 28 June 2015 (CEST)

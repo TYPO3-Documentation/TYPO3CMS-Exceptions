@@ -48,9 +48,9 @@ the Typo3 Backend :
 
 TYPO3 backend, ADMIN TOOLS > DB check > Manage Reference Index
 
-(`Francois </wiki/index.php?title=User:Francois&action=edit&redlink=1>`__
+(`Francois <https://wiki.typo3.org/wiki/index.php?title=User:Francois&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Francois&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Francois&action=edit&redlink=1>`__
 [deprecated wiki link]) 14:20, 1 June 2015 (CEST)) This didn't work for
 me, because the problem was different: the migration wizard (rather
 stupidly) takes the first File Storage that it finds. File Storages are

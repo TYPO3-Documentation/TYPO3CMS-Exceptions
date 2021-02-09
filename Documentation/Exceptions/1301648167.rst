@@ -28,9 +28,9 @@ cacheentries.
 
 TYPO3 4.7.4, realurl 1.12.3
 
-`Maholtz </User:Maholtz>`__ [deprecated wiki link]
-(`talk </User_talk:Maholtz>`__ [deprecated wiki link]) 10:55, 1 October
-2012 (CEST)
+`Maholtz <https://wiki.typo3.org/User:Maholtz>`__ [deprecated wiki link]
+(`talk <https://wiki.typo3.org/User_talk:Maholtz>`__ [deprecated wiki
+link]) 10:55, 1 October 2012 (CEST)
 
 addRootLineFields which are not available
 =========================================

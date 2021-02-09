@@ -42,8 +42,9 @@ you can change writing like this:
 Usally for the news-extension this is not the case, but I changed the
 author field to include several records from fe_users. Therefore
 {newsItem.author} is an array and has to be looped. --`David
-bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__ [deprecated
+wiki link]
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
 [deprecated wiki link]) 09:33, 12 March 2014 (CET)
 
 <f:for>
@@ -67,7 +68,7 @@ Removing the spaces after { and before } is my solution to the problem:
 
 Please not the discussion at: https://forge.typo3.org/issues/64317
 --`Bernhard
-Schenkenfelder </wiki/index.php?title=User:Bernland&action=edit&redlink=1>`__
+Schenkenfelder <https://wiki.typo3.org/wiki/index.php?title=User:Bernland&action=edit&redlink=1>`__
 [deprecated wiki link]
 
 <f:form.select>

@@ -25,9 +25,9 @@ Your project uses:
    array, "30")* indicates that an unknown table is used in a
    CONTENT-element with the name '30'.
 
---`Mmix </wiki/index.php?title=User:Mmix&action=edit&redlink=1>`__
+--`Mmix <https://wiki.typo3.org/wiki/index.php?title=User:Mmix&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Mmix&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Mmix&action=edit&redlink=1>`__
 [deprecated wiki link]) 19:01, 7 August 2014 (CEST)
 
 -  Backtrace is the detailed error output when dev mode is enabled in
@@ -61,5 +61,5 @@ Less bad:
    }
    [global]
 
---`ursbraem </wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
+--`ursbraem <https://wiki.typo3.org/wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
 [deprecated wiki link] 23. December 2014 (CEST)

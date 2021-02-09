@@ -10,7 +10,7 @@ having already inserted some entries to the list-view in the backend.
 
 Deleting the files *typo3conf/temp_CACHED_\** and truncating the
 caching-framework-tables beginning with *cf\_* helped for
-`me </wiki/index.php?title=User:Swagner&action=edit&redlink=1>`__
+`me <https://wiki.typo3.org/wiki/index.php?title=User:Swagner&action=edit&redlink=1>`__
 [deprecated wiki link].
 
 // Additional Situations, observed in TYPO3 6.1.2, Extbase 6 This
@@ -36,7 +36,8 @@ Non-CamelCase:
        */
 
 (Working in the files directly, not using the Extension_builder
-[anymore]) In `my </wiki/index.php?title=User&action=edit&redlink=1>`__
+[anymore]) In
+`my <https://wiki.typo3.org/wiki/index.php?title=User&action=edit&redlink=1>`__
 [not available anymore] case, the truncating of the cf_-tables was
 sufficient.
 

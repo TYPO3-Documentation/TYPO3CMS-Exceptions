@@ -25,7 +25,8 @@ If this does not help, add the following lines to you
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -37,7 +38,7 @@ If this does not help, add the following lines to you
       }
 
 See
-`Caching_framework#How_to_use_the_caching_framework_in_extensions </wiki/index.php?title=Caching_framework&action=edit&redlink=1>`__
+`Caching_framework#How_to_use_the_caching_framework_in_extensions <https://wiki.typo3.org/wiki/index.php?title=Caching_framework&action=edit&redlink=1>`__
 [not available anymore] for more information.
 
 --------------

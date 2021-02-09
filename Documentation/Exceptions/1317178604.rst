@@ -4,9 +4,9 @@
 TYPO3 Exception 1317178604
 ==========================
 
---`Infodesign@reinecke.de </wiki/index.php?title=User:Infodesign@reinecke.de&action=edit&redlink=1>`__
+--`Infodesign@reinecke.de <https://wiki.typo3.org/wiki/index.php?title=User:Infodesign@reinecke.de&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Infodesign@reinecke.de&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Infodesign@reinecke.de&action=edit&redlink=1>`__
 [deprecated wiki link]) 07:00, 30 July 2013 (CEST)
 
 Typo3 CMS 6.1.2 filelist/fileadmin error while uploading a file again which has been deleted earlier in the same folder

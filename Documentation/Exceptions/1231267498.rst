@@ -17,7 +17,8 @@ This setup will throw the exception:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -33,7 +34,8 @@ This setup will throw the exception:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -46,7 +48,8 @@ or clear the options:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::

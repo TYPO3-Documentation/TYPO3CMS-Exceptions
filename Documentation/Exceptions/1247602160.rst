@@ -25,8 +25,8 @@ Model mapping incorrect or missing
 
 .. container::
 
-   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
-   wiki link]
+   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
+   [deprecated wiki link]
 
 .. container::
 
@@ -44,7 +44,7 @@ name. The syntax for the upper example is the following:
 .. container::
 
    `TS
-   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
    [deprecated wiki link]
 
 .. container::
@@ -58,8 +58,8 @@ name. The syntax for the upper example is the following:
 
 .. container::
 
-   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
-   wiki link]
+   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
+   [deprecated wiki link]
 
 .. container::
 
@@ -80,7 +80,7 @@ set**, seems to solve this issue:
 .. container::
 
    `TS
-   TypoScript </wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
+   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
    [deprecated wiki link]
 
 .. container::
@@ -128,8 +128,8 @@ on page [0].
 
 .. container::
 
-   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
-   wiki link]
+   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
+   [deprecated wiki link]
 
 .. container::
 
@@ -194,8 +194,8 @@ DB COMPARE when done):
 
 .. container::
 
-   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
-   wiki link]
+   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
+   [deprecated wiki link]
 
 .. container::
 
@@ -218,7 +218,8 @@ changing :
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -231,7 +232,8 @@ to
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -247,7 +249,8 @@ Alternative solution is to use DB abstraction with following code:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::
@@ -272,8 +275,8 @@ Check your sql_mode
 
 .. container::
 
-   `SQL </wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__ [deprecated
-   wiki link]
+   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
+   [deprecated wiki link]
 
 .. container::
 

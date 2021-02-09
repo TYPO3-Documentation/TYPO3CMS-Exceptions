@@ -137,7 +137,8 @@ becomes
 
 For more information see:
 
--  `Fluid#form_fields </Fluid#f:form.textbox>`__ [deprecated wiki link]
+-  `Fluid#form_fields <https://wiki.typo3.org/Fluid#f:form.textbox>`__
+   [deprecated wiki link]
 -  `Documentation on Typo3
    Forge <https://forge.typo3.org/projects/typo3v4-mvc/wiki/Breaking_Changes%7CExtbase>`__
    [not available anymore]

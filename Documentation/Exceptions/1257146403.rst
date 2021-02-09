@@ -19,7 +19,7 @@ Notice the missing ``>`` for ``Member-update`` (should be
 `FrontendConfigurationManager <https://typo3.org/api/typo3cms/_frontend_configuration_manager_8php_source.html#l00220>`__
 [not available anymore] to see what values are expected.
 
---`Supermonster </wiki/index.php?title=User:Supermonster&action=edit&redlink=1>`__
+--`Supermonster <https://wiki.typo3.org/wiki/index.php?title=User:Supermonster&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Supermonster&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Supermonster&action=edit&redlink=1>`__
 [deprecated wiki link]) 10:47, 22 January 2015 (CET)

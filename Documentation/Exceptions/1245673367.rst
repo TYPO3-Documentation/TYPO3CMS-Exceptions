@@ -18,7 +18,7 @@ Occours in: typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php:117
 .. container::
 
    `Shell
-   Script </wiki/Help:Contents#Syntax-Highlighting_for_shellScript>`__
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_shellScript>`__
    [deprecated wiki link]
 
 .. container::
@@ -29,7 +29,8 @@ Occours in: typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php:117
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::

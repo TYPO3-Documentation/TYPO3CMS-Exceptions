@@ -16,6 +16,7 @@ TYPO3\CMS\Install\Service\Exception\CoreVersionServiceException thrown
 in file \\typo3\sysext\install\Classes\Service\CoreVersionService.php in
 line 322.
 
---`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+--`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
+[deprecated wiki link]
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
 [deprecated wiki link]) 07:27, 28 June 2015 (CEST)

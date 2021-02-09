@@ -7,7 +7,7 @@ TYPO3 Exception 1438780511
 v10.4.3 i get this message when i use a form sheet with internal_type =
 file. This has been deprecated in v9 and was removed in v10.
 https://forge.typo3.org/issues/86406
-`Woepwoep </wiki/index.php?title=User:Woepwoep&action=edit&redlink=1>`__
+`Woepwoep <https://wiki.typo3.org/wiki/index.php?title=User:Woepwoep&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Woepwoep&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Woepwoep&action=edit&redlink=1>`__
 [deprecated wiki link]) 12:07, 27 May 2020 (CEST)

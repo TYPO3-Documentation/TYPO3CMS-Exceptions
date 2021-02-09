@@ -46,8 +46,8 @@ website". This button has appeared after deleting the root template.
 There are some tutorials to make it easy for you to start:
 
 -  `TypoScript in 45
-   Minutes </wiki/index.php?title=Ts45min&action=edit&redlink=1>`__ [not
-   available anymore]
+   Minutes <https://wiki.typo3.org/wiki/index.php?title=Ts45min&action=edit&redlink=1>`__
+   [not available anymore]
 
 Addtionally you find many information in the docs on TYPO3.org
 

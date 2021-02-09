@@ -135,7 +135,8 @@ indexed search
 --------------
 
 I get this error after installing `indexed
-search </De:Indexed_search>`__ [deprecated wiki link].
+search <https://wiki.typo3.org/De:Indexed_search>`__ [deprecated wiki
+link].
 
 ::
 
@@ -374,8 +375,9 @@ Solution
 
 At 1st initial start of this page after clearing the cache, after reload
 [e.g. pressing F5] this message disappears, and page runs fine...
---`David bruchmann </User:David_bruchmann>`__ [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
+--`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
+[deprecated wiki link]
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
 [deprecated wiki link]) 02:03, 27 August 2014 (CEST)
 
 .. _typo3-6.2.4-1:
@@ -462,7 +464,8 @@ using ``$objectManager->get('MyExtension\MyRepository')``:
 
 .. container::
 
-   `PHP Script </wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
+   `PHP
+   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
    [deprecated wiki link]
 
 .. container::

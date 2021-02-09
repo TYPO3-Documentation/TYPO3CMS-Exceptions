@@ -49,9 +49,9 @@ done ;-) Leo
 In addition to what Leo did, i had to open the filelist-module, with a
 non-admin user, which has some filemounts in the auto-created
 fileadmin/-storage (the only storage left for me).
---`Csehrt </wiki/index.php?title=User:Csehrt&action=edit&redlink=1>`__
+--`Csehrt <https://wiki.typo3.org/wiki/index.php?title=User:Csehrt&action=edit&redlink=1>`__
 [deprecated wiki link]
-(`talk </wiki/index.php?title=User_talk:Csehrt&action=edit&redlink=1>`__
+(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Csehrt&action=edit&redlink=1>`__
 [deprecated wiki link]) 20:10, 12 August 2014 (CEST)
 
 one more
@@ -90,7 +90,7 @@ UTF-8 named files may become damaged/mangled upon transferring them via
 (S)FTP. For example using Transmit/Coda between OS X and a linux server.
 Use scp, rsync or lftp to transfer such files. Alternatively, also
 compressing them in a tar.gz for the move may
-help.-`ursbraem </wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
+help.-`ursbraem <https://wiki.typo3.org/wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
 [deprecated wiki link]
 
 .. _th-2:
@@ -125,5 +125,5 @@ Remove /uploads from filemounts
 
 I simply had to remove the uploads-folder from filemounts, log out and
 log in. Voilà.
-`User:pragmas </wiki/index.php?title=User:Pragmas&action=edit&redlink=1>`__
+`User:pragmas <https://wiki.typo3.org/wiki/index.php?title=User:Pragmas&action=edit&redlink=1>`__
 [deprecated wiki link]
