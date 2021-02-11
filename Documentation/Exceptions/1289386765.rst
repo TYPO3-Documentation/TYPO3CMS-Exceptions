@@ -5,10 +5,10 @@ TYPO3 Exception 1289386765
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Message:
 
@@ -259,7 +259,8 @@ Redo the whole TYPO3 upgrade? --> yes, that's what I meant. Take your
 
 Thanks, but (luckily) it was something else: the templates and
 namespaces have been changed. So using an old template can cause this
-exception too. https://forge.typo3.org/issues/62220
+exception too. https://forge.typo3.org/issues/62220 [not available
+anymore]
 
 If you got the error while adding a new namespace in TYPO3 7.4.0 or 7.5.0
 =========================================================================

@@ -5,10 +5,10 @@ TYPO3 Exception 1237823695
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 General
 =======
@@ -38,7 +38,8 @@ your template happens to be a Fluid tag, then the Fluid parser will
 throw the execption, that »xmlns« is in fact not a valid attribute of
 the current Fluid tag.
 
-Issue on Forge: https://forge.typo3.org/issues/56481
+Issue on Forge: https://forge.typo3.org/issues/56481 [not available
+anymore]
 
 Solution 1 - Remove the attribute
 ---------------------------------
@@ -91,7 +92,7 @@ Fluid 6.1 select ViewHelper
 ``</f:form.select>``
 
 -  prependContent="TRUE" should be available since 6.1
-   https://forge.typo3.org/issues/26595
+   https://forge.typo3.org/issues/26595 [not available anymore]
 -  No documented solution yet
 
 EXT:news

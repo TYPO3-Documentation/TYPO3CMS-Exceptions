@@ -5,10 +5,10 @@ TYPO3 Exception 1509741911
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 This exception happens when a image file should be rendered in fluid,
 but failed because the file does not exist:

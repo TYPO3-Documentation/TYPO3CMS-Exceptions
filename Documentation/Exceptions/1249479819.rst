@@ -5,10 +5,10 @@ TYPO3 Exception 1249479819
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Persistence
 ===========
@@ -22,7 +22,7 @@ Usage of (new) property mapper / t3extblog
 I encountered this exception when trying to install/use t3extblog with
 TYPO3 6.2.10. Check your code for correct usage of (new) property
 mapper, this should give you a hint (taken from
-https://forge.typo3.org/issues/51330):
+https://forge.typo3.org/issues/51330 [not available anymore]):
 
 old property mapper is not supported anymore and removed from the Core
 after 6.2. Use the new one instead.

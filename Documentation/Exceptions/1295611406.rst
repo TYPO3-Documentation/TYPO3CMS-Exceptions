@@ -5,10 +5,10 @@ TYPO3 Exception 1295611406
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 https://twitter.com/s_michaelsen/statuses/243636376648699904 [not
 available anymore]

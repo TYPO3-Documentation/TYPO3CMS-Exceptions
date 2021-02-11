@@ -5,10 +5,10 @@ TYPO3 Exception 1481889220
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Optimize MySQL tables scheduler task
 ====================================
@@ -17,4 +17,5 @@ If you get this error when running the *Optimize MySQL database tables
 (scheduler)* task, try using the **mysqli** driver instead of
 *pdo_mysql*.
 
-See: https://forge.typo3.org/issues/82686?next_issue_id=82682
+See: https://forge.typo3.org/issues/82686?next_issue_id=82682 [not
+available anymore]

@@ -5,10 +5,10 @@ TYPO3 Exception 1225709595
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Exception message:
 
@@ -80,7 +80,8 @@ If you set the format of our view manually in the controller like this:
 $this->request->setFormat('xml'); extbase is still looking for a file
 called youraction.html even if it eventually uses youraction.xml so you
 need to create both files, the html file can be empty. I think this is a
-bug and filled a bug report; https://forge.typo3.org/issues/46657
+bug and filled a bug report; https://forge.typo3.org/issues/46657 [not
+available anymore]
 
 typo3 6.1.7
 ===========

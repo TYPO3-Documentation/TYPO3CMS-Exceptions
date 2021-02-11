@@ -5,10 +5,10 @@ TYPO3 Exception 1217839467
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 -  Check if you have named the properties correctly in your fluid form
    and in your model class. In my case, this exception occurred simply
@@ -18,4 +18,5 @@ please add it to this page by following the :ref:`"Edit on GitHub" workflow
 -  Check if you have annotated @ignorevalidation $myObject in your
    action (or @dontvalidate for older Extbase version < 6.1)
 -  Some hints (in German) can be found here:
-   http://www.typo3.net/forum/beitraege/extbase_und_fluid/108844/
+   http://www.typo3.net/forum/beitraege/extbase_und_fluid/108844/ [not
+   available anymore]

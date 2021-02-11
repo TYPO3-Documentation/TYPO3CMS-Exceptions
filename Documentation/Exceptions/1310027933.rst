@@ -5,13 +5,13 @@ TYPO3 Exception 1310027933
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
-Update: see https://forge.typo3.org/issues/59829 for a hint towards the
-cause and/or workaround.
+Update: see https://forge.typo3.org/issues/59829 [not available anymore]
+for a hint towards the cause and/or workaround.
 
 Runtime Exception with TYPO3 4.7.19 & Powermail 2.0.15 after Updating
 TYPO3 from 4.7.9 to 4.7.19 and Powermail-Update from 2.0.14 to 2.0.15.

@@ -5,10 +5,10 @@ TYPO3 Exception 1317178604
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 --`Infodesign@reinecke.de <https://wiki.typo3.org/wiki/index.php?title=User:Infodesign@reinecke.de&action=edit&redlink=1>`__
 [deprecated wiki link]
@@ -37,6 +37,7 @@ Typo3 CMS 6.1.2 filelist/fileadmin error while uploading a file again which has 
 | Don´t know, whether this is the right place for a bug report -
   hopefully!
 | Edit: Related to `Bug #50508 <https://forge.typo3.org/issues/50508>`__
+  [not available anymore]
 
 TYPO3 CMS 6.2.x - happened when a tt_news entry had an non-existing image in the bodytext
 =========================================================================================

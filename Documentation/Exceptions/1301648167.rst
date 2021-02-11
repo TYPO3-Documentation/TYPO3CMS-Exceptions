@@ -5,10 +5,10 @@ TYPO3 Exception 1301648167
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Mountpoints and Shortcut Pages
 ==============================
@@ -21,6 +21,7 @@ mountpage. You can select the mountpage as shortcut target - just do not
 use the automatic functions ("first subpage", "random subpage"...)
 
 There is some info in this bug: https://forge.typo3.org/issues/14351
+[not available anymore]
 
 TYPO3 4.7.4
 

@@ -5,10 +5,10 @@ TYPO3 Exception 1195126772
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 General
 =======
@@ -24,7 +24,7 @@ Exception on shortcut
    Interface/Class. In general this causes just a warning but can also
    lead to serious problems.
 #. There's a bug in PHP 5.5.6+ which causes this Exception:
-   https://forge.typo3.org/issues/53682
+   https://forge.typo3.org/issues/53682 [not available anymore]
 
 I moved Typo3 6.1.6 from a server with php 5.3.15 to one with 5.6.1. It
 is the same code nothing changed in DB or code. Now I get this error

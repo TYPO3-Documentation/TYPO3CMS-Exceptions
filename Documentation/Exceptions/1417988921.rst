@@ -5,10 +5,10 @@ TYPO3 Exception 1417988921
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Workaround
 ==========
@@ -37,8 +37,8 @@ Limitation: When I delete all pages in the page tree, and then try to
 right-click-"New" => I hit the error again. Basically this means that
 this workaround only works as long as you don't delete all pages.
 
-See https://forge.typo3.org/issues/66704. When there is a fix available
-and released, an update should do.
+See https://forge.typo3.org/issues/66704 [not available anymore]. When
+there is a fix available and released, an update should do.
 
 | --`An0ther-adm1n <https://wiki.typo3.org/wiki/index.php?title=User:An0ther-adm1n&action=edit&redlink=1>`__
   [deprecated wiki link]

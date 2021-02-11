@@ -5,10 +5,10 @@ TYPO3 Exception 1
 =================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 typo3 4.6.0
 ===========
@@ -24,10 +24,11 @@ I get this error when switching to Web>Template.
    on line 554 and defined in /home/typo3_src/typo3_src-4.6.0/t3lib/class.t3lib_div.php line 1867
 
 -  Read the Ticket for this `Bug
-   #31353 <https://forge.typo3.org/issues/31353>`__.
+   #31353 <https://forge.typo3.org/issues/31353>`__ [not available
+   anymore].
 -  If you speak German, this `post at
    typo3.net/forum <http://www.typo3.net/forum/beitraege/sonstiges-1/107943/>`__
-   could help.
+   [not available anymore] could help.
 
 TYPO3 4.6.8
 ===========
@@ -55,8 +56,10 @@ Suddenly got this error when logging on to the next.
    on line 376 and defined in /public_html/typo3_src-4.7.14/t3lib/class.t3lib_div.php line 1862
 
 -  Read the Ticket for this `Bug
-   #31353 <https://forge.typo3.org/issues/31353>`__ and `as advised
-   above <http://www.typo3.net/forum/thematik/zeige/thema/107943/seite/2/?show=1&cHash=a1bcb079cea5fd9fee872ce737f9f544>`__.
+   #31353 <https://forge.typo3.org/issues/31353>`__ [not available
+   anymore] and `as advised
+   above <http://www.typo3.net/forum/thematik/zeige/thema/107943/seite/2/?show=1&cHash=a1bcb079cea5fd9fee872ce737f9f544>`__
+   [not available anymore].
 
 Solution
 --------
@@ -119,8 +122,9 @@ does not have admin rights.
    on line 376 and defined in /public_html/typo3_src-4.7.14/t3lib/class.t3lib_div.php line 1862
 
 -  Read the Ticket for this `Bug
-   #51969 <https://forge.typo3.org/issues/51969>`__ and `Bug
-   #52296 <https://forge.typo3.org/issues/52296>`__.
+   #51969 <https://forge.typo3.org/issues/51969>`__ [not available
+   anymore] and `Bug #52296 <https://forge.typo3.org/issues/52296>`__
+   [not available anymore].
 
 .. _solution-2:
 
@@ -128,12 +132,11 @@ Solution
 --------
 
 Downgrade to DAM 1.3.1
-`dam <https://extensions.typo3.org/extension/dam/>`__ [not available
-anymore]
+`dam <https://extensions.typo3.org/extension/dam/>`__
 
 Update 2013/11/21 Bug is on typo3.forge
-https://forge.typo3.org/issues/51969 Patch is here :
-https://review.typo3.org/#/c/23848/ Tested, working...
+https://forge.typo3.org/issues/51969 [not available anymore] Patch is
+here : https://review.typo3.org/#/c/23848/ Tested, working...
 
 typo3 6.1.0
 ===========
@@ -217,8 +220,7 @@ line 311
 
 I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
 gridelements extension is installed tested with gridelements v2.0.2 and
-gridelements v3.0.0-dev https://forge.typo3.org/issues/57833 [not
-available anymore]
+gridelements v3.0.0-dev https://forge.typo3.org/issues/57833
 
 .. _solution-5:
 
@@ -608,7 +610,7 @@ content of the mail
 
    PHP Warning: array_shift() expects parameter 1 to be array, null given in
    typo3_src-7.6.10/vendor/symfony/console/Input/ArgvInput.php line 61
-   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [not available anymore]
+   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [deprecated wiki link]
 
 indexed_search
 --------------

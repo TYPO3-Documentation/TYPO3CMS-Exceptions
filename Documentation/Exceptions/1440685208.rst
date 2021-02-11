@@ -5,10 +5,10 @@ TYPO3 Exception 1440685208
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 **Fluid**
 
@@ -25,7 +25,7 @@ Then I worked.
 
 Issues:
 
--  https://forge.typo3.org/issues/70197
+-  https://forge.typo3.org/issues/70197 [not available anymore]
 -  https://github.com/FluidTYPO3/flux/issues/944
 -  https://github.com/FluidTYPO3/flux/issues/992
 

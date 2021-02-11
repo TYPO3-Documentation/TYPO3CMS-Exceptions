@@ -5,15 +5,15 @@ TYPO3 Exception 1329821485
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 This exception can occour due to at least three reasons:
 
--  Bug #51747 (https://forge.typo3.org/issues/51747 [not available
-   anymore]) in typo3 6.1.4 as was the case on http://www.physikbuch.de
+-  Bug #51747 (https://forge.typo3.org/issues/51747) in typo3 6.1.4 as
+   was the case on http://www.physikbuch.de
 -  a folder in typo3temp or fileadmin that actually is write-protected
 -  The folder isn't write-protected but completely missing.
 

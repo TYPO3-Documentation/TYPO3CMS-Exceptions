@@ -5,10 +5,10 @@ TYPO3 Exception 1195043965
 ==========================
 
 .. note::
-If you encountered this exception, please help others by providing
-information about how you got this error. Especially if you have a solution,
-please add it to this page by following the :ref:`"Edit on GitHub" workflow
-<docs-contribute-github-method>`!
+   If you encountered this exception, please help others by providing
+   information about how you got this error. Especially if you have a solution,
+   please add it to this page by following the :ref:`"Edit on GitHub" workflow
+   <docs-contribute-github-method>`!
 
 Can someone please help me with this problem, which I've got when I
 updated to version Typo3 CMS 6.2 from 5.4.3. Thank You! I appreciate
