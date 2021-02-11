@@ -4,6 +4,12 @@
 TYPO3 Exception 1375955684
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 ::
 
    #1375955684: You are not allowed to access the given folder
@@ -14,14 +20,15 @@ TYPO3 Exception 1375955684
 This exception occurs when file action permissions are not correct. It
 may occur after an upgrade due to security bulletin
 `core-sa-2013-003 <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-003/>`__
+[not available anymore]
 
 -  …and not following the given advices (clear cache, deleting the
    complete »typo3temp/Cache« folder, set storage file permissions) - in
    this case follow the instructions in the bulletin
 -  …and deleting the complete »typo3temp« folder → in this case see bug
-   `51747 <https://forge.typo3.org/issues/51747>`__, manually creating
-   the folder »typo3temp/_processed_« seems to fix the problem for most
-   people.
+   `51747 <https://forge.typo3.org/issues/51747>`__ [not available
+   anymore], manually creating the folder »typo3temp/_processed_« seems
+   to fix the problem for most people.
 
 Exception when calling the language module
 ==========================================

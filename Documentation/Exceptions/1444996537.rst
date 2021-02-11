@@ -4,12 +4,19 @@
 TYPO3 Exception 1444996537
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This error happens since TYPO3 7.6 if your extension has defined the TCA
 in the file Configuration/TCA/my_extension_table.php and when
 "'displayCond' => 'EXT:foreign_extension:LOADED:true'" is used.
 
 see `Bug #76958: displayCond LOADED does not check the loaded
-extension <https://forge.typo3.org/issues/76958>`__
+extension <https://forge.typo3.org/issues/76958>`__ [not available
+anymore]
 
 You must move the the column with the condition into the folder
 Configuration/TCA/Overrides of your extension (my_extension) or of the

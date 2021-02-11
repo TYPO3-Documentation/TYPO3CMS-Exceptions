@@ -4,6 +4,12 @@
 TYPO3 Exception 1537633463
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 If you have a problem with an OutOfRangeException with the message "Hash
 not resolvable" this is a bug reported here:
-https://forge.typo3.org/issues/87688
+https://forge.typo3.org/issues/87688 [not available anymore]

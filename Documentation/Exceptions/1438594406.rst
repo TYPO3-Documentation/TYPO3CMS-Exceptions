@@ -4,6 +4,12 @@
 TYPO3 Exception 1438594406
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 On possible cause for this is the use of old ext_tables/TCA
 configuration. Please see
 https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/7.6/Index.html

@@ -4,6 +4,12 @@
 TYPO3 Exception 1476107295
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 PHP Warning: session_start():
 open(C:\windows\TEMP\sess_57271dd7537f919aeded93b5144d0b5f, O_RDWR)
 failed: Permission denied (13) --> can be fixed by deleting all sess\_

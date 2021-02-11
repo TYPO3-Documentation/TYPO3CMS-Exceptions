@@ -4,9 +4,15 @@
 TYPO3 Exception 1401732564
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This is an Exception if GIFBUILDER is used in css_styled_content texpic
 renderer or FCE and image is linked
 
-See https://forge.typo3.org/issues/62184
+See https://forge.typo3.org/issues/62184 [not available anymore]
 
 The Bug is has been solved in TYPO3 6.2.12 (and later)

@@ -4,6 +4,12 @@
 TYPO3 Exception 1251315967
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This Exception rose in one installation(TYPO3 4.6.9-15) after changing
 direction of relations in the extension_builder between two models after
 having already inserted some entries to the list-view in the backend.

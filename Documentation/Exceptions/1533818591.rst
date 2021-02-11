@@ -4,6 +4,12 @@
 TYPO3 Exception 1533818591
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Error message
 =============
 
@@ -80,4 +86,5 @@ More information
 -  `Official password hashing documentation since TYPO3
    v9 <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/PasswordHashing/Index.html>`__
 -  `Issue explaining the deployment
-   problem <https://forge.typo3.org/issues/86155>`__
+   problem <https://forge.typo3.org/issues/86155>`__ [not available
+   anymore]

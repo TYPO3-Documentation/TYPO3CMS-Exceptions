@@ -4,6 +4,12 @@
 TYPO3 Exception 1337280417
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Problem occurs when extension size is more than post_max_size (php.ini).
 Just fix post_max_size and restart webserver.
 

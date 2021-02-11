@@ -4,6 +4,12 @@
 TYPO3 Exception 1458745712
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Exception message
 =================
 
@@ -17,8 +23,9 @@ Background
 Support for editing/creating nested flex form section containers has
 been blocked in TYPO3 7.4.5 due to issues in data consistency and
 component handling (`commit
-27ac159 <https://git.typo3.org/Packages/TYPO3.CMS.git/commit/27ac1594dbd23417d055934dc5981bb3c6f13ba4>`__).
-See `Core bug report #73125 <https://forge.typo3.org/issues/73125>`__.
+27ac159 <https://git.typo3.org/Packages/TYPO3.CMS.git/commit/27ac1594dbd23417d055934dc5981bb3c6f13ba4>`__
+[not available anymore]). See `Core bug report
+#73125 <https://forge.typo3.org/issues/73125>`__.
 
 Nested sections in Flux aka "Fluid Powered TYPO3"
 =================================================

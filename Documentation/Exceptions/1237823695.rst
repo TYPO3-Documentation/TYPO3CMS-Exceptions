@@ -4,6 +4,12 @@
 TYPO3 Exception 1237823695
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 General
 =======
 
@@ -110,7 +116,8 @@ action="eventDetail">{newsItem.title}</e:link>
 Updated and working version : <n:link newsItem="{newsItem}"
 settings="{settings}">{newsItem.title}</n:link>
 
-See on TYPO3 Forge here : https://forge.typo3.org/issues/53921
+See on TYPO3 Forge here : https://forge.typo3.org/issues/53921 [not
+available anymore]
 
 Upgrade to TYPO3 7.6.2
 ======================

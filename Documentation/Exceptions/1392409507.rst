@@ -4,6 +4,12 @@
 TYPO3 Exception 1392409507
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 The problem is usually caused by an missing security token which
 protects againg
 `CSRF <https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29>`__.

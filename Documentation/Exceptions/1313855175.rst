@@ -4,11 +4,18 @@
 TYPO3 Exception 1313855175
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 >> Before checking below, find out if you have a
 Resources/Private/Templates/{controller}/{action}.html
 
 | 
-| For details, please see https://forge.typo3.org/issues/31322
+| For details, please see https://forge.typo3.org/issues/31322 [not
+  available anymore]
 
 To solve this, you can set the following in TypoScript:
 

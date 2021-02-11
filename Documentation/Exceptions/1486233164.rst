@@ -4,6 +4,12 @@
 TYPO3 Exception 1486233164
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This error can happen, when a record, containing a fal relation, is
 about to be translated into another language. Reason: 1. The fal data
 was created before any languages were created. In that case just delete

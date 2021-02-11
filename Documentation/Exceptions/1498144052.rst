@@ -4,6 +4,12 @@
 TYPO3 Exception 1498144052
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 A new installations of T3 v8.7.4 (Aug 2017). Installed 'media' extension
 successfully but using it gives error message, "Parameter $extensionName
 cannot be empty if a fully-qualified key is not specified."

@@ -4,6 +4,12 @@
 TYPO3 Exception 1507645417
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This happened in TYPO3 9.3.3 :
 
 **Oops, an error occurred!** Line 39: Object Name String,

@@ -4,13 +4,19 @@
 TYPO3 Exception 1397836158
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 If you have an error in typo3conf/ext/[your_ext_key]/ext_tables.php:
 **"#1397836158: No or invalid extension key "" given."**
 
 -  Search for variable $extensionKey and replace with $_EXTKEY
 -  Try not to use $_EXTKEY in dynamicConfigFiles or otherwise included
    TCA snippets
--  Check https://forge.typo3.org/issues/59033
+-  Check https://forge.typo3.org/issues/59033 [not available anymore]
 
 You may have to clear the cache in install tool (See "Important
 actions").

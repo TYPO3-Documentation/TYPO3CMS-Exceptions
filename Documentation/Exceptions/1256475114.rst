@@ -4,6 +4,12 @@
 TYPO3 Exception 1256475114
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 #. 1256475114: The argument "newsItem" was registered with type
    "Tx_News_Domain_Model_News", but is of type
    "TYPO3\CMS\Extbase\Persistence\Generic\LazyObjectStorage" in view

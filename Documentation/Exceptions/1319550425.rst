@@ -4,6 +4,12 @@
 TYPO3 Exception 1319550425
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Origin: Editor may create/edit/delete records of a custom extension. The
 records may store images in a folder in fileadmin. The Editor is not
 allowd to see the folder, but only to edit records. The Editor now tries

@@ -4,6 +4,12 @@
 TYPO3 Exception 1278155988
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 I got this exception just after I imported and installed tt_news in my
 Typo3 6.2 website. So now I cannot edit the pages on my website.
 

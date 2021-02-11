@@ -4,6 +4,12 @@
 TYPO3 Exception 1298012500
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Exception message:
 
 ::
@@ -56,7 +62,7 @@ Posted 25. June 2015
   without the redirect.
 | **LINKS**
 | http://stackoverflow.com/a/31022725
-| https://forge.typo3.org/issues/66848
+| https://forge.typo3.org/issues/66848 [not available anymore]
 
 Posted earlier from somebody else
 =================================

@@ -4,6 +4,12 @@
 TYPO3 Exception 1431452406
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 This exception can be raised when the TCA definition is invalid (check
 if the "type"-Attribute is correct/non-empty). The current TCA can be
 shown under System > Configuration > $GLOBALS['TCA']...

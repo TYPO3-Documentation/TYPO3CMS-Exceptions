@@ -4,6 +4,12 @@
 TYPO3 Exception 1
 =================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 typo3 4.6.0
 ===========
 
@@ -122,7 +128,8 @@ Solution
 --------
 
 Downgrade to DAM 1.3.1
-`dam <https://extensions.typo3.org/extension/dam/>`__
+`dam <https://extensions.typo3.org/extension/dam/>`__ [not available
+anymore]
 
 Update 2013/11/21 Bug is on typo3.forge
 https://forge.typo3.org/issues/51969 Patch is here :
@@ -210,7 +217,8 @@ line 311
 
 I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
 gridelements extension is installed tested with gridelements v2.0.2 and
-gridelements v3.0.0-dev https://forge.typo3.org/issues/57833
+gridelements v3.0.0-dev https://forge.typo3.org/issues/57833 [not
+available anymore]
 
 .. _solution-5:
 
@@ -600,7 +608,7 @@ content of the mail
 
    PHP Warning: array_shift() expects parameter 1 to be array, null given in
    typo3_src-7.6.10/vendor/symfony/console/Input/ArgvInput.php line 61
-   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [deprecated wiki link]
+   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [not available anymore]
 
 indexed_search
 --------------

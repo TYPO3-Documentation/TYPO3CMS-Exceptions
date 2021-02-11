@@ -4,6 +4,12 @@
 TYPO3 Exception 1314455642
 ==========================
 
+.. note::
+If you encountered this exception, please help others by providing
+information about how you got this error. Especially if you have a solution,
+please add it to this page by following the :ref:`"Edit on GitHub" workflow
+<docs-contribute-github-method>`!
+
 Exception in typo3 6.1 Backend show content in fileadmin folder
 ===============================================================
 
