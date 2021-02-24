@@ -4,17 +4,14 @@
 TYPO3 Exception 1294587486
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 TYPO3 9.5.23 and the extension phpmyadmin 5.6.4 result in error message
 
 ::
 
-      Session already started by session_start(). Make sure no installed extension is starting a session in its ext_localconf.php or ext_tables.php. 
+      Session already started by session_start(). Make sure no installed extension is starting a session in its ext_localconf.php or ext_tables.php.
 
 when logging in to Admin Tools (Maintenance, Settings, Update,
 Environment) in Backend.

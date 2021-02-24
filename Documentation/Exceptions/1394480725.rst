@@ -4,16 +4,13 @@
 TYPO3 Exception 1394480725
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 I had this error after i clicked the install button on the
 bootstrap_kickstart package.
 
-| 
+|
 | ( ! ) Warning:
   rename(C:/wamp/www/typo6/typo3temp/Cache/Data/cache_classes/549e9c6f11f2c.temp,C:/wamp/www/typo6/typo3temp/Cache/Data/cache_classes/tx_extbase_configuration_backendconfigurationmanager):
   in

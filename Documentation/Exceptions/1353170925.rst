@@ -4,11 +4,8 @@
 TYPO3 Exception 1353170925
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 The relation information for property "propertyXX" of class "TX\ext_key\Domain\Model\SomeModelYY" is missing.
 =============================================================================================================
@@ -22,7 +19,7 @@ type
            * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
            */
           protected $propertyXX;
-           
+
 
 the object will be populated by extbase without any other configuration.
 
@@ -30,7 +27,7 @@ But to make queries like
 
 ::
 
-     $query->like("propertyXX.someproperty", '%foo%') 
+     $query->like("propertyXX.someproperty", '%foo%')
 
 work, you still have to declare a 'foreign_table' in your TCA.
 

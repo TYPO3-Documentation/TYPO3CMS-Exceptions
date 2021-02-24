@@ -4,11 +4,8 @@
 TYPO3 Exception 1509741912
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Concerned Version: TYPO3 Version 9.2.1
 
@@ -24,46 +21,46 @@ Message is shown:
 
       Uncaught TYPO3 Exception
       #1509741912: Supplied file object type TYPO3\CMS\Core\Resource\ProcessedFile for must be File or FileReference. (More information)
-      
+
       TYPO3Fluid\Fluid\Core\ViewHelper\Exception thrown in file
       \typo3_src-9.2.1\typo3\sysext\fluid\Classes\ViewHelpers\ImageViewHelper.php in line 173.
-      
+
       58 TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper::render()
       57 call_user_func(array)
-      
+
       \typo3_src-9.2.1\vendor\typo3fluid\fluid\src\Core\ViewHelper\AbstractViewHelper.php:
       00260:     {
       00261:         if (method_exists($this, 'render')) {
       00262:             return call_user_func([$this, 'render']);
       00263:         }
       00264:         if ((new \ReflectionMethod($this, 'renderStatic'))->getDeclaringClass()->getName() !== AbstractViewHelper::class) {
-      
+
       56 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
-      
+
       \typo3_src-9.2.1\vendor\typo3fluid\fluid\src\Core\ViewHelper\AbstractViewHelper.php:
       00248:         $this->initialize();
-      00249: 
+      00249:
       00250:         return $this->callRenderMethod();
       00251:     }
-      00252: 
-      
+      00252:
+
       55 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
-      
+
       \typo3_src-9.2.1\vendor\typo3fluid\fluid\src\Core\ViewHelper\ViewHelperInvoker.php:
       00077:             $viewHelper->setArguments($evaluatedArguments);
       00078:             $viewHelper->handleAdditionalArguments($undeclaredArguments);
       00079:             return $viewHelper->initializeArgumentsAndRender();
       00080:         } catch (Exception $error) {
       00081:             return $renderingContext->getErrorHandler()->handleViewHelperError($error);
-      
+
       54 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke("TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper", array, TYPO3\CMS\Fluid\Core\Rendering\RenderingContext, Closure)
-      
+
       \typo3_src-9.2.1\vendor\typo3fluid\fluid\src\Core\ViewHelper\AbstractViewHelper.php:
       00520:     {
       00521:         $viewHelperClassName = get_called_class();
       00522:         return $renderingContext->getViewHelperInvoker()->invoke($viewHelperClassName, $arguments, $renderingContext, $renderChildrenClosure);
       00523:     }
-      00524: 
-      
+      00524:
+
       53 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::renderStatic(array, Closure, TYPO3\CMS\Fluid\Core\Rendering\RenderingContext)
       ...

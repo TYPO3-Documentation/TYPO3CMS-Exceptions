@@ -4,11 +4,8 @@
 TYPO3 Exception 1300205628
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Related to the YAG Extension.
 =============================
@@ -20,13 +17,13 @@ Case 1
 
    - This exception can come if the ImageMagick configuration isn't correct on your installation.
 
-   - I had this exception only when displaying one album in the Frontend or editing it in the backend. All other albumbs was working well. 
+   - I had this exception only when displaying one album in the Frontend or editing it in the backend. All other albumbs was working well.
      The problem was that the filenames in this album had empty spaces: i.e.  "my image 001.jpg"
      Solution: manually replace all empty spaces with _ in the filesystem and in the Database
      1. open the directory with the images in the console and run: filesystem:   for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
      2. MySQL: UPDATE tx_yag_domain_model_item SET sourceuri = REPLACE(tx_yag_domain_model_item.sourceuri,  ' ', '_' ) WHERE tx_yag_domain_model_item.album =  YOUR_ALBUM_UID_HERE
 
-   - This exception could occur when there are special chars in the name of the image files. In this case simply replace the spcial char in the filename in both: filesystem and database 
+   - This exception could occur when there are special chars in the name of the image files. In this case simply replace the spcial char in the filename in both: filesystem and database
      (table: tx_yag_domain_model_item, field: sourceuri)
 
 Case 2

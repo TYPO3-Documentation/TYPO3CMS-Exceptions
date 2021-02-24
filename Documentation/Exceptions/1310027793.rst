@@ -4,18 +4,15 @@
 TYPO3 Exception 1310027793
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Getting the following error on >> install >> upgrade >> Update database
 schema after installing several new extensions. Plus the add a record is
 throwing a 500 (blank). Please see the upgrade wizard DB changes and new
 tables
 
-| 
+|
 | *Oops, an error occurred!*
 
 ERROR: Query could not be parsed: "SQL engine parse ERROR: No )
@@ -27,7 +24,7 @@ unsigned NOT NULL default '0', server_url varchar(2047) NOT NULL default
 *, salt char(40) NOT NULL default* , PRIMARY KEY (uid), UNIQUE nonce
 (server_url(255),tstamp,salt), KEY crdate (crdate) ) ENGINE=InnoDB;"
 
-| 
+|
 | **I was led to this page after an SQL executing error from install
   tool. The proposed database modifications all failed because all sql
   table notations were missing the database name as prefix. The

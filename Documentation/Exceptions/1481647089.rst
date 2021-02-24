@@ -4,15 +4,12 @@
 TYPO3 Exception 1481647089
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
-   #1481647089: Invalid flex form data structure on field name "pi_flexform" with element "foo" in section container "content": Nesting select and group elements in flex form sections is not allowed with MM relations. 
+   #1481647089: Invalid flex form data structure on field name "pi_flexform" with element "foo" in section container "content": Nesting select and group elements in flex form sections is not allowed with MM relations.
 
 Happens on TYPO3 v8 when using a multiRelation field inside a section
 container

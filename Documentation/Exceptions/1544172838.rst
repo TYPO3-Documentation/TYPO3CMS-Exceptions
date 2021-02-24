@@ -4,11 +4,8 @@
 TYPO3 Exception 1544172838
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 **RuntimeException :** Error handler could not fetch error page(due to
 no internet connection or protected )
@@ -25,7 +22,7 @@ verify that the corresponding Flux-TS is included.
 ::
 
     (1/1) #1544172838 Error handler could not fetch error pageuntimeException
-    Error handler could not fetch error page "https://project.localdomain.vm/http-error-404 [not available anymore]", reason: cURL error 51: SSL: no alternative certificate subject name matches target host name 'project.localdomain.vm' (see 
+    Error handler could not fetch error page "https://project.localdomain.vm/http-error-404 [not available anymore]", reason: cURL error 51: SSL: no alternative certificate subject name matches target host name 'project.localdomain.vm' (see
     https://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
 When you have set your 404-error-handler to "Display content from page"
@@ -42,7 +39,7 @@ self signed certificate problem
 
     (1/1) #1544172838 RuntimeException  Error handler could not fetch error page "https://example.de/startseite", reason: cURL error 60: SSL certificate problem: self signed certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
-| 
+|
 | in
   **/path/typo3_src-9.5.21/typo3/sysext/core/Classes/Error/PageErrorHandler/PageContentErrorHandler.php**
   line 79

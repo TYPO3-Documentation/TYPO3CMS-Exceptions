@@ -4,11 +4,8 @@
 TYPO3 Exception 1438185331
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 An error message of this kind appears in the TYPO3 backend.
 
@@ -21,7 +18,7 @@ An error message of this kind appears in the TYPO3 backend.
       UnexpectedValueException thrown in file
       /home/myuser/public_html/mysite/typo3_src-8.7.13/typo3/sysext/backend/Classes/Form/FormDataProvider/DatabaseRecordTypeValue.php in line 43.
 
-| 
+|
 | **Solution:** Edit the file
   *your_extension_key*/Configuration/TCA/*myfirsttable_mm_second.php* of
   your extension. Use your extension key and file name of your table
@@ -40,7 +37,7 @@ Add an empty part of types to it, like this:
         ),
         'types' => array(
           '0' => array(
-              'showitem' => 
+              'showitem' =>
           )
     ),
 

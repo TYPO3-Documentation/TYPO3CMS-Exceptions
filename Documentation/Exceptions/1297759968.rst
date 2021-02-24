@@ -4,11 +4,8 @@
 TYPO3 Exception 1297759968
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 #1297759968: Exception while property mapping at property path "":Object with identity "1" not found.
 =====================================================================================================
@@ -198,7 +195,7 @@ CONFIGURATION_MODIFICATION_ALLOWED. You know the drill;
 
     $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
 
-| 
+|
 | Maybe also check this post:
   http://stackoverflow.com/questions/18654920/extbase-exception-while-property-mapping-at-property-path
 

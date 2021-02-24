@@ -4,11 +4,8 @@
 TYPO3 Exception 1478105826
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 I Got this Error after migrating an extension from TYPO3 CMS 7 to 8 and
 had copied some code from 'ext_tables.php' to
@@ -26,7 +23,7 @@ After that i cound not edit any record in backend.
       $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['slider'] = 'pi_flexform';
       \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
           $contentElement,
-          'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/slider.xml' 
+          'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/slider.xml'
       );
 
 Setting $_EXTKEY to name of my extension solved it.

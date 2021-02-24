@@ -4,11 +4,8 @@
 TYPO3 Exception 1225709595
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Exception message:
 
@@ -38,7 +35,7 @@ $this->controllerContext class field (others call it class property).
 All you have to do is include it in the
 *$standaloneView->setControllerContext()* method like so,
 
-| 
+|
 | $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
 
 $standaloneView->setControllerContext($this->controllerContext);
@@ -56,7 +53,7 @@ Solution 2
 If you are running your view away from the Controllers, then make sure
 to fill in *fillDefaultsByPackageName* with your extension key:
 
-| 
+|
 | $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
 
 $standaloneView->getTemplatePaths()->fillDefaultsByPackageName('myextension');

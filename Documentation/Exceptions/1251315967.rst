@@ -4,11 +4,8 @@
 TYPO3 Exception 1251315967
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 This Exception rose in one installation(TYPO3 4.6.9-15) after changing
 direction of relations in the extension_builder between two models after
@@ -36,7 +33,7 @@ Non-CamelCase:
       /**
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
        */
-     
+
       /**
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
        */
@@ -75,9 +72,9 @@ To fix this:
      * @param ${newModel}
      * @return void
      */
-     
-      Change to 
-     
+
+      Change to
+
      /**
      * Adds a {newModel}
       *
@@ -85,14 +82,14 @@ To fix this:
      * @return void
      */
 
--  
+-
 
    -  Clear Typo3 Caches
    -  Delete typo3temp/\*
    -  As stated before, truncating the cf_-tables was needed before the
       error stopped.
 
-| 
+|
 | May also be caused by incorrectly formatted comments - a missing \* on
   the first line (only having one star) will stop the parser finding the
   definitions.

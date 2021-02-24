@@ -4,11 +4,8 @@
 TYPO3 Exception 1596980032
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 **Errormessage:**
 
@@ -25,7 +22,7 @@ When debugged the corresponding cache.definition might look like this:
 
 This error is able to drive the complete frontend and backend unusable.
 
-| 
+|
 | **The reason**
 
 Before TYPO3 version 10 it was common that the variable $_EXTKEY was
@@ -40,7 +37,7 @@ the array-key for the cache-definition just was empty.
 
 So in this case it was an incomplete extension-update.
 
-| 
+|
 | **How to fix**
 
 Search in all extensions for usage of $_EXTKEY in the file

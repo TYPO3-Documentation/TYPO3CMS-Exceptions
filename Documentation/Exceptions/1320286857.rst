@@ -4,11 +4,8 @@
 TYPO3 Exception 1320286857
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 File-Record-Wizard
 
@@ -18,7 +15,7 @@ This error occurs e.g. when a file-name contains an umlaut. By removing
 the umlaut this can fix this issue. However, if it doesn't check the
 other posted solutions in this entry.
 
-| 
+|
 | RTE
 
 --------------
@@ -27,7 +24,7 @@ I've got this error since some weeks, when I try to create a link to a
 file or folder inside RTE. Links to email or pages work fine. I had that
 problem with 6.2 and now after upgrade also with 7.6.15.
 
-| 
+|
 | I noticed this issue when RTE had an incorrect link:
 
 <link ../fileadmin/user_upload/documents/myhomeplan.pdf>
@@ -81,7 +78,7 @@ gets wrapped with it's p-Tags and results in invalid linkhandling while
 'test test' gets split into '< p > test' which is not correct, but does
 not throw an exception.
 
-| 
+|
 | STudio26
 
 --------------

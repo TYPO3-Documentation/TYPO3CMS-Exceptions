@@ -4,18 +4,15 @@
 TYPO3 Exception 1224485838
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
    #1224485838 TYPO3Fluid\Fluid\Core\Parser\Exception
    Fluid parse error in template ..., line ... at character .... Error: You closed a templating tag which you never opened! (error code 1224485838). Template source chunk: </f:sometag>
 
-| 
+|
 | This occures if your try to write <f:sometag
   attribute_with_underscore="xxx">.
 

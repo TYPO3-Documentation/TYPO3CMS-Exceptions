@@ -4,11 +4,8 @@
 TYPO3 Exception 1245673367
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 I get this error after installing an Extension which tries to use a
 Class not defined in any of the typical Extbase Autoloader locations.
@@ -51,7 +48,7 @@ Occours in: typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php:117
                       $object = $this->objectManager->get($slotInformation['class']);
                   }
 
-| 
+|
 | - - - yes i got the same. caused by mismatch between the classname in
   the signalslot (in ext_tables.php) and the namespace/classname
   combination (full-qualified class name) in

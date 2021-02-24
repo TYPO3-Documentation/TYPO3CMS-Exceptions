@@ -4,11 +4,8 @@
 TYPO3 Exception 1253036401
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 I receive this when the extensions fluid_styled_content and
 css_styled_content are installed and are activated in the page template.
@@ -16,7 +13,7 @@ It doesn't seems not to be a genereal error, but one that is connected
 with on of our custom-made extensions. Up to now I have no clue, where
 exactly the error comes from.
 
-| 
+|
 | This error ( argument "*path*" was already defined and should not be
   defined again ) is caused by an extension viewhelper registering it
   arguments differently after an upgrade. Clear the cache from install

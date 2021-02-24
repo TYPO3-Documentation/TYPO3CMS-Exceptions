@@ -4,19 +4,16 @@
 TYPO3 Exception 1440506893
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
-   #1440506893: Data structure error: No source value in fieldname "tx_templavoila_ds" 
+   #1440506893: Data structure error: No source value in fieldname "tx_templavoila_ds"
 
 ::
 
-   #1440506893: Data structure error: Line 1: Invalid document end 
+   #1440506893: Data structure error: Line 1: Invalid document end
 
 Invalid document end: This happens if you define a flexform xml file
 which is not available. Check the path to your file.

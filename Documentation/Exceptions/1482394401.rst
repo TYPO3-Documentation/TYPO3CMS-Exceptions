@@ -4,11 +4,8 @@
 TYPO3 Exception 1482394401
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 | **Missing "type" in TCA of field
   "['dummyTable']['dummyField']['config']**
@@ -18,7 +15,7 @@ TYPO3 Exception 1482394401
 | Comment out one finisher at a time in the form definition file
   (*.form.yaml) to find the culprit.
 
-| 
+|
 | **TCEforms flexform** The error message only gives an example table
   name and table field, because due to some migration to real names are
   not used in this error message. So you have to do some guesswork from

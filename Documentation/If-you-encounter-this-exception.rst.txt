@@ -1,0 +1,9 @@
+
+.. note::
+
+   If you encountered this exception, please help others by providing
+   information about how you got this error. What did it mean in your case?
+   What helped and what did not help?
+
+   Please do not hesitate to update this page. Just follow the
+   :ref:`"Edit on GitHub" workflow <docs-contribute-github-method>`.

@@ -4,11 +4,8 @@
 TYPO3 Exception 1497332874
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 This error can happen in the TYPO3 Backend on the page configuration.
 
@@ -23,5 +20,5 @@ Yaml::parse($content); if (!is_array($content)) { throw new
 YamlParseException( 'YAML file "' . $fileName . '" could not be parsed
 into valid syntax, probably empty?', 1497332874 ); }
 
-| 
+|
 | Solution: Use a yaml syntax checker tool for for config.yaml file.

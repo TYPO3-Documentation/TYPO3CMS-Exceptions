@@ -4,11 +4,8 @@
 TYPO3 Exception 1298012500
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Exception message:
 
@@ -33,13 +30,13 @@ Posted 25. June 2015
 
 ::
 
-   #1298012500: Required argument "mail" is not set. 
+   #1298012500: Required argument "mail" is not set.
 
 ::
 
    Required argument "mail" is not set for In2code\Powermail\Controller\FormController->create.
 
-| 
+|
 | **POSSIBLE CAUSE**
 | My powermail form redirects to a thank you page. The base-url was set
   to non-www.
@@ -82,7 +79,7 @@ in line 425.
 14
 TYPO3\CMS\Extbase\Mvc\Controller\AbstractController::mapRequestArgumentsToControllerArguments()
 
-| 
+|
 | /var/www/avadis/html/typo3_src-6.2.12/typo3/sysext/extbase/Classes/Mvc/Controller/ActionController.php:
 
 00148: call_user_func(array($this, $actionInitializationMethodName));
@@ -93,12 +90,12 @@ TYPO3\CMS\Extbase\Mvc\Controller\AbstractController::mapRequestArgumentsToContro
 00151: $this->checkRequestHash(); 00152: $this->controllerContext =
 $this->buildControllerContext();
 
-| 
+|
 | 13
   TYPO3\CMS\Extbase\Mvc\Controller\ActionController::processRequest(TYPO3\CMS\Extbase\Mvc\Web\Request,
   TYPO3\CMS\Extbase\Mvc\Web\Response)
 
-| 
+|
 | /var/www/avadis/html/typo3_src-6.2.12/typo3/sysext/extbase/Classes/Mvc/Dispatcher.php:
 
 00067: $controller = $this->resolveController($request); 00068: try {

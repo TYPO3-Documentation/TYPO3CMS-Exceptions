@@ -4,11 +4,8 @@
 TYPO3 Exception 1314516809
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Check case sensitivity setting in \`File storage\` record
 =========================================================
@@ -132,7 +129,7 @@ The file does exist (though the file name is unfortunate):
 
 ::
 
-   ls -l fileadmin/user_upload/niederlandistik/bilder/foto_ba\\\'s.JPG 
+   ls -l fileadmin/user_upload/niederlandistik/bilder/foto_ba\\\'s.JPG
    -rw-r-----. 1 user group 194414 Nov  1  2012 fileadmin/user_upload/niederlandistik/bilder/foto_ba\'s.JPG
 
 **Concequence** Upgrade wizard no longer usable unless

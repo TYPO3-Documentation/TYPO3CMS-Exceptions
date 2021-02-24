@@ -4,11 +4,8 @@
 TYPO3 Exception 1228262000
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Happened after updating from TYPO3 6.0 to TYPO3 6.2.2. The extension
 RealURL: Clear cache [realurl_clearcache] threw the error
@@ -23,7 +20,7 @@ So I had to remove
 
 ::
 
-      'realurl_clearcache' => 
+      'realurl_clearcache' =>
       array (
         'state' => 'active',
         'packagePath' => 'typo3conf/ext/realurl_clearcache/',
@@ -39,7 +36,7 @@ Oops, an error occurred!
 $hookObject must implement interface
 TYPO3\CMS\Backend\Toolbar\ClearCacheActionsHookInterface
 
-| 
+|
 | **Solution:**
 
 Clear the cache in the Install tool:

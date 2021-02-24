@@ -4,11 +4,8 @@
 TYPO3 Exception 1437750231
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Exception message:
 
@@ -65,7 +62,7 @@ with
        </urlParameters>
    </module>
 
-| 
+|
 | For 'wizard_add.php', 'wizard_edit.php', 'wizard_list.php',
   'wizard_rte.php', the module names stay the same as the old php files
   name, for instance:

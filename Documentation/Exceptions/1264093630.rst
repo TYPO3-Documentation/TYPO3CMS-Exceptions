@@ -4,11 +4,8 @@
 TYPO3 Exception 1264093630
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 This error can be caused by a mis-spelled vendor name.
 
@@ -17,10 +14,10 @@ with a capital letter to work correctly with Extbase. Otherwise PHP
 class names start with a small letter while the Extbase types start with
 a capital letter what will cause problems.
 
-| 
+|
 | Make sure the type of each variable is defined in your model:
   extensionname/Classes/Domain/Model/\* Set the "@var" in the header
-| 
+|
 
 ::
 
@@ -28,5 +25,5 @@ a capital letter what will cause problems.
    * aString
    *
    * @var string
-   */ 
+   */
    protected $aString;

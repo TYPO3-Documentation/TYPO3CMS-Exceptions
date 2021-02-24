@@ -4,11 +4,8 @@
 TYPO3 Exception 1231267498
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Solution
 ========
@@ -35,7 +32,7 @@ This setup will throw the exception:
       $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['options'] = array('servers' => array('localhost:11211'),);
       $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['extbase_object']['backend'] = 'TYPO3\\CMS\\Core\\Cache\\Backend\\NullBackend';
 
-| 
+|
 | If you want to set to NullBackend, do it like this:
 
 .. container::

@@ -4,11 +4,8 @@
 TYPO3 Exception 40
 ==================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
@@ -55,15 +52,15 @@ Solution: Remove the second line with the field 'tstamp' from table
       /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/SchemaException.php in line 120.
       28 Doctrine\DBAL\Schema\SchemaException::columnAlreadyExists("sys_products_fe_users_mm_visited_products", "tstamp")
       /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php:
-      00478: 
+      00478:
       00479:         if (isset($this->_columns[$columnName])) {
       00480:             throw SchemaException::columnAlreadyExists($this->getName(), $columnName);
       00481:         }
-      00482: 
+      00482:
       27 Doctrine\DBAL\Schema\Table::_addColumn(Doctrine\DBAL\Schema\Column)
       /home/myuser/public_html/myuser/typo3_src-8.6.1/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/Table.php:
       00321:         $column = new Column($columnName, Type::getType($typeName), $options);
-      00322: 
+      00322:
       00323:         $this->_addColumn($column);
-      00324: 
+      00324:
       00325:         return $column;

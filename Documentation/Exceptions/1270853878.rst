@@ -4,11 +4,8 @@
 TYPO3 Exception 1270853878
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
@@ -17,7 +14,7 @@ TYPO3 Exception 1270853878
 Please check, whether you have downloaded and installed the called
 extension (in this case "adodb") in the backends extension manager.
 
-| 
+|
 | Another situation where this error is thrown is when the extension
   "mageconnect" is installed.
 

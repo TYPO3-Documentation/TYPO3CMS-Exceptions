@@ -4,11 +4,8 @@
 TYPO3 Exception 1316104317
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 .. container::
 
@@ -45,17 +42,17 @@ controller/action. Here's an example:
       \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         //assuming your extension is in typo3conf/ext/your_ext folder
         'YourVendor.YourExt',
-        
+
         // Plugin name
         'Pi1',
-        
+
         // An array of controller-action combinations. The first one found is the default one.
         array(
           'YourController' => 'index,new,create,edit,update'
         ),
-          
+
         // An array of non-cachable controller-action-combinations (they must already be enabled)
-        array(                
+        array(
           'YourController' => 'new,create,edit,update'
         )
       );
@@ -79,9 +76,9 @@ double-check your ext_localconf.
 
       lib.test = USER_INT
       lib.test {
-        # Calling the extbase bootstrapper 
+        # Calling the extbase bootstrapper
         userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-        
+
         # Upcase!
         extensionName = YourExt
         vendorName = YourVendor

@@ -4,11 +4,8 @@
 TYPO3 Exception 1224485398
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 error message
 =============
@@ -17,7 +14,7 @@ error message
 
    #1224485398: Templating tags not properly nested. Expected: TYPO3\CMS\Fluid\ViewHelpers\Link\ExternalViewHelper;
 
-   Actual: TYPO3\CMS\Fluid\ViewHelpers\Link\UriViewHelper 
+   Actual: TYPO3\CMS\Fluid\ViewHelpers\Link\UriViewHelper
 
 This error is triggered when the parser is finding that tags are not
 properly nested. Consult the manual for the correct nesting

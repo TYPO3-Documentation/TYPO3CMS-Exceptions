@@ -4,11 +4,8 @@
 TYPO3 Exception 1407060572
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Case 1
 ======
@@ -41,7 +38,7 @@ does not exist. (error code 1407060572). Template source chunk:
 <v:variable.set name="CUD" value='<f:cObject
 typoscriptObjectPath="lib.CUD" />' />
 
-| 
+|
 | in Fluid i declared {namespace v=FluidTYPO3\Vhs\ViewHelpers} but i did
   not install the Vhs extension
 

@@ -4,11 +4,8 @@
 TYPO3 Exception 1400741142
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 **Solution 1:**
 
@@ -22,7 +19,7 @@ The final code might look like this
 plugin.tx_news.settings.overrideFlexformSettingsIfEmpty =
 cropMaxCharacters,dateField,timeRestriction,orderBy,orderDirection,backPid,listPid,startingpoint,recursive,list.paginate.itemsPerPage
 
-| 
+|
 | **Solution 2:**
 
 Include the EXT:news static into your root-template (or

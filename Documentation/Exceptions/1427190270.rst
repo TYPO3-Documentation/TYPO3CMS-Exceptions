@@ -4,11 +4,8 @@
 TYPO3 Exception 1427190270
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Errors Messages for Image Cropper.
 ==================================
@@ -25,14 +22,14 @@ When using the image cropper :
 
    |Screenshot : using image cropper|
 
-| 
+|
 | You might encounter the following error message :
 
 .. container::
 
    |Screenshot : Missing Metadata Error|
 
-| 
+|
 
 How to solve it
 ^^^^^^^^^^^^^^^
@@ -46,7 +43,7 @@ How to solve it
 
    |Screenshot : Schelduler main page|
 
-| 
+|
 | Create a new task by clicking on the "+" as shown in the following
   image :
 
@@ -54,14 +51,14 @@ How to solve it
 
    |Screenshot : Creating a new task|
 
-| 
+|
 | Once the Task Form opens, fill it as follow:
 
 .. container::
 
    |Screenshot : Task Setting|
 
-| 
+|
 | Save the task by clicking on the floppy icon, tick the leftside
   checkbox, and clic the "execute selected task" button:
 
@@ -69,7 +66,7 @@ How to solve it
 
    |image1|
 
-| 
+|
 | If you have a lot of files in FAL, indexing may take some time. once
   indexing finishes, get back to image cropping, all should be fine now.
 

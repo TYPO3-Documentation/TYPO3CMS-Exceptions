@@ -4,18 +4,15 @@
 TYPO3 Exception 1260881688
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 If this error occurs when you use a $this -> redirect( ... ), try $this
 -> forward( ... ) instead. You can do this but its absolutely not
 recommended because you are bypassing domain validation with the
 forward() method!
 
-| 
+|
 | The error occurs if there is a newly created Domain Object where the
   attribute uid is not set. This happens because newly created Domain
   Objects were not persisted directly after adding them to a repository.

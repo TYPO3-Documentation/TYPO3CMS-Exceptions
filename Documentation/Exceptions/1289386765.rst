@@ -4,11 +4,8 @@
 TYPO3 Exception 1289386765
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Message:
 
@@ -86,7 +83,7 @@ Error message concerning Fluid View Helper
 
 ::
 
-   #1289386765: Could not analyse class:TYPO3\CMS\Fluid\ViewHelpers\Form\TextViewHelper maybe 
+   #1289386765: Could not analyse class:TYPO3\CMS\Fluid\ViewHelpers\Form\TextViewHelper maybe
 
    not loaded or no autoloader?
 

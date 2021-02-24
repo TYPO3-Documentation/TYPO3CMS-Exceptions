@@ -1,13 +1,10 @@
 .. include:: /Includes.rst.txt
-
 .. _start:
 .. _typo3-exceptions:
 
 ================
 TYPO3 Exceptions
 ================
-
-.. rst-class:: horizbuttons-tip-m
 
 :Version:
       |release|
@@ -31,17 +28,14 @@ TYPO3 Exceptions
       documentation@typo3.org
 
 :License:
-      Open Publication License available from `www.opencontent.org/openpub/
-      <http://www.opencontent.org/openpub/>`_
+      Open Publication License available from http://www.opencontent.org/openpub/
 
 :Shortcut:
       `t3exceptions` is the usual alias for :ref:`h2document:cheat-sheet-intersphinx`.
 
-.. rst-class:: horizbuttons-tip-xxl
 
-The content of this document is related to TYPO3 CMS,
-a GNU/GPL CMS/Framework available from `www.typo3.org
-<https://typo3.org/>`_
+The content of this document is related to TYPO3 CMS, a GNU/GPL CMS/Framework
+available from https://typo3.org/.
 
 **Official Documentation**
 
@@ -52,9 +46,11 @@ If you find an error or something is missing, please create an `issue
 or make the change yourself. You can find out more about how to do this in
 :ref:`contribute`.
 
+
 .. toctree::
    :glob:
    :titlesonly:
    :hidden:
 
-   Exceptions/*
+   Exceptions/Index
+   *

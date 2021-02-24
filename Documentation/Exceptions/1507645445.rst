@@ -4,11 +4,8 @@
 TYPO3 Exception 1507645445
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 **(1/1) #1507645445 RuntimeException** **Line 2: Object Name String,
 "Enables" was not followed by any operator, =<>({**
@@ -19,11 +16,11 @@ The file ext_conf_template.php has a RETURN where it is not allowed.
 
 ::
 
-    # cat=basic/enable/020; type=boolean; label=Activate the feature: 
+    # cat=basic/enable/020; type=boolean; label=Activate the feature:
     Enables the feature
     feature = 0
 
-| 
+|
 | *Correct*:
 
 ::

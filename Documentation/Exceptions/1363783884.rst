@@ -4,11 +4,8 @@
 TYPO3 Exception 1363783884
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 Extension BLSV Sporttabzieche 2013( blsvsa2013)
 ===============================================
@@ -18,7 +15,7 @@ Error
 
 ::
 
-   #1363783884: Keine Institution zugeordnet (uid: 109019) (More information) 
+   #1363783884: Keine Institution zugeordnet (uid: 109019) (More information)
 
    Exception thrown in file
    /www/2013.sportabzeichen-bayern.de/htdocs/typo3conf/ext/blsvsa2013/Classes/Domain/Model/Schulen.php in line 853.

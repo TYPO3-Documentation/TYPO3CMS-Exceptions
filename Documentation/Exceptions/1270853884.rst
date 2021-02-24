@@ -4,11 +4,8 @@
 TYPO3 Exception 1270853884
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
+
 
 ::
 
@@ -22,8 +19,8 @@ Solution 1: restart the MySQL daemon.
 ::
 
    1. Login as root on your system if you have shell access, or start a console from the server panel.
-   2. type: /etc/init.d/mysql restart 
-      On Mac OSX 10.10 (Yosemite) type: 
+   2. type: /etc/init.d/mysql restart
+      On Mac OSX 10.10 (Yosemite) type:
       sudo /usr/local/mysql/support-files/mysql.server stop
    3. If you get this error:
 
@@ -36,7 +33,7 @@ Solution 1: restart the MySQL daemon.
       Then your next option is to kill the mysql process manually by following this instructions:
       http://stackoverflow.com/questions/26263889/starting-mysql-error-the-server-quit-without-updating-pid-file/26266079#26266079
    4. Then restart mysql daemon again. This time it should work.
-      On Mac OSX 10.10 (Yosemite) type: 
+      On Mac OSX 10.10 (Yosemite) type:
       sudo /usr/local/mysql/support-files/mysql.server start
 
 Solution 2: TYPO3 6.2 - modify your MySQL configuration file
