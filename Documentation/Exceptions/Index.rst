@@ -1,8 +1,8 @@
 .. include:: /Includes.rst.txt
 
-=================
-Exceptions
-=================
+================
+TYPO3 Exceptions
+================
 
 .. toctree::
    :glob:
