@@ -5,7 +5,7 @@
 TYPO3 Exceptions
 ================
 
-Each exception is dealt with on a page of its own.
+Each exception has its own subpage.
 
 
 
