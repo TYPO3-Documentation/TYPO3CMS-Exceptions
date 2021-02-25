@@ -4,11 +4,7 @@
 TYPO3 Exception 1228262000
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 Happened after updating from TYPO3 6.0 to TYPO3 6.2.2. The extension
 RealURL: Clear cache [realurl_clearcache] threw the error

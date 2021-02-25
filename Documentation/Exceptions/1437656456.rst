@@ -4,11 +4,7 @@
 TYPO3 Exception 1437656456
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 I received this exception under Typo3 7.6.9 when attempting to add the
 language ISO code to a language with the ID "0". It worked fine for the
@@ -66,4 +62,4 @@ specification (see install tool > important actions). Make sure your
 table definitions are the same as they are in the current database!
 
 .. |TYPO3 multi-content edit error.png| image:: files/TYPO3_multi-content_edit_error.png
-   :target: /File:TYPO3_multi-content_edit_error.png
+   :target: files/TYPO3_multi-content_edit_error.png

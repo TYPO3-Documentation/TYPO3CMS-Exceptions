@@ -4,11 +4,7 @@
 TYPO3 Exception 1343589452
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 This happened after moving a TYPO3 site from one server to an other. The
 website had just been upgraded from 4.7 to 6.2.3. Still the solution was

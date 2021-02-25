@@ -4,11 +4,7 @@
 TYPO3 Exception 1476107295
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 PHP Warning: session_start():
 open(C:\windows\TEMP\sess_57271dd7537f919aeded93b5144d0b5f, O_RDWR)
@@ -136,4 +132,4 @@ in V10.4.12 - disable the ext, when you are in debug mode and you are
 good to go.
 
 .. |Error ... to large ... offset 27.jpg| image:: files/Error_..._to_large_..._offset_27.jpg
-   :target: /File:Error_..._to_large_..._offset_27.jpg
+   :target: files/Error_..._to_large_..._offset_27.jpg

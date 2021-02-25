@@ -4,11 +4,7 @@
 TYPO3 Exception 1481380393
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 Happened for me when I wanted to access backend flexform of one of my
 own extensions after upgrading to TYPO3 8.7 LTS.

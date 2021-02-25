@@ -4,11 +4,7 @@
 TYPO3 Exception 1478105826
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 I Got this Error after migrating an extension from TYPO3 CMS 7 to 8 and
 had copied some code from 'ext_tables.php' to

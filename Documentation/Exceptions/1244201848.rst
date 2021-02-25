@@ -4,11 +4,7 @@
 TYPO3 Exception 1244201848
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 Exception message:
 
@@ -19,5 +15,6 @@ Exception message:
    A boolean expression has more than tree parts.
 
 The error happens when you have a `Fluid ``f:if``
-tag </Fluid#f:if.2C_f:then.2C_f:else>`__ with a syntax error in the
-``condition`` attribute.
+tag <https://wiki.typo3.org/Fluid#f:if.2C_f:then.2C_f:else>`__
+[deprecated wiki link] with a syntax error in the ``condition``
+attribute.

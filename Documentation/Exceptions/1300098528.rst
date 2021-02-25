@@ -4,11 +4,7 @@
 TYPO3 Exception 1300098528
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 Observed in TYPO3 6.2.0: This error occurs when importing a previously
 exported page containing a reference to a file in fileadmin (Testing

@@ -4,11 +4,7 @@
 TYPO3 Exception 1481647089
 ==========================
 
-.. note::
-   If you encountered this exception, please help others by providing
-   information about how you got this error. Especially if you have a solution,
-   please add it to this page by following the :ref:`"Edit on GitHub" workflow
-   <docs-contribute-github-method>`!
+.. include:: /If-you-encounter-this-exception.rst.txt
 
 ::
 
@@ -16,3 +12,8 @@ TYPO3 Exception 1481647089
 
 Happens on TYPO3 v8 when using a multiRelation field inside a section
 container
+
+This `also happens with flux
+8 <https://github.com/FluidTYPO3/flux/issues/1446>`__ when using a
+<flux:field.relation> tag. This has `been fixed in flux
+9.0.0 <https://github.com/FluidTYPO3/flux/issues/1446>`__.
