@@ -11,3 +11,6 @@
    Please do not hesitate to update this page. Just click on
    "Edit on GitHub" at the top and follow the :ref:`"Edit on GitHub"
    workflow <h2document:docs-contribute-github-method>`.
+
+   See also :ref:`our tip about the coding style and reST
+   <Tip-about-reST-coding-style>`.
