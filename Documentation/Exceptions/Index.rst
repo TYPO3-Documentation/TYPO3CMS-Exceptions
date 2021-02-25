@@ -1,8 +1,20 @@
 .. include:: /Includes.rst.txt
+.. _TYPO3-Exceptions::
 
 ================
 TYPO3 Exceptions
 ================
+
+Each exception is dealt with on a page of its own.
+
+
+
+.. _Tip-about-reST-coding-style:
+
+.. rubric:: Here are some tips about writing reStructuredText (reST)
+
+.. include:: /Tip-about-reST-coding-style.rst.txt
+
 
 .. toctree::
    :glob:

@@ -3,41 +3,11 @@
 
    If you encounter this exception, please help others by providing
    information about how you get this error.
-   
+
    *  When and how does the exception occur?
    *  Do you know a solution?
    *  What did you try?
-   
+
    Please do not hesitate to update this page. Just click on
-   "Edit on GitHub" at the top and follow the :ref:`"Edit on GitHub" 
+   "Edit on GitHub" at the top and follow the :ref:`"Edit on GitHub"
    workflow <h2document:docs-contribute-github-method>`.
-
-
-.. tip::
-
-   Coding style of the Exception report (reST)
-   
-   Just start writing plain text - as you would do on an old-fashioned
-   typewriter. Any Unicode character is fine. To markup special words
-   follow the rules of **reStructuredText**. For example, if you write::
-   
-      this is *emphasis*, **strong emphasis** and 
-      `a hyperlink to TYPO3. <https://typo3.org/>`__
-      
-   the result will be
-   
-      this is *emphasis*, **strong emphasis** and 
-      `a hyperlink to TYPO3. <https://typo3.org/>`__
-     
-   One or more empty lines will end a a paragraph.
-   
-   Learn about reST:
-   
-   *  :ref:`h2document:rest-reference` - in TYPO3 documentation
-      
-   *  `Wikipedia (de) <https://de.wikipedia.org/wiki/ReStructuredText>`__
-   
-   *  `Wikipedia (en) <https://en.wikipedia.org/wiki/ReStructuredText>`__
-   
-   
-   
