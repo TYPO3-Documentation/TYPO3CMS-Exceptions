@@ -4,7 +4,7 @@
    If you encounter this exception, please help others by providing
    information about how you get this error.
    
-   *  When and how does it happen?
+   *  When and how does the exception occur?
    *  Do you know a solution?
    *  What did you try?
    
