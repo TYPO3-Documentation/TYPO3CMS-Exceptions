@@ -1,9 +1,13 @@
 
 .. note::
 
-   If you encountered this exception, please help others by providing
-   information about how you got this error. What did it mean in your case?
-   What helped and what did not help?
-
-   Please do not hesitate to update this page. Just follow the
-   :ref:`"Edit on GitHub" workflow <docs-contribute-github-method>`.
+   If you encounter this exception, please help others by providing
+   information about how you get this error.
+   
+   *  When and how does it happen?
+   *  Do you know a solution?
+   *  What did you try?
+   
+   Please do not hesitate to update this page. Just click on
+   "Edit on GitHub" and follow the :ref:`"Edit on GitHub" 
+   workflow <h2document:docs-contribute-github-method>`.
