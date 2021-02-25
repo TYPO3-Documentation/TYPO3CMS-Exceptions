@@ -1,0 +1,26 @@
+
+.. tip::
+
+   Coding style of the Exception report (reST)
+      Just start writing plain text - as you would do on an old-fashioned
+      typewriter. Any Unicode character is fine. To markup special words
+      follow the rules of **reStructuredText**. For example, if you write:
+
+      .. code-block:: text
+
+         this is *emphasis*, **strong emphasis** and `a hyperlink to TYPO3. <https://typo3.org/>`__
+
+      the result will be: this is *emphasis*, **strong emphasis** and
+      `a hyperlink to TYPO3. <https://typo3.org/>`__
+
+      One or more empty lines will end a paragraph.
+
+
+   Learn about reST
+      *  :ref:`h2document:rest-reference` - in TYPO3 documentation
+
+      *  `Wikipedia (de) <https://de.wikipedia.org/wiki/ReStructuredText>`__
+         - some good links (en)
+
+      *  `Wikipedia (en) <https://en.wikipedia.org/wiki/ReStructuredText>`__
+         - profound

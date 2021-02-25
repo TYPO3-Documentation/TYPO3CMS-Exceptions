@@ -1,9 +1,16 @@
 
 .. note::
 
-   If you encountered this exception, please help others by providing
-   information about how you got this error. What did it mean in your case?
-   What helped and what did not help?
+   If you encounter this exception, please help others by providing
+   information about how you get this error.
 
-   Please do not hesitate to update this page. Just follow the
-   :ref:`"Edit on GitHub" workflow <docs-contribute-github-method>`.
+   *  When and how does the exception occur?
+   *  Do you know a solution?
+   *  What did you try?
+
+   Please do not hesitate to update this page. Just click on
+   "Edit on GitHub" at the top and follow the :ref:`"Edit on GitHub"
+   workflow <h2document:docs-contribute-github-method>`.
+
+   See also :ref:`our tip about the coding style and reST
+   <Tip-about-reST-coding-style>`.
