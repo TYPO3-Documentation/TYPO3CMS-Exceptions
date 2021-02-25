@@ -9,5 +9,5 @@
    *  What did you try?
    
    Please do not hesitate to update this page. Just click on
-   "Edit on GitHub" and follow the :ref:`"Edit on GitHub" 
+   "Edit on GitHub" at the top and follow the :ref:`"Edit on GitHub" 
    workflow <h2document:docs-contribute-github-method>`.
