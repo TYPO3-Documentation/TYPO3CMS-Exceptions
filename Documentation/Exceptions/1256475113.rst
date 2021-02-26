@@ -42,3 +42,32 @@ PHP 7.3.14:
    pcre.jit = 1
 
 jit (Just in time compiler) had to be enabled in my installation.
+
+| 
+| - - -
+
+(1/1) #1256475113 InvalidArgumentException
+==========================================
+
+The argument "arguments" was registered with type "array", but is of
+type "string" in view helper
+"TYPO3\CMS\Fluid\ViewHelpers\Link\ActionViewHelper".
+
+| 
+| I get this exception when i try to use a variable in an f:link.action.
+
+example:
+
+this works:                                                    
+
+<f:link.action pageU arguments="{RSRQ_linkValue:
+'{row.{columnName.relationField}}'}">
+
+while this doesn't:                                        
+
+<f:variable name="placeholder" value="linkValue" />
+
+  <f:link.action pageU arguments="{RSRQ_{placeholder}:
+'{row.{columnName.relationField}}'}">
+
+(T3v10.4 ) ~~~~

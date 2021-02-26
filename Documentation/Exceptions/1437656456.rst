@@ -62,4 +62,3 @@ specification (see install tool > important actions). Make sure your
 table definitions are the same as they are in the current database!
 
 .. |TYPO3 multi-content edit error.png| image:: files/TYPO3_multi-content_edit_error.png
-   :target: files/TYPO3_multi-content_edit_error.png

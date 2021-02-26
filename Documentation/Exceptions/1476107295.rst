@@ -132,4 +132,3 @@ in V10.4.12 - disable the ext, when you are in debug mode and you are
 good to go.
 
 .. |Error ... to large ... offset 27.jpg| image:: files/Error_..._to_large_..._offset_27.jpg
-   :target: files/Error_..._to_large_..._offset_27.jpg

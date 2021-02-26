@@ -23,4 +23,3 @@ Changing this slug to something like "/my-company" is raising the
 error-message shown on the screenshot.
 
 .. |Error-message.png| image:: files/Error-message.png
-   :target: files/Error-message.png
