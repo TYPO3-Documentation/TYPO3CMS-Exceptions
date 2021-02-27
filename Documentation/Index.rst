@@ -58,7 +58,6 @@ or make the change yourself. You can find out more about how to do this in
    Testing <https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Testing/Index.html>
    Fluid debug viewhelper <https://docs.typo3.org/other/typo3/view-helper-reference/10.4/en-us/typo3/fluid/latest/Debug.html>
    TypoScript debugging <https://docs.typo3.org/m/typo3/reference-typoscript/10.4/en-us/UsingSetting/Debugging.html>
-   Report an issue <https://docs.typo3.org/m/typo3/guide-contributionworkflow/master/en-us/ReportingAnIssue/Index.html>
 
 
 .. toctree::
@@ -67,6 +66,7 @@ or make the change yourself. You can find out more about how to do this in
 
    "Edit on Github" Workflow <https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingDocsOfficial/GithubMethod.html>
    ReST Cheat Sheet <https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingReST/CheatSheet.html>
+   Report an issue <https://docs.typo3.org/m/typo3/guide-contributionworkflow/master/en-us/ReportingAnIssue/Index.html>
 
 
 .. toctree::
