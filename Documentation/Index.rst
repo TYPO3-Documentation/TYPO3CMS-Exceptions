@@ -70,9 +70,7 @@ or make the change yourself. You can find out more about how to do this in
 
 
 .. toctree::
-   :glob:
    :titlesonly:
    :hidden:
 
    Exceptions/Index
-   *
