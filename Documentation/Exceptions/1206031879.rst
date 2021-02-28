@@ -6,9 +6,12 @@ TYPO3 Exception 1206031879
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-It is explicit enough to understand that the TYPE can't be found,
+Invalid configuration type
+==========================
+
+It is explicit enough to understand that the `TYPE` can't be found,
 knowing you have three choices, all set in
-\\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface :
+`\\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface`
 
 -  'Framework', which is set by CONFIGURATION_TYPE_FRAMEWORK
 -  'Settings', which is set by CONFIGURATION_TYPE_SETTINGS

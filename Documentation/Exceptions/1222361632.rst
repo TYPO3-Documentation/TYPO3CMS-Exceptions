@@ -6,16 +6,14 @@ TYPO3 Exception 1222361632
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-erreo message TYPO3 CMS 6.1.5
-=============================
+The cache file could not be written
+====================================
 
 ::
 
    #1222361632: The cache file "[...]/typo3temp/Cache/Data/t3lib_l10n/f376fbe33c1512a6e326035c17036b8e" could not be written.
 
-solution
+Solution
 ========
 
-::
-
-   I removed the file from cache
+Manually remove the file and try again.

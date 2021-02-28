@@ -48,7 +48,7 @@ vagrant reload --provision did not help.
 
 Frontend is working fine but you can't login to the backend!
 
-My solution: You can check in the Typo3 Datebase Table sys_log which
+My solution: You can check in the TYPO3 Datebase Table sys_log which
 exception is thrown Now find the offending extension in
 LocalConfiguration.php and set the
 

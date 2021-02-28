@@ -13,5 +13,5 @@ Go to the Install Tool and add your IP address in "All Configuration"
 [BE][IPmaskList], using comma separation (no semikolon).
 
 Visit also
-https://docs.typo3.org/typo3cms/SecurityGuide/GuidelinesIntegrators/GlobalTypo3Options/Index.html#ipmasklist
+https://docs.typo3.org/typo3cms/SecurityGuide/GuidelinesIntegrators/GlobalTYPO3Options/Index.html#ipmasklist
 for more security advice.

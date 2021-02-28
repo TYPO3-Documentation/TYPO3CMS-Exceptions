@@ -7,7 +7,7 @@ TYPO3 Exception 1294586098
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 | TYPO3 backend error: **Lock file could not be created**
-| Typo3 back-end show this error probably because (deprecation-) log
+| TYPO3 back-end show this error probably because (deprecation-) log
   file in /typo3conf/ is getting over 30 MB.
 | To solve this error, delete the 'deprecation.log' -file in /typo3conf/
   and change settings:

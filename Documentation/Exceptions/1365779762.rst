@@ -14,7 +14,7 @@ Missing storage page ids.
 
 This error appears because you set some specific query settings, like
 $querySettings->setIgnoreEnableFields(true) and use generic
-Typo3QuerySettings, because this is a generic object, it knows nothing
+TYPO3QuerySettings, because this is a generic object, it knows nothing
 about the plugin context so, instead of using a generic object, use a
 $this->createQuery()->getQuerySettings() and then the pid set in
 Flexform or in TypoScript will be set.
@@ -25,13 +25,13 @@ This generate an error :
 
       public function initializeObject()
       {
-          /** @var \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings $querySettings */
-          $querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings::class);
+          /** @var \TYPO3\CMS\Extbase\Persistence\Generic\TYPO3QuerySettings $querySettings */
+          $querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\TYPO3QuerySettings::class);
           $querySettings->setIgnoreEnableFields(true);
           $querySettings->setEnableFieldsToBeIgnored(['fe_group']);
           $this->setDefaultQuerySettings($querySettings);
       }
-      
+
 
 This one is ok :
 
@@ -39,7 +39,7 @@ This one is ok :
 
       public function initializeObject()
       {
-          /** @var \TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings $querySettings */
+          /** @var \TYPO3\CMS\Extbase\Persistence\Generic\TYPO3QuerySettings $querySettings */
           $querySettings = $this->createQuery()->getQuerySettings();
           $querySettings->setIgnoreEnableFields(true);
           $querySettings->setEnableFieldsToBeIgnored(['fe_group']);

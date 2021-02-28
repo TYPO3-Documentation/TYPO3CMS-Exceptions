@@ -23,7 +23,7 @@ Also:
    UnexpectedValueException thrown in file
    /.../typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php in line 909.
 
-Typo3 v7.6.32 Happens when attaching an image to an existing content
+TYPO3 v7.6.32 Happens when attaching an image to an existing content
 element.
 
 Patch
@@ -43,7 +43,7 @@ v7.6.32. Use only on your own risk.
      <?php
     +declare(strict_types = 1);
      namespace TYPO3\CMS\Backend\Controller;
-     
+
      /*
     @@ -21,7 +22,6 @@ use TYPO3\CMS\Backend\Form\FormDataGroup\InlineParentRecord;
      use TYPO3\CMS\Backend\Form\FormDataGroup\TcaDatabaseRecord;
@@ -58,12 +58,12 @@ v7.6.32. Use only on your own risk.
              $inlineStackProcessor->initializeByParsingDomObjectIdString($domObjectId);
              $inlineStackProcessor->injectAjaxConfiguration($ajaxArguments['context']);
     +        $inlineTopMostParent = $inlineStackProcessor->getStructureLevel(0);
-     
+
              // Parent, this table embeds the child table
              $parent = $inlineStackProcessor->getStructureLevel(-1);
     @@ -107,7 +108,12 @@ class FormInlineAjaxController
              }
-     
+
              if ($parentConfig['type'] === 'flex') {
     -            $parentConfig = $this->getParentConfigFromFlexForm($parentConfig, $domObjectId);
     +            // Workaround 'inline' error: if list_type is empty then we use the $parent['config']
@@ -74,7 +74,7 @@ v7.6.32. Use only on your own risk.
     +            }
              }
              $childTableName = $parentConfig['foreign_table'];
-     
+
     @@ -126,6 +132,10 @@ class FormInlineAjaxController
                  'inlineParentTableName' => $parent['table'],
                  'inlineParentFieldName' => $parent['field'],
@@ -88,7 +88,7 @@ v7.6.32. Use only on your own risk.
                  $formDataCompilerInput['inlineChildChildUid'] = $childChildUid;
     @@ -133,15 +143,9 @@ class FormInlineAjaxController
              $childData = $formDataCompiler->compile($formDataCompilerInput);
-     
+
              // Set language of new child record to the language of the parent record
     -        if ($parent['localizationMode'] !== 'keep' && MathUtility::canBeInterpretedAsInteger($parent['uid'])) {
     -            $parentLanguageField = $GLOBALS['TCA'][$parent['table']]['ctrl']['languageField'];
@@ -117,13 +117,13 @@ v7.6.32. Use only on your own risk.
                      'columnsToProcess' => [
                          $parentFieldName
     @@ -388,7 +396,6 @@ class FormInlineAjaxController
-     
+
                  /** @var $tce DataHandler */
                  $tce = GeneralUtility::makeInstance(DataHandler::class);
     -            $tce->stripslashes_values = false;
                  $tce->start([], $cmd);
                  $tce->process_cmdmap();
-     
+
     @@ -787,10 +794,6 @@ class FormInlineAjaxController
          protected function getInlineExpandCollapseStateArray()
          {
@@ -138,7 +138,7 @@ v7.6.32. Use only on your own risk.
     @@ -799,27 +802,15 @@ class FormInlineAjaxController
              return $inlineView;
          }
-     
+
     -    /**
     -     * Method to check whether the backend user has the property inline view for the current IRRE item.
     -     * In existing or old IRRE items the attribute may not exist, then the unserialize will fail.

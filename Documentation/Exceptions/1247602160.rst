@@ -17,7 +17,7 @@ Tables or Fields missing, database needs to be updated
    #1247602160: Unknown column 'tx_yourext_domain_model_yourmodel.sorting' ...
 
 Make sure the Database tables are up to date. Go to the Extensionmanager
-and deactivate and activate the Extension (Typo3 6.0) or choose
+and deactivate and activate the Extension (TYPO3 6.0) or choose
 "Database Update" in the detail-view of an extension. Alternatively you
 can use the install-Tools "Database Analyser" to update all table
 definitions, choose "Update required tables COMPARE".
@@ -67,13 +67,13 @@ name. The syntax for the upper example is the following:
 
    ::
 
-      --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist: 
-      SELECT tx_extbase_domain_model_backenduser.* 
-      FROM tx_extbase_domain_model_backenduser 
-      WHERE tx_extbase_domain_model_backenduser.uid = '1' 
+      --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist:
+      SELECT tx_extbase_domain_model_backenduser.*
+      FROM tx_extbase_domain_model_backenduser
+      WHERE tx_extbase_domain_model_backenduser.uid = '1'
       LIMIT 1
 
-| 
+|
 | See also: https://forge.typo3.org/issues/51234
 
 Adding this code to the TypoScript, on **all pages where is_siteroot is

@@ -32,7 +32,7 @@ Non-CamelCase:
       /**
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
        */
-     
+
       /**
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
        */
@@ -71,9 +71,9 @@ To fix this:
      * @param ${newModel}
      * @return void
      */
-     
-      Change to 
-     
+
+      Change to
+
      /**
      * Adds a {newModel}
       *
@@ -81,14 +81,14 @@ To fix this:
      * @return void
      */
 
--  
+-
 
-   -  Clear Typo3 Caches
+   -  Clear TYPO3 Caches
    -  Delete typo3temp/\*
    -  As stated before, truncating the cf_-tables was needed before the
       error stopped.
 
-| 
+|
 | May also be caused by incorrectly formatted comments - a missing \* on
   the first line (only having one star) will stop the parser finding the
   definitions.

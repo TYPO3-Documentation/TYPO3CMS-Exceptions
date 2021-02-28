@@ -17,7 +17,7 @@ TYPO3 7.6.15:
 Reason: URL, title or icon is empty.
 
 Addtion to this correct, but very brief answer: One reason may be a
-missing language file. Imagine you check out a Typo3-page from git
+missing language file. Imagine you check out a TYPO3-page from git
 locally and also use a copy of the database/configuration of this site.
 Then, perhaps, the configured language is missing on your system. (For
 me it was german and the quick fix was to disable it via "Languages".)

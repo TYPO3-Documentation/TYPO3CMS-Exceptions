@@ -20,8 +20,8 @@ Hoge
 
 --------------
 
-| 
-| **Typo3 6.26**:
+|
+| **TYPO3 6.26**:
 
 Error occurred in an extension after migration 6.1 -> 6.2 due to wrong
 (invalid) field datatypes in the TCA ('type' => 'date',) -> 'date' is an

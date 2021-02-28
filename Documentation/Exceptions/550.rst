@@ -6,11 +6,11 @@ TYPO3 Exception 550
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Following Message appears
+May happen if an extension converts a HTTP error code to an exception code.
 
-Oops, an error occurred! Expected response code 250 but got code "550",
-with message "550 5.7.60 SMTP; Client does not have permissions to send
-as this sender
+   Oops, an error occurred! Expected response code 250 but got code "550",
+   with message "550 5.7.60 SMTP; Client does not have permissions to send
+   as this sender
 
-FE_Manager tries to send a notification to the admin, sender address or
-mailserver information doesn't match the reuirements. Check
+In this case, the `FE_Manager` tries to send a notification to the admin and the
+sender address or mail server information doesn't match the requirements.

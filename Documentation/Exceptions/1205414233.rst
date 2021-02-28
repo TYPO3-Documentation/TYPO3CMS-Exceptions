@@ -6,6 +6,9 @@ TYPO3 Exception 1205414233
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+No suitable request handler found.
+==================================
+
 This can be caused when ``config.tx_extbase`` is not set in TypoScript
 which happens if ``extbase/ext_typoscript_setup.txt`` was not loaded.
 

@@ -6,42 +6,39 @@ TYPO3 Exception 1224485398
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-error message
-=============
+Templating tags not properly nested
+===================================
 
 ::
 
    #1224485398: Templating tags not properly nested. Expected: TYPO3\CMS\Fluid\ViewHelpers\Link\ExternalViewHelper;
 
-   Actual: TYPO3\CMS\Fluid\ViewHelpers\Link\UriViewHelper 
+   Actual: TYPO3\CMS\Fluid\ViewHelpers\Link\UriViewHelper
 
 This error is triggered when the parser is finding that tags are not
 properly nested. Consult the manual for the correct nesting
 possibilities.
 
-solution
+Solution
 ========
+You have to nest the ViewHelpers correctly, for example:
 
 ::
 
-   You have to close the viewhelper in template, for example:
-
    <f:link.external ..>   needs      </f:link.external>
 
-*Hint*: Most of the time this error will be triggered if you forget to
-correctly close a single tag with a slash. (e.g. you need to use
-<f:example /> not <f:example>)
+.. hint::
 
-Fault in viewHelper
+   Most of the time this error will be triggered if you forget to
+   correctly close a single tag with a slash. (e.g. you need to use
+   <f:example /> not <f:example>)
+
+Error in ViewHelper
 -------------------
 
-If a viewHelper is not properly programmed, any arguments might break
+If a viewHelper is not properly programmed, any argument might break
 templates. It's important to register all arguments properly to get the
-templates parsed correct. To test any viewHelper, remove any arguments
-in the fluid-template to check if the nesting is recognized right then.
-The error-message is misleading in this case because the reason is not
-related to the notation in the template but to faults in the viewHelper.
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 01:16, 2 March 2015 (CET)
+templates parsed correctly. To test a ViewHelper, remove all arguments
+in the fluid template to check if the nesting is recognized right without arguments.
+The error message is misleading in this case because the reason is not
+related to the notation in the template but to faults in the ViewHelper.

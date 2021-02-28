@@ -6,14 +6,11 @@ TYPO3 Exception 1187176358
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception message:
-
 #1187176358: The controller name must be a valid string, integer given.
+=======================================================================
 
-Source:
-
-TYPO3\CMS\Extbase\Mvc\Exception\InvalidControllerNameException thrown in
-file typo3_src/typo3/sysext/extbase/Classes/Mvc/Request.php in line 315.
+:php:`TYPO3\CMS\Extbase\Mvc\Exception\InvalidControllerNameException` thrown in
+file :file:`typo3_src/typo3/sysext/extbase/Classes/Mvc/Request.php`.
 
 Possible error sources
 ======================
@@ -37,7 +34,8 @@ The correct solution is this:
    ::
 
       \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-          'FooExt', 'PluginName',
-          array('PluginName' => 'show'),
-          array('PluginName' => 'show')// non-cacheable actions                                                                                                          
+          'FooExt',
+          'PluginName',
+          [\Foo\Ext\Controller\PluginController::class => 'show'],
+          [\Foo\Ext\Controller\PluginController::class => 'show'] // non-cacheable actions
       );

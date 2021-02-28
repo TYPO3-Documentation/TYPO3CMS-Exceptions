@@ -7,14 +7,14 @@ TYPO3 Exception 1278155988
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 I got this exception just after I imported and installed tt_news in my
-Typo3 6.2 website. So now I cannot edit the pages on my website.
+TYPO3 6.2 website. So now I cannot edit the pages on my website.
 
 In the log it says:
 
 ::
 
-   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): ^ in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110   
-   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): <source>Bootstrap Package: Left & normal, 2 Columns</source> in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110   
+   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): ^ in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110
+   [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): <source>Bootstrap Package: Left & normal, 2 Columns</source> in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110
    [5]   [0]   Core: Error handler (BE): PHP Warning: simplexml_load_file(): /home/solreszt/public_html/typo3conf/ext/bootstrap_package/Resources/Private/Language/Backend.xml:18: parser error : xmlParseEntityRef: no name in /home/solreszt/public_html/typo3/sysext/core/Classes/Localization/Parser/AbstractXmlParser.php line 110
 
 It seems that the adding of one new page layout is not correct. It has
@@ -31,7 +31,7 @@ logo files in the configuration of bootstrap. I see no other way to
 solve this problem than go back to an earlier backup. Regards, Gunnar
 Jonsson
 
-| 
+|
 | I found the solution: Removing the & ampersand in the name of a
   backend layout in the backend.xlf file was the solution. The ampersand
   in the following lines was causing the Exception:
@@ -63,7 +63,7 @@ And I also inserted the following in the root template:
     page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns = TEXT
     page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns.value = EXT:bootstrap_package/Resources/Private/Templates/Page/Default2VColumns.html
     page.10.file.stdWrap.cObject.bootstrap_package__default_2_V_columns.insertData = 1
-    
+
 
 I insert the following in the file:
 bootstrap_package/Resources/Private/Language/Backend.xml
@@ -74,7 +74,7 @@ bootstrap_package/Resources/Private/Language/Backend.xml
     <source>Bootstrap Package: Left & normal, 2 Columns</source>
    </trans-unit>
 
-| 
+|
 | And futhermore I had to insert the following in the file
   bootstrap_package/Classes/Hooks/Options/BackendLayoutDataProvider.php:
 

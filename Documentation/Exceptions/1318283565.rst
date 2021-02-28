@@ -132,7 +132,7 @@ Debian Squeeze/Wheezy
 ---------------------
 
 | Got error after installation of Redmine on Debian (amd64).
-| Typo3 is version : 6.1.0.
+| TYPO3 is version : 6.1.0.
 | I upgraded to version 6.1.5 trying to solve my pb.
 | apt-get didn't want to reinstall package openssl (says "unable to find
   source package").
@@ -145,7 +145,7 @@ Debian Squeeze/Wheezy
 | Alternative solution for error "PHP OpenSSL extension not working:
   Something went wrong while trying to create a new private key for
   testing ..." on Debian Wheezy using PHP 5.5 FPM with login spinning
-  forever after updating Typo3 to 6.2.11: Setting 'loginSecurityLevel'
+  forever after updating TYPO3 to 6.2.11: Setting 'loginSecurityLevel'
   => 'normal' in LocalConfiguration helped temporarily for the login
   issue, but real "solution" was to give everyone read rights on
   /etc/ssl/openssl.cnf as this seems to be needed by PHP's

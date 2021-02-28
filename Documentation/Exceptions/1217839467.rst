@@ -6,12 +6,16 @@ TYPO3 Exception 1217839467
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+   Could not ultimately dispatch the request after ' . $dispatchLoopCount . ' iterations.
+   Most probably, a @' . \TYPO3\CMS\Extbase\Annotation\IgnoreValidation::class . ' annotation
+   is missing on re-displaying a form with validation errors.
+
 -  Check if you have named the properties correctly in your fluid form
    and in your model class. In my case, this exception occurred simply
    because the property name of the form field in the fluid template did
    not match the property name in the corresponding model class.
 
--  Check if you have annotated @ignorevalidation $myObject in your
-   action (or @dontvalidate for older Extbase version < 6.1)
+-  Check if you have annotated `@ignorevalidation $myObject` in your
+   action (or `@dontvalidate` for older Extbase version < 6.1)
 -  Some hints (in German) can be found here:
    http://www.typo3.net/forum/beitraege/extbase_und_fluid/108844/

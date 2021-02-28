@@ -6,7 +6,7 @@ TYPO3 Exception 1437656456
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I received this exception under Typo3 7.6.9 when attempting to add the
+I received this exception under TYPO3 7.6.9 when attempting to add the
 language ISO code to a language with the ID "0". It worked fine for the
 second language which was ID "1". Our TYPO3 is running on MySQL 5.5 and
 PHP 5.6. I tried clearing all caches in the Install tool and also

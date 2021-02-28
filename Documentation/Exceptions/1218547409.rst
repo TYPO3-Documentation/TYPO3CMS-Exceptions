@@ -6,34 +6,29 @@ TYPO3 Exception 1218547409
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Solution
-========
+$className must implement interface `PageLayoutViewDrawItemHookInterface::class`
+======================================================================================
 
-Deleting all files in "typo3temp/Cache" through console, did the job for
-me.
-
-``rm -rf typo3temp/Cache/*``
-
-For me it was to delete all files in "typo3temp/autoload" through
+- Try deleting all caches
+- Older versions: Try deleting all files in :file:`typo3temp/autoload` through
 console.
 
 ``rm -rf typo3temp/autoload/*``
 
-Solution Typo3 8.4.x
-====================
+Solution TYPO3 8.4.x and higher
+===============================
 
-The way registering the Hook has changed in ext_localconf.php:
+.. note::
 
-.. container::
+   Note that the `PageLayoutView` has changed a lot in newer TYPO3 versions,
+   make sure to update your code accordingly.
+
+The way registering the hook has changed in :file:`ext_localconf.php`::
+
+      // Prior TYPO3 8
+      // $TYPO3_CONF_VARS['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] = 'EXT:extensionkey/Classes/Hooks/PageLayoutViewDrawItemHook.php:&Vendor\\Extensionkey\\Hooks\\PageLayoutViewDrawItemHook';
 
    ::
 
-      // Prior Typo3 8
-      //$TYPO3_CONF_VARS['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] = 'EXT:extensionkey/Classes/Hooks/PageLayoutViewDrawItemHook.php:&Vendor\\Extensionkey\\Hooks\\PageLayoutViewDrawItemHook';
-
-.. container::
-
-   ::
-
-      // Typo3 8:
+      // TYPO3 8:
       $TYPO3_CONF_VARS['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] = 'Vendor\\Extensionkey\\Hooks\\PageLayoutViewDrawItemHook';
