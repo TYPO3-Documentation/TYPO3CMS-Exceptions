@@ -48,9 +48,30 @@ or make the change yourself. You can find out more about how to do this in
 
 
 .. toctree::
-   :glob:
+   :hidden:
+   :caption: TROUBLESHOOTING
+
+   Debugging TYPO3 <https://docs.typo3.org/m/typo3/guide-installation/10.4/en-us/Troubleshooting/Index.html#debug-settings>
+   Logging Framework <https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/Logging/Quickstart/Index.html#logging-quickstart>
+   Error and exception handling <https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ApiOverview/ErrorAndExceptionHandling/Index.html>
+   Core ChangeLog <https://docs.typo3.org/c/typo3/cms-core/master/en-us/>
+   Testing <https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Testing/Index.html>
+   Fluid debug viewhelper <https://docs.typo3.org/other/typo3/view-helper-reference/10.4/en-us/typo3/fluid/latest/Debug.html>
+   TypoScript debugging <https://docs.typo3.org/m/typo3/reference-typoscript/10.4/en-us/UsingSetting/Debugging.html>
+
+
+.. toctree::
+   :hidden:
+   :caption: CONTRIBUTING
+
+   "Edit on Github" workflow <https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingDocsOfficial/GithubMethod.html>
+   ReST Cheat Sheet <https://docs.typo3.org/m/typo3/docs-how-to-document/master/en-us/WritingReST/CheatSheet.html>
+   Report an issue <https://docs.typo3.org/m/typo3/guide-contributionworkflow/master/en-us/ReportingAnIssue/Index.html>
+
+
+.. toctree::
    :titlesonly:
    :hidden:
+   :caption: EXCEPTIONS
 
    Exceptions/Index
-   *
