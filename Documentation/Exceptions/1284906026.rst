@@ -6,15 +6,8 @@ TYPO3 Exception 1284906026
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-When trying to user feedit_advanced I get the following error (cannot
-find any error in logs):
+Language and character encoding are not set.
+============================================
 
-**Oops, an error occurred! Language and character encoding are not set.
-More information regarding this error might be available online**
-
-Any idea how to fix this? - I don't have this issue with beta
-releases :(
-
-Best regards,
-
-Stelli
+Error is thrown by the page renderer if language or charset configuration are missing.
+Please check your page renderer usage.

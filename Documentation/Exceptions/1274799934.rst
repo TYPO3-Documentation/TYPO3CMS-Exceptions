@@ -6,10 +6,6 @@ TYPO3 Exception 1274799934
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I encountered this issue while working with Value Objects in a rather
-complex Object while trying to persist it. After **changing the model
-type from Value Object to Entity in the model.php** it worked. I can't
-tell what the implications of this change would be for your models but
-looking at the discussion `on this
-blogpost <http://blog.typoplanet.de/2012/04/19/difference-between-entity-and-valueobject/>`__
-[not available anymore] maybe for you there is none.
+An object of class "..." could not be converted to a plain value.
+=================================================================
+

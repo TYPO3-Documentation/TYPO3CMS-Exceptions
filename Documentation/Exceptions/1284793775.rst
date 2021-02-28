@@ -6,15 +6,6 @@ TYPO3 Exception 1284793775
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 core issue in file
-*sysext/fluid/Classes/Core/Widget/AjaxWidgetContextHolder.php* on line
-61.
+No widget context was found for the Ajax Widget Identifier "..."
+================================================================
 
-::
-
-      $storageKey = json_decode(
-          $GLOBALS['TSFE']->fe_user->getKey('ses', isset($this->widgetContextsStorageKey) ? $this->widgetContextsStorageKey : ),
-          true
-      );
-
-The second parameter of *json_decode* must be set to *true*.

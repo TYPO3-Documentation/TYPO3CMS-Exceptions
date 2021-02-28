@@ -6,6 +6,12 @@ TYPO3 Exception 1273753083
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
--  Try this: Instead of just displaying {myObject.myProperty} , wrap it
-   with f:format.date: {myObject.myProperty -> f:format.date(format:
-   'd.m.Y')}. See https://forge.typo3.org/issues/38294
+Cannot cast object of type "..." to string.
+=================================================================
+
+The error message basically means that you are trying to directly render an object
+that has no `__toString()` method. Check your templates.
+
+For example: Instead of just using `{myObject.myDateProperty}`, wrap it
+with `f:format.date`: `{myObject.myDateProperty -> f:format.date(format: 'd.m.Y')}`.
+See https://forge.typo3.org/issues/38294

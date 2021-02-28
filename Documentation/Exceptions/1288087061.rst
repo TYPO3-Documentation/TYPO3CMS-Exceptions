@@ -6,25 +6,20 @@ TYPO3 Exception 1288087061
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error: file can not be found
+Template could not be found at "..."
+=====================================
 
-| In the example below, the error is:
-| *Template could not be found at "fileadmin/templates/RS1.html".*
+In the example below, the error is: *Template could not be found at "fileadmin/templates/RS1.html"*.
 
-Problem: what TypoScript code generates this error?
+To fix this error, correct the path of the included file.
 
-Answer: probably in your ROOT template, where you define the
-backend_layout.
-
-Example: see code below
-
-::
+.. code-block:: typoscript
 
    page.10.file.stdWrap.cObject = CASE
    page.10.file.stdWrap.cObject {
        key.data = levelfield:-1, backend_layout_next_level, slide
        key.override.field = backend_layout
-       
+
        default = TEXT
        default.value = fileadmin/templates/RS1.html
    }

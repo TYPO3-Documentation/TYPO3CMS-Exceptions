@@ -6,27 +6,10 @@ TYPO3 Exception 1270853879
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 Fatal Error: Extension key "templavoila" is NOT loaded!
+TYPO3 Fatal Error: Extension key "..." is NOT loaded!
+=============================================================
 
-This error appears in TYPO3 6+ when you deinstall TemplaVoila. It will
-block your complete backend access.
+This error appears in TYPO3 6+ when you uninstall or manually delete a required
+extension. Clear all caches and reinstall the necessary extension.
 
-Solution: fill in the templavoila extension key and all other
-extensionkeys from extensions you probably just have been deleted.
-Filling in only the key 'templavoila' did not help at all here. than
-delete typo3temp folder and recreate it with the usual permission
-settings.
 
-If you are receiving an error when logging in again into the backend
-like: "Invalid RSA public key" than simply wait until the "login error
-page" will appear an login from here with the same credentials - usually
-it works!
-
-Next you deinstall All extensions depending on templavoila i.e.
-templavoila_framework, skins, etc ... and of course also those
-extensions depending on templavoila but which are not mentioned as
-depending! Unfortunately with the new extension manager you can't
-inspect the needed information easily! You need extra external tools or
-additional extensions now, if the backend isn't already blocked ;-).
-
-clear cache and the backend should work again without templavoila.

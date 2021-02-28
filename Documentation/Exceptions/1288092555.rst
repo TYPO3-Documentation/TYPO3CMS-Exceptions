@@ -6,17 +6,8 @@ TYPO3 Exception 1288092555
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I have a problem with several TYPO3 installations.
+Could not load file layout. Tried Following paths: "..."
+========================================================
 
-In version 6.2.6 typo3_src everything worksfinde. But in version
-typo3_src-6.2.7 I get the error:
-
-Oops, an error occurred!
-
-Could not load file layout. Tried Following paths: "... / typo3conf /
-ext / SOME NAME / Resources / Private / Templates / Layouts /
-Body.html", "... typo3conf / ext / SOME NAME / Resources / Private /
-Templates / Layouts / Body".
-
-SOLUTION: in typo3conf/ext/SOME NAME/Resources/Private/Templates/Layouts
-the file names has to with a large initial letter.
+Check whether the correct layout file is referenced. A common mistake is to use
+lowercase instead of uppercase for the first letter.

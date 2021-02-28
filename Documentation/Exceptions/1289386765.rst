@@ -6,6 +6,9 @@ TYPO3 Exception 1289386765
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Could not analyse class: "..." maybe not loaded or no autoloader?
+=================================================================
+
 Message:
 
 ::
@@ -27,8 +30,8 @@ General
 
    $ rm -rf typo3temp/*
 
--  The errorHandler turns E_STRICT into exception. This can break the
-   autoloading in some TYPO3 version (ie. 6.2.30). Excluding E_STRICT
+-  The errorHandler turns E_STRICT into exceptions. This can break the
+   autoloading in some TYPO3 versions (ie. 6.2.30). Excluding E_STRICT
    errors can help.
 
 If you got the error while migrating your extension to use namespaces
@@ -38,7 +41,7 @@ If you're migrating to namespaces, you need to put the vendor name
 inside your \**ext_localconf.php*\* and your \**ext_tables.php**,
 otherwise extbase tries to look up names in the old fashioned way.
 
-**ext_localconf.php:**
+:file:`ext_localconf.php`
 
 ::
 
@@ -49,14 +52,21 @@ otherwise extbase tries to look up names in the old fashioned way.
        array('Controller' => 'action')
    );
 
-   // Right
+   // Correct in older TYPO3 versions:
    TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-       'MyVendorName.'.$_EXTKEY,
+       'MyVendorName.' . $_EXTKEY,
        'Plugin',
        array('Controller' => 'action')
    );
 
-**ext_tables.php:**
+   // Correct in newer TYPO3 versions:
+   TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+       'MyExtension',
+       'Plugin',
+       [\MyVendor\MyExtensionName\Controlle\MyPluginController::class => 'action']
+   );
+
+:file:`ext_tables.php`
 
 ::
 
@@ -96,11 +106,11 @@ solutions
 
    "<f:form.textbox ..." instead of   "<f:form.textfield ..."
 
--  to be more specific for the requested extension blog_example, change
+-  to be more specific for the requested extension `blog_example`, change
    all occurrences in templates under
 
-typo3conf/ext/blog_example/Ressources/Private/Backend/Layouts/Templates
-e.g.: Templates/Blog/New.html Line 14
+:file:`typo3conf/ext/blog_example/Resources/Private/Backend/Layouts/Templates`
+e.g.: :file:`Templates/Blog/New.html` Line 14
 
 ::
 
@@ -114,10 +124,10 @@ to
 
 -  also check if the extension itself is loaded
 
--  The RenderFlashMessagesViewHelper was deprecated for a long time and
+-  The `RenderFlashMessagesViewHelper` was deprecated for a long time and
    finally removed in 6.0.
 
-So, please use FlashMessagesViewHelper instead:
+So, please use `FlashMessagesViewHelper` instead:
 
 ::
 
@@ -130,20 +140,10 @@ becomes
    <f:flashMessages/>
 
 -  You must also check the Fluid template for upper and lower case
-   writing. For example f:link.typoLink... will throw an exception
+   writing. For example `f:link.typoLink`... will throw an exception
    because the class cannot be found. But this will occur only on
-   case-sensitive file systems. Normally you will find out on your dev
-   server because your local computer will most likely use a
-   case-insensitive file system. Solution: change f:link.typoLink
-   tof:link.typolink
-
-For more information see:
-
--  `Fluid#form_fields <https://wiki.typo3.org/Fluid#f:form.textbox>`__
-   [deprecated wiki link]
--  `Documentation on TYPO3
-   Forge <https://forge.typo3.org/projects/typo3v4-mvc/wiki/Breaking_Changes%7CExtbase>`__
-   [not available anymore]
+   case-sensitive file systems. Solution: change `f:link.typoLink`
+   to `f:link.typolink`
 
 error message concerning DamViewHelper (from ext:news)
 ======================================================
@@ -155,10 +155,6 @@ TYPO3 upgrade from 6.1.12 to 6.2.6
 
    #1289386765: Could not analyse class:Tx_News_ViewHelpers_Format_DamViewHelper maybe not loaded or no autoloader?
 
-earlier an error `"#1263391473: The property "falMediaNonPreviews" on
-the subject was not
-accessible." <https://wiki.typo3.org/Exception/CMS/1263391473%7C>`__
-[not available anymore] appears.
 
 Solution
 --------
@@ -172,7 +168,7 @@ templates
 Error in own extension
 ======================
 
-If you got the error using your own extension: Maybe your extension-name
+If you got the error using your own extension: Maybe your extension name
 uses underscores. If your extension is named my_extension:
 
 ::
@@ -230,9 +226,6 @@ Note if your installation "web-dir" in composer.json is "Web":
    }
    ...
 
-For more information see:
-
--  https://wiki.typo3.org/Composer [deprecated wiki link]
 
 If you got the error while updating from TYPO3 4.x to 6.2
 =========================================================
@@ -245,17 +238,6 @@ see the result of a problem at a very later stage that some classes
 could not be loaded. The root cause is a broken autoload-process that
 unfortunately doesn't create any errors.
 
-I am getting this for Powermail after and upgrade from 4.5->6.2 Could
-not analyse
-class:Tx_Powermail_ViewHelpers_Getter_GetFieldMarkerFromUidViewHelper
-maybe not loaded or no autoloader? I've tried uninstalling and
-installing powermail, no luck. What do you mean by "redo it entirely"?
-Redo the whole TYPO3 upgrade? --> yes, that's what I meant. Take your
-4.x environment, uninstall Powermail, and try the Upgrade again.
-
-Thanks, but (luckily) it was something else: the templates and
-namespaces have been changed. So using an old template can cause this
-exception too. https://forge.typo3.org/issues/62220
 
 If you got the error while adding a new namespace in TYPO3 7.4.0 or 7.5.0
 =========================================================================
@@ -359,8 +341,5 @@ if you got this error while updating via git
 -  If you update your installation via git it is possible that Class
    caches are not up to date
 -  The caches will not be cleared in BE neither in install tool
--  To clear the caches deinstall and re-install the extension
--  Alternatively use terminal: typo3/cli_dispatch.phpsh extbase
-   extension:dumpclassloadinginformation
--  If your installation uses xcache, there is no possibility to clear
-   the cache. You have to restart the server.
+-  To clear the caches uninstall and re-install the extension
+-  Alternatively use terminal: :bash:`typo3/cli_dispatch.phpsh extbase extension:dumpclassloadinginformation`

@@ -5,6 +5,7 @@
 .. role:: html(code)
 .. role:: js(code)
 .. role:: php(code)
+.. role:: bash(code)
 .. role:: pn(emphasis)
 .. role:: sep(strong)
 .. role:: sql(code)

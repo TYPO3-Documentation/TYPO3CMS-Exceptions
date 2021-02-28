@@ -6,13 +6,14 @@ TYPO3 Exception 1283790586
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Description
-===========
+There is no entry in the $TCA array for the table "your_unknown_table"
+======================================================================
 
-Exception 1283790586 **'There is no entry in the $TCA array for the
-table "your_unknown_table". This means that the function enableFields()
-is called with an invalid table name as argument.'** is thrown in
-TYPO3\CMS\Frontend\Page\PageRepository::enableFields when the table (as
+ Exception 1283790586 **'There is no entry in the $TCA array for the
+ table "your_unknown_table". This means that the function enableFields()
+ is called with an invalid table name as argument.'**
+
+This exception is thrown in `TYPO3\CMS\Frontend\Page\PageRepository::enableFields` when the table (as
 mentioned in the error) is not found in the TCA.
 
 Possible causes
@@ -20,33 +21,26 @@ Possible causes
 
 Your project uses:
 
--  PHP-code with enableFields('your_unknown_table').
+-  PHP-code with `enableFields('your_unknown_table')`.
 -  TypoScript-code with an unknown table in a CONTENT-object. There
-   might be an indication of this in the backtrace, f.e. *5
-   TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::cObjGetSingle("CONTENT",
-   array, "30")* indicates that an unknown table is used in a
-   CONTENT-element with the name '30'.
-
---`Mmix <https://wiki.typo3.org/wiki/index.php?title=User:Mmix&action=edit&redlink=1>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Mmix&action=edit&redlink=1>`__
-[deprecated wiki link]) 19:01, 7 August 2014 (CEST)
+   might be an indication of this in the backtrace, f.e. `TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::cObjGetSingle("CONTENT",
+   array, "30")` indicates that an unknown table is used in a
+   CONTENT element with the name '30'.
 
 -  Backtrace is the detailed error output when dev mode is enabled in
    the install tool. I searched it for "array" and found this:
-   TypoScript Code 4
-   TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::cObjGetSingle("TEMPLATE",
-   array, "100"). Now I searched my templates for the string "100". It
-   was the main page template, and I found some temp. objects that were
-   defined as temp.myobject = CONTENT, but due to some conditions, in
+   TypoScript Code `TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::cObjGetSingle("TEMPLATE",
+   array, "100")`. Now I searched my templates for the string "100". It
+   was the main page template, and I found some `temp.` objects that were
+   defined as `temp.myobject = CONTENT`, but due to some conditions, in
    some cases, had no further definition. TYPO3 4.5 could live with
    that, 6.2 threw an error.
 
 Bad:
 
-::
+.. code-block:: typoscript
 
-   temp.item =CONTENT
+   temp.item = CONTENT
    [globalVar = LIT:1 = {$constant}]
    temp.item {
    }
@@ -54,7 +48,7 @@ Bad:
 
 Less bad:
 
-::
+.. code-block:: typoscript
 
    temp.item =
    [globalVar = LIT:1 = {$constant}]
@@ -63,5 +57,3 @@ Less bad:
    }
    [global]
 
---`ursbraem <https://wiki.typo3.org/wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
-[deprecated wiki link] 23. December 2014 (CEST)

@@ -6,24 +6,25 @@ TYPO3 Exception 1270853878
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 Fatal Error: Extension key "..." is NOT loaded!
+=======================================================
+
 ::
 
    #1270853878: TYPO3 Fatal Error: Extension key "adodb" is NOT loaded!
 
 Please check, whether you have downloaded and installed the called
-extension (in this case "adodb") in the backends extension manager.
+extension (in this case "adodb") in the backend extension manager.
 
-| 
-| Another situation where this error is thrown is when the extension
-  "mageconnect" is installed.
+Additionally, clearing the complete Cache via the admin tool can help solve the
+problem.
 
-After deleting the whole content of the folder "/typo3temp/Cache" the
-installation was running again (the deleted files are written new).
+In general the error can be thrown if a dependency is
+not met (means: a required extension is missing).
 
-In general the error perhaps could be thrown too if one dependency is
-not met (means: one required extension is missing), but this was not
-given here.
+Non-supported versions
+----------------------
 
 If the extension is only for BE and depends on another extension such as
 scheduler, one has to set in the ext_localconf.php of that extension the
-variable doNotLoadInFE to 1.
+variable `doNotLoadInFE` to 1.
