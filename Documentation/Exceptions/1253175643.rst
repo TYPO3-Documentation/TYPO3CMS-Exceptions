@@ -6,18 +6,14 @@ TYPO3 Exception 1253175643
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-error message
-=============
+The argument type for parameter $parameter of method ... could not be detected.
+===============================================================================
 
-#. 1253175643: The argument type for parameter $parameter of method
+   1253175643: The argument type for parameter $parameter of method
    Tx_yourExtensionKey_Controller_yourController->yourAction() could not
    be detected.
 
-solution
-========
-
-| The GET/POST vars to **action parameter mapping** works only for
-  **objects** or **arrays** and **not for strings**.
+The GET/POST vars to **action parameter mapping** works only for **objects** or **arrays** and **not for strings**.
 
 To get an string argument you have to fetch it by your own from the
 request object in your action method:

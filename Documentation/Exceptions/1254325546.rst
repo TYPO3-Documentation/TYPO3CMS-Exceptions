@@ -6,23 +6,23 @@ TYPO3 Exception 1254325546
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Occurence in Frontend
-=====================
+Occurrence in Frontend
+======================
 
 The page is shown without the common template but just with brown
-background and the typical TYPO3 Error-Message: "Oops an Error accured"
-This happens even without realUrl. After deactivating a contentelement
+background and the typical TYPO3 Error-Message: "Oops an Error occured"
+This happens even without realUrl. After deactivating a content element
 with powermail the page worked again, but the desired powermail-form was
 surly missing.
 
-Occurence in Backend
-====================
+Occurrence in Backend
+=====================
 
 Going in the Powermail-Module (Web -> Mails) and choosing Function-Check
 I got the brown background with another Error-Message shown:
 
 Cookie was not set since HTTPS was forced in
-$TYPO3_CONF_VARS[SYS][cookieSecure].
+`$TYPO3_CONF_VARS[SYS][cookieSecure]`.
 
 Steps without Success
 =====================
@@ -33,10 +33,6 @@ Steps without Success
 Fixing the Errors and Misbehavior
 =================================
 
-In the Admin-Tool set $TYPO3_CONF_VARS[SYS][cookieSecure]=2 or
-$TYPO3_CONF_VARS[SYS][cookieSecure]=0
+In the Admin-Tool set `$TYPO3_CONF_VARS[SYS][cookieSecure]=2` or
+`$TYPO3_CONF_VARS[SYS][cookieSecure]=0`
 
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 23:20, 26 May 2015 (CEST)

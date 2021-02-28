@@ -6,14 +6,10 @@ TYPO3 Exception 1256475113
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-It appeared when hitting 'add new site configuration for this site' in
-the site configuration. Before I had installed the 'Launch TYPO3
-Responsive!' preconfigured distribution, then I had entered a page for
-an additional site and then installed the 'The official Introduction
-Package'. It happens at any of the three sites.
+The argument "arguments" was registered with type "array", but is of type "string" in view helper
+=================================================================================================
 
-This problem may happen as well when opening the Backend module
-"reports" and is actually related to the use of an extended Fluid syntax
+This problem is related to the use of an extended Fluid syntax
 like this:
 
 ::
@@ -43,31 +39,3 @@ PHP 7.3.14:
 
 jit (Just in time compiler) had to be enabled in my installation.
 
-| 
-| - - -
-
-(1/1) #1256475113 InvalidArgumentException
-==========================================
-
-The argument "arguments" was registered with type "array", but is of
-type "string" in view helper
-"TYPO3\CMS\Fluid\ViewHelpers\Link\ActionViewHelper".
-
-| 
-| I get this exception when i try to use a variable in an f:link.action.
-
-example:
-
-this works:                                                    
-
-<f:link.action pageU arguments="{RSRQ_linkValue:
-'{row.{columnName.relationField}}'}">
-
-while this doesn't:                                        
-
-<f:variable name="placeholder" value="linkValue" />
-
-  <f:link.action pageU arguments="{RSRQ_{placeholder}:
-'{row.{columnName.relationField}}'}">
-
-(T3v10.4 ) ~~~~

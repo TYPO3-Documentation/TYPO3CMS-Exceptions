@@ -9,10 +9,10 @@ TYPO3 Exception 1250715544
 #1250715544: Task is past end date
 ==================================
 
-OutOfBoundsException thrown in file
-typo3/sysext/scheduler/Classes/Execution.php.
+`OutOfBoundsException` thrown in file
+:file:`typo3/sysext/scheduler/Classes/Execution.php`.
 
-This happens if you try to forcly execute a task that has the endtime
+This happens if you try to forcefully execute a task that has the endtime
 set before now. Make sure that the endtime is set properly before
 running a task.
 

@@ -6,25 +6,18 @@ TYPO3 Exception 1253036401
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I receive this when the extensions fluid_styled_content and
-css_styled_content are installed and are activated in the page template.
-It doesn't seems not to be a genereal error, but one that is connected
-with on of our custom-made extensions. Up to now I have no clue, where
-exactly the error comes from.
+argument "*path*" was already defined and should not be defined again
+=====================================================================
 
-| 
-| This error ( argument "*path*" was already defined and should not be
-  defined again ) is caused by an extension viewhelper registering it
+This error ( argument "*path*" was already defined and should not be
+  defined again ) is caused by an extension viewhelper registering its'
   arguments differently after an upgrade. Clear the cache from install
   tool solves it.
 
-================================================
-================================================
-
 This error occurred, after upgrading from TYPO3 CMS 7 to 8 having a
 custom view helper extending
-\`TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper`. The registering of
-arguments changed from CMS 7 to. In 7 most of the arguments where
-defined in the signature of the \`render()\` method. That changed in CMS
+`TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper`. The registering of
+arguments changed from CMS 7 to 8. In 7 most of the arguments where
+defined in the signature of the `render()` method. That changed in CMS
 8. In my view helper the arguments were still in the signature causing
 this error.

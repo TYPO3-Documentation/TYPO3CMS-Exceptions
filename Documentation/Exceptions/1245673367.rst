@@ -6,6 +6,9 @@ TYPO3 Exception 1245673367
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The given class "Tx_Extname_Classname" is not a registered object.
+==================================================================
+
 I get this error after installing an Extension which tries to use a
 Class not defined in any of the typical Extbase Autoloader locations.
 
@@ -15,52 +18,18 @@ Class not defined in any of the typical Extbase Autoloader locations.
 
    The given class "Tx_Extname_Classname" is not a registered object.
 
-Occours in: typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php:117
+Occurs in: :file:`typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php`
 
-.. container::
 
-   `Shell
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_shellScript>`__
-   [deprecated wiki link]
+::
 
-.. container::
+   throw new Tx_Extbase_SignalSlot_Exception_InvalidSlotException(sprintf('Cannot dispatch %s::%s to class %s. The object manager is not yet available in the Signal Slot Dispatcher and therefore it cannot dispatch classes.', $signalClassName, $signalName, $slotInformation['class']), 1298113624);
+       }
+       if (!$this->objectManager->isRegistered($slotInformation['class'])) {
+           throw new Tx_Extbase_SignalSlot_Exception_InvalidSlotException('The given class "' . $slotInformation['class'] . '" is not a registered object.', 1245673367);
+       }
+       $object = $this->objectManager->get($slotInformation['class']);
+   }
 
-   ::
-
-      grep -rhC3 'is not a registered object' typo3
-
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-                        throw new Tx_Extbase_SignalSlot_Exception_InvalidSlotException(sprintf('Cannot dispatch %s::%s to class %s. The object manager is not yet available in the Signal Slot Dispatcher and therefore it cannot dispatch classes.', $signalClassName, $signalName, $slotInformation['class']), 1298113624);
-                      }
-                      if (!$this->objectManager->isRegistered($slotInformation['class'])) {
-                          throw new Tx_Extbase_SignalSlot_Exception_InvalidSlotException('The given class "' . $slotInformation['class'] . '" is not a registered object.', 1245673367);
-                      }
-                      $object = $this->objectManager->get($slotInformation['class']);
-                  }
-
-| 
-| - - - yes i got the same. caused by mismatch between the classname in
-  the signalslot (in ext_tables.php) and the namespace/classname
-  combination (full-qualified class name) in
-  Classes/Controller/XxxController.php
-
-- - - In my case the exeption is thrown, when I try to install a
-dev-version of gridelements-e4ca690 by hand, i.e. by putting it into the
-ext directory and then activating it with the extension tool in the
-backend. Since I'm a newby to autoloading etc. the question is: Is this
-an error in the .json file of the extension or am I using the wrong
-procedure by installing it manually? In the latter case the the
-exception is correct, nevertheless it should state that I have to use
-composer to install dev-versions. The question then is: How do I install
-dev-versions from outside the official repository with composer?
-
-- - - I uninstalled compatibility7 and the error was gone...
+-  caused by mismatch between the classname in the signal slot (in :file:`ext_tables.php`) and the namespace/classname
+   combination (fully qualified class name) in :file:`Classes/Controller/XxxController.php`

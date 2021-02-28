@@ -6,7 +6,7 @@ TYPO3 Exception 1255069597
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Go to TYPO3 Install tool -> All Configurations -> [encryptionKey] and
-fill in some long encryptionKey
+Go to :guilabel:`TYPO3 Install tool -> All Configurations -> [encryptionKey]` and
+add an encryptionKey.
 
 http://blog.joergboesche.de/typo3-cms-encryption-key-was-empty-exception

@@ -29,7 +29,7 @@ argument.
     ...
     <f:for>
 
-You must add the paramter 'menu' to the call from the PHP side.
+You must add the parameter 'menu' to the call from the PHP side.
 
 ::
 

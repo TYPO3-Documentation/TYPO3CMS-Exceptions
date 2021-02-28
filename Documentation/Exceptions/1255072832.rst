@@ -6,6 +6,9 @@ TYPO3 Exception 1255072832
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The form field "[items][][]" is invalid.
+========================================
+
 **The form field "[items][][]" is invalid. Reason: "[]" used not as last
 argument, but somewhere in the middle (like foo[][bar]).**
 
@@ -17,12 +20,12 @@ For example at the selecting field:
 
    <f:form.select '''name="paymentOptions"''' options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" value="visa" />
 
-| 
-| The error also occurs having a Fluid template like
+
+The error also occurs having a Fluid template like
 
 ::
 
-     <f:for each="{collection}" as="item" key="key">                    
+     <f:for each="{collection}" as="item" key="key">
        <f:form.checkbox name="items[]"  value="{key}"  />
        <label for="item-{key}">{item.name}</label>
      </f:for>
@@ -40,14 +43,14 @@ solves the problem:
 Since in the form.checkbox documentation the examples are given with
 empty brackets, I consider this a bug.1
 
-| 
-| **Better solution (since TYPO3 7):** Do not add yourself [] to the
-  name of the chackbox. Simply add multiple="1" and Fluid will adds
-  automatically the [] to all the checkbox of the group.
+
+**Better solution (since TYPO3 7):** Do not add yourself [] to the
+name of the checkbox. Simply add multiple="1" and Fluid will adds
+automatically the [] to all the checkbox of the group.
 
 ::
 
-     <f:for each="{collection}" as="item" key="key">                    
+     <f:for each="{collection}" as="item" key="key">
        <f:form.checkbox name="items" multiple="1"  value="{key}"  />
        <label for="item-{key}">{item.name}</label>
      </f:for>

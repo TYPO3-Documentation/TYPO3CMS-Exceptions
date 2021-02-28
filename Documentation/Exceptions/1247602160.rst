@@ -16,8 +16,8 @@ Tables or Fields missing, database needs to be updated
 
    #1247602160: Unknown column 'tx_yourext_domain_model_yourmodel.sorting' ...
 
-Make sure the Database tables are up to date. Go to the Extensionmanager
-and deactivate and activate the Extension (TYPO3 6.0) or choose
+Make sure the Database tables are up to date. Go to the ExtensionManager
+and deactivate and activate the Extension or choose
 "Database Update" in the detail-view of an extension. Alternatively you
 can use the install-Tools "Database Analyser" to update all table
 definitions, choose "Update required tables COMPARE".
@@ -25,96 +25,67 @@ definitions, choose "Update required tables COMPARE".
 Model mapping incorrect or missing
 ----------------------------------
 
-.. container::
+.. code-block:: sql
 
-   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-       --#1247602160: Table 'my_database.tx_extendpages_domain_model_page' doesn't exist:
-       SELECT tx_extendpages_domain_model_page.* FROM tx_extendpages_domain_model_page
-       WHERE tx_extendpages_domain_model_page.uid = '56' LIMIT 1
+    --#1247602160: Table 'my_database.tx_extendpages_domain_model_page' doesn't exist:
+    SELECT tx_extendpages_domain_model_page.* FROM tx_extendpages_domain_model_page
+    WHERE tx_extendpages_domain_model_page.uid = '56' LIMIT 1
 
 can happen if you didn't map the table and model via TypoScript.
 
 To solve this problem map the model to the corresponding database table
 name. The syntax for the upper example is the following:
 
-.. container::
 
-   `TS
-   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
-   [deprecated wiki link]
 
-.. container::
-
-   ::
+.. code-block:: typoscript
 
       plugin.tx_extendpages.persistence.classes.Tx_Extendpages_Domain_Model_Page.mapping.tableName = pages
 
 'tx_extbase_domain_model_backenduser' doesn't exist
 ===================================================
 
-.. container::
+.. code-block:: sql
 
-   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
-   [deprecated wiki link]
+   --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist:
+   SELECT tx_extbase_domain_model_backenduser.*
+   FROM tx_extbase_domain_model_backenduser
+   WHERE tx_extbase_domain_model_backenduser.uid = '1'
+   LIMIT 1
 
-.. container::
-
-   ::
-
-      --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist:
-      SELECT tx_extbase_domain_model_backenduser.*
-      FROM tx_extbase_domain_model_backenduser
-      WHERE tx_extbase_domain_model_backenduser.uid = '1'
-      LIMIT 1
-
-|
-| See also: https://forge.typo3.org/issues/51234
+See also: https://forge.typo3.org/issues/51234
 
 Adding this code to the TypoScript, on **all pages where is_siteroot is
 set**, seems to solve this issue:
 
-.. container::
+.. code-block:: typoscript
 
-   `TS
-   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      config.tx_extbase.persistence.classes {
-          TYPO3\CMS\Beuser\Domain\Model\BackendUser {
-              mapping {
-                  tableName = be_users
-                  columns {
-                      allowed_languages.mapOnProperty = allowedLanguages
-                      file_mountpoints.mapOnProperty = fileMountPoints
-                      db_mountpoints.mapOnProperty = dbMountPoints
-                      usergroup.mapOnProperty = backendUserGroups
-                  }
-              }
-          }
-          TYPO3\CMS\Beuser\Domain\Model\BackendUserGroup {
-              mapping {
-                  tableName = be_groups
-                  columns {
-                      subgroup.mapOnProperty = subGroups
-                  }
-              }
-          }
-      }
+   config.tx_extbase.persistence.classes {
+       TYPO3\CMS\Beuser\Domain\Model\BackendUser {
+           mapping {
+               tableName = be_users
+               columns {
+                   allowed_languages.mapOnProperty = allowedLanguages
+                   file_mountpoints.mapOnProperty = fileMountPoints
+                   db_mountpoints.mapOnProperty = dbMountPoints
+                   usergroup.mapOnProperty = backendUserGroups
+               }
+           }
+       }
+       TYPO3\CMS\Beuser\Domain\Model\BackendUserGroup {
+           mapping {
+               tableName = be_groups
+               columns {
+                   subgroup.mapOnProperty = subGroups
+               }
+           }
+       }
+   }
 
 'tx_staticinfotables_domain_model_language' doesn't exist
 =========================================================
 
-::
+.. code-block:: sql
 
    Oops, an error occurred!
    Table '[DB_NAME.tx_staticinfotables_domain_model_language' doesn't exist.
@@ -125,17 +96,10 @@ No good solution found so far, will report in if solution is found.
 Temporary solution would be to create table with 608 empty records, to
 be able to create and edit records in backend on page [0],
 
-otherwise TYPo3 will display error message and you can not edit anything
+otherwise TYPO3 will display error message and you can not edit anything
 on page [0].
 
-.. container::
-
-   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
+.. code-block:: sql
 
       CREATE TABLE `tx_staticinfotables_domain_model_language` (
         `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -149,7 +113,7 @@ on page [0].
 Try inserting the extbase mapping typoscript in the setup of your
 General Record Storage Page:
 
-::
+.. code-block:: typoscript
 
    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:static_info_tables/Configuration/TypoScript/Extbase/setup.txt">
 
@@ -194,78 +158,10 @@ in tables "tx_powermail_fieldsets" and "tx_powermail_fields". Add it
 manually to both tables, and formconverter will work (remove fields via
 DB COMPARE when done):
 
-.. container::
-
-   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
+.. code-block:: sql
 
       alter table tx_powermail_fieldsets add column class text NOT NULL;
       alter table tx_powermail_fields add column class text NOT NULL;
-
-sf_register Thows error with activated static_info_tables
-=========================================================
-
-With TYPO3 CMS 7.6.4 , sf_register 6.2.7 together with
-static_info_tables 6.3.9: Error in Mysql Request: newar "? and
-deleted=0" when the registerform tries generating the Country Zone
-Dropdown Problem is the
-\\typo3conf\ext\sf_register\Classes\Domain\Repository\StaticCountryZoneRepository.php
-function findAllByIso2 ->
-
-changing :
-
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      $query->statement("SELECT * FROM static_country_zones WHERE zn_country_iso_2 = ? AND deleted = 0" , array($iso2) );
-
-to
-
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      $query->statement("SELECT * FROM static_country_zones WHERE zn_country_iso_2 = '" . $iso2 . "' AND deleted = 0" );
-
-helped as quick solution. As normally the query->statement() should
-replace the Questionmark with $iso2 i am not sure why this is needed.
-
-Alternative solution is to use DB abstraction with following code:
-
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      $query->matching($query->equals('zn_country_iso_2', $iso2));
-
-Related `issue <https://github.com/evoWeb/sf_register/issues/13>`__ at
-sf_register bugtracker.
-
-Related `issue <https://forge.typo3.org/issues/67375>`__ at TYPO3
-bugtracker.
 
 SQL Mode not compatible
 =======================
@@ -275,26 +171,19 @@ sql_mode of the MySQL Database.
 
 Check your sql_mode
 
-.. container::
+.. code-block:: sql
 
-   `SQL <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_SQL>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      mysql> SELECT @@sql_mode;
-      +-------------------------------------------------------------------------------------------------------------------------------------------+
-      | @@sql_mode                                                                                                                                |
-      +-------------------------------------------------------------------------------------------------------------------------------------------+
-      | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
-      +-------------------------------------------------------------------------------------------------------------------------------------------+
-      1 row in set (0,00 sec)
+   mysql> SELECT @@sql_mode;
+   +-------------------------------------------------------------------------------------------------------------------------------------------+
+   | @@sql_mode                                                                                                                                |
+   +-------------------------------------------------------------------------------------------------------------------------------------------+
+   | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
+   +-------------------------------------------------------------------------------------------------------------------------------------------+
+   1 row in set (0,00 sec)
 
 Try to remove some of these modes in »/etc/mysql/my.conf«
 
-::
+.. code-block:: bash
 
    > [mysqld]
    > sql_mode=NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION

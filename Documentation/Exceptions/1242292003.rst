@@ -6,6 +6,9 @@ TYPO3 Exception 1242292003
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+could not determine type of argument "section" of the render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper"
+=========================================================================================================================
+
 This exception is thrown in extbase extensions if doc header is
 incorrect or if you use some PHP optimizer like eAccelerator because
 these optimizers remove the comments, extbase needs to determine the
@@ -13,7 +16,7 @@ data type.
 
 ::
 
-   #1242292003: could not determine type of argument "section" of the render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper". 
+   #1242292003: could not determine type of argument "section" of the render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper".
    Either the methods docComment is invalid or some PHP optimizer strips off comments.
 
 **Solution:**
@@ -34,4 +37,3 @@ data type.
 Links:
 
 -  `eAccelerator <http://eaccelerator.net/>`__
--  `xCache <http://xcache.lighttpd.net/>`__ [not available anymore]

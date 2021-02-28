@@ -6,6 +6,9 @@ TYPO3 Exception 1244201848
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+A boolean expression has more than tree parts.
+==============================================
+
 Exception message:
 
 ::
@@ -14,7 +17,5 @@ Exception message:
 
    A boolean expression has more than tree parts.
 
-The error happens when you have a `Fluid ``f:if``
-tag <https://wiki.typo3.org/Fluid#f:if.2C_f:then.2C_f:else>`__
-[deprecated wiki link] with a syntax error in the ``condition``
-attribute.
+The error happens when you have a Fluid `f:if`
+tag with a syntax error in the `condition` attribute.

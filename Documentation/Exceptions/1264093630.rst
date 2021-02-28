@@ -6,17 +6,16 @@ TYPO3 Exception 1264093630
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This error can be caused by a mis-spelled vendor name.
+This error can be caused by a misspelled vendor name.
 
 The vendor name (first part of the namespaced class name) must start
 with a capital letter to work correctly with Extbase. Otherwise PHP
 class names start with a small letter while the Extbase types start with
 a capital letter what will cause problems.
 
-| 
-| Make sure the type of each variable is defined in your model:
-  extensionname/Classes/Domain/Model/\* Set the "@var" in the header
-| 
+Make sure the type of each variable is defined in your model:
+:file:`extensionname/Classes/Domain/Model/*` Set the `@var` in the header
+
 
 ::
 
@@ -24,5 +23,5 @@ a capital letter what will cause problems.
    * aString
    *
    * @var string
-   */ 
+   */
    protected $aString;

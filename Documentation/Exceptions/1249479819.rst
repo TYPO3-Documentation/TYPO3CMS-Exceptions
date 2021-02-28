@@ -10,7 +10,7 @@ Persistence
 ===========
 
 You need to make sure that your object is already persisted before
-calling Repository->update($o); Add it first with Repository->add($o);
+calling `Repository->update($o);` Add it first with `Repository->add($o);`
 
 Usage of (new) property mapper / t3extblog
 ==========================================
@@ -26,34 +26,36 @@ after 6.2. Use the new one instead.
 For those who do not know how to fix it, I will show how I have fixed
 it.
 
-| Old code:
-| $persistenceManager =
-  \\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Tx_Extbase_Persistence_Manager');
+Old code::
 
-| New code:
-| $objectManager =
-  \\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-| $persistenceManager =
-  $objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class);
+   $persistenceManager =
+   \\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Tx_Extbase_Persistence_Manager');
+
+New code::
+
+   $objectManager =
+   \\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
+   $persistenceManager =
+   $objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class);
 
 Object retrieved by property mapper can't get updated via persistence manager
 =============================================================================
 
-If you try to ->update() an object which has been retrieved from the
+If you try to `->update()` an object which has been retrieved from the
 property mapper by mapping GET/POST parameters, so if you pass the
 object as argument of your controller action, this issue may occur.
 
 For me the solution was to re-retrieve the object using the repository
-and ->findByUid() method and then persist/update the retrieved object.
+and `->findByUid()` method and then persist/update the retrieved object.
 It seems the repository needs to "know" about the object.
 
 ::
 
-      function yourAction(\Some\Model $item)
-      {
-          $updateItem = $this->itemRepository->findByUid($item->getUid());
-          /**
-           *  something with $updateItem ...
-           */
-          $this->itemRepository->update($updateItem);
-      }
+   function yourAction(\Some\Model $item)
+   {
+       $updateItem = $this->itemRepository->findByUid($item->getUid());
+       /**
+        *  something with $updateItem ...
+        */
+       $this->itemRepository->update($updateItem);
+   }

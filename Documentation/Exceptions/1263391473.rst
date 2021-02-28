@@ -30,7 +30,7 @@ Error:
 
 ::
 
-   > The property "options.Fluidcontent.sorting" on the subject was not accessible. 
+   > The property "options.Fluidcontent.sorting" on the subject was not accessible.
 
 Reason:
 
@@ -41,7 +41,4 @@ Reason:
 
 Solution:
 
-::
-
-   > Hotfix: Comment out line 277 in luidTYPO3\Fluidcontent\Service\ConfigurationService in EXT:fluidcontent 4.4.1 (https://github.com/FluidTYPO3/fluidcontent/issues/376) (not so cool)
-   > Regular fix: Use development branch of EXT:flux (https://github.com/FluidTYPO3/flux/pull/1283)
+Update the extension.

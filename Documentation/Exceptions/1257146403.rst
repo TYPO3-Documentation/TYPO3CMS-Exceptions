@@ -6,8 +6,8 @@ TYPO3 Exception 1257146403
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Happened to me when I had invalid values for
-``<switchableControllerActions>``. My code looked like this:
+Happened with invalid values for
+``<switchableControllerActions>``. Code looked like this:
 
 ::
 
@@ -16,12 +16,4 @@ Happened to me when I had invalid values for
        <numIndex index="1">Member->myInvestmentData;Member->show;Member->edit;Member-update;Investment->list;Investment->show;Investment->new;Investment->create;Investment->edit;Investment->update;Investment->delete</numIndex>
    </numIndex>
 
-Notice the missing ``>`` for ``Member-update`` (should be
-``Member->update``). Have a look at
-`FrontendConfigurationManager <https://typo3.org/api/typo3cms/_frontend_configuration_manager_8php_source.html#l00220>`__
-[not available anymore] to see what values are expected.
-
---`Supermonster <https://wiki.typo3.org/wiki/index.php?title=User:Supermonster&action=edit&redlink=1>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Supermonster&action=edit&redlink=1>`__
-[deprecated wiki link]) 10:47, 22 January 2015 (CET)
+Notice the missing ``>`` for ``Member-update`` (should be ``Member->update``). Have a look at `FrontendConfigurationManager` to see what values are expected.

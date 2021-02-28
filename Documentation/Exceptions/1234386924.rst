@@ -17,15 +17,11 @@ Error-messages:
    "TYPO3\CMS\Extbase\Persistence\ObjectStorage" because it does not
    implement the TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
 
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 04:19, 11 August 2014 (CEST)
 
 Fix
 ===
 
-Assure that all classes in your model-files are defined and annotated
+Assure that all classes in your model files are defined and annotated
 correctly.
 
 Below is an example for one property of another table:

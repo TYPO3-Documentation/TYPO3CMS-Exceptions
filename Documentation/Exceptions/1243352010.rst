@@ -9,5 +9,5 @@ TYPO3 Exception 1243352010
 The key "TYPO3\CMS\Fluid\ViewHelpers\FormViewHelper->fieldNamePrefix" was already stored and you cannot override it.
 ====================================================================================================================
 
-This exception occurs if a f:form.xxxx viewhelper is used before the
-f:form VH is used, and also if f:form tags are nested.
+This exception occurs if a `f:form.xxxx` viewhelper is used before the
+`f:form` VH is used, or if `f:form` tags are nested.

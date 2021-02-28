@@ -6,7 +6,7 @@ TYPO3 Exception 1251315967
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This Exception rose in one installation(TYPO3 4.6.9-15) after changing
+This exception rose in one installation(TYPO3 4.6.9-15) after changing
 direction of relations in the extension_builder between two models after
 having already inserted some entries to the list-view in the backend.
 
@@ -81,16 +81,12 @@ To fix this:
      * @return void
      */
 
--
 
-   -  Clear TYPO3 Caches
-   -  Delete typo3temp/\*
-   -  As stated before, truncating the cf_-tables was needed before the
-      error stopped.
-
-|
-| May also be caused by incorrectly formatted comments - a missing \* on
-  the first line (only having one star) will stop the parser finding the
-  definitions.
-
-The error occurs also if you have missing annotation in your model.
+-  Clear TYPO3 Caches
+-  Delete typo3temp/\*
+-  As stated before, truncating the cf_-tables was needed before the
+   error stopped.
+-  May also be caused by incorrectly formatted comments - a missing \* on
+   the first line (only having one star) will stop the parser finding the
+   definitions.
+-  The error occurs also if you have missing annotation in your model.

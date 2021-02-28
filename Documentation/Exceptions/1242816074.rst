@@ -6,23 +6,13 @@ TYPO3 Exception 1242816074
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error 1
-=======
-
-::
-
-   Oops, an error occurred!
-
-   The number of question marks to replace must be equal to the number of parameters.
-
-Error 2
-=======
+Unsupported order encountered.
+==============================
 
 ::
 
     #1242816074: Unsupported order encountered.
 
 **Solution:** There is something wrong with your query, look at:
-**``$query->setOrderings``**
+:php:`$query->setOrderings`
 
-https://forge.typo3.org/issues/32051

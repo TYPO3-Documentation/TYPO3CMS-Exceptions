@@ -16,11 +16,7 @@ that I might have made a fault I never had success with the simple
 notation by using several parameters in the render-function. I succeeded
 with the solution to register the arguments in the function
 initializeArguments() which is automatically called if present in the
-viewHelper. --`David
-bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__ [deprecated
-wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 01:07, 2 March 2015 (CET)
+viewHelper.
 
 PHPStorm
 ========
@@ -45,7 +41,7 @@ Just remove the wrong xmlns attribute from your Fluid tag
 
 ::
 
-   Wrong (xmlns isnt a valid attribute for this tag): 
+   Wrong (xmlns isn't a valid attribute for this tag):
    <f:layout name="Page/Homepage" xmlns:f="http://www.w3.org/1999/html"/>
 
    Right:

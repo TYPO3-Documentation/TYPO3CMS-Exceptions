@@ -6,6 +6,11 @@ TYPO3 Exception 1241098027
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Invalid validate annotation
+===========================
+
+Check the annotation.
+
 ::
 
    #1241098027: Invalid validate annotation in Vnd\Extname\Domain\SomeObj::phone: Could not resolve class name for validator "".
