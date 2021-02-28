@@ -6,14 +6,11 @@ TYPO3 Exception 1289917924
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Uncaught TYPO3 Exception
+You don't have access to this page
+==================================
 
-#. 1289917924: You don't have access to this page
-
-RuntimeException thrown in file
-/var/www/htdocs/typo3_src-x.x.xx/typo3/sysext/extbase/Classes/Core/Bootstrap.php
-in line 297.
+:file:`typo3/sysext/extbase/Classes/Core/Bootstrap.php`
 
 This error can occur, when the current page is deleted and the user
 selects a module in the web menu. It has also been logged in the TYPO3
-Forge: `Issue 66449 <https://forge.typo3.org/issues/66449>`__
+issue tracker: `Issue 66449 <https://forge.typo3.org/issues/66449>`__

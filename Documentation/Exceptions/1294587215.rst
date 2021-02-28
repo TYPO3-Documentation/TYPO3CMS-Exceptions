@@ -6,18 +6,14 @@ TYPO3 Exception 1294587215
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**RealURL-Error "ID was outside the domain"**
+RealURL-Error "ID was outside the domain"
+==========================================
 
-You have to set your rootpage id inside your realurl_conf file:
-$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['pagePath']['rootpage_id']
-= 1;
+You have to set your root page id inside your realurl_conf file:
+`$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['pagePath']['rootpage_id']
+= 1;`
 
 or if using multiple domains in tree:
-$TYPO3_CONF_VARS['EXTCONF']['realurl']['www.website.org']['pagePath']['rootpage_id']
-= 25;
+`$TYPO3_CONF_VARS['EXTCONF']['realurl']['www.website.org']['pagePath']['rootpage_id']
+= 25;`
 
-| 
-| ! Beware:
-  $TYPO3_CONF_VARS['EXTCONF']['realurl']['website.org']['pagePath']['rootpage_id']
-  is not equal to
-  $TYPO3_CONF_VARS['EXTCONF']['realurl']['www.website.org']['pagePath']['rootpage_id'] !

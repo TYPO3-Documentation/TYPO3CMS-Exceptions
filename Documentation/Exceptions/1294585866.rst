@@ -6,15 +6,8 @@ TYPO3 Exception 1294585866
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error Message
-=============
+No class named "..."
+====================
 
-**Oops, an error occurred!** **No class named
-EXT:tt_products/hooks/class.tx_ttproducts_hooks_cms.php:&tx_ttproducts_hooks_cms**
-
-Solution
-========
-
-For some reason the file
-tt_products/hooks/class.tx_ttproducts_hooks_cms.php does not exist. Copy
-a file with this name to this place.
+Check your source code for occurrences of that class name. Usually happens if a
+hook is registered with a wrong class name/reference.

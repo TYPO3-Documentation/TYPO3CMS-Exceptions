@@ -6,12 +6,12 @@ TYPO3 Exception 1297933823
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Uncaught TYPO3 Exception: #1297933823: Object with identity "1234" not
-found.
+Object with identity "1234" not found.
+======================================
 
 Error like that is thrown when you have an Extbase plugin on a page with
 a "single view" action, and the object with id 1234 can not be
-retreived. E.g. because it is hidden or deleted.
+retrieved. E.g. because it is hidden or deleted.
 
 Example for **TYPO3 8.7**:
 
@@ -36,9 +36,7 @@ Example for **TYPO3 8.7**:
           }
       }
 
-| 
-| In **TYPO3 9.5**, you can switch out the (now deprecated)
-  pageNotfoundAndExit()-code with this:
+In **TYPO3 9.5**, you can switch out the (now deprecated) `pageNotfoundAndExit()`-code with this:
 
 ::
 

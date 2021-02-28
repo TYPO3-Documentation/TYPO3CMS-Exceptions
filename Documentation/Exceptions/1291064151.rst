@@ -6,12 +6,10 @@ TYPO3 Exception 1291064151
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Could not write to file "typo3temp/mail.mbox" when sending an email to debug transport
+======================================================================================
 
-   #1291064151: Could not write to file "typo3temp/mail.mbox" when sending an email to debug transport
+The filepath given in `[MAIL][transport_mbox_file]` needs to be
+**absolute** and writeable.
 
-The filepath given in »[MAIL][transport_mbox_file]« needs to be
-\**absolute*\* and writeable.
-
-In the example above is was enough to give
-"/var/www/typo3temp/mail.mbox" as path.
+In the example above is was enough to use `/var/www/typo3temp/mail.mbox` as path.

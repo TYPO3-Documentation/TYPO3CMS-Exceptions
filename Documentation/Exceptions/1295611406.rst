@@ -6,4 +6,8 @@ TYPO3 Exception 1295611406
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-https://twitter.com/s_michaelsen/statuses/243636376648699904
+Cyclic dependency in prototype object, for class "..."
+======================================================
+
+Happens if the extbase dependency injection is unable to resolve the dependencies
+as a dependency cycle has been detected (A requires B which requires A).

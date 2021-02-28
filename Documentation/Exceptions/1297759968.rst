@@ -6,18 +6,18 @@ TYPO3 Exception 1297759968
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#1297759968: Exception while property mapping at property path "":Object with identity "1" not found.
-=====================================================================================================
+Exception while property mapping at property path "":Object with identity "1" not found.
+========================================================================================
 
 This error is thrown when a link to a hidden record is called.
 
-#1297759968: Exception while property mapping at property path "":Method Tx_Foobar_Domain_Model_Baz::__construct() does not exist
-=================================================================================================================================
+Exception while property mapping at property path "":Method::__construct() does not exist
+==========================================================================================
 
 The ReflectionService tries to get the constructor arguments of your
-model class, which in this case seems not to exist.
+model class, which in this case seem not to exist.
 
-As a work around you can put an empty "__construct" method in your model
+As a work around you can put an empty :php:`__construct` method in your model
 class
 
 ::
@@ -28,57 +28,41 @@ class
     public function __construct() {
     }
 
-#1297759968: Exception while property mapping at property path "":Could not find a suitable type converter for "array|null" because no such class or interface exists
-=====================================================================================================================================================================
+Exception while property mapping at property path "":Could not find a suitable type converter for "array|null" because no such class or interface exists
+========================================================================================================================================================
 
-This error is thrown (for me) when I insert a datemenu on the listpage
-and follow a link:
+See https://forge.typo3.org/issues/48172
 
-#1297759968: Exception while property mapping at property path "":Could
-not find a suitable type converter for "array|null" because no such
-class or interface exists.
+Try updating the relevant extensions and TYPO3. If everything is up-to-date and the
+error still occurs setting the TypoScript option `plugin.tx_news.features.rewrittenPropertyMapper = 0` may help.
 
-seems related to https://forge.typo3.org/issues/48172 as the solution,
-setting the Typoscript
+.. hint::
 
-plugin.tx_news.features.rewrittenPropertyMapper = 0
+   Enabling/disabling the `rewrittenPropertyMapper` has huge
+   impacts on extbase behaviour. You are strongly advised to learn about
+   the "new" propertyMapper and how to use/configure it rather then
+   deactivating it.
 
-solves the error (for me).
+Exception while property mapping at property path "": Could not find a suitable type converter for "..." because no such class or interface exists.
+===================================================================================================================================================
 
-*Advice:* enabling/disabling the rewrittenPropertyMapper has huge
-impacts on extbase behaviour. You are strongly adviced to learn about
-the "new" propertyMapper and how to use/configure it rather then
-deactivating it (~Peter Niederlag)
-
-#1297759968: Exception while property mapping at property path "": Could not find a suitable type converter for "MyExample\Jobs\Domain\Model\Job" because no such class or interface exists.
-============================================================================================================================================================================================
-
-After adding an new model and clearing the caches (BE -> "Flush system
-caches", rm -rf typo3temp/Cache/), the new class still was not found.
+After adding an new model and clearing the caches (BE -> :guilabel:`Flush system caches`, :bash:`rm -rf typo3temp/Cache/`), the new class still was not found.
 Deactivating and reactivating the extension was solution.
 
-Background: the autoload information (typo3temp/autoload/) wasn't
+Background: the autoload information (:file:`typo3temp/autoload/`) wasn't
 flushed/updated. Since TYPO3 v8 there's a option in the install-tool for
 regenerating the autoconfiguration files.
 
-#1297759968: Exception while property mapping at property path "myDomainModel":Could not determine the child object type.
-=========================================================================================================================
+Exception while property mapping at property path "...": Could not determine the child object type.
+====================================================================================================
 
-After making (manual) changes to the model, the cache hasn't been
-cleared (configuartion cache). See
-http://maischner.de/typo3-extbase-fluid-fehlermeldungen/
+Try clearing all caches.
 
-For other cases: I have not found a solution yet.
-
-Try to truncate the cf_extbase_reflection table after you modified the
+Try to truncate the :sql:`cf_extbase_reflection` table after you modified the
 model.
 
-#1297759968: Exception while property mapping at property path "":Property "0" was not found in target object of type ""Tx_MyExt_Domain_Model_MyObject"
-=======================================================================================================================================================
-
-In my case, it's displayed when calling updateAction after showAction.
-The model configutation needs to be re-checked. (More information wanted
-here)
+Exception while property mapping at property path "Property 0" was not found in target object of type "..."
+===========================================================================================================
 
 When using extended models you need to set the base class variables to
 protected instead of private.
@@ -89,119 +73,18 @@ This error is also displayed if a property in a fluid-form is wrong. In
 my case I had property="{object.propertyName}" instead of
 property="propertyName"
 
-#1297759968: Exception while property mapping at property path "investigator":No converter found which can be used to convert from "array" to "Tx_Extbase_Persistence_ObjectStorage".
-=====================================================================================================================================================================================
+Exception while property mapping at property path "...":No converter found which can be used to convert from "array" to "string".
+=================================================================================================================================
 
-Instead of an object, an array has been passed to the model (e.g., from
-a form). Solution needed.
+The solution is there: http://stackoverflow.com/questions/16405963/typo3-how-to-use-file-upload-with-extbase
 
-#1297759968: Exception while property mapping at property path "imagecategorie":No converter found which can be used to convert from "array" to "string".
-=========================================================================================================================================================
+Exception while property mapping at property path "It is not allowed to map property "badproperty". ..."
+========================================================================================================
 
-It apperas when you try to upload a file in the BE, for a property of
-your model.
+-  Possible Cause: For me the reason was a <form> inside a <form>. Seems like the __trustedProperies in the second form made my first form to fail.
+-  See also: http://stackoverflow.com/questions/18654920/extbase-exception-while-property-mapping-at-property-path
 
-The solution is there :
-http://stackoverflow.com/questions/16405963/typo3-how-to-use-file-upload-with-extbase
-
-#1297759968: Exception while property mapping at property path "":It is not allowed to map property "badproperty". You need to use $propertyMappingConfiguration->allowProperties('badproperty') to enable mapping of this property.
-====================================================================================================================================================================================================================================
-
-::
-
-   For me the reason was a <form> inside a <form>. Seems like the __trustedProperies in the second form made my first form to fail.
-
-.. _exception-while-property-mapping-at-property-path-it-is-not-allowed-to-map-property-badproperty.-you-need-to-use-propertymappingconfiguration-allowpropertiesbadproperty-to-enable-mapping-of-this-property.-1:
-
-#1297759968: Exception while property mapping at property path "":It is not allowed to map property "badproperty". You need to use $propertyMappingConfiguration->allowProperties('badproperty') to enable mapping of this property.
-====================================================================================================================================================================================================================================
-
-Say you have a createAction getting two arguments, one for a reservation
-and one for the person that makes the reservation:
-
-::
-
-   /**
-    * action create
-    *
-    * @param $newReservation
-    * @param $newPerson
-    * @return void
-    * @dontverifyrequesthash
-    */
-   public function createAction(Tx_Nboevents_Domain_Model_Reservation $newReservation, Tx_Nboevents_Domain_Model_Person $newPerson) {
-    $this->reservationRepository->add($newReservation);
-    // ...
-   }
-
-You need to tell the PropertyManager to allow certain Properties in a
-new method:
-
-::
-
-   protected function initializeCreateAction(){
-    $propertyMappingConfiguration = $this->arguments['newPerson']->getPropertyMappingConfiguration();
-    // allow all properties:
-    $propertyMappingConfiguration->allowAllProperties();
-    // or just allow certain properties
-    $propertyMappingConfiguration->allowProperties('firstname');
-   }
-
-But this leads next to the following exception:
-
-#1297759968: Exception while property mapping at property path "foo":Creation of objects not allowed. To enable this, you need to set the PropertyMappingConfiguration Value "CONFIGURATION_CREATION_ALLOWED" to TRUE
-=====================================================================================================================================================================================================================
-
-After the above exception has been solved, you need to allow creation of
-new objects (or whatever). Add this line:
-
-::
-
-    $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
-
-The final methods;
-
-::
-
-   /**
-   * @return void
-   */
-   protected function initializeCreateAction(){
-    $propertyMappingConfiguration = $this->arguments['newPerson']->getPropertyMappingConfiguration();
-    $propertyMappingConfiguration->allowAllProperties();
-    $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
-   }
-
-   /**
-   * action create
-   *
-   * @param $newReservation
-   * @param $newPerson
-   * @return void
-   * @dontverifyrequesthash
-   */
-   public function createAction(Tx_Nboevents_Domain_Model_Reservation $newReservation, Tx_Nboevents_Domain_Model_Person $newPerson) {
-    // ...
-   }
-
-#1297759968: Exception while property mapping at property path "":Modification of persistent objects not allowed. To enable this, you need to set the PropertyMappingConfiguration Value "CONFIGURATION_MODIFICATION_ALLOWED" to TRUE. (More information)
-=========================================================================================================================================================================================================================================================
-
-See solution above, this time, the funny man listens to the name
-CONFIGURATION_MODIFICATION_ALLOWED. You know the drill;
-
-::
-
-    $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
-
-| 
-| Maybe also check this post:
-  http://stackoverflow.com/questions/18654920/extbase-exception-while-property-mapping-at-property-path
-
-#1297759968: Exception while property mapping at property path "yourProperty":It is not allowed to map property "__identity". You need to use $propertyMappingConfiguration->allowProperties('__identity') to enable mapping of this property.
-==============================================================================================================================================================================================================================================
-
-If yourProperty is an ObjectStorage that holds references to other
+If `badProperty` is an ObjectStorage that holds references to other
 models and you want to edit this relation in a Fluid form with a
 multiselect or checkboxes, don't let Fluid convert your objects. So
 instead of doing this:
@@ -216,73 +99,17 @@ assign only the uid integers to the viewhelper, like this:
 
     <f:form.checkbox property="yourProperty" value="{someObject.uid}" />
 
-#1297759968: Exception while property mapping at property path "":The target type was no string, but of type "NULL"
-===================================================================================================================
+Exception while property mapping at property path "":The target type was no string, but of type "NULL"
+======================================================================================================
 
-This error occured for me (TYPO3 6.2) when I had the following action
-defined in my controller:
-
-::
-
-    /**
-     * action detail
-     *
-     * @param \Webconsulting\WebconWarndienst\Domain\Model\Warning $warning
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Webconsulting\WebconWarndienst\Domain\Model\Location> $location
-     * @return void
-     */
-    public function detailAction(\Webconsulting\WebconWarndienst\Domain\Model\Warning $warning, \TYPO3\CMS\Extbase\Persistence\ObjectStorage $location = NULL) {
-
-In the form I have an input field having
-name="tx_myextension_controller[location]" which allows to submit
-multiple objects of type "Location".
-
-I tracked down the problem. The extbase controller "Argument.php" class
-does not read the @param annotation but rather uses the argument type
-retrieved from reflecting the method arguments:
-\\TYPO3\CMS\Extbase\Persistence\ObjectStorage
-
-As then only "\TYPO3\CMS\Extbase\Persistence\ObjectStorage" gets passed
-to the typeConverter/propertyMapper it can't determine the class of the
-location sub-elements which should be:
-\\Webconsulting\WebconWarndienst\Domain\Model\Location
-
-You can try this by adding a debugging "echo" statement in
-EXT:extbase/Classes/Property/PropertyMapper.php in method "convert":
-
-::
-
-    public function convert($source, $targetType, \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface $configuration = NULL) {
-      echo $targetType;
-
-It will only output "\TYPO3\CMS\Extbase\Persistence\ObjectStorage"
-
-For me the solution was to remove the type hint from my "detailAction".
-Extbase then uses the @param annotation. But this caused another error:
-`typo3-exception-1278450972 <typo3-exception-1278450972>`__
-
-Which could only get solved by applying a patch:
-https://forge.typo3.org/issues/66049
+See https://forge.typo3.org/issues/66049
 
 This issue concerning passing an array of objects to a controller action
 should have been resolved in 7.x because the old property mapper has
 been removed completely.
 
-#1297759968: Exception while property mapping at property path "files": PHP Warning: spl_object_hash() expects parameter 1 to be object, null given in /usr/share/typo3/typo3_src-7.6.2/typo3/sysext/extbase/Classes/Persistence/ObjectStorage.php line 155 =
-=============================================================================================================================================================================================================================================================
-
-The solution is to add this in your form :
-enctype="multipart/form-data".
-
-::
-
-     <f:form action="create" enctype="multipart/form-data" name="newObject" object="{newObject}">
-     <f:render partial="Object/FormFields" />
-       <f:form.submit value="Create new" />
-     </f:form>
-
-#1297759968: Exception while property mapping at property path "": Path does not exist in array
-===============================================================================================
+Exception while property mapping at property path "": Path does not exist in array
+==================================================================================
 
 When resetting options in YAML config files for EXT:form write
 

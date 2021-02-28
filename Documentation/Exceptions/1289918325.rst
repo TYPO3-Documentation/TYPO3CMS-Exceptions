@@ -6,21 +6,16 @@ TYPO3 Exception 1289918325
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#1289918325: Module 'my_module' is not configured. (More information)
-=====================================================================
+#1289918325: Module 'my_module' is not configured.
+==================================================
 
 This message appears when trying to load a module from BE context
-sensitive menu. The module was configured in Route.php and loaded via
-BackendControllerHook.
+menu. The module was configured in :file:`Route.php` and loaded via
+`BackendControllerHook`.
 
-This problem appears when changing the module name and clearing cache
-even with install tool does nothing.
+This problem appears when changing a module name or when old module names are
+still cached (for example when upgrading the TYPO3 core or extensions).
 
-The solution was to remove typo3temp folder.
+The solution is to clear all caches (either via the install tool or if that
+does not help via manually removing the files in :file:`typo3temp`).
 
-Other case
-----------
-
-The Exception appeared as well during upgrade procedure 7.6 to 8.7, when
-trying to access the InstallTool via BackEnd. Use
-domain.tld/typo/install/ instead, no folder removing necessary.

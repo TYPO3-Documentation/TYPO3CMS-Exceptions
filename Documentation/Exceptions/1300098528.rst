@@ -6,19 +6,10 @@ TYPO3 Exception 1300098528
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Observed in TYPO3 6.2.0: This error occurs when importing a previously
-exported page containing a reference to a file in fileadmin (Testing
-6.2.0, after beta5, excat version
-8cbb774ce1518b88e4e23646d9ac49f96ab1bd85)
+Incorrect reference to original file given for FileReference.
+==============================================================
 
-Observed in TYPO3 6.1.7: This error showed up when an image was added to
-a text with image content element (too many images? this was the 34th).
-Error blocks editing of page in List/Page module in backend. To fix, use
-History/Undo using the clickmenu in the pagetree to roll back to a
-previous version before the image was added.
-
-Observed in TYPO3 7.6 & 8.7: This error occur, when TCA media field
-configuration is missing *--palette--;;filePalette* entry in *showitem*,
-which is required. This often happens, if you manipulate *showitem*
-configuration, to hide sys_file_reference fields for medias. See snippet
-2017-3 Custom FAL inline overlay palette in BE for an example.
+Observed in **TYPO3 7.6 & 8.7**: This error occurs, when TCA media field
+configuration is missing `--palette--;;filePalette` entry in `showitem`,
+which is required. This often happens, if you manipulate `showitem`
+configuration, to hide :sql:`sys_file_reference` fields.

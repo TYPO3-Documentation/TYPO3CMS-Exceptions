@@ -6,9 +6,10 @@ TYPO3 Exception 1294585192
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-"ADMCMD command could not be executed!" related to:
-https://forge.typo3.org/issues/18761
+ADMCMD command could not be executed
+====================================
 
-client issue.
+See also: https://forge.typo3.org/issues/18761
 
-removing the cookie "ADMCMD_prev" solves the problem
+Happens in TYPO3 versions below 9 when the client side preview cookie expires.
+Removing the cookie `ADMCMD_prev` solves the problem.

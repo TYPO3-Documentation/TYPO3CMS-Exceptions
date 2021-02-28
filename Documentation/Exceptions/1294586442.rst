@@ -7,11 +7,12 @@ TYPO3 Exception 1294586442
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 Template is not writeable
+=========================
 
-Happens when your filepermissions (Unix) are not correct if you include
+Happens when your file permissions (Unix) are not correct if you include
 TypoScript from a file and try to edit it in the backend.
 
-Solution: Change filepermissions to make the file writeable by the
-webserver, ie.
-
-chgrp www-data fileadmin/templates/typoscript.txt && chmod g+w www-data
+Solution: Change file permissions to make the file writeable by the
+webserver or move the file to a writable location. For example, if you need
+to make changes on TypoScript of an extension you should not do it in the extension
+directly but in your own template files.

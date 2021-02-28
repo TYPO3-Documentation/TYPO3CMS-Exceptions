@@ -6,28 +6,18 @@ TYPO3 Exception 1294587217
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hello! I received this error message from my TYPO3-Frontend. Reason:
-Inside the Template of this page there were spaces inside the lines
-like:
+The page is not configured! [type=x][].
+=======================================
 
-#. Default PAGE object:
-
-page = PAGE page. 10 = TEXT page. 10.value = HELLO WORLD!
-
-(see the spaces right after the dots)
-
-Removing these spaces leaded to a page running fine without the error
-message this Thread is about. Best regards, strawk
-
-| 
-| **#1294587217: The page is not configured! [type=0][]. This means that
-  there is no TypoScript object of type PAGE with typeNum=0 configured**
-
+No PAGE object defined for type=x
+---------------------------------
 This happens if you forget the line
 
 ::
 
    page = PAGE
+
+(for `typeNum` = x from the error message, with `0` being the default)
 
 in the Setup field of your TypoScript record.
 
@@ -56,21 +46,21 @@ the Setup field with the following lines:
 Save the template and open the page in the frontend. You should see the
 words "HELLO WORLD!".
 
-| 
-| Another possibility is that you are trying to access a page with an
-  undefined page type. E.g. ``example.org/?type=123``, but you do not
-  have a ``(page).typeNum = 123`` defined in your TypoScript template.
+Another possibility is that you are trying to access a page with an
+undefined page type. E.g. ``example.org/?type=123``, but you do not
+have a ``(page).typeNum = 123`` defined in your TypoScript template.
 
-| 
-| == #1294587217: The page is not configured! [type=103][]. This means
-  that there is no TypoScript object of type PAGE with typeNum=103
-  configured.
+Using broken TypoScript
+------------------------
 
-This error is thrown when an old dead link is called after update to
-TYPO3 CMS 6.2. Please see: http://www.bahai.by/be/?type=103 [not
-available anymore] Why no 404 error.
+.. code-block:: typoscript
+
+   #. Default PAGE object:
+   page = PAGE page. 10 = TEXT page. 10.value = HELLO WORLD!
+
+Removing the spaces and adding line breaks leads to a page running fine without the error.
 
 Using Bootstrap_package
-=======================
+-----------------------
 
 You forgot to include the bootstrap_package static template.

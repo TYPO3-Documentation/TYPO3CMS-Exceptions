@@ -6,14 +6,12 @@ TYPO3 Exception 1298273089
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception message:
+regularExpression "^[2356]$" in RegularExpressionValidator contained an error.
+==============================================================================
 
-::
-
-   #1298273089: regularExpression "^[2356]$" in RegularExpressionValidator contained an error.
-
-   TYPO3\CMS\Extbase\Validation\Exception\InvalidValidationOptionsException thrown in file
-   .../typo3_src/typo3/sysext/extbase/Classes/Validation/Validator/RegularExpressionValidator.php in line 50.
+ #1298273089: regularExpression "^[2356]$" in RegularExpressionValidator contained an error.
+ `TYPO3\CMS\Extbase\Validation\Exception\InvalidValidationOptionsException` thrown in file
+ :file:`typo3/sysext/extbase/Classes/Validation/Validator/RegularExpressionValidator.php` in line 50.
 
 This happens when no regular expression delimiter is used.
 

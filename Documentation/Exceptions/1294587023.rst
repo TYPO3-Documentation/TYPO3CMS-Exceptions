@@ -6,11 +6,8 @@ TYPO3 Exception 1294587023
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Your browser version looks incompatible with this TYPO3 version!
+================================================================
 
-    #1294587023: Browser Error: Your browser version looks incompatible with this TYPO3 version! 
-
-TYPO3 thinks that TYPO3 does not work with your browser.
-
-To get around it, edit
-``typo3_src/typo3/sysext/core/Classes/Core/Bootstrap.php::checkValidBrowserOrDie()``
+You are using a browser that is not supported by TYPO3. Please use a supported browser
+(for example Firefox or Chrome in an up-to-date version).

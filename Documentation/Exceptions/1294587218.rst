@@ -6,14 +6,12 @@ TYPO3 Exception 1294587218
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hi,
-
-if you just started to work with TYPO3 CMS - Welcome and congratulations
-for the successfull installation!.
+ServiceUnavailable: TypoScriptFrontendController
+================================================
 
 TypoScript is the language, in which the internal object structure in
-TYPO 3 CMS is described (not the HTML DOM). Each page needs at least one
-Typoscript template either in its own properties or in an upward page.
+TYPO3 CMS is described (not the HTML DOM). Each page needs at least one
+TypoScript template either in its own properties or in an upward page.
 
 So you need at least one page and a "root level" template record with
 some content.
@@ -21,23 +19,20 @@ some content.
 If you have both, go through the following:
 
 First, check wether the page you don't see or at least one of the pages
-in root-direction has a Typoscript template which works, is active and
+in root-direction has a TypoScript template which works, is active and
 has root-level property. To achieve this, go to the following window:
 
-> Template Module in the left column > page is selected in middle column
-> info/edit in top selection field > edit complete template record >
+:guilabel:`Template` Module in the left column > :guilabel:`page` is selected in middle column
+> :guilabel:`info/edit` in top selection field > :guilabel:`edit complete template record` >
 "General" - tab
 
--  check the template Typoscript code in the "Setup" - text field
+-  check the template TypoScript code in the "Setup" - text field
 -  The "inactive" field must be unchecked.
--  Check, wether root-level property is set in the "Options" tab: the
+-  Check, whether root-level property is set in the "Options" tab: the
    "root level" field must be checked.
 
 If all this is o.k., but the error occurs nonetheless, you may delete
-and recreate the root template.
-
-If you have a working typoscript code, it is intelligent to save it
-first via copy and paste.
+and re-create the root template.
 
 Delete the root template with the little trash bin on top of template
 edit page.
@@ -45,22 +40,10 @@ edit page.
 Then create a new template by clicking "Create template for new
 website". This button has appeared after deleting the root template.
 
-There are some tutorials to make it easy for you to start:
+Additionally, you find many information in the docs on TYPO3.org
 
--  `TypoScript in 45
-   Minutes <https://wiki.typo3.org/wiki/index.php?title=Ts45min&action=edit&redlink=1>`__
-   [not available anymore]
+-  https://docs.typo3.org
 
-Addtionally you find many information in the docs on TYPO3.org
-
--  https://typo3.org/documentation/
-
-Thanks for choosing TYPO3.
-
-There is a big community, you can get in contact with us be registering
-on `TYPO3.org <http://TYPO3.org>`__
-
---------------
 
 SOLUTION 1 (Tested with TYPO3 7+)
 =================================

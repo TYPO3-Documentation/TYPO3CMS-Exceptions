@@ -6,10 +6,12 @@ TYPO3 Exception 1289679153
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The error "The specified compression of type "integer" but a boolean is
-expected. When your cache configuration is invalid. Check
-typo3conf/LocalConfiguration.php and
-typo3conf/AdditionalConfiguration.php looking for sth like:
+The specified compression of type "" but a boolean is expected.
+===============================================================
+
+The error happens when your cache configuration is invalid. Check
+:file:`typo3conf/LocalConfiguration.php` and
+:file:`typo3conf/AdditionalConfiguration.php` looking for something like:
 
 ::
 
