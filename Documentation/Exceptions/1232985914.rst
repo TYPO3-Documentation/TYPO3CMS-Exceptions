@@ -6,12 +6,12 @@ TYPO3 Exception 1232985914
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-| Got this on a Hetzner managed server after an update.
-| Message: "The PHP extension "apcu" must be installed and loaded in
-  order to use the APCu backend."
+The PHP extension "apcu" must be installed and loaded in order to use the APCu backend.
+=======================================================================================
 
-Solution:
-=========
-
-Disable, save and then re-enable APC in server management console to get
+#. Install and configure apc on the server. Maybe APCu is installed, but
+   needs more memory.
+#. Goto TYPO3 *Install Tool* --> *Configuration Presets* and
+   choose *Database cache backend* (or: something different then `apcu`) and save.
+#. On a Hetzner server: Disable, save and then re-enable APC in Hetzner server management console to get
 it fixed.

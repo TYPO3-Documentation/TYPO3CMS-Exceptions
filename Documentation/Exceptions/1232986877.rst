@@ -6,12 +6,14 @@ TYPO3 Exception 1232986877
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-For me this happend after I configured TYPO3 6.2 to use the APC Backend
-for Extbase Cache and afterwards disabled the APC Cache module on the
-server. Solution is to reenable the APC or delete the cache
-configuration from LocalConfiguration.php. Don't forget to clear the
-typo3temp/Cache afterwards.
+This happened after configuring TYPO3 6.2 to use the APC Backend
+for Extbase Cache and afterwards disabling the APC Cache module on the
+server. Solution is to re-enable the APC or delete the cache
+configuration from :file:`LocalConfiguration.php`. Don't forget to clear the
+:file:`typo3temp/Cache` afterwards.
 
 This error will also occur if your apc cache runs out of memory - either
 give it more or as a quick temp fix clear out the cache with a minimal
-script like <?php apc_clear_cache(); ?>
+script like::
+
+   <?php apc_clear_cache();?>

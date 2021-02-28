@@ -6,25 +6,27 @@ TYPO3 Exception 1225709597
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The template files "", "" could not be loaded.
+==============================================
+
 The requested Fluid template (or Partial file linked from within a
 Template file) is missing. Verify the configured file path/s and any
 linked Partials, and check the (case-sensitive) filename/s.
 
-| 
-| In case the following error occur:
+In case the following error occurs
 
-*Oops, an error occurred!*
+   *Oops, an error occurred!*
 
-*The template files "", "" could not be loaded.*
+   *The template files "", "" could not be loaded.*
 
-*More information regarding this error might be available online.*
+   *More information regarding this error might be available online.*
 
 make sure you are using a slash but not a backslash.
 
 TYPO3CMS >= 6.2
 ===============
 
-Make sure pathes to partials MUST NOT start with a slash.
+Make sure paths to partials DO NOT start with a slash.
 
 -  **Working** (with
    *./typo3conf/ext/extension_with_super_cow_powers/Resources/Private/Partials/Product/TabWithGal.html*

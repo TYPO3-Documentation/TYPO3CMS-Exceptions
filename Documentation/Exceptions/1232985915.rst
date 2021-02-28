@@ -6,8 +6,8 @@ TYPO3 Exception 1232985915
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception
-=========
+The APCu backend cannot be used because apcu is disabled on CLI
+===============================================================
 
 ::
 
@@ -16,15 +16,16 @@ Exception
       thrown in file typo3/sysext/core/Classes/Cache/Backend/ApcuBackend.php
       in line 84
 
-This error occurs if TYPO3 is execute in command line context. The
+This error occurs if TYPO3 is executed in command line context. The
 reason is, that ``typo3conf/LocalConfiguration.php`` uses
 ``TYPO3\\CMS\\Core\\Cache\\Backend\\ApcuBackend`` as caching backend,
 which works fine if called using an HTTP-context (e.g. via Apache or
 nginx) but does not if invoked via CLI (command line interface).
 
-Adjust PHP CLI configuration to fix this behavior
-=================================================
+Solutions
+---------
 
--  modify configuration file ``/etc/php/7.1/cli/conf.d/20-apcu.ini`` (as
-   an exaxmple on Ubuntu 17.10)
--  add new setting ``apc.enable_cli=on``
+#. Change Cache Backend: Goto TYPO3 *Install Tool* --> *Configuration Presets* and
+   choose *Database cache backend* (or: something different then `apcu`) and save.
+#. Adjust PHP CLI configuration to fix this behavior: modify configuration file ``/etc/php/7.1/cli/conf.d/20-apcu.ini`` (as
+   an example on Ubuntu 17.10) and add new setting ``apc.enable_cli=on``

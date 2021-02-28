@@ -6,8 +6,8 @@ TYPO3 Exception 1225709596
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 6.2.1
-===========
+The template files * could not be loaded.
+=========================================
 
 ::
 
@@ -16,12 +16,9 @@ TYPO3 6.2.1
 Reason
 ------
 
-Happend by using Flux 7.0.0
+Might happen when using Flux 7.0.0
 
 Solution
 ^^^^^^^^
 
-None until now
-
-Eventually you haven't include fluidcontent_bootstrap in your template.
-Just include it.
+- Maybe you have not included the `fluidcontent_bootstrap` in your template. Just include it.

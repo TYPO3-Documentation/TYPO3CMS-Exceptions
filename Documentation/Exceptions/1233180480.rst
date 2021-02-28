@@ -6,17 +6,14 @@ TYPO3 Exception 1233180480
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-error message
-=============
-
-#. 1233180480: The method "yourMethod" is not supported by the
-   repository
+The method "yourMethod" is not supported by the repository
+==========================================================
 
 Analysis
 ========
 
 -  check if the method **yourMethod** is not defined in the repository,
-   also with respect to spelling (lowercase and upercase).
+   also with respect to spelling (lowercase and uppercase).
 -  check the visibility of the method (public, protected, private)
 
 Solution

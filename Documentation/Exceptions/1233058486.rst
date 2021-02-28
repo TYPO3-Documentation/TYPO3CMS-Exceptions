@@ -45,13 +45,13 @@ class name of its own. It does not exist anywhere: ..._hooks_marker
 
 ::
 
-      'Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1233058486: 
-      \"agency_ttproductsagency_hooks_marker;\" is not a valid cache entry identifier. 
-      | InvalidArgumentException thrown in file 
+      'Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1233058486:
+      \"agency_ttproductsagency_hooks_marker;\" is not a valid cache entry identifier.
+      | InvalidArgumentException thrown in file
       /usr/www/users/myuser/typo3_src-6.2.14/typo3/sysext/core/Classes
       /Cache/Frontend/AbstractFrontend.php in line 85. Requested URL:
 
-EXT:be_acl :: Version 1.7.3 and above
+EXT:be_acl:: Version 1.7.3 and above
 -------------------------------------
 
 From version 1.7.3 on the cache identifier includes the
