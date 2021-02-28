@@ -6,5 +6,10 @@ TYPO3 Exception 1301648782
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I granted privileges to user on the wrong database. Corrected it and
-solved.
+ServiceUnavailableException
+===========================
+
+May happen any time TYPO3 is unable to respond correctly, for example:
+
+- Granted privileges to the database user on the wrong database
+- Used the wrong database credentials

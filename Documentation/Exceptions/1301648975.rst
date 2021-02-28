@@ -6,12 +6,9 @@ TYPO3 Exception 1301648975
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-GIVEN: - TYPO3 CMS Version 6.2.1 - No Pages in PageTree
+ServiceUnavailableException
+===========================
 
-Calling up the FE: you will encounter this Error.
+Can happen for many different reasons, for example
 
-Solution: - Add a Page - Add a TS-Template within this page.
-
-It can also be due to wrong domain name.
-
-hth G
+- No pages in page tree: calling the frontend will result in this error (depending on your TYPO3 version)

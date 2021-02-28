@@ -6,5 +6,7 @@ TYPO3 Exception 1301648328
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The shortcut from the root page must be changed in the shortcutmodul to
-the selected page
+This page is of type "Shortcut" and configured to redirect to a subpage. However, this page has no accessible subpages.
+=======================================================================================================================
+
+The shortcut must be changed in the :guilabel:`Page Properties` to point to a valid page.

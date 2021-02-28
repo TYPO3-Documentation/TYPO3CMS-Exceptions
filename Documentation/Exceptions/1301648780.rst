@@ -6,32 +6,29 @@ TYPO3 Exception 1301648780
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-When clicking on Show in the backend, this error occurs when an item is
-disabled, instead it should show the preview of the page.
+PageNotFoundException
+=====================
+
+Wrong Site Configuration
+-------------------------
 
 In LTS 9 this exception occurs when the rootPageId in the site config
-(config/sites/domainname/config.yaml) does not match the pageId of the
-page that is set as Rootpage.
+(:file:`config/sites/domainname/config.yaml`) does not match the pageId of the
+page that is set as root page.
 
-The Exception occurred **after** the update of the core system to
-version 6.2.5.
+Wrong preview/extension configuration
+-------------------------------------
 
 The Exception occurred after updating to 6.2.9. When editing a
-tx_cal_event (/typo3/alt_doc.php?edit[tx_cal_event][135]=edit) and using
+`tx_cal_event` (:file:`/typo3/alt_doc.php?edit[tx_cal_event][135]=edit`) and using
 any of the "Save"-Links, the Error "Page Not Found (404) The requested
 page does not exist!" is shown and nothing is saved. The resulting URL
-is /typo3/alt_doc.php?&edit[tx_cal_event][135]=edit&returnUrl=dummy.php
+is `/typo3/alt_doc.php?&edit[tx_cal_event][135]=edit&returnUrl=dummy.php`
 which might hold two hints: dummy.php and the missing key/value in the
 query string directly after the question mark.
 
-| 
-| **SOLUTION** A customer of mine had the same problem. The solution
-  was, that the SysFolder had a Page TSconfig entry
-  **options.tx_cal_controller.pageIDForPlugin = 419** The page 419 had
-  been deleted. As I removed that option, cal worked again. So be sure
-  to check the page TSconfig for wrong entries
-
-| 
-| This exception will also be thrown if an extension is passing an empty
-  argument to the **pageRenderer** functions addCssFile and
-  addJsFooterFile (tested on TYPO3 7.6.6).
+**SOLUTION** A customer of mine had the same problem. The solution
+was, that the SysFolder had a Page TSconfig entry
+:ts:`options.tx_cal_controller.pageIDForPlugin = 419`. The page 419 had
+been deleted. As I removed that option, cal worked again. So be sure
+to check the page TSconfig for wrong entries

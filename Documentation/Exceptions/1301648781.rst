@@ -6,16 +6,8 @@ TYPO3 Exception 1301648781
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I realized this message with a HTTP404 when my eID script was registered
-but not found. (T3v9.5, eID PSR style)
+PageNotFoundException
+=====================
 
-How did I see it was registered?
-
-Backend Configuration display:
-$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['myext'] was set to
-"myext = Company\Myext\Core\EID::processRequest"
-
-The call to the domain showed a nice page; adding ?eID=myext brought up
-the 404.
-
-Solution: Not Yet found :-(
+Happens when a page cannot be accessed for any reason. Please check the given
+error message for further hints.

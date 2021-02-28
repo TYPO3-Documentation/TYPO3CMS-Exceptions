@@ -6,8 +6,9 @@ TYPO3 Exception 1301654458
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**Parser for plain old PHP array is not yet implemented.**
+Parser for plain old PHP array is not yet implemented.
+======================================================
 
 Check your system for extensions that still use the old format for
-language resources (locallang.php). Remove them or update them to xml
+language resources (:file:`locallang.php`). Remove them or update them to :file:`locallang.xlf`
 format.

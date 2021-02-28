@@ -6,23 +6,26 @@ TYPO3 Exception 1301648404
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+This page is of type "Shortcut" and configured to redirect to a page, which is not accessible.
+==============================================================================================
+
 This exception is thrown when a shortcut page with id X is pointing to a
-page with id Y which is not accessible by some reason (example: if page
+page with id Y which is not accessible for some reason (example: if page
 with id Y is hidden).
 
-The message of this exception is: **This page (ID X) is of type
+The message of this exception is: `This page (ID X) is of type
 "Shortcut" and configured to redirect to a page, which is not accessible
-(ID Y).**
+(ID Y).`
 
 TYPO3 also sends a 404 header in this case, that should be handled by
 the Page Not Found Handler.
 
-**Likeley reasons how this could happen:**
+**Likely reasons how this could happen:**
 
--  The redactor has created a page as shortcut and did not define where
+-  The editor has created a page as shortcut and did not define where
    the shortcut should go to.
 -  The page the shortcut pointed to was hidden or removed.
 
-In each case, editing the given page (last parameter of getPageShortcut)
+In each case, editing the given page (last parameter of `getPageShortcut`)
 and setting the correct (new) page to shortcut too should solve the
 issue.
