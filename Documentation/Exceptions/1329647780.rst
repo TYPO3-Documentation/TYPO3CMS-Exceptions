@@ -10,7 +10,7 @@ Error: Object with identifier
 "1:/user_upload/bilder/Arbeiten_in_Architektur/Augsburg/" does not exist
 in storage
 
-posible cause: under fileadmin I renamed the folder
+posible cause: under :file:`fileadmin` I renamed the folder
 "Arbeiten_in_Architektur" in to "Architektur"
 
 Error Trigered when I tried to add an image under Content Element "Add

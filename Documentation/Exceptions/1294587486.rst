@@ -10,7 +10,7 @@ TYPO3 9.5.23 and the extension phpmyadmin 5.6.4 result in error message
 
 ::
 
-      Session already started by session_start(). Make sure no installed extension is starting a session in its ext_localconf.php or ext_tables.php.
+      Session already started by session_start(). Make sure no installed extension is starting a session in its :file:`ext_localconf.php` or :file:`ext_tables.php`.
 
 when logging in to :guilabel:`Admin Tools` (Maintenance, Settings, Update,
 Environment) in Backend.

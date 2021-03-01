@@ -6,7 +6,7 @@ TYPO3 Exception 1481380393
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Happened for me when I wanted to access backend flexform of one of my
+Happened for me when I wanted to access backend FlexForm of one of my
 own extensions after upgrading to TYPO3 8.7 LTS.
 
 Fix: If there's only one display condition, remove all the unnecessary

@@ -30,7 +30,7 @@ This method adds a new entry into the registry managed by
 of adding the relevant $TCA definition to create a field for making
 relations to the system categories. The call to **makeCategorizable()
 must be located in an extension's Configuration/TCA/Overrides folder**
-(or ext_tables.php file before TYPO3 CMS 6.2.1).
+(or :file:`ext_tables.php` file before TYPO3 CMS 6.2.1).
 
 .. _problem-1:
 

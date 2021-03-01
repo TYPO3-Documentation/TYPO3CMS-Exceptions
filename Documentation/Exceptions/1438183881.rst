@@ -9,19 +9,19 @@ TYPO3 Exception 1438183881
 Hello,
 
 I encountered this error in an extension because I had a TCA
-configuration in my ext_tables.php file not suitable for my mySQL table
+configuration in my :file:`ext_tables.php` file not suitable for my mySQL table
 fields defined in ext_tables.sql
 
 **Note** : this extension was written by a company for specific use 3
 years ago and i encountered this error when upgrading from 6.2 LTS to
 7.6 LTS.
 
-In my ext_tables.php file i had this code :
+In my :file:`ext_tables.php` file i had this code :
 
 ::
 
           $TCA['tx_myExtension_table'] = array(
-                  'ctrl' => array(      
+                  'ctrl' => array(
                   'title'     => $ll.'table.auteur',
                   'label'     => 'nom',
                   'tstamp'    => 'tstamp',

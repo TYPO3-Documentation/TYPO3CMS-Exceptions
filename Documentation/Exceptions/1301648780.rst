@@ -27,8 +27,7 @@ is `/typo3/alt_doc.php?&edit[tx_cal_event][135]=edit&returnUrl=dummy.php`
 which might hold two hints: dummy.php and the missing key/value in the
 query string directly after the question mark.
 
-**SOLUTION** A customer of mine had the same problem. The solution
-was, that the SysFolder had a Page TSconfig entry
+**SOLUTION** The solution was, that the SysFolder had a Page TSconfig entry
 :ts:`options.tx_cal_controller.pageIDForPlugin = 419`. The page 419 had
-been deleted. As I removed that option, cal worked again. So be sure
+been deleted. After removing the option cal worked again. So be sure
 to check the page TSconfig for wrong entries

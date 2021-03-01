@@ -10,7 +10,7 @@ Occurrence in Frontend
 ======================
 
 The page is shown without the common template but just with brown
-background and the typical TYPO3 Error-Message: "Oops an Error occured"
+background and the typical TYPO3 Error-Message: "Oops an Error occurred"
 This happens even without realUrl. After deactivating a content element
 with powermail the page worked again, but the desired powermail-form was
 surly missing.

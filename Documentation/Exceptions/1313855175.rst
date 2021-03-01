@@ -6,30 +6,12 @@ TYPO3 Exception 1313855175
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
->> Before checking below, find out if you have a
-Resources/Private/Templates/{controller}/{action}.html
+The action "..." is not allowed by this plugin.
+===============================================
 
-| 
-| For details, please see https://forge.typo3.org/issues/31322
-
-To solve this, you can set the following in TypoScript:
-
-::
-
-   config.tx_extbase {
-       mvc {
-           callDefaultActionIfActionCantBeResolved = 1
-       }
-   }
-
-or
-
-::
-
-   plugin.tx_yourextension.mvc.callDefaultActionIfActionCantBeResolved = 1
-
-| 
-| or you can solve at in ext_localconf.php
+-  Check your `configurePlugin()` configuration
+-  Check if you have a :file:`Resources/Private/Templates/{controller}/{action}.html`
+   For details, please see https://forge.typo3.org/issues/31322
 
 ::
 
@@ -41,7 +23,7 @@ or
        ),
        // non-cacheable actions
        array(
-           
+
        )
    );
 
@@ -49,50 +31,43 @@ or as of extbase 4.7 you need to update your FlexForm with all necessary
 actions (semicolon separated) in case you use
 switchableControllerActions:
 
-::
+.. code-block:: xml
 
-            <switchableControllerActions>
-              <TCEforms>
-                <label>LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode</label>
-                <onChange>reload</onChange>
-                <config>
-                  <type>select</type>
-                  <items>
-                    <numIndex index="0">
-                      <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.eventgroups</numIndex>
-                      <numIndex index="1">Events->list;Events->show</numIndex>
-                    </numIndex>
-                    <numIndex index="1">
-                      <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.persons</numIndex>
-                      <numIndex index="1">Persons->list;Persons->show</numIndex>
-                    </numIndex>
-                  </items>
-                </config>
-              </TCEforms>
-            </switchableControllerActions>
-
-Found in this forum post (German):
-http://www.typo3forum.net/forum/extbase/59994-action-show-list-not-allowed-plugin.html
-[not available anymore]
+   <switchableControllerActions>
+     <TCEforms>
+       <label>LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode</label>
+       <onChange>reload</onChange>
+       <config>
+         <type>select</type>
+         <items>
+           <numIndex index="0">
+             <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.eventgroups</numIndex>
+             <numIndex index="1">Events->list;Events->show</numIndex>
+           </numIndex>
+           <numIndex index="1">
+             <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.persons</numIndex>
+             <numIndex index="1">Persons->list;Persons->show</numIndex>
+           </numIndex>
+         </items>
+       </config>
+     </TCEforms>
+   </switchableControllerActions>
 
 or
 
-if you happened to try Flexform with switchableControllerAction
+If you tried using FlexForms with `switchableControllerAction`
+this overwrites your :file:`ext_localconf.php` even if you delete the Flexform
+and the link in your :file:`ext_tables.php`. To work with your extension again
+edit the table :sql:`tt_content` and search for `switchableControllerAction` in the column
+:sql:`pi_flexform` and delete the content of this field and everything works
+fine again without FlexForm.
 
-this overwrites your ext_localconf.php even if you delete the Flexform
-and the link in your ext_tables.php. The only possibility I have fount
-to work with your extension again is - edit (with MySQLAdmin) the table
-tt_content and search for switchableControllerAction in the column
-pi_flexform. - delete the content of this field and everything works
-fine again without Flexform.
+Another issue that can occur is an issue with `realurl` configuration.
+It may pass action params as uppercase e.g. 'Show' instead of
+'show'. Either fix the `realurl` configuration or allow actions in
+uppercase.
 
-| 
-| Another issue that can occur is an issue with realurl configuration.
-  It may pass action params as Capital case e.g. 'Show' instead of
-  'show'. Either fix the realurl configuration or allow actions in
-  uppercase.
-
-Also, as developer if you changed the flexform above, remember to change
+Also, as developer if you changed the FlexForm above, remember to change
 the plugin configuration on the referencing page as well. The page
 configuration overrides the plugin configuration and will still have the
 old (now invalid) value stored.

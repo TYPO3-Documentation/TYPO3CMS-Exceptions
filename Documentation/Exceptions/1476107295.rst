@@ -25,7 +25,7 @@ folder "var" in "typo3temp", the next Backend login succeeds. See:
 /html/typo3/typo3_src-8.7.10/typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
 line 234
 
-(vers. 8.7) The error occured in CKEditor Rich Text Editor while setting
+(vers. 8.7) The error occurred in CKEditor Rich Text Editor while setting
 a link. This was because of the page-TS-config for the old rte html
 Editor. After deleting the page TS config for RTE everything works as
 expected again.

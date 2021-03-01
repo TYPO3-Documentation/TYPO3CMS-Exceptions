@@ -32,14 +32,14 @@ LTS. **Step: "Migrate all file links of RTE-enabled fields to FAL"**
 
 no error messages appeared in /var/log/apache/error_log
 
-I found the solution;-) I had a new file storage in fileadmin which was
+I found the solution;-) I had a new file storage in :file:`fileadmin` which was
 automatically created by the upgrade process.
 
-how to solve this; go to your mysql database; use <your typo3 DB> select
+how to solve this; go to your mysql database; use <your  TYPO3 DB> select
 uid, name from sys_file_storage;
 
 find entries which are new and not necessary! (be very careful - this
-could destroy your typo3 installation!!)
+could destroy your  TYPO3 installation!!)
 
 delete from sys_file_storage where uid = xxx;
 

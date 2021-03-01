@@ -6,11 +6,10 @@ TYPO3 Exception 1314085990
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Desired storage "..." is not in the list of available storages.
+===============================================================
 
-    Desired storage is not in the list of available storages
-
-Related tickets on the forge :
+See also:
 
 -  https://forge.typo3.org/issues/59017
 -  https://forge.typo3.org/issues/62489

@@ -6,8 +6,8 @@ TYPO3 Exception 1314226805
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#. 1314226805: Property "crop" was not found in file reference or
-   original file
+Property "..." was not found in file reference or original file
+================================================================
 
 Happens if the field is missing in database. Go to Database Analyzer in
 Install Tool and add the field.

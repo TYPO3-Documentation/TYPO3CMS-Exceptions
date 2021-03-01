@@ -6,7 +6,7 @@ TYPO3 Exception 1481464101
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The cause of this error is the flexform file itself. Especially when
+The cause of this error is the FlexForm file itself. Especially when
 plugin options are defined under display conditions within <AND> clause.
 
 ::

@@ -11,7 +11,7 @@ TYPO3 >= 10 LTS
 
 Starting with TYPO3 10 LTS the variable $_EXTKEY isn't filled with the
 extension key anymore. Solution: use the hardcoded extension key within
-ext_tables.php and ext_localconf.php.
+ext_tables.php and :file:`ext_localconf.php`.
 
 See this page for further details:
 `best-practices-for-ext-tables-php-and-ext-localconf-php <https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ExtensionArchitecture/ConfigurationFiles/Index.html#best-practices-for-ext-tables-php-and-ext-localconf-php>`__
@@ -48,7 +48,7 @@ The error should be gone by now and the extension is removed. Reinstall
 the extension if needed.
 
 You can execute the following php file "clear_cache_franz.php" directly
-from your fileadmin folder as
+from your :file:`fileadmin` folder as
 http://www.mydomain.com/fileadmin/clear_cache_franz.php . Then
 everything will be restored automatically.
 

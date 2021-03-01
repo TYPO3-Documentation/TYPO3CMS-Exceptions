@@ -6,57 +6,11 @@ TYPO3 Exception 1310027793
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Getting the following error on >> install >> upgrade >> Update database
-schema after installing several new extensions. Plus the add a record is
-throwing a 500 (blank). Please see the upgrade wizard DB changes and new
-tables
+ERROR: Query could not be parsed: "..."
+=======================================
 
-| 
-| *Oops, an error occurred!*
+This error happens in TYPO3 versions below 8 when a database query could not be
+parsed. Take note of the query and:
 
-ERROR: Query could not be parsed: "SQL engine parse ERROR: No )
-parenthesis in list: near "(255),tstamp,salt), KEY crdate (crdate) )
-ENGINE=I"". Query: "CREATE TABLE tx_openid_nonce_store ( uid int(11)
-unsigned NOT NULL auto_increment, pid int(11) unsigned NOT NULL default
-'0', crdate int(11) unsigned NOT NULL default '0', tstamp int(11)
-unsigned NOT NULL default '0', server_url varchar(2047) NOT NULL default
-*, salt char(40) NOT NULL default* , PRIMARY KEY (uid), UNIQUE nonce
-(server_url(255),tstamp,salt), KEY crdate (crdate) ) ENGINE=InnoDB;"
-
-| 
-| **I was led to this page after an SQL executing error from install
-  tool. The proposed database modifications all failed because all sql
-  table notations were missing the database name as prefix. The
-  workaround was to enter the sql, adding the db name, into MySQL
-  workbench and executed the failed sql commands one by one.**
-
---------------
-
-Upgrade Wizard Show wizard options
-
-Update database schema: Create tables and fields
-
-Add the following tables:
-
-::
-
-      tx_openid_nonce_store
-      tx_rtehtmlarea_acronym
-      tx_bootstrappackage_tab_item
-
-Add the following fields to tables:
-
-::
-
-      tt_content: external_media_source, external_media_ratio, tx_bootstrappackage_tab_item
-      tx_bootstrappackage_carousel_item: header_layout
-
-Add the following keys to tables:
-
-::
-
-      index_fulltext: fulltextdata, metaphonedata
-
-::
-
-      Show database queries performed
+- if you are a developer: check your code for valid SQL
+- if you are an administrator: try executing the failing query manually via a SQL client

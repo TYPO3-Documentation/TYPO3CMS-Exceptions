@@ -75,13 +75,13 @@ the folder with the correct storage
 
    # fails
    options.folderTree.altElementBrowserMountPoints = assets
-   # works, as subfolder of storage 1, which is by default the fileadmin folder
+   # works, as subfolder of storage 1, which is by default the :file:`fileadmin` folder
    options.folderTree.altElementBrowserMountPoints = 1:assets
 
 Exception after cloning a 6.2 site when calling the file list module
 ====================================================================
 
-The fileadmin folder had been (deliberately) replaced by another one.
+The :file:`fileadmin` folder had been (deliberately) replaced by another one.
 Then, the page tree column displayed this error - only that 2nd column.
 In the third column, the files were displayed as usual. None of the
 above helped, but truncating all sys_file.. tables did. In my case, that
@@ -90,7 +90,7 @@ was feasible.
 Exception after viewing the TYPO3 frontend in a browser (you are not allowed to access the given folder: "_processed_")
 =======================================================================================================================
 
-The auto-created fileadmin folder had been put offline. Re-enabling the
+The auto-created :file:`fileadmin` folder had been put offline. Re-enabling the
 folder fixes the issue.
 
 Exception when deleting file as non admin user (You are not allowed to access the given folder: "")

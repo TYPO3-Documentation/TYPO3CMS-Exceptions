@@ -9,7 +9,7 @@ TYPO3 Exception 1381590731
 Cause in TYPO3 6.2 LTS Beta3
 ============================
 
-Copy / Past images in fileadmin doesn't index the images
+Copy / Past images in :file:`fileadmin` doesn't index the images
 
 Quickfix in TYPO3 6.2 LTS Beta3:
 

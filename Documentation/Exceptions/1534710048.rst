@@ -31,7 +31,7 @@ Error in TCA configuration
 \\TYPO3\CMS\Core\Compatibility\PseudoSiteTcaDisplayCondition::class .
 '->isInPseudoSite:pages:false' is used for records. The pseudo site
 check should only be used for pages. Remove or adopt display condition.
-Problem occured for example in tt_address >= 5.0.0, < 5.2.0 for field
+Problem occurred for example in tt_address >= 5.0.0, < 5.2.0 for field
 slug.
 
 The error may only occur if you edit specific records as a problem only

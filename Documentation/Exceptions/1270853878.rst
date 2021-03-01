@@ -26,5 +26,5 @@ Non-supported versions
 ----------------------
 
 If the extension is only for BE and depends on another extension such as
-scheduler, one has to set in the ext_localconf.php of that extension the
+scheduler, one has to set in the :file:`ext_localconf.php` of that extension the
 variable `doNotLoadInFE` to 1.

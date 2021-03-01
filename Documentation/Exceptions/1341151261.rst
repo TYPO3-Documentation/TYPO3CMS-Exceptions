@@ -14,7 +14,7 @@ Columns configuration file not found
 EXT:ad_google_maps: What did I do prior to experiencing the problem?
 ====================================================================
 
-This error occured using TYPO3 6.1
+This error occurred using TYPO3 6.1
 
 After installation of an extension (ad_google_maps) in the extension
 manager (EM) the error message appeared whenever I opened a frontend or
@@ -28,7 +28,7 @@ one <http://www.typo3.net/forum/thematik/zeige/thema/114839/>`__,
 Reason
 ------
 
-In ext_tables.php [i]dynamicConfigFile[/i] uses a **relative** path, but
+In :file:`ext_tables.php` [i]dynamicConfigFile[/i] uses a **relative** path, but
 \\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles()
 expects to get an **absolute** path.
 
@@ -36,7 +36,7 @@ Solution (patch)
 ----------------
 
 Replace the call of extRelPath() with extPath() for all
-*dynamicConfigFile*-entries in the ext_tables.php
+*dynamicConfigFile*-entries in the :file:`ext_tables.php`
 
 Solution (uninstall)
 --------------------

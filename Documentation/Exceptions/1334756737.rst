@@ -16,7 +16,7 @@ and try to create the file. Add some text to the file so it has more
 than 0 bytes.
 
 I had this problem with an installation today. The solution was to grant
-owner rights for the directorys: typo3conf, typo3temp, fileadmin and
+owner rights for the directorys: typo3conf, typo3temp, :file:`fileadmin` and
 uploads to PHP-User. Don't know if this ist spacial for my provider but
 it seems to work at the moment.
 

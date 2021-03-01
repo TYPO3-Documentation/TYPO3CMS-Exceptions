@@ -15,8 +15,8 @@ I get this error when switching to Web>Template.
 
    Oops, an error occurred!
 
-   PHP Catchable Fatal Error: Argument 2 passed to t3lib_div::array_merge_recursive_overrule() 
-   must be an array, null given, called in /home/typo3_src/typo3_src-4.6.0/typo3/sysext/lang/lang.php 
+   PHP Catchable Fatal Error: Argument 2 passed to t3lib_div::array_merge_recursive_overrule()
+   must be an array, null given, called in /home/typo3_src/typo3_src-4.6.0/typo3/sysext/lang/lang.php
    on line 554 and defined in /home/typo3_src/typo3_src-4.6.0/t3lib/class.t3lib_div.php line 1867
 
 -  Read the Ticket for this `Bug
@@ -78,17 +78,17 @@ typo3 4.7.17
 ============
 
 -  Login to Backend was not possible.
--  Error occured after changing PHP Binaries (not PHP Version) from 5.4
+-  Error occurred after changing PHP Binaries (not PHP Version) from 5.4
    (Mac OS X Mavericks default Binaries) to 5.4 (Binaries from
    http://php-osx.liip.ch/).
 
 ::
 
-   #1: PHP Catchable Fatal Error: 
-   Argument 1 passed to t3lib_div::array_merge_recursive_overrule() 
-   must be an array, null given, called in 
-   /path/to/documentRoot/typo3/sysext/lang/lang.php on line 529 
-   and defined in 
+   #1: PHP Catchable Fatal Error:
+   Argument 1 passed to t3lib_div::array_merge_recursive_overrule()
+   must be an array, null given, called in
+   /path/to/documentRoot/typo3/sysext/lang/lang.php on line 529
+   and defined in
    /path/to/documentRoot/t3lib/class.t3lib_div.php line 1862
 
 .. _solution-1:
@@ -144,10 +144,10 @@ link].
 
    Oops, an error occurred!
 
-   PHP Catchable Fatal Error: Argument 2 passed to TYPO3\CMS\Form\Controller\FormController::cObjGetSingleExt() 
-   must be an array, null given, called in 
-   /var/www/vhosts/typo3_cores/typo3_src-6.1.0alpha1/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php 
-   on line 730 and defined in 
+   PHP Catchable Fatal Error: Argument 2 passed to TYPO3\CMS\Form\Controller\FormController::cObjGetSingleExt()
+   must be an array, null given, called in
+   /var/www/vhosts/typo3_cores/typo3_src-6.1.0alpha1/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php
+   on line 730 and defined in
    /var/www/vhosts/typo3_cores/typo3_src-6.1.0alpha1/typo3/sysext/form/Classes/Controller/FormController.php line 93
 
 .. _solution-3:
@@ -207,7 +207,7 @@ fluidpages / fluidcontent
 typo3_src-6.2.0/typo3/sysext/core/Classes/Database/PreparedStatement.php
 line 311
 
-| 
+|
 | -
 
 I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
@@ -278,7 +278,7 @@ Error source code with line#263 = error line:
    00262:   if (!$testFileExists) {
    00263:    touch($path);
    00264:   }
-   00265: 
+   00265:
 
 No solution found yet
 
@@ -311,7 +311,7 @@ tx_cal
 
    40 array_merge(array, boolean)
 
-Calling the preview or workspace preview, this typo3 exception appears!
+Calling the preview or workspace preview, this  TYPO3 exception appears!
 
 TYPO 6.2.3
 ==========
@@ -523,7 +523,7 @@ by your Vendor name, and
 
 by the name of your converter.
 
-| 
+|
 | The solution to this error is very obvious but it's better written
   than not.
 
