@@ -6,99 +6,65 @@ TYPO3 Exception 1316104317
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-.. container::
-
-   notice - Draft
-
-   .. container::
-
-      Change the **{{draft}}** marker to **{{review}}** when you need a
-      reviewer for text and TypoScript.
-      `info <https://wiki.typo3.org/Help:Contents#Teamwork_-_draft_review_publish_delete_merge_outdated>`__
-      [deprecated wiki link]
-
-The default controller can not be determined. Please check for
-Tx_Extbase_Utility_Extension::configurePlugin() in your
-ext_localconf.php
+The default controller for extension "..." and plugin "..." can not be determined.
+==================================================================================
 
 Basic requirements
-==================
+------------------
 
 This basically means that you need to define a controller in your
-ext_localconf.php. Usually the first entry is taken as default
+:file:`ext_localconf.php`. Usually the first entry is taken as default
 controller/action. Here's an example:
 
-.. container::
+.. code-block::
 
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+     //assuming your extension is in typo3conf/ext/your_ext folder
+     'YourVendor.YourExt',
 
-.. container::
+     // Plugin name
+     'Pi1',
 
-   ::
+     // An array of controller-action combinations. The first one found is the default one.
+     [
+       \YourVendor\YourExt\Controller\YourController::class => 'index,new,create,edit,update'
+     ],
 
-      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        //assuming your extension is in typo3conf/ext/your_ext folder
-        'YourVendor.YourExt',
-
-        // Plugin name
-        'Pi1',
-
-        // An array of controller-action combinations. The first one found is the default one.
-        array(
-          'YourController' => 'index,new,create,edit,update'
-        ),
-
-        // An array of non-cachable controller-action-combinations (they must already be enabled)
-        array(
-          'YourController' => 'new,create,edit,update'
-        )
-      );
+     // An array of non-cacheable controller-action-combinations (they must already be enabled)
+     [
+       \YourVendor\YourExt\Controller\YourController::class => 'new,create,edit,update'
+     ],
+   );
 
 Situation: Adding your plugin via TypoScript
-============================================
+--------------------------------------------
 
 This error can appear if you got your TypoScript wrong. Make sure that
 you write your settings with the first letter in uppercase and
-double-check your ext_localconf.
+double-check your :file:`ext_localconf.php`.
 
-.. container::
-
-   `TS
-   TypoScript <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_TypoScript>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
+.. code-block:: typoscript
 
       lib.test = USER_INT
       lib.test {
         # Calling the extbase bootstrapper
         userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
 
-        # Upcase!
+        # Upper camel case!
         extensionName = YourExt
         vendorName = YourVendor
 
         # As you set it in \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin
         pluginName = Pi1
-        #if you want to call action different than the default controller action add these lines:
-        switchableControllerActions {
-              YourController {
-                1 = new
-              }
-        }
       }
 
-Situation: Adding the Plugin via Flexform Plugin
-================================================
+Situation: Adding the Plugin via FlexForm Plugin
+-------------------------------------------------
 
 Extbase has the possibility to override internal configuration from
-Flexforms. This error might appear if you change a plugin from diffrent
+FlexForms. This error might appear if you change a plugin from different
 types.
 
-Try deleting the plugin instance and add a new, or clear
-tt_content.pi_flexform field for current plugin, to avoid wrong
+Try deleting the plugin instance and add a new one, or clear
+:sql:`tt_content.pi_flexform` field for current plugin, to avoid wrong
 switchableControllerActions from FlexForm.

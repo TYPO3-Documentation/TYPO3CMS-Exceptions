@@ -6,21 +6,16 @@ TYPO3 Exception 1319550425
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Origin: Editor may create/edit/delete records of a custom extension. The
-records may store images in a folder in fileadmin. The Editor is not
-allowd to see the folder, but only to edit records. The Editor now tries
-to remove a file from a record. TYPO3 then tries to delete this file.
-This will raise an execption since the user is not allowed to delete the
-file. > You are not allowed to delete the file
-"/user_upload/customfolder/foo.png"
+You are not allowed to delete the file "..."
+=============================================
 
-Problem: FAL checks for sufficent user rights. The user is not allowed
-to see the folder in :file:`fileadmin` and therefore has no rights to delete
+FAL checks for sufficient user rights. The user is not allowed
+to see the folder or file or has no permissions to delete
 files in the given folder.
 
 Solution:
 
--  Easy: Just add a Filemount for this folder and give it to the
+-  Add a file mount for this folder and give it to the
    user/usergroup. This however means that the user may see \*all\*
-   files in the folde, not only his own.
--  Better: ???
+   files in the folder, not only his own.
+-  Make sure the user has sufficient access permissions to that folder.

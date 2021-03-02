@@ -6,76 +6,83 @@ TYPO3 Exception 1314516809
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Check case sensitivity setting in \`File storage\` record
-=========================================================
+File "..." does not exist
+=========================
 
-Most problems rises when you are migrating from case-insensitive to
-case-sensitive file system, or when auto-generated File Storage didn't
+Check case sensitivity setting in \`File storage\` record
+---------------------------------------------------------
+
+Most problems arise when you are migrating from a case-insensitive to a
+case-sensitive file system, or when an auto-generated File Storage didn't
 recognize case-sensitivity correctly.
 
-In such situation created **File storage** saves file identifiers with
-lower-case in DB and can't find files which has mixed case.
+In such a situation the created :guilabel:`File storage` saves file identifiers with
+lower-case in the database and can't find files which have mixed-case file names.
 
 Solution
---------
+^^^^^^^^
 
--  Find all **File Storages** via module List on 'page zero' and on tab
-   **Configuration** check the **Uses case sensitive identifiers**
-   checkbox.
+Find all :guilabel:`File Storages` via module :guilabel:`List` on `page zero` and on tab
+:guilabel:`Configuration` check the :guilabel:`Uses case sensitive identifiers`
+checkbox.
 
 Other possibilities
-===================
+-------------------
 
 -  This error occurs when a media resource (image, PDF) is deleted from
    the server but remains linked via the "media" extension and FAL.
 
--  The message appears when the file is in the directory but not the
+-  The message appears when the file is in the directory, but not the
    record in the DB.
 
--  In my case happens when you upload a file with the name in uppercase.
-   This is upload but the record is not created. Solution: delete the
-   file from the directory and upload the file in lowercase (first check
-   if setting case sensitivity in File Storage record doesn't help).
+-  It happens when you upload a file with the name in uppercase.
+   The file has been uploaded, but the reference record is not created.
+   Solution: delete the file from the directory and upload the file in
+   lowercase (and check if setting "case sensitivity" in :guilabel:`File Storage`
+   record is set correctly).
+
+Situation: Entering Upgrade Wizard after upgrading to 8.7
+---------------------------------------------------------
+
+Exception gets thrown when entering Upgrade Wizard:
+
+::
+
+   Uncaught TYPO3 Exception
+   #1314516809: File /user_upload//foto_ba\'s.JPG does not exist. (More information)
+
+
+The file does exist but is still referenced.
+
+**Important** Set configuration presets to "Debug" to see where problem
+occurs (You should not do this in production system though).
+
+**Workaround:**
+
+For this specific case: (the exception may be caused by other things,
+though)
+
+-  "Fix" the filename.
+-  Mark FormFileExtensionUpdate as done
+
+**See also:** https://forge.typo3.org/issues/85685
+
 
 Situation: Upgrade from 6.1 to 6.2
-==================================
+------------------------------------
 
 This error occurs at this step of the upgrade process :
 
-Migrate all RTE magic images from uploads/RTEmagicC_\* to
-fileadmin/_migrated/RTE/
+Migrate all RTE magic images from :file:`uploads/RTEmagicC_\*` to
+:file:`fileadmin/_migrated/RTE/`
 
-The solution is to update the general reference index (sys_refindex) via
-the TYPO3 Backend :
+The solution is to update the general reference index (:sql:`sys_refindex`) via
+the TYPO3 Backend:
 
-TYPO3 backend, ADMIN TOOLS > DB check > Manage Reference Index
-
-(`Francois <https://wiki.typo3.org/wiki/index.php?title=User:Francois&action=edit&redlink=1>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Francois&action=edit&redlink=1>`__
-[deprecated wiki link]) 14:20, 1 June 2015 (CEST)) This didn't work for
-me, because the problem was different: the migration wizard (rather
-stupidly) takes the first File Storage that it finds. File Storages are
-sorted by name. In my case, I happened to have some Storage which came
-before the default one. When the update wizard tried to check if the
-file had been moved properly, it couldn't find it in that Storage. My
-workaround was to rename my default Storage to "00 - Default", which
-made it the first to be retrieved.
-
-Situation: Upgrade from 4.5 to 6.2
-==================================
-
-This error occurs at this step of the upgrade process:
-
-Migrate file relations of tt_content uploads
-
-It occurs for files containing latin characters (æ,ø,å,..). The solution
-is to change default sys_file_storage (fileadmin/ (auto-created))
-directly in DB. Field 'configuration' in XML text for variable for
-'caseSensitive' set to '1'. Restart/continue migration.
+TYPO3 backend, :guilabel:`ADMIN TOOLS > DB check > Manage Reference Index`
 
 Situation: Upgrading from very old DAM versions
-===============================================
+-----------------------------------------------
 
 DAM versions up to 1.1.7 allowed users to circumvent TYPO3's file and
 folder name sanitization, so users could enter files containing e.g.
@@ -97,55 +104,6 @@ them manually. Warn your editors to check file names if currently unused
 files are affected (simply remove the ``number_of_references`` condition
 below). Assuming reference index is reliable:
 
-::
+.. code-block::
 
     SELECT * FROM sys_file WHERE identifier LIKE "% %" AND number_of_references > 0;
-
-Situation: Entering Upgrade Wizard after upgrading to 8.7
-=========================================================
-
-Exception gets thrown when entering Upgrade Wizard:
-
-::
-
-   Uncaught TYPO3 Exception
-   #1314516809: File /user_upload/niederlandistik/bilder/foto_ba\'s.JPG does not exist. (More information)
-
-   InvalidArgumentException thrown in file
-   /var/www/t3dev.uni-oldenburg.de/htdocs5/typo3_src-8.7.17/typo3/sysext/core/Classes/Resource/Driver/LocalDriver.php in line 253.
-
-   21 TYPO3\CMS\Core\Resource\Driver\LocalDriver::getFileInfoByIdentifier("/user_upload/niederlandistik/bilder/foto_ba\'s.JPG", array)
-
-This is caused by
-TYPO3\CMS\Form\Hooks\FormFileExtensionUpdate::checkForUpdate() getting
-called, which calls
-$persistenceManager->retrieveYamlFilesFromStorageFolders(). This seems
-to iterate over all files (which is not really necessary in any case)
-
-**See also:** https://forge.typo3.org/issues/85685
-
-The file does exist (though the file name is unfortunate):
-
-::
-
-   ls -l fileadmin/user_upload/niederlandistik/bilder/foto_ba\\\'s.JPG
-   -rw-r-----. 1 user group 194414 Nov  1  2012 fileadmin/user_upload/niederlandistik/bilder/foto_ba\'s.JPG
-
-**Concequence** Upgrade wizard no longer usable unless
-FormFileExtensionUpdate is disabled or issue with this file is fixed.
-Setting configuration presets from "Debug" to "Live" does not help.
-
-**Important** Set configuration presets to "Debug" to see where problem
-occurs (You should not do this in production system though).
-
-**Workaround:**
-
-For this specific case: (the exception may be caused by other things,
-though)
-
--  "Fix" the filename.
--  Mark FormFileExtensionUpdate as done
-
-These are workarounds, not solutions!!!
-
-**Solution:**

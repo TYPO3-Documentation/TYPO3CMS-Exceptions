@@ -6,27 +6,17 @@ TYPO3 Exception 1314778269
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Description
-===========
-
-Exception 1314778269 **'Cannot add a file that is already part of this
-storage.'** is thrown in
-TYPO3\CMS\Core\Resource\Driver\LocalDriver::addFile.
-
-upgraded from TYPO3 4.5 to 6.1
-------------------------------
-
-We're getting this error after saving an calender item (extension cal
-1.6.0) in a project that was recently upgraded from TYPO3 4.5 to 6.1.
-The content of the calender item has a reference to an existing image
-uploads/RTEmagicC_btn_reserveren_39.jpg.jpg (where did the '.jpg.jpg'
-come from!?).
+Cannot add a file that is already part of this storage.
+=======================================================
 
 FAL: addFile()
 --------------
 
-I'm getting this error when adding a sys_file to my FAL storage
-$this->storage->addFile($localFilePath, $targetFolder, $targetFileName)
-The problem was that my first parameter $localFilePath was an absolute
-path instead of a relative path. Wrong:
-my/absolute/path/www/fileadmin/myfile.jpg Correct: fileadmin/myfile.jpg
+Error when adding a :sql:`sys_file` to a FAL storage
+via `$this->storage->addFile($localFilePath, $targetFolder, $targetFileName)`:
+
+The problem was that the first parameter `$localFilePath` was an absolute
+path instead of a relative path.
+
+-  Wrong: :file:`my/absolute/path/www/fileadmin/myfile.jpg`
+-  Correct: :file:`fileadmin/myfile.jpg`

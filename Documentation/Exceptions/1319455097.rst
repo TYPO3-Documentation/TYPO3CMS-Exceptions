@@ -6,8 +6,11 @@ TYPO3 Exception 1319455097
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Error while fetching permissions for "..."
+==========================================
+
 Issue occurs because of offline filestorage
-===========================================
+-------------------------------------------
 
 Go to page 0 and check your file storage records. If they are offline at
 the moment, set them online. After saving check whether they are still
@@ -18,114 +21,48 @@ on the system. TYPO3 will set file storages offline if they can't be
 After the folder exists and the record is set to online, the issue
 should be solved in most cases.
 
-Possible second solution
-========================
+Unicode files
+--------------
 
-2st step
---------
+It maybe connected to unicode file names handling - it can happen with
+names like :file:`Økonomi.jpg`. If you have such file in folder then you can
+have following error message:
 
-*Oops, an error occurred!* Error while fetching permissions for More
-information regarding this error might be available online.
+In this case check 2 things:
 
-exception raised in the upgrade wizard from Version 4.5.29 LTS to 6.2.2
-LTS. **Step: "Migrate all file links of RTE-enabled fields to FAL"**
+#. Settings in config should contain:
+   `[SYS][UTF8filesystem] = true`
+   `[SYS][systemLocale] = 'en_US.utf8'`
 
-no error messages appeared in /var/log/apache/error_log
+#. See in server's shell whether your file system supports
+   unicode/utf-8 names, using for example command 'locale'
 
-I found the solution;-) I had a new file storage in :file:`fileadmin` which was
-automatically created by the upgrade process.
-
-how to solve this; go to your mysql database; use <your  TYPO3 DB> select
-uid, name from sys_file_storage;
-
-find entries which are new and not necessary! (be very careful - this
-could destroy your  TYPO3 installation!!)
-
-delete from sys_file_storage where uid = xxx;
-
-done ;-) Leo
-
-2nd step
---------
-
-In addition to what Leo did, i had to open the filelist-module, with a
-non-admin user, which has some filemounts in the auto-created
-fileadmin/-storage (the only storage left for me).
---`Csehrt <https://wiki.typo3.org/wiki/index.php?title=User:Csehrt&action=edit&redlink=1>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Csehrt&action=edit&redlink=1>`__
-[deprecated wiki link]) 20:10, 12 August 2014 (CEST)
-
-one more
---------
-
-I had to delete migrated entries in the table sys_file_storage
-
-4) if steps 2 - 3 above does not fit to you problem
----------------------------------------------------
-
-You have only ONLY one auto-created FAL Entry after Upgrade from 6.0/6.1
-to 6.2.x? (so deleting of other entries does not help?= For me it helped
-to fix the autocreated FAL entry: I activated "Is default storage?" and
-entered a folder to "Folder for manipulated and temporary images etc."
-
-5th
----
-
-| It maybe connected to unicode file names handling - it can happen with
-  names like Økonomi.jpg. If you have such file in folder then you can
-  have following error message: #1319455097: Error while fetching
-  permissions for .../fileadmin/.../konomi.jpg
-| So in this case check 2 things:
-| 1) Settings in config should contain:
-| [SYS][UTF8filesystem] = true
-| [SYS][systemLocale] = 'en_US.utf8'
-| 2) See in server's shell whether your file system supports
-  unicode/utf-8 names, using for example command 'locale'
-
-.. _th-1:
-
-6th
----
+UTF-8 problems
+--------------
 
 UTF-8 named files may become damaged/mangled upon transferring them via
 (S)FTP. For example using Transmit/Coda between OS X and a linux server.
 Use scp, rsync or lftp to transfer such files. Alternatively, also
 compressing them in a tar.gz for the move may
-help.-`ursbraem <https://wiki.typo3.org/wiki/index.php?title=User:Ursbraem&action=edit&redlink=1>`__
-[deprecated wiki link]
+help.
 
-.. _th-2:
-
-7th
----
+Default storage setting missing
+-------------------------------
 
 Problem occurred for me after updating from TYPO3 6.2.10 to 6.2.11 and
 6.2.12 – contrary to https://forge.typo3.org/issues/58403#note-3 I
-re-created a file storage for ``/``, but without setting it as standard
-(``fileadmin/`` is still the standard storage). The problem seems to be
-solved and I haven't found any new ones yet.
+re-created a file storage for ``/``, but without setting it as default
+(``fileadmin/`` is still the default storage).
 
-simple solution
-===============
-
-This exception hit me hard when I created a storage element in the
-Backend of a fresh installed 7.2, but did not create the corresponding
-directory in the filesystem.
-
-Migrate all RTE magic images from uploads/RTEmagicC_\* to fileadmin/_migrated/RTE/
-==================================================================================
+Migrate all RTE magic images
+============================
 
 Got this exception during update 4.5.40 to 6.2.12 at "Migrate all RTE
-magic images from uploads/RTEmagicC_\* to fileadmin/_migrated/RTE/". =>
-It turned out that the issue is fixed by the first solution listed here:
-delete unwanted entries from sys_file_storage (in my case only
-/fileadmin should remain in sys_file_storage).
+magic images from :file:`uploads/RTEmagicC_\*` to :file:`fileadmin/_migrated/RTE/".`
+
+*Solution*: Delete unwanted entries from :sql:`sys_file_storage`.
 
 Remove /uploads from filemounts
 ===============================
 
-I simply had to remove the uploads-folder from filemounts, log out and
-log in. Voilà.
-`User:pragmas <https://wiki.typo3.org/wiki/index.php?title=User:Pragmas&action=edit&redlink=1>`__
-[deprecated wiki link]
+Remove the uploads-folder from filemounts, log out and log in.
