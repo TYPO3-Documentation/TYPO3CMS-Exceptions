@@ -6,22 +6,13 @@ TYPO3 Exception 1323059807
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception message:
-
-   #1323059807: You are not allowed to create directories in the folder
-   "/" (More information)
-
-   TYPO3\CMS\Core\Resource\Exception\InsufficientFolderWritePermissionsException
-   thrown in file
-   typo3_src/typo3/sysext/core/Classes/Resource/ResourceStorage.php in
-   line 2008.
-
-   TYPO3\CMS\Core\Resource\ResourceStorage::createFolder("typo3temp/_processed_/")
+You are not allowed to create directories in the folder "..."
+=============================================================
 
 Related bugs:
 
 -  `Bug #55833: Creation of typo3temp/_processed_/ required write access
    to root folder <https://forge.typo3.org/issues/55833>`__
 
-SOLUTION: Simply remove the default File Storage Item that the migration
-tool has created and set to /.
+Possible solution: Remove the default File Storage Item that the migration
+tool has created and set to `/`.

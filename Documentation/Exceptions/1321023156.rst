@@ -6,4 +6,7 @@ TYPO3 Exception 1321023156
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+InvalidArgumentException
+========================
+
 https://forge.typo3.org/issues/52972

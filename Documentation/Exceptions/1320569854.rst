@@ -6,4 +6,7 @@ TYPO3 Exception 1320569854
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Creating file "..." failed.
+===========================
+
 http://lists.typo3.org/pipermail/typo3-dev/2012-July/045668.html

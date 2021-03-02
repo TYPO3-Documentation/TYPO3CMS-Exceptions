@@ -6,27 +6,21 @@ TYPO3 Exception 1329821485
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This exception can occour due to at least three reasons:
+You are not allowed to access the given folder
+==============================================
 
--  Bug #51747 (https://forge.typo3.org/issues/51747) in  TYPO3 6.1.4 as
-   was the case on http://www.physikbuch.de
--  a folder in typo3temp or :file:`fileadmin` that actually is write-protected
+This exception can occur due to at least three reasons:
+
+-  Bug #51747 (https://forge.typo3.org/issues/51747) in  TYPO3 6.1.4
+-  a folder in :file:`typo3temp` or :file:`fileadmin` that actually is write-protected
 -  The folder isn't write-protected but completely missing.
 
 Possible missing folders are
 
--  typo3temp/_processed\_
--  typo3temp/_migrated\_
--  fileadmin/_processed\_
--  fileadmin/_migrated\_
+-  :file:`typo3temp/_processed\_`
+-  :file:`typo3temp/_migrated\_`
+-  :file:`fileadmin/_processed\_`
+-  :file:`fileadmin/_migrated\_`
 
 Known issue, see `43484: TYPO3 Core - Extension Manager only shows error
-message "File has been deleted." [Closed; assigned to Georg
-Ringer] <https://forge.typo3.org/issues/43484>`__
-
--  Some unknown cached php file has been active. I have provided the PHP
-   file "clear_cache_franz.php" at
-   http://www.jambage.com/uploads/media/clear_cache_franz.php.zip [not
-   available anymore] to clear all caches. Use the Install Tool to clear
-   all files in the folders typo3temp/_processed\_ and
-   typo3temp/_migrated_.
+message "File has been deleted." <https://forge.typo3.org/issues/43484>`__

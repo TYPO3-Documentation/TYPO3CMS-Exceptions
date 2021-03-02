@@ -9,11 +9,8 @@ TYPO3 Exception 1333650506
 No settings detected
 ====================
 
-#. 1333650506: No settings detected. This usually happens if there is no
-   frontend TypoScript template with root flag set. Please create one.
+Try the following:
 
-Try following:
-
--  Create an TypoScript-Template an set the root-flag on the first page
+-  Create a TypoScript template and set the root-flag on the first page
    in the rootline.
 -  Check if TypoScript "module" has not been unset.

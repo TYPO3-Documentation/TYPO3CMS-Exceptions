@@ -6,51 +6,10 @@ TYPO3 Exception 1320575630
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error message
-=============
-
-Uncaught TYPO3 Exception
-
-#. 1320575630: Folder does not exist. (More information)
-
-TYPO3\CMS\Core\Resource\Exception\FolderDoesNotExistException thrown in
-file
-/servershare/virtualhosting/typo3_src-6.1.5/typo3/sysext/core/Classes/Resource/ResourceStorage.php
-in line 1883.
-
-12 TYPO3\CMS\Core\Resource\ResourceStorage::getFolder(boolean)
-
-::
-
-   /servershare/virtualhosting/typo3_src-6.1.5/typo3/sysext/core/Classes/Resource/ResourceFactory.php:
-
-00451: } 00452: } 00453: return $this->getStorageObject($storageUid,
-array(), $folderIdentifier)->getFolder($folderIdentifier); 00454: }
-00455:
-
-11
-TYPO3\CMS\Core\Resource\ResourceFactory::getFolderObjectFromCombinedIdentifier("uploads/")
-
-/servershare/virtualhosting/typo3_src-6.1.5/typo3/sysext/core/Classes/Html/RteHtmlParser.php:
-00556: $magicFolder =
-$fileFactory->getFolderObjectFromCombinedIdentifier( 00557:
-$this->rteImageStorageDir() 00558: ); 00559: if ($magicFolder instanceof
-\\TYPO3\CMS\Core\Resource\Folder) { 00560: $magicFolderPath =
-$magicFolder->getPublicUrl();
-
-To reproduce the error
+Folder does not exist.
 ======================
 
-When login in with an author user (!not admin) the message appears
-whenever there is a RTE Field available. When switching of the RTE in
-user settings, the error doesn't occur.
+See also:
+`forge.typo3.org/issues/51808 <https://forge.typo3.org/issues/51808>`__
+`forge.typo3.org/issues/51747 <https://forge.typo3.org/issues/51747>`__
 
-Furthermore
-===========
-
-| Bug might be related to one of these articles:
-| `orge.typo3.org/issues/51808 <https://forge.typo3.org/issues/51808>`__
-| `forge.typo3.org/issues/51747 <https://forge.typo3.org/issues/51747>`__
-
-| 
-| Still looking for the solution, these threads didn't solve my issue

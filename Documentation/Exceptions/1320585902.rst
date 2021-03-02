@@ -6,16 +6,10 @@ TYPO3 Exception 1320585902
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-If the message is:
+$hookObject must implement interface `TYPO3\CMS\Core\Database\TableConfigurationPostProcessingHookInterface`
+============================================================================================================
 
-"#1320585902: $hookObject must implement interface
-TYPO3\CMS\Core\Database\TableConfigurationPostProcessingHookInterface
-(More information)"
-
-when trying to install **dam_falmigration**, the problem is because you
-just clone the repository and the name of the extension folder is
-"**t3ext-dam_falmigration**" and not "**dam_falmigration**" as it should
-be. Just rename the folder to fix the issue.
+The `$hookObject` registered does not implement the interface.
 
 Related bug reports are `67933: TYPO3 Core - compatibility6 crashes
 TYPO3 BE [Closed] <https://forge.typo3.org/issues/67933>`__ and `68480:

@@ -6,17 +6,8 @@ TYPO3 Exception 1321804422
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I encounter this error as soon as there is a htaccess that requires
-login data, like this:
+Could not open log file "..."
+=============================
 
-AuthUserFile /www/path/to/folder/.htpasswd AuthGroupFile /dev/null
-AuthName 'Bitte Zugangsdaten eingeben' AuthType Basic require valid-user
-
-As soon as the login data was entered (correctly), this error appears:
-Could not open log file "/www/path/to/folder/typo3temp/logs/typo3.log"
-
-At the moment I have no solution - sorry...
-
---------------
-
-Deleting the file helps in my case
+- Check file permissions of the mentioned file.
+- Try deleting the file and let TYPO3 recreate it.

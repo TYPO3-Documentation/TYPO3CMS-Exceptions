@@ -6,6 +6,9 @@ TYPO3 Exception 1342635016
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Could not retrieve extension hash file from remote server.
+==========================================================
+
 **ISSUE**
 
 This usually occurs with a fresh installation of TYPO3 6.2.4, right
@@ -15,9 +18,9 @@ downloading the preconfigured distributions in the Extension Manager.
 
 **POSSIBLE SOLUTION**
 
-php.ini (or vhost configuration)
+:file:`php.ini` (or vhost configuration)
 
-::
+.. code-block:: bash
 
    allow_url_fopen = On
    max_execution_time = 300

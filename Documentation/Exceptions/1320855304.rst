@@ -6,15 +6,16 @@ TYPO3 Exception 1320855304
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Check the File-Permissions of this file. In my case there was a file
-which couldn't be created in the folder \_processed\_ because it had the
-wrong file-permissions. To solve this issue: either delete the mentioned
-file or change it's permissions
+Deletion of file "..." failed.
+==============================
+
+Check the File-Permissions of this file.
+To solve this issue: either delete the mentioned file or change it's permissions.
 
 Example of problem resolution on Linux
-======================================
+--------------------------------------
 
-::
+.. code-block:: bash
 
    chown -R www-data:www-data /path/to/site/
    chmod -R 775 /path/to/site/
