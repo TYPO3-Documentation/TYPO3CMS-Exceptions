@@ -6,6 +6,9 @@ TYPO3 Exception 1343589452
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Could not resolve related records for page "..." and foreign_table "..."
+========================================================================
+
 This happened after moving a TYPO3 site from one server to an other. The
 website had just been upgraded from 4.7 to 6.2.3. Still the solution was
 to run the upgrade wizard again in the install tool.

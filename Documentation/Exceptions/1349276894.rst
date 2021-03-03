@@ -6,7 +6,10 @@ TYPO3 Exception 1349276894
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Could not find any folder to be displayed.
+==========================================
+
 This error most likely occurs because the current backend-user does not
-have access to any file-mounts. Check that a file-mount exists and that
+have access to any file mounts. Check that a file mount exists and that
 the current user has access to it - either through the group(s) or
 through the user directly.

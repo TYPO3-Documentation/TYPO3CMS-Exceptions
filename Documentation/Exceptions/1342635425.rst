@@ -6,30 +6,22 @@ TYPO3 Exception 1342635425
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Could not access remote resource "..."
+======================================
+
 If this error comes directly after installation, activate cUrl support
 in Install-Tool.
 
-[SYS][curlUse] = 1
+.. code-block::
 
-Had this issue after fresh installation on XAMPP on Windows 7 with
-symlinks (mklink). curlUse = 1 worked for me.
+   [SYS][curlUse] = 1
 
---
+If you use a local XAMPP Installation and the error still occurs with
+cUrl, than it's maybe a problem with the certificate. The problem is
+cUrl quit with this message "SSL certificate problem: unable to get
+local issuer certificate".
 
-| 
-| If you use a local XAMPP Installation and the error still occurs with
-  cUrl, than it's maybe a problem with the certificate. The problem is
-  cUrl quit with this message "SSL certificate problem: unable to get
-  local issuer certificate". I could solve this issue with this step-by
-  step Guide from this blog:
-  http://christ.media/ssl-certificate-problem-unable-get-local-issuer-certificate-howto/
-  [not available anymore]
+-  Get the **cacert.pem** from http://curl.haxx.se/docs/caextract.html
+   and put this line in at the end of your :file:`php.ini` :bash:`curl.cainfo=PATH/To/your/cacert.pem`
+-  restart Apache/Xampp and all should work.
 
-| (in short and english):
-| Get the **cacert.pem** from http://curl.haxx.se/docs/caextract.html
-  and put this line in at the end of your php.ini
-
-| **curl.cainfo=PATH/To/your/cacert.pem**
-| restart Apache/Xampp and all should work.
-
-(thanks to Julien from http://christ.media/ for the step-by-step guide)

@@ -6,19 +6,22 @@ TYPO3 Exception 1344375003
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+No settings detected. This module can not work then.
+====================================================
+
 As the message states:
 
-"This usually happens if there is no frontend TypoScript template with
-root flag set. Please create a frontend page with a TypoScript root
-template."
+ This usually happens if there is no frontend TypoScript template with
+ root flag set. Please create a frontend page with a TypoScript root
+ template.
 
-So you need to create a template on your root page that has the Box
+So you need to create a template on your root page that has the box
 "rootlevel" under options ticked.
 
 Things to note
-==============
+--------------
 
 -  Make sure the root template gets loaded from the root page of your
    page tree. (Even if this is only shortcut to somewhere else.)
 -  Make sure non of the basis templates loaded by the root template
-   clears Setup/Config.
+   clears :guilabel:`Setup/Config`.

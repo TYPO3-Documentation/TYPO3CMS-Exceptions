@@ -6,10 +6,8 @@ TYPO3 Exception 1343589451
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 Backend: Oops, an error occurred! Could not fetch page data for
-uid 0. More information regarding this error might be available online.
+Could not fetch page data for uid "...".
+=========================================
 
-|
-| Error in FrontEnd when using f:link.page ViewHelper: Argument pageUid
-  of Link ViewHelper was a deleted page. Make sure the target of the
-  link is accessible.
+Error in frontend when using for example :html:`<f:link.page>` ViewHelper because
+the pageUid was a deleted page. Make sure the target of the link is accessible.

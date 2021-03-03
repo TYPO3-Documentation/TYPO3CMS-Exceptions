@@ -6,17 +6,19 @@ TYPO3 Exception 1347135546
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The error always occurs. Even when I wanted to clear the cache in the
-Install Tool The reason was a wrong defined TCA-column. I wrote
-something like this:
+`$haystack` can not be interpreted as string
+============================================
+
+Most often, the reason for this error is a wrongly defined TCA column.
+For example something like this (duplicate nesting of items):
 
 ::
 
-   'items' => array(
-      'items' => array(
-          array('noRotation', 0),
-          array('oneQuarter', 1),
-          array('halfCircle', 2),
-          array('threeQuarter', 3),
-     ),
-   ),
+   'items' => [
+      'items' => [
+          ['noRotation', 0],
+          ['oneQuarter', 1],
+          ['halfCircle', 2],
+          ['threeQuarter', 3],
+     ],
+   ],
