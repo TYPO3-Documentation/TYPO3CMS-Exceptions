@@ -6,7 +6,6 @@ TYPO3 Exception 1350582054
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Cannot update original file!
+============================
 
-   #1350582054: Cannot update original file!
-   RuntimeException thrown in file typo3/sysext/core/Classes/Resource/ProcessedFile.php in line 182.

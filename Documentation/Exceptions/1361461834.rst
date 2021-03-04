@@ -10,4 +10,4 @@ The storage "folder" looks currently off-line. Check the storage configuration i
 ============================================================================================================
 
 The folder needs to exist and be readable and writable. After creating
-the folder, edit the storage configuration record and set it "online".
+the folder, edit the storage configuration record and set it to "online".

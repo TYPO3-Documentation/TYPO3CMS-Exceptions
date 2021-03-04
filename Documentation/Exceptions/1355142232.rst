@@ -6,10 +6,8 @@ TYPO3 Exception 1355142232
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 10+
-=========
-
-Note: Could work with lesser versions.
+The ColumnMap for property "..." of class "..." is missing
+==========================================================
 
 What this simply says is that you don't have such a field/property with
 that spelling in your model for the table you are querying. Perhaps you

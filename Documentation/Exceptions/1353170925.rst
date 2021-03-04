@@ -6,29 +6,29 @@ TYPO3 Exception 1353170925
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The relation information for property "propertyXX" of class "TX\ext_key\Domain\Model\SomeModelYY" is missing.
-=============================================================================================================
+The relation information for property "..." of class "..." is missing.
+======================================================================
 
-If you have a propery in a class SomeModelYY which has another class as
+If you have a property in a class `SomeModelYY` which has another class as
 type
 
-::
+.. code-block::
 
-          /**
-           * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
-           */
-          protected $propertyXX;
-           
+   /**
+   * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
+   */
+   protected $propertyXX;
+
 
 the object will be populated by extbase without any other configuration.
 
 But to make queries like
 
-::
+.. code-block::
 
-     $query->like("propertyXX.someproperty", '%foo%') 
+   $query->like("propertyXX.someproperty", '%foo%')
 
-work, you still have to declare a 'foreign_table' in your TCA.
+work, you still have to declare a :php:`foreign_table` in your TCA.
 
-Also be sure, to have the properties with getter and setter in your
+Also make sure you have the properties with corresponding getters and setters in your
 model.

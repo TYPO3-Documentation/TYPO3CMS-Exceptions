@@ -6,6 +6,9 @@ TYPO3 Exception 1353170711
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The ColumnMap for property "..." of class "..." is missing.
+===========================================================
+
 You encounter this Exception because you try to fetch objects from the
 database which most probably do not have a TCA configuration.
 

@@ -6,12 +6,8 @@ TYPO3 Exception 1356356009
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#. 1356356009: Exception while parsing composer file
-   /.../typo3conf/ext/assetic//composer.json: Syntax error, malformed
-   JSON
+Exception while parsing composer file :file:`/.../composer.json`
+================================================================
 
-Solution
-========
-
-Most likely you have an error in the mentioned composer.json file. Check
-the composer.json for errors.
+Most likely you have an error in the mentioned :file:`composer.json` file. Check
+the mentioned :file:`composer.json` for errors.

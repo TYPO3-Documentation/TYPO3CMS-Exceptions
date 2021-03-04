@@ -6,7 +6,10 @@ TYPO3 Exception 1350570621
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Cannot process task of type "..."
+=================================
 
-   #1350570621: Cannot process task of type "Image.foo"
-   InvalidArgumentException thrown in file typo3/sysext/core/Classes/Resource/Processing/LocalImageProcessor.php in line 61.
+The `LocalImageProcessor` can currently handle tasks of type `Image` named
+`Preview` or `CropScaleMask` - all other task type/name combinations will produce
+this error.
+

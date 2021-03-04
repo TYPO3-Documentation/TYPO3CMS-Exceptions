@@ -6,6 +6,12 @@ TYPO3 Exception 1363778104
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+There is no `@var` annotation for property "..." in class "..."
+===============================================================
+
+Before TYPO3 v10
+-----------------
+
 **If you inject a service, or whatever other class in a model:**
 
 Please be sure you implement the Singleton interface in the service.
@@ -14,7 +20,7 @@ Example:
 
 I have a Domain Model under \\Custom\Domain\Model.php, in which I do:
 
-::
+.. code-block::
 
    /**
    * myService # optional property name as this is not really a property, it does not make much sense to name it
@@ -24,9 +30,9 @@ I have a Domain Model under \\Custom\Domain\Model.php, in which I do:
    * @lazy
    */
 
-protected $myService;
+   protected $myService;
 
-Then I need to make sure MyService class is declared like this :
+Then I need to make sure `MyService` class is declared like this:
 
 ::
 

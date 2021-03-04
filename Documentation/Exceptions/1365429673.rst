@@ -6,36 +6,38 @@ TYPO3 Exception 1365429673
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error message
-=============
-
-::
-
-   Oops, an error occurred!
-   TYPO3 Fatal Error: Extension key "sphinx" is NOT loaded!
-
-Solutions
-=========
+Extension key "..." is NOT loaded!
+==================================
 
 Disable the extension manually
 ------------------------------
 
-Open ``typo3conf/PackageStates.php``, look up the extension key and
+Open :file:`typo3conf/PackageStates.php`, look up the extension key and
 change
 
-::
+.. code-block::
 
-   'state' => 'active'
+   [
+      // ...
+      'state' => 'active'
+      // ...
+   ]
 
 to
 
-::
 
-   'state' => 'inactive'
+.. code-block::
 
-You might also need to clear the PHP code cache in ``typo3temp``:
+   [
+      // ...
+      'state' => 'inactive'
+      // ...
+   ]
 
-::
+
+You might also need to clear the PHP code cache in :file:`typo3temp`:
+
+.. code-block:: bash
 
    $ rm -rf typo3temp/*
 
@@ -44,30 +46,24 @@ Observations
 
 Using a Vagrant with TYPO3 6.2beta6 we had this problem
 
-vagrant reload --provision did not help.
+`vagrant reload --provision` did not help.
 
 Frontend is working fine but you can't login to the backend!
 
-My solution: You can check in the TYPO3 Datebase Table sys_log which
-exception is thrown Now find the offending extension in
-LocalConfiguration.php and set the
+My solution: You can check in the TYPO3 Database Table :sql:`sys_log` which
+exception is thrown. Now find the offending extension in
+`LocalConfiguration.php` and disable it (see above).
 
-::
-
-    'state' => 'inactive',
-
-Now clear the cache directory in typo3temp/Cache and you should be able
-to login again
-
---------------
+Mixed composer/classic installation
+-----------------------------------
 
 This could also happen when you attempt to unpack a .tar.gz packed
 version of TYPO3 and run it's installer over an previously
-composer-style-installed instance. The install-tool then havocs the
-PackageStates.php, trying to recover the old version did help in my
+composer-style-installed instance. The install-tool then breaks the
+:file:`PackageStates.php`, trying to recover the old version did help in my
 case. For me the extension cms was affected. This happens during an
 update from TYPO3 6.2 to 7.1 or later. You must search for the following
-array part or add it to your file PackageStates.php:
+array part or add it to your file :file:`PackageStates.php`:
 
 ::
 

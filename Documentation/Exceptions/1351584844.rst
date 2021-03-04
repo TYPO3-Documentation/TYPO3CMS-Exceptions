@@ -6,27 +6,20 @@ TYPO3 Exception 1351584844
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Uncaught TYPO3 Exception: #1351584844: An argument "key" or "id" has to be provided
-===================================================================================
+An argument "key" or "id" has to be provided
+============================================
 
-::
-
-   TYPO3\CMS\Fluid\Core\ViewHelper\Exception\InvalidVariableException thrown in file /srv/apache2/username/projectname/vendor/typo3/cms/typo3/sysext/fluid/Classes/ViewHelpers/TranslateViewHelper.php in line 127.
-
-Solution:
-=========
-
-Check your fluid template for empty keys or syntax errors in f:translate
-tags. In my case, it was:
+Check your fluid template for empty keys or syntax errors in :html:`<f:translate>`
+tags. Example:
 
 Wrong:
 
-::
+.. code-block:: html
 
-   <f:translate key="{openFeed}"/> 
+   <f:translate key="{openFeed}"/>
 
 Right:
 
-::
+.. code-block:: html
 
    <f:translate key="openFeed"/>
