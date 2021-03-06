@@ -71,4 +71,5 @@ or add path to lll File:
 
 ::
 
-      <mmf:post.helpfulButton post="{post}" title="{f:translate(key:'LLL:EXT:yourExtension/Resources/Private/Language/locallang.xmlButton_Helpful')}">
+   <mmf:post.helpfulButton post="{post}" 
+      title="{f:translate(key:'LLL:EXT:yourExtension/Resources/Private/Language/locallang.xmlButton_Helpful')}">
