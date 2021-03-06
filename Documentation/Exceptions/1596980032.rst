@@ -6,35 +6,35 @@ TYPO3 Exception 1596980032
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**Errormessage:**
+**Error message:**
 
 ::
 
        #1596980032 InvalidArgumentException
        A cache identifier was not set.
 
-When debugged the corresponding cache.definition might look like this:
+When debuging the corresponding cache.definition might look like this:
 
 ::
 
        '' => array('groups' => array('pages', 'all'))
 
-This error is able to drive the complete frontend and backend unusable.
+This error can break the backend and frontend.
 
 | 
 | **The reason**
 
-Before TYPO3 version 10 it was common that the variable $_EXTKEY was
-replaced automatically by the extension-key of the corresponding
+Before TYPO3 version 10 it was common that the variable :php:`$_EXTKEY` was
+replaced automatically by the extension key of the corresponding
 extension.
 
-This has changed and the variable either has to be defined or any cases
-directly replaced with the extension-key.
+This has changed and the variable either has to be defined or the 
+extension key automatically applied.
 
-As the variable was undefined in the case where this error was remarked,
-the array-key for the cache-definition just was empty.
+As the variable :php:`$_EXTKEY` was undefined, the array key for 
+the cache definition was empty.
 
-So in this case it was an incomplete extension-update.
+The error was therefore caused by an incomplete extension-update.
 
 | 
 | **How to fix**
