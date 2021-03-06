@@ -14,7 +14,10 @@ The following exception may bubble up since TYPO3 v9 during login:
 ::
 
       #1533822084 TYPO3\CMS\Core\Crypto\PasswordHashing\InvalidPasswordHashException
-      Configured default hash method TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash is not available. If the instance has just been upgraded, please log in to the standalone install tool at typo3/install.php to fix this. Follow the wiki link for more details.
+      Configured default hash method 
+      TYPO3\CMS\Core\Crypto\PasswordHashing\Argon2iPasswordHash is not available. If 
+      the instance has just been upgraded, please log in to the standalone install
+      tool at typo3/install.php to fix this. Follow the wiki link for more details.
 
 Explanation
 ===========
@@ -49,8 +52,8 @@ Solutions
    first installation was done on a system with argon2i and copied to a
    target system that doesn't support this encryption type
 
-   -  open ``typo3conf/LocalConfiguration.php`` change password hashing
-      for ``[FE][passwordHashing][className]`` and
+   -  open :file:`typo3conf/LocalConfiguration.php` change the password hashing
+      to ``[FE][passwordHashing][className]`` and
       ``[BE][passwordHashing][className]`` e.g. to
       ``TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\BcryptPasswordHash``
       or any other supported types
