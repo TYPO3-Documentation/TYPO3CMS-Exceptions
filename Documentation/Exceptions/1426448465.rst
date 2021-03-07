@@ -6,15 +6,8 @@ TYPO3 Exception 1426448465
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error message
-=============
-
-::
-
-    Field must not be empty
-
-Source
-======
+Field must not be empty
+=======================
 
 Error in TCA configuration. E.g. in section ``types['1']['showitem']``.
 

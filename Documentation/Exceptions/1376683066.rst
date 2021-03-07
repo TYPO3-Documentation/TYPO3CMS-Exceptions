@@ -6,27 +6,21 @@ TYPO3 Exception 1376683066
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+The slot method "..." returned a different number (...) of arguments, than it received (...).
+=============================================================================================
 
-   Uncaught TYPO3 Exception #1376683066: The slot method JambageCom\TtProducts\Slots\DatabaseRecordListSlots->addValuesToCsvRow() returned a different number (2) of arguments, than it received (1). (More information)
+This happens if a signal slot method is wrongly used.
 
-| 
-| This happens if a signal slot method is used to extend an extension or
-  TYPO3.
+Example
+-------
 
-::
-
-   TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotReturnException thrown in file
-    /var/www/html/typo3_src-7.6.16/typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php in line 147.
-    17 TYPO3\CMS\Extbase\SignalSlot\Dispatcher::dispatch("JambageCom\DbList\RecordList\DatabaseRecordList", "beforeSetCsvRow", array)
-
-The signal is called with a paramter *array($csvRow)*:
+The signal is called with a parameter `[$csvRow]`:
 
 ::
 
-   $this->signalSlotDispatcher->dispatch(__CLASS__, 'beforeSetCsvRow', array($csvRow));
+   $this->signalSlotDispatcher->dispatch(__CLASS__, 'beforeSetCsvRow', [$csvRow]);
 
-However the according slot method returns only *$csvRow*
+However the according slot method returns only `$csvRow`
 
 ::
 
@@ -34,7 +28,7 @@ However the according slot method returns only *$csvRow*
    {
      public function addValuesToCsvRow($csvRow)
      {
-       $csvRow['neu'] = 128;
+       $csvRow['new'] = 128;
        return $csvRow;
      }
    }
@@ -48,7 +42,7 @@ signal has used before.
    {
      public function addValuesToCsvRow($csvRow)
      {
-       $csvRow['neu'] = 128;
-       return array($csvRow);
+       $csvRow['new'] = 128;
+       return [$csvRow];
      }
    }

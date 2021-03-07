@@ -6,12 +6,15 @@ TYPO3 Exception 1390334120
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I'm getting this error frequently when installing and uninstalling
-extensions, running the DBAL etc, in TYPO3 6.2.6. It seems to have
-started when I (unsuccessfully) installed the extension 'uncache'. Also,
-one of the very few references to this exception is linked to uncache:
-https://forum.typo3.org/index.php/t/206055/
+No cache in the specified group "..."
+=====================================
 
-UPDATE: I cleared all caches, and uninstalled uncache previously, but
-the error kept popping up. Then I deleted uncache, and truncated the
-cache\_ and cf_tables manually. Looks better now, I hope.
+This happens if `flushCachesInGroup` is called with a group that has no caches
+defined.
+
+Possible Solutions:
+-------------------
+
+-  If you recently installed new extensions, try uninstalling them and clearing the cache.
+-  If you are a developer, check the error message for the `groupIdentifier` and verify
+   that the cache group exists.

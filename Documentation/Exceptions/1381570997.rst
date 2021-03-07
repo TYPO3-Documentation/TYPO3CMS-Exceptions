@@ -6,6 +6,7 @@ TYPO3 Exception 1381570997
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+A file needs to reside in a Storage
+===================================
 
-   #1381570997: A file needs to reside in a Storage
+You are trying to access a file for which no storage information can be found.

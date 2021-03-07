@@ -6,20 +6,13 @@ TYPO3 Exception 1384611413
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception message:
-
-   Uncaught TYPO3 Exception
-
-   **#1384611413: No record was found. The "record" or "uid" argument
-   must be specified.**
-
-   ``TYPO3Fluid\Fluid\Core\ViewHelper\Exception`` thrown in file
-   ``typo3conf/ext/vhs/Classes/Utility/ErrorUtility.php`` in line 25.
+No record was found. The "record" or "uid" argument must be specified.
+======================================================================
 
 Case 1: v:page.resources.fal
 ============================
 
-This happens when ``<v:page.resources.fal u>`` is used and the page is
+This happens when :html:`<v:page.resources.fal>` is used and the page is
 not visible (hidden, or start/endtime).
 
 See https://github.com/FluidTYPO3/vhs/issues/1618#issuecomment-579699504

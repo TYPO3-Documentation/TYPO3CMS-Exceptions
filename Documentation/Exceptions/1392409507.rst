@@ -6,15 +6,15 @@ TYPO3 Exception 1392409507
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Invalid form/module token detected. Access Denied.
+==================================================
+
 The problem is usually caused by an missing security token which
-protects againg
+protects against
 `CSRF <https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29>`__.
 It can occur in the backend by clicking on an icon, link or using other
 controls. This problem is usually only backend related but could also
 occur in the frontend when using frontend editing.
-
-https://typo3.org/news/article/cross-site-request-forgery-protection-in-typo3-cms-62/
-[not available anymore]
 
 **For TYPO3 integrators:**
 
@@ -25,23 +25,4 @@ free to create a new bug report.
 
 **For developers:**
 
-In custom backend modules it is usually necessary to generate links to
-the module using BackendUtility::getModuleUrl() method
-(https://typo3.org/api/typo3cms/class_t_y_p_o3_1_1_c_m_s_1_1_backend_1_1_utility_1_1_backend_utility.html#a8437ed5134d2c407ca67cc5f5627b280
-[not available anymore]). In the case of wizards the usage of the
-"script" key for type=>script wizards is deprecated. Instead the
-configuration option "module" should get used
-(https://docs.typo3.org/typo3cms/TCAReference/AdditionalFeatures/WizardsConfiguration/Index.html#wizards-configuration-script-script
-[not available anymore])
-
-`Kraftb <https://wiki.typo3.org/User:Kraftb>`__ [deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:Kraftb&action=edit&redlink=1>`__
-[deprecated wiki link]) 15:20, 7 May 2014 (CEST)
-
-| 
-| **Extension ics_awstats & TYPO3 6.2:**
-
-ics_awstats may need a little updating: moduleToken / security token
-must be forwarded to awstats (for link generation). In mod1/index.php
-near line 100 locate variable $aws_wrapper, and add moduleToken like
-this: $aws_wrapper .= '&moduleToken='.t3lib_div::_GP('moduleToken');
+See https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/FormProtection/Index.html

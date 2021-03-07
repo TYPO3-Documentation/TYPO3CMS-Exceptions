@@ -6,69 +6,45 @@ TYPO3 Exception 1438183881
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hello,
+TCA table "..." `ctrl['type']` is set to "...", but this field does not exist in the database of this table
+=================================================================================================================
 
-I encountered this error in an extension because I had a TCA
-configuration in my :file:`ext_tables.php` file not suitable for my mySQL table
-fields defined in ext_tables.sql
+This error happens for example in an extension because the TCA
+configuration was not suitable for the MySQL table fields defined in :file:`ext_tables.sql`.
 
-**Note** : this extension was written by a company for specific use 3
-years ago and i encountered this error when upgrading from 6.2 LTS to
-7.6 LTS.
-
-In my :file:`ext_tables.php` file i had this code :
+Error Example - TCA:
 
 ::
 
-          $TCA['tx_myExtension_table'] = array(
-                  'ctrl' => array(
-                  'title'     => $ll.'table.auteur',
-                  'label'     => 'nom',
-                  'tstamp'    => 'tstamp',
-                  'crdate'    => 'crdate',
-                  'cruser_id' => 'cruser_id',
-                  'type' => 'type',
-                  ...
-                  ...
+    $TCA['tx_myExtension_table'] = [
+      'ctrl' => [
+         'title'     => $ll.'table.auteur',
+         'label'     => 'nom',
+         'tstamp'    => 'tstamp',
+         'crdate'    => 'crdate',
+         'cruser_id' => 'cruser_id',
+         'type'      => 'type',
+         ...
+         ...
 
-And in my ext_tables.sql file :
+And in :file:`ext_tables.sql`:
+
+.. code-block:: sql
+
+    CREATE TABLE tx_myExtension_table (
+      uid int(11) NOT NULL auto_increment,
+      pid int(11) DEFAULT '0' NOT NULL,
+      tstamp int(11) DEFAULT '0' NOT NULL,
+      crdate int(11) DEFAULT '0' NOT NULL,
+      cruser_id int(11) DEFAULT '0' NOT NULL,
+      sys_language_uid int(11) DEFAULT '0' NOT NULL,
+      ...
+      ...
+
+Missing:
 
 ::
 
-          CREATE TABLE tx_myExtension_table (
-                  uid int(11) NOT NULL auto_increment,
-                  pid int(11) DEFAULT '0' NOT NULL,
-                  tstamp int(11) DEFAULT '0' NOT NULL,
-                  crdate int(11) DEFAULT '0' NOT NULL,
-                  cruser_id int(11) DEFAULT '0' NOT NULL,
-                  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-                  ...
-                  ...
+   type varchar(100) NOT NULL DEFAULT '0',
 
-But i did not have
-
-::
-
-                  type varchar(100) NOT NULL DEFAULT '0',
-
-or an other \`type\` field definition, so it generate an error because
-TYPO3 search this field in table in order to follow optional
-possibilities like explaned on this link :
-https://docs.typo3.org/typo3cms/TCAReference/7.6/Reference/Types/Index.html#optional-possibilities
-
-As i didn't need the \`type\` field, i choose to delete '**type' =>
-'type',** in TCA definition.
-
-I choose this after extension code inspection to be sure that \`type\`
-field was not required and that the mistake was not a sql definition
-oversight. **So look your extension code to know if this solution is
-good for you.**
-
-If you need this \`type\` field, i think you need to add a \`type\`
-field in your ext_tables.sql file.
-
-After that I did not have this error.
-
-I hope this will be useful to you.
-
-Jonathan IROULIN
+or any other `type` field definition.

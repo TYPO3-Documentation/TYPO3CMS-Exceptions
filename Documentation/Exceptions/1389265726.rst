@@ -6,6 +6,7 @@ TYPO3 Exception 1389265726
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Change the Login URL from
+TYPO3 Backend not accessed via SSL: TYPO3 Backend is configured to only be accessible through SSL.
+==================================================================================================
 
-http:// to http\ **s**://
+Change the login URL from `http://` to `https://`.

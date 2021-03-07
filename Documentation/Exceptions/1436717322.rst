@@ -6,36 +6,11 @@ TYPO3 Exception 1436717322
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hello!
-
-I don't know how to fix this error either, but I probably know a way how
-it occurred.
-
-With TYPO3 version 10.4.6 it became necessary to do a site
-configuration. This is a must with this version.
-
-I accidentally entered a double backslash in "Base URL". (Do not
-copy !!) Then this error occurred. The entire backend was no longer
-accessible.
-
-I tried to help myself via FTP and edited the file config.yaml. In line
-1 I made two backslashes into one. However, this was not successful.
-
-I hope someone can do something with this text. Greetings
-
---------------
-
-For me it was enough to delete "typo3temp". Good luck. SteBo
-
 The parsedUri string appears to be malformed
 ============================================
 
-Happened to me in TYPO3 9.5 in DDEV on Windows 10 when logging into the
-backend after setting up the project with composer and
-helhum/typo3-secure-web, helhum/typo3-config-handling.
-
 Solution:
 
--  Create .env file and set BASE_DOMAIN as your local base url.
--  or set base balue to your base url in config.xml
--  Delete typo3temp, as stated above
+-  Create :file:`.env` file and set BASE_DOMAIN as your local base url.
+-  or set base value to your base url in :file:`config.xml` (Site Configuration)
+-  Delete :file:`typo3temp/Cache` or clear caches via the Install Tool

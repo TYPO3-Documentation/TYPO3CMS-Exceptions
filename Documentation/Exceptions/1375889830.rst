@@ -14,7 +14,7 @@ outside of your configured storages. The default storage is fileadmin
 (see
 https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/Index.html).
 
-In backend modules this execption will occur if files in legacy
+In backend modules this exception will occur if files in legacy
 folders/storages are accessed, which is prohibited due to security
 reasons (see https://review.typo3.org/#/c/23608/).
 
@@ -22,5 +22,5 @@ Solution
 --------
 
 Either try to access files in a valid storage instead (like
-»fileadmin/_temp-/« instead of (»uploads/not/working«) or add the
+:file:`fileadmin/_temp_/` instead of (:file:`uploads/not/working`) or add the
 desired folder to a storage configuration.

@@ -6,11 +6,14 @@ TYPO3 Exception 1379981890
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Possible issue is missing options configuration
-===============================================
+Unsupported validation option(s) found: "..."
+=============================================
 
-One possible issue can be, that the Validator doesn't follow the API. He
-needs to configure the *$supportedOptions* property like:
+Possible issue is missing options configuration
+-----------------------------------------------
+
+One possible issue can be, that the Validator doesn't follow the API. The validator
+needs to configure the `$supportedOptions` property like:
 
 ::
 
@@ -18,7 +21,7 @@ needs to configure the *$supportedOptions* property like:
    /**
     * @var array
     */
-    protected $supportedOptions = array(
-       'minimum' => array(0, 'minimum length for a valid string', 'integer'),
-       'maximum' => array(php_int_max, 'maximum length for a valid string', 'integer')
-    );
+    protected $supportedOptions = [
+       'minimum' => [0, 'minimum length for a valid string', 'integer'],
+       'maximum' => [php_int_max, 'maximum length for a valid string', 'integer']
+    ];

@@ -6,11 +6,9 @@ TYPO3 Exception 1366744035
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-::
+Permission on "..." are already ok
+==================================
 
-   #1366744035: Permission on .../fileadmin/user_upload/_temp_ are already ok (More information)
-
-   TYPO3\CMS\Install\FolderStructure\Exception thrown in file
-   ../typo3_src-6.2.31/typo3/sysext/install/Classes/FolderStructure/AbstractNode.php in line 137.
-
-Happened in the install wizard when trying to create a missing folder
+Happens if `fixPermission` is called on an object with correct permissions.
+If you encounter this error without calling `fixPermission` yourself you can
+most likely safely ignore this.

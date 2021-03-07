@@ -6,21 +6,25 @@ TYPO3 Exception 1381590731
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Cause in TYPO3 6.2 LTS Beta3
-============================
+Metadata can only be retrieved for indexed files. UID: "..."
+============================================================
 
-Copy / Past images in :file:`fileadmin` doesn't index the images
+Occurrence in TYPO3 6.2 LTS with tx_news
+----------------------------------------
+
+Missing MySQL Tables :sql:`sys_file` and :sql:`sys_file_processedfile` due to
+MySQL version incompatibility.
+
+
+Cause in TYPO3 6.2 LTS Beta3
+----------------------------
+
+Copy / Paste images in :file:`fileadmin` doesn't index the images
 
 Quickfix in TYPO3 6.2 LTS Beta3:
 
 Edit the images you've pasted and save them. This is a quickfix, not a
 solution
 
-This bug still occurs in 6.2beta5 if you forgot to **run the Upgrade
-Wizard**
-
-Accurance in TYPO3 6.2 LTS with tx_news
-=======================================
-
-Missing MySQL Tables "sys_file" and "sys_file_processedfile" due to
-MySQL version incompatibility.
+This bug still occurs in 6.2beta5 if you forgot to :guilabel:`run the Upgrade
+Wizard`.
