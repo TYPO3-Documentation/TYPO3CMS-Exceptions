@@ -6,20 +6,17 @@ TYPO3 Exception 1365779762
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Trying to fetch data from a repository and get this error :
-
-**(1/1) #1365779762
-TYPO3\CMS\Extbase\Persistence\Generic\Exception\InconsistentQuerySettingsException**
-Missing storage page ids.
+Missing storage page ids
+========================
 
 This error appears because you set some specific query settings, like
-$querySettings->setIgnoreEnableFields(true) and use generic
-TYPO3QuerySettings, because this is a generic object, it knows nothing
+`$querySettings->setIgnoreEnableFields(true)` and use generic
+`TYPO3QuerySettings`. Because this is a generic object, it knows nothing
 about the plugin context so, instead of using a generic object, use a
-$this->createQuery()->getQuerySettings() and then the pid set in
-Flexform or in TypoScript will be set.
+`$this->createQuery()->getQuerySettings()` and then the pid set in
+FlexForm or in TypoScript will be set.
 
-This generate an error :
+This generates an error:
 
 ::
 
@@ -33,7 +30,7 @@ This generate an error :
       }
 
 
-This one is ok :
+This one is ok:
 
 ::
 

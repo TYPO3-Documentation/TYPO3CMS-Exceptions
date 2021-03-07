@@ -6,7 +6,9 @@ TYPO3 Exception 1377778916
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**You are not allowed to delete a file with extension "..."**
+You are not allowed to delete a file with extension "..."
+=========================================================
 
-you may edit the value for $TYPO3_CONF_VARS[BE][fileDenyPattern] in the
-Install-Tool
+Deleting a file with the mentioned extension is prohibited in this installation.
+If you have access to the TYPO3 configuration, you may edit the value for
+`$GLOBALS['TYPO3_CONF_VARS']['BE']['fileDenyPattern']` in the Install Tool.
