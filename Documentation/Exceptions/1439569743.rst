@@ -6,7 +6,7 @@ TYPO3 Exception 1439569743
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#. 1439569743: Field tx_xx_xx of table fe_users reference to foreign
-   table tx_xx, but this table is not defined in TCA
+Field "..." of table :sql:`fe_users` reference to foreign table "...", but this table is not defined in TCA
+===========================================================================================================
 
-make sure you have the correct table name in "foreign_table" (TCA)
+Make sure you have the correct table name in `foreign_table` (TCA).

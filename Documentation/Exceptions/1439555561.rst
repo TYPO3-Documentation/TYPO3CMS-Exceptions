@@ -6,14 +6,15 @@ TYPO3 Exception 1439555561
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-A composer.json file has a syntax error. Use the command line
-*composer.phar validate* to get details about this error and the line
+The composer.json found for extension "..." is invalid!
+=======================================================
+
+A :file:`composer.json` file has a syntax error. Use the command line
+:bash:`composer.phar validate` to get details about this error and the line
 number which causes this error.
 
-This error can also occur if the composer.json file is not accessible.
+This error can also occur if the :file:`composer.json` file is not accessible.
 
-**Solution:**
-
-Use a JSON online validator and copy-paste the contents of your
-composer.json. Then you will see the exact syntax error in this JSON
+Alternatively, use a JSON online validator and copy-paste the contents of your
+:file:`composer.json`. Then you will see the exact syntax error in this JSON
 file. E.g. `here <https://jsonformatter.curiousconcept.com/>`__.

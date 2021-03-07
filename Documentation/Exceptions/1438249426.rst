@@ -10,6 +10,7 @@ Default language record with id X not found in table Y while editing record Z
 =============================================================================
 
 This message is a result of an data inconsistency. This happens if the
-translation parent in default language was deleted without deleting the
-translation that was edited currently. Please contact your support for
-further help.
+translation parent in default language has been deleted without deleting the
+translation that is currently being edited. Please contact your support for
+further help (if you are the support: either remove the translation parent
+manually in the database, restore the parent record or discard the translations, too).

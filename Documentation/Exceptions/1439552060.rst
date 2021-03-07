@@ -6,7 +6,7 @@ TYPO3 Exception 1439552060
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
->> The extension "typoscript_code" has invalid version constraints in
-suggests section. Extension key is missing!
+The extension "..." has invalid version constraints in suggests section. Extension key is missing!
+==================================================================================================
 
-Haven't found out yet what this message means. Version 5.0.0
+Check the :file:`ext_emconf.php` or :file:`composer.json` file for invalid "suggests".
