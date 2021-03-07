@@ -6,6 +6,11 @@ TYPO3 Exception 1550092654
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Uncaught TYPO3 Exception #1550092654: A registered extension for the
-service "backend.routes" requires the service to be available, which is
-missing.
+A registered extension for the service "backend.routes" requires the service
+============================================================================
+
+::
+
+   Uncaught TYPO3 Exception #1550092654: A registered extension for the
+   service "backend.routes" requires the service to be available, which is
+   missing.

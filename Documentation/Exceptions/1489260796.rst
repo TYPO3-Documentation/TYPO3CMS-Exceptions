@@ -11,9 +11,9 @@ TYPO3.CMS.Form.prototypes.standard does not exist within the configuration
 
 ::
 
-    Uncaught TYPO3 Exception
-    #1489260796: TYPO3.CMS.Form.prototypes.standard does not exist within the configuration
+   #1489260796: TYPO3.CMS.Form.prototypes.standard does not exist within
+   the configuration
 
-This happens when you created a form based on the TYPO3 standard form
+This happens when you create a form based on the TYPO3 standard form
 and call it on a page in the frontend, but you forgot to include the
 extension template in TypoScript settings.

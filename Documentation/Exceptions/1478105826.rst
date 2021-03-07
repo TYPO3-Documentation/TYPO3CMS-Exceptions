@@ -6,23 +6,13 @@ TYPO3 Exception 1478105826
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-I Got this Error after migrating an extension from TYPO3 CMS 7 to 8 and
-had copied some code from 'ext_tables.php' to
-'Configuration/TCA/Overrides/tt_content.php' I did not notice, that
-$_EXTKEY is not set so an included template could not be resolved and
-$file was empty.
+This error can happen when using the variable :php:`$_EXTKEY` in a TCA
+definition like :file:`Configuration/TCA/Overrides/tt_content.php` without
+defining it. In TYPO3 versions before 8 the variable was automatically
+defined.
 
-After that i cound not edit any record in backend.
+Solution
+--------
 
-// Flexform
-
-::
-
-      // ========================================================================
-      $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['slider'] = 'pi_flexform';
-      \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-          $contentElement,
-          'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/slider.xml' 
-      );
-
-Setting $_EXTKEY to name of my extension solved it.
+Replace all occurences of :php:`$_EXTKEY` with the extension's name or
+define the variable locally.

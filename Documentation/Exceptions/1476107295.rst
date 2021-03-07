@@ -6,66 +6,84 @@ TYPO3 Exception 1476107295
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-PHP Warning: session_start():
-open(C:\windows\TEMP\sess_57271dd7537f919aeded93b5144d0b5f, O_RDWR)
-failed: Permission denied (13) --> can be fixed by deleting all sess\_
-files in the temp folder (or creating the folder by hand if it doesn't
-exist)
+Permission denied
+=================
 
---------------
+::
+
+PHP Warning: session_start(): failed: Permission denied (13)
+
+Solution
+--------
+
+Can be fixed by deleting all sess\_ files in the temp folder or by creating the
+folder by hand if it doesn't exist)
+
+On logging into the backend
+===========================
 
 After upgrading from TYPO3 7.6.23 to TYPO3 8.7.9, I am getting this
-error most of the time that I login to the Backend. After I delete the
-folder "var" in "typo3temp", the next Backend login succeeds. See:
-`File:Backend Login Exception.pdf <files/Backend_Login_Exception.pdf>`__
+error most of the time that I login to the Backend.
 
---------------
+Solution
+--------
 
-1476107295: PHP Warning: Illegal offset type in
-/html/typo3/typo3_src-8.7.10/typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
-line 234
+After I delete the folder "var" in "typo3temp", the next Backend login succeeds.
 
-(vers. 8.7) The error occurred in CKEditor Rich Text Editor while setting
-a link. This was because of the page-TS-config for the old rte html
-Editor. After deleting the page TS config for RTE everything works as
+
+PHP Warning: Illegal offset type
+================================
+
+:
+
+   PHP Warning: Illegal offset type in
+   typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
+   line 234
+
+(TYPO3 8.7) The error occurred in CKEditor Rich Text Editor while setting
+a link. This was caused by the pageTSconfig for the old rte html
+Editor. After deleting the pageTSconfig for the old RTE everything works as
 expected again.
 
---------------
+Using sb_portfolio2
+===================
 
-1476107295: PHP Warning: Declaration of
-Tx_SbPortfolio2_Domain_Repository_CategoryRepository::findByTags(Tx_SbPortfolio2_Domain_Model_Tag
-$tag) should be compatible with
-Tx_SbPortfolio2_Domain_Repository_CoreRecordRepository::findByTags($tag,
-array $portSetup) in
-7/typo3conf/ext/sb_portfolio2/Classes/Domain/Repository/CategoryRepository.php
-line 0 (More information)
+::
 
-The error occur if the function in a extended class has different
+   1476107295: PHP Warning: Declaration of
+   Tx_SbPortfolio2_Domain_Repository_CategoryRepository::findByTags(Tx_SbPortfolio2_Domain_Model_Tag
+   $tag) should be compatible with
+   Tx_SbPortfolio2_Domain_Repository_CoreRecordRepository::findByTags($tag,
+   array $portSetup) in
+   7/typo3conf/ext/sb_portfolio2/Classes/Domain/Repository/CategoryRepository.php
+   line 0 (More information)
+
+The error occurs if the function in a extended class has different
 arguments
 
---------------
+Vhs ScriptViewHelper
+====================
 
 I'm getting this error after the update from TYPO3 8.7 to 9.5 while
 rendering a template which contains JavaScript in the
 FluidTYPO3\Vhs\ViewHelpers\Asset\ScriptViewHelper.
 
---------------
+Upgrading from TYPO3 8 to 9
+===========================
 
 After upgrading from TYPO3 8 to 9 I got this error because PHP Cache is
 loading the files out of the old TYPO3 8 source dir. After removing the
 old typo3_src-8.x.x dir or reloading the webserver the paths are
 correct.
 
---------------
+PHP Warning: key() expects parameter 1  to be array, string given in ConditionMatcher.php
+=========================================================================================
 
-I had the same code of error:
+::
 
-Core: Exception handler (WEB): Uncaught TYPO3 Exception: #1476107295:
-PHP Warning: key() expects parameter 1 to be array, string given in
-/home/host/data/www/typo3_src-9.5.9/typo3/sysext/backend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
-line 184 \| TYPO3\CMS\Core\Error\Exception thrown in file
-/home/host/data/www/typo3_src-9.5.9/typo3/sysext/core/Classes/Error/ErrorHandler.php
-in line 124. Requested URL: ...
+   PHP Warning: key() expects parameter 1 to be array, string given in
+   /home/host/data/www/typo3_src-9.5.9/typo3/sysext/backend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
+
 
 It is happened because of my "_GP('edit')" coincided with
 "$editStatement = GeneralUtility::_GP('edit');".
@@ -73,62 +91,54 @@ It is happened because of my "_GP('edit')" coincided with
 My solution: I change from "edit" to "redact", now I do not get this
 error.
 
---------------
+PHP version to high
+===================
 
 Got this error because PHP version was higher (7.3.8) than supported by
 Ext:mask. No problems under PHP 7.2.21.
 
-I got this error:
 
-*"Uncaught TYPO3 Exception: #1476107295: PHP Warning: preg_match():
-Compilation failed: regular expression is too large at offset 27 in
-/html/typo3/typo3_src-9.5.22/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php
-line 3473"*
+PHP Warning: preg_match(): Compilation failed: regular expression is too large
+==============================================================================
 
-.. container::
+::
 
-   .. container::
+   "Uncaught TYPO3 Exception: #1476107295: PHP Warning: preg_match():
+   Compilation failed: regular expression is too large at offset 27 in
+   /html/typo3/typo3_src-9.5.22/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php
 
-      |Error ... to large ... offset 27.jpg|
-
-      .. container::
-
-         .. container::
-
-*This is the code in row 3473: if (preg_match($cropRegEx, $tempContent,
-$croppedMatch)) { ... and in the image you see the content of the 3
-parameters"*
 
 Reason here:
+------------
 
-Ext. "news": An editor created a text in a news-article (RTE) with
+Ext. news: An editor created a text in a news-article (RTE) with
 **only 1 (ONE) paragraph**. In the raw data, there was no html-tag, only
-the beginning <p> and the endeing </p> and the text had more than **3410
-letters**!
+the beginning :html:`<p>` and the ending :html:`</p>` and the text had more than
+**3410 letters**
+
+Solution
+--------
 
 After splitting this ONE paragraph into 3 paragraphs, the above
-mentioned error was gone!
-
---------------
+mentioned error was gone
 
 Calling typo3/sysext/core/bin/typo3 scheduler:run from CLI:
+===========================================================
 
-Uncaught TYPO3 Exception #1476107295: PHP Runtime Deprecation Notice:
-Array and string offset access syntax with curly braces is deprecated in
-(...)/typo3_src-9.5.9/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
-line 479
+::
 
-thrown in file
-/srv/sftp/ppwmain/page.org/typo3_src-9.5.9/typo3/sysext/core/Classes/Error/ErrorHandler.php
+   Array and string offset access syntax with curly braces is deprecated in
+   (...)/typo3_src-9.5.9/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
+   line 479
 
-in line 124
+Solution
+--------
 
-Solution: Disable Debug Mode ;)
+Disable Debug Mode
 
---------------
+Extension gridelements in debug mode
+====================================
 
 When gridelements is enabled in debug mode, this error comes currently
 in V10.4.12 - disable the ext, when you are in debug mode and you are
 good to go.
-
-.. |Error ... to large ... offset 27.jpg| image:: files/Error_..._to_large_..._offset_27.jpg

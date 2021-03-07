@@ -6,8 +6,12 @@ TYPO3 Exception 1544172838
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**RuntimeException :** Error handler could not fetch error page(due to
-no internet connection or protected )
+RuntimeException: Error handler could not fetch error page
+==========================================================
+
+::
+   RuntimeException: Error handler could not fetch error page(due to
+   no internet connection or protected)
 
 Migrating from Fluidpages to Flux
 =================================
@@ -21,10 +25,10 @@ verify that the corresponding Flux-TS is included.
 ::
 
     (1/1) #1544172838 Error handler could not fetch error pageuntimeException
-    Error handler could not fetch error page 
-    "https://project.localdomain.vm/http-error-404 [not available anymore]", 
-    reason: cURL error 51: SSL: no alternative certificate subject name 
-    matches target host name 'project.localdomain.vm' (see 
+    Error handler could not fetch error page
+    "https://project.localdomain.vm/http-error-404 [not available anymore]",
+    reason: cURL error 51: SSL: no alternative certificate subject name
+    matches target host name 'project.localdomain.vm' (see
     https://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
 When you have set your 404-error-handler to "Display content from page"
@@ -34,26 +38,14 @@ certificate isn't valid.
 Solution: test again without SSL or test on a staging system with a
 properly installed valid certificate.
 
+
 Self signed certificate problem
 ===============================
 
 ::
 
-    (1/1) #1544172838 RuntimeException  Error handler could not fetch 
-    error page "https://example.de/startseite", reason: cURL error 60: 
+    (1/1) #1544172838 RuntimeException  Error handler could not fetch
+    error page "https://example.de/startseite", reason: cURL error 60:
     SSL certificate problem: self signed certificate (see
     https://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
-| 
-| in
-  **/path/typo3_src-9.5.21/typo3/sysext/core/Classes/Error/PageErrorHandler/PageContentErrorHandler.php**
-  line 79
-
-::
-
-   if ($resolvedUrl !== (string)$request->getUri()) {
-       $content = GeneralUtility::getUrl($resolvedUrl, 0, null, $report);
-       if ($content === false && ((int)$report['error'] === -1 || (int)$report['error'] > 200)) {
-           throw new \RuntimeException('Error handler could not fetch error page "' . $resolvedUrl . '", reason: ' . $report['message'], 1544172838);
-       }
-   }

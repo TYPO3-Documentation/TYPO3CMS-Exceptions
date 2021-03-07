@@ -6,20 +6,28 @@ TYPO3 Exception 1507645417
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This happened in TYPO3 9.3.3 :
+Object Name String, "..." was not followed by any operator
+==========================================================
 
-**Oops, an error occurred!** Line 39: Object Name String,
-"exclude.tt_products_cat_language" was not followed by any operator,
-=<>({
+This happened in TYPO3 9.3.3:
+
+::
+
+   Object Name String, "exclude.tt_products_cat_language" was not followed
+   by any operator, =<>({
 
 Solution:
 =========
 
-The file **ext_conf_template.txt** of the extension contains a missing
+The file :file:`ext_conf_template.txt` of the extension contains a missing
 equation sign (=).
 
-*exclude.tt_products_cat_language*
+.. code-block::typoscript
 
-Cange it into this format:
+   exclude.tt_products_cat_language
 
-*exclude.tt_products_cat_language =*
+Change it into this format:
+
+.. code-block::typoscript
+
+   exclude.tt_products_cat_language =

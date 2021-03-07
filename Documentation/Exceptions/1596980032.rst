@@ -6,41 +6,38 @@ TYPO3 Exception 1596980032
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**Error message:**
-
-::
-
-       #1596980032 InvalidArgumentException
-       A cache identifier was not set.
+InvalidArgumentException:  A cache identifier was not set
+=========================================================
 
 When debuging the corresponding cache.definition might look like this:
 
-::
+.. code-block:: php
 
-       '' => array('groups' => array('pages', 'all'))
+   '' => array('groups' => array('pages', 'all'))
 
 This error can break the backend and frontend.
 
-| 
-| **The reason**
+Background
+----------
 
 Before TYPO3 version 10 it was common that the variable :php:`$_EXTKEY` was
 replaced automatically by the extension key of the corresponding
 extension.
 
-This has changed and the variable either has to be defined or the 
+This has changed and the variable either has to be defined or the
 extension key automatically applied.
 
-As the variable :php:`$_EXTKEY` was undefined, the array key for 
+As the variable :php:`$_EXTKEY` was undefined, the array key for
 the cache definition was empty.
 
 The error was therefore caused by an incomplete extension-update.
 
-| 
-| **How to fix**
 
-Search in all extensions for usage of $_EXTKEY in the file
-ext_localconf.php.
+Solution
+--------
+
+Search in all extensions for usage of :php:`$_EXTKEY` in the file
+:file:`ext_localconf.php`.
 
 If the variable is used but not defined in that file, define it in the
-beginning or replace it by the extension-key.
+beginning or replace it by the extension key.

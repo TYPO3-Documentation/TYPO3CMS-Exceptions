@@ -6,14 +6,17 @@ TYPO3 Exception 1581862822
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Maybe your content is insert into a Fluid template by :xml:`<f:cObject
-typoscriptObjectPath />` and your TypoScript lib uses a insertData = 1,
-this could be the reason why the form submit fails:
+This error might be caused by inserting content into a Fluid tamplate by
 
-insertData behaves like dataWrap and parses curly braces, see
-https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Stdwrap.html?highlight=insertdata
+.. code-block::xml
+
+   <f:cObject typoscriptObjectPath="lib.myLib"/>
+
+If the TypoScript object uses a :ts:`insertData = 1` or the datawrap curly
+braces might get parsed, See
+`https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Stdwrap.html?highlight=insertdata`__
 
 So, the serialized value of the hidden form field
-:php:' tx_form_formframework[__trustedProperties]'  get's parsed, too. The
+:php:`tx_form_formframework[__trustedProperties]`  get's parsed, too. The
 following HMAC validation throws the exception, because the
 :php:`__trustedProperties` is broken.

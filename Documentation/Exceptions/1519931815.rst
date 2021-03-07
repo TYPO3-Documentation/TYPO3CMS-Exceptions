@@ -9,9 +9,16 @@ TYPO3 Exception 1519931815
 Unresolved extension-dependencies
 =================================
 
-| 
-| This error might be caused by unresolved extension dependencies.
-| More detailed error-message could be retrieved using extension
-  "typo3_console". Executing following command in
-  typo3/typo3conf/ext/typo3_console:
-| ./typo3cms install:generatepackagestates
+This error might be caused by unresolved extension dependencies.
+More detailed error-message could be retrieved using extension
+"typo3_console".
+
+Executing following command on command line:
+
+.. code-block:: bash
+
+   typo3cms install:generatepackagestates
+
+See the `TYPO3 console manual
+<https://docs.typo3.org/p/helhum/typo3-console/master/en-us/Introduction/Index.html>`
+for further information.

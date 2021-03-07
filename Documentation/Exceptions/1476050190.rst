@@ -6,7 +6,10 @@ TYPO3 Exception 1476050190
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-You can access the admin menus pages via the installtool
-(typo3/install.php in TYPO3 10).
+On accesssing the admin tool from the backend
+=============================================
 
-Clearing all caches should help in TYPO3 9.5.
+Access the the install tool directly(via typo3/install.php) and clear
+all caches.
+
+This helped in TYPO3 9.5.

@@ -6,14 +6,14 @@ TYPO3 Exception 1480765571
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Data structure identifier must be set, typically by executing TcaFlexPrepare
+============================================================================
+
 If you encounter this error during FlexForm integration:
 
    ::
 
-      (1/1) #1480765571 RuntimeException
-
       Data structure identifier must be set, typically by executing TcaFlexPrepare data provider before
 
 it means that your FlexForm xml structure is defective (broken, has
-errors, does not parse properly), not that your are actually missing
-some obscure data structure identifier!
+errors, does not parse properly).

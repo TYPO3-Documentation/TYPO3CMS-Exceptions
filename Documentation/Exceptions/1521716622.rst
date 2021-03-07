@@ -6,15 +6,13 @@ TYPO3 Exception 1521716622
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-.. container::
+No site found in rootline of page 123
+=====================================
 
-   .. container::
+::
 
-      |Error-message.png|
-
-      .. container::
-
-         .. container::
+   #1521716622 TYPO3\CMS\Core\Exception\SiteNotFoundException
+   No site found in rootline of page 123
 
 When a page of type shortcut with external URL is created the slug that
 is automatically created looks like this: "/https//wwwfacebookcom/...".
@@ -22,4 +20,3 @@ is automatically created looks like this: "/https//wwwfacebookcom/...".
 Changing this slug to something like "/my-company" is raising the
 error-message shown on the screenshot.
 
-.. |Error-message.png| image:: files/Error-message.png

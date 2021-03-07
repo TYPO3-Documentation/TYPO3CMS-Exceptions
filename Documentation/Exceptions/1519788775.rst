@@ -6,24 +6,23 @@ TYPO3 Exception 1519788775
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Using extension filefill < version 3
+====================================
+
 I received this error when using the new style configuration of filefill
-``$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['filefill']['storages'][1] = [``
 
-````
+.. code-block:: php
 
-::
+   $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['filefill']['storages'][1] = [
+         'placeholder' => true,
+         [
+             'identifier' => 'domain',
+             'configuration' => 'https://www.example.de/' [not available anymore],
+         ],
+         [
+             'identifier' => 'placeholder',
+         ]
+   ];
 
-      'placeholder' => true,
-      [
-          'identifier' => 'domain',
-          'configuration' => 'https://www.example.de/' [not available anymore],
-      ],
-      [
-          'identifier' => 'placeholder',
-      ]
-
-````
-
-``];`` with a too old version of filefill (<3)
-
-upgrading filefill to 3.2.1 did the trick for me.
+with a too old version of filefill (<3), upgrading filefill to 3.2.1 did the
+trick for me.

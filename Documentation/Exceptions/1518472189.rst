@@ -13,10 +13,10 @@ The error is shown if the requested page can't be found for one of the
 following or further reasons:
 
 -  Slugs are defined for pages but there is a fault in the definitions
-   (i.e. trailing slash or the path is broken).
+   (for example a trailing slash or the path is broken).
 -  This may happen with a PersistedAliasMapper definition if the record
    you try to decode is stored **outside** of your site.
--  If there are several domains defined in a TYPO3-installation and a
+-  If there are several domains defined in one TYPO3-installation and a
    page includes a link to a page that is in another domain but still to
    another page inside the TYPO3-installation.
 -  If there are several domains defined in a TYPO3-installation and one
@@ -27,27 +27,30 @@ Request parameters could not be validated
 
 Some parameters in your url should not be part of the cHash generation.
 You must add them to the cacheHash excluded parameters list in the
-Install Tool. E.g. it is the eID parameter for Ajax calls.
+install Tool. For example the eID parameter for Ajax calls should not be
+part of the cHash generation.
 
-::
+.. code-block::php
 
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] = ...,eID
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] .= ',eID';
+
 
 How to fix cross-domain problems (TYPO3 version 9.5)?
 =====================================================
 
 -  Create a site-configuration for the rootpage of each domain in the
-   TYPO3-installation respectively pagetree.
+   TYPO3-installation's pagetree.
+
 
 How to fix slug related problems (TYPO3 version 9.5)?
 =====================================================
 
 -  Fix the slugs starting with the root-page for each domain in the
-   TYPO3-installation respectively pagetree. Each rootpage should be
-   configured with the slug "/" only. Each page down in the hierarchy
+   TYPO3-installation's pagetree. Each rootpage should be
+   configured with the slug "/" only. Each page down the hierarchy
    can be configured automatically or manually, but the path up must be
    correct. Trailing slashes in the path are not allowed.
--  If you use Apache-Webserver make sure that in the TYPO3-root is a
+-  If you use Apache-Webserver make sure that in the TYPO3 root is a
    ".htaccess"-file like this one:
    https://github.com/benjaminkott/bootstrap_package/blob/master/Configuration/Server/_.htaccess
 -  If you use Nginx-Webserver make sure that web-access to the

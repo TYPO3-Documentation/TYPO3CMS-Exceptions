@@ -6,15 +6,16 @@ TYPO3 Exception 1533818591
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Error message
-=============
+InvalidPasswordHashException: No implementation found that handles given hash
+=============================================================================
 
 The following exception may bubble up since TYPO3 v9 during login:
 
 ::
 
       #1533818591 TYPO3\CMS\Core\Crypto\PasswordHashing\InvalidPasswordHashException
-      No implementation found that handles given hash. This happens if the stored hash uses a mechanism not supported by current server. Follow the wiki link to fix this issue.
+      No implementation found that handles given hash. This happens if the
+      stored hash uses a mechanism not supported by current server.
 
 Explanation
 ===========
@@ -34,47 +35,8 @@ system is then deployed to a system that does not support *argon2i*.
 Solutions
 =========
 
--  **Recommended**: Fix the server side: If the passwords are stored
-   using *argon2i*, make the project hoster support PHP 7.2 with
-   argon2i. Usually, the argon library is just not installed and PHP is
-   compiled without argon2i support. There is little reason to have a
-   PHP 7.2 build without argon support.
-
--  If this happens during backend login and the PHP 7.2 build can not be
-   fixed to support argon2i: Log in to the standalone install tool at
-   typo3/install.php and select a different hash mechanism in Settings >
-   Configuration presets > Password hashing settings. Create a new
-   backend admin user if needed and reset all backend user passwords
-   that have been upgraded to *argon2i* in the database.
-
--  If this happens during login to the standalone install tool
-   (typo3/install.php) and the PHP 7.2 can not be fixed to support
-   argon2i:
-
-   -  A)
-
-      -  Enter a dummy hash into
-         the »/typo3conf/LocalConfiguration.php« at the
-         »installToolPassword« setting, to be able to generate a new
-         hash value → see
-         `typo3-exception-1518448686 <typo3-exception-1518448686>`__
-
-   -  B)
-
-      -  On any given local instance, where you can log into the
-         Backend, open the Settings section and choose a password
-         hashing mechanism that is likely to be available on the broken
-         instance:
-      -  Select the hash mechanism in Settings > Configuration presets >
-         Password hashing settings.
-      -  Preserve the current install tool password, then reset it using
-         in Backend -> Setting -> Change install tool password to one
-         you want to use on the broken instance.
-      -  Open file typo3conf/LocalConfiguration.php, pick the
-         "installToolPassword" entry and copy that hash into the
-         according file on the system where the error is shown.
-      -  Log into the formerly broken instance, it should work now.
-      -  Clean up the local instance.
+Please see :ref:`Password hashing troubleshooting
+<t3coreapi:password-hashing_troubleshooting>`.
 
 More information
 ================

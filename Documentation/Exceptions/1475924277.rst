@@ -6,6 +6,9 @@ TYPO3 Exception 1475924277
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Including a form without including the TypoScript template of the "forms" extension
+===================================================================================
+
 For me the Exception occurred in TYPO3 9.5.7 When I was trying to include
 a "form" form and forgot to include the TypoScript Template of extension
 form.

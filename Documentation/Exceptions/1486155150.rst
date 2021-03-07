@@ -6,20 +6,27 @@ TYPO3 Exception 1486155150
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception/CMS/1486155150
+The RecordLinkHandler expects identifier and uid as $parameter configuration
+============================================================================
 
-> #1486155150: The RecordLinkHandler expects identifier and uid as
-$parameter configuration.
+::
 
-Happens during upgrade to TYPO3 version 8.
+   #1486155150: The RecordLinkHandler expects identifier and uid as
+   $parameter configuration.
 
-Possible Reason:
+Happened during upgrade to TYPO3 version 8 in the migration wizard.
 
-The Linkparser cant handle links to extension records, like
+Reason
+------
+
+The Linkparser can't handle links to extension records, like
 
 ::
 
    <link record:tt_news:1 - internal-link>News Record</link>
 
-Solution: Search for records in database and change the link manually,
+Solution
+--------
+
+Search for records in database and change the link manually,
 then run the migration wizard again.

@@ -6,26 +6,36 @@ TYPO3 Exception 1482394401
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-| **Missing "type" in TCA of field
-  "['dummyTable']['dummyField']['config']**
+Missing "type" in TCA of field
+==============================
 
-| Enabling in the Form plugin the "Override finisher settings" option
-  may display this error for misconfigured form finishers.
-| Comment out one finisher at a time in the form definition file
-  (*.form.yaml) to find the culprit.
+Using form finishers
+--------------------
 
-|
-| **TCEforms FlexForm** The error message only gives an example table
-  name and table field, because due to some migration to real names are
-  not used in this error message. So you have to do some guesswork from
-  which extension this error comes from. Check the FlexForm file
-  FlexForm_ds.xml (or another name) of the TYPO3 extension if there are
-  TCEforms entries. In the child pair config a type must have been
-  defined.
+Enabling in the Form plugin the "Override finisher settings" option
+may display this error for wrongly configured form finishers.
+
+Solution
+~~~~~~~~
+
+Comment out one finisher at a time in the form definition file (*.form.yaml) to
+find the culprit.
+
+
+Using TCEforms FlexForm
+-----------------------
+
+ The error message only gives an example table
+name and table field, because due to some migration to real names are
+not used in this error message. So you have to do some guesswork from
+which extension causes this error. Check the FlexForm file
+FlexForm_ds.xml (or another name) of the extension if there are
+TCEforms entries. In the child pair config a type must have been
+defined.
 
 Example:
 
-::
+.. code-block:: xml
 
     <config>
       <form_type>user</form_type>
@@ -35,6 +45,6 @@ Example:
 
 You must use the type instead:
 
-::
+.. code-block:: xml
 
       <type>user</type>

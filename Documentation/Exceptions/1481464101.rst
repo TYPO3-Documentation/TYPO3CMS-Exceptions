@@ -7,9 +7,9 @@ TYPO3 Exception 1481464101
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 The cause of this error is the FlexForm file itself. Especially when
-plugin options are defined under display conditions within <AND> clause.
+plugin options are defined under display conditions within :xml:`<AND>` clause.
 
-::
+.. code-block:: xml
 
    <settings.subtitle_align>
         <TCEforms>
@@ -19,13 +19,14 @@ plugin options are defined under display conditions within <AND> clause.
                   FIELD:settings.subtitle:!=:0
                 </AND>
               </displayCond>
-          .......
+          <!-- ....... -->
    </settings.subtitle_align>
 
 If there is only a single condition, please avoid <AND> and get rid of
 the exception.
 
-::
+
+.. code-block:: xml
 
    <settings.subtitle_align>
         <TCEforms>
@@ -33,7 +34,5 @@ the exception.
               <displayCond>
                   FIELD:settings.subtitle:!=:0
               </displayCond>
-          .......
+          <!-- ....... -->
    </settings.subtitle_align>
-
-SOLVED !!!

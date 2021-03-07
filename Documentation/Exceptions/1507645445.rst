@@ -6,23 +6,28 @@ TYPO3 Exception 1507645445
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**(1/1) #1507645445 RuntimeException** **Line 2: Object Name String,
-"Enables" was not followed by any operator, =<>({**
+Object Name String, was not followed by any operator
+====================================================
 
-The file ext_conf_template.php has a RETURN where it is not allowed.
+::
+
+   #1507645445 RuntimeException Line 2: Object Name String,
+   "Enables" was not followed by any operator, =<>({**
+
+This might habben when there is an error in the TypoScript. For example
+the following has a line break where there should be none:
 
 *Wrong*:
 
-::
+.. code-block::typoscript
 
-    # cat=basic/enable/020; type=boolean; label=Activate the feature: 
+    # cat=basic/enable/020; type=boolean; label=Activate the feature:
     Enables the feature
     feature = 0
 
-| 
-| *Correct*:
+*Correct*:
 
-::
+.. code-block::typoscript
 
     # cat=basic/enable/020; type=boolean; label=Activate the feature: Enables the feature
     feature = 0
