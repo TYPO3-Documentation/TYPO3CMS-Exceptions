@@ -6,9 +6,8 @@ TYPO3 Exception 1460976233
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-In a custom content element, that wont check, if an image is there or
-not - will put this exception out. Check, if your CE is capable, to
-handle if there is an image or not.
+In a custom content element, that doesn't check, if an image exists
+this exception might be encountered if the image is missing.
 
 The extension Camaliga is sensible for this issue. If you have assigned
 a Gallery Map Element to a plugin and with this element is no image

@@ -6,24 +6,20 @@ TYPO3 Exception 1459422492
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This error happens when you update a TYPO3 7.x installation to Version
+Datebase credential structure in LocalConfiguration.php not up to date
+======================================================================
+
+
+
+This error happen when you update a TYPO3 7.x installation to Version
 8.x. Because of the changed array structure in version 8.x, TYPO3 cannot
 find the proper database connection.
 
-You need to change to following lines in your LocalConfiguration.php:
-=====================================================================
+Change your :file:`typo3conf/LocalConfiguration.php`
 
 **From:**
 
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
+.. code-block:: php
 
       'DB' => [
           'database' => '',
@@ -35,15 +31,7 @@ You need to change to following lines in your LocalConfiguration.php:
 
 **To:**
 
-.. container::
-
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
+.. code-block:: php
 
       'DB' => [
           'Connections' => [

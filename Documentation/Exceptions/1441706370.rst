@@ -6,7 +6,8 @@ TYPO3 Exception 1441706370
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TYPO3 7.6.15:
+Button "TYPO3\CMS\Backend\Template\Components\Buttons\LinkButton" is not valid
+==============================================================================
 
 ::
 
@@ -14,9 +15,11 @@ TYPO3 7.6.15:
     InvalidArgumentException thrown in file
     typo3_src/typo3/sysext/backend/Classes/Template/Components/ButtonBar.php in line 66.
 
+(TYPO3 7.6.15)
+
 Reason: URL, title or icon is empty.
 
-Addtion to this correct, but very brief answer: One reason may be a
+One reason may be a
 missing language file. Imagine you check out a TYPO3-page from git
 locally and also use a copy of the database/configuration of this site.
 Then, perhaps, the configured language is missing on your system. (For

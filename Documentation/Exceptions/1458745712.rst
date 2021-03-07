@@ -6,20 +6,22 @@ TYPO3 Exception 1458745712
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Exception message
-=================
+Invalid flex form data structure
+================================
 
-Invalid flex form data structure on field name "pi_flexform" with
-element "..." in section container "section": Nesting sections in
-container elements sections is not allowed.
+::
+
+   Invalid flex form data structure on field name "pi_flexform" with
+   element "..." in section container "section": Nesting sections in
+   container elements sections is not allowed.
 
 Background
 ==========
 
 Support for editing/creating nested flex form section containers has
 been blocked in TYPO3 7.4.5 due to issues in data consistency and
-component handling (`commit
-27ac159 <https://git.typo3.org/Packages/TYPO3.CMS.git/commit/27ac1594dbd23417d055934dc5981bb3c6f13ba4>`__).
+component handling.
+
 See `Core bug report #73125 <https://forge.typo3.org/issues/73125>`__.
 
 Nested sections in Flux aka "Fluid Powered TYPO3"

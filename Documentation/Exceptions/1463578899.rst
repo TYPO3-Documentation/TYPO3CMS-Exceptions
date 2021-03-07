@@ -6,25 +6,30 @@ TYPO3 Exception 1463578899
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-**Oops, an error occurred! TCA misconfiguration in table
-"the_table_name" field "the_field_name" config section: ds_pointerField
-"the_field_name_type" points to a field name that does not exist.**
-
-This happens in the TCE for a field which is configured by a
-'ds_pointerField'. You must also add a TCA column for the corresponding
-type field "the_field_name_type".
+TCA misconfiguration: a field name that does not exist
+======================================================
 
 ::
 
-          'config_type' => array (
-              'label' => 'LLL:EXT:my_extension/locallang_db.xml:the_table_name.the_field_name_type',
-              'config' => array (
-                  'type' => 'select',
-                  'renderType' => 'selectSingle',
-                  'items' => array (
-                      array(, )
-                  ),
-                  'default' => ,
-                  'authMode' => $GLOBALS['TYPO3_CONF_VARS']['BE']['explicitADmode'],
-              )
-          ),
+   TCA misconfiguration in table
+   "the_table_name" field "the_field_name" config section: ds_pointerField
+   "the_field_name_type" points to a field name that does not exist.
+
+This happens in the TCE for a field which is configured by a
+'ds_pointerField'. You must also add a TCA column for the corresponding
+type field :php:`the_field_name_type`.
+
+.. code-block:: php
+
+    'config_type' => array (
+        'label' => 'LLL:EXT:my_extension/locallang_db.xml:the_table_name.the_field_name_type',
+        'config' => array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => array (
+                array(, )
+            ),
+            'default' => ,
+            'authMode' => $GLOBALS['TYPO3_CONF_VARS']['BE']['explicitADmode'],
+        )
+    ),

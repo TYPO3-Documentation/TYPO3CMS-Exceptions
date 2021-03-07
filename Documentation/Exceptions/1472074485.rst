@@ -19,4 +19,10 @@ When you have mapped a relation to an external model in your extension,
 but forgot to define the mapping in Typoscript
 
 Table 'my_db.tx_myext_persistence_objectstorage' doesn't exist
---------------------------------------------------------------
+==============================================================
+
+Solution
+--------
+
+Go to :guilabel:`Admin tools -> Maintenance -> Database compare` and bring the
+database schema up to date.

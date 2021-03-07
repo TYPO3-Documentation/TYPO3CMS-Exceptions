@@ -6,15 +6,16 @@ TYPO3 Exception 1446996319
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-#1446996319: Configuration retrieved from FlexForm is incomplete or not of type "inline".
-=========================================================================================
+Configuration retrieved from FlexForm is incomplete or not of type "inline"
+===========================================================================
 
 ::
 
+   #1446996319: Configuration retrieved from FlexForm is incomplete or not of type "inline"
    UnexpectedValueException thrown in file
    /../typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php in line 935.
 
-Happens when attaching an image to a new non-saved fluidcontent element.
+Happens when attaching an image to a new non-saved Fluid content element.
 
 Also:
 
@@ -25,143 +26,3 @@ Also:
 
 TYPO3 v7.6.32 Happens when attaching an image to an existing content
 element.
-
-Patch
------
-
-We found a patch in the source of the site we've taken over from another
-agency. The patch was created on v7.6.31 but could also be applied to
-v7.6.32. Use only on your own risk.
-
-::
-
-    diff --git a/typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php b/typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php
-    index d4b30b0c75..011be2cd84 100644
-    --- a/typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php
-    +++ b/typo3/sysext/backend/Classes/Controller/FormInlineAjaxController.php
-    @@ -1,4 +1,5 @@
-     <?php
-    +declare(strict_types = 1);
-     namespace TYPO3\CMS\Backend\Controller;
-
-     /*
-    @@ -21,7 +22,6 @@ use TYPO3\CMS\Backend\Form\FormDataGroup\InlineParentRecord;
-     use TYPO3\CMS\Backend\Form\FormDataGroup\TcaDatabaseRecord;
-     use TYPO3\CMS\Backend\Form\InlineStackProcessor;
-     use TYPO3\CMS\Backend\Form\NodeFactory;
-    -use TYPO3\CMS\Backend\Utility\BackendUtility;
-     use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-     use TYPO3\CMS\Core\DataHandling\DataHandler;
-     use TYPO3\CMS\Core\Localization\LocalizationFactory;
-    @@ -57,6 +57,7 @@ class FormInlineAjaxController
-             $inlineStackProcessor = GeneralUtility::makeInstance(InlineStackProcessor::class);
-             $inlineStackProcessor->initializeByParsingDomObjectIdString($domObjectId);
-             $inlineStackProcessor->injectAjaxConfiguration($ajaxArguments['context']);
-    +        $inlineTopMostParent = $inlineStackProcessor->getStructureLevel(0);
-
-             // Parent, this table embeds the child table
-             $parent = $inlineStackProcessor->getStructureLevel(-1);
-    @@ -107,7 +108,12 @@ class FormInlineAjaxController
-             }
-
-             if ($parentConfig['type'] === 'flex') {
-    -            $parentConfig = $this->getParentConfigFromFlexForm($parentConfig, $domObjectId);
-    +            // Workaround 'inline' error: if list_type is empty then we use the $parent['config']
-    +            if (TRUE === empty($databaseRow['list_type'])) {
-    +                $parentConfig = $parent['config'];
-    +            } else {
-    +                $parentConfig = $this->getParentConfigFromFlexForm($parentConfig, $domObjectId);
-    +            }
-             }
-             $childTableName = $parentConfig['foreign_table'];
-
-    @@ -126,6 +132,10 @@ class FormInlineAjaxController
-                 'inlineParentTableName' => $parent['table'],
-                 'inlineParentFieldName' => $parent['field'],
-                 'inlineParentConfig' => $parentConfig,
-    +            // Fallback to $parentData is probably not needed here.
-    +            'inlineTopMostParentUid' => $parentData['inlineTopMostParentUid'] ?: $inlineTopMostParent['uid'],
-    +            'inlineTopMostParentTableName' => $parentData['inlineTopMostParentTableName'] ?: $inlineTopMostParent['table'],
-    +            'inlineTopMostParentFieldName' => $parentData['inlineTopMostParentFieldName'] ?: $inlineTopMostParent['field'],
-             ];
-             if ($childChildUid) {
-                 $formDataCompilerInput['inlineChildChildUid'] = $childChildUid;
-    @@ -133,15 +143,9 @@ class FormInlineAjaxController
-             $childData = $formDataCompiler->compile($formDataCompilerInput);
-
-             // Set language of new child record to the language of the parent record
-    -        if ($parent['localizationMode'] !== 'keep' && MathUtility::canBeInterpretedAsInteger($parent['uid'])) {
-    -            $parentLanguageField = $GLOBALS['TCA'][$parent['table']]['ctrl']['languageField'];
-    -            $childLanguageField = $GLOBALS['TCA'][$child['table']]['ctrl']['languageField'];
-    -            if (!empty($parentLanguageField) && !empty($childLanguageField)) {
-    -                $parentRecord = BackendUtility::getRecord($parent['table'], $parent['uid']);
-    -                $childData['databaseRow'][$childLanguageField][0] = $parentRecord[$parentLanguageField];
-    -            }
-    -        }
-    -
-    +        // @todo: To my understanding, the below case can't happen: With localizationMode select, lang overlays
-    +        // @todo: of children are only created with the "synchronize" button that will trigger a different ajax action.
-    +        // @todo: The edge case of new page overlay together with localized media field, this code won't kick in either.
-             if ($parentConfig['foreign_selector'] && $parentConfig['appearance']['useCombination']) {
-                 // We have a foreign_selector. So, we just created a new record on an intermediate table in $childData.
-                 // Now, if a valid id is given as second ajax parameter, the intermediate row should be connected to an
-    @@ -344,6 +348,10 @@ class FormInlineAjaxController
-                     'vanillaUid' => (int)$parent['uid'],
-                     'command' => 'edit',
-                     'tableName' => $parent['table'],
-    +                'databaseRow' => [
-    +                    // TcaInlineExpandCollapseState needs this
-    +                    'uid' => (int)$parent['uid'],
-    +                ],
-                     'inlineFirstPid' => $inlineFirstPid,
-                     'columnsToProcess' => [
-                         $parentFieldName
-    @@ -388,7 +396,6 @@ class FormInlineAjaxController
-
-                 /** @var $tce DataHandler */
-                 $tce = GeneralUtility::makeInstance(DataHandler::class);
-    -            $tce->stripslashes_values = false;
-                 $tce->start([], $cmd);
-                 $tce->process_cmdmap();
-
-    @@ -787,10 +794,6 @@ class FormInlineAjaxController
-         protected function getInlineExpandCollapseStateArray()
-         {
-             $backendUser = $this->getBackendUserAuthentication();
-    -        if (!$this->backendUserHasUcInlineView($backendUser)) {
-    -            return [];
-    -        }
-    -
-             $inlineView = unserialize($backendUser->uc['inlineView']);
-             if (!is_array($inlineView)) {
-                 $inlineView = [];
-    @@ -799,27 +802,15 @@ class FormInlineAjaxController
-             return $inlineView;
-         }
-
-    -    /**
-    -     * Method to check whether the backend user has the property inline view for the current IRRE item.
-    -     * In existing or old IRRE items the attribute may not exist, then the unserialize will fail.
-    -     *
-    -     * @param BackendUserAuthentication $backendUser
-    -     * @return bool
-    -     */
-    -    protected function backendUserHasUcInlineView(BackendUserAuthentication $backendUser)
-    -    {
-    -        return !empty($backendUser->uc['inlineView']);
-    -    }
-    -
-         /**
-          * Remove an element from an array.
-          *
-          * @param mixed $needle The element to be removed.
-          * @param array $haystack The array the element should be removed from.
-    -     * @param mixed $strict Search elements strictly.
-    +     * @param bool $strict Search elements strictly.
-          * @return array The array $haystack without the $needle
-          */
-    -    protected function removeFromArray($needle, $haystack, $strict = null)
-    +    protected function removeFromArray($needle, $haystack, $strict = false)
-         {
-             $pos = array_search($needle, $haystack, $strict);
-             if ($pos !== false) {

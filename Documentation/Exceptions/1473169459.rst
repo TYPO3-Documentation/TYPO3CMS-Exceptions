@@ -6,7 +6,10 @@ TYPO3 Exception 1473169459
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This issue is thrown by cdsrc_httpbasicauth if the extension dont find a
+Using extension cdsrc_httpbasicauth
+===================================
+
+This issue is thrown by cdsrc_httpbasicauth if the extension doesn't find a
 rewrite rule in htaccess.
 
 Add the rule described in file
