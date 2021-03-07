@@ -6,24 +6,12 @@ TYPO3 Exception 1425389240
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The requested resource "..." was not found.
+===========================================
+
 Affected: 7.4.0 and 7.5.0-dev and maybe earlier versions.
 
 See https://forge.typo3.org/issues/66704
-
-Workaround for 7.5.0-dev 8f540ffbf880691a17d6d4c3ca4f184abba84d22:
-
--  Export (to .t3d) a single leaf page from another TYPO3 CMS instance
-   (mine was 6.2)
--  Right click root element in page tree => Import from .t3d (I imported
-   only page properties)
--  Now I can append other pages to that page by using the "New"
-   operation (which failed before)
--  I can even add pages (with "New" to the root element which did not
-   work before.
--  Still, none of my pages is tagged as "Use as Root Page" in page
-   properties/"Behaviour" => It does not have to do with "Root Page".
-   Instead, at least one page must exist to get rid of the Bug (as a
-   workaround).
 
 Limitation: When I delete all pages in the page tree, and then try to
 right-click-"New" => I hit the error again. Basically this means that

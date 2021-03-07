@@ -6,23 +6,7 @@ TYPO3 Exception 1431872546
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-LIMITATION
-==========
+Node of type "..." must implement `NodeInterface`
+=================================================
 
-This Errormessage is shown only in Versions starting from TYPO3 7.3 and
-up.
-
-Errormessage
-============
-
-#. 1431872546: Node of type VENDOR\EXTENSION\Form\CLASSNAME must
-   implement NodeInterface (More information)
-
-TYPO3\CMS\Backend\Form\Exception thrown in file
-D:\___WWW___\_typo3\_SOURCES\typo3_src-7.3.0\typo3\sysext\backend\Classes\Form\NodeFactory.php
-in line 143.
-
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 08:05, 28 June 2015 (CEST)
+Check the code of the mentioned node type and implement the interface.

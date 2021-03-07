@@ -6,23 +6,26 @@ TYPO3 Exception 1396795884
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The current host header value does not match the configured trusted hosts pattern!
+==================================================================================
+
 Error displayed during installation of TYPO3
-============================================
+---------------------------------------------
 
 Usually, when installing a new TYPO3 instance, the system will detect
 the instance has not been configured yet and will redirect to the
 installer to proceed with the installation. However, depending on web
 server configuration, this trusted hosts pattern error may still be
 thrown and the redirect will not be performed. An easy way to circumvent
-this is to just manually add the path url »typo3/install.php« in the
+this is to just manually add the path url :file:`typo3/install.php` in the
 browser to directly reach the installer, which will take care of the
 trusted hosts pattern setting in one of its installer steps.
 
 Error displayed on an existing instance
-=======================================
+---------------------------------------
 
 You see this error, because the submitted HTTP host-header does not
-match the trustedHosts configuration. You may want to adjust the trusted
+match the `trustedHosts` configuration. You may want to adjust the trusted
 host pattern, which is security mechanism to validate the HTTP
 host-header and prevent host spoofing.
 
@@ -30,9 +33,9 @@ Please read the `security advisory
 »TYPO3-CORE-SA-2014-001« <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2014-001/>`__
 to understand the need for this configuration option.
 
-The trusted host pattern may be set with the Install Tool (Backend >
-Install Tool > All configuration > Toggle all and find
-trustedHostsPattern) or by editing »/typo3conf/LocalConfiguration.php«
+The trusted host pattern may be set with the Install Tool (:guilabel:`Backend` >
+:guilabel:`Install Tool` > :guilabel:`All configuration` > :guilabel:`Toggle all` and find
+:guilabel:`trustedHostsPattern`) or by editing :file:`/typo3conf/LocalConfiguration.php`.
 
 ::
 
@@ -40,8 +43,8 @@ trustedHostsPattern) or by editing »/typo3conf/LocalConfiguration.php«
 
 This is a regular expression pattern that matches all allowed hostnames
 (including their ports) of this TYPO3 installation, or the string
-"SERVER_NAME" (default). The default value SERVER_NAME checks if the
-HTTP Host header equals the SERVER_NAME and SERVER_PORT. This is secure
+"SERVER_NAME" (default). The default value `SERVER_NAME` checks if the
+HTTP Host header equals the `SERVER_NAME` and `SERVER_PORT`. This is secure
 in correctly configured hosting environments and does not need further
 configuration.
 
@@ -50,7 +53,7 @@ configuration. A typical case is a hosting setup with a Load Balancer,
 CDN or a HA proxy.
 
 Typical configuration examples
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following matches all hosts that end with **.domain.com** with all
 corresponding subdomains:

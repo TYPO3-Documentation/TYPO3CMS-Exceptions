@@ -6,18 +6,16 @@ TYPO3 Exception 1437656081
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Record with uid "..." from table "..." not found
+================================================
+
 Wrong sys_file_reference PID of related records
-===============================================
+-----------------------------------------------
 
 A file reference used in record which had a pid to a non existing page.
-In my example we have migrated tx_news images to FAL and some
-sys_file_reference entries have been created. No sure why, but we ended
-up wrong pid values for our created sys_file_reference entry. This can
-be fixed by adjusting sys_file_reference pid value to sysfolder uid of
+In my example we have migrated :sql:`tx_news` images to FAL and some
+:sql:`sys_file_reference` entries have been created. No sure why, but we ended
+up wrong pid values for our created :sql:`sys_file_reference` entry. This can
+be fixed by adjusting :sql:`sys_file_reference` pid value to sysfolder uid of
 related news record with an SQL statement.
 
-Record with uid 15 from table tx_powermail_domain_model_form not found
-======================================================================
-
-Powermail error after deleting items from database. This can be fixed by
-inserting the specific item into the database

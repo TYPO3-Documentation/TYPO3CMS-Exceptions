@@ -6,14 +6,16 @@ TYPO3 Exception 1404068038
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+No extension key could be determined when calling `addPlugin()`
+==============================================================
+
 You will see this exception most likely because
-t3lib_extMgm::addPlugin() or
-\\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin() is used
+`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin()` is used
 in a :file:`ext_tables.php` file, which will not work. As described in the API
-\\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin() is
-meant to be called from :file:`ext_tables.php` or (as of TYPO3 6.2.4) in a file
-in Configuration/TCA/Overrides/tt_content.php. Calling it from any other
+`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin()` is
+meant to be called from :file:`ext_tables.php` or (as of TYPO3 6.2.4 or later) in a file
+in :file:`Configuration/TCA/Overrides/tt_content.php`. Calling it from any other
 place e.g. :file:`ext_localconf.php` does not work and is not supported
 
-If you call it from Configuration/TCA/Overrides/tt_content.php, the
+If you call it from :file:`Configuration/TCA/Overrides/tt_content.php`, the
 extension key needs to be specified as third parameter.

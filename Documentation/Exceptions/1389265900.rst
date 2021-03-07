@@ -6,12 +6,11 @@ TYPO3 Exception 1389265900
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-You are not allowed to access the backend as your IP does not matches
-the [BE][IPmaskList] setting in the Install Tool.
+You are not allowed to access the backend as your IP does not matches the [BE][IPmaskList] setting in the Install Tool.
+=======================================================================================================================
 
-Go to the Install Tool and add your IP address in "All Configuration"
-[BE][IPmaskList], using comma separation (no semikolon).
+Go to the Install Tool and add your IP address in :guilabel:`All Configuration` `['BE']['IPmaskList']`, using comma separation (no semicolon).
 
-Visit also
+See also
 https://docs.typo3.org/typo3cms/SecurityGuide/GuidelinesIntegrators/GlobalTYPO3Options/Index.html#ipmasklist
 for more security advice.

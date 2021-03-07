@@ -6,10 +6,8 @@ TYPO3 Exception 1395614959
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-After updating the current list of available plugins from the TYPO3
-Extension Repository I received the above mentioned exception, namely:
-"Version number in composer manifest of package "vhs" is missing or
-invalid".
+Version number in composer manifest of package "..." is missing or invalid
+==========================================================================
 
 This happens in TYPO3 6.2 whenever an extension has a dependency on
 another extension which contains a file ``composer.json`` without any
