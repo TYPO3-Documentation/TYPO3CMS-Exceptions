@@ -6,47 +6,15 @@ TYPO3 Exception 1439552058
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hi, I tried to install the "doc_tut_templating" extension in TYPO3 7.6.6
-running locally under WAMP. After doing so, when I try to open
-Extensions, I get the message
-
-::
-
-   "The extension "doc_tut_templating" has invalid version constraints in depends section. Extension key is missing! More information regarding this error might be available online => reference to this exeception.
-
-Only after manually removing the extension from \\www\typo3conf\ext\\
-can I access my extensions again.
-
-Other extensions work fine and "doc_tut_templating" is said to be stable
-and verified with version 7 so I don't know what can be wrong here?
-
-kind regards, Marc
-
-**Solution:**
-
-This is a known issue and it also can happen with other extensions, see
-here: [ERROR: Cannot get content for issue "75979"]
+The extension "..." has invalid version constraints in depends section. Extension key is missing!
+=================================================================================================
 
 -  To fix this, go to your TYPO3 Installation directory, go to
-   "typo3conf/ext/doc_tut_templating" and edit "ext_emconf.php" and
-   delete the line in the ``depends`` section, which neither contains
+   :file:`typo3conf/ext/...` and edit :file:`ext_emconf.php` and
+   delete the line in the `depends` section, which neither contains
    any extension key nor any version, but only an empty array key with
-   empty array value (``' ' => ' ',``). In my case this was line 31. ->
+   empty array value (`' ' => ' ',`). In my case this was line 31. ->
    Save the file.
--  After this go to your TYPO3 backend, go to the "extensions"
-   subcategory and enable "Templating Tutorial doc_tut_templating 1.1.0"
-   by clicking the box in front of this entry.
+-  After this go to your TYPO3 backend, go to the :guilabel:`extensions`
+   subcategory and enable the extension by clicking the box in front of this entry.
 -  Refresh your page, and you should be fine.
-
-Kind regards, Helge
-
-I found it confusing between finding the "doc_tut_templating" in the
-distribution tab and the "activating" of the extension
-"doc_tut_templating" in the extension tab. So first I found the
-distribution, then edited the file as mentioned by Helge and finally I
-activated it in a the installed extensions tab. Hope that helps.
-
-Kind regards, Luke
-
-Unfortunately there are no tutorial pages inserted, if I follow the
-procedure of Helge. Kind regards, Andreas
