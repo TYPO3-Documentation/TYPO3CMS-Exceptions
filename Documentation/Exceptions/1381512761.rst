@@ -6,27 +6,14 @@ TYPO3 Exception 1381512761
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Hello Core Team,
+Invalid value "..." for enumeration "..."
+=========================================
 
-I get an error by using the extension cal (cal 1.9.3 / TYPO3 6.2.15).
-Copy some calendardata with the clipboard generates an Error-Page with
-the message: Invalid value 17 for TYPO3\CMS\Core\Versioning\VersionState
-
-I can't find any solution for this. Can you help.
-
-Thanks al lot
-
-Hoge
-
---------------
-
-|
-| **TYPO3 6.26**:
+TYPO3 6.2.x and higher (after update from 6.1 or lower)
+-------------------------------------------------------
 
 Error occurred in an extension after migration 6.1 -> 6.2 due to wrong
-(invalid) field datatypes in the TCA ('type' => 'date',) -> 'date' is an
+(invalid) field data types in the TCA (`'type' => 'date',`) -> `'date'` is an
 invalid type. It seems, v6.1 didn't care very much about invalid types,
-but 6.2 does. Changing the datatype to 'type' => 'input', 'eval' =>
-'datetime' solved the problem.
-
---------------
+but 6.2 does. Changing the datatype to `'type' => 'input', 'eval' => 'datetime'`
+solved the problem.

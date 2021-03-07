@@ -6,12 +6,16 @@ TYPO3 Exception 1382284105
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This error happens, when in Fluid templates the img-tag have an
-undefined variable in src-parameter.
+You must either specify a string src or a File object.
+======================================================
+
+This error happens in Fluid if an :html:`<img>` tag (or a media / image view helper)
+has an undefined variable in the :html:`src` parameter.
 
 Example:
 
-<img src="{f:uri.image(image: file)}" title="{file.title}"
-alt="{file.alternative}" />
+.. code-block:: html
 
-And "file" is undefined, or not a String or a FileReference
+   <img src="{f:uri.image(image: file)}" title="{file.title}" alt="{file.alternative}" />
+
+and "file" is undefined, or not a `String` or a `FileReference`.
