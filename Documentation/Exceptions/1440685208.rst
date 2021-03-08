@@ -14,11 +14,9 @@ Using Flux
    #1440685208: Broken data structure on field name pi_flexform. section
    without type or vice versa is not allowed
 
-Happens when using
-`<flux:form.container> <https://fluidtypo3.org/viewhelpers/flux/master/Form/ContainerViewHelper.html>`__
-[not available anymore] in a fluid content element.
+Happens when using :code:`<flux:form.container>` in a fluid content element.
 
-In our case it was due to <type>no_map</type> which we commented out.
+In our case it was due to :code:`<type>no_map</type>` which we commented out.
 Then it worked.
 
 Issues:

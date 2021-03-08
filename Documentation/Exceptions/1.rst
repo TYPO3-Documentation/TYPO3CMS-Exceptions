@@ -6,7 +6,7 @@ TYPO3 Exception 1
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-typo3 4.6.0
+TYPO3 4.6.0
 ===========
 
 I get this error when switching to Web>Template.
@@ -37,7 +37,7 @@ apt-get install php5-suhosin shows a broken dependency.
 
 solution is to drop suhosin.so from apache2 dpkg -P php5-suhosin
 
-typo3 4.7.10
+TYPO3 4.7.10
 ============
 
 Suddenly got this error when logging on to the next.
@@ -74,7 +74,7 @@ is working again (but without localization :)
 
 None - please edit if you found a solution!
 
-typo3 4.7.17
+TYPO3 4.7.17
 ============
 
 -  Login to Backend was not possible.
@@ -97,10 +97,8 @@ Solution
 --------
 
 Delete content of /typo3temp folder.
-http://www.typo3forum.net/forum/typo3-4-x-backend/56543-kein-login-fatal-error-typo3-4-7-1-a.html#post187281
-[not available anymore]
 
-typo3 4.7.14
+TYPO3 4.7.14
 ============
 
 I get this error when uploading files with DAM 1.3.2 for a user that
@@ -130,15 +128,14 @@ Update 2013/11/21 Bug is on typo3.forge
 https://forge.typo3.org/issues/51969 Patch is here :
 https://review.typo3.org/#/c/23848/ Tested, working...
 
-typo3 6.1.0
+TYPO3 6.1.0
 ===========
 
 indexed search
 --------------
 
 I get this error after installing `indexed
-search <https://wiki.typo3.org/De:Indexed_search>`__ [deprecated wiki
-link].
+search <https://docs.typo3.org/typo3cms/extensions/indexed_search>`__.
 
 ::
 
@@ -198,7 +195,7 @@ Uncaught TYPO3 Exception
 Solution
 ^^^^^^^^
 
-typo3 6.2.0
+TYPO3 6.2.0
 ===========
 
 when clicking on Page - rootpage - create content element using flux /
@@ -207,7 +204,6 @@ fluidpages / fluidcontent
 typo3_src-6.2.0/typo3/sysext/core/Classes/Database/PreparedStatement.php
 line 311
 
-|
 | -
 
 I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
@@ -219,7 +215,7 @@ gridelements v3.0.0-dev https://forge.typo3.org/issues/57833
 Solution
 --------
 
-Download the news versions from GIT of "view"
+Download the new versions from GIT of "view"
 https://github.com/FluidTYPO3/view [not available anymore]
 
 unfortunately only working partly:
@@ -377,10 +373,7 @@ Solution
 
 At 1st initial start of this page after clearing the cache, after reload
 [e.g. pressing F5] this message disappears, and page runs fine...
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 02:03, 27 August 2014 (CEST)
+-- David Bruchmann 02:03, 27 August 2014 (CEST)
 
 .. _typo3-6.2.4-1:
 
@@ -464,24 +457,16 @@ either by injecting the repository or at least by using
 ``GeneralUtility::makeInstance`` to get the objectmanager instance and
 using ``$objectManager->get('MyExtension\MyRepository')``:
 
-.. container::
+::
 
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      class MyController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-      {
-          public function fooAction()
-          {
-              $repo = $this->objectManager->get(MyRepository::class);
-              $item = $repo->findByUid(1);
-          }
-      }
+   class MyController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+   {
+       public function fooAction()
+       {
+           $repo = $this->objectManager->get(MyRepository::class);
+           $item = $repo->findByUid(1);
+       }
+   }
 
 TYPO3 6.2.15: Argument 1 passed to TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration::setTypeConverter() must implement interface TYPO3\CMS\Extbase\Property\TypeConverterInterface, string given
 =======================================================================================================================================================================================================
@@ -602,7 +587,7 @@ content of the mail
 
    PHP Warning: array_shift() expects parameter 1 to be array, null given in
    typo3_src-7.6.10/vendor/symfony/console/Input/ArgvInput.php line 61
-   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [deprecated wiki link]
+   More information regarding this error might be available online.
 
 indexed_search
 --------------
