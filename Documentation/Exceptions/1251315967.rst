@@ -11,9 +11,7 @@ direction of relations in the extension_builder between two models after
 having already inserted some entries to the list-view in the backend.
 
 Deleting the files *typo3conf/temp_CACHED_\** and truncating the
-caching-framework-tables beginning with *cf\_* helped for
-`me <https://wiki.typo3.org/wiki/index.php?title=User:Swagner&action=edit&redlink=1>`__
-[deprecated wiki link].
+caching-framework-tables beginning with *cf\_* helped for me.
 
 // Additional Situations, observed in TYPO3 6.1.2, Extbase 6 This
 exception is also thrown when, in the course of development: - a

@@ -137,8 +137,7 @@ indexed search
 --------------
 
 I get this error after installing `indexed
-search <https://wiki.typo3.org/De:Indexed_search>`__ [deprecated wiki
-link].
+search <https://docs.typo3.org/typo3cms/extensions/indexed_search>`__.
 
 ::
 
@@ -377,10 +376,7 @@ Solution
 
 At 1st initial start of this page after clearing the cache, after reload
 [e.g. pressing F5] this message disappears, and page runs fine...
---`David bruchmann <https://wiki.typo3.org/User:David_bruchmann>`__
-[deprecated wiki link]
-(`talk <https://wiki.typo3.org/wiki/index.php?title=User_talk:David_bruchmann&action=edit&redlink=1>`__
-[deprecated wiki link]) 02:03, 27 August 2014 (CEST)
+-- David Bruchmann 02:03, 27 August 2014 (CEST)
 
 .. _typo3-6.2.4-1:
 
@@ -464,24 +460,16 @@ either by injecting the repository or at least by using
 ``GeneralUtility::makeInstance`` to get the objectmanager instance and
 using ``$objectManager->get('MyExtension\MyRepository')``:
 
-.. container::
+::
 
-   `PHP
-   Script <https://wiki.typo3.org/wiki/Help:Contents#Syntax-Highlighting_for_PHP-Code>`__
-   [deprecated wiki link]
-
-.. container::
-
-   ::
-
-      class MyController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-      {
-          public function fooAction()
-          {
-              $repo = $this->objectManager->get(MyRepository::class);
-              $item = $repo->findByUid(1);
-          }
-      }
+   class MyController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+   {
+       public function fooAction()
+       {
+           $repo = $this->objectManager->get(MyRepository::class);
+           $item = $repo->findByUid(1);
+       }
+   }
 
 TYPO3 6.2.15: Argument 1 passed to TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration::setTypeConverter() must implement interface TYPO3\CMS\Extbase\Property\TypeConverterInterface, string given
 =======================================================================================================================================================================================================
@@ -602,7 +590,7 @@ content of the mail
 
    PHP Warning: array_shift() expects parameter 1 to be array, null given in
    typo3_src-7.6.10/vendor/symfony/console/Input/ArgvInput.php line 61
-   More information regarding this error might be available https://typo3.org/go/exception/CMS/1 [deprecated wiki link]
+   More information regarding this error might be available online.
 
 indexed_search
 --------------
