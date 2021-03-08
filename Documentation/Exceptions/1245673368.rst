@@ -11,14 +11,15 @@ Method postFolderCopy() does not exist.
 =======================================
 
 #. Logged into the backend as an admin.
-#. Trying to copy & paste a folder with subfolders in the file list
-   module.
+
+#. Tried to copy & paste a folder with subfolders in the file list module.
+
 #. When pasting into another folder, this error is displayed in the main
-   window:
-#. Extension causal/file_list is installed
+   window::
 
-::
+      Oops, an error occurred!
+      The slot method Causal\FileList\Slots\ResourceStorage->postFolderCopy() does not exist.
+      More information regarding this error might be available online.
 
-    Oops, an error occurred!
-    The slot method Causal\FileList\Slots\ResourceStorage->postFolderCopy() does not exist.
-    More information regarding this error might be available online.
+#. Extension `causal/file_list` is installed
+
