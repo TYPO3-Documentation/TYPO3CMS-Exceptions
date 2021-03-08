@@ -28,14 +28,14 @@ I get this error when switching to Web>Template.
 TYPO3 4.6.8
 ===========
 
-After a Debian upgrade (apt-get dist-upgrade) the suhosin.so can not be
-loaded
+After a Debian upgrade (:code:`apt-get dist-upgrade`) the suhosin.so can not be
+loaded.
 
 The page with the contact form says: "Oops, an error occurred."
 
 apt-get install php5-suhosin shows a broken dependency.
 
-solution is to drop suhosin.so from apache2 dpkg -P php5-suhosin
+Solution is to drop suhosin.so from apache2 by :code:`dpkg -P php5-suhosin`.
 
 TYPO3 4.7.10
 ============
@@ -50,27 +50,28 @@ Suddenly got this error when logging on to the next.
    must be of the type array, null given, called in /public_html/typo3conf/ext/dam/lib/class.tx_dam_db.php
    on line 376 and defined in /public_html/typo3_src-4.7.14/t3lib/class.t3lib_div.php line 1862
 
--  Read the Ticket for this `Bug
-   #31353 <https://forge.typo3.org/issues/31353>`__ and `as advised
-   above <http://www.typo3.net/forum/thematik/zeige/thema/107943/seite/2/?show=1&cHash=a1bcb079cea5fd9fee872ce737f9f544>`__.
+Read the Ticket for this `Bug #31353 <https://forge.typo3.org/issues/31353>`__
+and `as advised above <http://www.typo3.net/forum/thematik/zeige/thema/107943/seite/2/?show=1&cHash=a1bcb079cea5fd9fee872ce737f9f544>`__.
 
 Solution
 --------
 
 In localconf.php do the settings for the output errors:
 
-$TYPO3_CONF_VARS['SYS']['displayErrors'] = '2';
-$TYPO3_CONF_VARS['SYS']['devIPmask'] = '123.456.789.123';
-//$TYPO3_CONF_VARS['SYS']['devIPmask'] = '*';
-$TYPO3_CONF_VARS['SYS']['errorHandler'] = 't3lib_error_ErrorHandler';
-$TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '2';
+.. code-block:: php
+
+   $TYPO3_CONF_VARS['SYS']['displayErrors'] = '2';
+   $TYPO3_CONF_VARS['SYS']['devIPmask'] = '123.456.789.123';
+   //$TYPO3_CONF_VARS['SYS']['devIPmask'] = '*';
+   $TYPO3_CONF_VARS['SYS']['errorHandler'] = 't3lib_error_ErrorHandler';
+   $TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '2';
 
 then found that in my case, the error was in the file
 lang/locallang_login.xlf . More precisely - the replacement for my
 localization: typo3conf/l10n/ru/lang/ru.locallang_login.xlf - just
 rename the folder typo3conf/l10n/ru/lang/ and cleared the temporary
 files in the typo3temp. After that, the error disappeared and the site
-is working again (but without localization :)
+is working again (but without localization :)
 
 None - please edit if you found a solution!
 
@@ -112,9 +113,8 @@ does not have admin rights.
    must be of the type array, null given, called in /public_html/typo3conf/ext/dam/lib/class.tx_dam_db.php
    on line 376 and defined in /public_html/typo3_src-4.7.14/t3lib/class.t3lib_div.php line 1862
 
--  Read the Ticket for this `Bug
-   #51969 <https://forge.typo3.org/issues/51969>`__ and `Bug
-   #52296 <https://forge.typo3.org/issues/52296>`__.
+Read the Ticket for this `Bug #51969 <https://forge.typo3.org/issues/51969>`__
+and `Bug #52296 <https://forge.typo3.org/issues/52296>`__.
 
 .. _solution-2:
 
@@ -124,14 +124,15 @@ Solution
 Downgrade to DAM 1.3.1
 `dam <https://extensions.typo3.org/extension/dam/>`__
 
-Update 2013/11/21 Bug is on typo3.forge
-https://forge.typo3.org/issues/51969 Patch is here :
-https://review.typo3.org/#/c/23848/ Tested, working...
+Update 2013/11/21 Bug is on typo3.forge:
+https://forge.typo3.org/issues/51969.
+Patch is here: https://review.typo3.org/#/c/23848/.
+Tested, working...
 
 TYPO3 6.1.0
 ===========
 
-indexed search
+indexed_search
 --------------
 
 I get this error after installing `indexed
@@ -152,8 +153,9 @@ search <https://docs.typo3.org/typo3cms/extensions/indexed_search>`__.
 Solution
 ^^^^^^^^
 
-After uninstalling extension `system extension
-form <https://forge.typo3.org/projects/typo3v4-form>`__ it works
+After uninstalling extension
+`system extension form <https://forge.typo3.org/projects/typo3v4-form>`__
+it works.
 
 solr_report
 -----------
@@ -174,15 +176,20 @@ everything is ok, it should look like this:
 
 Uncaught TYPO3 Exception
 
-#. PHP Catchable Fatal Error: Argument 1 passed to
-   tx_solr_report_IndexReport::__construct() must be an instance of
-   tx_reports_Module, instance of
-   TYPO3\CMS\Reports\Controller\ReportController given in
-   /.../typo3conf/ext/solr/report/class.tx_solr_report_indexreport.php
-   line 47 (More information)
-#. TYPO3\CMS\Core\Error\Exception thrown in file
-   /.../typo3_src-6.1.0/typo3/sysext/core/Classes/Error/ErrorHandler.php
-   in line 108.
+#. ::
+
+      PHP Catchable Fatal Error: Argument 1 passed to
+      tx_solr_report_IndexReport::__construct() must be an instance of
+      tx_reports_Module, instance of
+      TYPO3\CMS\Reports\Controller\ReportController given in
+      /.../typo3conf/ext/solr/report/class.tx_solr_report_indexreport.php
+      line 47 (More information)
+
+#. ::
+
+      TYPO3\CMS\Core\Error\Exception thrown in file
+      /.../typo3_src-6.1.0/typo3/sysext/core/Classes/Error/ErrorHandler.php
+      in line 108.
 
 **TYPO3 / PHP VERSION**
 
@@ -198,8 +205,8 @@ Solution
 TYPO3 6.2.0
 ===========
 
-when clicking on Page - rootpage - create content element using flux /
-fluidpages / fluidcontent
+When clicking on the root page, create content element using flux /
+fluidpages / fluidcontent.
 
 typo3_src-6.2.0/typo3/sysext/core/Classes/Database/PreparedStatement.php
 line 311
@@ -238,7 +245,7 @@ When submitting a very basic form
 Solution
 --------
 
-none, please add
+None, please add.
 
 TYPO3 6.2.2
 ===========
@@ -285,7 +292,7 @@ sav_library_kickstarter
 
    #1: PHP Warning: Invalid argument supplied for foreach() in /var/www/.../typo3conf/ext/sav_library_kickstarter/Classes/ViewHelpers/BuildOptionsForViewSelectorboxViewHelper.php line 42
 
-temporarily solved by adding "if (is_array($views))" to the foreach
+temporarily solved by adding :code:`if (is_array($views))` to the foreach
 statement.
 
 tx_cal
@@ -317,14 +324,15 @@ TYPO 6.2.3
    #1: PHP Warning: Illegal string offset 'uid' in /volume1/web/cms/typo3_src/typo3/sysext/frontend/Classes/Controller/TypoScriptFrontendController.php line 1281
 
 At 1st initial start of this page on a day, after realod [e.g. pressing
-F5] this message disapears, and page runs fine...
+F5] this message disappears, and page runs fine...
 
 TYPO3 6.2.4
 ===========
 
 ::
 
-   #1: PHP Warning: fread(): Length parameter must be greater than 0 in /var/www/typo3_src-6.2.4/typo3/sysext/impexp/Classes/ImportExport.php line 3042
+   #1: PHP Warning: fread(): Length parameter must be greater than 0 in
+   /var/www/typo3_src-6.2.4/typo3/sysext/impexp/Classes/ImportExport.php line 3042
 
 Error description
 -----------------
@@ -391,8 +399,8 @@ TYPO3 6.2.4
 Error description
 -----------------
 
-This error occurs when opening a Folder while in Page-Module, but only
-if the Folder has a Backend Layout configured with no columns. This was
+This error occurs when opening a folder while in page module, but only
+if the folder has a backend layout configured with no columns. This was
 only possible until at least 4.7
 
 .. _solution-1-1:
@@ -400,15 +408,15 @@ only possible until at least 4.7
 Solution 1
 ----------
 
-Got to the List Module and switch the Folder back to Standard, change
-the Backend Layout and switch back.
+Got to the list module and switch the folder back to standard, change
+the backend layout and switch back.
 
 .. _solution-2-1:
 
 Solution 2
 ----------
 
-Edit your empty Backend Layout: Insert a colPos
+Edit your empty backend layout: Insert a colPos
 
 TYPO3 6.2.14
 ============
@@ -419,22 +427,21 @@ TYPO3 6.2.14
    TYPO3\CMS\Core\Error\Exception thrown in file
    /srv/www/typo3/typo3_src-6.2.14/typo3/sysext/core/Classes/Error/ErrorHandler.php in line 101.
 
-For background information see `Ticket
-#56603 <https://forge.typo3.org/issues/56603>`__.
+For background information see `Ticket #56603 <https://forge.typo3.org/issues/56603>`__.
 
 .. _solution-1-2:
 
 Solution 1
 ----------
 
-Log into Backend, clear Cache
+Log into backend and clear the cache.
 
 .. _solution-2-2:
 
 Solution 2
 ----------
 
-truncate all tables **cf_xxx_xxxx**
+Truncate all tables **cf_xxx_xxxx**.
 
 TYPO3 6.2.14: Argument 1 must implement ObjectManagerInterface
 ==============================================================
@@ -492,15 +499,15 @@ is simply done by calling a new instance of your TypeConverter:
 
    <vendor>
 
-by your Vendor name, and
+by your vendor name, and
 
 ::
 
    <extension>
 
-| by you extension name. This is kind of standard here but that's up to
-  you.
-| **Note 2**: Replace
+by your extension name. This is kind of standard here but that's up to you.
+
+**Note 2**: Replace
 
 ::
 
@@ -508,9 +515,7 @@ by your Vendor name, and
 
 by the name of your converter.
 
-|
-| The solution to this error is very obvious but it's better written
-  than not.
+The solution to this error is very obvious but it's better written than not.
 
 TYPO3 6.2.18: tx_news:newsadministration: Division by zero in PaginateController
 ================================================================================
@@ -524,7 +529,12 @@ TYPO3 7.5
 
 ::
 
-   #1: PHP Catchable Fatal Error: Argument 2 passed to FluidTYPO3\Flux\UserFunction\HtmlOutput::renderField() must be an instance of TYPO3\CMS\Backend\Form\FormEngine, instance of TYPO3\CMS\Backend\Form\Element\UserElement given in /home/seethrou/public_html/new7/typo3conf/ext/flux/Classes/UserFunction/HtmlOutput.php line 26
+   #1: PHP Catchable Fatal Error:
+   Argument 2 passed to FluidTYPO3\Flux\UserFunction\HtmlOutput::renderField()
+   must be an instance of TYPO3\CMS\Backend\Form\FormEngine,
+   instance of TYPO3\CMS\Backend\Form\Element\UserElement given in
+   /home/seethrou/public_html/new7/typo3conf/ext/flux/Classes/UserFunction/HtmlOutput.php
+   line 26
 
 Getting this error in page view when trying to edited an element
 carousel from the Fluid Bootstrap Theme (fluidbootstraptheme)
@@ -534,24 +544,24 @@ TYPO3 7.6
 
 ::
 
-   #1: PHP Runtime Deprecation Notice: Non-static method TYPO3\CMS\Extbase\Configuration\FrontendConfigurationManager::getTypoScriptSetup() should not be called statically, assuming $this from incompatible context in ...
+   #1: PHP Runtime Deprecation Notice:
+   Non-static method TYPO3\CMS\Extbase\Configuration\FrontendConfigurationManager::getTypoScriptSetup()
+   should not be called statically, assuming $this from incompatible context in ...
 
---------------
-
-I get the following error in the pagemodul with pages containe
-gridelements (7.0.0-dev) after installing von MFC-canonical 2.1.0:
+I get the following error in the page module with pages containing
+gridelements (7.0.0-dev) after installing MFC-canonical 2.1.0:
 
 ::
 
    #1: PHP Warning: Invalid argument supplied for foreach() in D:\...\Source\web\typo3conf\ext\gridelements\Classes\Hooks\DrawItem.php line 95 (More information)
 
---------------
-
 If you get this error:
 
 ::
 
-   PHP Warning:: igbinary_unserialize_header: unsupported version: "a:2:"..., should begin with a binary version header of "\x00\x00\x00\x01" or "\x00\x00\x00\x02"
+   PHP Warning:: igbinary_unserialize_header: unsupported version: "a:2:"...,
+   should begin with a binary version header of "\x00\x00\x00\x01" or
+   "\x00\x00\x00\x02"
 
 Just delete your caches. If you can't login to your backend, delete them
 from the install tool.
@@ -561,15 +571,19 @@ from the install tool.
 TYPO3 7.6.5
 ===========
 
-After Login the following error is shown (7.6.5):
+After login the following error is shown (7.6.5):
 
 ::
 
-   PHP Catchable Fatal Error: Argument 1 passed to TYPO3\CMS\Core\Resource\ResourceStorage::getFileForLocalProcessing() must implement interface TYPO3\CMS\Core\Resource\FileInterface, null given, called in .../typo3_src-7.6.5/typo3/sysext/core/Classes/Resource/Processing/LocalImageProcessor.php on line 118 and defined in.../typo3_src-7.6.5/typo3/sysext/core/Classes/Resource/ResourceStorage.php line 1337
+   PHP Catchable Fatal Error:
+   Argument 1 passed to TYPO3\CMS\Core\Resource\ResourceStorage::getFileForLocalProcessing()
+   must implement interface TYPO3\CMS\Core\Resource\FileInterface, null given,
+   called in .../typo3_src-7.6.5/typo3/sysext/core/Classes/Resource/Processing/LocalImageProcessor.php
+   on line 118 and defined in .../typo3_src-7.6.5/typo3/sysext/core/Classes/Resource/ResourceStorage.php line 1337
 
 In 7.6.5 and 8.0 there is an issue when a sys_file_processed file record
 is deleted but the processed file is still present
-https://review.typo3.org/#/c/47783/ . To temporary work arround the
+https://review.typo3.org/#/c/47783/ . To temporary work around the
 issue you can delete (if known) the specific processed file in
 fileadmin/_processed\_ folder or delete the complete \_processed\_
 folder (files will get generated automatically).
@@ -607,15 +621,18 @@ TYPO3 7.6.16
 Deprecation Notice: mysql_connect()
 -----------------------------------
 
-PHP Runtime Deprecation Notice: mysql_connect(): The mysql extension is
-deprecated and will be removed in the future: use mysqli or PDO instead
-in
-/usr/share/typo3/typo3_src-7.6.16/typo3/sysext/adodb/adodb/drivers/adodb-mysql.inc.php
-line 462 (More information)
+::
 
-TYPO3\CMS\Core\Error\Exception thrown in file
-/usr/share/typo3/typo3_src-7.6.16/typo3/sysext/core/Classes/Error/ErrorHandler.php
-in line 111.
+   PHP Runtime Deprecation Notice:
+   mysql_connect(): The mysql extension is
+   deprecated and will be removed in the future: use mysqli or PDO instead
+   in
+   /usr/share/typo3/typo3_src-7.6.16/typo3/sysext/adodb/adodb/drivers/adodb-mysql.inc.php
+   line 462 (More information)
+
+   TYPO3\CMS\Core\Error\Exception thrown in file
+   /usr/share/typo3/typo3_src-7.6.16/typo3/sysext/core/Classes/Error/ErrorHandler.php
+   in line 111.
 
 .. _solution-10:
 
@@ -630,25 +647,33 @@ php version: PHP 5.6.30-1~dotdeb+7.1 (cli) (built: Jan 21 2017 14:50:59)
 ReflectionProperty::getValue()
 ------------------------------
 
-#. 1: PHP Warning: ReflectionProperty::getValue(): Couldn't fetch
+::
+
+   PHP Warning: ReflectionProperty::getValue(): Couldn't fetch
    mysqli_result in
    /usr/share/typo3/typo3_src-7.6.16/typo3/sysext/extbase/Classes/Utility/DebuggerUtility.php
    line 349 (More information)
 
 This happens when i use
-\\TYPO3\CMS\Core\Utility\DebugUtility::debug($GLOBALS,'GLOBALS');
+
+::
+
+   \\TYPO3\CMS\Core\Utility\DebugUtility::debug($GLOBALS,'GLOBALS');
 
 For some reason the connection to the database fails.
 
 Warning: phpinfo() has been disabled
 ------------------------------------
 
-Eception occurs in Install Tool > System environment
+Exception occurs in Install Tool > System environment
 
-**Uncaught TYPO3 Exception** PHP Warning: phpinfo() has been disabled
-for security reasons in
-/var/www/[...]/vendor/typo3/cms/typo3/sysext/install/Classes/ViewHelpers/PhpInfoViewHelper.php
-line 73
+::
+
+   Uncaught TYPO3 Exception
+   PHP Warning: phpinfo() has been disabled
+   for security reasons in
+   /var/www/[...]/vendor/typo3/cms/typo3/sysext/install/Classes/ViewHelpers/PhpInfoViewHelper.php
+   line 73
 
 .. _solution-11:
 
