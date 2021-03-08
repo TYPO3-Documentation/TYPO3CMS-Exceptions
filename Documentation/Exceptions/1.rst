@@ -97,8 +97,6 @@ Solution
 --------
 
 Delete content of /typo3temp folder.
-http://www.typo3forum.net/forum/typo3-4-x-backend/56543-kein-login-fatal-error-typo3-4-7-1-a.html#post187281
-[not available anymore]
 
 TYPO3 4.7.14
 ============
@@ -206,7 +204,6 @@ fluidpages / fluidcontent
 typo3_src-6.2.0/typo3/sysext/core/Classes/Database/PreparedStatement.php
 line 311
 
-|
 | -
 
 I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
@@ -218,7 +215,7 @@ gridelements v3.0.0-dev https://forge.typo3.org/issues/57833
 Solution
 --------
 
-Download the news versions from GIT of "view"
+Download the new versions from GIT of "view"
 https://github.com/FluidTYPO3/view [not available anymore]
 
 unfortunately only working partly:

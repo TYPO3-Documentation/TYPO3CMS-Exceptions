@@ -36,9 +36,7 @@ Non-CamelCase:
        */
 
 (Working in the files directly, not using the Extension_builder
-[anymore]) In
-`my <https://wiki.typo3.org/wiki/index.php?title=User&action=edit&redlink=1>`__
-[not available anymore] case, the truncating of the cf_-tables was
+[anymore]) In my case, the truncating of the cf_-tables was
 sufficient.
 
 extension_builder bug

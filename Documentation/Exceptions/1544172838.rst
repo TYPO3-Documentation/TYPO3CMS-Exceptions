@@ -26,7 +26,7 @@ verify that the corresponding Flux-TS is included.
 
     (1/1) #1544172838 Error handler could not fetch error pageuntimeException
     Error handler could not fetch error page
-    "https://project.localdomain.vm/http-error-404 [not available anymore]",
+    "https://project.localdomain.vm/http-error-404",
     reason: cURL error 51: SSL: no alternative certificate subject name
     matches target host name 'project.localdomain.vm' (see
     https://curl.haxx.se/libcurl/c/libcurl-errors.html)
