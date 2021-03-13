@@ -34,12 +34,6 @@ jobs:
               -c make_singlehtml 1 \
               -c "/ALL/Menu/mainmenu.sh makehtml -c replace_static_in_html 1 -c make_singlehtml 1 -c jobfile /RESULT/jobfile.json"
 
-      - name: Upload
-        uses: actions/upload-artifact@v1
-        with:
-          name: Rendering of ${{ github.event.repository.name }} (mode ${{ matrix.mode }})
-          path: ./Documentation-GENERATED-temp/Result/project/0.0.0
-
       - name: SCP files to production system
         uses: appleboy/scp-action@master
         with:
