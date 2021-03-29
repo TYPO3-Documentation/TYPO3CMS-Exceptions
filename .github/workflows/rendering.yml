@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.DEPLOY_DOCS_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           source: "Documentation-GENERATED-temp/Result/project/0.0.0/*"
-          rm: false
+          rm: true
           strip_components: 4
           tar_tmp_path: ${{ secrets.TMP_TARGET_PATH }}
           target: ${{ secrets.TARGET_PATH }}
