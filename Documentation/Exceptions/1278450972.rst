@@ -6,6 +6,13 @@ TYPO3 Exception 1278450972
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+
+#1278450972: Class ... does not exist. Reflection failed. TYPO3 9.5
+===================================================================
+
+We had a whitespace at the beginning of the filename of the file containing 
+the class.
+
 #1278450972: The classname "..." was not found and thus can not be reflected.
 =============================================================================
 
