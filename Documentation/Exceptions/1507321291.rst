@@ -7,18 +7,16 @@ TYPO3 Exception 1507321291
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+10.4.13 - 01.04.2021
+====================
 
-   Situation
-   ---------
+Situation
+---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+This happened when installing an old extension that still dependet on $_EXTKEY beeing automatically set.
 
-   Solution
-   --------
+Solution
+--------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+Patched the extension.
+   
