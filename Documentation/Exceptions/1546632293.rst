@@ -12,7 +12,7 @@ TYPO3 10.4.14 - 2021-04-02
 Situation
 ---------
 
-When validating a controller's argument, the following exception is throwed::
+When validating a controller's argument, the following exception is thrown::
 
    #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Order::cart",
    make sure the property is either public or has a getter getCart(), a hasser hasCart() or an isser isCart().
