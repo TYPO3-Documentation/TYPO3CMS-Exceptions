@@ -6,19 +6,30 @@ TYPO3 Exception 1546632293
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 10.4.14 - 2021-04-02
+==========================
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+Situation
+---------
 
-   Situation
-   ---------
+When validating a controller's argument, the following exception is throwed::
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+   #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Order::cart",
+   make sure the property is either public or has a getter getCart(), a hasser hasCart() or an isser isCart().
 
-   Solution
-   --------
+But there is a :php:`public function getCart();` defined in the class.
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+Solution
+--------
+
+In Model, the property is nullable:
+
+::
+
+   protected ?Cart $cart;
+
+Add explicitly a default value:
+
+::
+
+   protected ?Cart $cart = null;
