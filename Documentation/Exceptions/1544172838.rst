@@ -49,3 +49,5 @@ Self signed certificate problem
     SSL certificate problem: self signed certificate (see
     https://curl.haxx.se/libcurl/c/libcurl-errors.html)
 
+You can avoid this exception with $GLOBALS['TYPO3_CONF_VARS']['HTTP']['verify'] = false;
+
