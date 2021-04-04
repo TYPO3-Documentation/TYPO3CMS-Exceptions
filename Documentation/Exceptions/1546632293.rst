@@ -33,3 +33,5 @@ Add explicitly a default value:
 ::
 
    protected ?Cart $cart = null;
+   
+`Read more information on this behaviour <https://blog.reelworx.at/detail/typo3-extbase-and-type-annotations-with-php-74/>`__.
