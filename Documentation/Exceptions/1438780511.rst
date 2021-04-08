@@ -9,6 +9,13 @@ TYPO3 Exception 1438780511
 TCA internal_type of field "..." in table "..." must be set to either `db`, (`file`) or `file_reference`
 ========================================================================================================
 
-In v10.4.3 this exception may happen if an internal type `file` is used, as that type has been deprecated
-in v9.5 and removed in v10. Use `file_reference` instead.
+In v10.4.3 this exception may happen if 
+
+* an `internal_type` `file` or `file_reference` is used in combination with type `group`
+
+Using these types has been deprecated in v9.5 and removed in v10. Only `internal_type` `db`or `folder`
+are allowed.
+
+If you are using files via the file abstraction layer (FAL) or as inline elements (IRRE), you should use
+the `type` `inline` instead.
 
