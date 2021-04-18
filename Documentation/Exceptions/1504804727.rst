@@ -7,21 +7,24 @@ TYPO3 Exception 1504804727
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [10.4] - [9th April 2021]
-   ====================================
 
-   Situation
-   ---------
+[10.4] - [9th April 2021]
+=========================
+
+Situation
+---------
 
 The TYPO3 backend throws an exception, when I click on Extensions.
-(1/1) #1504804727 RuntimeException
 
-This module "tools_ExtensionmanagerExtensionmanager" is only available as system maintainer
-in /foo/bar/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php line 464
+.. code-block::
 
-   Solution
-   --------
+   (1/1) #1504804727 RuntimeException
+   
+   This module "tools_ExtensionmanagerExtensionmanager" is only available as system maintainer
+   in /foo/bar/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php line 464
 
-This currently logged in backend user has been removed from the System Maintainers. 
-You must ask from all backend users who is a System Maintainer. He can put you back.
+Solution
+--------
+
+The currently logged in backend user has been removed from the system maintainers list. 
+Ask for access to be granted again by a backend user who is a system maintainer. Any system maintainer may grant access to other users.
