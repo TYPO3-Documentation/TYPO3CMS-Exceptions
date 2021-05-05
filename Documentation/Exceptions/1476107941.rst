@@ -8,17 +8,34 @@ TYPO3 Exception 1476107941
 
 
 ..
-   [TYPO3 version] - [Date of solution]
+   [TYPO3 LTS 10] - [2021.05.05]
    ====================================
-
    Situation
+   
+   Unable to call the controller configured in a plugin. 
+   
+   TYPO3 creates the wrong class object for the controller.
    ---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
-
-   Solution
+   Environment
+   
+   `ext_localconf.php`:
+   
+   .. code-block::php
+   
+      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+       'vendor.' . 'ext',
+       'name',
+       [
+           'ControllerName' => 'actionName',
+       ],
+       [
+           'ControllerName' => 'actionName',
+       ]
+      );
+   
    --------
+      
+   Solution
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+   Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.
