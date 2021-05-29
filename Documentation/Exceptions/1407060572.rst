@@ -46,3 +46,18 @@ Case 4 - Clear Caches
 
 Clearing caches in Install Tool resolved the error.
 
+Case 5 - fix outdated ViewHelpers
+---------------------------------
+
+In many cases the ViewHelpers of an Extension have changed. This can happen, 
+when partials or templates did not get updated when an extension 
+was updated. In this case you have to check, where the Viewhelper is used 
+and compare it to the new template or partial. 
+
+For example in powermail this ViewHelper:
+:html:`<vh:string.RawAndRemoveXss>{foo}</vh:string.RawAndRemoveXss>`
+
+Is in newer versions this:
+:html:`<vh:string.escapeLabels>{foo}</vh:string.escapeLabels>`
+
+
