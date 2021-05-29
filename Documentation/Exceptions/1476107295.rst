@@ -11,7 +11,7 @@ Permission denied
 
 ::
 
-PHP Warning: session_start(): failed: Permission denied (13)
+   PHP Warning: session_start(): failed: Permission denied (13)
 
 Solution
 --------
@@ -30,6 +30,23 @@ Solution
 
 After I delete the folder "var" in "typo3temp", the next Backend login succeeds.
 
+
+case 2:
+
+::
+
+   #1476107295: PHP Warning: include(/var/www/html/foobar/typo3_src-8.7.29/vendor/composer/../psr/http-message/src/UriInterface.php): failed to open stream: Bad message in /var/www/html/foobar/typo3_src-8.7.29/vendor/composer/ClassLoader.php line 444 (More information)
+
+Solution
+--------
+
+Check your filesystem at the folder given in the error message and run 
+
+::
+
+   sudo fsck -cfk /dev/sda2 
+   
+where dev/sda2 is the corrupted disk.
 
 PHP Warning: Illegal offset type
 ================================
