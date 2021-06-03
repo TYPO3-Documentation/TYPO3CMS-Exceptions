@@ -7,18 +7,33 @@ TYPO3 Exception 1483890482
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+11.3-master - [Date of solution]
+====================================
 
-   Situation
-   ---------
+Situation
+---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+I got this error on defining a node when the title was missing from the 
+language file::
 
-   Solution
-   --------
+   class ImportDataControl extends AbstractNode
+   {
+       public function render()
+       {
+           $result = [
+               'iconIdentifier' => 'import-data',
+               'title' => $GLOBALS['LANG']->sL('LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:pages.importData'),
+               'linkAttributes' => [
+                   'class' => 'importData ',
+                   'data-id' => $this->data['databaseRow']['somefield']
+               ],
+               'requireJsModules' => ['TYPO3/CMS/Examples/ImportData'],
+           ];
+           return $result;
+       }
+   }
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+Solution
+--------
+
+Add :xml:`pages.importData` to :file:`examples/Resources/Private/Language/locallang_db.xlf`
