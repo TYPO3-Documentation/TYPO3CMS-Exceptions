@@ -128,3 +128,11 @@ instead of
         700:
           identifier: null
           templateName: null
+          
+          
+Exception while property mapping at property path "propertyname": The identity property "" is no UID.   
+=====================================================================================================
+
+TYPO3 expects a relation as a property and can't find it. Check if a related database record exists (here: at "propertyname") and make sure to catch the error if no relation is present. 
+
+
