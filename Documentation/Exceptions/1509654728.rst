@@ -8,17 +8,15 @@ TYPO3 Exception 1509654728
 
 
 ..
-   [TYPO3 version] - [Date of solution]
+   [TYPO3 10.4.] - [2021.06.15]
    ====================================
 
    Situation
    ---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+   The exception was thrown when trying to activate an extension which utilized `\TYPO3\CMS\Core\Configuration\ExtensionConfiguration->get()` to load its configurations. The configuration file was missing.
 
    Solution
    --------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+   Make sure a [configuration file](https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ExtensionArchitecture/ConfigurationOptions/Index.html) exists or properly catch the exception.
