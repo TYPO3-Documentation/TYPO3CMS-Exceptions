@@ -19,4 +19,4 @@ The exception was thrown when trying to activate an extension which utilized `\T
 Solution
 --------
 
-Make sure a [configuration file](https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ExtensionArchitecture/ConfigurationOptions/Index.html) exists or properly catch the exception.
+Make sure a configuration file exists or properly catch the exception: https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/ExtensionArchitecture/ConfigurationOptions/Index.html
