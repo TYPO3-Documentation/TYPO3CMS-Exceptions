@@ -22,10 +22,8 @@ f.e. you have used this:
 ::
 
      [globalVar = TSFE:id = {$noLoginPluginOnPids}]
-
-lib.login >
-
-::
+     
+     lib.login >
 
      [global]
 
@@ -42,9 +40,7 @@ change typoscript to:
 
      [globalVar = TSFE:id = {$noLoginPluginOnPids}]
 
-lib.login =
-
-::
+     lib.login =
 
      [global]
 
