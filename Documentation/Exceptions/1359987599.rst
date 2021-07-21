@@ -1,0 +1,24 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1359987599
+==========================
+
+.. include:: /If-you-encounter-this-exception.rst.txt
+
+
+..
+   [TYPO3 version] - [Date of solution]
+   ====================================
+
+   Situation
+   ---------
+
+   Describe everything to understand the situation: Systems, environment, versions.
+   What happened?
+
+   Solution
+   --------
+
+   1. Did you find a solution?
+   2. Explain what you did ..

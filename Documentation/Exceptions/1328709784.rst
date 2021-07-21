@@ -16,5 +16,8 @@ yaml file, but forgot to register the finisher in base config of your
 form setup.
 
 Please ensure that you add your newly created form finisher to config
-section:
-:yaml:`prototypes.standard.formElementsDefinition.finishersDefinition`
+section:  
+:yaml:`TYPO3.CMS.Form.prototypes.standard.finishersDefinition`  
+
+And that yaml is loaded to the plugin and/or module form settings:  
+:typoscript:`plugin.tx_form.settings.yamlConfigurations`  
