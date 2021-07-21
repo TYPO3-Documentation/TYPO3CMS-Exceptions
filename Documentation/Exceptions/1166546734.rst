@@ -36,11 +36,13 @@ According to the hints in TER these kind of keys are invalid:
 -  https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ExtensionKey/Index.html
 
 Reason 3:
+---------
+
 
    1/1) #1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
    Package "" is not available. Please check if the package exists and that the package key is correct (package keys are case sensitive).
    
-Happened on switching from LTS 9 to 10 as :php:`$_EXTKEY` is no more defined. Therefore I called::
+Happened on switching from LTS 9 to 10 as :php:`$_EXTKEY` is no longer defined. Therefore I called::
 
    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         'VENDOR.' . $extensionKey,
