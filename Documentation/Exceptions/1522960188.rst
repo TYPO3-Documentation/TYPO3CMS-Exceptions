@@ -7,11 +7,13 @@ TYPO3 Exception 1522960188
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-`Bug in LTS 9 (fixed)`
-==============================
+Bug in LTS 9 (fixed)
+====================
 
 https://forge.typo3.org/issues/86623
 
-`Faulty configuration for ext:crawler`
-==============================
-The DB table tx_crawler_configuration contained a faulty configuration. Happened when upgrading from LTS 8 to 9 and 10.
+Faulty configuration for ext:crawler
+====================================
+
+The DB table :sql:`tx_crawler_configuration` contains a faulty configuration.
+This may occur when upgrading from LTS 8 to versions 9 and 10.
