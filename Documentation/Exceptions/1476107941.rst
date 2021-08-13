@@ -6,6 +6,32 @@ TYPO3 Exception 1476107941
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+..
+   [TYPO3 11.3] - [2021.08.13]
+   ====================================
+   Situation
+   
+   TYPO3 cannot configure Dependency Injection for the plugin controller.
+   --------
+      
+   Solution
+
+   Dependeny Injection is not properly configured via :file:`Configuration/Services.yaml`.
+   Make sure that either the affected class or all classes (`_default`) have `autoconfigure: true` defined.
+   
+   Bare minimum example:
+   
+   .. code-block::yaml
+   
+      services:
+        _defaults:
+          autowire: true
+          autoconfigure: true
+          public: false
+      
+      Vendor\Extension\:
+        resource: '../Classes/*'
+
 
 ..
    [TYPO3 LTS 10] - [2021.05.05]
