@@ -6,62 +6,55 @@ TYPO3 Exception 1476107941
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-..
-   [TYPO3 11.3] - [2021.08.13]
-   ====================================
-   Situation
-   
-   TYPO3 cannot configure Dependency Injection for the plugin controller.
-   --------
-      
-   Solution
 
-   Dependeny Injection is not properly configured via :file:`Configuration/Services.yaml`.
-   Make sure that either the affected class or all classes (`_default`) have `autoconfigure: true` defined.
-   
-   Bare minimum example:
-   
-   .. code-block::yaml
-   
-      services:
-        _defaults:
-          autowire: true
-          autoconfigure: true
-          public: false
-      
-      Vendor\Extension\:
-        resource: '../Classes/*'
+[TYPO3 11.3] - [2021.08.13]
+====================================
 
 
-..
-   [TYPO3 LTS 10] - [2021.05.05]
-   ====================================
-   Situation
-   
-   Unable to call the controller configured in a plugin. 
-   
-   TYPO3 creates the wrong class object for the controller.
-   ---------
+TYPO3 cannot configure Dependency Injection for the plugin controller.
+----------------------------------------------------------------------
 
-   Environment
-   
-   `ext_localconf.php`:
-   
-   .. code-block::php
-   
-      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-       'vendor.' . 'ext',
-       'name',
-       [
-           'ControllerName' => 'actionName',
-       ],
-       [
-           'ControllerName' => 'actionName',
-       ]
-      );
-   
-   --------
-      
-   Solution
+Dependeny Injection may not be properly configured via :file:`Configuration/Services.yaml`.
+Make sure that either the affected class or all classes (`_defaults`) have :yaml:`autoconfigure: true` defined.
 
-   Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.
+Bare minimum example:
+
+.. code-block::yaml
+
+   services:
+     _defaults:
+       # ...
+       autoconfigure: true
+       # ...
+   
+   # ...
+
+
+
+[TYPO3 LTS 10] - [2021.05.05]
+====================================
+
+Unable to call the controller configured in a plugin. 
+------------------------------------------------------
+
+TYPO3 creates the wrong class object for the controller.
+
+Environment:
+
+`ext_localconf.php`:
+
+.. code-block::php
+
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'vendor.' . 'ext',
+    'name',
+    [
+        'ControllerName' => 'actionName',
+    ],
+    [
+        'ControllerName' => 'actionName',
+    ]
+   );
+
+
+Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.
