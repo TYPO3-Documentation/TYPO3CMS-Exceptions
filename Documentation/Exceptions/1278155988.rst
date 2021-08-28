@@ -10,12 +10,23 @@ Broken character in locallang files
 ====================================
 
 This exception happens if you have invalid characters in a `locallang.xlf` file.
-For example
 
-.. code-block: xml
+_Example_
+
+Bad:
+
+.. code-block:: xml
 
    <trans-unit >
     <source>Bootstrap Package: Left & normal, 2 Columns</source>
    </trans-unit>
 
-Make sure to use `CDATA` to escape special characters.
+Good:
+
+Wrap with `CDATA` to escape special characters.
+
+.. code-block:: xml
+
+   <trans-unit >
+    <source><![CDATA[Bootstrap Package: Left & normal, 2 Columns]]></source>
+   </trans-unit>
