@@ -15,9 +15,9 @@ The action "..." is not allowed by this plugin.
 
 ::
 
-   Tx_Extbase_Utility_Extension::configurePlugin(
-       $_EXTKEY,
-       'yourExtensionEky',
+   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+       '<VendorName>.<ExtensionName>,
+       '<PluginName>',
        array(
            'yourController' => 'yourAction',
        ),
