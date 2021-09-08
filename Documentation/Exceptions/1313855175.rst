@@ -31,6 +31,10 @@ or as of extbase 4.7 you need to update your FlexForm with all necessary
 actions (semicolon separated) in case you use
 switchableControllerActions:
 
+.. info::
+   As of LTS 10 switchable controller actions are deprecated.
+   For details, please see https://docs.typo3.org/c/typo3/cms-core/10.4/en-us/Changelog/10.3/Deprecation-89463-SwitchableControllerActions.html
+
 .. code-block:: xml
 
    <switchableControllerActions>
