@@ -32,7 +32,8 @@ actions (semicolon separated) in case you use
 switchableControllerActions:
 
 .. info::
-   As of LTS 10 switchable controller actions are deprecated.
+   
+   As of TYPO3 10.3 switchable controller actions are deprecated.
    For details, please see https://docs.typo3.org/c/typo3/cms-core/10.4/en-us/Changelog/10.3/Deprecation-89463-SwitchableControllerActions.html
 
 .. code-block:: xml
