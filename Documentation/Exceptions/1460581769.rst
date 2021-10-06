@@ -50,3 +50,8 @@ Solution
 .. code-block:: sql
 
    UPDATE sys_redirect SET target='t3://page?uid=1004' WHERE target='t3://page=uid=p1004';
+
+Core issue
+----------
+
+* https://forge.typo3.org/issues/95488
