@@ -6,9 +6,8 @@ TYPO3 Exception 1460581769
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-
-10.4.21 - October 6, 2021
-=========================
+TYPO3 10.4.21 - October 6, 2021
+===============================
 
 Situation
 ---------
@@ -30,7 +29,7 @@ Solution
 1. This can be fixed by entering a correct target in the redirect.
 2. Because of the exception, it can't be done in the redirects module, must be done in the
    database directly, e.g.
-   
+
 .. code-block:: sql
 
-   UPDATE sys_redirect SET target='t3://page?uid=1004' WHERE target='t3://page=uid=p1004';   
+   UPDATE sys_redirect SET target='t3://page?uid=1004' WHERE target='t3://page=uid=p1004';
