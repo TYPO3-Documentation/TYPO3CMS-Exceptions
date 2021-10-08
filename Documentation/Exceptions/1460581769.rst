@@ -6,7 +6,6 @@ TYPO3 Exception 1460581769
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-
 ..
    [TYPO3 version] - [Date of solution]
    ====================================
@@ -22,3 +21,37 @@ TYPO3 Exception 1460581769
 
    1. Did you find a solution?
    2. Explain what you did ..
+
+
+TYPO3 10.4.21 - October 6, 2021
+===============================
+
+Situation
+---------
+
+* Exception in FE on loading page: Oops, an error occurred! LinkHandler for page=uid=p1004 was not registered
+* Exception in redirects module when filtering for the redirect where this problem occurs (e.g. enter the source URL)
+
+The exception is logged, you can find the exception stack trace in the TYPO3 log.
+
+Cause of problem
+----------------
+
+* An invalid link target was entered in a redirect, e.g. target=`t3://page=uid=p1004`
+
+
+Solution
+--------
+
+1. This can be fixed by entering a correct target in the redirect.
+2. Because of the exception, it can't be done in the redirects module, must be done in the
+   database directly, e.g.
+
+.. code-block:: sql
+
+   UPDATE sys_redirect SET target='t3://page?uid=1004' WHERE target='t3://page=uid=p1004';
+
+Core issue
+----------
+
+* https://forge.typo3.org/issues/95488
