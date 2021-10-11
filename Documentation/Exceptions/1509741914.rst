@@ -7,25 +7,31 @@ TYPO3 Exception 1509741914
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 11.5.0 - ext:news dev-master - 8.10.2021
+==============================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
+TYPO3 11.5.0 with composer and ext:news dev-master using the default news templates
+that come bundled with the extension.
+
+The Issue
+---------
+
+The following error when displaying a page with the news plugin::
+
+   (1/2) #1509741914 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+   File /typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png does not exist.
    
-   The Issue
-   ---------
+The dummy image is present in the path.
+
+Solution
+--------
+
+As a workaround set the following TypoScript::
+
+   plugin.tx_news.settings.displayDummyIfNoMedia = 1
    
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+For further informatin, visit https://github.com/georgringer/news/issues/1589
 
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
