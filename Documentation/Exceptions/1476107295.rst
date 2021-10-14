@@ -159,3 +159,19 @@ Extension gridelements in debug mode
 When gridelements is enabled in debug mode, this error comes currently
 in V10.4.12 - disable the ext, when you are in debug mode and you are
 good to go.
+
+
+
+PHP Warning: Undefined array key "<field>" in InlineRecordContainer.php
+===============================================================================
+
+Using TYPO3v11 with PHP 8.0 this error occurs because of an invalid TCA configuration.
+
+Solution
+--------
+
+Check your TCA configuration, inside the :php:`ctrl` section columns might be referenced which have not been defined in :php:`columns`, e.g. `hidden`.
+
+Remove the offending entry in your :php:`ctrl` section or add the missing column to :php:`columns`.
+
+
