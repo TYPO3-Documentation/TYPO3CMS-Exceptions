@@ -170,7 +170,8 @@ Using TYPO3v11 with PHP 8.0 this error occurs because of an invalid TCA configur
 Solution
 --------
 
-Check your TCA files, if inside ctrl-Section fields are defined, which aren't defined in columns, e.g. hidden.
-Remove the entry in ctrl section or make clear definition of enabledColumn in column section.
+Check your TCA configuration, inside the :php:`ctrl` section columns might be referenced which have not been defined in :php:`columns`, e.g. `hidden`.
+
+Remove the offending entry in your :php:`ctrl` section or add the missing column to :php:`columns`.
 
 
