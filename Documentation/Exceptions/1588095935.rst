@@ -23,10 +23,5 @@ is enabled by default.
 Solution
 --------
 
-Disable the feature by editing :file:`LocalConfiguration.php`::
-
-   'SYS' => [
-           'features' => [
-               'security.backend.enforceReferrer' => false,
-           ],
-   ]
+Please have a look at `the related security advisory <https://typo3.org/security/advisory/typo3-core-sa-2020-006>`__
+for possible workarounds and solutions.
