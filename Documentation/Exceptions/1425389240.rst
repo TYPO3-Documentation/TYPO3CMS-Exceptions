@@ -9,6 +9,11 @@ TYPO3 Exception 1425389240
 The requested resource "..." was not found.
 ===========================================
 
+Affected: 9.5.x and maybe earlier versions
+
+If this errors occures for the TYPO3 backend and/or install tool,
+check the file PackageStates.php, the extension "backend" might be missing. 
+
 Affected: 7.4.0 and 7.5.0-dev and maybe earlier versions.
 
 See https://forge.typo3.org/issues/66704
@@ -17,5 +22,5 @@ Limitation: When I delete all pages in the page tree, and then try to
 right-click-"New" => I hit the error again. Basically this means that
 this workaround only works as long as you don't delete all pages.
 
-As soon as https://forge.typo3.org/issues/66704 is fixed and the
-corresponding version released, an update might fix the problem.
+The issue https://forge.typo3.org/issues/66704 has been fixed and the
+corresponding version released, updating to the latest 7.5 version might fix the problem.
