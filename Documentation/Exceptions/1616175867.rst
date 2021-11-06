@@ -7,18 +7,30 @@ TYPO3 Exception 1616175867
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+TYPO3 11.5 - 2021-11-06
+=======================
 
-   Situation
-   ---------
+Situation
+---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+After several attempts to login, the backend login is locked:
+   
+.. code-block:: none
+   
+   #1616175867 TYPO3\CMS\Core\RateLimiter\RequestRateLimitedException
+   The login is locked until 06-11-21 08:29 due to too many failed login attempts from your IP address.
 
-   Solution
-   --------
+   
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+Solution
+--------
+
+You can unlock the backend using the CLI command backend:unlock
+
+.. code-block:: shell
+
+   vendor/bin/typo3 backend:unlock
+   
+.. seealso::
+
+-  :ref:`t3coreapi:symfony-console-commands-cli`
