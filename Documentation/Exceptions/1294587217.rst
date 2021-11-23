@@ -47,7 +47,7 @@ Save the template and open the page in the frontend. You should see the
 words "HELLO WORLD!".
 
 Another possibility is that you are trying to access a page with an
-undefined page type. E.g. ``example.org/?type=123``, but you do not
+undefined page type. E.g. :samp:`https://example.org/?type=123`, but you do not
 have a ``(page).typeNum = 123`` defined in your TypoScript template.
 
 Using broken TypoScript
