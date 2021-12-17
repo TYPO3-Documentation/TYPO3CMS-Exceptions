@@ -44,3 +44,7 @@ not removed the cache files in typo3conf.
 
 To do so simply remove these files go to your TYPO3 Installation and in
 the shell type `rm typo3conf/temp_CACHED_\*` and reload the page.
+
+This exception is raised if you upgraded from TYPO3 9.5 to 10.4 and then immediately to 11 .
+Solution: Delete your cookies.
+
