@@ -14,9 +14,12 @@ TYPO3 Exception 1518472257
    Situation
    ---------
 
-   After upgrading a TYPO3 System from 8.7.41 it looks like the standard 404 Page could not be fetched due to the lack of a site configuration. This only happened, when upgrading a multi-domain-setup
+   After upgrading a TYPO3 system from 8.7.41 it looks like the standard 404 page could not
+   be fetched due to the lack of a site configuration. This only happens, when upgrading 
+   a multi-domain-setup.
 
    Solution
    --------
 
-   No site configuration after upgrading a multi-domain-setup - Add site configurations to all possible Templates and deactivate the "Domain" Items in List Module
+   No site configuration after upgrading a multi-domain-setup - Add site configurations to all 
+   possible templates and deactivate the "Domain" items in list module
