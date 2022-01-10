@@ -16,18 +16,15 @@ Deleting the files *typo3conf/temp_CACHED_\** and truncating the
 caching-framework-tables beginning with *cf\_* helped for me.
 
 // Additional Situations, observed in TYPO3 6.1.2, Extbase 6 This
-exception is also thrown when, in the course of development: - a
-variable is changed, e.g. from CamelCase to non-CamelCase:
+exception is also thrown when, in the course of development:
 
-::
+- a variable is changed, e.g. from CamelCase to non-CamelCase::
 
       protected $pressReview
       protected $pressreview
 
 - a variable annotation is changed, e.g. from CamelCase to
-Non-CamelCase:
-
-::
+  Non-CamelCase::
 
       /**
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
@@ -38,7 +35,7 @@ Non-CamelCase:
        */
 
 (Working in the files directly, not using the Extension Builder
-[anymore]) In my case, the truncating of the cf_-tables was
+[anymore]) In my case, the truncating of the cf\_-tables was
 sufficient.
 
 Extension Builder bug
@@ -82,7 +79,7 @@ To fix this:
 
 -  Clear TYPO3 Caches
 -  Delete typo3temp/\*
--  As stated before, truncating the cf_-tables was needed before the
+-  As stated before, truncating the cf\_-tables was needed before the
    error stopped.
 -  May also be caused by incorrectly formatted comments - a missing \* on
    the first line (only having one star) will stop the parser finding the

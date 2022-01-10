@@ -9,7 +9,7 @@ TYPO3 Exception 1481380393
 Might happen after upgrading to TYPO3 8.7 LTS or above.
 
 Fix: Check the syntax in your FlexForms when using :xml:`<displayCond>`. See the
-:ref:`displayCond in the TCA Reference <t3tca:columns-properties-displaycond>:`
+:ref:`displayCond in the TCA Reference <t3tca:columns-properties-displaycond>`:
 
 Old:
 ====

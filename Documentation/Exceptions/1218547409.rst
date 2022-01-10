@@ -11,7 +11,7 @@ $className must implement interface `PageLayoutViewDrawItemHookInterface::class`
 
 - Try deleting all caches
 - Older versions: Try deleting all files in :file:`typo3temp/autoload` through
-console.
+  console.
 
 ``rm -rf typo3temp/autoload/*``
 

@@ -18,14 +18,14 @@ may display this error for wrongly configured form finishers.
 Solution
 ~~~~~~~~
 
-Comment out one finisher at a time in the form definition file (*.form.yaml) to
+Comment out one finisher at a time in the form definition file (\*.form.yaml) to
 find the culprit.
 
 
 Using TCEforms FlexForm
 -----------------------
 
- The error message only gives an example table
+The error message only gives an example table
 name and table field, because due to some migration to real names are
 not used in this error message. So you have to do some guesswork from
 which extension causes this error. Check the FlexForm file

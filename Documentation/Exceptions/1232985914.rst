@@ -14,4 +14,4 @@ The PHP extension "apcu" must be installed and loaded in order to use the APCu b
 #. Goto TYPO3 *Install Tool* --> *Configuration Presets* and
    choose *Database cache backend* (or: something different then `apcu`) and save.
 #. On a Hetzner server: Disable, save and then re-enable APC in Hetzner server management console to get
-it fixed.
+   it fixed.

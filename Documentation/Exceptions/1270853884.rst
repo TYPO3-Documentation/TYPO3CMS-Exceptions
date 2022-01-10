@@ -28,15 +28,12 @@ Restart the MySQL daemon.
 2. type: /etc/init.d/mysql restart
    On Mac OSX 10.10 (Yosemite) type:
    sudo /usr/local/mysql/support-files/mysql.server stop
-3. If you get this error:
+3. If you get this error::
 
-::
+      ERROR! The server quit without updating PID file (/usr/local/mysql/data/<SERVERNAME>.pid)
 
-   ERROR! The server quit without updating PID file (/usr/local/mysql/data/<SERVERNAME>.pid)
-
-Then your next option is to kill the mysql process manually by following this instructions:
-http://stackoverflow.com/questions/26263889/starting-mysql-error-the-server-quit-without-updating-pid-file/26266079#26266079
-
+   Then your next option is to kill the mysql process manually by following this instructions:
+   http://stackoverflow.com/questions/26263889/starting-mysql-error-the-server-quit-without-updating-pid-file/26266079#26266079
 4. Then restart mysql daemon again. This time it should work.
    On Mac OSX 10.10 (Yosemite) type:
    sudo /usr/local/mysql/support-files/mysql.server start
@@ -53,8 +50,10 @@ Proceed as follows:
 3. login as root in your server
 4. login to mysql as admin/root (mysql -u root -p)
 5. select database, type: use mysql;
-6. just switched to mysql db change the password of the user:
-update mysql.user set password=PASSWORD('password') where user='db-username'
-obviously substitute db-username with the 'username' and 'password' with the right (old or new password) used to access your db, stored in: typo3conf/LocalConfiguration.php
+6. just switched to mysql db change the password of the user::
+
+      update mysql.user set password=PASSWORD('password') where user='db-username'
+
+   obviously substitute db-username with the 'username' and 'password' with the right (old or new password) used to access your db, stored in: typo3conf/LocalConfiguration.php
 7. restart your mysql daemon: /etc/init.d/mysqld restart
-8. eventually remove all site cache: rm -rif typo3temp/Cache*
+8. eventually remove all site cache: rm -rif typo3temp/Cache\*

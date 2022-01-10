@@ -7,7 +7,7 @@ TYPO3 Exception 1404068038
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 No extension key could be determined when calling `addPlugin()`
-==============================================================
+===============================================================
 
 You will see this exception most likely because
 `\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin()` is used

@@ -113,11 +113,7 @@ See on TYPO3 Forge here : https://forge.typo3.org/issues/53921
 Upgrade to TYPO3 7.6.2
 ======================
 
-The Extension Manager does not work and gives this error message. ````
-
-````
-
-::
+The Extension Manager does not work and gives this error message::
 
    Uncaught TYPO3 Exception
    #1237823695: Argument "jQueryNamespace" was not registered. (More information)
@@ -131,10 +127,7 @@ The Extension Manager does not work and gives this error message. ````
    00566:           $this->abortIfRequiredArgumentsAreMissing($expectedViewHelperArguments, $argumentsObjectTree);
    00567:         $this->rewriteBooleanNodesInArgumentsObjectTree($expectedViewHelperArguments, $argumentsObjectTree);
 
-````
-
-```` Solution: Start the Install Tool and press the button "Clear all
-cache".
+Solution: Start the Install Tool and press the button "Clear all cache".
 
 Removal of deprecated code in sysext fluid
 ==========================================

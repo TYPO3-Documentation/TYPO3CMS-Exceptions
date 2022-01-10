@@ -15,10 +15,10 @@ _Example_
 
 Bad:
 
-.. code-block:: xml
+.. code-block:: none
 
-   <trans-unit >
-    <source>Bootstrap Package: Left & normal, 2 Columns</source>
+   <trans-unit>
+      <source>Bootstrap Package: Left & normal, 2 Columns</source>
    </trans-unit>
 
 Good:
@@ -27,6 +27,6 @@ Wrap with `CDATA` to escape special characters.
 
 .. code-block:: xml
 
-   <trans-unit >
-    <source><![CDATA[Bootstrap Package: Left & normal, 2 Columns]]></source>
+   <trans-unit>
+      <source><![CDATA[Bootstrap Package: Left & normal, 2 Columns]]></source>
    </trans-unit>
