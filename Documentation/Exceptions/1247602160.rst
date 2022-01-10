@@ -85,7 +85,7 @@ set**, seems to solve this issue:
 'tx_staticinfotables_domain_model_language' doesn't exist
 =========================================================
 
-.. code-block:: sql
+.. code-block:: none
 
    Oops, an error occurred!
    Table '[DB_NAME.tx_staticinfotables_domain_model_language' doesn't exist.

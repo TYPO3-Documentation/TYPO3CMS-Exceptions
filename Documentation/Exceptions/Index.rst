@@ -1,5 +1,4 @@
 .. include:: /Includes.rst.txt
-.. _TYPO3-Exceptions::
 
 ================
 TYPO3 Exceptions

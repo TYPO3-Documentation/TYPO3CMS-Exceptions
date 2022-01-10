@@ -21,7 +21,7 @@ data type.
 
 **Solution:**
 
-#. check doc header, it must start with /*\* (two stars).
+#. check doc header, it must start with \*\* (two stars).
 #. attribute must be mentioned as @param type $variableName.
 #. alternatively use $this->registerArgument() in initializeArguments()
    method.

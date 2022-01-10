@@ -247,8 +247,6 @@ error. In my case it happens to be a weird caching issue. Actually
 hitting the "Clear cache" button in the install tool should solve that,
 but somehow that alone won't work.
 
-.. _solution-1:
-
 Solution
 --------
 

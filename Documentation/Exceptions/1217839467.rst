@@ -6,7 +6,7 @@ TYPO3 Exception 1217839467
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-   Could not ultimately dispatch the request after ' . $dispatchLoopCount . ' iterations.
+-  Could not ultimately dispatch the request after ' . $dispatchLoopCount . ' iterations.
    Most probably, a @' . \TYPO3\CMS\Extbase\Annotation\IgnoreValidation::class . ' annotation
    is missing on re-displaying a form with validation errors.
 
@@ -17,5 +17,6 @@ TYPO3 Exception 1217839467
 
 -  Check if you have annotated `@ignorevalidation $myObject` in your
    action (or `@dontvalidate` for older Extbase version < 6.1)
+
 -  Some hints (in German) can be found here:
    http://www.typo3.net/forum/beitraege/extbase_und_fluid/108844/

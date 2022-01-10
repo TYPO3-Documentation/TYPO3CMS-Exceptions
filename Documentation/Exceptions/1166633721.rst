@@ -8,6 +8,6 @@ TYPO3 Exception 1166633721
 
 
 `\TYPO3\Flow\Package\Exception`
-==============================
+===============================
 
 Exception happens while building class files for the class loader in TYPO3 6.2.
