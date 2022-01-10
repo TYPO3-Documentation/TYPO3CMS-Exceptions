@@ -6,9 +6,11 @@ TYPO3 Exception 1251315967
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This exception rose in one installation(TYPO3 4.6.9-15) after changing
-direction of relations in the extension_builder between two models after
-having already inserted some entries to the list-view in the backend.
+This exception rose in one installation (TYPO3 4.6.9-15) after changing
+direction of relations in the
+`Extension Builder <https://extensions.typo3.org/extension/extension_builder>`__
+between two models after having already inserted some entries to the list-view
+in the backend.
 
 Deleting the files *typo3conf/temp_CACHED_\** and truncating the
 caching-framework-tables beginning with *cf\_* helped for me.
@@ -35,15 +37,15 @@ Non-CamelCase:
        * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
        */
 
-(Working in the files directly, not using the Extension_builder
+(Working in the files directly, not using the Extension Builder
 [anymore]) In my case, the truncating of the cf_-tables was
 sufficient.
 
-extension_builder bug
+Extension Builder bug
 =====================
 
-In another case, this occurred in the extension builder v6.2.0 after the
-modification of an extension via the extension builder to add a new
+In another case, this occurred in the Extension Builder v6.2.0 after the
+modification of an extension via the Extension Builder to add a new
 model object and relate it in a 1:n relation. The previously created
 model, which was meant to hold a set (n) of the new model, was missing
 the new model in the new dependency injections. The code generated was
