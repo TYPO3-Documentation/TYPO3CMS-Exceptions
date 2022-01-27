@@ -6,8 +6,11 @@ TYPO3 Exception 1253191023
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TypoScript object path "tt_content.list.20.yourext" does not exist
-==================================================================
+TypoScript object path "tt_content.list.20.your_extension" does not exist
+=========================================================================
+
+Missing content rendering definition
+------------------------------------
 
 Using `fluid_styled_content`: had to add a list entry for my current plugin.
 `fluid_styled_content` needs you to override its default *if you change
@@ -32,3 +35,16 @@ something like this:
            templateName = YourListTemplateName
        }
    }
+
+
+Removed/inactive extension
+--------------------------
+
+::
+
+   TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+   TypoScript object path "tt_content.list.your_extension." does not exist
+
+This could be cause by a frontend plugin from an extension which has been removed/deactivated in the meantime.
+
+A possible fix is hiding/removing the plugin or installing/activating the related extension again.
