@@ -37,8 +37,8 @@ something like this:
    }
 
 
-Case 2 - Not activated extension
----------------------------------
+Removed/inactive extension
+--------------------------
 
 ::
 
