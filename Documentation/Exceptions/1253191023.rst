@@ -32,3 +32,11 @@ something like this:
            templateName = YourListTemplateName
        }
    }
+
+
+::
+
+   TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+   TypoScript object path "tt_content.list.20.5" does not exist
+
+This means that you have inserted a frontend plugin, but the corresponding extension (tt_products) is not activated.
