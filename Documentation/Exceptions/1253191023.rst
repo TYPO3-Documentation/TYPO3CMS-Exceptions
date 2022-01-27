@@ -45,5 +45,6 @@ Removed/inactive extension
    TYPO3Fluid\Fluid\Core\ViewHelper\Exception
    TypoScript object path "tt_content.list.your_extension." does not exist
 
-This means that you have formerly activated an extension. Then you have inserted a frontend plugin. 
-But at a later time you have deactivated this extension. You must either hide this plugin or activate the extension again.
+This could be cause by a frontend plugin from an extension which has been removed/deactivated in the meantime.
+
+A possible fix is hiding/removing the plugin or installing/activating the related extension again.
