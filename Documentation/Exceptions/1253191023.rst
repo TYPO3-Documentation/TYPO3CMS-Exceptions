@@ -6,8 +6,11 @@ TYPO3 Exception 1253191023
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-TypoScript object path "tt_content.list.20.yourext" does not exist
-==================================================================
+TypoScript object path "tt_content.list.20.your_extension" does not exist
+=========================================================================
+
+Case 1 - Missing entry in Fluid Styled Content
+----------------------------------------------
 
 Using `fluid_styled_content`: had to add a list entry for my current plugin.
 `fluid_styled_content` needs you to override its default *if you change
@@ -34,9 +37,13 @@ something like this:
    }
 
 
+Case 2 - Not activated extension
+---------------------------------
+
 ::
 
    TYPO3Fluid\Fluid\Core\ViewHelper\Exception
-   TypoScript object path "tt_content.list.20.5" does not exist
+   TypoScript object path "tt_content.list.your_extension." does not exist
 
-This means that you have inserted a frontend plugin, but the corresponding extension (tt_products) is not activated.
+This means that you have formerly activated an extension. Then you have inserted a frontend plugin. 
+But at a later time you have deactivated this extension. You must either hide this plugin or activate the extension again.
