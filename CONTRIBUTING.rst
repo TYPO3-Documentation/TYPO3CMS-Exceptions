@@ -13,7 +13,7 @@ Create Issues
 Make changes (create pull requests)
 ===================================
 
-*  In order to make changes on a `rendered page <https://docs.typo3.org/typo3cms/exceptions/master/en-us/>`__,
+*  In order to make changes on a `rendered page <https://docs.typo3.org/typo3cms/exceptions/main/en-us/>`__,
    just click on "Edit me on GitHub".
 *  For a step-by-step walkthrough for making a change, see
    `Contribute to docs.typo3.org <https://docs.typo3.org/typo3cms/HowToDocument/WritingDocsOfficial/Index.html>`__

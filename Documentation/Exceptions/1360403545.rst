@@ -14,5 +14,5 @@ TYPO3 Exception 1360403545
 
    Solution
    --------
-   
-   Extension key in `ext_emconf.php` was defined as string constant instead of `$_EXTKEY`. See [documentation](https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ExtensionArchitecture/DeclarationFile/Index.html) for `ext_emconf.php`.
+
+   Extension key in `ext_emconf.php` was defined as string constant instead of `$_EXTKEY`. See [documentation](https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/DeclarationFile/Index.html) for `ext_emconf.php`.

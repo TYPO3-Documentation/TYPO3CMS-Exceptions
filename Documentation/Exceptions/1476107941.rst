@@ -26,7 +26,7 @@ Bare minimum example:
        # ...
        autoconfigure: true
        # ...
-   
+
    # ...
 
 
@@ -34,7 +34,7 @@ Bare minimum example:
 [TYPO3 LTS 10] - [2021.05.05]
 ====================================
 
-Unable to call the controller configured in a plugin. 
+Unable to call the controller configured in a plugin.
 ------------------------------------------------------
 
 TYPO3 creates the wrong class object for the controller.
@@ -57,4 +57,4 @@ Environment:
    );
 
 
-Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.
+Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.

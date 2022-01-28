@@ -14,7 +14,7 @@ This error might be caused by inserting content into a Fluid template by
 
 If the TypoScript object uses a :ts:`insertData = 1` or the datawrap curly
 braces might get parsed, see
-https://docs.typo3.org/m/typo3/reference-typoscript/master/en-us/Functions/Stdwrap.html?highlight=insertdata.
+https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/Functions/Stdwrap.html?highlight=insertdata.
 
 So, the serialized value of the hidden form field
 :php:`tx_form_formframework[__trustedProperties]`  get's parsed, too. The

@@ -17,7 +17,7 @@ extension key anymore. Solution: use the hardcoded extension key within
 ext_tables.php and :file:`ext_localconf.php`.
 
 See this page for further details:
-`best-practices-for-ext-tables-php-and-ext-localconf-php <https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ExtensionArchitecture/ConfigurationFiles/Index.html#best-practices-for-ext-tables-php-and-ext-localconf-php>`__
+`best-practices-for-ext-tables-php-and-ext-localconf-php <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/ConfigurationFiles/Index.html#best-practices-for-ext-tables-php-and-ext-localconf-php>`__
 
 However, notice that $_EXTKEY `must be used in
 ext_emconf.php <https://github.com/TYPO3/CmsComposerInstallers/pull/59>`__.

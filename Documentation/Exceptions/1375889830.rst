@@ -12,7 +12,7 @@ You are not allowed to access files outside your storages
 This exception is thrown in FAL whenever you are trying to access a file
 outside of your configured storages. The default storage is fileadmin
 (see
-https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/Fal/Index.html).
+https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Fal/Index.html).
 
 In backend modules this exception will occur if files in legacy
 folders/storages are accessed, which is prohibited due to security
