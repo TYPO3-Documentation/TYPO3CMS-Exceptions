@@ -25,4 +25,4 @@ free to create a new bug report.
 
 **For developers:**
 
-See https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/FormProtection/Index.html
+See https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/FormProtection/Index.html

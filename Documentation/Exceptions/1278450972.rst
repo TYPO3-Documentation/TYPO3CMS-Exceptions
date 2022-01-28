@@ -10,7 +10,7 @@ TYPO3 Exception 1278450972
 #1278450972: Class ... does not exist. Reflection failed. TYPO3 9.5
 ===================================================================
 
-We had a whitespace at the beginning of the filename of the file containing 
+We had a whitespace at the beginning of the filename of the file containing
 the class.
 
 #1278450972: Class ... does not exist. Reflection failed. After updating to TYPO3 11
@@ -18,7 +18,7 @@ the class.
 
 We missed the required update in the registration of plugins and modules to use the full class name.
 
-See `Breaking: #92609 - Use controller classes when registering plugins/modules <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/11.0/Breaking-92609-UseControllerClassesWhenRegisteringPluginsmodules.html>`__.
+See `Breaking: #92609 - Use controller classes when registering plugins/modules <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/11.0/Breaking-92609-UseControllerClassesWhenRegisteringPluginsmodules.html>`__.
 
 #1278450972: The classname "..." was not found and thus can not be reflected.
 =============================================================================

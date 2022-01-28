@@ -11,6 +11,6 @@ No columns definition in TCA table
 
 On possible cause for this is the use of old :file:`ext_tables.php`/TCA
 configuration. Please see
-https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/7.6/Index.html
+https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/7.6/Index.html
 for the changes in TYPO3. Also, the TCA file must return the array, not
 only declare it, as would work before.
