@@ -10,3 +10,5 @@ Error occurs after importing database dump and open the backend the
 first time. No login, normally automatically logged in by a service.
 Maybe old temporary files or other old data. Clear InstallTool Cache
 solve the problem.
+
+The error might also occur due to a very strict referrer-policy of your webserver. For instance, if you set it to 'Header set Referrer-Policy "strict-origin"' in your Apache server, you will see this page after trying to login to the backend.
