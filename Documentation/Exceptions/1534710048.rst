@@ -48,4 +48,4 @@ Extension news or tt_address needs updates
 
 Some versions of the extensions news and tt_address can cause this error
 on opening records like sys_category. Updating the extension to the most
-recent version can help. For example updating News to version 8.4.1 or newer [fixes this issue](https://github.com/georgringer/news/commit/20e9866807616fa1ca55a2c43a516a29705ffca9).
+recent version can help. For example updating News to version 8.4.1 or newer `fixes this issue <https://github.com/georgringer/news/commit/20e9866807616fa1ca55a2c43a516a29705ffca9>`_.
