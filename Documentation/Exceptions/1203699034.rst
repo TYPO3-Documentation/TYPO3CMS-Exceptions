@@ -57,4 +57,4 @@ Replace it with
 ::
    $GLOBALS['TYPO3_CONF_VARS']['SYS']
 
-and they maybe you need to compare you datebase again from install tool.
+and maybe you need to compare your datebase scheme again in the admin tools.
