@@ -44,3 +44,17 @@ not removed the cache files in typo3conf.
 
 To do so simply remove these files go to your TYPO3 Installation and in
 the shell type `rm typo3conf/temp_CACHED_\*` and reload the page.
+
+--------------
+
+If you have upgraded from v8.x to v9 or v10 then there is a possibility that cache configuration is defined with
+
+::
+   $TYPO3_CONF_VARS['SYS']
+
+Replace it with
+
+::
+   $GLOBALS['TYPO3_CONF_VARS']['SYS']
+
+and maybe you need to compare your datebase scheme again in the admin tools.
