@@ -16,16 +16,19 @@ The action "..." is not allowed by this plugin.
 ::
 
    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-       '<VendorName>.<ExtensionName>,
+       '<ExtensionName>,
        '<PluginName>',
-       array(
-           'yourController' => 'yourAction',
-       ),
+       [
+           \Vendor\ExtensionName\Controller\YourController::class => 'yourAction',
+       ],
        // non-cacheable actions
-       array(
+       [
 
-       )
+       ]
    );
+   
+   
+   
 
 or as of extbase 4.7 you need to update your FlexForm with all necessary
 actions (semicolon separated) in case you use
