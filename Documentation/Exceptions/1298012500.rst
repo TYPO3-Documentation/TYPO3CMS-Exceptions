@@ -13,3 +13,10 @@ This happens when an action method requires a parameter (e.g. domain
 object), but the POST request did not contain that data.
 
 This may happen when a form is submitted without filling any values.
+
+Make sure the `objectName` parameter matches the method parameter name in your
+action:
+
+.. code-block:: html
+
+    <f:form action="someAction" objectName="argumentName" object="{someObjectName}">
