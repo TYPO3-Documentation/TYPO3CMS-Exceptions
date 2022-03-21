@@ -16,15 +16,15 @@ Situation
 
 The TYPO3 backend throws an exception, when I click on Extensions.
 
-.. code-block::
+.. code-block:: none
 
    (1/1) #1504804727 RuntimeException
-   
+
    This module "tools_ExtensionmanagerExtensionmanager" is only available as system maintainer
    in /foo/bar/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php line 464
 
 Solution
 --------
 
-The currently logged in backend user has been removed from the system maintainers list. 
+The currently logged in backend user has been removed from the system maintainers list.
 Ask for access to be granted again by a backend user who is a system maintainer. Any system maintainer may grant access to other users.

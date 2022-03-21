@@ -29,7 +29,7 @@ Error in TCA configuration
 Might be caused by a TCA definition of a table other then pages using the
 following:
 
-.. code-block::
+.. code-block:: php
 
    'displayCond' => 'USER:'
       . \\TYPO3\CMS\Core\Compatibility\PseudoSiteTcaDisplayCondition::class .

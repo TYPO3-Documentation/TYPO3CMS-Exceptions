@@ -12,7 +12,7 @@ The relation information for property "..." of class "..." is missing.
 If you have a property in a class `SomeModelYY` which has another class as
 type
 
-.. code-block::
+.. code-block:: php
 
    /**
    * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
@@ -24,7 +24,7 @@ the object will be populated by extbase without any other configuration.
 
 But to make queries like
 
-.. code-block::
+.. code-block:: php
 
    $query->like("propertyXX.someproperty", '%foo%')
 

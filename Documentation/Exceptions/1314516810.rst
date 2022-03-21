@@ -31,7 +31,7 @@ Another solution is to go to the web root of your TYPO3 installation
 shell commands which will copy the missing file to where it is supposed
 to be:
 
-.. code-block::
+.. code-block:: bash
 
    mkdir fileadmin/introduction/images/theme/
 

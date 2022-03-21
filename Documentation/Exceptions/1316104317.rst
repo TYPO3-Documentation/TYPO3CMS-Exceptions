@@ -16,7 +16,7 @@ This basically means that you need to define a controller in your
 :file:`ext_localconf.php`. Usually the first entry is taken as default
 controller/action. Here's an example:
 
-.. code-block::
+.. code-block:: php
 
    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
      //assuming your extension is in typo3conf/ext/your_ext folder

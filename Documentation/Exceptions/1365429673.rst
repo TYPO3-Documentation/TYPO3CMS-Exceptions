@@ -15,7 +15,7 @@ Disable the extension manually
 Open :file:`typo3conf/PackageStates.php`, look up the extension key and
 change
 
-.. code-block::
+.. code-block:: none
 
    [
       // ...
@@ -26,7 +26,7 @@ change
 to
 
 
-.. code-block::
+.. code-block:: none
 
    [
       // ...
