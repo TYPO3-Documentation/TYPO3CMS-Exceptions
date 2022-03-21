@@ -22,8 +22,8 @@ TypoScript PAGE cObject is missing
 ----------------------------------
 
 In certain cases, it is possible that this error occurs, when the
-necessary PAGE cObject (e.g. :ts:`page = PAGE`) isn't available with the
-requested :ts:`typeNum`. Check if your TypoScript setup is completely loaded.
+necessary PAGE cObject (e.g. :typoscript:`page = PAGE`) isn't available with the
+requested :typoscript:`typeNum`. Check if your TypoScript setup is completely loaded.
 
 
 TYPO3 4.7.x

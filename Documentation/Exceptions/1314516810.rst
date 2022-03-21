@@ -21,7 +21,7 @@ Workaround 1
 ^^^^^^^^^^^^
 
 A workaround is to edit the TypoScript template on the root page and
-comment the first line :ts:`//page.logo.file = fileadmin/introduction/images/theme/IntroductionPackage.png`
+comment the first line :typoscript:`//page.logo.file = fileadmin/introduction/images/theme/IntroductionPackage.png`
 
 Workaround 2
 ^^^^^^^^^^^^

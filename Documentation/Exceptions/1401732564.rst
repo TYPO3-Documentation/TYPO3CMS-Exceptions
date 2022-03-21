@@ -9,7 +9,7 @@ TYPO3 Exception 1401732564
 Invalid file identifier given. It must be of type string and not empty. "NULL" given.
 =====================================================================================
 
-This is an exception happening if :ts:`GIFBUILDER` is used in css_styled_content texpic
+This is an exception happening if :typoscript:`GIFBUILDER` is used in css_styled_content texpic
 renderer:
 
 See https://forge.typo3.org/issues/62184
