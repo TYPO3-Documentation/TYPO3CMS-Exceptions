@@ -12,7 +12,7 @@ Could not access remote resource "..."
 If this error comes directly after installation, activate cUrl support
 in Install-Tool.
 
-.. code-block::
+.. code-block:: none
 
    [SYS][curlUse] = 1
 

@@ -28,6 +28,6 @@ which might hold two hints: dummy.php and the missing key/value in the
 query string directly after the question mark.
 
 **SOLUTION** The solution was, that the SysFolder had a Page TSconfig entry
-:ts:`options.tx_cal_controller.pageIDForPlugin = 419`. The page 419 had
+:typoscript:`options.tx_cal_controller.pageIDForPlugin = 419`. The page 419 had
 been deleted. After removing the option cal worked again. So be sure
 to check the page TSconfig for wrong entries

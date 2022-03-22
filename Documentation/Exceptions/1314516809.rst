@@ -104,6 +104,6 @@ them manually. Warn your editors to check file names if currently unused
 files are affected (simply remove the ``number_of_references`` condition
 below). Assuming reference index is reliable:
 
-.. code-block::
+.. code-block:: sql
 
-    SELECT * FROM sys_file WHERE identifier LIKE "% %" AND number_of_references > 0;
+   SELECT * FROM sys_file WHERE identifier LIKE "% %" AND number_of_references > 0;

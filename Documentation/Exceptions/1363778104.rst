@@ -20,7 +20,7 @@ Example:
 
 I have a Domain Model under \\Custom\Domain\Model.php, in which I do:
 
-.. code-block::
+.. code-block:: php
 
    /**
    * myService # optional property name as this is not really a property, it does not make much sense to name it

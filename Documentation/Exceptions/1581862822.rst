@@ -12,7 +12,7 @@ This error might be caused by inserting content into a Fluid template by
 
    <f:cObject typoscriptObjectPath="lib.myLib"/>
 
-If the TypoScript object uses a :ts:`insertData = 1` or the datawrap curly
+If the TypoScript object uses a :typoscript:`insertData = 1` or the datawrap curly
 braces might get parsed, see
 https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/Functions/Stdwrap.html?highlight=insertdata.
 
