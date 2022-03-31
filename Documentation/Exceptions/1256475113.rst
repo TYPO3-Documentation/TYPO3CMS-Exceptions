@@ -31,7 +31,7 @@ This effectively forces Fluid to extract the content of the single
 quotes with a simpler regular expression instead of a recursive one.
 
 
-The syntax of the arguments format has been applied wrongy.
+The syntax of the arguments format has been applied wrongly.
 
 ::
 
