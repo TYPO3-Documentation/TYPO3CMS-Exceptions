@@ -30,6 +30,18 @@ with single quotes like that:
 This effectively forces Fluid to extract the content of the single
 quotes with a simpler regular expression instead of a recursive one.
 
+
+The syntax of the arguments format has been applied wrongy.
+
+::
+
+   <f:render section="someSection" arguments="foo: {someVariable}" />
+
+Solution::
+
+   <f:render section="someSection" arguments="{foo: someVariable}" />
+
+
 Another possible cause of this error may be a PHP-configuration problem:
 PHP 7.3.14:
 
