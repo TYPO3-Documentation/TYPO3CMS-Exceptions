@@ -32,7 +32,7 @@ quotes with a simpler regular expression instead of a recursive one.
 
 
 The argument does not follow the 
-`Fluid array syntax <https://docs.typo3.org/m/typo3/guide-extbasefluid/main/en-us/Fluid/ThingsToKnow/Arrays.html>`.
+`Fluid array syntax <https://docs.typo3.org/m/typo3/guide-extbasefluid/main/en-us/Fluid/ThingsToKnow/Arrays.html>`__.
 
 ::
 
