@@ -30,6 +30,19 @@ with single quotes like that:
 This effectively forces Fluid to extract the content of the single
 quotes with a simpler regular expression instead of a recursive one.
 
+
+The argument does not follow the 
+`Fluid array syntax <https://docs.typo3.org/m/typo3/guide-extbasefluid/main/en-us/Fluid/ThingsToKnow/Arrays.html>`__.
+
+::
+
+   <f:render section="someSection" arguments="foo: {someVariable}" />
+
+Solution::
+
+   <f:render section="someSection" arguments="{foo: someVariable}" />
+
+
 Another possible cause of this error may be a PHP-configuration problem:
 PHP 7.3.14:
 
