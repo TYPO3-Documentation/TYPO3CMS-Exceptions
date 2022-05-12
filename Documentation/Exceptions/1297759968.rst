@@ -135,4 +135,8 @@ Exception while property mapping at property path "propertyname": The identity p
 
 TYPO3 expects a relation as a property and can't find it. Check if a related database record exists (here: at "propertyname") and make sure to catch the error if no relation is present. 
 
+This can also happen if an extbase form has an object with a file upload element (and involved TypeConverters): If a bot maliciously spams your form, it might submit a POST/GET request with that type=file upload element, but uses type=text instead. This will lead into a structure, where the property will not contain the expected array data (tmp_name, name, errors, size, ... from $_FILES), and lead to this exception. In this case the error would say `The Identity property "a2vsd3fs" is no UID`, where `a2vsd3fs` is the actual random spam string submitted by the bot, even though it reads like a TYPO3 internal UID placeholder.
 
+You can silence that error by using an initializeAction and checking if the mentioned properties actually are submitted as an array, or only as a string. But in fact, this exception would not be "wrong", because the actual bot request was faulty. But we wanted this recurring error not to flood our sys_log entries.
+
+(TODO: This might also be fixable with better property mapping configuration and/or TypeConverter checks catching this error; the UploadedFileReferenceTypeConverter from Helmut Hummel was used in this case, which provoked the error above)
