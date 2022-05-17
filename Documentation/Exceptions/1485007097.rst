@@ -13,5 +13,5 @@ TYPO3 Exception 1485007097
 
    You'll encounter this issue when configuring a TCA field of type `group` and forget to define
    the `internal_type` option to be either `db` or `folder`. This most likely happened because
-   you were looking at a configuration exeample for TYPO3 > 10, where this is not neede anymore
-   since group type `folder` has been removed.
+   you were looking at a configuration example for TYPO3v12 or newer, where this was removed
+   with the group type `folder`.
