@@ -8,24 +8,10 @@ TYPO3 Exception 1485007097
 
 
 ..
-   TYPO3 [version] - [date of report]
-   ==================================
+   TYPO3 10 and before
+   ===================
 
-   Installation Overview
-   ---------------------
-
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+   You'll encounter this issue when configuring a TCA field of type `group` and forget to define
+   the `internal_type` option to be either `db` or `folder`. This most likely happened because
+   you were looking at a configuration exeample for TYPO3 > 10, where this is not neede anymore
+   since group type `folder` has been removed.
