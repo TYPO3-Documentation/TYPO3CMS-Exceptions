@@ -9,3 +9,23 @@ TYPO3 Exception 1458745468
 This exception has been introduced together with `exception
 1458745712 <typo3-exception-1458745712>`__, same documentation may apply
 for this one as well.
+
+
+TYPO3 10 - 2022-05-19
+=====================
+
+The Issue
+---------
+
+ (1/1) #1458745468 UnexpectedValueException
+
+ Invalid flex form data structure on field name "pi_flexform" with element "image" in section container "objectFeedback": Nesting inline elements in flex form sections is not allowed.
+
+This exception occurs when nesting a `<flux:field.inline.fal>` inside a `<flux:form.section>`.
+This is not supported anymore since TYPO3 v10.
+
+See https://github.com/FluidTYPO3/flux/issues/1803#issuecomment-697283924
+
+Solution
+--------
+Rework the content element: Split it into a container element and a sub element that may be added multiple times.
