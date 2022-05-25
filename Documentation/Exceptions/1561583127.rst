@@ -7,18 +7,22 @@ TYPO3 Exception 1561583127
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+TYPO3 10.4.28 - 2020-05-25
+==========================
 
-   Situation
-   ---------
+Exception message:
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+ InvalidArgumentException: TypoScriptFrontendController must be constructed with a valid SiteLanguage object or a resolved site in the current request as fallback. None given.
 
-   Solution
-   --------
+Situation
+---------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+The `Preview` section of a flux content element used `<f:cObject>` to access a TypoScript-defined function. Because no TSFE is available in the backend, one is created and that brings this error
+
+
+Solution
+--------
+
+Workaround: Do not use `<f:cObject>` in backend previews.
+
+In TYPO3v11 this has been fixed with https://forge.typo3.org/issues/91511, but that change has not been backported to v10.
