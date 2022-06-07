@@ -21,3 +21,5 @@ section:
 
 And that yaml is loaded to the plugin and/or module form settings:  
 :typoscript:`plugin.tx_form.settings.yamlConfigurations`  
+
+It could also be the case that you correctly registered the finisher in the base config of your form setup (e.g. in the root template of your site) but the registration will not work because there might be a syntax error in the typoscript (e.g. a missing closing curly brace from an open code-block); in that case, the registration will not succeed and hence, the form framework is not able to find the finisher. This will most likely happen during a major upgrade of TYPO3 when there are typically bigger changes in your typoscript setup.
