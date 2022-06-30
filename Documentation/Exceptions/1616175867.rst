@@ -20,7 +20,7 @@ Situation
    
    The login is locked until 26-06-22 12:33 due to too many failed login attempts from your IP address.
 
-This exception is thrown, when there have been too many failed login from one IP Adress within a configured time.
+This exception is thrown, when there have been too many failed login attempts from one IP address within a given time frame.
 
 See also: :docs:`t3coreapi:Changelog/11.3/Feature-93825-RateLimitingForFailedLogins.html`.
 
@@ -28,4 +28,4 @@ Solution
 --------
 
 1. Wait for the lock to time out.
-2. If the limit it to low for your purpose, make the limit higher.
+2. If the limit is too short for your purposes, make the limit higher.
