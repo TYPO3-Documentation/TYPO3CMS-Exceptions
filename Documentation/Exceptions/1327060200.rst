@@ -7,18 +7,39 @@ TYPO3 Exception 1327060200
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+[11.5.12] - [02.07.2022]
+====================================
 
-   Situation
-   ---------
+Situation
+---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+Error on sending the form:
 
-   Solution
-   --------
+.. code-block:: none
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+   (1/1) #1327060200 TYPO3\CMS\Form\Domain\Finishers\Exception\FinisherException
+   The option "recipients" must be set for the EmailFinisher.
+
+Solution
+--------
+
+There was a leading white space in my Email adress:
+
+.. code-block:: yaml
+  :caption: Wrong yaml
+   
+  finishers:
+  -
+    options:
+      recipients:
+        ' info@example.org': 'Name'
+        
+        
+.. code-block:: yaml
+  :caption: Correct yaml
+   
+  finishers:
+  -
+    options:
+      recipients:
+        'info@example.org': 'Name'
