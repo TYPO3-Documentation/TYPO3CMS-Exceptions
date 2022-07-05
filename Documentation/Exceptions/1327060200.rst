@@ -23,7 +23,7 @@ Error on sending the form:
 Solution
 --------
 
-There was a leading white space in my Email adress:
+There was a leading white space in the recipient's email address:
 
 .. code-block:: yaml
   :caption: Wrong yaml
