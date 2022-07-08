@@ -43,3 +43,31 @@ There was a leading white space in the recipient's email address:
     options:
       recipients:
         'info@example.org': 'Name'
+
+
+[v11.5.12] - [08-07-2022]
+====================================
+
+Solution 2
+----------
+
+Older versions of EXT:form used 'recipientAddress' and 'recipientName', they are now replaced by 'recipients'. Either simply open and directly save the form in the Form backend module, the backend module will automatically rewrite the old options to the new one, or make the adjustments manually:
+
+.. code-block:: yaml
+  :caption: Old yaml, no longer working in v11
+   
+  finishers:
+  -
+    options:
+      recipientAddress: email@example.com
+      recipientName: '{text-1}'
+        
+        
+.. code-block:: yaml
+  :caption: New yaml
+   
+  finishers:
+  -
+    options:
+      recipients:
+        email@example.com: '{text-1}'
