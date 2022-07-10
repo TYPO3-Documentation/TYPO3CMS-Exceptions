@@ -20,7 +20,7 @@ controller/action. Here's an example:
 
    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
      //assuming your extension is in typo3conf/ext/your_ext folder
-     'YourVendor.YourExt',
+     'YourExt',
 
      // Plugin name
      'Pi1',
