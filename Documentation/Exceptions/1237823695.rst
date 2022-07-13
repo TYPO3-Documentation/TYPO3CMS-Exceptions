@@ -9,8 +9,8 @@ TYPO3 Exception 1237823695
 General
 =======
 
-`Register arguments of
-viewhelpers <https://docs.typo3.org/typo3cms/ExtbaseFluidBook/8-Fluid/8-developing-a-custom-viewhelper.html#register-arguments-of-viewhelpers>`__
+:ref:`Register arguments of
+viewhelpers <t3coreapi:fluid-viewhelper-custom-initializeArguments>`
 describes how to register own Arguments for viewHelpers. Never denying
 that I might have made a fault I never had success with the simple
 notation by using several parameters in the render-function. I succeeded
