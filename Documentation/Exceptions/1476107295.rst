@@ -175,3 +175,8 @@ Check your TCA configuration, inside the :php:`ctrl` section columns might be re
 Remove the offending entry in your :php:`ctrl` section or add the missing column to :php:`columns`.
 
 
+PHP Warning: file_exists(): open_basedir restriction in effect. File(/typo3temp/assets/js/<something>.js) is not within the allowed path(s)
+============================================================================================================================================
+
+Happens after Updating from TYPO3 11.5.13 to 11.5.14. There is an issue on forge: 
+`https://forge.typo3.org/issues/98106`__ And a patch that can be applied. Should be resolved with the next bug fix version.
