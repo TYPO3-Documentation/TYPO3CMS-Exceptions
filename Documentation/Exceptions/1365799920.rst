@@ -29,7 +29,7 @@ On front end call to the extensions plugin
 Solution
 --------
 
-The fully Quallified class name of the validator in the annotation was wrong
+The fully-qualified class name of the validator in the annotation was wrong
 
 Changed annotation from 
 
