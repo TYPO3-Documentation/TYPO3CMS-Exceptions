@@ -7,25 +7,50 @@ TYPO3 Exception 1365799920
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.0-dev - 14.08.22
+==================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+TYPO3 12.0-dev with blog_example extension
 
-   Solution
-   --------
+The Issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+On front end call to the extensions plugin
+
+.. attention::
+
+   .. code-block:: none
+      (1/1) #1365799920 TYPO3\CMS\Extbase\Validation\Exception\NoSuchValidatorException
+      Validator class FriendsOfTYPO3\ExtbaseExample\Domain\Validator\BlogValidator does not exist
+
+Solution
+--------
+
+The fully Quallified class name of the validator in the annotation was wrong
+
+Changed annotation from 
+
+.. code-block:: php
+
+  /**
+  * Updates an existing blog
+  *
+  * @Validate(param="blog", validator="FriendsOfTYPO3\ExtbaseExample\Domain\Validator\BlogValidator")
+  * @throws NoBlogAdminAccessException
+  */
+  public function updateAction(Blog $blog): ResponseInterface
+  
+to 
+
+.. code-block:: php
+
+  /**
+  * Updates an existing blog
+  *
+  * @Validate(param="blog", validator="FriendsOfTYPO3\BlogExample\Domain\Validator\BlogValidator")
+  * @throws NoBlogAdminAccessException
+  */
+  public function updateAction(Blog $blog): ResponseInterface
