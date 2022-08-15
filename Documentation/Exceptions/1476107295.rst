@@ -179,4 +179,4 @@ PHP Warning: file_exists(): open_basedir restriction in effect. File(/typo3temp/
 ============================================================================================================================================
 
 Happens after Updating from TYPO3 11.5.13 to 11.5.14. There is an issue on forge: 
-:forge:`98106` And a patch that can be applied. Should be resolved with the next bug fix version.
+:forge:`98106`. And a patch that can be applied. Should be resolved with the next bug fix version.
