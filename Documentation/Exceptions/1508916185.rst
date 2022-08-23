@@ -19,7 +19,7 @@ TYPO3 Exception 1508916185
    The Issue
    ---------
    
-   After migration from V8 to V9, this message is displayed when trying to show the site :
+   After migration from V8 to V9, this message is displayed when trying to show the site:
 
    Oops, an error occurred!
    Invalid config.metaCharset: Unknown charset "UTF-8"
