@@ -31,5 +31,4 @@ TYPO3 Exception 1508916185
    
    config {
       metaCharset = utf-8
-      renderCharset = utf-8
    }
