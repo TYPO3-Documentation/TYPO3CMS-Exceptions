@@ -8,24 +8,27 @@ TYPO3 Exception 1508916185
 
 
 ..
-   TYPO3 [version] - [date of report]
+   TYPO3 V9 - 19/08/2022
    ==================================
 
    Installation Overview
    ---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
+   TYPO3 V9.5.31
    
    The Issue
    ---------
    
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+   After migration from V8 to V9, this message is displayed when trying to show the site:
+
+   Oops, an error occurred!
+   Invalid config.metaCharset: Unknown charset "UTF-8"
+   More information regarding this error might be available online.   
 
    Solution
    --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+   Check if :typoscript:`config.metaCharset` is correct and not in uppercase UTF-8 instead of lowercase utf-8, it should be like this:
+   
+   config {
+      metaCharset = utf-8
+   }
