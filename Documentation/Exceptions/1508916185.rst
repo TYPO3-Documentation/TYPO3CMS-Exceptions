@@ -27,7 +27,7 @@ TYPO3 Exception 1508916185
 
    Solution
    --------
-   Check if the config.metaCharset is the right one and not in uppercase UTF-8 instead of utf-8, it should be like this :
+   Check if :typoscript:`config.metaCharset` is correct and not in uppercase UTF-8 instead of lowercase utf-8, it should be like this:
    
    config {
       metaCharset = utf-8
