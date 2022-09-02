@@ -185,7 +185,7 @@ Happens after Updating from TYPO3 11.5.13 to 11.5.14. There is an issue:
 
 
 TYPO3\\CMS\\Core\\Error\\Exception
-================================================
+========================
 
 PHP Warning: file_get_contents(.../public/fileadmin/<file>): failed to open stream: No such file or directory in .../public/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php line 110
 
