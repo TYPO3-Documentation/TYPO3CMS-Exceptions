@@ -18,8 +18,8 @@ TYPO3\CMS\Core\Http\Security\MissingReferrerException
 This error occurs when logging into the backend or install tool and is 
 triggered by a failed check of a referer header.
 
-The reason for this is the usage of an HTTP proxy
-(for example a reverse proxy to an encapsulated system) without
+The reason for this is the usage of an HTTP proxy,
+for example a reverse proxy to an encapsulated system without
 sufficient header delegation.
 
 Solution
@@ -29,7 +29,7 @@ The feature was introduced due to potential security risks,
 visit the related `security advisory <https://typo3.org/security/advisory/typo3-core-sa-2020-006>`__
 for more information.
 
-The feature may be enabled or disabled in the Install Tool,
+The feature can be enabled or disabled in the Install Tool,
 > SYS > features > security.backend.enforceReferrer.
 
-It is recommend to keep enable it.
+It is recommended that you keep this feature enabled.
