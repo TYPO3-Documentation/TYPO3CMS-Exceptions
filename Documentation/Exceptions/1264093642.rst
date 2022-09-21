@@ -41,7 +41,7 @@ instead off
 Running Rector for TYPO3 v8 and below
 -------------------------------------
 
-If you are running rector on TYPO3 v8 and below you should exclude :php:`Domain/Model` paths
+If you are running Rector on TYPO3 v8 and below you should exclude :php:`Domain/Model` paths
 from TYPO3 Option `Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES`.
 
 ::
