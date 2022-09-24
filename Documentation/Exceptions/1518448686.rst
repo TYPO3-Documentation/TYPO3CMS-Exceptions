@@ -27,4 +27,4 @@ Solutions
 =========
 
 See :ref:`Recovering from a corrupt or missing install tool password
-<t3coreapi:password-hashing_troubleshooting_dummy>`.
+<t3coreapi:password-hashing_troubleshooting>`.
