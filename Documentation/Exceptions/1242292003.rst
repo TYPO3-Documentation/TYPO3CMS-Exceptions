@@ -32,7 +32,7 @@ data type.
 #. use another PHP optimizer. I use xCache on Debian Squeeze which seems
    to work fine.
 #. using the opcode cache of modern PHP versions, you can set
-   opcache.save_comments=1 and opcache.load_comments=1.
+   opcache.save_comments=1.
 
 Links:
 
