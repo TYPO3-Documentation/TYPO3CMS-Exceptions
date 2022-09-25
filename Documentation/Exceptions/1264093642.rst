@@ -37,3 +37,22 @@ instead off
     * @var ObjectStorage<\vendor\yourExtension\Domain\Model\yourModel>
     * ...
     */
+    
+Running Rector for TYPO3 v8 and below
+-------------------------------------
+
+If you are running Rector on TYPO3 v8 and below you should exclude :php:`Domain/Model` paths
+from TYPO3 Option `Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES`.
+
+::
+    $parameters->set(Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES, [
+        # If you are targeting TYPO3 Version 11 use can now use Short namespace
+        # @see namespace https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ExtensionArchitecture/ConfigurationFiles/Index.html
+        'ext_localconf.php',
+        'ext_tables.php',
+        'ClassAliasMap.php',
+        __DIR__ . '/**/Domain/Model/*',
+        __DIR__ . '/**/Configuration/*.php',
+        __DIR__ . '/**/Configuration/**/*.php',
+    ]);
+

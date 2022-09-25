@@ -26,5 +26,5 @@ order to allow logins after migrating to an other encrypting algorithm.
 Solutions
 =========
 
-See `Recovering from a corrupt or missing install tool password
-<t3coreapi:password-hashing_troubleshooting_dummy>`.
+See :ref:`Recovering from a corrupt or missing install tool password
+<t3coreapi:password-hashing_troubleshooting>`.
