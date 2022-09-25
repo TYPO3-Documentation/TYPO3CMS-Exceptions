@@ -11,7 +11,7 @@ FlexForm location was not found, TYPO3 12.0
 
 ..  code-block:: none
 
-    Data structure file "EXT:nonexistanextension/Configuration/FlexForms/Plugin.xml" could not be resolved to an existing file
+    Data structure file "EXT:my_extension/Configuration/FlexForms/NotExisting.xml" could not be resolved to an existing file
     
 When opening a plugin in the backend and the referenced FlexForm is missing.
 
