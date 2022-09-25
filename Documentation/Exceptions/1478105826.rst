@@ -6,6 +6,24 @@ TYPO3 Exception 1478105826
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+FlexForm location was not found, TYPO3 12.0
+===========================================
+
+..  code-block:: none
+
+    Data structure file "EXT:nonexistanextension/Configuration/FlexForms/Plugin.xml" could not be resolved to an existing file
+    
+When opening a plugin in the backend and the referenced FlexForm is missing.
+
+Solution
+--------
+
+Correct the path to the flexform in method :php:`ExtensionManagementUtility::addPiFlexFormValue()`, which is usually called in
+:file:`EXT:my_extension/Configuration/TCA/Overrides/tt_content.php`.
+
+Using `$_EXTKEY` in configuration files in TYPO3 v9 and above
+==============================================================
+
 This error can happen when using the variable :php:`$_EXTKEY` in a TCA
 definition like :file:`Configuration/TCA/Overrides/tt_content.php` without
 defining it. In TYPO3 versions before 8 the variable was automatically
