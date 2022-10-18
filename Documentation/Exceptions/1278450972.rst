@@ -14,7 +14,7 @@ We had a whitespace at the beginning of the filename of the file containing
 the class.
 
 When switching over from working with TYPO3 v10+ back to TYPO3 v9.5, remember that you have to
-specify the fully qualified name for parameters, as opposed to TYPO3 10+ where you can import
+specify the fully qualified name for parameters, as opposed to TYPO3 v10+ where you can import
 the class name.
 
 #1278450972: Class ... does not exist. Reflection failed. After updating to TYPO3 11
