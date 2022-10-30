@@ -14,12 +14,13 @@ TYPO3 Exception 1476107941
 TYPO3 cannot configure Dependency Injection for the plugin controller.
 ----------------------------------------------------------------------
 
-Dependeny Injection may not be properly configured via :file:`Configuration/Services.yaml`.
+Dependeny Injection may not be properly configured.
 Make sure that either the affected class or all classes (`_defaults`) have :yaml:`autoconfigure: true` defined.
 
 Bare minimum example:
 
-.. code-block::yaml
+.. code-block:: yaml
+   :caption: Configuration/Services.yaml
 
    services:
      _defaults:
@@ -29,7 +30,7 @@ Bare minimum example:
 
    # ...
 
-
+See :ref:`t3coreapi:dependency-injection-Configuration` in TYPO3 Explained.
 
 [TYPO3 LTS 10] - [2021.05.05]
 ====================================
@@ -37,24 +38,41 @@ Bare minimum example:
 Unable to call the controller configured in a plugin.
 ------------------------------------------------------
 
-TYPO3 creates the wrong class object for the controller.
+TYPO3 creates the wrong class object for the controller due to using only
+the controller name (and not the fully qualified class name) in
+:php:`configurePlugin` or :php:`registerModule`.
 
-Environment:
+**Incorrect example:**
 
-`ext_localconf.php`:
+.. code-block:: php
+    :caption: ext_localconf.php
 
-.. code-block::php
-
-   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'vendor.' . 'ext',
-    'name',
-    [
-        'ControllerName' => 'actionName',
-    ],
-    [
-        'ControllerName' => 'actionName',
-    ]
-   );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Examples', // $extensionName
+        'HtmlParser', // plugin name
+        // this is deprecated!
+        ['ControllerName' => 'actionName'],
+        // this is deprecated!
+        ['ControllerName' => 'actionName']
+    );
 
 
-Migrate controller names according to `the deprecation notice <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html?highlight=configureplugin>`.
+Use fully qualified class names as array keys in arguments
+:php:`$controllerActions` and :php:`$nonCacheableControllerActions` in
+:php:`configurePlugin` or :php:`registerModule`.
+
+More details are in the changelog
+:doc:`ext_core:Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules`:
+
+**Correct example:**
+
+.. code-block:: php
+    :caption: ext_localconf.php
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Examples', // $extensionName
+        'HtmlParser', // plugin name
+        // controller class name => action name
+        [\T3docs\Examples\Controller\HtmlParserController::class => 'search',],
+        [\T3docs\Examples\Controller\HtmlParserController::class => 'search',]
+    );
