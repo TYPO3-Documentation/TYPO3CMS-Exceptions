@@ -24,6 +24,11 @@ We missed the required update in the registration of plugins and modules to use 
 
 See `Breaking: #92609 - Use controller classes when registering plugins/modules <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/11.0/Breaking-92609-UseControllerClassesWhenRegisteringPluginsmodules.html>`__.
 
+#1278450972: Class ... does not exist. Reflection failed. in TYPO3 11
+====================================================================================
+
+Simple `composer update` fixed the problem in composer based TYPO3.
+
 #1278450972: The classname "..." was not found and thus can not be reflected.
 =============================================================================
 
