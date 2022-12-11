@@ -165,7 +165,10 @@ good to go.
 PHP Warning: Undefined array key "<field>" in ControllerName.php
 ===============================================================================
 
-Using TYPO3v11 with PHP 8.0 this error occurs because of misconfiguration of an Extension due to changes from 7.4 to 8.0/1. It can happen, when an Extension is not migrated to work with PHP 8.0 or 8.1. Please Contact the developer to fix this issue, or fix it by yourself if it is your own extension. 
+Using TYPO3v11 with PHP 8 this error occurs because of misconfiguration of an 
+extension due to changes from PHP 7.4 to 8.x. It can happen when an extension
+is not migrated to work with PHP 8.x. Please contact the developer to fix this
+ issue, or fix it by yourself if it is your own extension.  (See below)
 
 Solution
 --------
