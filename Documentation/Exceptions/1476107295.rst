@@ -162,10 +162,13 @@ good to go.
 
 
 
-PHP Warning: Undefined array key "<field>" in InlineRecordContainer.php
+PHP Warning: Undefined array key "<field>" in ControllerName.php
 ===============================================================================
 
-Using TYPO3v11 with PHP 8.0 this error occurs because of an invalid TCA configuration.
+Using TYPO3v11 with PHP 8 this error occurs because of misconfiguration of an 
+extension due to changes from PHP 7.4 to 8.x. It can happen when an extension
+is not migrated to work with PHP 8.x. Please contact the developer to fix this
+ issue, or fix it by yourself if it is your own extension.  (See below)
 
 Solution
 --------
