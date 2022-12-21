@@ -205,7 +205,7 @@ Solution
 Add the missing file.
 
 PHP Warning: Array to string conversion in vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/CompositeExpression.php line 174
-========================
+==============================================================================================================================================
 
 Reason
 ------
