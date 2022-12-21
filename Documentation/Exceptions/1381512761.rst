@@ -24,4 +24,5 @@ After Upgrade to v11 TCA config internal_type => 'file_reference' make problem
 After an update to TYPO3 v11 from a very old v6.2 installation, the TCA config for TCA type group
 is deprecated. You cannot use :php:`internal_type => 'file_reference'` or :php:`internal_type => 'file'`.
 Migrate your old TCA to new one using type :php:`inline` as :php:`fileReferences`.
-https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.5/Deprecation-86406-TCATypeGroupInternal_typeFileAndFile_reference.html
+..  seealso::
+    https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.5/Deprecation-86406-TCATypeGroupInternal_typeFileAndFile_reference.html
