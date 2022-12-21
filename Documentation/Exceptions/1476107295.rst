@@ -227,7 +227,7 @@ You add some :sql:`where` constraints through an array with :php:`where()` funct
 
 Solution
 --------
-You have to use the unpacking ellipsis (...) PHP token in order to add your constaints :
+You have to use the unpacking ellipsis (:php:`...`) PHP token in order to add your constaints :
 
 ::
 
