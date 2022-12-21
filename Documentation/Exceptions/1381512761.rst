@@ -17,3 +17,13 @@ Error occurred in an extension after migration 6.1 -> 6.2 due to wrong
 invalid type. It seems, v6.1 didn't care very much about invalid types,
 but 6.2 does. Changing the datatype to `'type' => 'input', 'eval' => 'datetime'`
 solved the problem.
+
+After Upgrade to v11 TCA config internal_type => 'file_reference' make problem
+------------------------------------------------------------------------------
+
+After an update to TYPO3 v11 from a very old v6.2 installation, the TCA config for TCA type group
+is deprecated. You cannot use :php:`internal_type => 'file_reference'` or :php:`internal_type => 'file'`.
+Migrate your old TCA to new one using type :php:`inline` as :php:`fileReferences`.
+
+..  seealso::
+    https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.5/Deprecation-86406-TCATypeGroupInternal_typeFileAndFile_reference.html
