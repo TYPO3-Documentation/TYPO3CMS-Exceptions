@@ -212,7 +212,7 @@ Reason
 
 You add some where constraints through an array with where() function and this function is waiting for string|CompositeExpression as parameter.
 
-::
+.. code-block:: php
 
     $constraints = [];
     $constraints[] = $queryBuilder->expr()->eq('doktype', 100);
