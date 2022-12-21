@@ -19,7 +19,7 @@ but 6.2 does. Changing the datatype to `'type' => 'input', 'eval' => 'datetime'`
 solved the problem.
 
 After Upgrade to v11 TCA config internal_type => 'file_reference' make problem
--------------------------------------------------------
+------------------------------------------------------------------------------
 
 After update to TYPO3 V11 from a very old v6.2 the TCA config for TCA type group
 is depreciated you can not use internal_type => 'file_reference' or internal_type => 'file'
