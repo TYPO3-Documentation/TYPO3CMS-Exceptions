@@ -210,7 +210,7 @@ PHP Warning: Array to string conversion in vendor/doctrine/dbal/lib/Doctrine/DBA
 Reason
 ------
 
-You add some where constraints through an array with where() function and this function is waiting for string|CompositeExpression as parameter.
+You add some :sql:`where` constraints through an array with :php:`where()` function and this function is waiting for :php:`string|CompositeExpression` as parameter.
 
 ..  code-block:: php
 
