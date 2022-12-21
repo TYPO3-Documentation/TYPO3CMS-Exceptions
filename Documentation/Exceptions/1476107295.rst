@@ -229,7 +229,7 @@ Solution
 --------
 You have to use the unpacking ellipsis (:php:`...`) PHP token in order to add your constaints :
 
-::
+..  code-block:: php
 
     $result = $queryBuilder->select('pages.*')
         ->from('pages')
