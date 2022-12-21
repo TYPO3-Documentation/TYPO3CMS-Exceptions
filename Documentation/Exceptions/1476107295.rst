@@ -203,3 +203,36 @@ Solution
 --------
 
 Add the missing file.
+
+PHP Warning: Array to string conversion in vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/Expression/CompositeExpression.php line 174
+========================
+
+Reason
+------
+
+You add some where constraints through an array with where() function and this function is waiting for string|CompositeExpression as parameter.
+
+::
+
+    $constraints = [];
+    $constraints[] = $queryBuilder->expr()->eq('doktype', 100);
+    $constraints[] = $queryBuilder->expr()->in('categories.uid_local', $categories);
+
+    $result = $queryBuilder->select('pages.*')
+        ->from('pages')
+        ->where($constraints)
+        ->execute()
+        ->fetchAllAssociative();
+
+
+Solution
+--------
+You have to use the unpacking ellipsis (...) PHP token in order to add your constaints :
+
+::
+
+    $result = $queryBuilder->select('pages.*')
+        ->from('pages')
+        ->where(...$constraints)
+        ->execute()
+        ->fetchAllAssociative();
