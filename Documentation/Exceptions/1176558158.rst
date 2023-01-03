@@ -7,18 +7,28 @@ TYPO3 Exception 1176558158
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+TYPO3 11.5.21 -03.01.2023
+=========================
 
-   Situation
-   ---------
+..   code-block:: none
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+    An argument "site" does not exist for this request.
 
-   Solution
-   --------
+Situation
+---------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+This happens when you call the following in an action of an Extbase controller:
+
+..  code-block:: php
+
+    $site =  $this->request->getArgument('site');
+
+Solution
+--------
+
+You must retrieve the site configuration with `getAttribute()` not `getArgument`:
+
+
+..  code-block:: php
+
+    $site =  $this->request->getAttribute('site');
