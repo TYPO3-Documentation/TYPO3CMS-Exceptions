@@ -26,8 +26,4 @@ This happens when you call the following in an action of an Extbase controller:
 Solution
 --------
 
-Get the site from the original request:
-
-..  code-block:: php
-
-    $site =  $this->request->getOriginalRequest()->getArgument('site');
+None for now.
