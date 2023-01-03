@@ -26,4 +26,9 @@ This happens when you call the following in an action of an Extbase controller:
 Solution
 --------
 
-None for now.
+You must retrieve the site configuration with `getAttribute()` not `getArgument`:
+
+
+..  code-block:: php
+
+    $site =  $this->request->getAttribute('site');
