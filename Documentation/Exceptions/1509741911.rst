@@ -9,7 +9,7 @@ TYPO3 Exception 1509741911
 Folder "/testing/foo/file.png/" does not exist
 ==============================================
 
-::
+.. code-block: none
 
    (1/2) #1509741911 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
    Folder "/testing/foo/file.png/" does not exist.
