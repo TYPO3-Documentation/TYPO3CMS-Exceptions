@@ -8,21 +8,21 @@ TYPO3 Exception 1616175867
 
 
 11.5.11 - 26.06.2022
-====================================
+====================
 
 Situation
 ---------
 
 .. code-block:: none
    :caption: Exception message upon failed login
-   
+
    (1/1) #1616175867 TYPO3\CMS\Core\RateLimiter\RequestRateLimitedException
-   
+
    The login is locked until 26-06-22 12:33 due to too many failed login attempts from your IP address.
 
 This exception is thrown, when there have been too many failed login attempts from one IP address within a given time frame.
 
-See also: :docs:`t3coreapi:Changelog/11.3/Feature-93825-RateLimitingForFailedLogins.html`.
+See also: :ref:`ext_core:feature-93825`.
 
 Solution
 --------
