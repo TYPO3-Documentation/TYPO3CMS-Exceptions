@@ -9,6 +9,13 @@ TYPO3 Exception 1381512761
 Invalid value "..." for enumeration "..."
 =========================================
 
+Invalid value "-1" for enumeration "TYPO3\CMS\Core\Versioning\VersionState"
+---------------------------------------------------------------------------
+
+The value ``-1`` is no longer valid for VersionState.
+The corresponding rows should have been updated within the database by an Upgrade Wizard "WorkspaceNewPlaceholderRemovalMigration".
+More information is available at: https://forge.typo3.org/issues/99401#note-3
+
 TYPO3 6.2.x and higher (after update from 6.1 or lower)
 -------------------------------------------------------
 
