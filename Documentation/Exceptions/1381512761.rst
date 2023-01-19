@@ -7,7 +7,7 @@ TYPO3 Exception 1381512761
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 Invalid value "..." for enumeration "..." in v12
-=========================================
+================================================
 
 Invalid value "-1" for enumeration "TYPO3\CMS\Core\Versioning\VersionState"
 ---------------------------------------------------------------------------
