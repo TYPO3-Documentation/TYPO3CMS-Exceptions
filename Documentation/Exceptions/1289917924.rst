@@ -14,3 +14,7 @@ You don't have access to this page
 This error can occur, when the current page is deleted and the user
 selects a module in the web menu. It has also been logged in the TYPO3
 issue tracker: `Issue 66449 <https://forge.typo3.org/issues/66449>`__
+
+Another reason might be permission problems: For example, if access
+to a page is restricted by permissions or the current user does not
+have permissions to access any page in the page tree.
