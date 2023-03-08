@@ -30,6 +30,12 @@ Problem: No page templates
 We had this error when no fluidpage templates were available and thus
 not selected in the backend.
 
+Problem: Extension containing templates not installed
+=====================================================
+
+We had this error when site package extension which contained templates was not installed,
+thus TYPO3 couldn't resolve EXT:extensionname/...  paths.
+
 Problem: sitepackage not added in resources
 ===========================================
 
