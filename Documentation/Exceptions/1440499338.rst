@@ -29,3 +29,62 @@ TYPO3 Exception 1440499338
 
    Did you resolve the issue? List the steps or changes made that resolved the 
    issue.
+
+
+TYPO3 v12.3 - 2023-03-30
+========================
+
+The issue
+---------
+   
+With TYPO3 v12.3 the items of the TCA types "check", "radio" and "select" requires
+a "label" key instead of the array index "0". In v12 a TCA migration is in place which
+is not applied to custom site configurations in v12.3.
+   
+.. seealso::
+   *  `Feature: #99739 - Associative array keys for TCA items <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.3/Feature-99739-AssociativeArrayKeysForTCAItems.html>`__
+   *  `Bug: #100359 - Using TCA type "checkbox" in custom site configuration field throws error <https://forge.typo3.org/issues/100359>'__
+   
+Solution
+--------
+
+Migrate from:
+   
+.. code-block:: php
+   
+  'config' => [
+      'type' => 'check',
+      'renderType' => 'checkboxToggle',
+      'items' => [[
+          0 => '',
+          1 => '',
+      ]],
+  ]
+ 
+to:
+ 
+.. code-block:: php
+   
+  'config' => [
+      'type' => 'check',
+      'renderType' => 'checkboxToggle',
+      'items' => [[
+          'label' => '',
+          'value' => '',
+      ]],
+  ]
+ 
+To stay compatible with TYPO3 v12 and v11, use:
+
+.. code-block:: php
+   
+  'config' => [
+      'type' => 'check',
+      'renderType' => 'checkboxToggle',
+      'items' => [[
+          0 => '',
+          1 => '',
+          'label' => '',
+          'value' => '',
+      ]],
+  ]
