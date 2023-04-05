@@ -15,8 +15,6 @@ FAL: addFile()
 Error when adding a :sql:`sys_file` to a FAL storage
 via `$this->storage->addFile($localFilePath, $targetFolder, $targetFileName)`:
 
-The problem was that the first parameter `$localFilePath` was an absolute
-path instead of a relative path.
-
--  Wrong: :file:`my/absolute/path/www/fileadmin/myfile.jpg`
--  Correct: :file:`fileadmin/myfile.jpg`
+The exception is thrown when the `$localFilePath` (the source file) is already located anywhere
+inside of the target's FAL local storage path. For example inside of :file:`fileadmin/` when using the dafault
+local storage.
