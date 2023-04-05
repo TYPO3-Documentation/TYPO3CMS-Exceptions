@@ -16,5 +16,5 @@ Error when adding a :sql:`sys_file` to a FAL storage
 via `$this->storage->addFile($localFilePath, $targetFolder, $targetFileName)`:
 
 The exception is thrown when the `$localFilePath` (the source file) is already located anywhere
-inside of the target's FAL local storage path. For example inside of :file:`fileadmin/` when using the dafault
+inside of the target's FAL local storage path. For example, inside of :file:`fileadmin/` when using the default
 local storage.
