@@ -7,25 +7,38 @@ TYPO3 Exception 1476109646
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 10.4.36 - 07.04.2023
+==========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+Trying to extend `fe_manager` I accidently left the following example code in my :file:`ext_localconf.php`:
 
-   Solution
-   --------
+.. code-block:: php
 
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+    $extbaseObjectContainer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\Container\Container::class);
+    $extbaseObjectContainer->registerImplementation(
+        \In2code\Femanager\Controller\NewController::class,
+        \In2code\Femanagerextended\Controller\NewController::class
+    );
+    
+Without implemenign the class or chaninging it to my namespace.
+
+The Issue
+---------
+
+I got the - counterintuitive error message: 
+
+..  code-block:: text
+
+    #1476109646 TYPO3\CMS\Extbase\Mvc\Exception\InvalidControllerException
+    Invalid controller "In2code\Femanager\Controller\NewController". The controller 
+    must implement the TYPO3\CMS\Extbase\Mvc\Controller\ControllerInterface.
+    
+Even though NewController actually does implement ControllerInterface
+
+Solution
+--------
+
+Remove the faulty implementaton registration.
