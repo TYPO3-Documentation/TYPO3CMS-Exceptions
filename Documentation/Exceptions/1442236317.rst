@@ -8,17 +8,25 @@ TYPO3 Exception 1442236317
 
 
 ..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+   [TYPO3 12.3] - [8.4.2023]
+   =========================
 
    Situation
    ---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+   The TYPO3 12.3 backend page module ends up in this exception error message:
+   (1/1) #1442236317 InvalidArgumentException
+    MenuItem "" is not valid
+    
+   backtrace:
+    /typo3/sysext/backend/Classes/Template/Components/Menu/Menu.php line 92
+     */
+    public function addMenuItem(MenuItem $menuItem)
+    {
+        if (!$menuItem->isValid($menuItem)) {
+            throw new \InvalidArgumentException('MenuItem "' . $menuItem->getTitle() . '" is not valid', 1442236317);
+        }
 
    Solution
    --------
-
-   1. Did you find a solution?
-   2. Explain what you did ..
+   Maintenance backend module -> Flush TYPO3 and PHP Cache
