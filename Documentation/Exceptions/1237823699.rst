@@ -58,3 +58,20 @@ well: https://github.com/FluidTYPO3/flux/issues/1599 → Add colPos
 attribute to all grids with numbers from 0 to 99. The Update script of
 flux will then fix the colPos Value in the database automatically.
 https://github.com/FluidTYPO3/flux/issues/1594#issuecomment-408886174
+
+#1237823699 Error: Required argument "error" was not supplied.
+===============================================================
+
+Issue: Upgrade of Form Framework from Version 9 to 11. Frontend shows
+exception about missing error translation argument.
+
+Solution: Compare markup of the original Partial (typo3/sysext/form/Resources/Private/Frontend/Partials/Field/Field.html)
+to your custom Partial. 
+
+Before:
+
+    {formvh:translateElementError(element: element, code: error.code, arguments: error.arguments, defaultValue: error.message)}
+
+After:
+
+    {formvh:translateElementError(element: element, error: error)}
