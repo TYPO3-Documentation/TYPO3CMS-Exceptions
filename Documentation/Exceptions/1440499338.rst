@@ -43,7 +43,7 @@ is not applied to custom site configurations in v12.3.
    
 .. seealso::
    *  `Feature: #99739 - Associative array keys for TCA items <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.3/Feature-99739-AssociativeArrayKeysForTCAItems.html>`__
-   *  `Bug: #100359 - Using TCA type "checkbox" in custom site configuration field throws error <https://forge.typo3.org/issues/100359>'__
+   *  `Bug: #100359 - Using TCA type "checkbox" in custom site configuration field throws error <https://forge.typo3.org/issues/100359>`__
    
 Solution
 --------
