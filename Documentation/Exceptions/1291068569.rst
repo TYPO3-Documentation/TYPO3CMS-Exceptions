@@ -8,8 +8,8 @@ TYPO3 Exception 1291068569
 
 
 ..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+   TYPO3 v12 - 2023-04-14
+   ======================
 
    Situation
    ---------
@@ -22,3 +22,14 @@ TYPO3 Exception 1291068569
 
    1. Did you find a solution?
    2. Explain what you did ..
+
+ERROR
+-----
+
+(1/1) #1291068569 TYPO3\CMS\Core\Exception
+Unsupported sendmail command flags "/usr/local/bin/mailhog sendmail test@example.org --smtp-addr 127.0.0.1:1025"; must be one of "-bs" or "-t" but can include additional flags.
+
+Solution
+--------
+
+Adjust the settings for Mail like proposed either in the Installtool or directly in config/system/settings.php.
