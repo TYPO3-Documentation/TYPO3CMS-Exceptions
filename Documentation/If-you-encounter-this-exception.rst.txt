@@ -9,7 +9,7 @@
 
    General TYPO3 troubleshooting tips can be found in the section
    "Troubleshooting" of the menu, and live support is available in the
-   `TYPO3 Slack channel <https://typo3.slack.com>`__ #typo3-cms.
+   `TYPO3 Slack channel <https://typo3.slack.com>`__ #typo3-cms. (See `How to get your TYPO3 Slack account <https://typo3.org/community/meet/chat-slack>`__.)
 
    To add your experience, click "Edit on GitHub" above and follow the
    :ref:`"Edit on GitHub" workflow <h2document:docs-contribute-github-method>`.
