@@ -11,3 +11,8 @@ Property "..." was not found in file reference or original file
 
 Happens if the field is missing in database. Go to Database Analyzer in
 Install Tool and add the field.
+
+Property "width" was not found in file reference or original file
+================================================================
+
+Happens if the file metadata is missing in database. This might happen if the file record was imported. To fix it run FileStorageIndexingTask via ext:scheduler or restore the metadata.
