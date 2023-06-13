@@ -140,3 +140,22 @@ This can also happen if an extbase form has an object with a file upload element
 You can silence that error by using an initializeAction and checking if the mentioned properties actually are submitted as an array, or only as a string. But in fact, this exception would not be "wrong", because the actual bot request was faulty. But we wanted this recurring error not to flood our sys_log entries.
 
 (TODO: This might also be fixable with better property mapping configuration and/or TypeConverter checks catching this error; the UploadedFileReferenceTypeConverter from Helmut Hummel was used in this case, which provoked the error above)
+
+Exception while property mapping at property path "filter": No delimiter configured for TYPO3\CMS\Extbase\Property\TypeConverter\ArrayConverter and non-empty value given.
+==========================================================================================================================================================================
+
+This could happen if your Fluid ViewHelper for a checkbox is like this and filter is an array:
+
+::
+
+    <f:form action="myAction" objectName="MyDto" object="MyDto">
+        <f:form.checkbox property="filter" value="TYPO3" />
+    </f:form>
+
+You have to add multiple="1" in the Fluid ViewHelper:
+
+::
+
+    <f:form action="myAction" objectName="MyDto" object="MyDto">
+        <f:form.checkbox property="filter" value="TYPO3" multiple="1" />
+    </f:form>
