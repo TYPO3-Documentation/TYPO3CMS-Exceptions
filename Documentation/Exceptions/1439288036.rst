@@ -33,3 +33,28 @@ This has to be replaced with a correct item definition like
    ]
 
 https://docs.typo3.org/typo3cms/TCAReference/7.6/Reference/Columns/Select/Index.html#items
+
+Same error on TYPO3 12.4:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I got this error in TYPO3 12.4 when changing the TCA items (l10n_parent field) from old format to new one forgetting the outer brackets []
+
+wrong:
+
+.. code-block:: php
+
+   'items' => [
+       'label' => '-',
+        'value' => 0,
+   ],
+
+right:
+
+.. code-block:: php
+
+   'items' => [
+       [
+           'label' => '',
+           'value' => 0,
+       ],
+   ],
