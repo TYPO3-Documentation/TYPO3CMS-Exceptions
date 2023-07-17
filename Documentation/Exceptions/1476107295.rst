@@ -246,7 +246,7 @@ This error occurred when editing certain IRRE data and when displaying the detai
 Reason
 ------
 
-We add wrong TCA paramaters : 
+We add wrong TCA parameters : 
 
 ::
 
