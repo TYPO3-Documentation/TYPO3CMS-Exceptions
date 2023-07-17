@@ -267,7 +267,8 @@ which generated an error in the following code (:php:`/ $this->iLimit`)
         if ($totalPages <= 1) {
             return '';
         }
-        ...
+        // ...
+    }
 
 
 Solution
