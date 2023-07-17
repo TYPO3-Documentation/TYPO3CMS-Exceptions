@@ -257,7 +257,8 @@ which generated an error in the following code (:php:`/ $this->iLimit`)
 
 ..  code-block:: php
 
-    * @return string Navigation HTML
+    /**
+     * @return string Navigation HTML
     */
     protected function renderListNavigation($renderPart = 'top')
     {
