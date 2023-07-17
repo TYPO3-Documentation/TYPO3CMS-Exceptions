@@ -236,3 +236,42 @@ You have to use the unpacking ellipsis (:php:`...`) PHP token in order to add yo
         ->where(...$constraints)
         ->execute()
         ->fetchAllAssociative();
+
+
+PHP Warning: Division by zero in /var/www/html/public/typo3/sysext/recordlist/Classes/RecordList/DatabaseRecordList.php line 1884
+==============================================================================================================================================
+
+This error occurred when editing certain IRRE data and when displaying the detail list.
+
+Reason
+------
+
+We add wrong TCA parameters : 
+
+::
+
+    'maxDBListItems' => 0,
+    'maxSingleDBListItems' => 0,
+
+which generated an error in the following code (:php:`/ $this->iLimit`)
+
+..  code-block:: php
+
+    /**
+     * @return string Navigation HTML
+     */
+    protected function renderListNavigation($renderPart = 'top')
+    {
+        $totalPages = ceil($this->totalItems / $this->iLimit);
+        // Show page selector if not all records fit into one page
+        if ($totalPages <= 1) {
+            return '';
+        }
+        // ...
+    }
+
+
+Solution
+--------
+
+Check that you do not have a null value for the :php:`maxDBListItems` and :php:`maxSingleDBListItems` parameters.
