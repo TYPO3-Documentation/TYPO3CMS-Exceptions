@@ -259,7 +259,7 @@ which generated an error in the following code (:php:`/ $this->iLimit`)
 
     /**
      * @return string Navigation HTML
-    */
+     */
     protected function renderListNavigation($renderPart = 'top')
     {
         $totalPages = ceil($this->totalItems / $this->iLimit);
