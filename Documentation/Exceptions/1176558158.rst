@@ -28,7 +28,34 @@ Solution
 
 You must retrieve the site configuration with `getAttribute()` not `getArgument`:
 
-
 ..  code-block:: php
 
     $site =  $this->request->getAttribute('site');
+
+TYPO3 12.4.3 - 24.07.23
+=======================
+
+..  error::
+    An argument "currentContentObject" does not exist for this request.
+
+
+Situation
+---------
+
+This error was thrown in the :php:`\TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder` when calling it from a non-Extbase context
+
+
+Solution
+--------
+
+Pass the current request object to the UriBuilder:
+
+..  code-block:: php
+
+    $uri = $uriBuilder->reset()
+            ->setRequest($this->getExtbaseRequest())
+            ->setTargetPageUid(188)
+            // ...
+            ->build();
+
+See also :ref:`t3coreapi:extbase-uri-builder`.
