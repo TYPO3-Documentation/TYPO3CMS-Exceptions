@@ -53,7 +53,7 @@ Pass the current request object to the UriBuilder:
 ..  code-block:: php
 
     $uri = $uriBuilder->reset()
-            ->setRequest($this->getRequest)
+            ->setRequest($this->getRequest())
             ->setTargetPageUid(188)
             // ...
             ->build();
