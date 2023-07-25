@@ -42,7 +42,7 @@ TYPO3 12.4.3 - 24.07.23
 Situation
 ---------
 
-This error was thrown in the :php:`\TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder`.
+This error was thrown in the :php:`\TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder` when calling it from a non-Extbase context
 
 
 Solution
@@ -53,7 +53,9 @@ Pass the current request object to the UriBuilder:
 ..  code-block:: php
 
     $uri = $uriBuilder->reset()
-            ->setRequest($this->getRequest())
+            ->setRequest($this->getExtbaseRequest())
             ->setTargetPageUid(188)
             // ...
             ->build();
+
+See also :ref:`t3coreapi:extbase-uri-builder`.
