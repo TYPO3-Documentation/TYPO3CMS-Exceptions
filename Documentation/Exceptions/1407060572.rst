@@ -16,7 +16,7 @@ Case 1: Missing Extension
 
 If you did change your templates like this:  
 
-:html:`<core:contentEditable table="tt_content" field="header" u> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`  
+:html:`<core:contentEditable table="tt_content" field="header" uid="42"> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`  
 
 … you need to add the `frontend_editing` extension.
 
