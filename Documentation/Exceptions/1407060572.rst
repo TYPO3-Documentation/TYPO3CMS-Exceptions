@@ -46,7 +46,7 @@ Check for typos! I named the ViewHelper "CustomViewhelper" with an
 lowercase "h", which leads to above fatal error.
 
 Case 3 - Autoloading failed
---------------------------
+---------------------------
 
 Check for correct namespaces derived from PSR-4 in /vendor/composer/autoload_psr4.php. Sometimes the class hasnt been autoloaded at all, due to typos in composer.json.
 
