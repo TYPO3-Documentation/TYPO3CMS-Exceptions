@@ -9,26 +9,20 @@ TYPO3 Exception 1407060572
 Fluid parse error in template "..."
 ===================================
 
-Case 1: Frontend editing required but not installed
+Case 1: Missing Extension
 ---------------------------------------------------
 
-If you did change your templates like this:
-:html:`<core:contentEditable table="tt_content" field="header" u> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`
-you need to add the `frontend_editing` extension.
+**E.g. #1 Frontend editing required but not installed**  
 
-Case 2 - Typos
+If you did change your templates like this:  
+
+:html:`<core:contentEditable table="tt_content" field="header" uid="42"> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`  
+
+… you need to add the `frontend_editing` extension.
+
 --------------
 
-
- **Uncaught TYPO3 Exception**
- #1407060572: Fluid parse error in template Standard_action_index_d05c4e8f75e024f00a98da5e29c3ed0043a25267, line 9 at character 1. Error: The ViewHelper :html:`<xy:custom>` could not be resolved.
- Based on your spelling, the system would load the class `MyVendor\MyExtension\ViewHelpers\CustomViewHelper`, however this class does not exist. (error code 1407060572). Template source chunk: :html:`<xy:custom myParameter="somedata" />`
-
-Check for typos! I named the ViewHelper "CustomViewhelper" with an
-lowercase "h", which leads to above fatal error.
-
-Case 3 - Missing Extension
---------------------------
+**E.g. #2 Vhs extension missing**
 
  **Fluid parse error in template**
  Query_action_show_0c62eb625eb2a7904988fc25163bb9056e30949a, line 11 at
@@ -41,12 +35,28 @@ Case 3 - Missing Extension
 In Fluid the namespace :html:`{namespace v=FluidTYPO3\Vhs\ViewHelpers}` was declared,
 but the Vhs extension was missing.
 
+Case 2 - Typos
+--------------
+
+ **Uncaught TYPO3 Exception**
+ #1407060572: Fluid parse error in template Standard_action_index_d05c4e8f75e024f00a98da5e29c3ed0043a25267, line 9 at character 1. Error: The ViewHelper :html:`<xy:custom>` could not be resolved.
+ Based on your spelling, the system would load the class `MyVendor\MyExtension\ViewHelpers\CustomViewHelper`, however this class does not exist. (error code 1407060572). Template source chunk: :html:`<xy:custom myParameter="somedata" />`
+
+Check for typos! I named the ViewHelper "CustomViewhelper" with an
+lowercase "h", which leads to above fatal error.
+
+Case 3 - Autoloading failed
+---------------------------
+
+Check for correct namespaces derived from PSR-4 in /vendor/composer/autoload_psr4.php. Sometimes the class hasnt been autoloaded at all, due to typos in composer.json.
+
+
 Case 4 - Clear Caches
 ---------------------
 
 Clearing caches in Install Tool resolved the error.
 
-Case 5 - fix outdated ViewHelpers
+Case 5 - Fix outdated ViewHelpers
 ---------------------------------
 
 In many cases the ViewHelpers of an Extension have changed. This can happen, 
