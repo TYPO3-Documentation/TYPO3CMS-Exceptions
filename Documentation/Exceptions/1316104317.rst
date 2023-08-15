@@ -75,7 +75,8 @@ Try deleting the plugin instance and add a new one, or clear
 switchableControllerActions from FlexForm.
 
 If this still isn't resolved, or happens for 3rd party extensions:
-=========================================
+==================================================================
+
 If you got this error for e.g. `EXT:news` which probably shouldn't be badly configured, it can
 be a broken routing configuration. So check your site yaml (includes) for
 
