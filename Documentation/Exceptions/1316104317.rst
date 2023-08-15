@@ -6,8 +6,13 @@ TYPO3 Exception 1316104317
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-The default controller for extension "..." and plugin "..." can not be determined.
-==================================================================================
+::
+
+    #1316104317 TYPO3\CMS\Extbase\Mvc\Exception 
+    The default controller for extension "..." and plugin "..." can not be determined.`
+
+If this happens for your own extensions:
+========================================
 
 Basic requirements
 ------------------
@@ -68,3 +73,17 @@ types.
 Try deleting the plugin instance and add a new one, or clear
 :sql:`tt_content.pi_flexform` field for current plugin, to avoid wrong
 switchableControllerActions from FlexForm.
+
+If this still isn't resolved, or happens for 3rd party extensions:
+=========================================
+If you got this error for e.g. `EXT:news` which probably shouldn't be badly configured, it can
+be a broken routing configuration. So check your site yaml (includes) for
+
+.. code-block:: yaml
+
+    routeEnhancers:
+      News:
+        type: Extbase
+        extension: News
+
+And replace the lines following that with a default solution from the docs.
