@@ -18,7 +18,7 @@ The Issue
 ---------
 
 This error happens when calling :php:`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem()`
-on an item that is not a valid select imtem or does not have a items array.
+on an item that is not a valid select item or does not have an items array.
 
 Solution
 --------
