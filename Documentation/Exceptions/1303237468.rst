@@ -7,25 +7,33 @@ TYPO3 Exception 1303237468
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4.5 - 16.08.23
+=======================
 
-   Installation Overview
-   ---------------------
+..  error::
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+    Given select field item list was not found.
 
-   Solution
-   --------
+The Issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+This error happens when calling :php:`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem()`
+on an item that is not a valid select item or does not have an items array.
+
+Solution
+--------
+
+My select item did not have an `items` array, adding an empty items array fixed it:
+
+..  code-block:: php
+    :caption: EXT:my_sitepackage/Configuration/TCA/tx_my_sitepackage_table.php
+
+
+    'type' => [
+        'label' => 'Typ',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [],
+        ],
+    ],
