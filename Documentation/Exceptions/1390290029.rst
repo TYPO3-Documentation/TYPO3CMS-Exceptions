@@ -22,7 +22,7 @@ TYPO3 11.4 - File storage is offline / not found
 -------------------------------------------------
 
 Got to the backend module :guilabel:`File > Filelist` and check if a file
-storage is offline. If so right click on it and chose :guilabel:`edit`from
+storage is offline. If so right click on it and chose :guilabel:`Edit` from
 the context menu. Check the paths or sources that are configured here.
 
 TYPO3 7
