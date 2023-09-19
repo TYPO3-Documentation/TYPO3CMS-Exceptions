@@ -18,6 +18,13 @@ to create and save preview images. The :file:`processed` folder was set to a
 second file storage whose root directory was `readonly`. After fixing that
 permission problem of the second file storage, everything worked again.
 
+TYPO3 11.5 - File storage is offline / not found
+-------------------------------------------------
+
+Got to the backend module :guilabel:`File > Filelist` and check if a file
+storage is offline. If so right click on it and choose :guilabel:`Edit` from
+the context menu. Check the paths or sources that are configured here.
+
 TYPO3 7
 -------
 
