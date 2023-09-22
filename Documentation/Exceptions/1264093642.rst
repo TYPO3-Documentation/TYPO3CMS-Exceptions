@@ -9,9 +9,11 @@ TYPO3 Exception 1264093642
 Found an invalid element type declaration in %s
 ===============================================
 
- 1264093642: Found an invalid element type declaration in %s. Type
- "ObjectStorage" must not have an element type hint
- (vendor\yourExtension\Domain\Model\yourModel)
+.. code-block:: text
+
+   1264093642: Found an invalid element type declaration in %s. Type
+   "ObjectStorage" must not have an element type hint
+   (vendor\yourExtension\Domain\Model\yourModel)
 
 Solution
 ========
@@ -21,23 +23,27 @@ In annotations use statement do not work in older TYPO3 versions.
 Use::
 
     use TYPO3\CMS\Extbase\Persistence\ObjectStorage
-    ....
+
+    // ...
+
     /**
     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\vendor\yourExtension\Domain\Model\yourModel
     * ...
     */
 
-instead off
+instead of
 
 ::
 
     use TYPO3\CMS\Extbase\Persistence\ObjectStorage
-    ....
+
+    // ...
+
     /**
     * @var ObjectStorage<\vendor\yourExtension\Domain\Model\yourModel>
     * ...
     */
-    
+
 Running Rector for TYPO3 v8 and below
 -------------------------------------
 
@@ -45,9 +51,10 @@ If you are running Rector on TYPO3 v8 and below you should exclude :php:`Domain/
 from TYPO3 Option `Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES`.
 
 ::
+
     $parameters->set(Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES, [
-        # If you are targeting TYPO3 Version 11 use can now use Short namespace
-        # @see namespace https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ExtensionArchitecture/ConfigurationFiles/Index.html
+        // If you are targeting TYPO3 Version 11 use can now use Short namespace
+        // @see namespace https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/BestPractises/ConfigurationFiles.html
         'ext_localconf.php',
         'ext_tables.php',
         'ClassAliasMap.php',

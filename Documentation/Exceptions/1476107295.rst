@@ -9,63 +9,63 @@ TYPO3 Exception 1476107295
 Permission denied
 =================
 
-::
+.. code-block:: text
 
    PHP Warning: session_start(): failed: Permission denied (13)
 
 Solution
 --------
 
-Can be fixed by deleting all sess\_ files in the temp folder or by creating the
-folder by hand if it doesn't exist)
+Can be fixed by deleting all :file:`sess_` files in the :file:`temp` folder or by creating the
+folder by hand (if it doesn't exist).
 
 On logging into the backend
 ===========================
 
-After upgrading from TYPO3 7.6.23 to TYPO3 8.7.9, I am getting this
-error most of the time that I login to the Backend.
+After upgrading from TYPO3 v7.6.23 to TYPO3 v8.7.9, I am getting this
+error most of the time that I login to the backend.
 
 Solution
 --------
 
-After I delete the folder "var" in "typo3temp", the next Backend login succeeds.
+After I delete the folder :file:`var` in :file:`typo3temp`, the next backend login succeeds.
 
 
 case 2:
 
-::
+.. code-block:: text
 
    #1476107295: PHP Warning: include(/var/www/html/foobar/typo3_src-8.7.29/vendor/composer/../psr/http-message/src/UriInterface.php): failed to open stream: Bad message in /var/www/html/foobar/typo3_src-8.7.29/vendor/composer/ClassLoader.php line 444 (More information)
 
 Solution
 --------
 
-Check your filesystem at the folder given in the error message and run 
+Check your file system at the folder given in the error message and run
 
-::
+.. code-block:: bash
 
-   sudo fsck -cfk /dev/sda2 
-   
+   sudo fsck -cfk /dev/sda2
+
 where dev/sda2 is the corrupted disk.
 
 PHP Warning: Illegal offset type
 ================================
 
-:
+.. code-block:: text
 
    PHP Warning: Illegal offset type in
    typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
    line 234
 
-(TYPO3 8.7) The error occurred in CKEditor Rich Text Editor while setting
-a link. This was caused by the pageTSconfig for the old rte html
-Editor. After deleting the pageTSconfig for the old RTE everything works as
+(TYPO3 v8.7) The error occurred in CKEditor Rich Text Editor while setting
+a link. This was caused by the page TSconfig for the old rte html
+Editor. After deleting the page TSconfig for the old RTE everything works as
 expected again.
 
 Using sb_portfolio2
 ===================
 
-::
+.. code-block:: text
 
    1476107295: PHP Warning: Declaration of
    Tx_SbPortfolio2_Domain_Repository_CategoryRepository::findByTags(Tx_SbPortfolio2_Domain_Model_Tag
@@ -81,29 +81,29 @@ arguments
 Vhs ScriptViewHelper
 ====================
 
-I'm getting this error after the update from TYPO3 8.7 to 9.5 while
+I'm getting this error after the update from TYPO3 v8.7 to v9.5 while
 rendering a template which contains JavaScript in the
-FluidTYPO3\Vhs\ViewHelpers\Asset\ScriptViewHelper.
+:php:`\FluidTYPO3\Vhs\ViewHelpers\Asset\ScriptViewHelper`.
 
 Upgrading from TYPO3 8 to 9
 ===========================
 
-After upgrading from TYPO3 8 to 9 I got this error because PHP Cache is
-loading the files out of the old TYPO3 8 source dir. After removing the
-old typo3_src-8.x.x dir or reloading the webserver the paths are
+After upgrading from TYPO3 v8 to v9 I got this error because PHP Cache is
+loading the files out of the old TYPO3 v8 source dir. After removing the
+old :file:`typo3_src-8.x.x` dir or reloading the webserver the paths are
 correct.
 
 PHP Warning: key() expects parameter 1  to be array, string given in ConditionMatcher.php
 =========================================================================================
 
-::
+.. code-block:: text
 
    PHP Warning: key() expects parameter 1 to be array, string given in
    /home/host/data/www/typo3_src-9.5.9/typo3/sysext/backend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
 
 
-It is happened because of my "_GP('edit')" coincided with
-"$editStatement = GeneralUtility::_GP('edit');".
+It is happened because of my :php:`_GP('edit')` coincided with
+:php:`$editStatement = GeneralUtility::_GP('edit');`.
 
 My solution: I change from "edit" to "redact", now I do not get this
 error.
@@ -118,7 +118,7 @@ Ext:mask. No problems under PHP 7.2.21.
 PHP Warning: preg_match(): Compilation failed: regular expression is too large
 ==============================================================================
 
-::
+.. code-block:: text
 
    "Uncaught TYPO3 Exception: #1476107295: PHP Warning: preg_match():
    Compilation failed: regular expression is too large at offset 27 in
@@ -142,7 +142,7 @@ mentioned error was gone
 Calling typo3/sysext/core/bin/typo3 scheduler:run from CLI:
 ===========================================================
 
-::
+.. code-block:: text
 
    Array and string offset access syntax with curly braces is deprecated in
    (...)/typo3_src-9.5.9/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
@@ -157,7 +157,7 @@ Extension gridelements in debug mode
 ====================================
 
 When gridelements is enabled in debug mode, this error comes currently
-in V10.4.12 - disable the ext, when you are in debug mode and you are
+in v10.4.12 - disable the extension, when you are in debug mode and you are
 good to go.
 
 
@@ -165,10 +165,10 @@ good to go.
 PHP Warning: Undefined array key "<field>" in ControllerName.php
 ===============================================================================
 
-Using TYPO3v11 with PHP 8 this error occurs because of misconfiguration of an 
+Using TYPO3 v11 with PHP 8 this error occurs because of misconfiguration of an
 extension due to changes from PHP 7.4 to 8.x. It can happen when an extension
 is not migrated to work with PHP 8.x. Please contact the developer to fix this
- issue, or fix it by yourself if it is your own extension.  (See below)
+issue, or fix it by yourself if it is your own extension. (See below)
 
 Solution
 --------
@@ -181,16 +181,18 @@ Remove the offending entry in your :php:`ctrl` section or add the missing column
 PHP Warning: file_exists(): open_basedir restriction in effect. File(/typo3temp/assets/js/<something>.js) is not within the allowed path(s)
 ============================================================================================================================================
 
-Happens after Updating from TYPO3 11.5.13 to 11.5.14. There is an issue: 
+Happens after Updating from TYPO3 v11.5.13 to v11.5.14. There is an issue:
 :forge:`98106`. And a patch that can be applied. Should be resolved with the next bug fix version.
 
 
 
 
 TYPO3\\CMS\\Core\\Error\\Exception
-========================
+==================================
 
-PHP Warning: file_get_contents(.../public/fileadmin/<file>): failed to open stream: No such file or directory in .../public/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php line 110
+.. code-block:: text
+
+   PHP Warning: file_get_contents(.../public/fileadmin/<file>): failed to open stream: No such file or directory in .../public/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php line 110
 
 
 Reason
@@ -246,7 +248,7 @@ This error occurred when editing certain IRRE data and when displaying the detai
 Reason
 ------
 
-We add wrong TCA parameters : 
+We add wrong TCA parameters :
 
 ::
 
