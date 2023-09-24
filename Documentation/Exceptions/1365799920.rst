@@ -1,4 +1,4 @@
- .. include:: /Includes.rst.txt
+.. include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1365799920
@@ -8,7 +8,7 @@ TYPO3 Exception 1365799920
 
 
 TYPO3 12.0-dev - 14.08.22
-==================================
+=========================
 
 Installation Overview
 ---------------------
@@ -20,18 +20,17 @@ The Issue
 
 On front end call to the extensions plugin
 
-.. attention::
+.. code-block:: text
 
-   .. code-block:: none
-      (1/1) #1365799920 TYPO3\CMS\Extbase\Validation\Exception\NoSuchValidatorException
-      Validator class FriendsOfTYPO3\ExtbaseExample\Domain\Validator\BlogValidator does not exist
+   (1/1) #1365799920 TYPO3\CMS\Extbase\Validation\Exception\NoSuchValidatorException
+   Validator class FriendsOfTYPO3\ExtbaseExample\Domain\Validator\BlogValidator does not exist
 
 Solution
 --------
 
 The fully-qualified class name of the validator in the annotation was wrong
 
-Changed annotation from 
+Changed annotation from
 
 .. code-block:: php
 
@@ -42,8 +41,8 @@ Changed annotation from
   * @throws NoBlogAdminAccessException
   */
   public function updateAction(Blog $blog): ResponseInterface
-  
-to 
+
+to
 
 .. code-block:: php
 
