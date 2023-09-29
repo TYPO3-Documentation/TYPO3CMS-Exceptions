@@ -46,7 +46,7 @@ When validating a controller's argument, the following exception is thrown:
 
    .. code-block:: text
       #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Booking::startdate",
-   make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
+      make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
 
 But there is a :php:`public function getStartdate(): DateTime` defined in the class.
 
