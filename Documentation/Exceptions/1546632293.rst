@@ -42,7 +42,7 @@ TYPO3 11.5.31 - 2023-09-29
 Situation
 ---------
 
-When validating a controller's argument, the following exception is thrown::
+When validating a controller's argument, the following exception is thrown:
 
    #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Booking::startdate",
    make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
