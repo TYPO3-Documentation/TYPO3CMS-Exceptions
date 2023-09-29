@@ -53,7 +53,7 @@ But there is a :php:`public function getStartdate(): DateTime` defined in the cl
 Solution
 --------
 
-In Getter, the return value has to be nullable:
+In the getter, the return value has to be nullable:
 
 ::
 
