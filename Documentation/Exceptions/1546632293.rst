@@ -57,4 +57,4 @@ In the getter, the return value has to be nullable:
 
 ::
 
-  publich function getStartdate(): ?DateTime
+  public function getStartdate(): ?DateTime
