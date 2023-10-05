@@ -13,7 +13,8 @@ Check your source code for occurrences of that class name. Usually happens if a
 hook is registered with a wrong class name/reference.
 
 Possible solution:
-non Composer:
+
+Legacy installation:
 
 *   Try to use the :guilabel:`Admin Tools > Maintenance` backend module: Rebuild PHP Autoload Information
 
