@@ -13,4 +13,11 @@ Check your source code for occurrences of that class name. Usually happens if a
 hook is registered with a wrong class name/reference.
 
 Solution 1: 
-Try to use the TYPO3 backend Install Tool: Rebuild PHP Autoload Information
+non Composer:
+
+*   Try to use the TYPO3 backend Install Tool: Rebuild PHP Autoload Information
+
+Composer:
+
+*   composer dump-autoload
+
