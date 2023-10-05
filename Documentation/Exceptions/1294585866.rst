@@ -18,7 +18,7 @@ Legacy installation:
 
 *   Try to use the :guilabel:`Admin Tools > Maintenance` backend module: Rebuild PHP Autoload Information
 
-Composer:
+Composer-based installation:
 
 *   composer dump-autoload
 
