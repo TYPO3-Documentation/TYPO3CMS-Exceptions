@@ -15,7 +15,7 @@ hook is registered with a wrong class name/reference.
 Possible solution:
 non Composer:
 
-*   Try to use the TYPO3 backend Install Tool: Rebuild PHP Autoload Information
+*   Try to use the :guilabel:`Admin Tools > Maintenance` backend module: Rebuild PHP Autoload Information
 
 Composer:
 
