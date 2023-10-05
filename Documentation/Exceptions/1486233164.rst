@@ -6,27 +6,28 @@ TYPO3 Exception 1486233164
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-This error can happen, when a record, containing a fal relation, is
-about to be translated into another language. Reason: 1. The fal data
-was created before any languages were created. In that case just delete
-the original fal data and recreate it. 2. The TCA is missing an
-"appearance" configuration, for example:
+This error can happen, when a record, containing a :ref:`FAL <t3coreapi:fal>`
+relation, is about to be translated into another language. Possible reasons:
 
-[...] => ['config' => [
+1.  The FAL data was created before any languages were created. In that case
+    just delete the original FAL data and recreate it.
+2.  The TCA is missing an "appearance" configuration, for example:
 
-::
+..  code-block:: php
 
-      'appearance' => [
-          'showPossibleLocalizationRecords' => true,
-          'showRemovedLocalizationRecords' => true,
-          'showAllLocalizationLink' => true,
-          'showSynchronizationLink' => true,
-          'enabledControls' => [
-              'info' => false,
-          ]
-      ]
-
-]]
+    [
+        'config' => [
+            // ...
+            'appearance' => [
+                'showPossibleLocalizationRecords' => true,
+                'showRemovedLocalizationRecords' => true,
+                'showAllLocalizationLink' => true,
+                'showSynchronizationLink' => true,
+                'enabledControls' => [
+                    'info' => false,
+                ]
+            ]
+    ]
 
 Check the TCA Reference for examples, like here:
-https://docs.typo3.org/typo3cms/TCAReference/ColumnsConfig/Type/Inline.html#images
+:ref:`IRRE / inline examples <t3tca:columns-inline-examples>`
