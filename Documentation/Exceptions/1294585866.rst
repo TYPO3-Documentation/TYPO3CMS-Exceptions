@@ -11,3 +11,14 @@ No class named "..."
 
 Check your source code for occurrences of that class name. Usually happens if a
 hook is registered with a wrong class name/reference.
+
+Possible solution:
+
+Legacy installation:
+
+*   Try to use the :guilabel:`Admin Tools > Maintenance` backend module: Rebuild PHP Autoload Information
+
+Composer-based installation:
+
+*   composer dump-autoload
+
