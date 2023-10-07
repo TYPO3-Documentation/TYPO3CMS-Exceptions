@@ -2,20 +2,26 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
-  workflow_dispatch:
+  # Ensure that the rendering workflow is executed after the exception-codes workflow has been executed.
+  workflow_run:
+    workflows: [exception-codes]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   use-docker-container:
     runs-on: ubuntu-latest
+    if: ${{ (github.event_name == 'push') || ((github.event_name == 'workflow_run') && (github.event.workflow_run.conclusion == 'success')) }}
     strategy:
       matrix:
         # online, offline
         mode: [ 'online' ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Prepare jobfile
         run: |
           mkdir -p Documentation-GENERATED-temp

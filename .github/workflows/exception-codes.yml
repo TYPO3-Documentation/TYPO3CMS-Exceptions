@@ -1,0 +1,40 @@
+name: exception-codes
+# NOTE: Be carefully with renaming the workflow. If the workflow is renamed, adjust it
+#       in the `rendering.yaml` workflow_run definition
+
+on:
+  schedule:
+    - cron:  '15 */3 * * *'
+
+jobs:
+  exception-code-pages:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: 8.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerUpdate
+
+      - name: Collect exception code for new releases
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s updateExceptionCodesMissingTags -c
+
+      - name: Create missing exception code pages
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s createMissingExceptionCodeFiles -c
+
+      - name: Check for not pushed commits
+        shell: bash
+        run: |
+          GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD)
+          UNPUSHED_COMMITS=$(git log origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH --oneline)
+          [[ -z "${UNPUSHED_COMMITS}" ]] && echo "::set-output name=t3d_has_changes::false"
+          [[ -n "${UNPUSHED_COMMITS}" ]] && echo "::set-output name=t3d_has_changes::true"
+
+      - name: Push committed changes
+        if: ${{ steps.vars.outputs.t3d_has_changes }}
+        shell: bash
+        run: |
+          git push

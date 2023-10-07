@@ -1,2 +1,4 @@
+/.Build/
 /.idea/
+/Build/app/vendor/
 /Documentation-GENERATED-temp/

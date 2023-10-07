@@ -1,0 +1,24 @@
+{
+    "name": "typo3/t3docs-exceptions",
+    "description": "This project provides the working commands for the TYPO3 Exception Pages\"",
+    "type": "project",
+    "license": "CC-BY-NC-SA-4.0",
+    "autoload": {
+        "psr-4": {
+            "T3DOCS\\ExceptionCodes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TYPO3 Documentation Team",
+            "homepage": "https://typo3.org/community/teams/documentation"
+        }
+    ],
+    "require": {
+        "symfony/console": "^6.3.4",
+        "psr/log": "^3",
+        "czproject/git-php": "^4.2.0",
+        "symfony/filesystem": "^6.3.1",
+        "php": "^8.1 || ^8.2 || ^8.3"
+    }
+}
