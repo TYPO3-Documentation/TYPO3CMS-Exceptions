@@ -77,6 +77,9 @@ switchableControllerActions from FlexForm.
 If this still isn't resolved, or happens for 3rd party extensions:
 ==================================================================
 
+Broken routing configuration:
+-----------------------------
+
 If you got this error for e.g. `EXT:news` which probably shouldn't be badly configured, it can
 be a broken routing configuration. So check your site yaml (includes) for
 
@@ -88,3 +91,7 @@ be a broken routing configuration. So check your site yaml (includes) for
         extension: News
 
 And replace the lines following that with a default solution from the docs.
+
+Bad redirects:
+--------------
+If you have a httpd redirect, custom early middleware redirect, or a TYPO3 redirect configured for the URL, even a simple one like redirecting `/paths` to variants with trailing slash `/paths/` then this can happen, too. Although that is more common with POST scenarios. Removing that redirect could resolve that problem.
