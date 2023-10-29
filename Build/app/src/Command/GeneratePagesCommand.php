@@ -86,6 +86,7 @@ final class GeneratePagesCommand extends Command
             uri: null,
         );
 
+        $output->writeln('Auto-commit: ' . ($autoCommit ? 'Y' : 'N'));
         $errorCodes = $this->getTotalErrorCodes($exceptionCollectionsPath);
         $templateContent = $this->getDocumentationFileTemplateContent();
         if (empty($templateContent)) {
