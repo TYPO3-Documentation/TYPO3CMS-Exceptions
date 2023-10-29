@@ -100,7 +100,7 @@ final class FetchCommand extends Command
 
         $exceptionCollectionsPath = Path::canonicalize(Path::makeAbsolute($exceptionCollectionsPath, $rootPath));
         $coreRepositoryPath = Path::canonicalize(Path::makeAbsolute($coreRepositoryPath, $rootPath));
-
+        $output->writeln('Auto-commit: ' . ($autoCommit ? 'Y' : 'N'));
         $service = FetcherService::factory(
             output: $output,
             autoCommit: $autoCommit,

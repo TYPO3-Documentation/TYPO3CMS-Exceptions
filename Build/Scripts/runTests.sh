@@ -199,13 +199,19 @@ case ${TEST_SUITE} in
         ;;
     updateExceptionCodesAllTags)
         AUTO_COMMIT_OPTION=""
-        [[ "${CREATE_COMMIT}" -eq 1 ]] ; AUTO_COMMIT_OPTION="--auto-commit"
+        if [ "${CREATE_COMMIT}" -eq 1 ]; then
+          AUTO_COMMIT_OPTION="--auto-commit"
+          echo "> auto-commit enabled"
+        fi
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name exceptioncodes-missing-${SUFFIX} ${XDEBUG_MODE} -e XDEBUG_CONFIG="${XDEBUG_CONFIG}" ${IMAGE_PHP} Build/app/console.php exception-codes:fetch --exception-collections-path="${CORE_ROOT}/Build/Exceptions" --repo-path="${CORE_ROOT}/.Build/typo3-core-repo" --repo-clone-url="https://github.com/TYPO3/typo3.git" ${AUTO_COMMIT_OPTION} all
         SUITE_EXIT_CODE=$?
         ;;
     updateExceptionCodesMissingTags)
         AUTO_COMMIT_OPTION=""
-        [[ "${CREATE_COMMIT}" -eq 1 ]] ; AUTO_COMMIT_OPTION="--auto-commit"
+        if [ "${CREATE_COMMIT}" -eq 1 ]; then
+          AUTO_COMMIT_OPTION="--auto-commit"
+          echo "> auto-commit enabled"
+        fi
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name exceptioncodes-missing-${SUFFIX} ${XDEBUG_MODE} -e XDEBUG_CONFIG="${XDEBUG_CONFIG}" ${IMAGE_PHP} Build/app/console.php exception-codes:fetch --exception-collections-path="${CORE_ROOT}/Build/Exceptions" --repo-path="${CORE_ROOT}/.Build/typo3-core-repo" --repo-clone-url="https://github.com/TYPO3/typo3.git" ${AUTO_COMMIT_OPTION} missing
         SUITE_EXIT_CODE=$?
         ;;
