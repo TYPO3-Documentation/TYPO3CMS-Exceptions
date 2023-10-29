@@ -162,6 +162,14 @@ IMAGE_PREFIX="docker.io/"
 TYPO3_IMAGE_PREFIX="ghcr.io/"
 CONTAINER_INTERACTIVE="-it --init"
 
+IS_CORE_CI=0
+# ENV var "CI" is set by gitlab-ci. We use it here to distinct 'local' and 'CI' environment.
+if [ "${CI}" == "true" ]; then
+    IS_CORE_CI=1
+    # Remove interactive tty for CI runs
+    CONTAINER_INTERACTIVE=""
+fi
+
 IMAGE_PHP="${TYPO3_IMAGE_PREFIX}typo3/core-testing-$(echo "php${PHP_VERSION}" | sed -e 's/\.//'):latest"
 SUFFIX=$(echo $RANDOM)
 NETWORK="typo3-docs-${SUFFIX}"
