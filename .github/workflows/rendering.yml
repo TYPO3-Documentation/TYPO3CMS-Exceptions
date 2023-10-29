@@ -11,6 +11,9 @@ on:
     types:
       - completed
 
+  # Allow manual triggering of this workflow
+  workflow_dispatch:
+
 jobs:
   use-docker-container:
     runs-on: ubuntu-latest
