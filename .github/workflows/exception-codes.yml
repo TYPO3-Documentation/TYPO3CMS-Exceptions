@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerUpdate
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerInstall
 
       - name: Collect exception code for new releases
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s updateExceptionCodesMissingTags -c
