@@ -27,7 +27,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List last 10 commits
-        if: ${{ steps.vars.outputs.t3d_has_changes }}
         shell: bash
         run: |
           git log -n 10 --oneline
