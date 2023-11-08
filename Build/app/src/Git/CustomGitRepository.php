@@ -57,7 +57,7 @@ final class CustomGitRepository extends GitRepository
 
     public function userEmail(): string|null
     {
-        return $this->userName ??= $this->detectUserEmail();
+        return $this->userEmail ??= $this->detectUserEmail();
     }
 
     /**
