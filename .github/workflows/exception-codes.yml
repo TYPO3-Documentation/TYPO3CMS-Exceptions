@@ -40,8 +40,9 @@ jobs:
           GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD)
           UNPUSHED_COMMITS=$(git log origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH --oneline)
           echo ${UNPUSHED_COMMITS}
-          [[ -z "${UNPUSHED_COMMITS}" ]] && echo '>> no unpushed commits' && && echo "t3d_has_changes=0" >> $GITHUB_OUTPUT
-          [[ -n "${UNPUSHED_COMMITS}" ]] && echo '>> has unpushed commits' && echo "t3d_has_changes=1" >> $GITHUB_OUTPUT           
+          hasChanges=0
+          [[ -n "${UNPUSHED_COMMITS}" ]] && hasChanges=1
+          echo "t3d_has_changes=${hasChanges}" >> $GITHUB_OUTPUT
 
       - name: Debug output variable
         run:
