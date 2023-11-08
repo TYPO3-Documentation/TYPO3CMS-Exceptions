@@ -39,11 +39,16 @@ jobs:
         run: |
           GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD)
           UNPUSHED_COMMITS=$(git log origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH --oneline)
-          [[ -z "${UNPUSHED_COMMITS}" ]] && echo "t3d_has_changes=false" >> $GITHUB_OUTPUT
-          [[ -n "${UNPUSHED_COMMITS}" ]] && echo "t3d_has_changes=true" >> $GITHUB_OUTPUT
+          echo ${UNPUSHED_COMMITS}
+          [[ -z "${UNPUSHED_COMMITS}" ]] && echo '>> no unpushed commits' && && echo "t3d_has_changes=0" >> $GITHUB_OUTPUT
+          [[ -n "${UNPUSHED_COMMITS}" ]] && echo '>> has unpushed commits' && echo "t3d_has_changes=1" >> $GITHUB_OUTPUT           
+
+      - name: Debug output variable
+        run:
+          echo ${{ steps.vars.outputs.t3d_has_changes }}
 
       - name: Push committed changes
-        if: ${{ steps.vars.outputs.t3d_has_changes }}
+        if: ${{ steps.vars.outputs.t3d_has_changes == 1 }}
         shell: bash
         run: |
           git push

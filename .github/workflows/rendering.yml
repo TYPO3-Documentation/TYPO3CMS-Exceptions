@@ -25,6 +25,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: List last 10 commits
+        if: ${{ steps.vars.outputs.t3d_has_changes }}
+        shell: bash
+        run: |
+          git log -n 10 --oneline
+
       - name: Prepare jobfile
         run: |
           mkdir -p Documentation-GENERATED-temp
@@ -34,6 +41,7 @@ jobs:
           if [[ "${{ matrix.mode }}" = "online" ]]; then
             echo '{"Overrides_cfg":{"html_theme_options":{"docstypo3org":"yes"}}}' > Documentation-GENERATED-temp/jobfile.json
           fi
+
       - name: docker run
         run: |
           docker run --rm --user=$(id -u):$(id -g) \
