@@ -52,7 +52,7 @@ final class CustomGitRepository extends GitRepository
 
     public function userName(): string|null
     {
-        return $this->userEmail ??= $this->detectUserEmail();
+        return $this->userName ??= $this->detectUserName();
     }
 
     public function userEmail(): string|null
@@ -67,22 +67,22 @@ final class CustomGitRepository extends GitRepository
     protected function detectUserName(): string|null
     {
         try {
-            $userEmail = trim($this->runWithoutEnv('config', ['--local', '--get' => 'user.name'])->getOutputAsString());
-            if ($userEmail !== '') {
-                return $userEmail;
+            $userName = trim($this->runWithoutEnv('config', ['--local', '--get' => 'user.name'])->getOutputAsString());
+            if ($userName !== '') {
+                return $userName;
             }
         } catch(GitException) {}
 
         try {
-            $userEmail = trim($this->runWithoutEnv('config', ['--global', '--get' => 'user.name'])->getOutputAsString());
-            if ($userEmail !== '') {
-                return $userEmail;
+            $userName = trim($this->runWithoutEnv('config', ['--global', '--get' => 'user.name'])->getOutputAsString());
+            if ($userName !== '') {
+                return $userName;
             }
         } catch(GitException) {}
 
-        $userEmail = trim((string)getenv('GIT_USER_NAME') ?? '');
-        if ($userEmail !== '') {
-            return $userEmail;
+        $userName = trim((string)getenv('GIT_USER_NAME') ?? '');
+        if ($userName !== '') {
+            return $userName;
         }
 
         return $this->defaultUserName ?? 'unknown';

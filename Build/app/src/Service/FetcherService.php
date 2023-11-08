@@ -222,15 +222,22 @@ class FetcherService
             }
         }
 
+        $hasChanges = $this->rootRepository->hasChanges();
+        $this->output->writeln(sprintf('COUNT_ADDED...: %s', $countAdded));
+        $this->output->writeln(sprintf('AUTO_COMMIT...: %s', ($this->autoCommit ? 'Y' : 'N')));
+        $this->output->writeln(sprintf('HAS_CHANGES...: %s', ($hasChanges ? 'Y' : 'N')));
+
         if ($this->autoCommit === true
-            && $this->rootRepository->hasChanges()
+            && $hasChanges
             && $countAdded > 0
         ) {
             $firstLine = ($this->mode === FetchMode::Missing)
                 ? '[TASK] Added missing release exception codes'
                 : '[TASK] Rebuild exception codes for all releases';
-            $rootRepository->commit($firstLine);
-
+            $commit = $rootRepository->commit($firstLine);
+            $this->output->writeln(sprintf('COMMIT_ID..........: %s', $commit->getId()->toString()));
+            $this->output->writeln(sprintf('COMMIT_AUTHOR_NAME.: %s', $commit->getAuthorName()));
+            $this->output->writeln(sprintf('COMMIT_AUTHOR_EMAIL: %s', $commit->getAuthorEmail()));
         } else {
             $this->output->writeln(
                 $this->autoCommit === true
@@ -249,13 +256,6 @@ class FetcherService
         );
 
         chdir($currentDirectory);
-
-        if ($this->autoCommit === true && $rootRepository->hasChanges()) {
-            throw new \RuntimeException(
-                'Changes left in repository after committing exception code release collections.',
-                1696777795
-            );
-        }
     }
 
     protected function exceptionJsonFilePathForTag(string $tag): string

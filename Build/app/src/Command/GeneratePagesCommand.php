@@ -130,12 +130,21 @@ final class GeneratePagesCommand extends Command
         }
         $duration = microtime(true) - $start;
 
+        $hasChanges = $rootRepository->hasChanges();
+
+        $output->writeln(sprintf('COUNT_ADDED...: %s', $countAdded));
+        $output->writeln(sprintf('AUTO_COMMIT...: %s', ($autoCommit ? 'Y' : 'N')));
+        $output->writeln(sprintf('HAS_CHANGES...: %s', ($hasChanges ? 'Y' : 'N')));
+
         if ($countAdded > 0
             && $autoCommit === true
-            && $rootRepository->hasChanges()
+            && $hasChanges
         ) {
             $firstLine = '[TASK] Created missing exception code page(s)';
-            $rootRepository->commit($firstLine);
+            $commit = $rootRepository->commit($firstLine);
+            $output->writeln(sprintf('COMMIT_ID..........: %s', $commit->getId()->toString()));
+            $output->writeln(sprintf('COMMIT_AUTHOR_NAME.: %s', $commit->getAuthorName()));
+            $output->writeln(sprintf('COMMIT_AUTHOR_EMAIL: %s', $commit->getAuthorEmail()));
         } else {
             $output->writeln(
                 $autoCommit === true
