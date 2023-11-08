@@ -36,20 +36,16 @@ jobs:
 
       - name: Check for not pushed commits
         shell: bash
+        id: check_changes
         run: |
           GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD)
           UNPUSHED_COMMITS=$(git log origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH --oneline)
-          echo ${UNPUSHED_COMMITS}
-          hasChanges=0
+          [[ -z "${UNPUSHED_COMMITS}" ]] && hasChanges=0
           [[ -n "${UNPUSHED_COMMITS}" ]] && hasChanges=1
-          echo "t3d_has_changes=${hasChanges}" >> $GITHUB_OUTPUT
-
-      - name: Debug output variable
-        run:
-          echo ${{ steps.vars.outputs.t3d_has_changes }}
+          echo "has_changes=${hasChanges}" >> $GITHUB_OUTPUT
 
       - name: Push committed changes
-        if: ${{ steps.vars.outputs.t3d_has_changes == 1 }}
+        if: ${{ steps.check_changes.outputs.has_changes == 1 }}
         shell: bash
         run: |
           git push
