@@ -7,25 +7,32 @@ TYPO3 Exception 1476045117
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 [V9] - [2023/12/05]
+==================================
 
-   Installation Overview
-   ---------------------
+The Issue
+---------
+This error mesage appears in the frontend when using an ExtBase model.
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+    (1/1) #1476045117 TYPO3\CMS\Extbase\Persistence\Generic\Exception\InvalidClassException
+    
+    Could not find class definition for name "Videos". This could be caused by a mis-spelling of the class name in the class definition.
 
-   The Issue
-   ---------
+Solution
+--------
+In the model, you have to use the full namespace for properties, replace::
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+    use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+    use \Site\Mda\Domain\Model\Videos;
+    
+    /**
+     * @var ObjectStorage<Videos>
+     */
+    protected $videos;
 
-   Solution
-   --------
+with::
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Site\Mda\Domain\Model\Videos>
+     */
+    protected $videos;
