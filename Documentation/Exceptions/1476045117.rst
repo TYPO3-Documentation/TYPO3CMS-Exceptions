@@ -21,6 +21,7 @@ This error mesage appears in the frontend when using an Extbase model.
 
 Solution
 --------
+
 In the model, you have to use the full namespace for properties, replace::
 
     use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
