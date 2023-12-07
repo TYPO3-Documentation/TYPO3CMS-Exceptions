@@ -12,7 +12,7 @@ TYPO3 [V9] - [2023/12/05]
 
 The Issue
 ---------
-This error mesage appears in the frontend when using an ExtBase model.
+This error mesage appears in the frontend when using an Extbase model.
 
     (1/1) #1476045117 TYPO3\CMS\Extbase\Persistence\Generic\Exception\InvalidClassException
     
