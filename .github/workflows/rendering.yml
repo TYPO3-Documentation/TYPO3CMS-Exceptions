@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, documentatation-draft]
 
   # Ensure that the rendering workflow is executed after the exception-codes workflow has been executed.
   workflow_run:
