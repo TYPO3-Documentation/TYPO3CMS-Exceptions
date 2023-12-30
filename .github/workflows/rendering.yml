@@ -53,6 +53,13 @@ jobs:
               -c replace_static_in_html 1 \
               -c jobfile /RESULT/jobfile.json
 
+      - name: Archive documentation rendering
+        uses: actions/upload-artifact@v3
+        with:
+          name: rendered-documentation
+          path: |
+            Documentation-GENERATED-temp/ 
+
       - name: SCP files to production system
         uses: appleboy/scp-action@master
         # Transfer the documentation to the production server only on main branch builds
