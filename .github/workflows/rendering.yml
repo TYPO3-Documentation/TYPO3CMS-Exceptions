@@ -2,12 +2,14 @@ name: CI
 
 on:
   push:
-    branches: [main, documentatation-draft]
+    branches:
+      - main
+      - documentation-draft
 
   # Ensure that the rendering workflow is executed after the exception-codes workflow has been executed.
   workflow_run:
     workflows: [exception-codes]
-    branches: [main, documentatation-draft]
+    branches: [main]
     types:
       - completed
 
@@ -53,6 +55,8 @@ jobs:
 
       - name: SCP files to production system
         uses: appleboy/scp-action@master
+        # Transfer the documentation to the production server only on main branch builds
+        if: ${{ github.ref == 'main' }}
         with:
           host: ${{ secrets.DEPLOY_DOCS_HOST }}
           username: ${{ secrets.DEPLOY_DOCS_USERNAME }}
