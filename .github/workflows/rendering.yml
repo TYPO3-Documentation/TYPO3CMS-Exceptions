@@ -20,10 +20,6 @@ jobs:
   use-docker-container:
     runs-on: ubuntu-latest
     if: ${{ (github.event_name == 'push') || ((github.event_name == 'workflow_run') && (github.event.workflow_run.conclusion == 'success')) }}
-    strategy:
-      matrix:
-        # online, offline
-        mode: [ 'online' ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,32 +29,11 @@ jobs:
         run: |
           git log -n 10 --oneline
 
-      - name: Prepare jobfile
-        run: |
-          mkdir -p Documentation-GENERATED-temp
-          if [[ "${{ matrix.mode }}" = "offline" ]]; then
-            echo '{"Overrides_cfg":{"html_theme_options":{"docstypo3org":""}}}' > Documentation-GENERATED-temp/jobfile.json
-          fi
-          if [[ "${{ matrix.mode }}" = "online" ]]; then
-            echo '{"Overrides_cfg":{"html_theme_options":{"docstypo3org":"yes"}}}' > Documentation-GENERATED-temp/jobfile.json
-          fi
-
       - name: Render exception code pages with new php render container
         run: |
           mkdir -p Documentation-GENERATED-temp \
           && docker run --rm --pull always -v $(pwd):/project \
              ghcr.io/typo3-documentation/render-guides:latest --config=Documentation
-          
-
-#      - name: docker run
-#        run: |
-#          docker run --rm --user=$(id -u):$(id -g) \
-#            -v $(pwd):/PROJECT:ro \
-#            -v $(pwd)/Documentation-GENERATED-temp:/RESULT \
-#            ghcr.io/t3docs/render-documentation makehtml-no-cache \
-#              -c make_singlehtml 1 \
-#              -c replace_static_in_html 1 \
-#              -c jobfile /RESULT/jobfile.json
 
       - name: Archive documentation rendering
         uses: actions/upload-artifact@v3
