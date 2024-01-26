@@ -29,3 +29,17 @@ TYPO3 Exception 1551950301
 
    Did you resolve the issue? List the steps or changes made that resolved the
    issue.
+
+
+
+TYPO3 10.4 - 2023-01-26
+==================================
+
+The Issue
+---------
+-  "Hash has to be non-empty string."
+-  Entries in 'sys_file' table point to non-existing files on the server
+
+Solution
+---------
+-  Sync your 'fileadmin' folder
