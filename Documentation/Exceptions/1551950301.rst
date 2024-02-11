@@ -46,5 +46,4 @@ Solution
 
     You may either be missing referenced files in :file:`fileadmin/`, or :sql:`sys_file` lists outdated entries.
     
-    The CLI command `typo3 cleanup:missingfiles` may help synchronizing your database to the current 
-:file:`fileadmin/` structure.
+    The CLI command `typo3 cleanup:missingfiles` may help synchronizing your database to the current :file:`fileadmin/` structure.
