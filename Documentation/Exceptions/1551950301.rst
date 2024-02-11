@@ -42,6 +42,9 @@ The Issue
 
 Solution
 ---------
--  Ensure that the files contained in your :file:`fileadmin/` tree are consistent with your :sql:`sys_file` database relations.
-You may either be missing referenced files in :file:`fileadmin/`, or :sql:`sys_file` lists outdated entries.
-The CLI command `typo3 cleanup:missingfiles` may help synchronizing your database to the current :file:`fileadmin/` structure.
+-   Ensure that the files contained in your :file:`fileadmin/` tree are consistent with your :sql:`sys_file` database relations.
+
+    You may either be missing referenced files in :file:`fileadmin/`, or :sql:`sys_file` lists outdated entries.
+    
+    The CLI command `typo3 cleanup:missingfiles` may help synchronizing your database to the current 
+:file:`fileadmin/` structure.
