@@ -7,25 +7,28 @@ TYPO3 Exception 1639819269
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4.12 - 20.03.2024
+==========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Sending a :php:`\TYPO3\CMS\Core\Mail\FluidEmail` from a console command. The template uses the
+:ref:`t3viewhelper:typo3-fluid-uri-page`.
 
-   The Issue
-   ---------
+The Issue
+---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+Error message:
 
-   Solution
-   --------
+..  code-block:: text
+    :caption: Example error output
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+    [ERROR] The rendering context of ViewHelper f:link.page is missing a valid request object. 
+    
+
+Solution
+--------
+
+Switch to using other ViewHelpers or set a valid request object to the :php:`FluidEmail`
+See also :ref:`Send email with FluidEmail <t3coreapi:mail-fluid-email>`.
