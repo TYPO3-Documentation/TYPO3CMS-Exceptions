@@ -33,7 +33,7 @@ Add explicitly a default value:
 ::
 
    protected ?Cart $cart = null;
-   
+
 `Read more information on this behaviour <https://blog.reelworx.at/detail/typo3-extbase-and-type-annotations-with-php-74/>`__.
 
 TYPO3 11.5.31 - 2023-09-29
@@ -45,6 +45,7 @@ Situation
 When validating a controller's argument, the following exception is thrown:
 
 .. code-block:: text
+
    #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Booking::startdate",
    make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
 
