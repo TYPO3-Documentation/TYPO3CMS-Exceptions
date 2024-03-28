@@ -17,3 +17,28 @@ If you encounter this error during FlexForm integration:
 
 it means that your FlexForm xml structure is defective (broken, has
 errors, does not parse properly).
+
+It occurs for example, when you try to add a FlexForm file to a CE or plugin, but forget the prefix 'FILE:'.
+
+.. code-block:: php
+    :caption: EXT:my_extension/Configuration/TCA/Overrides/tt_content.php
+    :linenos:
+    :emphasize-lines: 6, 15
+
+    /**
+     * Wrong way to add a FlexForm file to a Content Element
+     */
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+        '*',
+        'EXT:my_extension/Resources/Private/FlexForm/MyFlexForm.xml',
+        'textpic'
+    );
+
+    /**
+     * Correct way to add a FlexForm file to a Content Element
+     */
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+        '*',
+        'FILE:EXT:my_extension/Resources/Private/FlexForm/MyFlexForm.xml',
+        'textpic'
+    );
