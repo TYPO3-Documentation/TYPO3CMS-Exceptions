@@ -1,32 +1,37 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1480765571
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Data structure identifier must be set, typically by executing TcaFlexPrepare
 ============================================================================
 
-If you encounter this error during FlexForm integration:
+If you encounter this error during :ref:`FlexForm <t3coreapi:flexforms>`
+integration:
 
-   ::
+..  code-block:: text
 
-      Data structure identifier must be set, typically by executing TcaFlexPrepare data provider before
+    Data structure identifier must be set, typically by executing TcaFlexPrepare data provider before
 
-it means that your FlexForm xml structure is defective (broken, has
+it means that your FlexForm's XML structure is defective (broken, has
 errors, does not parse properly).
 
-It occurs for example, when you try to add a FlexForm file to a CE or plugin, but forget the prefix 'FILE:'.
+Missing prefix "FILE:"
+======================
 
-.. code-block:: php
+It occurs, for example, when you try to add a FlexForm file to a CE or plugin,
+but forget the prefix `FILE:`:
+
+..  code-block:: php
     :caption: EXT:my_extension/Configuration/TCA/Overrides/tt_content.php
     :linenos:
     :emphasize-lines: 6, 15
 
     /**
-     * Wrong way to add a FlexForm file to a Content Element
+     * WRONG WAY to add a FlexForm file to a content element
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '*',
@@ -35,7 +40,7 @@ It occurs for example, when you try to add a FlexForm file to a CE or plugin, bu
     );
 
     /**
-     * Correct way to add a FlexForm file to a Content Element
+     * CORRECT WAY to add a FlexForm file to a content element
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '*',
