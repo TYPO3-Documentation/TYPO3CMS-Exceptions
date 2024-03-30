@@ -35,8 +35,7 @@ system is then deployed to a system that does not support *argon2i*.
 Solutions
 =========
 
-Please see :ref:`Password hashing troubleshooting
-<t3coreapi:password-hashing_troubleshooting>`.
+Please see :ref:`Password hashing troubleshooting <t3coreapi:password-hashing\_troubleshooting>`.
 
 More information
 ================
