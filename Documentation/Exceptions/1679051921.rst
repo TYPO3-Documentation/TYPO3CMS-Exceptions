@@ -6,26 +6,16 @@ TYPO3 Exception 1679051921
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+LogicException (TYPO3 v12.4)
+==================================
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+``Either $defaultControllerClassName or $defaultControllerAlias are unexpectedly null``
 
-   Installation Overview
-   ---------------------
+When upgrading from TYPO3 v10.4
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Solution
+--------
 
-   The Issue
-   ---------
+Use controller classes when registering plugins/modules:
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules.html
