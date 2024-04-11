@@ -8,6 +8,7 @@ TYPO3 Exception 1679051921
 
 LogicException (TYPO3 12.4)
 ==================================
+
 ``Either $defaultControllerClassName or $defaultControllerAlias are unexpectedly null``
 
 When upgrading from TYPO3 10.4
