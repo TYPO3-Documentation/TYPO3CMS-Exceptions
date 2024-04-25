@@ -7,25 +7,42 @@ TYPO3 Exception 1641989097
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4.14 - 25.04.2024
+==========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Installation with custom Email templates for form, Updated from TYPO3 v10.4
 
-   The Issue
-   ---------
+The Issue
+---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+..  code-block:: plaintext
+    :caption: Warning message
 
-   Solution
-   --------
+    (1/1) #1641989097 LogicException
+    Invoked ContentObjectRenderer::parseFunc without any configuration
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Solution
+--------
+
+The template contained the following:
+
+..  code-block:: html
+    :caption: Template.html before
+
+    <f:format.html parseFuncTSPath="">
+        <f:translate extensionName="..." key="emailToSender.thankYou" arguments="{0: type}"/>
+    </f:format.html>
+
+Replace with 
+
+..  code-block:: html
+    :caption: Template.html before
+
+    <f:format.html>
+        <f:translate extensionName="..." key="emailToSender.thankYou" arguments="{0: type}"/>
+    </f:format.html>
+
+This way `null` is used instead of an empty string and the default can be applied.
