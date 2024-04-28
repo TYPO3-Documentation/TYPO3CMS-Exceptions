@@ -53,4 +53,4 @@ In the :file:`var/log/typo3_xxx.log` is also an error logged:
 Solution
 --------
 
-Correct the name of the dependency in :file:`Configuration/Sets/MySet/config.yaml, or remove it completely.
+Correct the name of the dependency in :file:`Configuration/Sets/MySet/config.yaml`, or remove it completely.
