@@ -8,24 +8,15 @@ TYPO3 Exception 1705656657
 
 
 ..
-   TYPO3 [version] - [date of report]
+   TYPO3 13.0 - 30 April 2023
    ==================================
-
-   Installation Overview
-   ---------------------
-
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
 
    The Issue
    ---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+   This exception is triggered if you attempt to view a page that lacks a TypoScript template.
 
    Solution
    --------
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+   :ref:`Create a TypoScript template <t3ts45:the-main-template>` for your site in the site's root page.
