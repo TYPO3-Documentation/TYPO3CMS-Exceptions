@@ -7,6 +7,47 @@ TYPO3 Exception 1711797936
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
+TYPO3 13.1.0 - 01.05.2024
+=========================
+
+Installation Overview
+---------------------
+
+Using the :typoscript:`PAGEVIEW` TypoScript element to display a content element:
+
+..  code-block:: typoscript
+    :caption: EXT:my_sitepackage/Configuration/Sets/MySet/setup.typoscript
+
+    page = PAGE
+    page {
+        10 = PAGEVIEW
+        10 {
+            paths {
+                100 = EXT:site_package/Resources/Private/Templates/
+            }
+            // ...
+        }
+    }
+
+There is a file called :file:`EXT:site_package/Resources/Private/Templates/pages/default.html`.
+
+The Issue
+---------
+
+..  code-block:: plaintext
+    :caption: The error message
+
+    Could not find template source for "pages/default". Configured 
+    templateRootPaths: /var/www/html/vendor/myvendor/site-package/Resources/Private/Templates/
+
+Solution
+--------
+
+The template name has to start with an upper case letter.
+
+Rename :file:`EXT:site_package/Resources/Private/Templates/pages/default.html` to
+:file:`EXT:site_package/Resources/Private/Templates/pages/Default.html`.
+
 ..
    TYPO3 [version] - [date of report]
    ==================================
@@ -29,3 +70,4 @@ TYPO3 Exception 1711797936
 
    Did you resolve the issue? List the steps or changes made that resolved the
    issue.
+
