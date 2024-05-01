@@ -29,3 +29,28 @@ TYPO3 Exception 1607585445
 
    Did you resolve the issue? List the steps or changes made that resolved the
    issue.
+
+TYPO3 v13.1.0 - 2024-04-28
+==========================
+
+The issue
+---------
+
+When configuring `sets <ext_core:feature-103437-1712062105>` with an invalid
+dependency in the :file:`Configuration/Sets/MySet/config.yaml` the following error is
+displayed:
+
+..  code-block:: text
+
+    No page configured for type=0.
+
+In the :file:`var/log/typo3_xxx.log` is also an error logged:
+
+..  code-block:: text
+
+    Sun, 28 Apr 2024 19:05:23 +0200 [ERROR] request="3274a5986fc4e" component="TYPO3.CMS.Core.Site.Set.SetRegistry": Invalid set "my-vendor/my-site": Missing dependency "some-vendor/some-set"
+
+Solution
+--------
+
+Correct the name of the dependency in :file:`Configuration/Sets/MySet/config.yaml`, or remove it completely.
