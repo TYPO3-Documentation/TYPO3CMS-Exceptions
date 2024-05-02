@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns="https://www.phpdoc.org/guides" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+        links-are-relative="true"
+        max-menu-depth="1"
+>
+    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+               project-home="https://docs.typo3.org/typo3cms/exceptions/main/en-us/"
+               project-contact="https://typo3.slack.com/archives/C028JEPJL"
+               project-repository="https://github.com/TYPO3-Documentation/TYPO3CMS-Exceptions"
+               project-issues="https://github.com/TYPO3-Documentation/TYPO3CMS-Exceptions/issues"
+               edit-on-github-branch="main"
+               edit-on-github="TYPO3-Documentation/TYPO3CMS-Exceptions"
+               typo3-core-preferred="main"
+               interlink-shortcode="exception"
+    />
+    <project title="TYPO3 Exceptions"
+             release="main"
+             version="main"
+             copyright="since 2004 by the TYPO3 contributors"
+    />
+    <inventory id="t3ts45" url="https://docs.typo3.org/m/typo3/tutorial-typoscript-in-45-minutes/main/en-us/"/>
+</guides>
