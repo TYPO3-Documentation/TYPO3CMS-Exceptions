@@ -20,7 +20,7 @@ Example:
  
 The Issue
 ---------
-Calling the "Edit" Function in TYPO3 Backend of a Redord using such own Form Node raises this *LogicException*  
+Calling the "Edit" Function in TYPO3 Backend of a record using such own Form Node raises this *LogicException*  
 
 Solution
 --------
