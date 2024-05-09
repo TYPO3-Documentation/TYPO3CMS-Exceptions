@@ -4,28 +4,28 @@
 TYPO3 Exception 1638264590
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+
+TYPO3 12.4 - 2024-05-09
+==================================
+
+Overview
+---------------------
+
+An extension adds to a backend Form own Form Nodes. Form node definition adds the deprecated: RequireJsModules:
+
+Example: 
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+     $resultArray['requireJsModules'][] = 'TYPO3/CMS/Extension/JavaScriptFile';
+ 
+The Issue
+---------
+Calling the "Edit" Function in TYPO3 Backend of a record using such own Form Node raises this *LogicException*  
 
-   Installation Overview
-   ---------------------
+Solution
+--------
+   
+`see needed migration steps for the Extension maintainer in the TYPO3 Documentation: <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.0/Breaking-96221-DenyInlineJavaScriptInFormEnginesRequireJsModules.html>`
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
 
-   The Issue
-   ---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
