@@ -1,10 +1,18 @@
- .. include:: /Includes.rst.txt
+.. include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1509741914
 ==========================
 
 .. include:: /If-you-encounter-this-exception.rst.txt
+
+Insights from the code
+======================
+
+A comment in the code associated with this exception explains that it is “thrown 
+if file storage does not exist.”
+
+*Added in TYPO3 v6.3 • Still present in TYPO3 v13.1*
 
 
 TYPO3 11.5.0 - ext:news dev-master - 8.10.2021
