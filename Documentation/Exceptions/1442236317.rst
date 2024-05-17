@@ -7,26 +7,34 @@ TYPO3 Exception 1442236317
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 12.3] - [8.4.2023]
-   =========================
+TYPO3 12.4.14 - 17.05.2024
+==========================
 
-   Situation
-   ---------
+..  code-block:: plaintext
+    caption: Exception Message
 
-   The TYPO3 12.3 backend page module ends up in this exception error message:
-   (1/1) #1442236317 InvalidArgumentException
-    MenuItem "" is not valid
-    
-   backtrace:
-    /typo3/sysext/backend/Classes/Template/Components/Menu/Menu.php line 92
-     */
-    public function addMenuItem(MenuItem $menuItem)
-    {
-        if (!$menuItem->isValid($menuItem)) {
-            throw new \InvalidArgumentException('MenuItem "' . $menuItem->getTitle() . '" is not valid', 1442236317);
-        }
+    MenuItem "Liste" is not valid
 
-   Solution
-   --------
-   Maintenance backend module -> Flush TYPO3 and PHP Cache
+Situation
+---------
+
+Trying to add a menu Item to the menu in a custom backend module:
+
+..  code-block:: php
+    :caption: EXT:my_extension/Classes/Controller/MyModuleController.php
+
+    $menu = $moduleTemplate->getDocHeaderComponent()->getMenuRegistry()->makeMenu();
+
+     $menuItem = $menu->makeMenuItem()
+        ->setTitle($menuItemConfig['label'])
+        ->setHref($this->uriBuilder->reset()->uriFor($menuItemConfig['action'], [], $menuItemConfig['controller']))
+        ->setActive($isActive);
+    $menu->addMenuItem($menuItem);
+
+This exception is thrown when the title or the href of the menuitem are empty. In this case the UriBuilder
+returned an emptry result, therefore the Href was empty.
+
+Solution
+--------
+
+Fix the href generation.
