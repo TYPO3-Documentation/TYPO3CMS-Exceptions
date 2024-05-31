@@ -18,8 +18,8 @@ choose the specific Plugin from the tab 'Plug-in'
 Occures if you pass the wrong pluginType to
 TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)
 
-General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20
-=================================================================================================
+TYPO3 12 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20
+============================================================================================================
 
 If your extension is a general plugin and is not activated, then you need to activate it.
 Otherwise proceed as follows.
