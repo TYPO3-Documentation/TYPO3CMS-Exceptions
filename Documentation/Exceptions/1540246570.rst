@@ -21,6 +21,9 @@ TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)
 No Content Object definition found at TypoScript object path "tt_content.list.20
 ================================================================================
 
+If your extension is not activated, then you need to activate it.
+Otherwise proceed as follows.
+
 :file:`tt_content.php` adds the plugin by 
 
 ..  code-block:: php
