@@ -9,7 +9,7 @@ TYPO3 Exception 1710399967
 
 ..
    TYPO3 12.4.16 or 13.2+ - 2024-06-11
-   ==================================
+   ===================================
 
    Installation Overview
    ---------------------
@@ -22,7 +22,7 @@ TYPO3 Exception 1710399967
    Opening the TYPO3 frontend or backend shows an "Ooops" error, 
    or with detailed error logging: 
 
-   ..  code:: 
+   ..  code-block:: 
 
        vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83: 
        Function value token stream has not been set
