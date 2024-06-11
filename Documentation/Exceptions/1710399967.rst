@@ -7,29 +7,28 @@ TYPO3 Exception 1710399967
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 12.4.16 or 13.2+ - 2024-06-11
-   ===================================
+TYPO3 12.4.16 or 13.2+ - 2024-06-11
+===================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Normal composer-based installation.
+Normal composer-based installation.
 
-   The Issue
-   ---------
+The Issue
+---------
 
-   Opening the TYPO3 frontend or backend shows an "Ooops" error, 
-   or with detailed error logging: 
+Opening the TYPO3 frontend or backend shows an "Ooops" error, 
+or with detailed error logging: 
 
-   ..  code-block:: 
+..  code-block:: 
 
-       vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83: 
-       Function value token stream has not been set
+   vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83: 
+   Function value token stream has not been set
 
-   Solution
-   --------
+Solution
+--------
 
-   The "page" cache needs an update due to a change in TYPO3 v12 (and v13), see `https://github.com/typo3/typo3/commit/837f5b0b55`__.
+The "page" cache needs an update due to a change in TYPO3 v12 (and v13), see `https://github.com/typo3/typo3/commit/837f5b0b55`__.
 
-   The error should go away after clearing your TYPO3 cache either via Install Tool or CLI (`vendor/bin/typo3 cache:flush`).
+The error should go away after clearing your TYPO3 cache either via Install Tool or CLI (`vendor/bin/typo3 cache:flush`).
