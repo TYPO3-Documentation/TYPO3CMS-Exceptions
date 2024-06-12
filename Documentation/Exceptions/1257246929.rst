@@ -36,6 +36,25 @@ Problem: Extension containing templates not installed
 We had this error when site package extension which contained templates was not installed,
 thus TYPO3 couldn't resolve EXT:extensionname/...  paths.
 
+Problem: Using an Extbase link with argument "format"
+=====================================================
+
+When creating a link like:
+
+..  code-block:: fluid
+
+    <f:uri.action action="new" arguments="{format: someFormat}" />
+    <f:uri.action action="new" format="{someFormat}" />
+
+you might want to pass a custom URI variable named "format"
+to an Extbase action. However, "format" is a reserved keyword.
+It is interpreted to trigger rendering different formats than
+HTML for output (for example "JSON"). So either you need to
+provide fluid templates with exactly that format, or if you
+in fact wanted to evaluate a parameter named `format` you
+should rename it to something like `exportFormat` to not
+clash with the reserved keyword.
+
 Problem: sitepackage not added in resources
 ===========================================
 
