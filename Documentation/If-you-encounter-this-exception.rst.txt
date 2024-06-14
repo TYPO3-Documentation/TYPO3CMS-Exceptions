@@ -8,8 +8,8 @@
    resolved it.
 
    General TYPO3 troubleshooting tips can be found in the section
-   "Troubleshooting" of the menu. You can also ask questions and receive support in the
-   `"TYPO3 Questions" category on talk.typo3.org <https://talk.typo3.org/c/typo3-questions/>`__.
+   *Troubleshooting* section in the menu. You can also ask questions and receive support in the
+   `TYPO3 Questions category on talk.typo3.org <https://talk.typo3.org/c/typo3-questions/>`__.
 
    To add your experience, click "Edit on GitHub" above and follow the
    :ref:`"Edit on GitHub" workflow <h2document:docs-contribute-github-method>`.
