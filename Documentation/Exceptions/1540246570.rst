@@ -37,7 +37,7 @@ The extension TypoScript is like this:
 ..  code-block:: typoscript
 
     plugin.tx_myextension {
-      controller.action = USER_INT
+      controller.action = EXTBASEPLUGIN
 
 
 Solution
