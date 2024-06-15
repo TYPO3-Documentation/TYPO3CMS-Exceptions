@@ -8,8 +8,8 @@
    resolved it.
 
    General TYPO3 troubleshooting tips can be found in the section
-   "Troubleshooting" of the menu, and live support is available in the
-   `TYPO3 Slack channel <https://typo3.slack.com>`__ #typo3-cms. (See `How to get your TYPO3 Slack account <https://typo3.org/community/meet/chat-slack>`__.)
+   *Troubleshooting* section in the menu. You can also ask questions and receive support in the
+   `TYPO3 Questions category on talk.typo3.org <https://talk.typo3.org/c/typo3-questions/>`__.
 
    To add your experience, click "Edit on GitHub" above and follow the
    :ref:`"Edit on GitHub" workflow <h2document:docs-contribute-github-method>`.
