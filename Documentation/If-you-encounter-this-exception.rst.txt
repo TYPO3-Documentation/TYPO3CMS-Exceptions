@@ -7,8 +7,8 @@
    here and add your experience and solution steps to this issue once you have
    resolved it.
 
-   General TYPO3 troubleshooting tips can be found in the section
-   *Troubleshooting* section in the menu. You can also ask questions and receive support in the
+   General TYPO3 troubleshooting tips can be found in the *Troubleshooting* 
+   section in the menu. You can also ask questions and receive support in the
    `TYPO3 Questions category on talk.typo3.org <https://talk.typo3.org/c/typo3-questions/>`__.
 
    To add your experience, click "Edit on GitHub" above and follow the
