@@ -6,13 +6,63 @@ TYPO3 Exception 1540246570
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-It happens when i create a content element of type Plugin and forget to
+
+Is there a problem with the plugin ?
+====================================
+
+It happens when a content element of type Plugin is created and then you forget to
 choose the specific Plugin from the tab 'Plug-in'
 
 --------------
 
 Occures if you pass the wrong pluginType to
 TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)
+
+TYPO3 12 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20
+============================================================================================================
+
+If your extension is a general plugin, check if it is properly installed (and activated for legacy installations)
+and the required TypoScript included.
+Otherwise proceed as follows.
+
+:file:`tt_content.php` adds the plugin by 
+
+..  code-block:: php
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+
+However the tt_content TypoScript for the list type is not added if you look into the Active TypoScript
+in the backend. 
+The extension TypoScript is like this:
+
+..  code-block:: typoscript
+
+    plugin.tx_myextension {
+      controller.action = EXTBASEPLUGIN
+
+
+Solution
+--------
+
+Always add the TypoScript for the tt_content list rendering.
+
+:file:`ext_localconf.php`
+
+..  code-block:: php
+
+    $extensionKey = 'my_extension';
+
+    $addLine = 'tt_content.list.20.tx_myextension_controllers_action = < plugin.tx_myextension.controller.action';
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+        $extensionKey,
+        'setup',
+        '
+        # Setting ' . $extensionKey . ' plugin TypoScript
+        ' . $addLine . '
+        ',
+        43
+    );
+
 
 You have removed Typoscript by Conditon?
 =========================================
@@ -58,7 +108,7 @@ will be thrown.
 
 
 Solution
-========
+--------
 
 add a default text to the tag and also fix the language file.
 
