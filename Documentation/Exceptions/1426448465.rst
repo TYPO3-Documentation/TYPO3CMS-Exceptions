@@ -6,13 +6,46 @@ TYPO3 Exception 1426448465
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Field must not be empty
+TYPO3 v12.4, 18.06.2024
 =======================
+
+..  code-block:: plaintext
+
+    #1426448465 RuntimeException
+    Field must not be empty
+
+This error happened after updating from TYPO3 v10.4 when trying to edit a files
+metadata in the "Filelist" module.
+
+There was an invalid entry in the TCA of :sql:`sys_file_metadata`. In TYPO3 v10
+the falsely declared div title was not displayed and ignored. In TYPO3 v12.4
+this error was thrown.
+
+Solution: Fix TCA of `sys_file_metadata`
+----------------------------------------
+
+Items in TCA `showitem` must be separated by comma `,` not semicolon `;`. A 
+divider `--div--` must start with this string after the previous comma.
+
+..  code-block:: diff
+
+    $GLOBALS['TCA']['sys_file_metadata']['types'][1] = [
+        'showitem' => $GLOBALS['TCA']['sys_file_metadata']['types'][1]['showitem']
+    -        . ';--div--;My-Cool-Center,my_cool_center_enable',
+    +        . ',--div--;My-Cool-Center,my_cool_center_enable,',
+    ];
+
+
+Unknown TYPO3 Version
+=====================
+
+Field must not be empty
+-----------------------
 
 Error in TCA configuration. E.g. in section ``types['1']['showitem']``.
 
 Possible solution
-=================
+-----------------
 
 Fix TCA configuration. E.g. ``showitem`` string. (In my case, the value
 was illegally starting with ``;;1,``.)
