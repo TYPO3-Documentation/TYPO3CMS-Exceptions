@@ -6,26 +6,11 @@ TYPO3 Exception 1717495996
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+Function value token stream has not been set
+======================================================================================
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+- Try deleting the code cache (var/cache/code)
 
-   Installation Overview
-   ---------------------
-
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
-
-   The Issue
-   ---------
-
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Possible Reason
+===============================
+This can be caused by having obsolete TSConfig/Typoscript AST parser cache data, e.g. due to the changes introduced by the fix for https://forge.typo3.org/issues/103671
