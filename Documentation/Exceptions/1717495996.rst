@@ -6,11 +6,26 @@ TYPO3 Exception 1717495996
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-Function value token stream has not been set
-======================================================================================
 
-- Try deleting the code cache (var/cache/code)
+TYPO3 12.4.16 or 13.2+ - 2024-06-23
+===================================
 
-Possible Reason
-===============================
-This can be caused by having obsolete TSConfig/Typoscript AST parser cache data, e.g. due to the changes introduced by the fix for https://forge.typo3.org/issues/103671
+The Issue
+---------
+
+Cannot log into the TYPO3 backend.
+
+With detailed error logging enabled, you get:
+
+..  code-block::
+
+   vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83:
+   Function value token stream has not been set
+
+Solution
+--------
+
+The "page" cache needs an update due to a change in TYPO3 v12 (and v13), see `https://github.com/typo3/typo3/commit/837f5b0b55`__.
+
+The error should go away after clearing your TYPO3 cache either via Install Tool or CLI (`vendor/bin/typo3 cache:flush`),
+or manually deleting the folder `/var/cache/code`.
