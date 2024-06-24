@@ -28,4 +28,4 @@ Solution
 The "page" cache needs an update due to a change in TYPO3 v12 (and v13), see `https://github.com/typo3/typo3/commit/837f5b0b55`__.
 
 The error should go away after clearing your TYPO3 cache either via Install Tool or CLI (`vendor/bin/typo3 cache:flush`),
-or manually deleting the folder `/var/cache/code`.
+or manually deleting the folder `var/cache/code`.
