@@ -7,25 +7,36 @@ TYPO3 Exception 1690365240
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4.16 - 04.07.2024
+==========================
 
-   Installation Overview
-   ---------------------
+..  warning::
+    #1690365240 RuntimeException
+    The rendering context of ViewHelper f:link.action is missing a valid request object.
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Installation Overview
+---------------------
 
-   The Issue
-   ---------
+`<f:link.action>` Viewhelper in Standalone View (Email)
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+The Issue
+---------
 
-   Solution
-   --------
+The error comes when trying to send an email.
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Solution
+--------
+
+I solved this by setting standaloneView->setRequest, however this method is internal.
+
+..  code-block:: php
+
+    use TYPO3\CMS\Extbase\Mvc\RequestInterface;
+
+    public function sendEmail(RequestInterface $request, ...): bool
+    {
+        $this->standaloneView->setRequest($request);
+        // Set sender to default value
+    }
+
+See also: https://stackoverflow.com/questions/76473242/typo3-12-lts-fluid-the-rendering-context-of-viewhelper-furi-page-is-missing-a 
