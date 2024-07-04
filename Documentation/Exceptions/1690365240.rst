@@ -39,4 +39,8 @@ I solved this by setting standaloneView->setRequest, however this method is inte
         // Set sender to default value
     }
 
+Using the internal method `setRequest()` on the `StandaloneView` is currently the best option. 
+
+Another solution would be provide the fully build links as variable assignments to the view.
+
 See also: https://stackoverflow.com/questions/76473242/typo3-12-lts-fluid-the-rendering-context-of-viewhelper-furi-page-is-missing-a 
