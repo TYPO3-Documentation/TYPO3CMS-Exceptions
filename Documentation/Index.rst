@@ -37,7 +37,7 @@ of the enterprise content management system TYPO3.
     Error and exception handling <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/ErrorAndExceptionHandling/Index.html>
     Core ChangeLog <https://docs.typo3.org/c/typo3/cms-core/main/en-us/>
     Testing <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Testing/Index.html>
-    Fluid debug viewhelper <https://docs.typo3.org/other/typo3/view-helper-reference/main/en-us/typo3/fluid/latest/Debug.html>
+    Fluid debug ViewHelper <https://docs.typo3.org/other/typo3/view-helper-reference/main/en-us/typo3/fluid/latest/Debug.html>
     TypoScript debugging <https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/UsingSetting/Debugging.html>
 
 
