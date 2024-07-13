@@ -10,13 +10,13 @@ TYPO3 Exception 1540246570
 Is there a problem with the plugin ?
 ====================================
 
-It happens when a content element of type Plugin is created and then you forget to
+It happens when a content element of type plugin is created and then you forget to
 choose the specific Plugin from the tab 'Plug-in'
 
 --------------
 
 Occures if you pass the wrong pluginType to
-TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)
+:php:`TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(...)`.
 
 TYPO3 12 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20
 ============================================================================================================
@@ -25,54 +25,48 @@ If your extension is a general plugin, check if it is properly installed (and ac
 and the required TypoScript included.
 Otherwise proceed as follows.
 
-:file:`tt_content.php` adds the plugin by 
+:file:`tt_content.php` adds the plugin by
 
 ..  code-block:: php
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin()
 
 However the tt_content TypoScript for the list type is not added if you look into the Active TypoScript
-in the backend. 
+in the backend.
 The extension TypoScript is like this:
 
 ..  code-block:: typoscript
+    :caption: EXT:my_extension/Configuration/TypoScript/setup.typoscript
 
     plugin.tx_myextension {
-      controller.action = EXTBASEPLUGIN
+        controller.action = EXTBASEPLUGIN
+    }
 
 
 Solution
 --------
 
-Always add the TypoScript for the tt_content list rendering.
+Always add the TypoScript for the `tt_content` list rendering.
 
 :file:`ext_localconf.php`
 
-..  code-block:: php
+..  code-block:: typoscript
+    :caption: EXT:my_extension/Configuration/TypoScript/setup.typoscript
 
-    $extensionKey = 'my_extension';
-
-    $addLine = 'tt_content.list.20.tx_myextension_controllers_action = < plugin.tx_myextension.controller.action';
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
-        $extensionKey,
-        'setup',
-        '
-        # Setting ' . $extensionKey . ' plugin TypoScript
-        ' . $addLine . '
-        ',
-        43
-    );
+    tt_content.list.20 {
+        tx_myextension_controllers_action = < plugin.tx_myextension.controller.action
+    }
 
 
 You have removed Typoscript by Conditon?
 =========================================
 
-f.e. you have used this:
+For example you have used this:
 
 ::
 
      [globalVar = TSFE:id = {$noLoginPluginOnPids}]
-     
+
      lib.login >
 
      [global]
@@ -114,6 +108,6 @@ add a default text to the tag and also fix the language file.
 
 The error does not occur when you use the Fluid lanuage tag with a path:
 
-.. code-block:: xml
+..  code-block:: xml
 
-       <f:translate key = "LLL:EXT:yourExtension/Resources/Private/Language/locallang.xml:Button_Helpful" />
+    <f:translate key = "LLL:EXT:yourExtension/Resources/Private/Language/locallang.xml:Button_Helpful" />
