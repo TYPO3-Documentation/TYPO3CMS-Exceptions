@@ -25,11 +25,12 @@ The reason for this may be:
 Solution
 --------
 
-* Verify the values are correct for the variables:
+* Check whether the HTTPS proxy is configured correctly.
+* Check whether the values for the variables are correct:
   * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['reverseProxySSL']`
   * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['reverseProxyIP']`
   * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern']`
-* Verify the https connection has a valid certificate
+* Check whether the HTTPS connection is secured by a valid certificate.
 
 The security check for the correct referrer was introduced due to potential security risks,
 visit the related `security advisory <https://typo3.org/security/advisory/typo3-core-sa-2020-006>`__
