@@ -15,21 +15,26 @@ TYPO3\\CMS\\Core\\Http\\Security\\MissingReferrerException
     #1588095935 TYPO3\CMS\Core\Http\Security\MissingReferrerException
     Missing referrer for /main
 
-This error occurs when logging into the backend or install tool and is
-triggered by a failed check of a referer header.
+This error occurs when logging into the backend or Install Tool and is
+triggered by a failed check of the :code:`Referer` header.
 
-The reason for this is the usage of an HTTP proxy,
-for example a reverse proxy to an encapsulated system without
-sufficient header delegation.
+The reason for this may be:
+* the use of an HTTP proxy, e.g. a reverse proxy to an encapsulated system without sufficient header delegation
+* the webserver is not configured correctly to use a valid certificate
 
 Solution
 --------
 
-The feature was introduced due to potential security risks,
+* Check whether the HTTPS proxy is configured correctly.
+* Check whether the values for the variables are correct:
+  * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['reverseProxySSL']`
+  * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['reverseProxyIP']`
+  * :code:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern']`
+* Check whether the HTTPS connection is secured by a valid certificate.
+
+The security check for the correct referrer was introduced due to potential security risks,
 visit the related `security advisory <https://typo3.org/security/advisory/typo3-core-sa-2020-006>`__
 for more information.
 
-The feature can be enabled or disabled in
+It is recommended that you keep this feature enabled, but it can be enabled or disabled in
 :guilabel:`Admin Tools > Settings > Configure Installation-Wide Options > System > [SYS][features][security.backend.enforceReferrer]`.
-
-It is recommended that you keep this feature enabled.
