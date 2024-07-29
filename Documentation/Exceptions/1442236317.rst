@@ -7,6 +7,25 @@ TYPO3 Exception 1442236317
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
+TYPO3 12.4.17 - 29.07.2024
+==========================
+
+..  code-block:: plaintext
+    caption: Exception Message
+
+    MenuItem "" is not valid
+
+Situation
+---------
+
+Right after an update from TYPO3 11 to 12. Forgot to clear the cache
+
+Solution
+--------
+
+Clear all caches from install tool or console
+
+
 TYPO3 12.4.14 - 17.05.2024
 ==========================
 
