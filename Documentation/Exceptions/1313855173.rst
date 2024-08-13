@@ -41,6 +41,7 @@ manager is initialized before it is determined, if the request is a frontend or
 backend request, the backend configuration manager is initialized. As the
 configuration manager is a singleton, it would not be initialized again, leading
 to the plugin configuration being read from
+
 .. code-block:: typoscript
 
    module.your_extension {
