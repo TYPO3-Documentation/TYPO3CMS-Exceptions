@@ -34,7 +34,7 @@ is one switchable controller action chosen on another plugin that does
 not allow this controller, you'll have to adapt your page setup or your
 switchable controller actions.
 
-If the above it of no help, please check, if you somewhere in the early bootstrap
+If the above doesn't help, please check, if you somewhere in the early bootstrap
 initialize the configuration manager. This might be in a request middleware or
 another hook or event early in the bootstrapping process. If the configuration
 manager is initialized before it is determined, if the request is a frontend or
