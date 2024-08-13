@@ -33,3 +33,17 @@ same page with different switchable controller actions chosen. If there
 is one switchable controller action chosen on another plugin that does
 not allow this controller, you'll have to adapt your page setup or your
 switchable controller actions.
+
+If the solutions above do not help, please check, if you somewhere in the early bootstrap
+initialize the configuration manager. This might be in a request middleware or
+another hook or event early in the bootstrapping process. If the configuration
+manager is initialized before it is determined, if the request is a frontend or
+backend request, the backend configuration manager is initialized. As the
+configuration manager is a singleton, it would not be initialized again, leading
+to the plugin configuration being read from
+
+.. code-block:: typoscript
+
+   module.your_extension {
+   // ...
+   }
