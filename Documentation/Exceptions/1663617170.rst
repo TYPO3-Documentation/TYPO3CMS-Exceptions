@@ -11,6 +11,10 @@ TYPO3 Exception 1663617170
 TYPO3 12.4.19 - 20.08.2024
 ==========================
 
+..  warning:: 
+    (1/1) #1663617170 RuntimeException
+    Form ViewHelpers are Extbase specific and need an Extbase Request to work
+
 Installation Overview
 ---------------------
 
