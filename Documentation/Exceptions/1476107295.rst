@@ -277,3 +277,19 @@ Solution
 --------
 
 Check that you do not have a null value for the :php:`maxDBListItems` and :php:`maxSingleDBListItems` parameters.
+
+TYPO3 12.4.19, 21.08.2024: PHP Warning: Undefined array key "renderType"
+========================================================================
+
+..  warning::
+    PHP Warning: Undefined array key "renderType" in /var/www/html/vendor/typo3/cms-backend/Classes/Form/FormDataProvider/TcaSelectItems.php line 200
+
+Reason
+------
+
+TCA :ref:`Select field <t3tca:columns-select>` where the render type was accidently overridden
+
+Solution
+--------
+
+Fix TCA
