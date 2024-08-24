@@ -293,3 +293,30 @@ Solution
 --------
 
 Fix TCA
+
+PHP 8: PHP Warning: Undefined array key "foo"
+=============================================
+
+..  warning::
+    PHP Warning: Undefined array key "foo" in /var/www/html/Bar.php line 200
+
+Reason
+------
+
+The warning level for undefined array keys in PHP 8 is stronger than in PHP 7.
+
+
+Solution
+--------
+
+Use the double question mark (null coalescing) operator to fix the PHP code.
+
+before:
+
+    $value = $foo['bar']; 
+
+after:
+
+    $value = ($foo['bar'] ?? false);
+
+
