@@ -313,9 +313,13 @@ Use the double question mark (null coalescing) operator to fix the PHP code.
 
 before:
 
+..  code-block:: php
+
     $value = $foo['bar']; 
 
 after:
+
+..  code-block:: php
 
     $value = ($foo['bar'] ?? false);
 
