@@ -7,25 +7,40 @@ TYPO3 Exception 1702623312
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.3.0-dev - 08.09.2024
+=============================
 
-   Installation Overview
-   ---------------------
+..  warning:: 
+    Invalid setting definition: {"label":"Rss Channel description","type":"string","description":""}
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Installation Overview
+---------------------
 
-   The Issue
-   ---------
+I am defining a setting like this:
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+..  code-block:: php
+    :caption: EXT:news/Configuration/Sets/News/settings.definitions.yaml
 
-   Solution
-   --------
+    settings:
+        news.rss.channel.description:
+            label: 'Rss Channel description'
+            type: string
+            description: ''
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+The Issue
+---------
+
+As the default value is missing the extension is thrown.
+
+Solution
+--------
+
+Add a default value:
+
+
+    settings:
+        news.rss.channel.description:
+            label: 'Rss Channel description'
+            type: string
+            description: ''
+            default: ''
