@@ -12,7 +12,7 @@
                edit-on-github-branch="main"
                edit-on-github="TYPO3-Documentation/TYPO3CMS-Exceptions"
                typo3-core-preferred="main"
-               interlink-shortcode="exception"
+               interlink-shortcode="t3exceptions"
     />
     <project title="TYPO3 Exceptions"
              release="main"
