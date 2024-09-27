@@ -48,3 +48,10 @@ Removed/inactive extension
 This could be cause by a frontend plugin from an extension which has been removed/deactivated in the meantime.
 
 A possible fix is hiding/removing the plugin or installing/activating the related extension again.
+
+TypoScript object path "tt_content..20" does not exist
+======================================================
+
+TYPO3 12.4.20, 27.09.2024
+
+See https://forge.typo3.org/issues/105135
