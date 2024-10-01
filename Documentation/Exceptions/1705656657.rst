@@ -18,4 +18,4 @@ This exception is triggered if you attempt to view a page that lacks a TypoScrip
 Solution
 --------
 
-:ref:`Create a TypoScript template <t3ts45:the-main-template>` for your site in the site's root page.
+:ref:`Create a TypoScript template <t3sitepackage:typoscript-configuration>` for your site in the site's root page.

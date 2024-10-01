@@ -41,7 +41,7 @@ Problem: Using an Extbase link with argument "format"
 
 When creating a link like:
 
-..  code-block:: fluid
+..  code-block:: html
 
     <f:uri.action action="new" arguments="{format: someFormat}" />
     <f:uri.action action="new" format="{someFormat}" />
