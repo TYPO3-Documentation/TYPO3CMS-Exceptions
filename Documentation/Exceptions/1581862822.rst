@@ -8,7 +8,7 @@ TYPO3 Exception 1581862822
 
 This error might be caused by inserting content into a Fluid template by
 
-.. code-block::xml
+.. code-block:: xml
 
    <f:cObject typoscriptObjectPath="lib.myLib"/>
 
