@@ -29,7 +29,7 @@ If the problem still comes up:
       plugin.your_extension.mvc.callDefaultActionIfActionCantBeResolved = 1
 
 #. Your routing configuration contains
-   `defaultController: MyPluginController::index`.
+   :yaml:`defaultController: MyPluginController::index`.
    The `Controller` suffix may not be used in there; the correct configuration
    would be `defaultController: MyPlugin::index`.
 
