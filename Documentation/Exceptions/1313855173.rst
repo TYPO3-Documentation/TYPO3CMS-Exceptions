@@ -27,6 +27,10 @@ If the problem still comes up:
    .. code-block:: typoscript
 
       plugin.your_extension.mvc.callDefaultActionIfActionCantBeResolved = 1
+#. Your routing configuration contains
+   `defaultController: MyPluginController::index`.
+   The `Controller` suffix may not be used in there; the correct configuration
+   would be `defaultController: MyPlugin::index`.
 
 Another possibility is that you may have the same plugin twice on the
 same page with different switchable controller actions chosen. If there
