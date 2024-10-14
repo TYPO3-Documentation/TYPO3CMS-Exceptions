@@ -31,7 +31,7 @@ If the problem still comes up:
 #. Your routing configuration contains
    :yaml:`defaultController: MyPluginController::index`.
    The `Controller` suffix may not be used in there; the correct configuration
-   would be `defaultController: MyPlugin::index`.
+   would be :yaml:`defaultController: MyPlugin::index`.
 
 Another possibility is that you may have the same plugin twice on the
 same page with different switchable controller actions chosen. If there
