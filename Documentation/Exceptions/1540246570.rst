@@ -6,6 +6,21 @@ TYPO3 Exception 1540246570
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 13.4: No Content Object definition found [21.10.2024]
+===========================================================
+
+..  warning:: 
+    No Content Object definition found at TypoScript object path "tt_content.text"
+
+This error happens when you did not include the 
+:ref:`Site set "Fluid Styled Content" <typo3/cms-fluid-styled-content:site-set-fluid-styled-content>`
+but try to use a content element provided by this system extension.
+
+Solution: Require the site set in your site configuration:
+:ref:`Using a site set as dependency in a site <t3coreapi:site-sets-usage>` or depend on it from
+your site packages site set: 
+:ref:`Defining the site set with a fluid_styled_content dependency <t3coreapi:site-sets-example-site-package-set>`.
+
 
 Is there a problem with the plugin ?
 ====================================
