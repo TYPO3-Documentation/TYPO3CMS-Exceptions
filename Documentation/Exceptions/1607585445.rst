@@ -30,6 +30,29 @@ TYPO3 Exception 1607585445
    Did you resolve the issue? List the steps or changes made that resolved the
    issue.
 
+"No page configured for type=0." TYPO3 v13.4.0 - 2024-11-02
+===========================================================
+
+..  warning:: No page configured for type=0.
+
+This happens if the following line is missing from your TypoScript:
+
+..  code-block:: typoscript
+
+    page = PAGE
+
+See also :ref:`Troubleshooting <t3tsref:guide-troubleshooting>`.
+
+"No TypoScript record found!" TYPO3 v13.4.0 - 2024-11-02
+========================================================
+
+..  warning:: No TypoScript record found!
+
+This happens when the current site has no root TypoScript record and no 
+site set including TypoScript. 
+
+See also :ref:`Troubleshooting <t3tsref:guide-troubleshooting>`.
+
 TYPO3 v13.1.0 - 2024-04-28
 ==========================
 
