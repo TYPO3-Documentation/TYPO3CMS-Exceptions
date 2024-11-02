@@ -6,6 +6,32 @@ TYPO3 Exception 1225709595
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+The Fluid template files "" could not be loaded TYPO3 13.4.0, 2024-11-02
+========================================================================
+
+Happens if you are trying to use a layout within a Fluid template that is included with 
+:ref:`FLUIDTEMPLATE <t3tsref:cobj-template>` but did not define any path to the layouts.
+
+Solution:
+
+..  code-block:: diff
+
+     page = PAGE
+     page {
+      10 = FLUIDTEMPLATE
+      10 {
+         templateName = Default
+         templateRootPaths.10 = EXT:site_package/Resources/Private/Templates/Pages/
+     +   partialRootPaths.10 = EXT:site_package/Resources/Private/Partials/Pages/
+     +   layoutRootPaths.10 = EXT:site_package/Resources/Private/Layouts/Pages/
+       }
+     }
+
+Or use a :ref:`PAGEVIEW <t3tsref:cobj-pageview>` which automatically configures these paths for you.
+
+See also :ref:`Troubleshooting TypoScript <t3tsref:guide-troubleshooting>`.
+
+
 The Fluid template files "" could not be loaded
 ===============================================
 
