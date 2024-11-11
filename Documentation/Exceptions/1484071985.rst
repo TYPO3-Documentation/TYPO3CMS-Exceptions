@@ -7,25 +7,22 @@ TYPO3 Exception 1484071985
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4.0 - 11.11.2024
+=========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+* TYPO3 13.4.0
+* "lavitto/typo3-form-to-database": "dev-update-v13"
 
-   Solution
-   --------
+The Issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+Error upon trying to save a form in the :guilabel:`Web > Form` module into 
+a path lying in an extension.
+
+Solution
+--------
+
+https://gitlab.com/lavitto/typo3-form-to-database/-/issues/118
