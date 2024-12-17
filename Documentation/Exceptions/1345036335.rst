@@ -8,17 +8,17 @@ TYPO3 Exception 1345036335
 
 
 ..
-   [TYPO3 version] - [Date of solution]
+   [TYPO3 12] - [17th December 2024]
    ====================================
 
    Situation
    ---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+   BE and FE only show this exception with the detail:
+   Could not write log record to log file. 
 
    Solution
    --------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+   1. Remove the files in typo3temp/var/log
+
