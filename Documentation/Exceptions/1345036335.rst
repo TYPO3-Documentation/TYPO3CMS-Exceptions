@@ -7,18 +7,20 @@ TYPO3 Exception 1345036335
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   [TYPO3 version] - [Date of solution]
-   ====================================
+[TYPO3 12] - [17th December 2024]
+=================================
 
-   Situation
-   ---------
+Situation
+---------
 
-   Describe everything to understand the situation: Systems, environment, versions.
-   What happened?
+Backend and Frontend only show this exception with the detail:
+Could not write log record to log file. 
 
-   Solution
-   --------
+Solution
+--------
 
-   1. Did you find a solution?
-   2. Explain what you did ..
+#.  If the Install Tool can be opened, go to :guilabel:`Admin Tools >  Environment > Directory Status`
+    and check the directory status.
+#.  Check if `typo3temp/var/log` and all files therein are writable for TYPO3
+#   If the disk is full, you might want to switch to log rotation.
+#.  As a last resort: Delete the files in `typo3temp/var/log`. Make a copy first.
