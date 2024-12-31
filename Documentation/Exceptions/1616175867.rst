@@ -6,7 +6,6 @@ TYPO3 Exception 1616175867
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-
 11.5.11 - 26.06.2022
 ====================
 
@@ -29,5 +28,4 @@ Solution
 
 1. Wait for the lock to time out.
 2. If the limit is too short for your purposes, make the limit higher.
-3. Log in with the Install Tool
-
+3. During Development: Deleting the cache folder `var/cache/` manually enables login right away again.
