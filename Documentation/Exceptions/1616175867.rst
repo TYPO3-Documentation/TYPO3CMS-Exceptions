@@ -4,6 +4,11 @@
 TYPO3 Exception 1616175867
 ==========================
 
+..  seealso::
+
+    `TYPO3 Getting Started Troubleshooting: "Account locked" message <https://docs.typo3.org/permalink/t3start:troubleshooting-login-account-locked>`_
+    `Editors Tutorial: Too many failed logins <https://docs.typo3.org/permalink/t3editors:login-troubleshooting-failed-logins>`_
+
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 11.5.11 - 26.06.2022
