@@ -7,25 +7,44 @@ TYPO3 Exception 1666513645
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4 - 30th December 2024
+================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+It uses the extension tslib_fetce 0.9.2 which uses the FrontendTce class Middleware.
 
-   The Issue
-   ---------
+The Issue
+---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+RuntimeException
 
-   Solution
-   --------
+Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Solution
+--------
+
+Call the method hasSetup before hasSetup.
+
+..  code-block:: php
+
+   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+   {
+      $tsfe = $this->getTypoScriptFrontendController();
+      $frontendTypoScript = $request->getAttribute('frontend.typoscript');
+      if ($frontendTypoScript->hasSetup()) {
+          $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
+          // ...
+      }
+   }
+
+   /**
+    * @return TypoScriptFrontendController
+    */
+    protected function getTypoScriptFrontendController(): TypoScriptFrontendController
+    {
+       return $GLOBALS['TSFE'];
+    }
+
+
