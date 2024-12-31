@@ -7,44 +7,44 @@ TYPO3 Exception 1666513645
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 13.4 - 30th December 2024
-   ================================
+TYPO3 13.4 - 30th December 2024
+================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   It uses the extension tslib_fetce 0.9.2 which uses the FrontendTce class Middleware.
+It uses the extension tslib_fetce 0.9.2 which uses the FrontendTce class Middleware.
 
-   The Issue
-   ---------
+The Issue
+---------
 
-   RuntimeException
+RuntimeException
 
-   Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
+Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
-   Solution
-   --------
+Solution
+--------
 
-   Call the method hasSetup before hasSetup.
+Call the method hasSetup before hasSetup.
 
-   ..  code-block:: php
+..  code-block:: php
 
-       public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-       {
-          $tsfe = $this->getTypoScriptFrontendController();
-          $frontendTypoScript = $request->getAttribute('frontend.typoscript');
-          if ($frontendTypoScript->hasSetup()) {
-              $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
-          ...
-       }
+   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+   {
+      $tsfe = $this->getTypoScriptFrontendController();
+      $frontendTypoScript = $request->getAttribute('frontend.typoscript');
+      if ($frontendTypoScript->hasSetup()) {
+          $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
+          // ...
+      }
+   }
 
-       /**
-          * @return TypoScriptFrontendController
-        */
-        protected function getTypoScriptFrontendController(): TypoScriptFrontendController
-        {
-           return $GLOBALS['TSFE'];
-        }
+   /**
+    * @return TypoScriptFrontendController
+    */
+    protected function getTypoScriptFrontendController(): TypoScriptFrontendController
+    {
+       return $GLOBALS['TSFE'];
+    }
 
 
