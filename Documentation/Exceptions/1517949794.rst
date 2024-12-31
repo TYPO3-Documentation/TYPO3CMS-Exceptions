@@ -7,7 +7,8 @@ TYPO3 Exception 1517949794
 
 ..  warning::
 
-    #1517949794 TYPO3\CMS\Backend\Exception\BackendLockedException
+    #1517949794 :php:`TYPO3\CMS\Backend\Exception\BackendLockedException`
+
     Backend and Install Tool are locked for maintenance. [BE][adminOnly] is set to "-1".
 
 ..  seealso::
