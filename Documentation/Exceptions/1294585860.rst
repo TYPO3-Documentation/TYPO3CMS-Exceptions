@@ -4,6 +4,14 @@
 TYPO3 Exception 1294585860
 ==========================
 
+..  warning:: 
+
+    TYPO3 is in maintenance mode at the moment. Only administrators are allowed access.
+
+..  seealso::
+
+    `Editors Tutorial, Backend and Install Tool are locked for maintenance <https://docs.typo3.org/permalink/t3editors:login-troubleshooting-locked>`_
+
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 is in maintenance mode
