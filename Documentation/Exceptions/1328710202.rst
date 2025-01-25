@@ -7,25 +7,24 @@ TYPO3 Exception 1328710202
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4.25 with EXT:recaptcha - 25.01.2025
+=============================================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that 
-   you think will be relevant to other users who encounter the same issue.
-   
-   The Issue
-   ---------
-   
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+After installing :composer:`evoweb/recaptcha` the following error occurs on
+vieweing any page in the frontend:
 
-   Solution
-   --------
+The Issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the 
-   issue.
+..  error::
+
+    (1/1) #1328710202 TYPO3\CMS\Form\Domain\Model\Exception\ValidatorPresetNotFoundException
+    The validator preset identified by "Recaptcha" could not be found, or the implementationClassName was not specified.
+
+Solution
+--------
+
+You need to include the TypoScript includes of the extension or the site set on each site that in the installation.
