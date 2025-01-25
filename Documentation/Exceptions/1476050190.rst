@@ -6,6 +6,20 @@ TYPO3 Exception 1476050190
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 13.4.4 - 25.01.2025
+=========================
+
+When trying to view the Content Security Policy backend module throws error if EXT:lowlevel is not installed.
+
+..  error:: 
+    (1/1) #1476050190 TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException
+    Unable to generate a URL for the named route "system_config" because this route was not found.
+
+See also https://forge.typo3.org/issues/105988
+
+Can be solved by installing :composer:`typo3/cms-lowlevel`.
+
+
 On accesssing the admin tool from the backend
 =============================================
 
