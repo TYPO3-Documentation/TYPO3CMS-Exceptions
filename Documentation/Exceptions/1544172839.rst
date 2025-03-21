@@ -24,7 +24,6 @@ TYPO3 Exception 1544172839
    Detail each of the steps or changes that took place leading up to the
    issue occurring.
 
-   Solution
    --------
 
    Did you resolve the issue? List the steps or changes made that resolved the
