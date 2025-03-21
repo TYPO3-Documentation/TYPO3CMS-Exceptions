@@ -9,6 +9,31 @@ TYPO3 Exception 1363778104
 There is no `@var` annotation for property "..." in class "..."
 ===============================================================
 
+TYPO3 v12.4 - 21.03.2025
+------------------------
+
+For each property of a domain model Extbase needs to determine the type. It is prefered to use a real PHP type:
+
+..  code-block:: diff
+
+     class UserData extends AbstractEntity
+     {
+    -    public $frontendUser = null;
+    +    public ?FrontendUser $frontendUser = null;
+         //...
+     }
+
+If using typed properties is not and option for some reason, you can use the `@var` annotation instead:
+
+..  code-block:: diff
+
+     class UserData extends AbstractEntity
+     {
+    +    /** @var ?FrontendUser $frontendUser*/
+         public $frontendUser = null;
+         //...
+     }
+
 Before TYPO3 v10
 -----------------
 
