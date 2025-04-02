@@ -6,6 +6,11 @@ TYPO3 Exception 1546632293
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 12.4 - 2025-04-02
+=======================
+
+The TCA definition for the field was missing.
+
 TYPO3 10.4.14 - 2021-04-02
 ==========================
 
