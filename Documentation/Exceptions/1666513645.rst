@@ -25,7 +25,7 @@ Setup array has not been initialized. This happens in cached Frontend scope wher
 Solution
 --------
 
-Call the method hasSetup before hasSetup.
+Call the method hasSetup before getSetupArray.
 
 ..  code-block:: php
 
