@@ -8,24 +8,31 @@ TYPO3 Exception 1481496170
 
 
 ..
-   TYPO3 [version] - [date of report]
+   TYPO3 12.4.x - 14-4-2025
    ==================================
 
-   Installation Overview
-   ---------------------
+   Exception text
+   --------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+   503
+
+   Flex form displayCond on field "<FieldName>" on flex form sheet "<SheetName>" references
+   a field or field / sheet combination "<otherFieldName>" that might be defined in given
+   data structure but is not found in data values.
 
    The Issue
    ---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+   If the exception occurs in the backend when a non-admin editor tries to insert a new
+   content element or plugin, then probably this is a matter of permissions: a field that
+   the user has access to references another field to which the user has no access.
+   Most likely in a 'displayCond'.
 
    Solution
    --------
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+   Check the access rights for this user, in the usergroups the user belongs to. Find the
+   section 'Allowed excludefields [non_exclude_fields]' and look for the flexform belonging
+   to this content element or plugin. Then make sure to either check, or uncheck all fields
+   that reference each other.
+
