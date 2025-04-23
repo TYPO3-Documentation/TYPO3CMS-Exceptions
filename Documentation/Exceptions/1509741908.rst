@@ -7,25 +7,28 @@ TYPO3 Exception 1509741908
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4 - 2025-04-23
+=======================
 
-   Installation Overview
-   ---------------------
+Installation overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+A content element has a relation to a custom record which itself has a relation to one image.
+When now using the record-transformation data processor and reference `{data.record.image}` in a `<f:image>` tag,
+the following exception is thrown:
 
-   The Issue
-   ---------
+.. code-block: plaintext
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+   Unable to render image uri in "tt_content:140": Supplied file must be File or FileReference, TYPO3\CMS\Core\Resource\Collection\LazyFileReferenceCollection given.
 
-   Solution
-   --------
+The issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+TYPO3 provides a collection by default which cannot be resolved by the ImageViewHelper.
+
+Solution
+--------
+
+Add `'relationship' => 'oneToOne'` (or one of the other values if appropriate) to the config section 
+in the TCA configuration of the according field.
+See: `relationship <https://docs.typo3.org/permalink/t3tca:confval-category-relationship>`__
