@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1509741908
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 13.4 - 2025-04-23
@@ -17,9 +17,10 @@ A content element has a relation to a custom record which itself has a relation 
 When now using the record-transformation data processor and reference `{data.record.image}` in a `<f:image>` tag,
 the following exception is thrown:
 
-.. code-block: plaintext
+..  code-block:: plaintext
 
-   Unable to render image uri in "tt_content:140": Supplied file must be File or FileReference, TYPO3\CMS\Core\Resource\Collection\LazyFileReferenceCollection given.
+    Unable to render image uri in "tt_content:140": Supplied file must be File or 
+    FileReference, TYPO3\CMS\Core\Resource\Collection\LazyFileReferenceCollection given.
 
 The issue
 ---------
