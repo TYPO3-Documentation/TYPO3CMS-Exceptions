@@ -6,6 +6,29 @@ TYPO3 Exception 1234386924
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 13.5.9, 2025-05-12 Cannot create empty instance of the class "ObjectStorage"...
+=====================================================================================
+
+..  warning::
+    (1/1) #1234386924 TYPO3\CMS\Extbase\Persistence\Generic\Exception\InvalidClassException
+    Cannot create empty instance of the class "TYPO3\CMS\Extbase\Persistence\ObjectStorage" because it does not implement the TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
+    
+    in /var/www/html/vendor/typo3/cms-extbase/Classes/Persistence/Generic/Mapper/DataMapper.php line 175
+
+Happened when in an Extbase Model (AbstractEntity) the object Storage was missing information 
+about the type of objects to be saved. 
+
+Saved like this:
+
+..  code-block:: diff
+
+     class Theme extends AbstractEntity
+     {
+       protected string $name = '';
+    +  /** @var ?ObjectStorage<InfoCenter>  */
+       protected ?ObjectStorage $infoCenter = null;
+
+
 Error-messages:
 ===============
 
