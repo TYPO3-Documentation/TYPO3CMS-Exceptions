@@ -33,4 +33,4 @@ Solution
 
 1. Wait for the lock to time out.
 2. If the limit is too short for your purposes, make the limit higher.
-3. During Development: Deleting the cache folder `var/cache/` manually enables login right away again.
+3. During Development: Deleting the cache folder `var/cache/data/ratelimiter/` manually enables login right away again.
