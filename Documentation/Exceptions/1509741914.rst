@@ -43,3 +43,31 @@ As a workaround set the following TypoScript::
    
 For further informatin, visit https://github.com/georgringer/news/issues/1589
 
+TYPO3 13.4.9 - Add image with custom extension
+==============================================
+
+Context
+-------
+
+Have an image in a custom extension and want to display it with Fluid Template.::
+
+   <f:image src="EXT:my_ext/Resources/Public/MyImage.svg" />
+
+The Issue
+---------
+
+The following error is shown when the Fluid Template is used ::
+
+   (1/2) #1509741914 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+   File typo3 Unable to render image tag in "tt_content:6": _assets/0c22fd3d95c93dc31098cc8d4b1d7232/MyImage.svg File  does not exist.
+
+Solution
+--------
+
+Add this to composer.json::
+    
+   "extra": {
+      "typo3/cms": {
+         "web-dir": "public"
+      }
+   }
