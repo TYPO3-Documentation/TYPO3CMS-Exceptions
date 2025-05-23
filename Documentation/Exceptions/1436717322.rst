@@ -9,8 +9,6 @@ TYPO3 Exception 1436717322
 The parsedUri string appears to be malformed
 ============================================
 
-Solution:
-
--  Create :file:`.env` file and set BASE_DOMAIN as your local base url.
--  or set base value to your base url in :file:`config.xml` (Site Configuration)
--  Delete :file:`typo3temp/Cache` or clear caches via the Install Tool
+..  hint::
+    A solution is currently missing, please use the Edit on
+    GitHub Button to add a solution.
