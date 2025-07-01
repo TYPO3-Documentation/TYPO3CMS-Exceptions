@@ -7,25 +7,47 @@ TYPO3 Exception 1443793404
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 12.4 - 01.07.2025
+=======================
 
-   Installation Overview
-   ---------------------
+..  warning::
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+    Inline field fieldname of table tx_myextension_domain_model_mytable must have a foreign_table config
 
-   The Issue
-   ---------
+Installation Overview
+---------------------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+Custom extension with custom table and inline field created by :composer:`stefanfroemken/ext-kickstarter`
 
-   Solution
-   --------
+The Issue
+---------
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+The generated TCA is not complete:
+
+..  code-block:: php
+
+    'fieldname' => [
+        'label' => 'Fieldname',
+        'config' => [
+            'type' => 'inline',
+        ],
+    ],
+
+Solution
+--------
+
+Add foreign_table and foreign_field to TCA:
+
+..  code-block:: php
+
+    'fieldname' => [
+        'label' => 'Fieldname',
+        'config' => [
+            'type' => 'inline',
+            'foreign_table' => 'tx_myextension_domain_model_othertable',
+            'foreign_field' => 'parent',
+        ],
+    ],
+
+See also `Example: Simple 1:n inline relation <https://docs.typo3.org/permalink/t3tca:tca-example-inline-1n-inline-1>`_
+
