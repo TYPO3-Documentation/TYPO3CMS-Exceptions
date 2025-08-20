@@ -6,6 +6,34 @@ TYPO3 Exception 1297759968
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+..  contents::
+
+When using Extbase FileUpload, TYPO3 13.4.17
+============================================
+
+..  warning:: 
+    Exception while property mapping at property path "": Expected argument of type 
+    "TYPO3\CMS\Extbase\Domain\Model\FileReference", "TYPO3\CMS\Core\Http\UploadedFile" 
+    given at property path "documents".
+
+The import for the PHP Attribute was missing
+
+..  code-block:: diff
+
+    +use TYPO3\CMS\Extbase\Annotation\FileUpload;
+
+     #[FileUpload([
+         'validation' => [
+             'minFiles' => 0,
+             'maxFiles' => 1,
+             'mimeType' => ['allowedMimeTypes' => ['application/pdf']],
+         ],
+         'uploadFolder' => '2:/documents/',
+     ])]
+     protected ?FileReference $documents = null;
+
+Added the attribute.
+
 Exception while property mapping at property path "":Object with identity "1" not found.
 ========================================================================================
 
