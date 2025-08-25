@@ -130,11 +130,13 @@ The error does not occur when you use the Fluid lanuage tag with a path:
 TYPO3 12/13 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20"
 ==============================================================================================================
 
-This exception could happen because a plugin was registered before using the :php:`list` content element and the plugin subtype :php:`list_type` and is now registered as :php:`ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT`.
+This exception could happen because a plugin was registered before using the :php:`list` content element 
+and the plugin subtype :php:`list_type` and is now registered as :php:`ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT`.
 
-Have a look at https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/13.4/Deprecation-105076-PluginContentElementAndPluginSubTypes.html
+Have a look at `Deprecation: #105076 - Plugin content element and plugin sub types <https://docs.typo3.org/permalink/changelog:deprecation-105076-1726923626>`_.
 
 Either an Upgrade Wizard was not executed for those plugins or may be you need to create one.
 
-If Upgrade Wizard creation is required, you can have a look in TYPO3 core for example, search Upgrade Wizard extending :php:`AbstractListTypeToCTypeUpdate`, like :php:`final class IndexedSearchCTypeMigration extends AbstractListTypeToCTypeUpdate`.
+If Upgrade Wizard creation is required, you can have a look in TYPO3 core for example, search 
+Upgrade Wizard extending :php:`AbstractListTypeToCTypeUpdate`, like :php:`final class IndexedSearchCTypeMigration extends AbstractListTypeToCTypeUpdate`.
 
