@@ -127,7 +127,7 @@ The error does not occur when you use the Fluid lanuage tag with a path:
 
     <f:translate key = "LLL:EXT:yourExtension/Resources/Private/Language/locallang.xml:Button_Helpful" />
 
-TYPO3 12/13 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20
+TYPO3 12/13 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20"
 ==============================================================================================================
 
 This exception could happen because a plugin were registered before using the :php:`list` content element and the plugin subtype :php:`list_type` and are now registered as :php:`ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT`.
