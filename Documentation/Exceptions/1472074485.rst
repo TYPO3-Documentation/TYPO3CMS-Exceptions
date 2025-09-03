@@ -16,7 +16,13 @@ Table 'my_db.tx_myext_domain_model_myfield' doesn't exist
 =========================================================
 
 When you have mapped a relation to an external model in your extension,
-but forgot to define the mapping in Typoscript
+but forgot to define the mapping in :file:`EXT:extension/Configuration/Extbase/Persistence/Classes.php`.
+
+Table 'my_db.tx_myext_domain_model_mymodel' doesn't exist
+=========================================================
+
+When you use other extension names in your extension which do not correspond the Extbase table naming scheme,
+but forgot to define the :php:`tableName` name in :file:`EXT:extension/Configuration/Extbase/Persistence/Classes.php`.
 
 Table 'my_db.tx_myext_persistence_objectstorage' doesn't exist
 ==============================================================
