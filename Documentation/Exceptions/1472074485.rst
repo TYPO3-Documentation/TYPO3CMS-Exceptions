@@ -12,17 +12,28 @@ Unknown column 'tx_myext_domain_model_myfield.' in 'order clause'
 There's no 'foreign_sorting' set in TCA. For me it happened with an
 Inline type.
 
-Table 'my_db.tx_myext_domain_model_myfield' doesn't exist
-=========================================================
+Table 'my_db.tx_someotherextension_domain_model_myfield' doesn't exist
+======================================================================
 
 When you have mapped a relation to an external model in your extension,
-but forgot to define the mapping in :file:`EXT:extension/Configuration/Extbase/Persistence/Classes.php`.
+and did not map it in
+:file:`EXT:extension/Configuration/Extbase/Persistence/Classes.php`.
 
-Table 'my_db.tx_myext_domain_model_mymodel' doesn't exist
-=========================================================
+..  seealso::
+    *   See `Use arbitrary database tables with an Extbase model <https://docs.typo3.org/permalink/t3coreapi:extbase-manual-mapping>`_
+        for details.
+    *   `Extending an Extbase model <https://docs.typo3.org/permalink/t3coreapi:extending-extbase-model>`_
 
-When you use other extension names in your extension which do not correspond the Extbase table naming scheme,
-but forgot to define the :php:`tableName` name in :file:`EXT:extension/Configuration/Extbase/Persistence/Classes.php`.
+Table 'my_db.tx_mytablename' doesn't exist
+==========================================
+
+A table name which does not correspond the Extbase table naming scheme,
+and did not define define the :php:`tableName` name in 
+:file:`EXT:my_extension/Configuration/Extbase/Persistence/Classes.php`.
+
+..  seealso::
+    See `Use arbitrary database tables with an Extbase model <https://docs.typo3.org/permalink/t3coreapi:extbase-manual-mapping>`_
+    for details.
 
 Table 'my_db.tx_myext_persistence_objectstorage' doesn't exist
 ==============================================================
