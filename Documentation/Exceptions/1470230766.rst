@@ -9,6 +9,19 @@ TYPO3 Exception 1470230766
 Unknown column 'a' in 'field list'
 ==================================
 
+The field might not have been created yet: do a 
+`Database compare <https://docs.typo3.org/permalink/t3coreapi:database-upgrade>`_.
+
 This error might occur if a model contains a field that does not exist
 in the corresponding database table. In this case you should add the
 field to the table in ext_tables.sql.
+
+Table 'db.tx_myextension_domain_model_mymodel' doesn't exist
+============================================================
+
+*   The table might not have been created yet: do a 
+    `Database compare <https://docs.typo3.org/permalink/t3coreapi:database-upgrade>`_.
+*   The TCA for the model is missing.
+*   You intend to use a different table with your model. 
+    See `Connecting the model to the database <https://docs.typo3.org/permalink/t3coreapi:extbase-persistence-database-connection>`_
+    `Use arbitrary database tables with an Extbase model <https://docs.typo3.org/permalink/t3coreapi:extbase-manual-mapping>`_
