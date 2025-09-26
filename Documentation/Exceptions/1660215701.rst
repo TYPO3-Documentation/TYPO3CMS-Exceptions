@@ -7,25 +7,35 @@ TYPO3 Exception 1660215701
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4.18 - 26.09.2025
+==========================
 
-   Installation Overview
-   ---------------------
+..  warning::
+    The type of property MyVendor\MyExtension\Domain\Model\MyModel::pageoverride could not be identified because the property 
+    is defined as union or intersection type, therefore the desired value (0) cannot be mapped onto it. 
+    Make sure to use only a single type.
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+The Issue
+---------
 
-   The Issue
-   ---------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+The model had a setter, which accidently used bool instead of null for a not-set value
 
-   Solution
-   --------
+..  code-block:: php
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+    #[Lazy]
+    protected ?Page $pageoverride = null;
+
+    public function setPageoverride(Page|bool $pageoverride): void
+    {
+        $this->pageoverride = $pageoverride;
+    }
+
+Solution
+--------
+
+
+..  code-block:: diff
+
+    - public function setPageoverride(Page|bool $pageoverride): void
+    + public function setPageoverride(Page|bool $pageoverride): void
