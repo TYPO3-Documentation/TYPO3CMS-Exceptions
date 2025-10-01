@@ -326,3 +326,19 @@ after:
     $value = ($foo['bar'] ?? false);
 
 
+PHP 8: PHP Warning: Undefined array key "NEW_xxx"
+=================================================
+
+..  code-block:: text
+
+    PHP Warning: Undefined array key "NEW_xxx" in typo3/sysext/frontend/Classes/Hooks/TreelistCacheUpdateHooks.php line 81
+
+Reason
+------
+
+This error is shown when trying to create a page in TYPO3 < v13 if the `pages` table does not contain all necessary columns.
+
+Solution
+--------
+
+Use the database analyzer in the Install Tool to create the missing columns.
