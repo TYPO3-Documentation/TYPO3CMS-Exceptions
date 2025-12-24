@@ -53,6 +53,8 @@ Trying to add a menu Item to the menu in a custom backend module:
 This exception is thrown when the title or the href of the menuitem are empty. In this case the UriBuilder
 returned an emptry result, therefore the Href was empty.
 
+One possible reason for Href being empty: the action is missing in Configuration/Backend/Modules.php -> 'ControllerActions'
+
 Solution
 --------
 
