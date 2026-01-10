@@ -31,20 +31,11 @@ Call the method hasSetup before getSetupArray.
 
    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
    {
-      $tsfe = $this->getTypoScriptFrontendController();
       $frontendTypoScript = $request->getAttribute('frontend.typoscript');
       if ($frontendTypoScript->hasSetup()) {
           $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
           // ...
       }
    }
-
-   /**
-    * @return TypoScriptFrontendController
-    */
-    protected function getTypoScriptFrontendController(): TypoScriptFrontendController
-    {
-       return $GLOBALS['TSFE'];
-    }
 
 
