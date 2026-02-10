@@ -1,0 +1,31 @@
+.. include:: /Includes.rst.txt
+
+==========================
+TYPO3 Exception 1606732022
+==========================
+
+.. include:: /If-you-encounter-this-exception.rst.txt
+
+
+..
+   TYPO3 [version] - [date of report]
+   ==================================
+
+   Installation Overview
+   ---------------------
+
+   Provide as much information about your installation of TYPO3
+   including its version number and any other information that
+   you think will be relevant to other users who encounter the same issue.
+
+   The Issue
+   ---------
+
+   Detail each of the steps or changes that took place leading up to the
+   issue occurring.
+
+   Solution
+   --------
+
+   Did you resolve the issue? List the steps or changes made that resolved the
+   issue.
