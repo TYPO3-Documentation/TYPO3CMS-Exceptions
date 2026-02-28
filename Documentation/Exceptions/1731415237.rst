@@ -6,26 +6,10 @@ TYPO3 Exception 1731415237
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+If you encounter `Required PageContext not available` check your typo3 log in `var/log/` - if there is log entry like
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+::
+    An exception occurred while executing a query: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VARCHAR(16383))) AS `__CTE_PATH__`, (CAST(0 <> 0 AS SIGNED INTEGER)) AS `__CT...' at line 1
 
-   Installation Overview
-   ---------------------
-
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
-
-   The Issue
-   ---------
-
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Your Database version might be too low. Check on get.typo3.org for the supported versions.
+When developing with DDEV you might want to run `ddev debug migrate-database mariadb:10.4`.
