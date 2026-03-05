@@ -12,6 +12,8 @@ on:
 jobs:
   exception-code-pages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write        # needed to push commit
     strategy:
       matrix:
         php: ['8.1']
