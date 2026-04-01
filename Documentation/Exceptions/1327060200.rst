@@ -29,10 +29,10 @@ There was a leading white space in the recipient's email address:
   :caption: Wrong yaml
    
   finishers:
-  -
-    options:
-      recipients:
-        ' info@example.org': 'Name'
+-
+  options:
+    recipients:
+      'info@example.org': 'Name'
         
         
 .. code-block:: yaml
