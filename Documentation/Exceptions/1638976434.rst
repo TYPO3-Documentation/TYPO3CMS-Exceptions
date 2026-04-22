@@ -7,25 +7,16 @@ TYPO3 Exception 1638976434
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4.27 - 22.04.2026
+==========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+This error can happen if you try to use :php:`TYPO3\CMS\Extbase\Utility\LocalizationUtility` 
+in the wrong context, for example within an enums label that is also called from TCA.
 
-   The Issue
-   ---------
+Solution
+--------
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
-
-   Solution
-   --------
-
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Get the translation service from the current backend user in backend context.
