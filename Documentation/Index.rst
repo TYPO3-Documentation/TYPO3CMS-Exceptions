@@ -32,22 +32,22 @@ of the enterprise content management system TYPO3.
     :hidden:
     :caption: TROUBLESHOOTING
 
-    Debugging TYPO3 <https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/Troubleshooting/TYPO3.html#debug-settings>
-    Logging Framework <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Logging/Quickstart/Index.html>
-    Error and exception handling <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/ErrorAndExceptionHandling/Index.html>
-    Core ChangeLog <https://docs.typo3.org/c/typo3/cms-core/main/en-us/>
-    Testing <https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Testing/Index.html>
-    Fluid debug ViewHelper <https://docs.typo3.org/other/typo3/view-helper-reference/main/en-us/typo3/fluid/latest/Debug.html>
-    TypoScript debugging <https://docs.typo3.org/m/typo3/reference-typoscript/main/en-us/UsingSetting/Debugging.html>
+    Debugging TYPO3 <https://docs.typo3.org/permalink/t3coreapi:examples-debug>
+    Logging Framework <https://docs.typo3.org/permalink/t3coreapi:logging>
+    Error and exception handling <https://docs.typo3.org/permalink/t3coreapi:error-handling>
+    Core ChangeLog <https://docs.typo3.org/permalink/changelog:start>
+    Testing <https://docs.typo3.org/permalink/t3coreapi:testing>
+    Fluid debug ViewHelper <https://docs.typo3.org/permalink/t3viewhelper:typo3-fluid-debug>
+    TypoScript debugging <https://docs.typo3.org/permalink/t3tsref:typoscript-debugging>
 
 
 ..  toctree::
     :hidden:
     :caption: CONTRIBUTING
 
-    "Edit on Github" workflow <https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingDocsOfficial/GithubMethod.html>
-    ReST Cheat Sheet <https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/CheatSheet.html>
-    Report an issue <https://docs.typo3.org/m/typo3/guide-contributionworkflow/main/en-us/ReportingAnIssue/Index.html>
+    "Edit on Github" workflow <https://docs.typo3.org/permalink/h2document:docs-contribute-github-method>
+    ReST Cheat Sheet <https://docs.typo3.org/permalink/h2document:rest-cheat-sheet>
+    Report an issue <https://docs.typo3.org/permalink/t3contribute:bugreporting-index>
 
 
 ..  toctree::
