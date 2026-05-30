@@ -22,8 +22,8 @@ RuntimeException
 
 Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
-Solution
---------
+First Solution
+--------------
 
 Call the method hasSetup before getSetupArray.
 
@@ -37,5 +37,46 @@ Call the method hasSetup before getSetupArray.
           // ...
       }
    }
+
+
+
+Second Solution
+---------------
+
+Initialize the setSetupArray before getSetupArray.
+
+
+    /**
+     * Renders the admin panel - Called in PSR-15 Middleware
+     *
+     * @see \TYPO3\CMS\Adminpanel\Middleware\AdminPanelRenderer
+     */
+    public function render(ServerRequestInterface $request): string
+    {
+        $resources = ResourceUtility::getResources(['nonce' => $this->requestId->nonce]);
+
+        $backupRequest = null;
+        $frontendTypoScript = $request->getAttribute('frontend.typoscript');
+        if (!$frontendTypoScript->hasSetup()) {
+            // @todo: This is a hack: The admin panel is the only extension that starts
+            //        a Fluid view in 'fully cached' scenarios. f:translate() now triggers
+            //        the extbase configuration manager in FE, which fetches TS setup from
+            //        the Request attribute, which is *usally* always available, *except*
+            //        in fully cached scenarios.
+            //        See https://review.typo3.org/c/Packages/TYPO3.CMS/+/80732
+            //        We still want extbase to crash if it tries to fetch TS setup when it
+            //        is not set, so we work around this in the admin panel here.
+            //        This should later be resolved by avoiding the dependency to extbase
+            //        LocalizationUtility again, when core localization services can do
+            //        similar things in FE as well.
+            $frontendTypoScript = clone $frontendTypoScript;
+            $frontendTypoScript->setSetupArray([]);
+            $request = $request->withAttribute('frontend.typoscript', $frontendTypoScript);
+            $GLOBALS['TYPO3_REQUEST'] = $request;
+        }
+    }
+
+
+
 
 
