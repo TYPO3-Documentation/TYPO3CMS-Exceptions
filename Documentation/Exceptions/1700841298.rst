@@ -9,25 +9,44 @@ TYPO3 Exception 1700841298
 ..  warning:: 
     Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
-..
-   TYPO3 [version] - [date of report]
-   ==================================
+TYPO3 13.4.29 - 05.06.26
+========================
 
-   Installation Overview
-   ---------------------
+Installation Overview
+---------------------
 
-   Provide as much information about your installation of TYPO3
-   including its version number and any other information that
-   you think will be relevant to other users who encounter the same issue.
+Exception happened in a console command called via scheduler. The scheduler task is sending emails and therefore faked a frontend request:
 
-   The Issue
-   ---------
+..  code-block:: php
 
-   Detail each of the steps or changes that took place leading up to the
-   issue occurring.
+    Bootstrap::initializeBackendAuthentication();
+    $site = $this->siteFinder->getSiteByPageId(1);
 
-   Solution
-   --------
+    $request = (new ServerRequest())
+        ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_FE)
+        ->withAttribute('site', $site);
+    $GLOBALS['TYPO3_REQUEST'] = $request;
+    // ...
+    $email = (new FluidEmail());
+    // ...
+    $email->setRequest($GLOBALS['TYPO3_REQUEST']);
 
-   Did you resolve the issue? List the steps or changes made that resolved the
-   issue.
+Solution
+--------
+
+I resolved the issue by not setting the global variable and instead sending the request 
+as parameter to the place where it is needed for the mailer:
+
+
+..  code-block:: php
+
+    Bootstrap::initializeBackendAuthentication();
+    $site = $this->siteFinder->getSiteByPageId(1);
+
+    $request = (new ServerRequest())
+        ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_FE)
+        ->withAttribute('site', $site);
+    // ...
+    $email = (new FluidEmail());
+    // ...
+    $email->setRequest($request);
