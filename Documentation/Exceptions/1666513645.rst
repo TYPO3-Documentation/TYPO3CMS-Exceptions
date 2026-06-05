@@ -22,12 +22,13 @@ RuntimeException
 
 Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
-First Solution
---------------
+1st Solution
+~~~~~~~~~~~~
 
 Call the method hasSetup before getSetupArray.
 
 ..  code-block:: php
+    :caption: uae method hasSetup before getSetupArray
 
    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
    {
@@ -40,11 +41,13 @@ Call the method hasSetup before getSetupArray.
 
 
 
-Second Solution
----------------
+2nd Solution
+~~~~~~~~~~~~
 
-Initialize the setSetupArray before getSetupArray.
+Initialize the setSetupArray before getSetupArray checks the setup array
 
+..  code-block:: php
+    :caption: how the Admin Panel system extension 
 
     /**
      * Renders the admin panel - Called in PSR-15 Middleware
@@ -75,6 +78,33 @@ Initialize the setSetupArray before getSetupArray.
             $GLOBALS['TYPO3_REQUEST'] = $request;
         }
     }
+
+
+3rd Solution
+~~~~~~~~~~~~
+
+Configure the middleware in a way that the initialization of the setup array is executed before the middleware.
+
+..  code-block:: php
+    :caption: myextension/Configuration/RequestMiddlewares.php
+
+    use MyDomain\MyExtension\Middleware\XajaxHandler;
+    
+    return [
+        'frontend' => [
+            'mydomain/myextension/preprocessing' => [
+                'target' =>  XajaxHandler::class,
+                'description' => 'Calls to my extension will be processed and no page will be generated.',
+                'after' => [
+                    'typo3/cms-frontend/prepare-tsfe-rendering'
+                ],
+                'before' => [
+                    'typo3/cms-frontend/content-length-headers',
+                ],
+            ],
+        ],
+    ];
+
 
 
 
