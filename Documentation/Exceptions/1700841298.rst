@@ -6,6 +6,8 @@ TYPO3 Exception 1700841298
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+..  warning:: 
+    Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
 ..
    TYPO3 [version] - [date of report]
