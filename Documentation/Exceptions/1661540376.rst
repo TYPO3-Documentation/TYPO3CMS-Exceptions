@@ -8,8 +8,8 @@ TYPO3 Exception 1661540376
 
 
 ..
-   TYPO3 14.3 - [date of report]
-   =============================
+   TYPO3 [version] - [date of report]
+   ==================================
 
    Installation Overview
    ---------------------
