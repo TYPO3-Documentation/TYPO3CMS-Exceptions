@@ -36,7 +36,7 @@ but forget the prefix `FILE:`:
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '*',
         'EXT:my_extension/Resources/Private/FlexForm/MyFlexForm.xml',
-        'textpic'
+        'myextension_textpic'
     );
 
     /**
@@ -44,6 +44,6 @@ but forget the prefix `FILE:`:
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '*',
-        'FILE:EXT:my_extension/Resources/Private/FlexForm/MyFlexForm.xml',
-        'textpic'
+        'FILE:EXT:my_extension/Configuration/FlexForms/MyFlexForm.xml',
+        'myextension_textpic'
     );
