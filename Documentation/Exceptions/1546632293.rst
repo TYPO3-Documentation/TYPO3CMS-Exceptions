@@ -10,14 +10,14 @@ TYPO3 13.4 - 2026-05-15
 =======================
 
 ..  warning::
-    Could not get value of property `TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy::xxx`, 
+    Could not get value of property `TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy::xxx`,
     make sure the property is either public or has a getter getQXxx(), a hasser hasXxx() or an isser isXxx().
 
 When validating a DTO referencing a model this error came. The model itself was having relations to other models marked as `#[Lazy]`.
 
 I could only solve this by patching the `AbstractGenericObjectValidator`:
 
-..  code:block:: diff
+..  code-block:: diff
 
      protected function isValid(mixed $object): void
      {
