@@ -17,7 +17,7 @@ TYPO3 14.3 with not acitvated extension tt_board and records of it. The routing 
 
 ..  code-block:: yaml
     :caption: EXT:tt_board/config.yaml
-    
+
     TtBoardList:
        type: Plugin
        routePath: '/boardl/{uid}'
@@ -33,23 +33,23 @@ The Issue
 
 The front end with speaking url shows this exception:
 
+..  warning::
+    **#1661540376 TYPO3\CMS\Core\Schema\Exception\UndefinedSchemaException**
+    No TCA schema exists for the name "tt_board".
 
-**#1661540376 TYPO3\CMS\Core\Schema\Exception\UndefinedSchemaException**
-No TCA schema exists for the name "tt_board".
-
-/path/typo3_src-14.3.0/typo3/sysext/core/Classes/Schema/SchemaCollection.php:76:
+    /path/typo3_src-14.3.0/typo3/sysext/core/Classes/Schema/SchemaCollection.php:76:
 
 ..  code-block:: php
-:caption: EXT:tt_board/config.yaml
+    :caption: EXT:tt_board/config.yaml
 
- public function get(string $schemaName): TcaSchema
- {
-    if (!$this->has($schemaName)) {
-        throw new UndefinedSchemaException('No TCA schema exists for the name "' . $schemaName . '".', 1661540376);
-    }
-    if (str_contains($schemaName, '.')) {
-        [$mainSchema, $subSchema] = explode('.', $schemaName, 2);
-        return $this->get($mainSchema)->getSubSchema($subSchema);
+     public function get(string $schemaName): TcaSchema
+     {
+        if (!$this->has($schemaName)) {
+            throw new UndefinedSchemaException('No TCA schema exists for the name "' . $schemaName . '".', 1661540376);
+        }
+        if (str_contains($schemaName, '.')) {
+            [$mainSchema, $subSchema] = explode('.', $schemaName, 2);
+            return $this->get($mainSchema)->getSubSchema($subSchema);
 
 
 Solution
