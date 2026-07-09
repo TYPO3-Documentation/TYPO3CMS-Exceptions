@@ -6,6 +6,16 @@ TYPO3 Exception 1537633463
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
+TYPO3 13.4.32, 9.7.2026
+=======================
+
+    (1/1) #1537633463 OutOfRangeException
+    
+    Hash not resolvable
+
+This error happened when trying to generate a link with the :php:`TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder`
+from within an event listener, even if the event was called by an Extbase Controller.
+
 OutOfRangeException: Hash not resolvable
 ========================================
 
