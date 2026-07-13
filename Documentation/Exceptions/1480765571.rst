@@ -47,3 +47,23 @@ but forget the prefix `FILE:`:
         'FILE:EXT:my_extension/Configuration/FlexForms/MyFlexForm.xml',
         'myextension_textpic'
     );
+
+
+Not matching filename of FLexform file
+=======================================
+
+This exception is thrown if the configured filename does not exist with the same name on the file system.
+In the following example you must make sure the filename is exactly 'flexform_ds_plugin.xml'.
+
+..  code-block:: php
+    :caption: EXT:my_extension/Configuration/TCA/Overrides/tt_content.php
+    :linenos:
+    :emphasize-lines: 3, 4
+
+    $extensionKey = 'my_extension';
+    ExtensionManagementUtility::addPiFlexFormValue(
+        '*',
+        'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/flexform_ds_plugin.xml',
+        $pluginSignature,
+    );
+
