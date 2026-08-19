@@ -7,6 +7,30 @@ TYPO3 Exception 1442236317
 .. include:: /If-you-encounter-this-exception.rst.txt
 
 
+TYPO3 13.4
+==========
+
+..  code-block:: php
+    :caption: Exception Message
+
+    (1/1) #1442236317 InvalidArgumentException
+    
+    MenuItem "" is not valid
+    in /var/www/html/vendor/typo3/cms-backend/Classes/Template/Components/Menu/Menu.php line 92
+
+Situation
+---------
+This exception appears when creating a backend module with submodules and you have no title for submodule, i.e.:
+
+* wrong translation key/path in **<ext>/Configuration/Backend/Modules.php** for submodule title
+* translation key doesn't exists in translation file
+* language cache has not been cleared (clear all cache)
+
+Solution
+--------
+
+Check all submodules titles and clear all cache. 
+
 TYPO3 12.4.17 - 29.07.2024
 ==========================
 
