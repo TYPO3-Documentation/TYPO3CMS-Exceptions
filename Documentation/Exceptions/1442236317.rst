@@ -20,6 +20,7 @@ TYPO3 13.4
 
 Situation
 ---------
+
 This exception appears when creating a backend module with submodules and you have no title for submodule, i.e.:
 
 * wrong translation key/path in **<ext>/Configuration/Backend/Modules.php** for submodule title
