@@ -48,8 +48,8 @@ but forget the prefix `FILE:`:
         'myextension_textpic'
     );
 
-Mismatching name of the FlexForm file
-=====================================
+Mismatching name of the FlexForm file (TYPO3 14.3.5)
+====================================================
 
 This exception is thrown if no file exists at the configured path. The file name
 is case-sensitive and must match exactly, in this example
