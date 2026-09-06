@@ -48,17 +48,19 @@ but forget the prefix `FILE:`:
         'myextension_textpic'
     );
 
+Mismatching name of the FlexForm file
+=====================================
 
-Not matching filename of FLexform file
-=======================================
-
-This exception is thrown if the configured filename does not exist with the same name on the file system.
-In the following example you must make sure the filename is exactly 'flexform_ds_plugin.xml'.
+This exception is thrown if no file exists at the configured path. The file name
+is case-sensitive and must match exactly, in this example
+:file:`flexform_ds_plugin.xml`:
 
 ..  code-block:: php
     :caption: EXT:my_extension/Configuration/TCA/Overrides/tt_content.php
     :linenos:
-    :emphasize-lines: 3, 4
+    :emphasize-lines: 6
+
+    use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
     $extensionKey = 'my_extension';
     ExtensionManagementUtility::addPiFlexFormValue(
@@ -66,4 +68,3 @@ In the following example you must make sure the filename is exactly 'flexform_ds
         'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/flexform_ds_plugin.xml',
         $pluginSignature,
     );
-
