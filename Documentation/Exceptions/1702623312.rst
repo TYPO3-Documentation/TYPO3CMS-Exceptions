@@ -10,7 +10,7 @@ TYPO3 Exception 1702623312
 TYPO3 13.3.0-dev - 08.09.2024
 =============================
 
-..  warning:: 
+..  warning::
     Invalid setting definition: {"label":"Rss Channel description","type":"string","description":""}
 
 Installation Overview

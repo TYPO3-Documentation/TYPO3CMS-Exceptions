@@ -28,7 +28,7 @@ Table 'my_db.tx_mytablename' doesn't exist
 ==========================================
 
 A table name which does not correspond the Extbase table naming scheme,
-and did not define define the :php:`tableName` name in 
+and did not define define the :php:`tableName` name in
 :file:`EXT:my_extension/Configuration/Extbase/Persistence/Classes.php`.
 
 ..  seealso::

@@ -15,10 +15,10 @@ TYPO3 Exception 1630089406
    ---------------------
 
    TYPO3 11.5.1
-   
+
    The Issue
    ---------
-   
+
    The list module of the TYPO3 backend shows this exception together with the error message.
   (1/1) #1630089406 RuntimeException
    Resource paths must start with "EXT:" and must reference Resources/Public
@@ -29,4 +29,4 @@ TYPO3 Exception 1630089406
    --------
 
    You must apply this patch:
-   https://github.com/TYPO3/typo3/commit/c86b292962c7d54a66aa9254af5ba00dcbfe6a8f  
+   https://github.com/TYPO3/typo3/commit/c86b292962c7d54a66aa9254af5ba00dcbfe6a8f

@@ -9,7 +9,7 @@ TYPO3 Exception 1225709595
 The Fluid template files "" could not be loaded TYPO3 13.4.0, 2024-11-02
 ========================================================================
 
-Happens if you are trying to use a layout within a Fluid template that is included with 
+Happens if you are trying to use a layout within a Fluid template that is included with
 :ref:`FLUIDTEMPLATE <t3tsref:cobj-template>` but did not define any path to the layouts.
 
 Solution:

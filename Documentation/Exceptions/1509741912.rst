@@ -9,7 +9,7 @@ TYPO3 Exception 1509741912
 Insights from the code
 ======================
 
-A comment in the code associated with this exception explains that it is “thrown 
+A comment in the code associated with this exception explains that it is “thrown
 if a file has been replaced with a folder.”
 
 *Added in TYPO3 v9.0 • Confirmed present in TYPO3 v13.1*
@@ -42,7 +42,7 @@ This message appears with content-blocks if you try display an image (or a file)
 
     <f:image image="{data.image}" width="42" maxHeight="48" />
 
-images and files are collections with content-blocks, you need to use a <f:for> loop to display them: 
+images and files are collections with content-blocks, you need to use a <f:for> loop to display them:
 
 ::
 

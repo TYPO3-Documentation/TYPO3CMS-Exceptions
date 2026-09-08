@@ -12,4 +12,3 @@ Folder does not exist.
 See also:
 `forge.typo3.org/issues/51808 <https://forge.typo3.org/issues/51808>`__
 `forge.typo3.org/issues/51747 <https://forge.typo3.org/issues/51747>`__
-

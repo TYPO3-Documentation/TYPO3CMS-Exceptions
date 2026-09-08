@@ -14,7 +14,7 @@ Situation
 ---------
 
 Backend and Frontend only show this exception with the detail:
-Could not write log record to log file. 
+Could not write log record to log file.
 
 Solution
 --------

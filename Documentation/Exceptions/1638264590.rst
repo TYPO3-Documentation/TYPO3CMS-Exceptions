@@ -13,19 +13,16 @@ Overview
 
 An extension adds to a backend Form own Form Nodes. Form node definition adds the deprecated: RequireJsModules:
 
-Example: 
+Example:
 
 
      $resultArray['requireJsModules'][] = 'TYPO3/CMS/Extension/JavaScriptFile';
- 
+
 The Issue
 ---------
-Calling the "Edit" Function in TYPO3 Backend of a record using such own Form Node raises this *LogicException*  
+Calling the "Edit" Function in TYPO3 Backend of a record using such own Form Node raises this *LogicException*
 
 Solution
 --------
-   
+
 `see needed migration steps for the Extension maintainer in the TYPO3 Documentation: <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.0/Breaking-96221-DenyInlineJavaScriptInFormEnginesRequireJsModules.html>`
-
-
-

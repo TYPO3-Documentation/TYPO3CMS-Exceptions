@@ -317,7 +317,7 @@ before:
 
 ..  code-block:: php
 
-    $value = $foo['bar']; 
+    $value = $foo['bar'];
 
 after:
 

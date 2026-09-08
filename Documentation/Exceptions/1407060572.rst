@@ -12,11 +12,11 @@ Fluid parse error in template "..."
 Case 1: Missing Extension
 ---------------------------------------------------
 
-**E.g. #1 Frontend editing required but not installed**  
+**E.g. #1 Frontend editing required but not installed**
 
-If you did change your templates like this:  
+If you did change your templates like this:
 
-:html:`<core:contentEditable table="tt_content" field="header" uid="42"> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`  
+:html:`<core:contentEditable table="tt_content" field="header" uid="42"> <f:render partial="Header/All" arguments="{_all}" /> </core:contentEditable>`
 
 … you need to add the `frontend_editing` extension.
 
@@ -59,15 +59,13 @@ Clearing caches in Install Tool resolved the error.
 Case 5 - Fix outdated ViewHelpers
 ---------------------------------
 
-In many cases the ViewHelpers of an Extension have changed. This can happen, 
-when partials or templates did not get updated when an extension 
-was updated. In this case you have to check, where the Viewhelper is used 
-and compare it to the new template or partial. 
+In many cases the ViewHelpers of an Extension have changed. This can happen,
+when partials or templates did not get updated when an extension
+was updated. In this case you have to check, where the Viewhelper is used
+and compare it to the new template or partial.
 
 For example in powermail this ViewHelper:
 :html:`<vh:string.RawAndRemoveXss>{foo}</vh:string.RawAndRemoveXss>`
 
 Is in newer versions this:
 :html:`<vh:string.escapeLabels>{foo}</vh:string.escapeLabels>`
-
-

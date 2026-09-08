@@ -16,4 +16,3 @@ You have to set your root page id inside your realurl_conf file:
 or if using multiple domains in tree:
 `$TYPO3_CONF_VARS['EXTCONF']['realurl']['www.website.org']['pagePath']['rootpage_id']
 = 25;`
-

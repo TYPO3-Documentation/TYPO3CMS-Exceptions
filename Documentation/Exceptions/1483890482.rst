@@ -13,7 +13,7 @@ TYPO3 Exception 1483890482
 Situation
 ---------
 
-I got this error on defining a node when the title was missing from the 
+I got this error on defining a node when the title was missing from the
 language file::
 
    class ImportDataControl extends AbstractNode

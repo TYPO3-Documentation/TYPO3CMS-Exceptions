@@ -12,4 +12,3 @@ Cannot process task of type "..."
 The `LocalImageProcessor` can currently handle tasks of type `Image` named
 `Preview` or `CropScaleMask` - all other task type/name combinations will produce
 this error.
-

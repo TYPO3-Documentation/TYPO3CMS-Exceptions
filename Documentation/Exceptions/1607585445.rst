@@ -48,8 +48,8 @@ See also :ref:`Troubleshooting <t3tsref:guide-troubleshooting>`.
 
 ..  warning:: No TypoScript record found!
 
-This happens when the current site has no root TypoScript record and no 
-site set including TypoScript. 
+This happens when the current site has no root TypoScript record and no
+site set including TypoScript.
 
 See also :ref:`Troubleshooting <t3tsref:guide-troubleshooting>`.
 

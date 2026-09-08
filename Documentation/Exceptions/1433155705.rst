@@ -12,4 +12,3 @@ Element "..." already has a resolver registered with priority "..."
 This happens, if two `NodeResolvers` with the same priority for the same
 element have been registered, for example when installing two RTEs (like
 ckeditor and tinymce). Remove one of them and everything works again.
-

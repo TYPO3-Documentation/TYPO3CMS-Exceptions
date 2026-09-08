@@ -24,7 +24,7 @@ this error was thrown.
 Solution: Fix TCA of `sys_file_metadata`
 ----------------------------------------
 
-Items in TCA `showitem` must be separated by comma `,` not semicolon `;`. A 
+Items in TCA `showitem` must be separated by comma `,` not semicolon `;`. A
 divider `--div--` must start with this string after the previous comma.
 
 ..  code-block:: diff

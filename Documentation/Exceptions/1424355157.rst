@@ -12,4 +12,3 @@ Session file not writable. Please check permission on `typo3temp/InstallToolSess
 As the error states, check file permission on the mentioned directory. Additionally,
 check `$GLOBALS['TYPO3_CONF_VARS']['BE']['fileCreateMask']` and `$GLOBALS['TYPO3_CONF_VARS']['BE']['folderCreateMask']`.
 The masks might be too restrictive.
-

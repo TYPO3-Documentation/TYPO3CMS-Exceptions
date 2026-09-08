@@ -19,7 +19,7 @@ the following exception is thrown:
 
 ..  code-block:: plaintext
 
-    Unable to render image uri in "tt_content:140": Supplied file must be File or 
+    Unable to render image uri in "tt_content:140": Supplied file must be File or
     FileReference, TYPO3\CMS\Core\Resource\Collection\LazyFileReferenceCollection given.
 
 The issue
@@ -30,6 +30,6 @@ TYPO3 provides a collection by default which cannot be resolved by the ImageView
 Solution
 --------
 
-Add `'relationship' => 'oneToOne'` (or one of the other values if appropriate) to the config section 
+Add `'relationship' => 'oneToOne'` (or one of the other values if appropriate) to the config section
 in the TCA configuration of the according field.
 See: `relationship <https://docs.typo3.org/permalink/t3tca:confval-category-relationship>`__

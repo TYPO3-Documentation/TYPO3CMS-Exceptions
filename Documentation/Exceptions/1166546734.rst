@@ -41,7 +41,7 @@ Reason 3:
 
    1/1) #1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
    Package "" is not available. Please check if the package exists and that the package key is correct (package keys are case sensitive).
-   
+
 Happened on switching from LTS 9 to 10 as :php:`$_EXTKEY` is no longer defined. Therefore I called::
 
    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
@@ -49,7 +49,7 @@ Happened on switching from LTS 9 to 10 as :php:`$_EXTKEY` is no longer defined. 
         'Pi1',
         'LLL:EXT:...'
     );
-    
+
 With an empty :php:`$extensionKey`
 
 See also

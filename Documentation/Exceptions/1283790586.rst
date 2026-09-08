@@ -56,4 +56,3 @@ Less bad:
    temp.item {
    }
    [global]
-

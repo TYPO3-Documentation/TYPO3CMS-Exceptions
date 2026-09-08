@@ -11,5 +11,3 @@ TYPO3 Fatal Error: Extension key "..." is NOT loaded!
 
 This error appears in TYPO3 6+ when you uninstall or manually delete a required
 extension. Clear all caches and reinstall the necessary extension.
-
-

@@ -26,9 +26,9 @@ The action "..." is not allowed by this plugin.
 
        ]
    );
-   
-   
-   
+
+
+
 
 or as of extbase 4.7 you need to update your FlexForm with all necessary
 actions (semicolon separated) in case you use

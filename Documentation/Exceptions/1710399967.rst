@@ -18,12 +18,12 @@ Normal composer-based installation.
 The Issue
 ---------
 
-Opening the TYPO3 frontend or backend shows an "Ooops" error, 
-or with detailed error logging: 
+Opening the TYPO3 frontend or backend shows an "Ooops" error,
+or with detailed error logging:
 
-..  code-block:: 
+..  code-block::
 
-   vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83: 
+   vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83:
    Function value token stream has not been set
 
 Solution

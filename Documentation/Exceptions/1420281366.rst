@@ -12,4 +12,3 @@ TYPO3 Exception 1420281366
 Might happen, if a PHP class is referenced with a leading backslash, for example
 in `itemsProcFunc`. In newer versions of PHP reference classes via `::class` to
 avoid the error.
-

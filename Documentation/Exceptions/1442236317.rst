@@ -14,7 +14,7 @@ TYPO3 13.4
     :caption: Exception Message
 
     (1/1) #1442236317 InvalidArgumentException
-    
+
     MenuItem "" is not valid
     in /var/www/html/vendor/typo3/cms-backend/Classes/Template/Components/Menu/Menu.php line 92
 
@@ -30,7 +30,7 @@ This exception appears when creating a backend module with submodules and you ha
 Solution
 --------
 
-Check all submodules titles and clear all cache. 
+Check all submodules titles and clear all cache.
 
 TYPO3 12.4.17 - 29.07.2024
 ==========================

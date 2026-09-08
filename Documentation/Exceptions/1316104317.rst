@@ -8,7 +8,7 @@ TYPO3 Exception 1316104317
 
 ::
 
-    #1316104317 TYPO3\CMS\Extbase\Mvc\Exception 
+    #1316104317 TYPO3\CMS\Extbase\Mvc\Exception
     The default controller for extension "..." and plugin "..." can not be determined.`
 
 If this happens for your own extensions:

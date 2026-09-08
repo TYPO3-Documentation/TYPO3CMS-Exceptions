@@ -6,7 +6,7 @@ TYPO3 Exception 1700841298
 
 .. include:: /If-you-encounter-this-exception.rst.txt
 
-..  warning:: 
+..  warning::
     Setup array has not been initialized. This happens in cached Frontend scope where full TypoScript is not needed by the system.
 
 TYPO3 13.4.29 - 05.06.26
@@ -34,7 +34,7 @@ Exception happened in a console command called via scheduler. The scheduler task
 Solution
 --------
 
-I resolved the issue by not setting the global variable and instead sending the request 
+I resolved the issue by not setting the global variable and instead sending the request
 as parameter to the place where it is needed for the mailer:
 
 
