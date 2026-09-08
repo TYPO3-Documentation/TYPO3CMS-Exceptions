@@ -16,5 +16,3 @@ Parameter $extensionName cannot be empty
 
 Error happended in a new installations of TYPO3 v8.7.4 (Aug 2017) after
 installing the :file:`media` extension.
-
-

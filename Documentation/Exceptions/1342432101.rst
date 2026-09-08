@@ -17,4 +17,3 @@ of A and B available.
 
    Switching your system to a composer based installation will remove the need
    for manual dependency checking.
-

@@ -13,4 +13,3 @@ This exception can be thrown when you use a fluid template
 with an image tag :html:`<f:image src="image.jpg">` and the image does not
 exist! So check your templates for correct image sources before checking
 models.
-

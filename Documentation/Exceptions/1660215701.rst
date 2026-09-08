@@ -11,8 +11,8 @@ TYPO3 13.4.18 - 26.09.2025
 ==========================
 
 ..  warning::
-    The type of property MyVendor\MyExtension\Domain\Model\MyModel::pageoverride could not be identified because the property 
-    is defined as union or intersection type, therefore the desired value (0) cannot be mapped onto it. 
+    The type of property MyVendor\MyExtension\Domain\Model\MyModel::pageoverride could not be identified because the property
+    is defined as union or intersection type, therefore the desired value (0) cannot be mapped onto it.
     Make sure to use only a single type.
 
 The Issue

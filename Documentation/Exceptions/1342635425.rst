@@ -24,4 +24,3 @@ local issuer certificate".
 -  Get the **cacert.pem** from http://curl.haxx.se/docs/caextract.html
    and put this line in at the end of your :file:`php.ini` :bash:`curl.cainfo=PATH/To/your/cacert.pem`
 -  restart Apache/Xampp and all should work.
-

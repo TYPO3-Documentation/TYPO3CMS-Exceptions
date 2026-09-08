@@ -15,4 +15,3 @@ Unsupported order encountered.
 
 **Solution:** There is something wrong with your query, look at:
 :php:`$query->setOrderings`
-

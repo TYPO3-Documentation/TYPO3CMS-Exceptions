@@ -4,7 +4,7 @@
 TYPO3 Exception 1294585860
 ==========================
 
-..  warning:: 
+..  warning::
 
     TYPO3 is in maintenance mode at the moment. Only administrators are allowed access.
 

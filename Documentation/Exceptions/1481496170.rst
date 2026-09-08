@@ -35,4 +35,3 @@ TYPO3 Exception 1481496170
    section 'Allowed excludefields [non_exclude_fields]' and look for the flexform belonging
    to this content element or plugin. Then make sure to either check, or uncheck all fields
    that reference each other.
-

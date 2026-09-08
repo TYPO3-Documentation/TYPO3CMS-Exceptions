@@ -11,9 +11,9 @@ TYPO3 Exception 1297759968
 When using Extbase FileUpload, TYPO3 13.4.17
 ============================================
 
-..  warning:: 
-    Exception while property mapping at property path "": Expected argument of type 
-    "TYPO3\CMS\Extbase\Domain\Model\FileReference", "TYPO3\CMS\Core\Http\UploadedFile" 
+..  warning::
+    Exception while property mapping at property path "": Expected argument of type
+    "TYPO3\CMS\Extbase\Domain\Model\FileReference", "TYPO3\CMS\Core\Http\UploadedFile"
     given at property path "documents".
 
 The import for the PHP Attribute was missing
@@ -157,12 +157,12 @@ instead of
         700:
           identifier: null
           templateName: null
-          
-          
-Exception while property mapping at property path "propertyname": The identity property "" is no UID.   
+
+
+Exception while property mapping at property path "propertyname": The identity property "" is no UID.
 =====================================================================================================
 
-TYPO3 expects a relation as a property and can't find it. Check if a related database record exists (here: at "propertyname") and make sure to catch the error if no relation is present. 
+TYPO3 expects a relation as a property and can't find it. Check if a related database record exists (here: at "propertyname") and make sure to catch the error if no relation is present.
 
 This can also happen if an extbase form has an object with a file upload element (and involved TypeConverters): If a bot maliciously spams your form, it might submit a POST/GET request with that type=file upload element, but uses type=text instead. This will lead into a structure, where the property will not contain the expected array data (tmp_name, name, errors, size, ... from $_FILES), and lead to this exception. In this case the error would say `The Identity property "a2vsd3fs" is no UID`, where `a2vsd3fs` is the actual random spam string submitted by the bot, even though it reads like a TYPO3 internal UID placeholder.
 

@@ -3,6 +3,6 @@ repos:
     rev: v4.4.0  # Use the latest version
     hooks:
       - id: trailing-whitespace
-        exclude: \.json$
+        exclude: (\.json$|^Build/Exceptions/exceptions\.php$)
       - id: end-of-file-fixer
-        exclude: \.json$
+        exclude: (\.json$|^Build/Exceptions/exceptions\.php$)

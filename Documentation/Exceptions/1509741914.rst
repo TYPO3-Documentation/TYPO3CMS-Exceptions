@@ -9,7 +9,7 @@ TYPO3 Exception 1509741914
 Insights from the code
 ======================
 
-A comment in the code associated with this exception explains that it is “thrown 
+A comment in the code associated with this exception explains that it is “thrown
 if file storage does not exist.”
 
 *Added in TYPO3 v6.3 • Still present in TYPO3 v13.1*
@@ -31,7 +31,7 @@ The following error when displaying a page with the news plugin::
 
    (1/2) #1509741914 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
    File /typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png does not exist.
-   
+
 The dummy image is present in the path.
 
 Solution
@@ -40,7 +40,7 @@ Solution
 As a workaround set the following TypoScript::
 
    plugin.tx_news.settings.displayDummyIfNoMedia = 1
-   
+
 For further informatin, visit https://github.com/georgringer/news/issues/1589
 
 TYPO3 13.4.9 - Add image with custom extension
@@ -65,7 +65,7 @@ Solution
 --------
 
 Add this to composer.json::
-    
+
    "extra": {
       "typo3/cms": {
          "web-dir": "public"

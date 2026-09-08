@@ -8,4 +8,3 @@ TYPO3 Exception 1350582054
 
 Cannot update original file!
 ============================
-

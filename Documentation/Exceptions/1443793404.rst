@@ -50,4 +50,3 @@ Add foreign_table and foreign_field to TCA:
     ],
 
 See also `Example: Simple 1:n inline relation <https://docs.typo3.org/permalink/t3tca:tca-example-inline-1n-inline-1>`_
-

@@ -36,7 +36,7 @@ The template contained the following:
         <f:translate extensionName="..." key="emailToSender.thankYou" arguments="{0: type}"/>
     </f:format.html>
 
-Replace with 
+Replace with
 
 ..  code-block:: html
     :caption: Template.html before

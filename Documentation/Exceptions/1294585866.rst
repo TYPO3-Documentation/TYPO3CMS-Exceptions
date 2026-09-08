@@ -21,4 +21,3 @@ Legacy installation:
 Composer-based installation:
 
 *   composer dump-autoload
-

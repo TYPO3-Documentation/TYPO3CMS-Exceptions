@@ -16,4 +16,3 @@ Possible solutions:
 
 -  Clear all caches
 -  Reload the whole Page (not only the ContentFrame)
-

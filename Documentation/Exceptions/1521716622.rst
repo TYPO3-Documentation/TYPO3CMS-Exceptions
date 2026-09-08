@@ -19,4 +19,3 @@ is automatically created looks like this: "/https//wwwfacebookcom/...".
 
 Changing this slug to something like "/my-company" is raising the
 error-message shown on the screenshot.
-

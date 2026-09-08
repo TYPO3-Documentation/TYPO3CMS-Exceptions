@@ -62,4 +62,3 @@ from TYPO3 Option `Typo3Option::PATHS_FULL_QUALIFIED_NAMESPACES`.
         __DIR__ . '/**/Configuration/*.php',
         __DIR__ . '/**/Configuration/**/*.php',
     ]);
-

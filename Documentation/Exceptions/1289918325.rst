@@ -18,4 +18,3 @@ still cached (for example when upgrading the TYPO3 core or extensions).
 
 The solution is to clear all caches (either via the install tool or if that
 does not help via manually removing the files in :file:`typo3temp`).
-

@@ -11,4 +11,3 @@ gd, mysql, openssl, fileinfo).
 
 To fix this modify your php.ini file and activate the proper
 extension(s) there.
-

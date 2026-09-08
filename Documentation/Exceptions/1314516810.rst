@@ -36,4 +36,3 @@ to be:
    mkdir fileadmin/introduction/images/theme/
 
    cp typo3conf/ext/introduction/Initialisation/Files/images/theme/IntroductionPackage.png fileadmin/introduction/images/theme/
-

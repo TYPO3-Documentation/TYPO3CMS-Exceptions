@@ -19,7 +19,7 @@ Installation Overview
 The Issue
 ---------
 
-Error upon trying to save a form in the :guilabel:`Web > Form` module into 
+Error upon trying to save a form in the :guilabel:`Web > Form` module into
 a path lying in an extension.
 
 Solution

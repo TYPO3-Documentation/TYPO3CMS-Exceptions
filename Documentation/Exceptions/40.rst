@@ -38,4 +38,3 @@ There are 2 fields :sql:`tstamp` in the table :sql:`sys_products_fe_users_mm_vis
 
 Removing the second line with the field :sql:`tstamp` from table
 :sql:`sys_products_fe_users_mm_visited_products` fixes the problem in this case.
-

@@ -22,4 +22,3 @@ Method postFolderCopy() does not exist.
       More information regarding this error might be available online.
 
 #. Extension `causal/file_list` is installed
-

@@ -18,4 +18,3 @@ In my example we have migrated :sql:`tx_news` images to FAL and some
 up wrong pid values for our created :sql:`sys_file_reference` entry. This can
 be fixed by adjusting :sql:`sys_file_reference` pid value to sysfolder uid of
 related news record with an SQL statement.
-

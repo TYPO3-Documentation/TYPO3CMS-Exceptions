@@ -24,8 +24,8 @@ Error message:
 ..  code-block:: text
     :caption: Example error output
 
-    [ERROR] The rendering context of ViewHelper f:link.page is missing a valid request object. 
-    
+    [ERROR] The rendering context of ViewHelper f:link.page is missing a valid request object.
+
 
 Solution
 --------

@@ -35,4 +35,3 @@ Fixing the Errors and Misbehavior
 
 In the Admin-Tool set `$TYPO3_CONF_VARS[SYS][cookieSecure]=2` or
 `$TYPO3_CONF_VARS[SYS][cookieSecure]=0`
-

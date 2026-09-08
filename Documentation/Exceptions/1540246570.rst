@@ -9,16 +9,16 @@ TYPO3 Exception 1540246570
 TYPO3 13.4: No Content Object definition found [21.10.2024]
 ===========================================================
 
-..  warning:: 
+..  warning::
     No Content Object definition found at TypoScript object path "tt_content.text"
 
-This error happens when you did not include the 
+This error happens when you did not include the
 :ref:`Site set "Fluid Styled Content" <typo3/cms-fluid-styled-content:site-set-fluid-styled-content>`
 but try to use a content element provided by this system extension.
 
 Solution: Require the site set in your site configuration:
 :ref:`Using a site set as dependency in a site <t3coreapi:site-sets-usage>` or depend on it from
-your site packages site set: 
+your site packages site set:
 :ref:`Defining the site set with a fluid_styled_content dependency <t3coreapi:site-sets-example-site-package-set>`.
 
 
@@ -130,13 +130,12 @@ The error does not occur when you use the Fluid lanuage tag with a path:
 TYPO3 12/13 - General Plugin: No Content Object definition found at TypoScript object path "tt_content.list.20"
 ==============================================================================================================
 
-This exception could happen because a plugin was registered before using the :php:`list` content element 
+This exception could happen because a plugin was registered before using the :php:`list` content element
 and the plugin subtype :php:`list_type` and is now registered as :php:`ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT`.
 
 Have a look at `Deprecation: #105076 - Plugin content element and plugin sub types <https://docs.typo3.org/permalink/changelog:deprecation-105076-1726923626>`_.
 
 Either an Upgrade Wizard was not executed for those plugins or may be you need to create one.
 
-If Upgrade Wizard creation is required, you can have a look in TYPO3 core for example, search 
+If Upgrade Wizard creation is required, you can have a look in TYPO3 core for example, search
 Upgrade Wizard extending :php:`AbstractListTypeToCTypeUpdate`, like :php:`final class IndexedSearchCTypeMigration extends AbstractListTypeToCTypeUpdate`.
-

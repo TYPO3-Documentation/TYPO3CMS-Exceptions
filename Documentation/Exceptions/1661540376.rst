@@ -56,4 +56,3 @@ Solution
 --------
 
 Activate the extension tt_board which contains the TCA for the table tt_board.
-

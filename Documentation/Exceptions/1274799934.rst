@@ -8,4 +8,3 @@ TYPO3 Exception 1274799934
 
 An object of class "..." could not be converted to a plain value.
 =================================================================
-
