@@ -188,7 +188,7 @@ fi
 # Suite execution
 case ${TEST_SUITE} in
     composerInstall)
-        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-install-${SUFFIX} -e COMPOSER_CACHE_DIR=.Build/.cache/composer ${IMAGE_PHP} composer install --no-progress --no-interaction --working-dir=${CORE_ROOT}/Build/app
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-install-${SUFFIX} -e COMPOSER_CACHE_DIR=${CORE_ROOT}/.Build/.cache/composer ${IMAGE_PHP} composer install --no-progress --no-interaction --working-dir=${CORE_ROOT}/Build/app
         SUITE_EXIT_CODE=$?
         ;;
     createMissingExceptionCodeFiles)
