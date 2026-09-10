@@ -223,7 +223,7 @@ Solution
 --------
 
 Download the new versions from GIT of "view"
-https://github.com/FluidTYPO3/view [not available anymore]
+:samp:`https://github.com/FluidTYPO3/view` [not available anymore]
 
 unfortunately only working partly:
 typo3_src-6.2.0/typo3/sysext/lang/Classes/LanguageService.php line 250
