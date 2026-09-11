@@ -51,7 +51,7 @@ in the backend.
 The extension TypoScript is like this:
 
 ..  code-block:: typoscript
-    :caption: EXT:my_extension/Configuration/TypoScript/setup.typoscript
+    :caption: EXT:my_extension/Configuration/Sets/MyExtension/setup.typoscript
 
     plugin.tx_myextension {
         controller.action = EXTBASEPLUGIN
@@ -66,7 +66,7 @@ Always add the TypoScript for the `tt_content` list rendering.
 :file:`ext_localconf.php`
 
 ..  code-block:: typoscript
-    :caption: EXT:my_extension/Configuration/TypoScript/setup.typoscript
+    :caption: EXT:my_extension/Configuration/Sets/MyExtension/setup.typoscript
 
     tt_content.list.20 {
         tx_myextension_controllers_action = < plugin.tx_myextension.controller.action
