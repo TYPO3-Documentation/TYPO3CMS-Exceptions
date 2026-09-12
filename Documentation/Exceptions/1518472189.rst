@@ -51,8 +51,8 @@ How to fix slug related problems (TYPO3 version 9.5)?
    can be configured automatically or manually, but the path up must be
    correct. Trailing slashes in the path are not allowed.
 -  If you use Apache-Webserver make sure that in the TYPO3 root is a
-   ".htaccess"-file like this one:
-   https://github.com/benjaminkott/bootstrap_package/blob/master/Configuration/Server/_.htaccess
+   ".htaccess"-file, see `Apache .htaccess configuration file
+   <https://docs.typo3.org/permalink/t3coreapi:htaccess>`_.
 -  If you use Nginx-Webserver make sure that web-access to the
    TYPO3-root is configured accordingly to the previous list-point.
 
