@@ -20,5 +20,5 @@ Executing following command on command line:
    typo3cms install:generatepackagestates
 
 See the `TYPO3 console manual
-<https://docs.typo3.org/p/helhum/typo3-console/master/en-us/Introduction/Index.html>`
+<https://docs.typo3.org/p/helhum/typo3-console/master/en-us/Introduction/Index.html>`_
 for further information.
