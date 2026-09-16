@@ -1,4 +1,4 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1638264590
@@ -16,7 +16,7 @@ An extension adds to a backend Form own Form Nodes. Form node definition adds th
 Example:
 
 
-     $resultArray['requireJsModules'][] = 'TYPO3/CMS/Extension/JavaScriptFile';
+    $resultArray['requireJsModules'][] = 'TYPO3/CMS/Extension/JavaScriptFile';
 
 The Issue
 ---------

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 =================
 TYPO3 Exception 1
 =================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 4.6.0
 ===========
@@ -19,11 +19,11 @@ I get this error when switching to Web>Template.
    must be an array, null given, called in /home/typo3_src/typo3_src-4.6.0/typo3/sysext/lang/lang.php
    on line 554 and defined in /home/typo3_src/typo3_src-4.6.0/t3lib/class.t3lib_div.php line 1867
 
--  Read the Ticket for this `Bug
-   #31353 <https://forge.typo3.org/issues/31353>`__.
--  If you speak German, this `post at
-   typo3.net/forum <http://www.typo3.net/forum/beitraege/sonstiges-1/107943/>`__
-   could help.
+-   Read the Ticket for this `Bug
+    #31353 <https://forge.typo3.org/issues/31353>`__.
+-   If you speak German, this `post at
+    typo3.net/forum <http://www.typo3.net/forum/beitraege/sonstiges-1/107943/>`__
+    could help.
 
 TYPO3 4.6.8
 ===========
@@ -58,13 +58,13 @@ Solution
 
 In localconf.php do the settings for the output errors:
 
-.. code-block:: php
+..  code-block:: php
 
-   $TYPO3_CONF_VARS['SYS']['displayErrors'] = '2';
-   $TYPO3_CONF_VARS['SYS']['devIPmask'] = '123.456.789.123';
-   //$TYPO3_CONF_VARS['SYS']['devIPmask'] = '*';
-   $TYPO3_CONF_VARS['SYS']['errorHandler'] = 't3lib_error_ErrorHandler';
-   $TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '2';
+    $TYPO3_CONF_VARS['SYS']['displayErrors'] = '2';
+    $TYPO3_CONF_VARS['SYS']['devIPmask'] = '123.456.789.123';
+    //$TYPO3_CONF_VARS['SYS']['devIPmask'] = '*';
+    $TYPO3_CONF_VARS['SYS']['errorHandler'] = 't3lib_error_ErrorHandler';
+    $TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '2';
 
 then found that in my case, the error was in the file
 lang/locallang_login.xlf . More precisely - the replacement for my
@@ -78,10 +78,10 @@ None - please edit if you found a solution!
 TYPO3 4.7.17
 ============
 
--  Login to Backend was not possible.
--  Error occurred after changing PHP Binaries (not PHP Version) from 5.4
-   (Mac OS X Mavericks default Binaries) to 5.4 (Binaries from
-   http://php-osx.liip.ch/).
+-   Login to Backend was not possible.
+-   Error occurred after changing PHP Binaries (not PHP Version) from 5.4
+    (Mac OS X Mavericks default Binaries) to 5.4 (Binaries from
+    http://php-osx.liip.ch/).
 
 ::
 
@@ -92,7 +92,7 @@ TYPO3 4.7.17
    and defined in
    /path/to/documentRoot/t3lib/class.t3lib_div.php line 1862
 
-.. _solution-1:
+..  _solution-1:
 
 Solution
 --------
@@ -116,7 +116,7 @@ does not have admin rights.
 Read the Ticket for this `Bug #51969 <https://forge.typo3.org/issues/51969>`__
 and `Bug #52296 <https://forge.typo3.org/issues/52296>`__.
 
-.. _solution-2:
+..  _solution-2:
 
 Solution
 --------
@@ -148,7 +148,7 @@ search <https://docs.typo3.org/typo3cms/extensions/indexed_search>`__.
    on line 730 and defined in
    /var/www/vhosts/typo3_cores/typo3_src-6.1.0alpha1/typo3/sysext/form/Classes/Controller/FormController.php line 93
 
-.. _solution-3:
+..  _solution-3:
 
 Solution
 ^^^^^^^^
@@ -162,7 +162,7 @@ solr_report
 
 **TO COME HERE WE DID:**
 
-6. Check the status report in the reports module The reports module has
+6.  Check the status report in the reports module The reports module has
 a Solr section in the status report. It will complain about different
 aspects and give hints to solve them. Most of the time the reasons can
 be found in different aspects like:
@@ -176,28 +176,28 @@ everything is ok, it should look like this:
 
 Uncaught TYPO3 Exception
 
-#. ::
+#.  ::
 
-      PHP Catchable Fatal Error: Argument 1 passed to
-      tx_solr_report_IndexReport::__construct() must be an instance of
-      tx_reports_Module, instance of
-      TYPO3\CMS\Reports\Controller\ReportController given in
-      /.../typo3conf/ext/solr/report/class.tx_solr_report_indexreport.php
-      line 47 (More information)
+       PHP Catchable Fatal Error: Argument 1 passed to
+       tx_solr_report_IndexReport::__construct() must be an instance of
+       tx_reports_Module, instance of
+       TYPO3\CMS\Reports\Controller\ReportController given in
+       /.../typo3conf/ext/solr/report/class.tx_solr_report_indexreport.php
+       line 47 (More information)
 
-#. ::
+#.  ::
 
-      TYPO3\CMS\Core\Error\Exception thrown in file
-      /.../typo3_src-6.1.0/typo3/sysext/core/Classes/Error/ErrorHandler.php
-      in line 108.
+       TYPO3\CMS\Core\Error\Exception thrown in file
+       /.../typo3_src-6.1.0/typo3/sysext/core/Classes/Error/ErrorHandler.php
+       in line 108.
 
 **TYPO3 / PHP VERSION**
 
-#. CONST: php_sapi_name: cgi-fcgi
-#. OTHER: TYPO3_VERSION: 6.1.0
-#. OTHER: PHP_VERSION : 5.3.3-7+squeeze15
+#.  CONST: php_sapi_name: cgi-fcgi
+#.  OTHER: TYPO3_VERSION: 6.1.0
+#.  OTHER: PHP_VERSION : 5.3.3-7+squeeze15
 
-.. _solution-4:
+..  _solution-4:
 
 Solution
 ^^^^^^^^
@@ -217,7 +217,7 @@ I got this error after upgrading from 6.1.7 to 6.2.0. occures when the
 gridelements extension is installed tested with gridelements v2.0.2 and
 gridelements v3.0.0-dev https://forge.typo3.org/issues/57833
 
-.. _solution-5:
+..  _solution-5:
 
 Solution
 --------
@@ -228,7 +228,7 @@ Download the new versions from GIT of "view"
 unfortunately only working partly:
 typo3_src-6.2.0/typo3/sysext/lang/Classes/LanguageService.php line 250
 
-.. _solution-6:
+..  _solution-6:
 
 Solution
 --------
@@ -240,7 +240,7 @@ form
 
 When submitting a very basic form
 
-.. _solution-7:
+..  _solution-7:
 
 Solution
 --------
@@ -263,14 +263,14 @@ PHP Warning: touch(): Unable to create file /user_upload/news/aAbB
 
 Reproduction:
 
-#. have 6.2.0 on your system
-#. install tool: Important actions: check for core updates
-#. accept the upgrade to 6.2.2
-#. repair folders using Folder Structure
-#. click Upgrade Wizard
-#. click Execute under "Migrate existing filemounts to be file
-   abstraction layer compatible."
-#. click "Perform updates!"
+#.  have 6.2.0 on your system
+#.  install tool: Important actions: check for core updates
+#.  accept the upgrade to 6.2.2
+#.  repair folders using Folder Structure
+#.  click Upgrade Wizard
+#.  click Execute under "Migrate existing filemounts to be file
+    abstraction layer compatible."
+#.  click "Perform updates!"
 
 Error source code with line#263 = error line:
 
@@ -349,7 +349,7 @@ Fal was not present in TYPO3 4.5.35 export, so $initStr was always
 empty, when executing
 typo3_src/typo3/sysext/impexp/Classes/ImportExport.php line 3042.
 
-.. _solution-8:
+..  _solution-8:
 
 Solution
 --------
@@ -374,7 +374,7 @@ This bugfix did it for me:
    Last trace:
    3 TYPO3\CMS\Core\Error\ErrorHandler::handleError(2, "Illegal string offset 'uid'", "...\typo3\sys…lasses\Controller\TypoScriptFrontendController.php", 1281, array)
 
-.. _solution-9:
+..  _solution-9:
 
 Solution
 --------
@@ -383,7 +383,7 @@ At 1st initial start of this page after clearing the cache, after reload
 [e.g. pressing F5] this message disappears, and page runs fine...
 -- David Bruchmann 02:03, 27 August 2014 (CEST)
 
-.. _typo3-6.2.4-1:
+..  _typo3-6.2.4-1:
 
 TYPO3 6.2.4
 ===========
@@ -394,7 +394,7 @@ TYPO3 6.2.4
    called in /var/www/typo3/sysext/backend/Classes/View/PageLayoutView.php on line 475
    and defined in /var/www/typo3/sysext/backend/Classes/View/PageLayoutView.php line 1866
 
-.. _error-description-1:
+..  _error-description-1:
 
 Error description
 -----------------
@@ -403,7 +403,7 @@ This error occurs when opening a folder while in page module, but only
 if the folder has a backend layout configured with no columns. This was
 only possible until at least 4.7
 
-.. _solution-1-1:
+..  _solution-1-1:
 
 Solution 1
 ----------
@@ -411,7 +411,7 @@ Solution 1
 Got to the list module and switch the folder back to standard, change
 the backend layout and switch back.
 
-.. _solution-2-1:
+..  _solution-2-1:
 
 Solution 2
 ----------
@@ -429,14 +429,14 @@ TYPO3 6.2.14
 
 For background information see `Ticket #56603 <https://forge.typo3.org/issues/56603>`__.
 
-.. _solution-1-2:
+..  _solution-1-2:
 
 Solution 1
 ----------
 
 Log into backend and clear the cache.
 
-.. _solution-2-2:
+..  _solution-2-2:
 
 Solution 2
 ----------
@@ -450,7 +450,7 @@ TYPO3 6.2.14: Argument 1 must implement ObjectManagerInterface
 
    #1: PHP Catchable Fatal Error: Argument 1 passed to TYPO3\CMS\Extbase\Persistence\Repository::__construct() must implement interface TYPO3\CMS\Extbase\Object\ObjectManagerInterface, none given
 
-.. _solution-1-3:
+..  _solution-1-3:
 
 Solution 1
 ----------
@@ -634,7 +634,7 @@ Deprecation Notice: mysql_connect()
    /usr/share/typo3/typo3_src-7.6.16/typo3/sysext/core/Classes/Error/ErrorHandler.php
    in line 111.
 
-.. _solution-10:
+..  _solution-10:
 
 Solution
 ^^^^^^^^
@@ -675,7 +675,7 @@ Exception occurs in Install Tool > System environment
    /var/www/[...]/vendor/typo3/cms/typo3/sysext/install/Classes/ViewHelpers/PhpInfoViewHelper.php
    line 73
 
-.. _solution-11:
+..  _solution-11:
 
 Solution
 ^^^^^^^^

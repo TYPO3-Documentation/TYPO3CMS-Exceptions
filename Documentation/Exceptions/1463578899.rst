@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1463578899
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TCA misconfiguration: a field name that does not exist
 ======================================================
@@ -19,7 +19,7 @@ This happens in the TCE for a field which is configured by a
 'ds_pointerField'. You must also add a TCA column for the corresponding
 type field :php:`the_field_name_type`.
 
-.. code-block:: php
+..  code-block:: php
 
     'config_type' => array (
         'label' => 'LLL:EXT:my_extension/locallang_db.xml:the_table_name.the_field_name_type',

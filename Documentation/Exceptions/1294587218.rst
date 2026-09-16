@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1294587218
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ServiceUnavailable: TypoScriptFrontendController
 ================================================
@@ -26,10 +26,10 @@ has root-level property. To achieve this, go to the following window:
 > :guilabel:`info/edit` in top selection field > :guilabel:`edit complete template record` >
 "General" - tab
 
--  check the template TypoScript code in the "Setup" - text field
--  The "inactive" field must be unchecked.
--  Check, whether root-level property is set in the "Options" tab: the
-   "root level" field must be checked.
+-   check the template TypoScript code in the "Setup" - text field
+-   The "inactive" field must be unchecked.
+-   Check, whether root-level property is set in the "Options" tab: the
+    "root level" field must be checked.
 
 If all this is o.k., but the error occurs nonetheless, you may delete
 and re-create the root template.
@@ -42,16 +42,16 @@ website". This button has appeared after deleting the root template.
 
 Additionally, you find many information in the docs on TYPO3.org
 
--  https://docs.typo3.org
+-   https://docs.typo3.org
 
 
 SOLUTION 1 (Tested with TYPO3 7+)
 =================================
 
-#. In the backend, click on 'Template' menu under web module.
-#. Click on the main page (usually id 1)
-#. Select *Info/Modify* in the dropdown menu on the header section of
-   the content pane.
-#. Click on the *Edit the whole template record* button.
-#. Click on the *Options* tab.
-#. Make sure to select *Rootlevel* checkbox. Problem solved.
+#.  In the backend, click on 'Template' menu under web module.
+#.  Click on the main page (usually id 1)
+#.  Select *Info/Modify* in the dropdown menu on the header section of
+    the content pane.
+#.  Click on the *Edit the whole template record* button.
+#.  Click on the *Options* tab.
+#.  Make sure to select *Rootlevel* checkbox. Problem solved.

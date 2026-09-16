@@ -1,16 +1,16 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1442787911
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Solution
 --------
 
 Delete all cache_core files
 
-.. code-block:: bash
+..  code-block:: bash
 
-   sudo rm -rf typo3temp/cache/code/cache_core
+    sudo rm -rf typo3temp/cache/code/cache_core

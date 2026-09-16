@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1342635425
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Could not access remote resource "..."
 ======================================
@@ -12,15 +12,15 @@ Could not access remote resource "..."
 If this error comes directly after installation, activate cUrl support
 in Install-Tool.
 
-.. code-block:: none
+..  code-block:: none
 
-   [SYS][curlUse] = 1
+    [SYS][curlUse] = 1
 
 If you use a local XAMPP Installation and the error still occurs with
 cUrl, than it's maybe a problem with the certificate. The problem is
 cUrl quit with this message "SSL certificate problem: unable to get
 local issuer certificate".
 
--  Get the **cacert.pem** from http://curl.haxx.se/docs/caextract.html
-   and put this line in at the end of your :file:`php.ini` :bash:`curl.cainfo=PATH/To/your/cacert.pem`
--  restart Apache/Xampp and all should work.
+-   Get the **cacert.pem** from http://curl.haxx.se/docs/caextract.html
+    and put this line in at the end of your :file:`php.ini` :bash:`curl.cainfo=PATH/To/your/cacert.pem`
+-   restart Apache/Xampp and all should work.

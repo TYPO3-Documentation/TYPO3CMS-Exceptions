@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1459422492
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Datebase credential structure in LocalConfiguration.php not up to date
 ======================================================================
@@ -19,30 +19,30 @@ Change your :file:`typo3conf/LocalConfiguration.php`
 
 **From:**
 
-.. code-block:: php
+..  code-block:: php
 
-      'DB' => [
-          'database' => '',
-          'host' => 1',
-          'password' => '',
-          'port' => 3306,
-          'username' => '',
-      ],
+    'DB' => [
+        'database' => '',
+        'host' => 1',
+        'password' => '',
+        'port' => 3306,
+        'username' => '',
+    ],
 
 **To:**
 
-.. code-block:: php
+..  code-block:: php
 
-      'DB' => [
-          'Connections' => [
-              'Default' => [
-                  'charset' => 'utf8',
-                  'dbname' => 'typo3_v8',
-                  'driver' => 'mysqli',
-                  'host' => '',
-                  'password' => '',
-                  'port' => 3306,
-                  'user' => '',
-              ],
-          ],
-      ],
+    'DB' => [
+        'Connections' => [
+            'Default' => [
+                'charset' => 'utf8',
+                'dbname' => 'typo3_v8',
+                'driver' => 'mysqli',
+                'host' => '',
+                'password' => '',
+                'port' => 3306,
+                'user' => '',
+            ],
+        ],
+    ],

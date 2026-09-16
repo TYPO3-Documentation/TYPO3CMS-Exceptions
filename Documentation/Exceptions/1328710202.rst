@@ -1,10 +1,10 @@
- .. include:: /Includes.rst.txt
+ ..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1328710202
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 12.4.25 with EXT:recaptcha - 25.01.2025

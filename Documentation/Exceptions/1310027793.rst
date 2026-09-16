@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1310027793
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ERROR: Query could not be parsed: "..."
 =======================================
@@ -12,5 +12,5 @@ ERROR: Query could not be parsed: "..."
 This error happens in TYPO3 versions below 8 when a database query could not be
 parsed. Take note of the query and:
 
-- if you are a developer: check your code for valid SQL
-- if you are an administrator: try executing the failing query manually via a SQL client
+-   if you are a developer: check your code for valid SQL
+-   if you are an administrator: try executing the failing query manually via a SQL client

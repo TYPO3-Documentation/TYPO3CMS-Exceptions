@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1313855173
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The controller "..." is not allowed by this plugin.
 ===================================================
@@ -14,24 +14,24 @@ First of all: Please check, if you have configured your controller in
 
 If the problem still comes up:
 
-#. Maybe you have changed your content element from another plugin to
-   your new extbase plugin. In that case it may be that the previous
-   plugin works with FlexForms (:sql:`pi_flexform`). Extbase will read these
-   FlexForm configurations no matter if your plugin needs them or not.
-   So please delete the current content element, create a new one and choose
-   your plugin OR clear content of column :sql:`pi_flexform` in database of this
-   content element.
-#. If you don't want to add the missing controller to :file:`ext_localconf.php`
-   you have the possibility to add following into your TypoScript:
+#.  Maybe you have changed your content element from another plugin to
+    your new extbase plugin. In that case it may be that the previous
+    plugin works with FlexForms (:sql:`pi_flexform`). Extbase will read these
+    FlexForm configurations no matter if your plugin needs them or not.
+    So please delete the current content element, create a new one and choose
+    your plugin OR clear content of column :sql:`pi_flexform` in database of this
+    content element.
+#.  If you don't want to add the missing controller to :file:`ext_localconf.php`
+    you have the possibility to add following into your TypoScript:
 
-   .. code-block:: typoscript
+    ..  code-block:: typoscript
 
-      plugin.your_extension.mvc.callDefaultActionIfActionCantBeResolved = 1
+        plugin.your_extension.mvc.callDefaultActionIfActionCantBeResolved = 1
 
-#. Your routing configuration contains
-   :yaml:`defaultController: MyPluginController::index`.
-   The `Controller` suffix may not be used in there; the correct configuration
-   would be :yaml:`defaultController: MyPlugin::index`.
+#.  Your routing configuration contains
+    :yaml:`defaultController: MyPluginController::index`.
+    The `Controller` suffix may not be used in there; the correct configuration
+    would be :yaml:`defaultController: MyPlugin::index`.
 
 Another possibility is that you may have the same plugin twice on the
 same page with different switchable controller actions chosen. If there
@@ -47,8 +47,8 @@ backend request, the backend configuration manager is initialized. As the
 configuration manager is a singleton, it would not be initialized again, leading
 to the plugin configuration being read from
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-   module.your_extension {
-   // ...
-   }
+    module.your_extension {
+    // ...
+    }

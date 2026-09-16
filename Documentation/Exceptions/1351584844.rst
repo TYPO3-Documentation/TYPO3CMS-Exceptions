@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1351584844
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 An argument "key" or "id" has to be provided
 ============================================
@@ -14,12 +14,12 @@ tags. Example:
 
 Wrong:
 
-.. code-block:: html
+..  code-block:: html
 
-   <f:translate key="{openFeed}"/>
+    <f:translate key="{openFeed}"/>
 
 Right:
 
-.. code-block:: html
+..  code-block:: html
 
-   <f:translate key="openFeed"/>
+    <f:translate key="openFeed"/>

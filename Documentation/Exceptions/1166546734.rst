@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1166546734
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 #1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
 ====================================================================
@@ -12,35 +12,35 @@ TYPO3 Exception 1166546734
 Reason 1:
 ---------
 
--  Package does really not exist
+-   Package does really not exist
 
 Reason 2:
 ---------
 
-.. container::
+..  container::
 
-   |Extension Upload screen TER.png|
+    |Extension Upload screen TER.png|
 
--  CamelCaseConversion Problem with numbers
--  f.e. vendor_extension_2018 will be converted into VendorExtension2018
-   and converted back into vendor_extension2018
+-   CamelCaseConversion Problem with numbers
+-   f.e. vendor_extension_2018 will be converted into VendorExtension2018
+    and converted back into vendor_extension2018
 
 This will result in the following error message:
 
-   Package "vendor_extension2018" is not available. Please check if the
-   package exists and that the package key is correct (package keys are
-   case sensitive)
+    Package "vendor_extension2018" is not available. Please check if the
+    package exists and that the package key is correct (package keys are
+    case sensitive)
 
 According to the hints in TER these kind of keys are invalid:
 
--  https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ExtensionKey/Index.html
+-   https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ExtensionKey/Index.html
 
 Reason 3:
 ---------
 
 
-   1/1) #1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
-   Package "" is not available. Please check if the package exists and that the package key is correct (package keys are case sensitive).
+    1/1) #1166546734 TYPO3\CMS\Core\Package\Exception\UnknownPackageException
+    Package "" is not available. Please check if the package exists and that the package key is correct (package keys are case sensitive).
 
 Happened on switching from LTS 9 to 10 as :php:`$_EXTKEY` is no longer defined. Therefore I called::
 
@@ -55,6 +55,6 @@ With an empty :php:`$extensionKey`
 See also
 --------
 
--  https://forge.typo3.org/issues/87737
+-   https://forge.typo3.org/issues/87737
 
-.. |Extension Upload screen TER.png| image:: files/Extension_Upload_screen_TER.png
+..  |Extension Upload screen TER.png| image:: files/Extension_Upload_screen_TER.png

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1375955684
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You are not allowed to access the given folder
 ==============================================
@@ -13,13 +13,13 @@ This exception occurs when file action permissions are not correct. It
 may occur after an upgrade due to security bulletin
 `core-sa-2013-003 <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-003/>`__
 
--  …and not following the given advices (clear cache, deleting the
-   complete :file:`typo3temp/Cache` folder, set storage file permissions) - in
-   this case follow the instructions in the bulletin
--  …and deleting the complete :file:`typo3temp` folder → in this case see bug
-   `51747 <https://forge.typo3.org/issues/51747>`__, manually creating
-   the folder :file:`typo3temp/_processed_` seems to fix the problem for most
-   people.
+-   …and not following the given advices (clear cache, deleting the
+    complete :file:`typo3temp/Cache` folder, set storage file permissions) - in
+    this case follow the instructions in the bulletin
+-   …and deleting the complete :file:`typo3temp` folder → in this case see bug
+    `51747 <https://forge.typo3.org/issues/51747>`__, manually creating
+    the folder :file:`typo3temp/_processed_` seems to fix the problem for most
+    people.
 
 Exception when calling the language module
 ==========================================

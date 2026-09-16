@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1504804727
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 
@@ -16,12 +16,12 @@ Situation
 
 The TYPO3 backend throws an exception, when I click on Extensions.
 
-.. code-block:: none
+..  code-block:: none
 
-   (1/1) #1504804727 RuntimeException
+    (1/1) #1504804727 RuntimeException
 
-   This module "tools_ExtensionmanagerExtensionmanager" is only available as system maintainer
-   in /foo/bar/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php line 464
+    This module "tools_ExtensionmanagerExtensionmanager" is only available as system maintainer
+    in /foo/bar/typo3/sysext/core/Classes/Authentication/BackendUserAuthentication.php line 464
 
 Solution
 --------

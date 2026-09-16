@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1254325546
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Occurrence in Frontend
 ======================
@@ -27,8 +27,8 @@ Cookie was not set since HTTPS was forced in
 Steps without Success
 =====================
 
--  Changing the version of Powermail is NOT fixing the Errors.
--  Uninstalling or deactivating realUrl is NOT fixing the Errors.
+-   Changing the version of Powermail is NOT fixing the Errors.
+-   Uninstalling or deactivating realUrl is NOT fixing the Errors.
 
 Fixing the Errors and Misbehavior
 =================================

@@ -1,18 +1,18 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1253036401
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 argument "*path*" was already defined and should not be defined again
 =====================================================================
 
 This error ( argument "*path*" was already defined and should not be
-  defined again ) is caused by an extension viewhelper registering its'
-  arguments differently after an upgrade. Clear the cache from install
-  tool solves it.
+    defined again ) is caused by an extension viewhelper registering its'
+    arguments differently after an upgrade. Clear the cache from install
+    tool solves it.
 
 This error occurred, after upgrading from TYPO3 CMS 7 to 8 having a
 custom view helper extending

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1237823695
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 General
 =======
@@ -82,9 +82,9 @@ Fluid 6.1 select ViewHelper
 
 ``</f:form.select>``
 
--  prependContent="TRUE" should be available since 6.1
-   https://forge.typo3.org/issues/26595
--  No documented solution yet
+-   prependContent="TRUE" should be available since 6.1
+    https://forge.typo3.org/issues/26595
+-   No documented solution yet
 
 EXT:news
 ========

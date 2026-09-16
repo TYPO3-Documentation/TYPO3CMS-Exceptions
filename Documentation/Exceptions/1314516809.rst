@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1314516809
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 File "..." does not exist
 =========================
@@ -29,17 +29,17 @@ checkbox.
 Other possibilities
 -------------------
 
--  This error occurs when a media resource (image, PDF) is deleted from
-   the server but remains linked via the "media" extension and FAL.
+-   This error occurs when a media resource (image, PDF) is deleted from
+    the server but remains linked via the "media" extension and FAL.
 
--  The message appears when the file is in the directory, but not the
-   record in the DB.
+-   The message appears when the file is in the directory, but not the
+    record in the DB.
 
--  It happens when you upload a file with the name in uppercase.
-   The file has been uploaded, but the reference record is not created.
-   Solution: delete the file from the directory and upload the file in
-   lowercase (and check if setting "case sensitivity" in :guilabel:`File Storage`
-   record is set correctly).
+-   It happens when you upload a file with the name in uppercase.
+    The file has been uploaded, but the reference record is not created.
+    Solution: delete the file from the directory and upload the file in
+    lowercase (and check if setting "case sensitivity" in :guilabel:`File Storage`
+    record is set correctly).
 
 Situation: Entering Upgrade Wizard after upgrading to 8.7
 ---------------------------------------------------------
@@ -62,8 +62,8 @@ occurs (You should not do this in production system though).
 For this specific case: (the exception may be caused by other things,
 though)
 
--  "Fix" the filename.
--  Mark FormFileExtensionUpdate as done
+-   "Fix" the filename.
+-   Mark FormFileExtensionUpdate as done
 
 **See also:** https://forge.typo3.org/issues/85685
 
@@ -104,6 +104,6 @@ them manually. Warn your editors to check file names if currently unused
 files are affected (simply remove the ``number_of_references`` condition
 below). Assuming reference index is reliable:
 
-.. code-block:: sql
+..  code-block:: sql
 
-   SELECT * FROM sys_file WHERE identifier LIKE "% %" AND number_of_references > 0;
+    SELECT * FROM sys_file WHERE identifier LIKE "% %" AND number_of_references > 0;

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1417988921
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The CSRF protection token for the requested module is missing or invalid.
 =========================================================================
@@ -18,14 +18,14 @@ https://forum.typo3.org/index.php/t/210486/
 
 Other Workaround, which applies for 7.4.0:
 
--  Export (to :file:`.t3d`) a single leaf page from another TYPO3 CMS instance
-   (mine was 6.2)
--  Right click root element in :guilabel:`page tree` => :guilabel:`Import from .t3d`
-   (I imported only page properties)
--  Now I can append other pages to that page by using the :guilabel:`New`
-   operation (which failed before)
--  I can even add pages (with :guilabel:`New` to the root element which did not
-   work before.
+-   Export (to :file:`.t3d`) a single leaf page from another TYPO3 CMS instance
+    (mine was 6.2)
+-   Right click root element in :guilabel:`page tree` => :guilabel:`Import from .t3d`
+    (I imported only page properties)
+-   Now I can append other pages to that page by using the :guilabel:`New`
+    operation (which failed before)
+-   I can even add pages (with :guilabel:`New` to the root element which did not
+    work before.
 
 Still, none of my pages is tagged as :guilabel:`Use as Root Page` in
 :guilabel:`Page Properties` > :guilabel:`Behaviour` =>

@@ -1,17 +1,17 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1476107295
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Permission denied
 =================
 
-.. code-block:: text
+..  code-block:: text
 
-   PHP Warning: session_start(): failed: Permission denied (13)
+    PHP Warning: session_start(): failed: Permission denied (13)
 
 Solution
 --------
@@ -33,29 +33,29 @@ After I delete the folder :file:`var` in :file:`typo3temp`, the next backend log
 
 case 2:
 
-.. code-block:: text
+..  code-block:: text
 
-   #1476107295: PHP Warning: include(/var/www/html/foobar/typo3_src-8.7.29/vendor/composer/../psr/http-message/src/UriInterface.php): failed to open stream: Bad message in /var/www/html/foobar/typo3_src-8.7.29/vendor/composer/ClassLoader.php line 444 (More information)
+    #1476107295: PHP Warning: include(/var/www/html/foobar/typo3_src-8.7.29/vendor/composer/../psr/http-message/src/UriInterface.php): failed to open stream: Bad message in /var/www/html/foobar/typo3_src-8.7.29/vendor/composer/ClassLoader.php line 444 (More information)
 
 Solution
 --------
 
 Check your file system at the folder given in the error message and run
 
-.. code-block:: bash
+..  code-block:: bash
 
-   sudo fsck -cfk /dev/sda2
+    sudo fsck -cfk /dev/sda2
 
 where dev/sda2 is the corrupted disk.
 
 PHP Warning: Illegal offset type
 ================================
 
-.. code-block:: text
+..  code-block:: text
 
-   PHP Warning: Illegal offset type in
-   typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
-   line 234
+    PHP Warning: Illegal offset type in
+    typo3/sysext/rte_ckeditor/Classes/Controller/BrowseLinksController.php
+    line 234
 
 (TYPO3 v8.7) The error occurred in CKEditor Rich Text Editor while setting
 a link. This was caused by the page TSconfig for the old rte html
@@ -65,15 +65,15 @@ expected again.
 Using sb_portfolio2
 ===================
 
-.. code-block:: text
+..  code-block:: text
 
-   1476107295: PHP Warning: Declaration of
-   Tx_SbPortfolio2_Domain_Repository_CategoryRepository::findByTags(Tx_SbPortfolio2_Domain_Model_Tag
-   $tag) should be compatible with
-   Tx_SbPortfolio2_Domain_Repository_CoreRecordRepository::findByTags($tag,
-   array $portSetup) in
-   7/typo3conf/ext/sb_portfolio2/Classes/Domain/Repository/CategoryRepository.php
-   line 0 (More information)
+    1476107295: PHP Warning: Declaration of
+    Tx_SbPortfolio2_Domain_Repository_CategoryRepository::findByTags(Tx_SbPortfolio2_Domain_Model_Tag
+    $tag) should be compatible with
+    Tx_SbPortfolio2_Domain_Repository_CoreRecordRepository::findByTags($tag,
+    array $portSetup) in
+    7/typo3conf/ext/sb_portfolio2/Classes/Domain/Repository/CategoryRepository.php
+    line 0 (More information)
 
 The error occurs if the function in a extended class has different
 arguments
@@ -96,10 +96,10 @@ correct.
 PHP Warning: key() expects parameter 1  to be array, string given in ConditionMatcher.php
 =========================================================================================
 
-.. code-block:: text
+..  code-block:: text
 
-   PHP Warning: key() expects parameter 1 to be array, string given in
-   /home/host/data/www/typo3_src-9.5.9/typo3/sysext/backend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
+    PHP Warning: key() expects parameter 1 to be array, string given in
+    /home/host/data/www/typo3_src-9.5.9/typo3/sysext/backend/Classes/Configuration/TypoScript/ConditionMatching/ConditionMatcher.php
 
 
 It is happened because of my :php:`_GP('edit')` coincided with
@@ -118,11 +118,11 @@ Ext:mask. No problems under PHP 7.2.21.
 PHP Warning: preg_match(): Compilation failed: regular expression is too large
 ==============================================================================
 
-.. code-block:: text
+..  code-block:: text
 
-   "Uncaught TYPO3 Exception: #1476107295: PHP Warning: preg_match():
-   Compilation failed: regular expression is too large at offset 27 in
-   /html/typo3/typo3_src-9.5.22/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php
+    "Uncaught TYPO3 Exception: #1476107295: PHP Warning: preg_match():
+    Compilation failed: regular expression is too large at offset 27 in
+    /html/typo3/typo3_src-9.5.22/typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php
 
 
 Reason
@@ -142,11 +142,11 @@ mentioned error was gone
 Calling typo3/sysext/core/bin/typo3 scheduler:run from CLI:
 ===========================================================
 
-.. code-block:: text
+..  code-block:: text
 
-   Array and string offset access syntax with curly braces is deprecated in
-   (...)/typo3_src-9.5.9/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
-   line 479
+    Array and string offset access syntax with curly braces is deprecated in
+    (...)/typo3_src-9.5.9/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
+    line 479
 
 Solution
 --------
@@ -190,9 +190,9 @@ Happens after Updating from TYPO3 v11.5.13 to v11.5.14. There is an issue:
 TYPO3\\CMS\\Core\\Error\\Exception
 ==================================
 
-.. code-block:: text
+..  code-block:: text
 
-   PHP Warning: file_get_contents(.../public/fileadmin/<file>): failed to open stream: No such file or directory in .../public/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php line 110
+    PHP Warning: file_get_contents(.../public/fileadmin/<file>): failed to open stream: No such file or directory in .../public/typo3/sysext/core/Classes/Configuration/Loader/YamlFileLoader.php line 110
 
 
 Reason

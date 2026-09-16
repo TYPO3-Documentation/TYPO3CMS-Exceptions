@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1225709597
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The template files "", "" could not be loaded.
 ==============================================
@@ -15,11 +15,11 @@ linked Partials, and check the (case-sensitive) filename/s.
 
 In case the following error occurs
 
-   *Oops, an error occurred!*
+    *Oops, an error occurred!*
 
-   *The template files "", "" could not be loaded.*
+    *The template files "", "" could not be loaded.*
 
-   *More information regarding this error might be available online.*
+    *More information regarding this error might be available online.*
 
 make sure you are using a slash but not a backslash.
 
@@ -28,15 +28,15 @@ TYPO3CMS >= 6.2
 
 Make sure paths to partials DO NOT start with a slash.
 
--  **Working** (with
-   *./typo3conf/ext/extension_with_super_cow_powers/Resources/Private/Partials/Product/TabWithGal.html*
-   present)
+-   **Working** (with
+    *./typo3conf/ext/extension_with_super_cow_powers/Resources/Private/Partials/Product/TabWithGal.html*
+    present)
 
 ::
 
    <f:render partial="Product/TabWithGal" arguments="{tab: tab}"/>
 
--  Not Working (but worked in 6.1.x)
+-   Not Working (but worked in 6.1.x)
 
 ::
 

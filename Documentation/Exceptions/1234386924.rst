@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1234386924
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 13.5.9, 2025-05-12 Cannot create empty instance of the class "ObjectStorage"...
 =====================================================================================
@@ -32,13 +32,13 @@ Saved like this:
 Error-messages:
 ===============
 
-#. #1234386924: Cannot create empty instance of the class
-   "TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository" because
-   it does not implement the
-   TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
-#. #1234386924: Cannot create empty instance of the class
-   "TYPO3\CMS\Extbase\Persistence\ObjectStorage" because it does not
-   implement the TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
+#.  #1234386924: Cannot create empty instance of the class
+    "TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository" because
+    it does not implement the
+    TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
+#.  #1234386924: Cannot create empty instance of the class
+    "TYPO3\CMS\Extbase\Persistence\ObjectStorage" because it does not
+    implement the TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface.
 
 
 Fix

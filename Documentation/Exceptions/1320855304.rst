@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1320855304
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Deletion of file "..." failed.
 ==============================
@@ -15,7 +15,7 @@ To solve this issue: either delete the mentioned file or change it's permissions
 Example of problem resolution on Linux
 --------------------------------------
 
-.. code-block:: bash
+..  code-block:: bash
 
-   chown -R www-data:www-data /path/to/site/
-   chmod -R 775 /path/to/site/
+    chown -R www-data:www-data /path/to/site/
+    chmod -R 775 /path/to/site/

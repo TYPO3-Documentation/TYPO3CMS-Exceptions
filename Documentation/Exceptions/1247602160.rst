@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1247602160
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Tx_Extbase_Persistence_Storage_Exception_SqlError
 =================================================
@@ -25,7 +25,7 @@ definitions, choose "Update required tables COMPARE".
 Model mapping incorrect or missing
 ----------------------------------
 
-.. code-block:: sql
+..  code-block:: sql
 
     --#1247602160: Table 'my_database.tx_extendpages_domain_model_page' doesn't exist:
     SELECT tx_extendpages_domain_model_page.* FROM tx_extendpages_domain_model_page
@@ -38,58 +38,58 @@ name. The syntax for the upper example is the following:
 
 
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-      plugin.tx_extendpages.persistence.classes.Tx_Extendpages_Domain_Model_Page.mapping.tableName = pages
+    plugin.tx_extendpages.persistence.classes.Tx_Extendpages_Domain_Model_Page.mapping.tableName = pages
 
 'tx_extbase_domain_model_backenduser' doesn't exist
 ===================================================
 
-.. code-block:: sql
+..  code-block:: sql
 
-   --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist:
-   SELECT tx_extbase_domain_model_backenduser.*
-   FROM tx_extbase_domain_model_backenduser
-   WHERE tx_extbase_domain_model_backenduser.uid = '1'
-   LIMIT 1
+    --#1247602160: Table 'database.tx_extbase_domain_model_backenduser' doesn't exist:
+    SELECT tx_extbase_domain_model_backenduser.*
+    FROM tx_extbase_domain_model_backenduser
+    WHERE tx_extbase_domain_model_backenduser.uid = '1'
+    LIMIT 1
 
 See also: https://forge.typo3.org/issues/51234
 
 Adding this code to the TypoScript, on **all pages where is_siteroot is
 set**, seems to solve this issue:
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-   config.tx_extbase.persistence.classes {
-       TYPO3\CMS\Beuser\Domain\Model\BackendUser {
-           mapping {
-               tableName = be_users
-               columns {
-                   allowed_languages.mapOnProperty = allowedLanguages
-                   file_mountpoints.mapOnProperty = fileMountPoints
-                   db_mountpoints.mapOnProperty = dbMountPoints
-                   usergroup.mapOnProperty = backendUserGroups
-               }
-           }
-       }
-       TYPO3\CMS\Beuser\Domain\Model\BackendUserGroup {
-           mapping {
-               tableName = be_groups
-               columns {
-                   subgroup.mapOnProperty = subGroups
-               }
-           }
-       }
-   }
+    config.tx_extbase.persistence.classes {
+        TYPO3\CMS\Beuser\Domain\Model\BackendUser {
+            mapping {
+                tableName = be_users
+                columns {
+                    allowed_languages.mapOnProperty = allowedLanguages
+                    file_mountpoints.mapOnProperty = fileMountPoints
+                    db_mountpoints.mapOnProperty = dbMountPoints
+                    usergroup.mapOnProperty = backendUserGroups
+                }
+            }
+        }
+        TYPO3\CMS\Beuser\Domain\Model\BackendUserGroup {
+            mapping {
+                tableName = be_groups
+                columns {
+                    subgroup.mapOnProperty = subGroups
+                }
+            }
+        }
+    }
 
 'tx_staticinfotables_domain_model_language' doesn't exist
 =========================================================
 
-.. code-block:: none
+..  code-block:: none
 
-   Oops, an error occurred!
-   Table '[DB_NAME.tx_staticinfotables_domain_model_language' doesn't exist.
-   More information regarding this error might be available online.
+    Oops, an error occurred!
+    Table '[DB_NAME.tx_staticinfotables_domain_model_language' doesn't exist.
+    More information regarding this error might be available online.
 
 No good solution found so far, will report in if solution is found.
 
@@ -99,23 +99,23 @@ be able to create and edit records in backend on page [0],
 otherwise TYPO3 will display error message and you can not edit anything
 on page [0].
 
-.. code-block:: sql
+..  code-block:: sql
 
-      CREATE TABLE `tx_staticinfotables_domain_model_language` (
-        `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
-        `constructed_language` varchar(255) DEFAULT NULL,
-        `sacred_language` varchar(255) DEFAULT NULL,
-        `iso_code_a2` varchar(5) DEFAULT NULL,
-        `country_iso_code_a2` varchar(5) DEFAULT NULL,
-        PRIMARY KEY (`uid`)
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    CREATE TABLE `tx_staticinfotables_domain_model_language` (
+      `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+      `constructed_language` varchar(255) DEFAULT NULL,
+      `sacred_language` varchar(255) DEFAULT NULL,
+      `iso_code_a2` varchar(5) DEFAULT NULL,
+      `country_iso_code_a2` varchar(5) DEFAULT NULL,
+      PRIMARY KEY (`uid`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 Try inserting the extbase mapping typoscript in the setup of your
 General Record Storage Page:
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-   <INCLUDE_TYPOSCRIPT: source="FILE:EXT:static_info_tables/Configuration/TypoScript/Extbase/setup.txt">
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:static_info_tables/Configuration/TypoScript/Extbase/setup.txt">
 
 'tx_srlanguagemenu_domain_model_systemlanguage' doesn't exist
 =============================================================
@@ -158,10 +158,10 @@ in tables "tx_powermail_fieldsets" and "tx_powermail_fields". Add it
 manually to both tables, and formconverter will work (remove fields via
 DB COMPARE when done):
 
-.. code-block:: sql
+..  code-block:: sql
 
-      alter table tx_powermail_fieldsets add column class text NOT NULL;
-      alter table tx_powermail_fields add column class text NOT NULL;
+    alter table tx_powermail_fieldsets add column class text NOT NULL;
+    alter table tx_powermail_fields add column class text NOT NULL;
 
 SQL Mode not compatible
 =======================
@@ -171,19 +171,19 @@ sql_mode of the MySQL Database.
 
 Check your sql_mode
 
-.. code-block:: sql
+..  code-block:: sql
 
-   mysql> SELECT @@sql_mode;
-   +-------------------------------------------------------------------------------------------------------------------------------------------+
-   | @@sql_mode                                                                                                                                |
-   +-------------------------------------------------------------------------------------------------------------------------------------------+
-   | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
-   +-------------------------------------------------------------------------------------------------------------------------------------------+
-   1 row in set (0,00 sec)
+    mysql> SELECT @@sql_mode;
+    +-------------------------------------------------------------------------------------------------------------------------------------------+
+    | @@sql_mode                                                                                                                                |
+    +-------------------------------------------------------------------------------------------------------------------------------------------+
+    | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
+    +-------------------------------------------------------------------------------------------------------------------------------------------+
+    1 row in set (0,00 sec)
 
 Try to remove some of these modes in »/etc/mysql/my.conf«
 
-.. code-block:: bash
+..  code-block:: bash
 
-   > [mysqld]
-   > sql_mode=NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+    > [mysqld]
+    > sql_mode=NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION

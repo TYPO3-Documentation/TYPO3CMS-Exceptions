@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1319455097
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Error while fetching permissions for "..."
 ==========================================
@@ -30,12 +30,12 @@ have following error message:
 
 In this case check 2 things:
 
-#. Settings in config should contain:
-   `[SYS][UTF8filesystem] = true`
-   `[SYS][systemLocale] = 'en_US.utf8'`
+#.  Settings in config should contain:
+    `[SYS][UTF8filesystem] = true`
+    `[SYS][systemLocale] = 'en_US.utf8'`
 
-#. See in server's shell whether your file system supports
-   unicode/utf-8 names, using for example command 'locale'
+#.  See in server's shell whether your file system supports
+    unicode/utf-8 names, using for example command 'locale'
 
 UTF-8 problems
 --------------

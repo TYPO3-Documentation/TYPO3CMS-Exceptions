@@ -1,21 +1,21 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1242292003
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 could not determine type of argument "section" of the render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper"
 =========================================================================================================================
 
-.. note::
+..  note::
 
-   The information on this page is outdated and no longer applies to TYPO3
-   >= 10.0 (and was deprecated in earlier versions). Arguments to a
-   ViewHelper are registered with :php:`registerArgument()` and no longer
-   passed as arguments to the render function. See Changelog
-   `Deprecation: #81213 - Render method arguments on ViewHelpers deprecated <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.0/Deprecation-81213-RenderMethodArgumentOnViewHelpersDeprecated.html>`__
+    The information on this page is outdated and no longer applies to TYPO3
+    >= 10.0 (and was deprecated in earlier versions). Arguments to a
+    ViewHelper are registered with :php:`registerArgument()` and no longer
+    passed as arguments to the render function. See Changelog
+    `Deprecation: #81213 - Render method arguments on ViewHelpers deprecated <https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.0/Deprecation-81213-RenderMethodArgumentOnViewHelpersDeprecated.html>`__
 
 
 This exception is thrown if the PHPDoc `@param` entry in a Fluid ViewHelper
@@ -24,28 +24,28 @@ like the builtin `Opcache <https://www.php.net/manual/en/opcache.configuration.p
 and have disabled the storing of PHPDoc blocks. Fluid ViewHelpers needed the
 PHPDoc entries to determine the data type (in older TYPO3 versions).
 
-.. code-block:: text
+..  code-block:: text
 
-   #1242292003: could not determine type of argument "section" of the
-     render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper".
-   Either the methods docComment is invalid or some PHP optimizer strips off
-     comments.
+    #1242292003: could not determine type of argument "section" of the
+      render-method in ViewHelper "Tx_Fluid_ViewHelpers_RenderViewHelper".
+    Either the methods docComment is invalid or some PHP optimizer strips off
+      comments.
 
 **Solution:**
 
-#. check PHPDoc block, it must start with \*\* (two stars).
-#. attribute must be mentioned as :php:`@param type $variableName`.
-#. alternatively use :php:`$this->registerArgument()` in :php:`initializeArguments()`
-   method.
-#. If using `eAccelerator <http://eaccelerator.net/>`__: compile eAccelerator with option
-   "--with-eaccelerator-doc-comment-inclusion": "If you want
-   eAccelerator to retain doc-comments in internal php structures"
-   (eAccelerator help)
-#. Use another PHP optimizer. I use xCache on Debian Squeeze which seems
-   to work fine.
-#. using the opcode cache of modern PHP versions, you can set
-   opcache.save_comments=1 (and opcache.load_comments=1 in PHP < 7.0).
+#.  check PHPDoc block, it must start with \*\* (two stars).
+#.  attribute must be mentioned as :php:`@param type $variableName`.
+#.  alternatively use :php:`$this->registerArgument()` in :php:`initializeArguments()`
+    method.
+#.  If using `eAccelerator <http://eaccelerator.net/>`__: compile eAccelerator with option
+    "--with-eaccelerator-doc-comment-inclusion": "If you want
+    eAccelerator to retain doc-comments in internal php structures"
+    (eAccelerator help)
+#.  Use another PHP optimizer. I use xCache on Debian Squeeze which seems
+    to work fine.
+#.  using the opcode cache of modern PHP versions, you can set
+    opcache.save_comments=1 (and opcache.load_comments=1 in PHP < 7.0).
 
 Links:
 
--  `eAccelerator <http://eaccelerator.net/>`__
+-   `eAccelerator <http://eaccelerator.net/>`__

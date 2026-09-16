@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1390334120
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No cache in the specified group "..."
 =====================================
@@ -15,6 +15,6 @@ defined.
 Possible Solutions:
 -------------------
 
--  If you recently installed new extensions, try uninstalling them and clearing the cache.
--  If you are a developer, check the error message for the `groupIdentifier` and verify
-   that the cache group exists.
+-   If you recently installed new extensions, try uninstalling them and clearing the cache.
+-   If you are a developer, check the error message for the `groupIdentifier` and verify
+    that the cache group exists.

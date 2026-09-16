@@ -1,13 +1,13 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1349868540
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No composer manifest file found at :file:`.../composer.json`.
 =============================================================
 
-- check whether there is a :file:`composer.json` file in that location
-- check whether the file is accessible by the web server (file permissions)
+-   check whether there is a :file:`composer.json` file in that location
+-   check whether the file is accessible by the web server (file permissions)

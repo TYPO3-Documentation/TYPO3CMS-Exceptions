@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1289386765
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Could not analyse class: "..." maybe not loaded or no autoloader?
 =================================================================
@@ -22,17 +22,17 @@ Message:
 General
 =======
 
--  The class cache in TYPO3 7.6 does not get cleared when pressing the
-   "Clear System Cache" button, so you have to empty ``typo3temp/*``
-   yourself to get around this issue:
+-   The class cache in TYPO3 7.6 does not get cleared when pressing the
+    "Clear System Cache" button, so you have to empty ``typo3temp/*``
+    yourself to get around this issue:
 
 ::
 
    $ rm -rf typo3temp/*
 
--  The errorHandler turns E_STRICT into exceptions. This can break the
-   autoloading in some TYPO3 versions (ie. 6.2.30). Excluding E_STRICT
-   errors can help.
+-   The errorHandler turns E_STRICT into exceptions. This can break the
+    autoloading in some TYPO3 versions (ie. 6.2.30). Excluding E_STRICT
+    errors can help.
 
 If you got the error while migrating your extension to use namespaces
 =====================================================================
@@ -99,15 +99,15 @@ Error message concerning Fluid View Helper
 solutions
 ---------
 
--  it could be, that you have misspelled the name of the viewhelper, for
-   example
+-   it could be, that you have misspelled the name of the viewhelper, for
+    example
 
 ::
 
    "<f:form.textbox ..." instead of   "<f:form.textfield ..."
 
--  to be more specific for the requested extension `blog_example`, change
-   all occurrences in templates under
+-   to be more specific for the requested extension `blog_example`, change
+    all occurrences in templates under
 
 :file:`typo3conf/ext/blog_example/Resources/Private/Backend/Layouts/Templates`
 e.g.: :file:`Templates/Blog/New.html` Line 14
@@ -122,10 +122,10 @@ to
 
    <f:form.textfield property ="title" />
 
--  also check if the extension itself is loaded
+-   also check if the extension itself is loaded
 
--  The `RenderFlashMessagesViewHelper` was deprecated for a long time and
-   finally removed in 6.0.
+-   The `RenderFlashMessagesViewHelper` was deprecated for a long time and
+    finally removed in 6.0.
 
 So, please use `FlashMessagesViewHelper` instead:
 
@@ -139,11 +139,11 @@ becomes
 
    <f:flashMessages/>
 
--  You must also check the Fluid template for upper and lower case
-   writing. For example `f:link.typoLink`... will throw an exception
-   because the class cannot be found. But this will occur only on
-   case-sensitive file systems. Solution: change `f:link.typoLink`
-   to `f:link.typolink`
+-   You must also check the Fluid template for upper and lower case
+    writing. For example `f:link.typoLink`... will throw an exception
+    because the class cannot be found. But this will occur only on
+    case-sensitive file systems. Solution: change `f:link.typoLink`
+    to `f:link.typolink`
 
 error message concerning DamViewHelper (from ext:news)
 ======================================================
@@ -266,11 +266,11 @@ https://github.com/FluidTYPO3/flux/blob/7.2.0/CHANGELOG.md)
 
 Examples:
 
--  In PHP Code ``Tx_Fluidpages_Controller_PageController`` to
-   ``\FluidTYPO3\Fluidpages\Controller\PageController``
--  In ViewHelpers ``{namespace v=Tx_Vhs_ViewHelpers}`` to
-   ``{namespace v=FluidTYPO3\Vhs\ViewHelpers}``
--  In TypoScript (if not loaded automatically)
+-   In PHP Code ``Tx_Fluidpages_Controller_PageController`` to
+    ``\FluidTYPO3\Fluidpages\Controller\PageController``
+-   In ViewHelpers ``{namespace v=Tx_Vhs_ViewHelpers}`` to
+    ``{namespace v=FluidTYPO3\Vhs\ViewHelpers}``
+-   In TypoScript (if not loaded automatically)
 
 ::
 
@@ -294,18 +294,18 @@ version to work with TYPO3 6.2). The extension fluidcontent_bootstrap
 itself isn't 7.6 compatible. So either replace it or fix the problematic
 places and set the extension to ``excludeFromUpdates``.
 
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Accordion.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Alert.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonGroup.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonLink.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Carousel.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Jumbotron.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/NavigationList.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/PageHeader.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Row.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Tabs.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Thumbnails.html
--  fluidcontent_bootstrap/Resources/Private/Templates/Content/Well.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Accordion.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Alert.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonGroup.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/ButtonLink.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Carousel.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Jumbotron.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/NavigationList.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/PageHeader.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Row.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Tabs.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Thumbnails.html
+-   fluidcontent_bootstrap/Resources/Private/Templates/Content/Well.html
 
 A more elegant way could be to change the template path to ``fileadmin``
 and copy the resources (and alter only these files).
@@ -336,8 +336,8 @@ Just remove ``<flux:widget.grid />`` completely.
 if you got this error while updating via git
 ============================================
 
--  If you update your installation via git it is possible that Class
-   caches are not up to date
--  The caches will not be cleared in BE neither in install tool
--  To clear the caches uninstall and re-install the extension
--  Alternatively use terminal: :bash:`typo3/cli_dispatch.phpsh extbase extension:dumpclassloadinginformation`
+-   If you update your installation via git it is possible that Class
+    caches are not up to date
+-   The caches will not be cleared in BE neither in install tool
+-   To clear the caches uninstall and re-install the extension
+-   Alternatively use terminal: :bash:`typo3/cli_dispatch.phpsh extbase extension:dumpclassloadinginformation`

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1353170925
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The relation information for property "..." of class "..." is missing.
 ======================================================================
@@ -12,21 +12,21 @@ The relation information for property "..." of class "..." is missing.
 If you have a property in a class `SomeModelYY` which has another class as
 type
 
-.. code-block:: php
+..  code-block:: php
 
-   /**
-   * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
-   */
-   protected $propertyXX;
+    /**
+    * @var TX\ext_key\Domain\Model\SomeOtherModelZZ
+    */
+    protected $propertyXX;
 
 
 the object will be populated by extbase without any other configuration.
 
 But to make queries like
 
-.. code-block:: php
+..  code-block:: php
 
-   $query->like("propertyXX.someproperty", '%foo%')
+    $query->like("propertyXX.someproperty", '%foo%')
 
 work, you still have to declare a :php:`foreign_table` in your TCA.
 

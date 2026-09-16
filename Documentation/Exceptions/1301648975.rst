@@ -1,14 +1,14 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1301648975
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ServiceUnavailableException
 ===========================
 
 Can happen for many different reasons, for example
 
-- No pages in page tree: calling the frontend will result in this error (depending on your TYPO3 version)
+-   No pages in page tree: calling the frontend will result in this error (depending on your TYPO3 version)

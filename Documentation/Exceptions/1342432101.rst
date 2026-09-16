@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1342432101
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 "..." was requested to be downloaded in different versions
 ==========================================================
@@ -13,7 +13,7 @@ This happens if extension A requires extension B in version X and extension
 C requires extension B in version Y. Check if there is a compatible combination
 of A and B available.
 
-.. hint::
+..  hint::
 
-   Switching your system to a composer based installation will remove the need
-   for manual dependency checking.
+    Switching your system to a composer based installation will remove the need
+    for manual dependency checking.

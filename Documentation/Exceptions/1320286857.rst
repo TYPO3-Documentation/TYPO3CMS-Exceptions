@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1320286857
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 File "..." is not valid (".." and "//" is not allowed in path).
 ===============================================================
@@ -26,9 +26,9 @@ This issue occurred to me by misusing the :sql:`softref` config within the
 This bug behaved like the following with the relevant content in line 1
 of the :sql:`bodytext` editor input:
 
--  Saving 'test test' -> works
--  Saving 'testtest' -> error
--  Saving 'test' -> error
+-   Saving 'test test' -> works
+-   Saving 'testtest' -> error
+-   Saving 'test' -> error
 
 When :sql:`'softref'` is set to e.g. the :sql:`bodytext` field, the DataHandler
 calls `updateRefIndexTable` of the ReferenceIndex. The Stacktrace leads
@@ -52,7 +52,7 @@ TYPO3 specifically reported that the file path is incorrect and that
 
 This happened for us after we migrated from 4.5.x to 4.6.x.
 
--  Solution: Remove the invalid link via phpmyadmin or similar tools
--  Can affect: Any table, ex: news, tt_news etc...
--  Sometimes, we may even get into this situation when the file in
-   question has been renamed/moved/missing.
+-   Solution: Remove the invalid link via phpmyadmin or similar tools
+-   Can affect: Any table, ex: news, tt_news etc...
+-   Sometimes, we may even get into this situation when the file in
+    question has been renamed/moved/missing.

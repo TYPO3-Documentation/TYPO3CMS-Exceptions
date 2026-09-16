@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1533818591
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 InvalidPasswordHashException: No implementation found that handles given hash
 =============================================================================
@@ -41,7 +41,7 @@ Please see :ref:`Password hashing troubleshooting
 More information
 ================
 
--  `Official password hashing documentation since TYPO3
-   v9 <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/PasswordHashing/Index.html>`__
--  `Issue explaining the deployment
-   problem <https://forge.typo3.org/issues/86155>`__
+-   `Official password hashing documentation since TYPO3
+    v9 <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/PasswordHashing/Index.html>`__
+-   `Issue explaining the deployment
+    problem <https://forge.typo3.org/issues/86155>`__

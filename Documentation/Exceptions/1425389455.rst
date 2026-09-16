@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1425389455
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Invalid request for route "..."
 ===============================
@@ -12,6 +12,6 @@ Invalid request for route "..."
 Solutions
 ---------
 
-- Log out / Log in again
-- Clear caches in the Install Tool
-- Reload the backend
+-   Log out / Log in again
+-   Clear caches in the Install Tool
+-   Reload the backend

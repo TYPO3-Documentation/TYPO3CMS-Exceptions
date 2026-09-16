@@ -1,17 +1,17 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1313855175
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The action "..." is not allowed by this plugin.
 ===============================================
 
--  Check your `configurePlugin()` configuration
--  Check if you have a :file:`Resources/Private/Templates/{controller}/{action}.html`
-   For details, please see https://forge.typo3.org/issues/31322
+-   Check your `configurePlugin()` configuration
+-   Check if you have a :file:`Resources/Private/Templates/{controller}/{action}.html`
+    For details, please see https://forge.typo3.org/issues/31322
 
 ::
 
@@ -34,32 +34,32 @@ or as of extbase 4.7 you need to update your FlexForm with all necessary
 actions (semicolon separated) in case you use
 switchableControllerActions:
 
-.. note::
+..  note::
 
-   As of TYPO3 10.3 switchable controller actions are deprecated.
-   For details, please see https://docs.typo3.org/c/typo3/cms-core/10.4/en-us/Changelog/10.3/Deprecation-89463-SwitchableControllerActions.html
+    As of TYPO3 10.3 switchable controller actions are deprecated.
+    For details, please see https://docs.typo3.org/c/typo3/cms-core/10.4/en-us/Changelog/10.3/Deprecation-89463-SwitchableControllerActions.html
 
-.. code-block:: xml
+..  code-block:: xml
 
-   <switchableControllerActions>
-     <TCEforms>
-       <label>LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode</label>
-       <onChange>reload</onChange>
-       <config>
-         <type>select</type>
-         <items>
-           <numIndex index="0">
-             <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.eventgroups</numIndex>
-             <numIndex index="1">Events->list;Events->show</numIndex>
-           </numIndex>
-           <numIndex index="1">
-             <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.persons</numIndex>
-             <numIndex index="1">Persons->list;Persons->show</numIndex>
-           </numIndex>
-         </items>
-       </config>
-     </TCEforms>
-   </switchableControllerActions>
+    <switchableControllerActions>
+      <TCEforms>
+        <label>LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode</label>
+        <onChange>reload</onChange>
+        <config>
+          <type>select</type>
+          <items>
+            <numIndex index="0">
+              <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.eventgroups</numIndex>
+              <numIndex index="1">Events->list;Events->show</numIndex>
+            </numIndex>
+            <numIndex index="1">
+              <numIndex index="0">LLL:EXT:kofomi/Resources/Private/Language/locallang_be.xml:flexforms_general.mode.persons</numIndex>
+              <numIndex index="1">Persons->list;Persons->show</numIndex>
+            </numIndex>
+          </items>
+        </config>
+      </TCEforms>
+    </switchableControllerActions>
 
 or
 

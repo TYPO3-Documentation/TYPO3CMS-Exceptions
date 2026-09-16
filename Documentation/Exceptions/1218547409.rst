@@ -1,27 +1,27 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1218547409
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 $className must implement interface `PageLayoutViewDrawItemHookInterface::class`
 ======================================================================================
 
-- Try deleting all caches
-- Older versions: Try deleting all files in :file:`typo3temp/autoload` through
-  console.
+-   Try deleting all caches
+-   Older versions: Try deleting all files in :file:`typo3temp/autoload` through
+    console.
 
 ``rm -rf typo3temp/autoload/*``
 
 Solution TYPO3 8.4.x and higher
 ===============================
 
-.. note::
+..  note::
 
-   Note that the `PageLayoutView` has changed a lot in newer TYPO3 versions,
-   make sure to update your code accordingly.
+    Note that the `PageLayoutView` has changed a lot in newer TYPO3 versions,
+    make sure to update your code accordingly.
 
 The way registering the hook has changed in :file:`ext_localconf.php`::
 

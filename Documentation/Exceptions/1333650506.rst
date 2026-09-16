@@ -1,16 +1,16 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1333650506
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No settings detected
 ====================
 
 Try the following:
 
--  Create a TypoScript template and set the root-flag on the first page
-   in the rootline.
--  Check if TypoScript "module" has not been unset.
+-   Create a TypoScript template and set the root-flag on the first page
+    in the rootline.
+-   Check if TypoScript "module" has not been unset.

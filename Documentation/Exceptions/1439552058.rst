@@ -1,20 +1,20 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1439552058
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The extension "..." has invalid version constraints in depends section. Extension key is missing!
 =================================================================================================
 
--  To fix this, go to your TYPO3 Installation directory, go to
-   :file:`typo3conf/ext/...` and edit :file:`ext_emconf.php` and
-   delete the line in the `depends` section, which neither contains
-   any extension key nor any version, but only an empty array key with
-   empty array value (`' ' => ' ',`). In my case this was line 31. ->
-   Save the file.
--  After this go to your TYPO3 backend, go to the :guilabel:`extensions`
-   subcategory and enable the extension by clicking the box in front of this entry.
--  Refresh your page, and you should be fine.
+-   To fix this, go to your TYPO3 Installation directory, go to
+    :file:`typo3conf/ext/...` and edit :file:`ext_emconf.php` and
+    delete the line in the `depends` section, which neither contains
+    any extension key nor any version, but only an empty array key with
+    empty array value (`' ' => ' ',`). In my case this was line 31. ->
+    Save the file.
+-   After this go to your TYPO3 backend, go to the :guilabel:`extensions`
+    subcategory and enable the extension by clicking the box in front of this entry.
+-   Refresh your page, and you should be fine.

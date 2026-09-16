@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1251315967
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 This exception rose in one installation (TYPO3 4.6.9-15) after changing
 direction of relations in the
@@ -18,21 +18,21 @@ caching-framework-tables beginning with *cf\_* helped for me.
 // Additional Situations, observed in TYPO3 6.1.2, Extbase 6 This
 exception is also thrown when, in the course of development:
 
-- a variable is changed, e.g. from CamelCase to non-CamelCase::
+-   a variable is changed, e.g. from CamelCase to non-CamelCase::
 
-      protected $pressReview
-      protected $pressreview
+        protected $pressReview
+        protected $pressreview
 
-- a variable annotation is changed, e.g. from CamelCase to
-  Non-CamelCase::
+-   a variable annotation is changed, e.g. from CamelCase to
+    Non-CamelCase::
 
-      /**
-       * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
-       */
+        /**
+         * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\PressReviews>
+         */
 
-      /**
-       * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
-       */
+        /**
+         * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Vendor\MyExtension\Domain\Model\Pressreviews>
+         */
 
 (Working in the files directly, not using the Extension Builder
 [anymore]) In my case, the truncating of the cf\_-tables was
@@ -50,13 +50,13 @@ missing the new model's extbase path.
 
 To fix this:
 
--  Find all sections where the new model path is missing and add it
+-   Find all sections where the new model path is missing and add it
 
-   -  e.g. from \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<> to
-      \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<\{VendorName}\{Ext}\Domain\Model\{NewModel}>
-      in the protected variable
-   -  in the get/set/add/edit functions in the body, e.g. the 'add'
-      function
+    -   e.g. from \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<> to
+        \\TYPO3\CMS\Extbase\Persistence\ObjectStorage<\{VendorName}\{Ext}\Domain\Model\{NewModel}>
+        in the protected variable
+    -   in the get/set/add/edit functions in the body, e.g. the 'add'
+        function
 
 ::
 
@@ -77,11 +77,11 @@ To fix this:
      */
 
 
--  Clear TYPO3 Caches
--  Delete typo3temp/\*
--  As stated before, truncating the cf\_-tables was needed before the
-   error stopped.
--  May also be caused by incorrectly formatted comments - a missing \* on
-   the first line (only having one star) will stop the parser finding the
-   definitions.
--  The error occurs also if you have missing annotation in your model.
+-   Clear TYPO3 Caches
+-   Delete typo3temp/\*
+-   As stated before, truncating the cf\_-tables was needed before the
+    error stopped.
+-   May also be caused by incorrectly formatted comments - a missing \* on
+    the first line (only having one star) will stop the parser finding the
+    definitions.
+-   The error occurs also if you have missing annotation in your model.

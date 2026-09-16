@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1342635016
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Could not retrieve extension hash file from remote server.
 ==========================================================
@@ -20,7 +20,7 @@ downloading the preconfigured distributions in the Extension Manager.
 
 :file:`php.ini` (or vhost configuration)
 
-.. code-block:: bash
+..  code-block:: bash
 
-   allow_url_fopen = On
-   max_execution_time = 300
+    allow_url_fopen = On
+    max_execution_time = 300

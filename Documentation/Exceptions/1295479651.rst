@@ -1,18 +1,18 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1295479651
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The default action can not be determined for controller "Foo"
 =============================================================
 
- #1295479651: The default action can not be determined for controller
- "Foo". Please check
- `TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin()` in your
- :file:`ext_localconf.php`.
+    #1295479651: The default action can not be determined for controller
+    "Foo". Please check
+    `TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin()` in your
+    :file:`ext_localconf.php`.
 
 This may happen if the third parameter to
 ``\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin()`` is
@@ -20,16 +20,16 @@ wrong.
 
 Invalid:
 
-.. container::
+..  container::
 
-   ::
+    ::
 
-      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-          'Ext',
-          'Foo',
-          [FooController::class => ['show']],
-          []
-      );
+       \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+           'Ext',
+           'Foo',
+           [FooController::class => ['show']],
+           []
+       );
 
 Valid:
 

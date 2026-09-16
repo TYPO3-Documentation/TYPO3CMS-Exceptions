@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1187176358
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 #1187176358: The controller name must be a valid string, integer given.
 =======================================================================
@@ -21,21 +21,21 @@ configurePlugin: Actions declared incorrectly
 This error happens when the first array does have an integer as key
 instead of the plugin name:
 
-.. container::
+..  container::
 
-   ::
+    ::
 
-      array('show')
+       array('show')
 
 The correct solution is this:
 
-.. container::
+..  container::
 
-   ::
+    ::
 
-      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-          'FooExt',
-          'PluginName',
-          [\Foo\Ext\Controller\PluginController::class => 'show'],
-          [\Foo\Ext\Controller\PluginController::class => 'show'] // non-cacheable actions
-      );
+       \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+           'FooExt',
+           'PluginName',
+           [\Foo\Ext\Controller\PluginController::class => 'show'],
+           [\Foo\Ext\Controller\PluginController::class => 'show'] // non-cacheable actions
+       );

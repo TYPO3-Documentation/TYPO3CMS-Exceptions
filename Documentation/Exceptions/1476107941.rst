@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1476107941
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 [TYPO3 11.3] - [2021.08.13]
@@ -19,16 +19,16 @@ Make sure that either the affected class or all classes (`_defaults`) have :yaml
 
 Bare minimum example:
 
-.. code-block:: yaml
-   :caption: Configuration/Services.yaml
+..  code-block:: yaml
+    :caption: Configuration/Services.yaml
 
-   services:
-     _defaults:
-       # ...
-       autoconfigure: true
-       # ...
+    services:
+      _defaults:
+        # ...
+        autoconfigure: true
+        # ...
 
-   # ...
+    # ...
 
 See :ref:`t3coreapi:dependency-injection-Configuration` in TYPO3 Explained.
 
@@ -44,7 +44,7 @@ the controller name (and not the fully qualified class name) in
 
 **Incorrect example:**
 
-.. code-block:: php
+..  code-block:: php
     :caption: ext_localconf.php
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -66,7 +66,7 @@ More details are in the changelog
 
 **Correct example:**
 
-.. code-block:: php
+..  code-block:: php
     :caption: ext_localconf.php
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(

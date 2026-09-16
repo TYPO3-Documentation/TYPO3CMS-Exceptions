@@ -1,19 +1,19 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1509741911
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Folder "/testing/foo/file.png/" does not exist
 ==============================================
 
-.. code-block:: none
+..  code-block:: none
 
-   (1/2) #1509741911 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
-   Folder "/testing/foo/file.png/" does not exist.
-   in /var/www/site/htdocs/typo3_src/typo3/sysext/fluid/Classes/ViewHelpers/ImageViewHelper.php line 175
+    (1/2) #1509741911 TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+    Folder "/testing/foo/file.png/" does not exist.
+    in /var/www/site/htdocs/typo3_src/typo3/sysext/fluid/Classes/ViewHelpers/ImageViewHelper.php line 175
 
 This exception happens if an image file should be rendered in Fluid,
 but failed because the file does not exist:

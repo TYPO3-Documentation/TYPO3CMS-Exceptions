@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1206031879
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Invalid configuration type
 ==========================
@@ -13,9 +13,9 @@ It is explicit enough to understand that the `TYPE` can't be found,
 knowing you have three choices, all set in
 `\\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface`
 
--  'Framework', which is set by CONFIGURATION_TYPE_FRAMEWORK
--  'Settings', which is set by CONFIGURATION_TYPE_SETTINGS
--  'FullTypoScript', which is set by CONFIGURATION_TYPE_FULL_TYPOSCRIPT
+-   'Framework', which is set by CONFIGURATION_TYPE_FRAMEWORK
+-   'Settings', which is set by CONFIGURATION_TYPE_SETTINGS
+-   'FullTypoScript', which is set by CONFIGURATION_TYPE_FULL_TYPOSCRIPT
 
 First, be sure you use only one of these three possibilities.
 

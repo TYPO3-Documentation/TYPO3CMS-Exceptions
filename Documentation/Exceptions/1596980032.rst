@@ -1,19 +1,19 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1596980032
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 InvalidArgumentException:  A cache identifier was not set
 =========================================================
 
 When debuging the corresponding cache.definition might look like this:
 
-.. code-block:: php
+..  code-block:: php
 
-   '' => array('groups' => array('pages', 'all'))
+    '' => array('groups' => array('pages', 'all'))
 
 This error can break the backend and frontend.
 

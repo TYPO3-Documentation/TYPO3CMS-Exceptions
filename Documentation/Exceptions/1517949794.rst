@@ -1,4 +1,4 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1517949794
@@ -15,7 +15,7 @@ TYPO3 Exception 1517949794
 
     `Backend and Install Tool are locked for maintenance <https://docs.typo3.org/permalink/t3editors:login-troubleshooting-locked>`_
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ..
    TYPO3 [version] - [date of report]

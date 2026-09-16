@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1253191060
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Could not get image resource for ...
 ====================================
@@ -21,12 +21,12 @@ to generate a file in :file:`typo3temp/assets/...`.
 Due to **wrong access right** it was not able to save the
 file, passed it to the Image ViewHelper which then raised the exception.
 
-.. note::
+..  note::
 
-   The core ViewHelpers f:image and f:uri.image used to behave the
-   same. However they don't throw exceptions for missing images anymore.
-   See https://forge.typo3.org/issues/71686
+    The core ViewHelpers f:image and f:uri.image used to behave the
+    same. However they don't throw exceptions for missing images anymore.
+    See https://forge.typo3.org/issues/71686
 
-.. hint::
-   Exceptions may be ignored via TypoScript:
-   https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.0/Feature-47919-CatchContentRenderingExceptions.html
+..  hint::
+    Exceptions may be ignored via TypoScript:
+    https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.0/Feature-47919-CatchContentRenderingExceptions.html

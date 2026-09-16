@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1294586446
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Fatal Error: This module "..." is not enabled in TBE_MODULES
 ============================================================
@@ -14,5 +14,5 @@ after installing or updating an extension.
 
 Possible solutions:
 
--  Clear all caches
--  Reload the whole Page (not only the ContentFrame)
+-   Clear all caches
+-   Reload the whole Page (not only the ContentFrame)

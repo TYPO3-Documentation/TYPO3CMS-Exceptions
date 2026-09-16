@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1317178794
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No file usage (sys_file_reference) found for given UID.
 =======================================================
@@ -31,9 +31,9 @@ Workaround
 There is a bug in TYPO3 6.2.15 which leads to a wrong SQL query. That
 will raise this exception.
 
-.. code-block:: sql
+..  code-block:: sql
 
-      SELECT * FROM sys_file_reference WHERE uid=1 AND sys_file_reference.deleted=0
+    SELECT * FROM sys_file_reference WHERE uid=1 AND sys_file_reference.deleted=0
 
 Just make sure that your first several (maximum number of assigned file
 references to your extension table) records of the table

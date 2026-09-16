@@ -1,4 +1,4 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1616175867
@@ -9,7 +9,7 @@ TYPO3 Exception 1616175867
     `TYPO3 Getting Started Troubleshooting: "Account locked" message <https://docs.typo3.org/permalink/t3start:troubleshooting-login-account-locked>`_
     `Editors Tutorial: Too many failed logins <https://docs.typo3.org/permalink/t3editors:login-troubleshooting-failed-logins>`_
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 11.5.11 - 26.06.2022
 ====================
@@ -17,12 +17,12 @@ TYPO3 Exception 1616175867
 Situation
 ---------
 
-.. code-block:: none
-   :caption: Exception message upon failed login
+..  code-block:: none
+    :caption: Exception message upon failed login
 
-   (1/1) #1616175867 TYPO3\CMS\Core\RateLimiter\RequestRateLimitedException
+    (1/1) #1616175867 TYPO3\CMS\Core\RateLimiter\RequestRateLimitedException
 
-   The login is locked until 26-06-22 12:33 due to too many failed login attempts from your IP address.
+    The login is locked until 26-06-22 12:33 due to too many failed login attempts from your IP address.
 
 This exception is thrown, when there have been too many failed login attempts from one IP address within a given time frame.
 
@@ -31,6 +31,6 @@ See also: :ref:`ext_core:feature-93825`.
 Solution
 --------
 
-1. Wait for the lock to time out.
-2. If the limit is too short for your purposes, make the limit higher.
-3. During Development: Deleting the cache folder `var/cache/data/ratelimiter/` manually enables login right away again.
+1.  Wait for the lock to time out.
+2.  If the limit is too short for your purposes, make the limit higher.
+3.  During Development: Deleting the cache folder `var/cache/data/ratelimiter/` manually enables login right away again.

@@ -1,10 +1,10 @@
- .. include:: /Includes.rst.txt
+ ..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1484071985
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 13.4.0 - 11.11.2024
@@ -13,8 +13,8 @@ TYPO3 13.4.0 - 11.11.2024
 Installation Overview
 ---------------------
 
-* TYPO3 13.4.0
-* "lavitto/typo3-form-to-database": "dev-update-v13"
+*   TYPO3 13.4.0
+*   "lavitto/typo3-form-to-database": "dev-update-v13"
 
 The Issue
 ---------

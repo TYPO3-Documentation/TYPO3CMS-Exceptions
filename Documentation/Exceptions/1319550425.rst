@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1319550425
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You are not allowed to delete the file "..."
 =============================================
@@ -15,7 +15,7 @@ files in the given folder.
 
 Solution:
 
--  Add a file mount for this folder and give it to the
-   user/usergroup. This however means that the user may see \*all\*
-   files in the folder, not only his own.
--  Make sure the user has sufficient access permissions to that folder.
+-   Add a file mount for this folder and give it to the
+    user/usergroup. This however means that the user may see \*all\*
+    files in the folder, not only his own.
+-   Make sure the user has sufficient access permissions to that folder.

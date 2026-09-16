@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1365429673
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Extension key "..." is NOT loaded!
 ==================================
@@ -15,31 +15,31 @@ Disable the extension manually
 Open :file:`typo3conf/PackageStates.php`, look up the extension key and
 change
 
-.. code-block:: none
+..  code-block:: none
 
-   [
-      // ...
-      'state' => 'active'
-      // ...
-   ]
+    [
+       // ...
+       'state' => 'active'
+       // ...
+    ]
 
 to
 
 
-.. code-block:: none
+..  code-block:: none
 
-   [
-      // ...
-      'state' => 'inactive'
-      // ...
-   ]
+    [
+       // ...
+       'state' => 'inactive'
+       // ...
+    ]
 
 
 You might also need to clear the PHP code cache in :file:`typo3temp`:
 
-.. code-block:: bash
+..  code-block:: bash
 
-   $ rm -rf typo3temp/*
+    $ rm -rf typo3temp/*
 
 Observations
 ============

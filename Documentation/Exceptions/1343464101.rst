@@ -1,14 +1,14 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1343464101
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Broken rootline. Could not resolve page with uid "..."
 ======================================================
 
--  Workspace page preview link is opened to a page that has not been
-   published yet (only exists in workspace)
--  Page has no connection to a parent anymore (orphan)
+-   Workspace page preview link is opened to a page that has not been
+    published yet (only exists in workspace)
+-   Page has no connection to a parent anymore (orphan)

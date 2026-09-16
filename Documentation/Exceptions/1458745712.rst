@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1458745712
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Invalid flex form data structure
 ================================
@@ -70,45 +70,45 @@ containers.
 
 For example, if you had a structure such as:
 
--  FCE "Contacts"
+-   FCE "Contacts"
 
-   -  Section/object "Person"
+    -   Section/object "Person"
 
-      -  Field "Name" => "John Doe"
-      -  Section/object "Number"
+        -   Field "Name" => "John Doe"
+        -   Section/object "Number"
 
-         -  Field "Type" => "Phone"
-         -  Field "Number" => "12345"
+            -   Field "Type" => "Phone"
+            -   Field "Number" => "12345"
 
-      -  Section/object "Number"
+        -   Section/object "Number"
 
-         -  Field "Type" => "Fax"
-         -  Field "Number" => "54321"
+            -   Field "Type" => "Fax"
+            -   Field "Number" => "54321"
 
-   -  Section/object "Person"
+    -   Section/object "Person"
 
-      -  ...
+        -   ...
 
 You could split it so that you get:
 
--  FCE "Contacts Container"
+-   FCE "Contacts Container"
 
-   -  Grid column "Contacts"
+    -   Grid column "Contacts"
 
-      -  FCE "Contact Person"
+        -   FCE "Contact Person"
 
-         -  Field "Name" => "John Doe"
+            -   Field "Name" => "John Doe"
 
-            -  Section/object "Number"
+                -   Section/object "Number"
 
-               -  Field "Type" => "Phone"
-               -  Field "Number" => "12345"
+                    -   Field "Type" => "Phone"
+                    -   Field "Number" => "12345"
 
-            -  Section/object "Number"
+                -   Section/object "Number"
 
-               -  Field "Type" => "Fax"
-               -  Field "Number" => "54321"
+                    -   Field "Type" => "Fax"
+                    -   Field "Number" => "54321"
 
-      -  FCE "Contact Person"
+        -   FCE "Contact Person"
 
-         -  ...
+            -   ...

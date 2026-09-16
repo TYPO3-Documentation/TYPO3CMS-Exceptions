@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1314455642
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Error during file indexing: "..."
 =================================
@@ -14,7 +14,7 @@ Exception in  TYPO3 6.1 Backend show content in :file:`fileadmin` folder
 
 After upload a broken image the following error occurred:
 
- Error during file indexing: "Column 'height' cannot be null".
+    Error during file indexing: "Column 'height' cannot be null".
 
 *Solution:* Find the broken image and delete it.
 
@@ -24,7 +24,7 @@ ERROR during Upgrade TYPO3 4.5 to 6.1
 During using the **Upgrade Wizard** at step **Migrate all file relations
 from `tt_content.image` and `pages.media`** the following error occurred:
 
- Oops, an error occurred!
- Error during file indexing: "Unknown column 'creation_date' in 'field list'"
+    Oops, an error occurred!
+    Error during file indexing: "Unknown column 'creation_date' in 'field list'"
 
 *Solution:* You have to run compare' first. Then the Upgrade Wizard worked fine

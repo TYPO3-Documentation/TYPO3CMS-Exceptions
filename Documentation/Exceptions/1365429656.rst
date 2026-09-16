@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1365429656
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 Fatal Error: Extension key "..." is NOT loaded!
 =====================================================
@@ -22,7 +22,7 @@ See this page for further details:
 However, notice that $_EXTKEY `must be used in
 ext_emconf.php <https://github.com/TYPO3/CmsComposerInstallers/pull/59>`__.
 
-.. _typo3-10-lts-1:
+..  _typo3-10-lts-1:
 
 TYPO3 < 10 LTS
 --------------
