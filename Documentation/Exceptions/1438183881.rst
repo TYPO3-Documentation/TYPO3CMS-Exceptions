@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1438183881
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TCA table "..." `ctrl['type']` is set to "...", but this field does not exist in the database of this table
 =================================================================================================================
@@ -29,7 +29,7 @@ Error Example - TCA:
 
 And in :file:`ext_tables.sql`:
 
-.. code-block:: sql
+..  code-block:: sql
 
     CREATE TABLE tx_myExtension_table (
       uid int(11) NOT NULL auto_increment,

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1444996537
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 This error happens since TYPO3 7.6 if your extension has defined the TCA
 in the file Configuration/TCA/my_extension_table.php and when

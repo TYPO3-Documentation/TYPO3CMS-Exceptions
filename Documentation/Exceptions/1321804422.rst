@@ -1,13 +1,13 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1321804422
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Could not open log file "..."
 =============================
 
-- Check file permissions of the mentioned file.
-- Try deleting the file and let TYPO3 recreate it.
+-   Check file permissions of the mentioned file.
+-   Try deleting the file and let TYPO3 recreate it.

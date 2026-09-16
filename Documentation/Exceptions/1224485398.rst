@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1224485398
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Templating tags not properly nested
 ===================================
@@ -27,11 +27,11 @@ You have to nest the ViewHelpers correctly, for example:
 
    <f:link.external ..>   needs      </f:link.external>
 
-.. hint::
+..  hint::
 
-   Most of the time this error will be triggered if you forget to
-   correctly close a single tag with a slash. (e.g. you need to use
-   <f:example /> not <f:example>)
+    Most of the time this error will be triggered if you forget to
+    correctly close a single tag with a slash. (e.g. you need to use
+    <f:example /> not <f:example>)
 
 Error in ViewHelper
 -------------------

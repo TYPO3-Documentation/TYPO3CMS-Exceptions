@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1717495996
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 12.4.16 or 13.2+ - 2024-06-23
@@ -19,8 +19,8 @@ With detailed error logging enabled, you get:
 
 ..  code-block::
 
-   vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83:
-   Function value token stream has not been set
+    vendor/typo3/cms-core/Classes/TypoScript/Tokenizer/Line/IdentifierFunctionLine.php, line 83:
+    Function value token stream has not been set
 
 Solution
 --------

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1442236317
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 13.4
@@ -23,9 +23,9 @@ Situation
 
 This exception appears when creating a backend module with submodules and you have no title for submodule, i.e.:
 
-* wrong translation key/path in **<ext>/Configuration/Backend/Modules.php** for submodule title
-* translation key doesn't exists in translation file
-* language cache has not been cleared (clear all cache)
+*   wrong translation key/path in **<ext>/Configuration/Backend/Modules.php** for submodule title
+*   translation key doesn't exists in translation file
+*   language cache has not been cleared (clear all cache)
 
 Solution
 --------

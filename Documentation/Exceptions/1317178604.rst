@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1317178604
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No file found for given UID.
 ============================
@@ -39,15 +39,15 @@ The exception happened when initializing :file:`fileadmin/` queue. File record
 was missing in sys_file but existed in :sql:`sys_file_reference` and
 :sql:`sys_file_processedfile`. The following SQL helped:
 
-.. code-block:: sql
+..  code-block:: sql
 
-   delete from sys_file_reference where uid_local not in (select uid from
-   sys_file); truncate sys_file_processedfile;
+    delete from sys_file_reference where uid_local not in (select uid from
+    sys_file); truncate sys_file_processedfile;
 
 The exception can also happen when there are non-existing files for
 indexing in :sql:`tx_solr_indexqueue_file` and the the records are not deleted with
 "Clear Index Queue" for unknown reasons. This SQL helped:
 
-.. code-block:: sql
+..  code-block:: sql
 
-   truncate tx_solr_indexqueue_file;
+    truncate tx_solr_indexqueue_file;

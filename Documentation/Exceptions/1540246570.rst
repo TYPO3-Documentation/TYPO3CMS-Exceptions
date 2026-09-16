@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1540246570
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 13.4: No Content Object definition found [21.10.2024]
 ===========================================================
@@ -108,9 +108,9 @@ Exception is thrown in a fluid template using a view helper
 
 Might be caused by a translation not found in Fluid:
 
-.. code-block:: xml
+..  code-block:: xml
 
-       <f:translate key = "Button_Helpful" />
+    <f:translate key = "Button_Helpful" />
 
 If translation key is not found in the default language file, this error
 will be thrown.

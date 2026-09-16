@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1225709595
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The Fluid template files "" could not be loaded TYPO3 13.4.0, 2024-11-02
 ========================================================================
@@ -16,16 +16,16 @@ Solution:
 
 ..  code-block:: diff
 
-     page = PAGE
-     page {
-      10 = FLUIDTEMPLATE
-      10 {
-         templateName = Default
-         templateRootPaths.10 = EXT:site_package/Resources/Private/Templates/Pages/
-     +   partialRootPaths.10 = EXT:site_package/Resources/Private/Partials/Pages/
-     +   layoutRootPaths.10 = EXT:site_package/Resources/Private/Layouts/Pages/
-       }
-     }
+    page = PAGE
+    page {
+     10 = FLUIDTEMPLATE
+     10 {
+        templateName = Default
+        templateRootPaths.10 = EXT:site_package/Resources/Private/Templates/Pages/
+    +   partialRootPaths.10 = EXT:site_package/Resources/Private/Partials/Pages/
+    +   layoutRootPaths.10 = EXT:site_package/Resources/Private/Layouts/Pages/
+      }
+    }
 
 Or use a :ref:`PAGEVIEW <t3tsref:cobj-pageview>` which automatically configures these paths for you.
 
@@ -88,14 +88,14 @@ to fill in :php:`fillDefaultsByPackageName` with your extension key::
 Older versions
 ==============
 
-   #1225709595: The template files
-   ".../typo3conf/ext/blsvsa2013/Resources/Private/Partials/Model/Template.html"
-   could not be loaded.
+    #1225709595: The template files
+    ".../typo3conf/ext/blsvsa2013/Resources/Private/Partials/Model/Template.html"
+    could not be loaded.
 
--  check if the template file exist.
+-   check if the template file exist.
 
--  If you set the format of our view manually in the controller like this:
-   `$this->request->setFormat('xml');` extbase is still looking for a file
-   called `youraction.html` even if it eventually uses `youraction.xml` so you
-   need to create both files, the html file can be empty. I think this is a
-   bug and filled a bug report; https://forge.typo3.org/issues/46657
+-   If you set the format of our view manually in the controller like this:
+    `$this->request->setFormat('xml');` extbase is still looking for a file
+    called `youraction.html` even if it eventually uses `youraction.xml` so you
+    need to create both files, the html file can be empty. I think this is a
+    bug and filled a bug report; https://forge.typo3.org/issues/46657

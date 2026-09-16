@@ -1,15 +1,15 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1301648782
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ServiceUnavailableException
 ===========================
 
 May happen any time TYPO3 is unable to respond correctly, for example:
 
-- Granted privileges to the database user on the wrong database
-- Used the wrong database credentials
+-   Granted privileges to the database user on the wrong database
+-   Used the wrong database credentials

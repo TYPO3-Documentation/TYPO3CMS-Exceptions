@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1546632293
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TYPO3 13.4 - 2026-05-15
 =======================
@@ -68,10 +68,10 @@ Situation
 
 When validating a controller's argument, the following exception is thrown:
 
-.. code-block:: text
+..  code-block:: text
 
-   #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Booking::startdate",
-   make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
+    #1546632293 RuntimeException Could not get value of property "Site\Site\Domain\Model\Booking::startdate",
+    make sure the property is either public or has a getter getStartdate(), a hasser hasStartdate() or an isser isStartdate().
 
 But there is a :php:`public function getStartdate(): DateTime` defined in the class.
 

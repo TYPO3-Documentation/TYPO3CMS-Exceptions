@@ -1,18 +1,18 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1323059807
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You are not allowed to create directories in the folder "..."
 =============================================================
 
 Related bugs:
 
--  `Bug #55833: Creation of typo3temp/_processed_/ required write access
-   to root folder <https://forge.typo3.org/issues/55833>`__
+-   `Bug #55833: Creation of typo3temp/_processed_/ required write access
+    to root folder <https://forge.typo3.org/issues/55833>`__
 
 Possible solution: Remove the default File Storage Item that the migration
 tool has created and set to `/`.

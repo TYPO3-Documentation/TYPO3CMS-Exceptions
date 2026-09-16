@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1666513645
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 13.4 - 30th December 2024
@@ -28,16 +28,16 @@ Setup array has not been initialized. This happens in cached Frontend scope wher
 Call the method hasSetup before getSetupArray.
 
 ..  code-block:: php
-    :caption: uae method hasSetup before getSetupArray
+     :caption: uae method hasSetup before getSetupArray
 
-   public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-   {
-      $frontendTypoScript = $request->getAttribute('frontend.typoscript');
-      if ($frontendTypoScript->hasSetup()) {
-          $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
-          // ...
-      }
-   }
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    {
+       $frontendTypoScript = $request->getAttribute('frontend.typoscript');
+       if ($frontendTypoScript->hasSetup()) {
+           $typoScriptSetupArray = $frontendTypoScript->getSetupArray();
+           // ...
+       }
+    }
 
 
 

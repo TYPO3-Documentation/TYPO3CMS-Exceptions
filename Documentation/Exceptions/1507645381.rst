@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1507645381
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 RuntimeException: Object Name String, contains invalid character
 ================================================================
@@ -28,9 +28,9 @@ Fix error
 
 Fix, see these resources:
 
--  in the shell:
-   `How to remove BOM
-   <https://unix.stackexchange.com/questions/381230/how-can-i-remove-the-bom-from-a-utf-8-file>`__
--  in PhpStorm: Use :guilabel:`File > Remove BOM`, see
-   `How to stop PHPStorm from creating BOM
-   <https://intellij-support.jetbrains.com/hc/en-us/community/posts/207041775-How-do-I-stop-PHPStorm-7-0-131-374-from-adding-a-BOM>`__
+-   in the shell:
+    `How to remove BOM
+    <https://unix.stackexchange.com/questions/381230/how-can-i-remove-the-bom-from-a-utf-8-file>`__
+-   in PhpStorm: Use :guilabel:`File > Remove BOM`, see
+    `How to stop PHPStorm from creating BOM
+    <https://intellij-support.jetbrains.com/hc/en-us/community/posts/207041775-How-do-I-stop-PHPStorm-7-0-131-374-from-adding-a-BOM>`__

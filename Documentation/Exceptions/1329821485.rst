@@ -1,26 +1,26 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1329821485
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You are not allowed to access the given folder
 ==============================================
 
 This exception can occur due to at least three reasons:
 
--  Bug #51747 (https://forge.typo3.org/issues/51747) in  TYPO3 6.1.4
--  a folder in :file:`typo3temp` or :file:`fileadmin` that actually is write-protected
--  The folder isn't write-protected but completely missing.
+-   Bug #51747 (https://forge.typo3.org/issues/51747) in  TYPO3 6.1.4
+-   a folder in :file:`typo3temp` or :file:`fileadmin` that actually is write-protected
+-   The folder isn't write-protected but completely missing.
 
 Possible missing folders are
 
--  :file:`typo3temp/_processed\_`
--  :file:`typo3temp/_migrated\_`
--  :file:`fileadmin/_processed\_`
--  :file:`fileadmin/_migrated\_`
+-   :file:`typo3temp/_processed\_`
+-   :file:`typo3temp/_migrated\_`
+-   :file:`fileadmin/_processed\_`
+-   :file:`fileadmin/_migrated\_`
 
 Known issue, see `43484: TYPO3 Core - Extension Manager only shows error
 message "File has been deleted." <https://forge.typo3.org/issues/43484>`__

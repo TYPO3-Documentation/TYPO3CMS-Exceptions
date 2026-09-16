@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1288087061
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Template could not be found at "..."
 =====================================
@@ -13,13 +13,13 @@ In the example below, the error is: *Template could not be found at "fileadmin/t
 
 To fix this error, correct the path of the included file.
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-   page.10.file.stdWrap.cObject = CASE
-   page.10.file.stdWrap.cObject {
-       key.data = levelfield:-1, backend_layout_next_level, slide
-       key.override.field = backend_layout
+    page.10.file.stdWrap.cObject = CASE
+    page.10.file.stdWrap.cObject {
+        key.data = levelfield:-1, backend_layout_next_level, slide
+        key.override.field = backend_layout
 
-       default = TEXT
-       default.value = fileadmin/templates/RS1.html
-   }
+        default = TEXT
+        default.value = fileadmin/templates/RS1.html
+    }

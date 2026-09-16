@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1507645445
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Object Name String, was not followed by any operator
 ====================================================
@@ -19,7 +19,7 @@ the following has a line break where there should be none:
 
 *Wrong*:
 
-.. code-block::typoscript
+..  code-block::typoscript
 
     # cat=basic/enable/020; type=boolean; label=Activate the feature:
     Enables the feature
@@ -27,7 +27,7 @@ the following has a line break where there should be none:
 
 *Correct*:
 
-.. code-block::typoscript
+..  code-block::typoscript
 
     # cat=basic/enable/020; type=boolean; label=Activate the feature: Enables the feature
     feature = 0

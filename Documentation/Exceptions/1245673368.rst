@@ -1,24 +1,24 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1245673368
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 Method postFolderCopy() does not exist.
 =======================================
 
-#. Logged into the backend as an admin.
+#.  Logged into the backend as an admin.
 
-#. Tried to copy & paste a folder with subfolders in the file list module.
+#.  Tried to copy & paste a folder with subfolders in the file list module.
 
-#. When pasting into another folder, this error is displayed in the main
-   window::
+#.  When pasting into another folder, this error is displayed in the main
+    window::
 
-      Oops, an error occurred!
-      The slot method Causal\FileList\Slots\ResourceStorage->postFolderCopy() does not exist.
-      More information regarding this error might be available online.
+       Oops, an error occurred!
+       The slot method Causal\FileList\Slots\ResourceStorage->postFolderCopy() does not exist.
+       More information regarding this error might be available online.
 
-#. Extension `causal/file_list` is installed
+#.  Extension `causal/file_list` is installed

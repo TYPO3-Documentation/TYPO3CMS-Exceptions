@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1467983513
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Error message
 =============
@@ -36,5 +36,5 @@ Afterwards, clear all your caches.
 See also
 ========
 
--  `TYPO3-CORE-SA-2016-022: Cache Flooding in TYPO3
-   Frontend <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-022/>`__
+-   `TYPO3-CORE-SA-2016-022: Cache Flooding in TYPO3
+    Frontend <https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-022/>`__

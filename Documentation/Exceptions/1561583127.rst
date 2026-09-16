@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1561583127
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 TYPO3 10.4.28 - 2020-05-25
@@ -12,7 +12,7 @@ TYPO3 10.4.28 - 2020-05-25
 
 Exception message:
 
- InvalidArgumentException: TypoScriptFrontendController must be constructed with a valid SiteLanguage object or a resolved site in the current request as fallback. None given.
+    InvalidArgumentException: TypoScriptFrontendController must be constructed with a valid SiteLanguage object or a resolved site in the current request as fallback. None given.
 
 Situation
 ---------

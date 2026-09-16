@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1294587217
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The page is not configured! [type=x][].
 =======================================
@@ -32,16 +32,16 @@ Use the Template module to modify that template: Select the
 the pencil icon next to the word "Setup" and replace what you have in
 the Setup field with the following lines:
 
-.. container::
+..  container::
 
-   ::
+    ::
 
-          # Default PAGE object:
-          page = PAGE
-          # Define output for typeNum=0, the default type.
-          page.typeNum = 0
-          page.10 = TEXT
-          page.10.value = HELLO WORLD!
+           # Default PAGE object:
+           page = PAGE
+           # Define output for typeNum=0, the default type.
+           page.typeNum = 0
+           page.10 = TEXT
+           page.10.value = HELLO WORLD!
 
 Save the template and open the page in the frontend. You should see the
 words "HELLO WORLD!".
@@ -53,10 +53,10 @@ have a ``(page).typeNum = 123`` defined in your TypoScript template.
 Using broken TypoScript
 ------------------------
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-   #. Default PAGE object:
-   page = PAGE page. 10 = TEXT page. 10.value = HELLO WORLD!
+    #. Default PAGE object:
+    page = PAGE page. 10 = TEXT page. 10.value = HELLO WORLD!
 
 Removing the spaces and adding line breaks leads to a page running fine without the error.
 

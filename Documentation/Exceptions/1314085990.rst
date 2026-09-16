@@ -1,16 +1,16 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1314085990
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Desired storage "..." is not in the list of available storages.
 ===============================================================
 
 See also:
 
--  https://forge.typo3.org/issues/59017
--  https://forge.typo3.org/issues/62489
--  https://forge.typo3.org/issues/67627
+-   https://forge.typo3.org/issues/59017
+-   https://forge.typo3.org/issues/62489
+-   https://forge.typo3.org/issues/67627

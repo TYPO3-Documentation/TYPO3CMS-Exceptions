@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1301648404
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 This page is of type "Shortcut" and configured to redirect to a page, which is not accessible.
 ==============================================================================================
@@ -22,9 +22,9 @@ the Page Not Found Handler.
 
 **Likely reasons how this could happen:**
 
--  The editor has created a page as shortcut and did not define where
-   the shortcut should go to.
--  The page the shortcut pointed to was hidden or removed.
+-   The editor has created a page as shortcut and did not define where
+    the shortcut should go to.
+-   The page the shortcut pointed to was hidden or removed.
 
 In each case, editing the given page (last parameter of `getPageShortcut`)
 and setting the correct (new) page to shortcut too should solve the

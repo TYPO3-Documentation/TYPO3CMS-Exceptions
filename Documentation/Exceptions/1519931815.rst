@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1519931815
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Unresolved extension-dependencies
 =================================
@@ -15,9 +15,9 @@ More detailed error-message could be retrieved using extension
 
 Executing following command on command line:
 
-.. code-block:: bash
+..  code-block:: bash
 
-   typo3cms install:generatepackagestates
+    typo3cms install:generatepackagestates
 
 See the `TYPO3 console manual
 <https://docs.typo3.org/p/helhum/typo3-console/master/en-us/Introduction/Index.html>`_

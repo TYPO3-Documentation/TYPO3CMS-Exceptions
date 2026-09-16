@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1298012500
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Required argument "argumentName" is not set for SomeController->methodName.
 ===========================================================================
@@ -17,6 +17,6 @@ This may happen when a form is submitted without filling any values.
 Make sure the `objectName` parameter matches the method parameter name in your
 action:
 
-.. code-block:: html
+..  code-block:: html
 
     <f:form action="someAction" objectName="argumentName" object="{someObjectName}">

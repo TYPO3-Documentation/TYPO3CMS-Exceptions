@@ -1,86 +1,86 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1318283565
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Login into TYPO3 is not possible anymore, as no OpenSSL backend for rsaauth is available.
 =========================================================================================
 
--  Activate and configure (on Windows) the PHP module openssl
--  Configure `rsaauth` to use the `openssl` executable inside :file:`localconf.php`
+-   Activate and configure (on Windows) the PHP module openssl
+-   Configure `rsaauth` to use the `openssl` executable inside :file:`localconf.php`
 
-   -  Set `$TYPO3_CONF_VARS['SYS']['binSetup']` to the executable. E.g.
-      `'openssl=C:/ ... /openssl.exe'`
-   -  If your path to `openssl.exe` contains blanks, make sure to quote
-      the `openssl` parameter, e.g. `'openssl="C:/ ... /openssl.exe"'`
+    -   Set `$TYPO3_CONF_VARS['SYS']['binSetup']` to the executable. E.g.
+        `'openssl=C:/ ... /openssl.exe'`
+    -   If your path to `openssl.exe` contains blanks, make sure to quote
+        the `openssl` parameter, e.g. `'openssl="C:/ ... /openssl.exe"'`
 
--  Set `$TYPO3_CONF_VARS[TYPO3_mode]['loginSecurityLevel']` to 'normal'
-   instead of 'rsa' (replace `TYPO3_mode` with BE or FE) and set the hash
-   of your user account's password to the md5 hashed value of your
-   password. This way you can at least access your installation. Please
-   be aware that this is a bad idea and disabling
-   rsaauth/saltedpasswords results in all your passwords being unusable,
-   until openssl is available.
+-   Set `$TYPO3_CONF_VARS[TYPO3_mode]['loginSecurityLevel']` to 'normal'
+    instead of 'rsa' (replace `TYPO3_mode` with BE or FE) and set the hash
+    of your user account's password to the md5 hashed value of your
+    password. This way you can at least access your installation. Please
+    be aware that this is a bad idea and disabling
+    rsaauth/saltedpasswords results in all your passwords being unusable,
+    until openssl is available.
 
 Windows 7 and Xampp
 -------------------
 
 Assuming you installed Xampp into :file:`C:\xampp:`
 
--  Activate the PHP module openssl in :file:`C:\xampp\php\php.ini`. Look for
-   this line:
+-   Activate the PHP module openssl in :file:`C:\xampp\php\php.ini`. Look for
+    this line:
 
-.. code-block:: ini
+..  code-block:: ini
 
     ;extension=php_openssl.dll
 
--  Load `fileinfo` module as well. Look for this line and uncomment it:
+-   Load `fileinfo` module as well. Look for this line and uncomment it:
 
-.. code-block:: ini
+..  code-block:: ini
 
     ;extension=php_fileinfo.dll
 
--  Add an environment variable `"OPENSSL_CONF"` with value
-   :file:`C:\xampp\apache\conf\openssl.cnf`. Press "Win + PAUSE" to go to the
-   System window. In the left sidebar are the system settings.
--  Either set `$TYPO3_CONF_VARS['SYS']['binSetup']` to
-   `'openssl=C:\xampp\apache\bin\openssl.exe'` or append
-   `C:\xampp\apache\bin` to the environment variable `PATH` (will work for
-   every PHP script not only TYPO3)
+-   Add an environment variable `"OPENSSL_CONF"` with value
+    :file:`C:\xampp\apache\conf\openssl.cnf`. Press "Win + PAUSE" to go to the
+    System window. In the left sidebar are the system settings.
+-   Either set `$TYPO3_CONF_VARS['SYS']['binSetup']` to
+    `'openssl=C:\xampp\apache\bin\openssl.exe'` or append
+    `C:\xampp\apache\bin` to the environment variable `PATH` (will work for
+    every PHP script not only TYPO3)
 
-   -  If your path to :file:`openssl.exe` contains blanks, make sure to quote
-      the openssl parameter, e.g. `'openssl="C:/ ... /openssl.exe"'`
+    -   If your path to :file:`openssl.exe` contains blanks, make sure to quote
+        the openssl parameter, e.g. `'openssl="C:/ ... /openssl.exe"'`
 
--  Restart Apache
--  If Apache won't start, deactivate the apache ssl module (php has its
-   own) in :file:`C:\xampp\apache\conf\httpd.conf` like so:
+-   Restart Apache
+-   If Apache won't start, deactivate the apache ssl module (php has its
+    own) in :file:`C:\xampp\apache\conf\httpd.conf` like so:
 
-.. code-block:: ini
+..  code-block:: ini
 
     #LoadModule ssl_module modules/mod_ssl.so
 
 and near the end of the file:
 
-.. code-block:: ini
+..  code-block:: ini
 
     #Include conf/extra/httpd-ssl.conf
 
--  Copy :file:`libeay32.ddl` and :file:`ssleay32.dll` from :file:`C:\xampp\php\\` to
-   :file:`C:\xampp\apache\bin\\`
+-   Copy :file:`libeay32.ddl` and :file:`ssleay32.dll` from :file:`C:\xampp\php\\` to
+    :file:`C:\xampp\apache\bin\\`
 
 Helpful links (German)
 ^^^^^^^^^^^^^^^^^^^^^^
 
--  http://blog.joergboesche.de/xampp-1-7-7-apachephp-openssl-modul-workaround-gegen-abstuerze
--  http://praxistipps.chip.de/typo3-lokal-unter-windows-installieren-so-gehts_33260
+-   http://blog.joergboesche.de/xampp-1-7-7-apachephp-openssl-modul-workaround-gegen-abstuerze
+-   http://praxistipps.chip.de/typo3-lokal-unter-windows-installieren-so-gehts_33260
 
 Helpful links (English)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
--  http://stackoverflow.com/questions/24140956/xampp-3-2-1-and-typo3-6-2-openssl-not-working
+-   http://stackoverflow.com/questions/24140956/xampp-3-2-1-and-typo3-6-2-openssl-not-working
 
 Solution for Windows 10 with XAMPP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

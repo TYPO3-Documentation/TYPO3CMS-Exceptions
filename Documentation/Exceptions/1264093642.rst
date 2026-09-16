@@ -1,19 +1,19 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1264093642
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Found an invalid element type declaration in %s
 ===============================================
 
-.. code-block:: text
+..  code-block:: text
 
-   1264093642: Found an invalid element type declaration in %s. Type
-   "ObjectStorage" must not have an element type hint
-   (vendor\yourExtension\Domain\Model\yourModel)
+    1264093642: Found an invalid element type declaration in %s. Type
+    "ObjectStorage" must not have an element type hint
+    (vendor\yourExtension\Domain\Model\yourModel)
 
 Solution
 ========

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1316104317
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ::
 
@@ -21,25 +21,25 @@ This basically means that you need to define a controller in your
 :file:`ext_localconf.php`. Usually the first entry is taken as default
 controller/action. Here's an example:
 
-.. code-block:: php
+..  code-block:: php
 
-   \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-     //assuming your extension is in typo3conf/ext/your_ext folder
-     'YourExt',
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+      //assuming your extension is in typo3conf/ext/your_ext folder
+      'YourExt',
 
-     // Plugin name
-     'Pi1',
+      // Plugin name
+      'Pi1',
 
-     // An array of controller-action combinations. The first one found is the default one.
-     [
-       \YourVendor\YourExt\Controller\YourController::class => 'index,new,create,edit,update'
-     ],
+      // An array of controller-action combinations. The first one found is the default one.
+      [
+        \YourVendor\YourExt\Controller\YourController::class => 'index,new,create,edit,update'
+      ],
 
-     // An array of non-cacheable controller-action-combinations (they must already be enabled)
-     [
-       \YourVendor\YourExt\Controller\YourController::class => 'new,create,edit,update'
-     ],
-   );
+      // An array of non-cacheable controller-action-combinations (they must already be enabled)
+      [
+        \YourVendor\YourExt\Controller\YourController::class => 'new,create,edit,update'
+      ],
+    );
 
 Situation: Adding your plugin via TypoScript
 --------------------------------------------
@@ -48,20 +48,20 @@ This error can appear if you got your TypoScript wrong. Make sure that
 you write your settings with the first letter in uppercase and
 double-check your :file:`ext_localconf.php`.
 
-.. code-block:: typoscript
+..  code-block:: typoscript
 
-      lib.test = USER_INT
-      lib.test {
-        # Calling the extbase bootstrapper
-        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    lib.test = USER_INT
+    lib.test {
+      # Calling the extbase bootstrapper
+      userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
 
-        # Upper camel case!
-        extensionName = YourExt
-        vendorName = YourVendor
+      # Upper camel case!
+      extensionName = YourExt
+      vendorName = YourVendor
 
-        # As you set it in \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin
-        pluginName = Pi1
-      }
+      # As you set it in \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin
+      pluginName = Pi1
+    }
 
 Situation: Adding the Plugin via FlexForm Plugin
 -------------------------------------------------
@@ -83,7 +83,7 @@ Broken routing configuration:
 If you got this error for e.g. `EXT:news` which probably shouldn't be badly configured, it can
 be a broken routing configuration. So check your site yaml (includes) for
 
-.. code-block:: yaml
+..  code-block:: yaml
 
     routeEnhancers:
       News:

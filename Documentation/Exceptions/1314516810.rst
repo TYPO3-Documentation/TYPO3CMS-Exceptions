@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1314516810
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 File "..." does not exist.
 ===========================
@@ -31,8 +31,8 @@ Another solution is to go to the web root of your TYPO3 installation
 shell commands which will copy the missing file to where it is supposed
 to be:
 
-.. code-block:: bash
+..  code-block:: bash
 
-   mkdir fileadmin/introduction/images/theme/
+    mkdir fileadmin/introduction/images/theme/
 
-   cp typo3conf/ext/introduction/Initialisation/Files/images/theme/IntroductionPackage.png fileadmin/introduction/images/theme/
+    cp typo3conf/ext/introduction/Initialisation/Files/images/theme/IntroductionPackage.png fileadmin/introduction/images/theme/

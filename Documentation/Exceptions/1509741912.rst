@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1509741912
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Insights from the code
 ======================
@@ -21,8 +21,8 @@ Concerned Version: TYPO3 Version 9.2.1
 
 Related issues:
 
--  https://forge.typo3.org/issues/84578 (closed)
--  https://forge.typo3.org/issues/84343 (closed)
+-   https://forge.typo3.org/issues/84578 (closed)
+-   https://forge.typo3.org/issues/84343 (closed)
 
 When moving some files in the File-module with the clipboard this Error
 Message is shown:

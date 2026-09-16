@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1534710048
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Exeption is thrown when click in Backend on Module "Sites"
 ==========================================================
@@ -29,11 +29,11 @@ Error in TCA configuration
 Might be caused by a TCA definition of a table other then pages using the
 following:
 
-.. code-block:: php
+..  code-block:: php
 
-   'displayCond' => 'USER:'
-      . \\TYPO3\CMS\Core\Compatibility\PseudoSiteTcaDisplayCondition::class .
-      '->isInPseudoSite:pages:false'
+    'displayCond' => 'USER:'
+       . \\TYPO3\CMS\Core\Compatibility\PseudoSiteTcaDisplayCondition::class .
+       '->isInPseudoSite:pages:false'
 
 is used for records. The pseudo site
 check should only be used for pages. Remove or adopt display condition.

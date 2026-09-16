@@ -1,17 +1,17 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1334756737
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The temporary cache file "..." could not be written.
 ====================================================
 
--  Check your quota.
--  Check if filesystem is full.
--  Check if the filesystem permissions are correct.
+-   Check your quota.
+-   Check if filesystem is full.
+-   Check if the filesystem permissions are correct.
 
 Troubleshooting: Log on to the console or ftp as the user that runs php
 and try to create the file. Add some text to the file so it has more

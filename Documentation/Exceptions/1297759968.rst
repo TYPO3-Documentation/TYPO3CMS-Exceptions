@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1297759968
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 ..  contents::
 
@@ -65,12 +65,12 @@ See https://forge.typo3.org/issues/48172
 Try updating the relevant extensions and TYPO3. If everything is up-to-date and the
 error still occurs setting the TypoScript option `plugin.tx_news.features.rewrittenPropertyMapper = 0` may help.
 
-.. hint::
+..  hint::
 
-   Enabling/disabling the `rewrittenPropertyMapper` has huge
-   impacts on extbase behaviour. You are strongly advised to learn about
-   the "new" propertyMapper and how to use/configure it rather then
-   deactivating it.
+    Enabling/disabling the `rewrittenPropertyMapper` has huge
+    impacts on extbase behaviour. You are strongly advised to learn about
+    the "new" propertyMapper and how to use/configure it rather then
+    deactivating it.
 
 Exception while property mapping at property path "": Could not find a suitable type converter for "..." because no such class or interface exists.
 ===================================================================================================================================================
@@ -110,8 +110,8 @@ The solution is there: http://stackoverflow.com/questions/16405963/typo3-how-to-
 Exception while property mapping at property path "It is not allowed to map property "badproperty". ..."
 ========================================================================================================
 
--  Possible Cause: For me the reason was a <form> inside a <form>. Seems like the __trustedProperies in the second form made my first form to fail.
--  See also: http://stackoverflow.com/questions/18654920/extbase-exception-while-property-mapping-at-property-path
+-   Possible Cause: For me the reason was a <form> inside a <form>. Seems like the __trustedProperies in the second form made my first form to fail.
+-   See also: http://stackoverflow.com/questions/18654920/extbase-exception-while-property-mapping-at-property-path
 
 If `badProperty` is an ObjectStorage that holds references to other
 models and you want to edit this relation in a Fluid form with a

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1507645417
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Object Name String, "..." was not followed by any operator
 ==========================================================
@@ -22,12 +22,12 @@ Solution:
 The file :file:`ext_conf_template.txt` of the extension contains a missing
 equation sign (=).
 
-.. code-block::typoscript
+..  code-block::typoscript
 
-   exclude.tt_products_cat_language
+    exclude.tt_products_cat_language
 
 Change it into this format:
 
-.. code-block::typoscript
+..  code-block::typoscript
 
-   exclude.tt_products_cat_language =
+    exclude.tt_products_cat_language =

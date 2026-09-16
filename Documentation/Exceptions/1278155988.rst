@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1278155988
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 Broken character in locallang files
 ====================================
@@ -15,18 +15,18 @@ _Example_
 
 Bad:
 
-.. code-block:: none
+..  code-block:: none
 
-   <trans-unit>
-      <source>Bootstrap Package: Left & normal, 2 Columns</source>
-   </trans-unit>
+    <trans-unit>
+       <source>Bootstrap Package: Left & normal, 2 Columns</source>
+    </trans-unit>
 
 Good:
 
 Wrap with `CDATA` to escape special characters.
 
-.. code-block:: xml
+..  code-block:: xml
 
-   <trans-unit>
-      <source><![CDATA[Bootstrap Package: Left & normal, 2 Columns]]></source>
-   </trans-unit>
+    <trans-unit>
+       <source><![CDATA[Bootstrap Package: Left & normal, 2 Columns]]></source>
+    </trans-unit>

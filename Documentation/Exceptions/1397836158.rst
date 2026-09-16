@@ -1,19 +1,19 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1397836158
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 No or invalid extension key "..." given.
 ========================================
 
--  Search for variable `$extensionKey` and replace with the extension key as
-   `$_EXTKEY` or string `myExtension`
--  Try not to use `$_EXTKEY` in dynamicConfigFiles or otherwise included
-   TCA snippets
--  Check https://forge.typo3.org/issues/59033
+-   Search for variable `$extensionKey` and replace with the extension key as
+    `$_EXTKEY` or string `myExtension`
+-   Try not to use `$_EXTKEY` in dynamicConfigFiles or otherwise included
+    TCA snippets
+-   Check https://forge.typo3.org/issues/59033
 
 You may have to clear the cache in install tool (See :guilabel:`Important actions`).
 

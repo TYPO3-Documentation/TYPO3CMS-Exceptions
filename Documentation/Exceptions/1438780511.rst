@@ -1,17 +1,17 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1438780511
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 TCA internal_type of field "..." in table "..." must be set to either `db`, (`file`) or `file_reference`
 ========================================================================================================
 
 In v10.4.3 this exception may happen if
 
-* an `internal_type` `file` or `file_reference` is used in combination with type `group`
+*   an `internal_type` `file` or `file_reference` is used in combination with type `group`
 
 Using these types has been deprecated in v9.5 and removed in v10. Only `internal_type` `db` or `folder`
 are allowed.

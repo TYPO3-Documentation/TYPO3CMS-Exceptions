@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1294586448
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You don't have access to this module.
 ======================================
@@ -28,4 +28,4 @@ for non admin)`.
 
 |Media Extra Module in Access List for Backend usergroup.png|
 
-.. |Media Extra Module in Access List for Backend usergroup.png| image:: files/Media_Extra_Module_in_Access_List_for_Backend_usergroup.png
+..  |Media Extra Module in Access List for Backend usergroup.png| image:: files/Media_Extra_Module_in_Access_List_for_Backend_usergroup.png

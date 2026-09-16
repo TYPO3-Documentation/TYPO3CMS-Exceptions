@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1390290029
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 You are trying to use a method on an inaccessible folder.
 =========================================================
@@ -28,14 +28,14 @@ the context menu. Check the paths or sources that are configured here.
 TYPO3 7
 -------
 
--  accessed files/folders may be missing (check if the do exist)
--  file storage may be out of webroot (try to move the files into a valid
-   file storage)
--  check the same folder in the backend module :guilabel:`File->List` - maybe some
-   Icons will show you that the folder is not accessible
--  check missing folders in typo3temp
--  If the file storage is readonly (Flag :guilabel:`Is writable` not set), then you
-   may need to set a :guilabel:`Folder for manipulated and temporary images`
-   -> This folder may be located in another file storage, which is
-   writeable (eg the non-writable file storage is number 2, a writeable
-   storage is number 1, then set this folder value to :file:`1:/_processed_`)
+-   accessed files/folders may be missing (check if the do exist)
+-   file storage may be out of webroot (try to move the files into a valid
+    file storage)
+-   check the same folder in the backend module :guilabel:`File->List` - maybe some
+    Icons will show you that the folder is not accessible
+-   check missing folders in typo3temp
+-   If the file storage is readonly (Flag :guilabel:`Is writable` not set), then you
+    may need to set a :guilabel:`Folder for manipulated and temporary images`
+    -> This folder may be located in another file storage, which is
+    writeable (eg the non-writable file storage is number 2, a writeable
+    storage is number 1, then set this folder value to :file:`1:/_processed_`)

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1245673367
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The given class "Tx_Extname_Classname" is not a registered object.
 ==================================================================
@@ -31,5 +31,5 @@ Occurs in: :file:`typo3/sysext/extbase/Classes/SignalSlot/Dispatcher.php`
        $object = $this->objectManager->get($slotInformation['class']);
    }
 
--  caused by mismatch between the classname in the signal slot (in :file:`ext_tables.php`) and the namespace/classname
-   combination (fully qualified class name) in :file:`Classes/Controller/XxxController.php`
+-   caused by mismatch between the classname in the signal slot (in :file:`ext_tables.php`) and the namespace/classname
+    combination (fully qualified class name) in :file:`Classes/Controller/XxxController.php`

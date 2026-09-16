@@ -1,16 +1,16 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1581862822
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 This error might be caused by inserting content into a Fluid template by
 
-.. code-block:: xml
+..  code-block:: xml
 
-   <f:cObject typoscriptObjectPath="lib.myLib"/>
+    <f:cObject typoscriptObjectPath="lib.myLib"/>
 
 If the TypoScript object uses a :typoscript:`insertData = 1` or the datawrap curly
 braces might get parsed, see

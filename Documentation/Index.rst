@@ -6,20 +6,20 @@ TYPO3 Exceptions
 ================
 
 :Version:
-   |release|
+    |release|
 
 :Language:
-   en
+    en
 
 :Author:
-   TYPO3 contributors
+    TYPO3 contributors
 
 :License:
-   This document is published under the
-   `Open Publication License <https://www.opencontent.org/openpub/>`__.
+    This document is published under the
+    `Open Publication License <https://www.opencontent.org/openpub/>`__.
 
 :Rendered:
-   |today|
+    |today|
 
 ----
 

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1232985915
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 The APCu backend cannot be used because apcu is disabled on CLI
 ===============================================================
@@ -25,7 +25,7 @@ nginx) but does not if invoked via CLI (command line interface).
 Solutions
 ---------
 
-#. Change Cache Backend: Goto TYPO3 *Install Tool* --> *Configuration Presets* and
-   choose *Database cache backend* (or: something different then `apcu`) and save.
-#. Adjust PHP CLI configuration to fix this behavior: modify configuration file ``/etc/php/7.1/cli/conf.d/20-apcu.ini`` (as
-   an example on Ubuntu 17.10) and add new setting ``apc.enable_cli=on``
+#.  Change Cache Backend: Goto TYPO3 *Install Tool* --> *Configuration Presets* and
+    choose *Database cache backend* (or: something different then `apcu`) and save.
+#.  Adjust PHP CLI configuration to fix this behavior: modify configuration file ``/etc/php/7.1/cli/conf.d/20-apcu.ini`` (as
+    an example on Ubuntu 17.10) and add new setting ``apc.enable_cli=on``

@@ -1,23 +1,23 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1195126772
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 $toolbarItem must implement interface `TYPO3\CMS\Backend\Toolbar\ToolbarItemHookInterface`
 ==========================================================================================
 
-#. Check whether the requested class really implements
-   :php:`TYPO3\\CMS\\Backend\\Toolbar\\ToolbarItemHookInterface`
+#.  Check whether the requested class really implements
+    :php:`TYPO3\\CMS\\Backend\\Toolbar\\ToolbarItemHookInterface`
 
 Exception on shortcut
 =====================
 
-#. The error might have been caused because the argument to the
-   constructor was not passed by reference as requested by the
-   Interface/Class. In general this causes just a warning but can also
-   lead to serious problems.
-#. There's a bug in PHP 5.5.6+ which causes this Exception:
-   https://forge.typo3.org/issues/53682
+#.  The error might have been caused because the argument to the
+    constructor was not passed by reference as requested by the
+    Interface/Class. In general this causes just a warning but can also
+    lead to serious problems.
+#.  There's a bug in PHP 5.5.6+ which causes this Exception:
+    https://forge.typo3.org/issues/53682

@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1437656456
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 `$uid` must be positive integer, 0 given
 ========================================
@@ -21,4 +21,4 @@ The issue was solved here by comparing the database with the
 specification (see :guilabel:`Install Tool` > :guilabel:`Important Actions`). Make sure your
 table definitions are the same as they are in the current database!
 
-.. |TYPO3 multi-content edit error.png| image:: files/TYPO3_multi-content_edit_error.png
+..  |TYPO3 multi-content edit error.png| image:: files/TYPO3_multi-content_edit_error.png

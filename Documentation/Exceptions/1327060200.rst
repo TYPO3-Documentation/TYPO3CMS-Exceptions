@@ -1,10 +1,10 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
 ==========================
 TYPO3 Exception 1327060200
 ==========================
 
-.. include:: /If-you-encounter-this-exception.rst.txt
+..  include:: /If-you-encounter-this-exception.rst.txt
 
 
 [11.5.12] - [02.07.2022]
@@ -15,34 +15,34 @@ Situation
 
 Error on sending the form:
 
-.. code-block:: none
+..  code-block:: none
 
-   (1/1) #1327060200 TYPO3\CMS\Form\Domain\Finishers\Exception\FinisherException
-   The option "recipients" must be set for the EmailFinisher.
+    (1/1) #1327060200 TYPO3\CMS\Form\Domain\Finishers\Exception\FinisherException
+    The option "recipients" must be set for the EmailFinisher.
 
 Solution
 --------
 
 There was a leading white space in the recipient's email address:
 
-.. code-block:: yaml
-  :caption: Wrong yaml
+..  code-block:: yaml
+    :caption: Wrong yaml
 
-  finishers:
-  -
-    options:
-      recipients:
-        ' info@example.org': 'Name'
+    finishers:
+    -
+      options:
+        recipients:
+          ' info@example.org': 'Name'
 
 
-.. code-block:: yaml
-  :caption: Correct yaml
+..  code-block:: yaml
+    :caption: Correct yaml
 
-  finishers:
-  -
-    options:
-      recipients:
-        'info@example.org': 'Name'
+    finishers:
+    -
+      options:
+        recipients:
+          'info@example.org': 'Name'
 
 
 [v11.5.12] - [08-07-2022]
@@ -53,21 +53,21 @@ Solution 2
 
 Older versions of EXT:form used 'recipientAddress' and 'recipientName', they are now replaced by 'recipients'. Either simply open and directly save the form in the Form backend module, the backend module will automatically rewrite the old options to the new one, or make the adjustments manually:
 
-.. code-block:: yaml
-  :caption: Old yaml, no longer working in v11
+..  code-block:: yaml
+    :caption: Old yaml, no longer working in v11
 
-  finishers:
-  -
-    options:
-      recipientAddress: email@example.com
-      recipientName: '{text-1}'
+    finishers:
+    -
+      options:
+        recipientAddress: email@example.com
+        recipientName: '{text-1}'
 
 
-.. code-block:: yaml
-  :caption: New yaml
+..  code-block:: yaml
+    :caption: New yaml
 
-  finishers:
-  -
-    options:
-      recipients:
-        email@example.com: '{text-1}'
+    finishers:
+    -
+      options:
+        recipients:
+          email@example.com: '{text-1}'
