@@ -58,4 +58,4 @@ Pass the current request object to the UriBuilder:
             // ...
             ->build();
 
-See also :ref:`t3coreapi:extbase-uri-builder`.
+See also :ref:`Generating URLs with the UriBuilder <t3coreapi:extbase-uri-builder>`.

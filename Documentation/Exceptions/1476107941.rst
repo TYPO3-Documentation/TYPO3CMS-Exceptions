@@ -30,7 +30,8 @@ Bare minimum example:
 
     # ...
 
-See :ref:`t3coreapi:dependency-injection-Configuration` in TYPO3 Explained.
+See :ref:`how to configure dependency injection
+<t3coreapi:dependency-injection-Configuration>` in TYPO3 Explained.
 
 [TYPO3 LTS 10] - [2021.05.05]
 ====================================
@@ -61,8 +62,9 @@ Use fully qualified class names as array keys in arguments
 :php:`$controllerActions` and :php:`$nonCacheableControllerActions` in
 :php:`configurePlugin` or :php:`registerModule`.
 
-More details are in the changelog
-:doc:`ext_core:Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules`:
+More details are in the changelog entry
+:doc:`Use controller classes when registering plugins and modules
+<ext_core:Changelog/10.0/Deprecation-87550-UseControllerClassesWhenRegisteringPluginsmodules>`:
 
 **Correct example:**
 

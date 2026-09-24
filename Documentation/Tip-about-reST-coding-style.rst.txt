@@ -17,7 +17,8 @@
 
 
    Learn about reST
-      *  :ref:`h2document:rest-reference` - in TYPO3 documentation
+      *  :ref:`reStructuredText reference <h2document:rest-reference>` - in TYPO3
+         documentation
 
       *  `Wikipedia (de) <https://de.wikipedia.org/wiki/ReStructuredText>`__
          - some good links (en)

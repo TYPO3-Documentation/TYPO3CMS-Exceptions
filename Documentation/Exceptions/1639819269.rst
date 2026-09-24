@@ -14,7 +14,7 @@ Installation Overview
 ---------------------
 
 Sending a :php:`\TYPO3\CMS\Core\Mail\FluidEmail` from a console command. The template uses the
-:ref:`t3viewhelper:typo3-fluid-uri-page`.
+:ref:`page URI ViewHelper <t3viewhelper:typo3-fluid-uri-page>`.
 
 The Issue
 ---------
