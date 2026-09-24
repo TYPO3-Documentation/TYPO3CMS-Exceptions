@@ -26,7 +26,8 @@ Situation
 
 This exception is thrown, when there have been too many failed login attempts from one IP address within a given time frame.
 
-See also: :ref:`ext_core:feature-93825`.
+See also the changelog entry for
+:ref:`feature #93825 <ext_core:feature-93825>`.
 
 Solution
 --------
