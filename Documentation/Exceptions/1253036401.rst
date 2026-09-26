@@ -16,7 +16,7 @@ This error ( argument "*path*" was already defined and should not be
 
 This error occurred, after upgrading from TYPO3 CMS 7 to 8 having a
 custom view helper extending
-`TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper`. The registering of
+:php:`TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper`. The registering of
 arguments changed from CMS 7 to 8. In 7 most of the arguments where
 defined in the signature of the `render()` method. That changed in CMS
 8. In my view helper the arguments were still in the signature causing

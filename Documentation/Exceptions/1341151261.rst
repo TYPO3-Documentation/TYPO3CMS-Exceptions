@@ -27,7 +27,7 @@ Reason
 ^^^^^^
 
 In :file:`ext_tables.php` `dynamicConfigFile` uses a **relative** path, but
-`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles()`
+:php:`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles()`
 expects to get an **absolute** path.
 
 Solution (patch)

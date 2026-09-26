@@ -13,7 +13,7 @@ There is no entry in the $TCA array for the table "your_unknown_table"
     table "your_unknown_table". This means that the function enableFields()
     is called with an invalid table name as argument.'**
 
-This exception is thrown in `TYPO3\CMS\Frontend\Page\PageRepository::enableFields` when the table (as
+This exception is thrown in :php:`TYPO3\CMS\Frontend\Page\PageRepository::enableFields` when the table (as
 mentioned in the error) is not found in the TCA.
 
 Possible causes

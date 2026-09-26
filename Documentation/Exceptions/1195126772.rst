@@ -6,11 +6,11 @@ TYPO3 Exception 1195126772
 
 ..  include:: /If-you-encounter-this-exception.rst.txt
 
-$toolbarItem must implement interface `TYPO3\CMS\Backend\Toolbar\ToolbarItemHookInterface`
-==========================================================================================
+$toolbarItem must implement interface `TYPO3\\CMS\\Backend\\Toolbar\\ToolbarItemHookInterface`
+==============================================================================================
 
 #.  Check whether the requested class really implements
-    :php:`TYPO3\\CMS\\Backend\\Toolbar\\ToolbarItemHookInterface`
+    :php:`TYPO3\CMS\Backend\Toolbar\ToolbarItemHookInterface`
 
 Exception on shortcut
 =====================
