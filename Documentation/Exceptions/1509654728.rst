@@ -14,7 +14,7 @@ TYPO3 Exception 1509654728
 Situation
 ---------
 
-The exception was thrown when trying to activate an extension which utilized `\TYPO3\CMS\Core\Configuration\ExtensionConfiguration->get()` to load its configurations. The configuration file was missing.
+The exception was thrown when trying to activate an extension which utilized :php:`\TYPO3\CMS\Core\Configuration\ExtensionConfiguration->get()` to load its configurations. The configuration file was missing.
 
 Solution
 --------

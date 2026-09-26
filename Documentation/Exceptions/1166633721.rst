@@ -7,7 +7,7 @@ TYPO3 Exception 1166633721
 ..  include:: /If-you-encounter-this-exception.rst.txt
 
 
-`\TYPO3\Flow\Package\Exception`
-===============================
+`\\TYPO3\\Flow\\Package\\Exception`
+===================================
 
 Exception happens while building class files for the class loader in TYPO3 6.2.

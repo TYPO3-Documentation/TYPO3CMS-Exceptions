@@ -10,7 +10,7 @@ regularExpression "^[2356]$" in RegularExpressionValidator contained an error.
 ==============================================================================
 
     #1298273089: regularExpression "^[2356]$" in RegularExpressionValidator contained an error.
-    `TYPO3\CMS\Extbase\Validation\Exception\InvalidValidationOptionsException` thrown in file
+    :php:`TYPO3\CMS\Extbase\Validation\Exception\InvalidValidationOptionsException` thrown in file
     :file:`typo3/sysext/extbase/Classes/Validation/Validator/RegularExpressionValidator.php` in line 50.
 
 This happens when no regular expression delimiter is used.

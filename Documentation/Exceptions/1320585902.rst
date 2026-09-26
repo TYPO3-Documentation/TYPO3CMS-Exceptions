@@ -6,8 +6,8 @@ TYPO3 Exception 1320585902
 
 ..  include:: /If-you-encounter-this-exception.rst.txt
 
-$hookObject must implement interface `TYPO3\CMS\Core\Database\TableConfigurationPostProcessingHookInterface`
-============================================================================================================
+$hookObject must implement interface `TYPO3\\CMS\\Core\\Database\\TableConfigurationPostProcessingHookInterface`
+================================================================================================================
 
 The `$hookObject` registered does not implement the interface.
 

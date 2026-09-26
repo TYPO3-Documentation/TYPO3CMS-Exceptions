@@ -28,7 +28,7 @@ If you did change your templates like this:
     Query_action_show_0c62eb625eb2a7904988fc25163bb9056e30949a, line 11 at
     character 1. Error: The ViewHelper :html:`<v:variable.set>` could not be
     resolved. Based on your spelling, the system would load the class
-    `FluidTYPO3\Vhs\ViewHelpers\Variable\SetViewHelper`, however this class
+    :php:`FluidTYPO3\Vhs\ViewHelpers\Variable\SetViewHelper`, however this class
     does not exist. (error code 1407060572). Template source chunk:
     :html:`<v:variable.set name="CUD" value='<f:cObject typoscriptObjectPath="lib.CUD" />' />`
 
@@ -40,7 +40,7 @@ Case 2 - Typos
 
     **Uncaught TYPO3 Exception**
     #1407060572: Fluid parse error in template Standard_action_index_d05c4e8f75e024f00a98da5e29c3ed0043a25267, line 9 at character 1. Error: The ViewHelper :html:`<xy:custom>` could not be resolved.
-    Based on your spelling, the system would load the class `MyVendor\MyExtension\ViewHelpers\CustomViewHelper`, however this class does not exist. (error code 1407060572). Template source chunk: :html:`<xy:custom myParameter="somedata" />`
+    Based on your spelling, the system would load the class :php:`MyVendor\MyExtension\ViewHelpers\CustomViewHelper`, however this class does not exist. (error code 1407060572). Template source chunk: :html:`<xy:custom myParameter="somedata" />`
 
 Check for typos! I named the ViewHelper "CustomViewhelper" with an
 lowercase "h", which leads to above fatal error.

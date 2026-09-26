@@ -21,9 +21,9 @@ From the core `API
 docs <https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/Categories/Index.html#making-a-table-categorizable>`__:
 
 The second way is to call
-`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable()`.
+:php:`\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable()`.
 This method adds a new entry into the registry managed by
-`\TYPO3\CMS\Core\Category\CategoryRegistry`. The registry will take care
+:php:`\TYPO3\CMS\Core\Category\CategoryRegistry`. The registry will take care
 of adding the relevant `$TCA` definition to create a field for making
 relations to the system categories. The call to **makeCategorizable()
 must be located in an extension's Configuration/TCA/Overrides folder**

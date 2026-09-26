@@ -9,4 +9,4 @@ TYPO3 Exception 1285067843
 A back-end form protection may only be instantiated if there is an active back-end session.
 ===========================================================================================
 
-`\TYPO3\CMS\Core\FormProtection\BackendFormProtection` may only be used with a backend user that is logged in.
+:php:`\TYPO3\CMS\Core\FormProtection\BackendFormProtection` may only be used with a backend user that is logged in.

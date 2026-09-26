@@ -47,8 +47,8 @@ Assuming you installed Xampp into :file:`C:\xampp:`
     :file:`C:\xampp\apache\conf\openssl.cnf`. Press "Win + PAUSE" to go to the
     System window. In the left sidebar are the system settings.
 -   Either set `$TYPO3_CONF_VARS['SYS']['binSetup']` to
-    `'openssl=C:\xampp\apache\bin\openssl.exe'` or append
-    `C:\xampp\apache\bin` to the environment variable `PATH` (will work for
+    `'openssl=C:\\xampp\\apache\\bin\\openssl.exe'` or append
+    `C:\\xampp\\apache\\bin` to the environment variable `PATH` (will work for
     every PHP script not only TYPO3)
 
     -   If your path to :file:`openssl.exe` contains blanks, make sure to quote
