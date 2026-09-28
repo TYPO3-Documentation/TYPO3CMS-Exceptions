@@ -17,7 +17,7 @@ template" flag set in your TS hierarchy.
 
 If setting this flag is not an option for you (this may happen with
 inherited configuration templates such as "Use this template for next
-level"), then you may included it manually with
+level"), then you may include it manually with:
 
 ::
 

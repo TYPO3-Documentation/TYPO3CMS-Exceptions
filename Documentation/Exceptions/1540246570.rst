@@ -40,7 +40,7 @@ If your extension is a general plugin, check if it is properly installed (and ac
 and the required TypoScript included.
 Otherwise proceed as follows.
 
-:file:`tt_content.php` adds the plugin by
+:file:`tt_content.php` adds the plugin by:
 
 ..  code-block:: php
 

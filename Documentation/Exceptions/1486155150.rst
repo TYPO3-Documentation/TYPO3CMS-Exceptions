@@ -19,7 +19,7 @@ Happened during upgrade to TYPO3 version 8 in the migration wizard.
 Reason
 ------
 
-The Linkparser can't handle links to extension records, like
+The Linkparser can't handle links to extension records, like:
 
 ::
 

@@ -95,7 +95,7 @@ psr4 autoload in copmposer.json:
       at TYPO3\CMS\Extbase\Reflection\ReflectionService->buildClassSchema('Vendorname\\Extensionname\\Domain\\Model\\MyModel')
 
 Got this error because in MyModel was a setter with a wrong typehint, in
-my case it was something like
+my case it was something like:
 
 ::
 

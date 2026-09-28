@@ -95,6 +95,6 @@ Extension 'hosts_pattern'
 =========================
 
 Take a look at the extension 'hosts_pattern' which generates the
-patterns for you
+patterns for you:
 
 -   https://extensions.typo3.org/extension/hosts_pattern/

@@ -95,7 +95,6 @@ No good solution found so far, will report in if solution is found.
 
 Temporary solution would be to create table with 608 empty records, to
 be able to create and edit records in backend on page [0],
-
 otherwise TYPO3 will display error message and you can not edit anything
 on page [0].
 
@@ -124,7 +123,7 @@ This occurs when the sr_language_menu extension is installed, but not
 configured right.
 
 Please make sure, that you include the "Language Menu Setup
-(sr_language_menu)" in
+(sr_language_menu)" in:
 
 Templates->Edit the whole template record->Includes: Language Menu Setup
 (sr_language_menu)!

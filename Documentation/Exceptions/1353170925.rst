@@ -22,7 +22,7 @@ type
 
 the object will be populated by extbase without any other configuration.
 
-But to make queries like
+But to make queries like:
 
 ..  code-block:: php
 

@@ -15,7 +15,7 @@ This exception can occur due to at least three reasons:
 -   a folder in :file:`typo3temp` or :file:`fileadmin` that actually is write-protected
 -   The folder isn't write-protected but completely missing.
 
-Possible missing folders are
+Possible missing folders are:
 
 -   :file:`typo3temp/_processed\_`
 -   :file:`typo3temp/_migrated\_`
