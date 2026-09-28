@@ -47,7 +47,7 @@ the shell type `rm typo3conf/temp_CACHED_\*` and reload the page.
 
 --------------
 
-If you have upgraded from v8.x to v9 or v10 then there is a possibility that cache configuration is defined with
+If you have upgraded from v8.x to v9 or v10 then there is a possibility that cache configuration is defined with:
 
 ::
    $TYPO3_CONF_VARS['SYS']

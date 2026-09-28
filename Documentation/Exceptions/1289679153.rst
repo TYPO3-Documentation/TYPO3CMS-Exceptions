@@ -22,7 +22,7 @@ The error happens when your cache configuration is invalid. Check
           ],
       ],
 
-and change it to
+and change it to:
 
 ::
 

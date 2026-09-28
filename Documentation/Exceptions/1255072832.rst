@@ -21,7 +21,7 @@ For example at the selecting field:
    <f:form.select '''name="paymentOptions"''' options="{payPal: 'PayPal International Services', visa: 'VISA Card'}" value="visa" />
 
 
-The error also occurs having a Fluid template like
+The error also occurs having a Fluid template like:
 
 ::
 

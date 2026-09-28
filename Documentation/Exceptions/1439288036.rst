@@ -10,7 +10,7 @@ An item in field "..." of table "..." is not an array as expected
 =================================================================
 
 This happens in TYPO3 7.6 if there is a incompatible 'items' TCA
-definition in the according field like
+definition in the according field like:
 
 ..  code-block:: php
 
@@ -24,7 +24,7 @@ or
 
     'items' => ['-']
 
-This has to be replaced with a correct item definition like
+This has to be replaced with a correct item definition like:
 
 ..  code-block:: php
 

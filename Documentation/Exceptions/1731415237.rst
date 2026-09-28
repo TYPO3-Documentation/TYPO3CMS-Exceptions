@@ -6,7 +6,7 @@ TYPO3 Exception 1731415237
 
 ..  include:: /If-you-encounter-this-exception.rst.txt
 
-If you encounter `Required PageContext not available` check your typo3 log in `var/log/` - if there is log entry like
+If you encounter `Required PageContext not available` check your typo3 log in `var/log/` - if there is log entry like:
 
 ::
     An exception occurred while executing a query: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VARCHAR(16383))) AS `__CTE_PATH__`, (CAST(0 <> 0 AS SIGNED INTEGER)) AS `__CT...' at line 1

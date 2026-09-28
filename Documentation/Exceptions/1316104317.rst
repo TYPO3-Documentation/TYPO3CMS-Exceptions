@@ -81,7 +81,7 @@ Broken routing configuration:
 -----------------------------
 
 If you got this error for e.g. `EXT:news` which probably shouldn't be badly configured, it can
-be a broken routing configuration. So check your site yaml (includes) for
+be a broken routing configuration. So check your site yaml (includes) for:
 
 ..  code-block:: yaml
 

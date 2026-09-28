@@ -13,7 +13,7 @@ RealURL searches in the sys_domain table for a domain with matches the
 current host. It would then detect the PID of the domain record and
 hence get the root page of the domain.
 
-If this exception is thrown, then
+If this exception is thrown, then:
 
 -   either no domain record exists for the current domain (solution: add
     domain record)

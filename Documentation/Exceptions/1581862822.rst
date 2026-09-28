@@ -6,7 +6,7 @@ TYPO3 Exception 1581862822
 
 ..  include:: /If-you-encounter-this-exception.rst.txt
 
-This error might be caused by inserting content into a Fluid template by
+This error might be caused by inserting content into a Fluid template by:
 
 ..  code-block:: xml
 
