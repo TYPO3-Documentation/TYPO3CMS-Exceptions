@@ -8,7 +8,7 @@ Each exception has its own subpage.
 
 
 
-..  _Tip-about-reST-coding-style:
+..  _tip-about-rest-coding-style:
 
 ..  rubric:: Here are some tips about writing reStructuredText (reST)
 
