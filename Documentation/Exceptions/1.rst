@@ -383,7 +383,7 @@ At 1st initial start of this page after clearing the cache, after reload
 [e.g. pressing F5] this message disappears, and page runs fine...
 -- David Bruchmann 02:03, 27 August 2014 (CEST)
 
-..  _typo3-6.2.4-1:
+..  _typo3-6-2-4-1:
 
 TYPO3 6.2.4
 ===========
