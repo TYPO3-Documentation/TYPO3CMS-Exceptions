@@ -42,7 +42,7 @@ default.
 This exception may appear if you just upgraded your TYPO3 Core and have
 not removed the cache files in typo3conf.
 
-To do so simply remove these files go to your TYPO3 Installation and in
+To remove these files, go to your TYPO3 Installation and in
 the shell type `rm typo3conf/temp_CACHED_\*` and reload the page.
 
 --------------

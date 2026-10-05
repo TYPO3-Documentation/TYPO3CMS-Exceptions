@@ -21,4 +21,4 @@ Might happen when using Flux 7.0.0
 Solution
 ^^^^^^^^
 
--   Maybe you have not included the `fluidcontent_bootstrap` in your template. Just include it.
+-   Maybe you have not included the `fluidcontent_bootstrap` in your template. Include it.

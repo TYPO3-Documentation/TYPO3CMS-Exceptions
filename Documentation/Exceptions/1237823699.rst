@@ -9,7 +9,7 @@ TYPO3 Exception 1237823699
 #1237823699: Required argument "controller" was not supplied.
 =============================================================
 
-Just add the parameter controller to the *be.menus.actionMenuItem*
+Add the parameter controller to the *be.menus.actionMenuItem*
 ViewHelper:
 
 ::

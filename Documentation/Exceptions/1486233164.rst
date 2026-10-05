@@ -10,7 +10,7 @@ This error can happen, when a record, containing a :ref:`FAL <t3coreapi:fal>`
 relation, is about to be translated into another language. Possible reasons:
 
 1.  The FAL data was created before any languages were created. In that case
-    just delete the original FAL data and recreate it.
+    delete the original FAL data and recreate it.
 2.  The TCA is missing an "appearance" configuration, for example:
 
 ..  code-block:: php

@@ -2,7 +2,7 @@
 .. tip::
 
    Coding style of the Exception report (reST)
-      Just start writing plain text - as you would do on an old-fashioned
+      Start writing plain text - as you would do on an old-fashioned
       typewriter. Any Unicode character is fine. To markup special words
       follow the rules of **reStructuredText**. For example, if you write:
 

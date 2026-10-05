@@ -35,7 +35,7 @@ will raise this exception.
 
     SELECT * FROM sys_file_reference WHERE uid=1 AND sys_file_reference.deleted=0
 
-Just make sure that your first several (maximum number of assigned file
+Make sure that your first several (maximum number of assigned file
 references to your extension table) records of the table
 :sql:`sys_file_reference` are not marked as deleted. If this SQL query executes
 successfully, then it will work.

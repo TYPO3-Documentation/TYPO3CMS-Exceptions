@@ -51,7 +51,7 @@ There was a leading white space in the recipient's email address:
 Solution 2
 ----------
 
-Older versions of EXT:form used 'recipientAddress' and 'recipientName', they are now replaced by 'recipients'. Either simply open and directly save the form in the Form backend module, the backend module will automatically rewrite the old options to the new one, or make the adjustments manually:
+Older versions of EXT:form used 'recipientAddress' and 'recipientName', they are now replaced by 'recipients'. Either open and directly save the form in the Form backend module, the backend module will automatically rewrite the old options to the new one, or make the adjustments manually:
 
 ..  code-block:: yaml
     :caption: Old yaml, no longer working in v11

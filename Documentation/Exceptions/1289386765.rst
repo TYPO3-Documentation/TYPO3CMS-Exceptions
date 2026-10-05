@@ -331,7 +331,7 @@ Reason:
 
 Fix:
 
-Just remove ``<flux:widget.grid />`` completely.
+Remove ``<flux:widget.grid />`` completely.
 
 if you got this error while updating via git
 ============================================
