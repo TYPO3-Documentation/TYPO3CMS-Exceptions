@@ -101,7 +101,7 @@ very old TYPO3/DAM installations.
 **Solution:** Identify all file paths containing spaces which are
 currently in use (to keep amount of work low) via database and rename
 them manually. Warn your editors to check file names if currently unused
-files are affected (simply remove the ``number_of_references`` condition
+files are affected (remove the ``number_of_references`` condition
 below). Assuming reference index is reliable:
 
 ..  code-block:: sql

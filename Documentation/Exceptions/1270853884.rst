@@ -54,6 +54,6 @@ Proceed as follows:
 
        update mysql.user set password=PASSWORD('password') where user='db-username'
 
-    obviously substitute db-username with the 'username' and 'password' with the right (old or new password) used to access your db, stored in: typo3conf/LocalConfiguration.php
+    substitute db-username with the 'username' and 'password' with the right (old or new password) used to access your db, stored in: typo3conf/LocalConfiguration.php
 7.  restart your mysql daemon: /etc/init.d/mysqld restart
 8.  eventually remove all site cache: rm -rif typo3temp/Cache\*

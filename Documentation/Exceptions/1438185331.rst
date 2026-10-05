@@ -31,5 +31,5 @@ Add an empty part of types to it, like this:
       ],
    ],
 
-Of course you can add a more enhanced `types` array if you have a need for
+You can add a more enhanced `types` array if you have a need for
 it.

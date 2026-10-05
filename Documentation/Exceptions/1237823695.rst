@@ -35,7 +35,7 @@ Issue on Forge: https://forge.typo3.org/issues/56481
 Solution 1 - Remove the attribute
 ---------------------------------
 
-Just remove the wrong xmlns attribute from your Fluid tag
+Remove the wrong xmlns attribute from your Fluid tag
 
 ````
 

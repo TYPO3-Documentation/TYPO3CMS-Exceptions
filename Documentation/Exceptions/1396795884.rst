@@ -16,8 +16,8 @@ Usually, when installing a new TYPO3 instance, the system will detect
 the instance has not been configured yet and will redirect to the
 installer to proceed with the installation. However, depending on web
 server configuration, this trusted hosts pattern error may still be
-thrown and the redirect will not be performed. An easy way to circumvent
-this is to just manually add the path url :file:`typo3/install.php` in the
+thrown and the redirect will not be performed. One way to circumvent
+this is to manually add the path url :file:`typo3/install.php` in the
 browser to directly reach the installer, which will take care of the
 trusted hosts pattern setting in one of its installer steps.
 

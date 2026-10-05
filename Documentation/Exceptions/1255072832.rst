@@ -45,7 +45,7 @@ empty brackets, I consider this a bug.1
 
 
 **Better solution (since TYPO3 7):** Do not add yourself [] to the
-name of the checkbox. Simply add multiple="1" and Fluid will adds
+name of the checkbox. Add multiple="1" and Fluid will adds
 automatically the [] to all the checkbox of the group.
 
 ::

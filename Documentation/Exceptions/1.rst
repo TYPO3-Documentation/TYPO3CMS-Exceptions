@@ -484,7 +484,7 @@ TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration, line 389.
 
 This method expects a
 \\TYPO3\CMS\Extbase\Property\TypeConverterInterface as argument, which
-is simply done by calling a new instance of your TypeConverter:
+is done by calling a new instance of your TypeConverter:
 
 ::
 
@@ -514,8 +514,6 @@ by your extension name. This is kind of standard here but that's up to you.
    <myConverter>
 
 by the name of your converter.
-
-The solution to this error is very obvious but it's better written than not.
 
 TYPO3 6.2.18: tx_news:newsadministration: Division by zero in PaginateController
 ================================================================================
@@ -563,7 +561,7 @@ If you get this error:
    should begin with a binary version header of "\x00\x00\x00\x01" or
    "\x00\x00\x00\x02"
 
-Just delete your caches. If you can't login to your backend, delete them
+Delete your caches. If you can't login to your backend, delete them
 from the install tool.
 
 --------------
