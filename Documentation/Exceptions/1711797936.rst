@@ -16,20 +16,20 @@ Installation Overview
 Using the :typoscript:`PAGEVIEW` TypoScript element to display a content element:
 
 ..  code-block:: typoscript
-    :caption: EXT:my_sitepackage/Configuration/Sets/MySet/setup.typoscript
+    :caption: EXT:my_sitepackage/Configuration/Sets/Main/setup.typoscript
 
     page = PAGE
     page {
         10 = PAGEVIEW
         10 {
             paths {
-                100 = EXT:site_package/Resources/Private/Templates/
+                100 = EXT:my_sitepackage/Resources/Private/Templates/
             }
             // ...
         }
     }
 
-There is a file called :file:`EXT:site_package/Resources/Private/Templates/pages/default.html`.
+There is a file called :file:`EXT:my_sitepackage/Resources/Private/Templates/pages/default.html`.
 
 The Issue
 ---------
@@ -38,15 +38,15 @@ The Issue
     :caption: The error message
 
     Could not find template source for "pages/default". Configured
-    templateRootPaths: /var/www/html/vendor/myvendor/site-package/Resources/Private/Templates/
+    templateRootPaths: /var/www/html/vendor/my-vendor/my-sitepackage/Resources/Private/Templates/
 
 Solution
 --------
 
 The template name has to start with an upper case letter.
 
-Rename :file:`EXT:site_package/Resources/Private/Templates/pages/default.html` to
-:file:`EXT:site_package/Resources/Private/Templates/pages/Default.html`.
+Rename :file:`EXT:my_sitepackage/Resources/Private/Templates/pages/default.html` to
+:file:`EXT:my_sitepackage/Resources/Private/Templates/pages/Default.html`.
 
 ..
    TYPO3 [version] - [date of report]
