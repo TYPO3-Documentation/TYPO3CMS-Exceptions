@@ -17,4 +17,4 @@ This error can also occur if the :file:`composer.json` file is not accessible.
 
 Alternatively, use a JSON online validator and copy-paste the contents of your
 :file:`composer.json`. Then you will see the exact syntax error in this JSON
-file. E.g. `here <https://jsonformatter.curiousconcept.com/>`__.
+file.
